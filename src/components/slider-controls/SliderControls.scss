@@ -1,0 +1,25 @@
+@import '~styles/config';
+
+.slider {
+
+    @media (min-width: $min-768) {
+      position: absolute;
+      bottom: 5.6vw;
+      @include grid-col(5);
+      @include grid-offset-left(10);
+    }
+
+  &__link {
+    display: inline-block;
+    margin-right: 25px;    
+  }
+
+  &__control {
+    width: 15px;
+    height:  15px;
+    border-radius: 7.5px;
+    border: 1px solid #000; 
+    background-color: transparent;    
+  }  
+
+} 

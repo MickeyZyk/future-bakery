@@ -1,0 +1,571 @@
+@import '~styles/reset';
+/* @import '~styles/fonts.css'; */
+
+/* stylelint-disable selector-max-type  */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+:root {
+  @if global-variable-exists(scale) {
+    --scale-element: 1;
+    --scale-font: 1;
+
+    @each $size in $scale {
+      @media (max-height: nth($size, 1)) {
+        --scale-element: #{nth($size, 2)};
+        --scale-font: #{nth($size, 2)};
+      }
+    }
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  background-color: $color-background;
+  overflow: hidden;  
+/*
+  min-height: 100vh;
+  overflow: hidden;
+*/  
+}
+
+html {
+  -webkit-overflow-scrolling: touch;
+  /* overflow-y: scroll; // always show the vertical scrollbar so that content doesn't jump */
+
+  box-sizing: border-box;
+}
+
+// inherited from <html>
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @include responsive-font($font-size-min, $font-size);
+
+  position: relative;
+
+  margin: 0;
+
+  font-family: $font-family;
+  line-height: $line-height;
+  text-size-adjust: 100%; // iOS on orientation change
+
+  color: $color-font;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// placeholders
+input,
+textarea,
+select {
+  &::-webkit-input-placeholder {
+    color: $color-placeholder;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+    color: $color-placeholder;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color-placeholder;
+  }
+}
+
+
+/* additional */
+
+
+[data-scrollbar] {
+    width: 100vw;
+    max-height: 100vh;
+}
+
+/*
+
+.scroll-content, .scroll-content > div, .tl-wrapper, .tl-edges {
+  min-height: 100vh;
+}
+
+
+.tl-edges {
+    overflow-y: hidden;  
+}
+
+*/
+.active > div {
+  background-color: #000;
+}
+
+
+
+
+/* GLOBAL */
+
+
+
+.paragraph {
+    @include responsive-font(16px, 24px);
+    letter-spacing: -0.6px;
+    line-height: 4.5vw;
+    margin-bottom: 100px;   
+}
+
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+
+  $padding-map: (375px: 110px, 767px: 180px, 768px: 90px, 2880px: 320px);
+  @include poly-fluid-sizing('padding-top', $padding-map);
+
+}
+
+.section-wrapper {
+  position: relative;
+}
+
+.tl-edges {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.grid-row {
+  @include grid-row;
+}
+
+.centered-row {
+    align-items: center;  
+}
+
+.fullscreen_cursor_position {
+
+}
+
+.show_on_mobile {
+
+  display: block;
+
+  @media (min-width: $min-768) {  
+
+    display: none;
+
+  }
+}
+
+.hide_on_mobile {
+
+    display: none;  
+
+  @media (min-width: $min-768) {  
+
+  display: block;
+
+  }
+}
+
+/* BAKERY HOME SLIDER  */
+
+
+.carousel .slide {
+
+    background: transparent!important;
+}
+
+.carousel .slider-wrapper.axis-vertical {
+    max-height: 30vw;
+}
+
+.main_slider {
+
+    @include grid-col(6);
+    @include grid-offset-left(11); 
+
+
+  @media (min-width: $min-768) {  
+    @include grid-col(10);
+    @include grid-offset-left(2);
+ 
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BAKERY - ABOUT */
+
+
+.bakery_about__green_rainbow {
+
+    @include grid-col(6);
+    @include grid-offset-left(11); 
+    position: absolute;
+    top: 200px;    
+
+  @media (min-width: $min-768) {  
+    @include grid-col(3);
+    @include grid-offset-left(7); 
+    position: absolute!important;
+    top: 200px;
+    z-index: 5;
+    transform: translateX(50px);    
+
+  }
+}
+
+.bakery_about__image_one {
+
+      position: relative;
+      height: 250px;
+      @include grid-col(16);
+      @include grid-offset-left(2);
+      margin-bottom: 50px;
+
+
+    @media (min-width: $min-768) {
+
+      @include grid-col(8);
+      @include grid-offset-right(1);
+      height: 30vw;
+  
+    }
+
+    > div {
+      clip-path: inset(.001% .002% .003% .004%);
+    }
+
+}
+
+
+.bakery_about__heading_group {
+
+  @include grid-col(12);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-768) {
+    @include grid-col(5);
+    @include grid-offset-left(3);
+   
+  }  
+}
+
+
+.bakery_about__heading_one {
+
+  margin-bottom: 35px;
+
+  @include grid-col(12);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-576) {
+
+
+  }  
+
+  @media (min-width: $min-768) {
+
+  @include grid-col(4);
+  @include grid-offset-left(3);
+
+  }
+
+  @media (min-width: $min-768) {
+
+
+
+  }    
+
+  @media (min-width: $min-768) {
+
+
+
+  }      
+
+}
+
+
+.bakery_about__paragraph {
+  position: relative;
+
+  font-weight: lighter;
+
+  @media (min-width: $min-768) {
+    line-height: 2.3vw;      
+
+  }
+}
+
+.background {
+
+  min-height: 32vw;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+
+
+.bakery_about__greenboard {
+
+    @media (min-width: $min-768) {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      margin-top: 150px;
+      background-size: 83.333% 100%;
+      background-position: bottom left;
+      background-repeat: no-repeat;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }  
+
+}
+
+.bakery_about__heading_two {
+
+  font-weight: 900;
+  @include responsive-font(28px, 32px);  
+  line-height: 28px;
+  color: #fff;
+  @include grid-col(11);
+  @include grid-offset-left(2);
+  margin-bottom: 30px; 
+  margin-top: 100px; 
+  letter-spacing: -0.6px;
+
+  @media (min-width: $min-768) {
+
+    @include responsive-font(46px, 52px);    
+    margin-top: 0;     
+    @include grid-col(3);
+    @include grid-offset-left(4);
+    line-height: 51px;
+    margin-bottom: 5.6vw;
+
+  }
+}
+
+.bakery_about__green_block {
+
+      @include grid-col(7);
+      @include grid-offset-left(2); 
+     margin-bottom: 50px;
+
+    @media (min-width: $min-768) {
+      @include grid-col(3);
+      @include grid-offset-right(5);
+    }
+
+}
+
+.bakery_about__green_text {
+
+  @include responsive-font(17px, 22px);
+  line-height: 20px;
+  position: relative;
+  font-weight: lighter;
+  color: #d4de4f;
+      margin-bottom: 35px;  
+
+    @media (min-width: $min-768) {
+    @include responsive-font(30px, 38px);    
+        line-height: 38px;
+      margin-bottom: 15px;
+    }  
+
+}
+
+
+.bakery_about__green_link {
+
+  @include responsive-font(15px, 20px);
+  line-height: 24px;  
+  color: #d4de4f;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;  
+
+
+  @media (min-width: $min-768) {  
+
+    @include responsive-font(18px, 24px);
+    line-height: 40px;
+  }
+
+}
+
+.bakery_about__white_company {
+
+      @include grid-col(14);
+      @include grid-offset-left(2);      
+      margin-bottom: 60px;
+
+    @media (min-width: $min-768) {
+      @include grid-col(9);
+      @include grid-offset-left(4);      
+      margin-bottom: 150px;
+    }        
+
+
+}
+
+.bakery_about__white_hearts {
+
+    display: none;
+
+    @media (min-width: $min-768) {
+
+      display: block;
+
+      align-self: center!important;    
+      @include grid-col(1);
+      @include grid-offset-right(4); 
+
+      transform: translateX(2vw) scale(0.6);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: auto;
+      bottom: 400px;  
+
+    }   
+
+}
+
+.bakery_about__button_link {
+
+      background-color: #d4de4f;
+      padding: 10px 85px ;
+      text-align: center;
+      color: #15311a;
+      font-weight: 700;
+      text-decoration: none;      
+      @include grid-col(14);
+      @include grid-offset-left(2);
+      margin-bottom: 100px;
+
+
+    @media (min-width: $min-768) {
+      align-self: center!important;    
+      @include grid-col(3);
+      @include grid-offset-left(10); 
+      margin-bottom: 0px;      
+
+    }  
+}
+
+.bakery_about__green_heading_background {
+
+      @include grid-col(14);
+      @include grid-offset-left(2);
+      background: linear-gradient( to right, #d4de4f 57.14%, transparent 42.86% );      
+      padding: 20px 10px 40px 40px !important;
+      margin-top: -40px;      
+
+    @media (min-width: $min-768) {
+  
+      @include grid-col(3);
+      @include grid-offset-left(2); 
+      background: linear-gradient( to right, #d4de4f 66.6%, transparent 33.4% );
+      padding: 260px 40px 40px 40px !important;      
+      margin-top: -150px;
+      z-index: 5;  
+
+    }  
+}
+
+.bakery_about__heading_three {
+
+  font-weight: 900;
+  @include responsive-font(60px, 68px);  
+  line-height: 28px;
+  color: #231f20;
+  margin-top: 100px; 
+  letter-spacing: -0.6px;
+  line-height: 46px;
+
+  @media (min-width: $min-768) {
+
+    @include responsive-font(68px, 104px);    
+    margin-top: 0;     
+    line-height: 78px;
+
+  }
+}
+
+.bakery_about__white_pan {
+
+      align-self: center!important;    
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: auto;  
+      
+      bottom: 150px;
+      z-index: 5;
+
+      transform: translateX(-5vw) scale(1);
+
+      @include grid-col(6);
+      @include grid-offset-left(5); 
+
+
+    @media (min-width: $min-768) {
+
+      @include grid-col(2);
+      @include grid-offset-left(2); 
+
+      transform: translateX(-1vw) scale(1);
+
+      bottom: 360px;
+      z-index: 5;
+
+    }   
+
+}

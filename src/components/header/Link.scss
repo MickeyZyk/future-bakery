@@ -1,0 +1,108 @@
+@import '~styles/config';
+
+.permanent {
+  @extend .link;
+  font-weight: bold;
+  display: block !important;
+  right: 0;
+  left: auto!important; 
+    @include grid-offset-right(1); 
+    @include grid-col(6);  
+
+  @media (min-width: $min-768) {  
+    @include grid-offset-right(1); 
+    @include grid-col(2);
+  }
+
+}
+
+.link {
+  display: none; /* hidden on mobile */
+  position: absolute;
+  left: 0;
+  text-align: right;
+  text-decoration: none;
+  color: #231f20;
+  z-index: 10;
+  transition: font-weight 0.2s ease-in-out;
+
+  $font-map: (375px: 16px, 767px: 24px, 768px: 14px, 2880px: 24px);
+  @include poly-fluid-sizing('font-size', $font-map);
+
+  &:nth-child(1) {
+    @include grid-offset-left(6);
+    @media (min-width: $min-768) {
+      @include grid-offset-left(6);
+      display: inline-block; /* show on tablet and above */   
+    }
+    @media (min-width: $min-960) {
+      @include grid-offset-left(4);   
+    }    
+    @media (min-width: $min-1440) {
+      @include grid-offset-left(7);   
+    }
+    @media (min-width: $min-1920) {
+      @include grid-offset-left(10);   
+    }    
+  }
+  &:nth-child(2) {
+    @include grid-offset-left(9);
+    @media (min-width: $min-768) {
+      @include grid-offset-left(9); 
+      display: inline-block; /* show on tablet and above */           
+    }
+    @media (min-width: $min-960) {
+      @include grid-offset-left(8);   
+    }    
+    @media (min-width: $min-1440) {
+      @include grid-offset-left(10);    
+    } 
+    @media (min-width: $min-1920) {
+      @include grid-offset-left(12);    
+    } 
+  }
+  &:nth-child(3) {
+    @include grid-offset-left(12); 
+    @media (min-width: $min-768) {
+      @include grid-offset-left(12);
+      display: inline-block; /* show on tablet and above */            
+    }   
+    @media (min-width: $min-960) {
+      @include grid-offset-left(12);   
+    }  
+    @media (min-width: $min-1440) {
+      @include grid-offset-left(13);    
+    }
+    @media (min-width: $min-1920) {
+      @include grid-offset-left(14);    
+    }     
+  }    
+ 
+  &__active {
+      font-weight: 700;
+  }  
+
+
+
+  &__icon {
+    position: relative; 
+
+    $size-map: (375px: 14px, 767px: 20px, 768px: 12px, 2880px: 22px);
+    @include poly-fluid-sizing('width', $size-map);
+
+    $top-map: (375px: 1px, 767px: 1.5px, 768px: 1.5px, 2880px: 3px);
+    @include poly-fluid-sizing('top', $top-map);
+
+    $margin-map: (375px: 14px, 767px: 16px, 768px: 10px, 2880px: 14px);
+    @include poly-fluid-sizing('margin-left', $margin-map);    
+
+    height: auto;    
+
+
+  }
+
+}
+
+.centered {
+  display: inline-block;
+}

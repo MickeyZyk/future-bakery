@@ -1,0 +1,27 @@
+@import '~styles/config';
+
+.intro {
+
+  clip-path: inset(.001% .002% .003% .004%);   
+
+  @media (min-width: $min-768) {
+    transform: translateY(-320px);
+  }
+
+  &__col {
+    @include grid-col;
+
+    @media (min-width: $min-768) {
+      @include grid-col(5);
+      @include grid-offset-left(10);
+
+    }
+  }
+
+  &__text {
+    /* @include rf(25, 32); */
+    font-size: 25px;
+    font-weight: lighter;
+    line-height: 25px;
+  }
+}

@@ -1,0 +1,48 @@
+@import '~styles/config';
+
+.block {
+  padding: 60px 0;
+    clip-path: inset(.001% .002% .003% .004%); 
+
+  @media (min-width: $min-768) {
+    padding: 80px 0;
+      @include grid-col(10);
+      @include grid-offset-left(2);    
+  }
+
+  &__col {
+    @include grid-col;
+
+    @media (min-width: $min-768) {
+      @include grid-col(5);
+    }
+  }
+
+  &__heading {
+    @include rf(16, 18);
+
+    margin-bottom: 10px;
+
+    font-weight: 900;
+  }
+
+  &__description {
+    @include rf(16, 18);
+
+    font-weight: 300;
+    line-height: (26 / 16);
+
+    a { // stylelint-disable-line
+      text-decoration: none;
+      font-weight: 400;
+
+      color: #000;
+
+      transition: 200ms opacity ease-in-out;
+
+      &:hover { // stylelint-disable-line
+        opacity: 0.5;
+      }
+    }
+  }
+}

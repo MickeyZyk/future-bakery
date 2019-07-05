@@ -1,0 +1,15 @@
+{
+  "name": "grav-headless-plugin",
+  "version": "1.0.0",
+  "description": "Get data from GRAV CMS",
+  "main": "gatsby-node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "gatsby-node-helpers": "^0.3.0"
+  }
+}

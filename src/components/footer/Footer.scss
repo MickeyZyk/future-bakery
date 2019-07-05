@@ -1,0 +1,57 @@
+@import '~styles/config';
+
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 40px 0;
+
+    border-bottom: 10px solid #8effbf;
+
+
+    @media (min-width: $min-768) {
+
+        @include grid-col(16);
+        @include grid-offset-left(1);    
+    }
+
+
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 40px 0;
+
+    border-bottom: 10px solid #8effbf;
+
+
+    @media (min-width: $min-768) {
+
+        max-width: 200px;    
+    }
+
+
+  }  
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-left: 30px;
+
+    transition: 200ms opacity ease-in-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

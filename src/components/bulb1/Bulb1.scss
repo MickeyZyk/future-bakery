@@ -1,0 +1,21 @@
+@import '~styles/config';
+
+.figure {
+    opacity: 1;
+    position: relative;
+    z-index: 3;
+    width: 92px!important;
+    height: 153px;
+
+    @include grid-col;
+
+    @media (min-width: $min-768) {
+      @include grid-col(1);
+      @include grid-offset-left(4);
+      margin-bottom: -165px;
+      margin-top: 50px;
+
+    }
+
+}
+

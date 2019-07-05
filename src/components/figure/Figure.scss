@@ -1,0 +1,32 @@
+@import '~styles/config';
+
+.figure {
+
+    height: 50vh;
+
+    @include grid-col;
+
+    @media (min-width: $min-768) {
+/*
+      @include grid-col(10);
+      @include grid-offset-left(2);
+*/
+    	height: 65vh;
+    }
+
+    > div {
+      clip-path: inset(.001% .002% .003% .004%);
+    }
+
+}
+
+.background {
+
+    @media (min-width: $min-768) {
+      min-height: 65vh;
+      background-repeat: no-repeat;
+      background-size: cover; 
+      background-position: center top;
+    }  
+
+}
