@@ -8,7 +8,6 @@ import { Figure2 } from 'components/figure2/Figure2';
 import { Heading } from 'components/heading/Heading';
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
-import { Slider } from 'components/slider/Slider';
 import ReactCursorPosition from 'react-cursor-position';
 import TransitionLink from 'gatsby-plugin-transition-link'
 import { graphql } from 'gatsby';
@@ -23,8 +22,6 @@ const BakeryAbout = ({data}) => {
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
       <Helmet title="About" />
-
-      <Slider/>
 
       <SVGicon className='bakery_about__green_rainbow' src='green_rainbow.svg'  /> 
 
