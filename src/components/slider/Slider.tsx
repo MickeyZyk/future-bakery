@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { TimelineMax } from "gsap/TweenMax";
-import SplitText from "utils/SplitText";
+import { TimelineMax, TweenMax, TweenLite } from "gsap/TweenMax";
+import { SplitText } from "imports-loader?define=>false!utils/SplitText.min.js";
 
 export class Slider extends Component {
   constructor(props) {
