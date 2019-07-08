@@ -38,10 +38,10 @@
 
 @mixin grid-offset-left($offset: 1) {
   margin-left: convertify($offset);
-  margin-right: auto;  
+  margin-right: auto;
 }
 
 @mixin grid-offset-right($offset: 1) {
   margin-right: convertify($offset);
-  margin-left: auto;
+  margin-left: auto;  
 }

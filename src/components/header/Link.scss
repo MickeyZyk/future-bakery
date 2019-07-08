@@ -31,12 +31,9 @@
 
   &:nth-child(1) {
     @include grid-offset-left(6);
-    @media (min-width: $min-768) {
-      @include grid-offset-left(6);
-      display: inline-block; /* show on tablet and above */   
-    }
     @media (min-width: $min-960) {
-      @include grid-offset-left(4);   
+      @include grid-offset-left(6);  
+      display: inline-block; /* show above tablet width */   
     }    
     @media (min-width: $min-1440) {
       @include grid-offset-left(7);   
@@ -47,12 +44,9 @@
   }
   &:nth-child(2) {
     @include grid-offset-left(9);
-    @media (min-width: $min-768) {
-      @include grid-offset-left(9); 
-      display: inline-block; /* show on tablet and above */           
-    }
     @media (min-width: $min-960) {
-      @include grid-offset-left(8);   
+      @include grid-offset-left(9); 
+      display: inline-block; /* show above tablet width */   
     }    
     @media (min-width: $min-1440) {
       @include grid-offset-left(10);    
@@ -63,12 +57,9 @@
   }
   &:nth-child(3) {
     @include grid-offset-left(12); 
-    @media (min-width: $min-768) {
-      @include grid-offset-left(12);
-      display: inline-block; /* show on tablet and above */            
-    }   
     @media (min-width: $min-960) {
-      @include grid-offset-left(12);   
+      @include grid-offset-left(12); 
+      display: inline-block; /* show above tablet width */   
     }  
     @media (min-width: $min-1440) {
       @include grid-offset-left(13);    
@@ -81,7 +72,6 @@
   &__active {
       font-weight: 700;
   }  
-
 
 
   &__icon {

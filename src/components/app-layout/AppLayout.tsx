@@ -11,6 +11,9 @@ import ReactDOM from 'react-dom';
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 import Circle from 'assets/svg/circle.svg';
+import WhiteCircle from 'assets/svg/white_circle.svg';
+import { Location } from '@reach/router';
+
 import s from './AppLayout.scss';
  
 interface IAppLayoutProps {
@@ -21,39 +24,68 @@ interface IAppLayoutProps {
 //const isDev = process.env.NODE_ENV === 'development';
 const isDev = true;
 
-export default ({ children }: IAppLayoutProps) => ( 
+export default ({ children, data, set, state, location }: IAppLayoutProps) => ( 
 
     <div className={s.layout}>
 
       <Helmet {...helmet} />
 
+      <Location>
+        {({ location }) => (
+          <ContextConsumer>
+            {({ data, set  }) => (
+              <div>{ location.pathname }</div>              
+            )}
+          </ContextConsumer>
+        )}
+      </Location>          
+
       <ContextProviderComponent>
 
         <Header>
 
-          <ContextConsumer>
-            {({ data, set }) => (
-              <HeaderLink name="FUTURE BAKERY" to="/" >
-                <div onClick={() => set({ logo: 'bakery' })}>FUTURE BAKERY</div>
-              </HeaderLink>
+          <Location>
+            {({ location }) => (
+              <ContextConsumer>
+                {({ data, set  }) => (
+                  <HeaderLink className={ location.pathname == '/BakeryMenu' ? `hidden` : '' } onClick={() => set({ logo: 'bakery' })} name="FUTURE BAKERY" to="/">FUTURE BAKERY</HeaderLink>
+                )}
+              </ContextConsumer>
             )}
-          </ContextConsumer>
-          <ContextConsumer>
-            {({ data, set }) => (
-              <HeaderLink name="FUTURE BAKERS" to="/bakers" >
-                <div onClick={() => set({ logo: 'bakers' })}>FUTURE BAKERS</div>
-              </HeaderLink>
-            )}
-          </ContextConsumer>
-          <ContextConsumer>
-            {({ data, set }) => (
-              <HeaderLink name="FUTURE CROWDERS" to="/crowders" >
-                <div onClick={() => set({ logo: 'crowders' })}>FUTURE CROWDERS</div>
-              </HeaderLink>
-            )}
-          </ContextConsumer>
+          </Location>          
 
-          <HeaderLink name="MENU" to="/" icon={<Circle />} permanent={true}>MENU</HeaderLink>      
+          <Location>
+            {({ location }) => (
+              <ContextConsumer>
+                {({ data, set }) => (
+                  <HeaderLink className={ location.pathname == '/BakeryMenu' ? `hidden` : '' } onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERS" to="/bakers">FUTURE BAKERS</HeaderLink>
+                )}
+              </ContextConsumer>
+            )}
+          </Location>                  
+
+          <Location>
+            {({ location }) => (
+              <ContextConsumer>
+                {({ data, set }) => (
+                  <HeaderLink className={ location.pathname == '/BakeryMenu' ? `hidden` : '' } onClick={() => set({ logo: 'crowders' })} name="FUTURE CROWDERS" to="/crowders" >FUTURE CROWDERS</HeaderLink>
+                )}
+              </ContextConsumer>
+            )}
+          </Location>                  
+
+
+          <Location>
+            {({ location }) => (
+              <ContextConsumer>
+                {({ data, set }) => (
+                  <HeaderLink className={ location.pathname == '/BakeryMenu' ? `white_text` : '' } name="MENU" to={location.pathname == '/BakeryMenu' ? `/` : `/BakeryMenu`} icon={location.pathname == '/BakeryMenu' ? <WhiteCircle /> : <Circle />} permanent={true}>                
+                    {location.pathname == '/BakeryMenu' ? ` CLOSE` : `MENU`}
+                  </HeaderLink>
+                )}
+              </ContextConsumer> 
+            )}
+          </Location>
 
         </Header>
 

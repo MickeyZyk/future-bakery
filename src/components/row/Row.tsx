@@ -6,8 +6,8 @@ interface IRowProps {
   children: React.ReactNode;
 }
 
-export const Row = ({ children }: IRowProps) => (
-  <div className={s.row}>
+export const Row = ({ children, className }: IRowProps) => (
+  <div className={`${s.row} ${className}`}>
     {children}
   </div>
 );

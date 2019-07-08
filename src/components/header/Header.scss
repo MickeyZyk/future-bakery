@@ -29,7 +29,7 @@
     top: 22px;
     z-index: 10;      
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
       @include grid-offset-left(1);        
       top: 2.1vw;
       width: 7vw;
@@ -40,9 +40,12 @@
 
   &__navigation {
       position: absolute;
-      top: 10vw;
+
+      $top-map: (320px: 32px, 959px: 96px, 960px: 250px, 2880px: 144px);  
+      @include poly-fluid-sizing('top', $top-map);
+
       width: 100vw;
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
       top: 5vw;
       width: 100%;
       z-index: 20;  

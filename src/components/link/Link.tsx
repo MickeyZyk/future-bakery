@@ -7,8 +7,18 @@ interface ILinkProps {
   [key: string]: any;
 }
 
-export const Link = ({ children, to, ...props }: ILinkProps) => (
-  <TransitionLink to={to} {...props} exit={{ length: 1 }} entry={{ delay: 1 }}>        
-    {children}
-  </TransitionLink>
-);
+export const Link = ({ children, state, ...props }: ILinkProps) => {
+
+  return (
+
+
+	  <TransitionLink {...props} exit={{ length: 1 }} entry={{ length: 1 }}>        
+	    {children}
+	  </TransitionLink>                      
+
+
+
+
+  );
+};
+

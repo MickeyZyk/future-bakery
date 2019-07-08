@@ -15,70 +15,76 @@ interface IHeaderProps {
   children: React.ReactNode;
 }
 
-export const Header = ({ children, logo, data, set}: IHeaderProps) => (
-
-
+export const Header = ({ children, logo, data, set }: IHeaderProps) => (
 
   <header className={s.header}>
-      <div className={s.header__content}>
 
-    
+      <div className={s.header__content}>  
 
+        <ContextConsumer>
+          {({ data, set }) => (   
 
-          <TransitionLink to="/" className={s.header__logo} exit={{ length: 1 }} entry={{ delay: 1 }}>
+          <TransitionLink to="/" onClick={() => set({ menuOpen: !data.menuOpen })} className={s.header__logo} exit={{ length: 1 }} entry={{ delay: 0 }}>
 
             <ContextConsumer>
               {({ data, set }) => (
+
                 data.logo == 'bakery' ? 
 
-
-
-
-                          <BakeryLogo className={s.header__logo}/>
-
-
-
-
-                     
-                : null
-              )}   
-            </ContextConsumer> 
-            <ContextConsumer>
-              {({ data, set }) => (
-                data.logo == 'bakers' ? 
-                <BakersLogo className={s.header__logo}/>
-                : null
-              )}   
-            </ContextConsumer> 
-            <ContextConsumer>
-              {({ data, set }) => (
-                data.logo == 'crowders' ?
-                <CrowdersLogo className={s.header__logo}/>
-                : null
-              )}   
-            </ContextConsumer> 
-            <ContextConsumer>
-              {({ data, set }) => (
-                data.logo == '' ?
                 <BakeryLogo className={s.header__logo}/>
+
                 : null
+
+              )}   
+            </ContextConsumer> 
+            <ContextConsumer>
+              {({ data, set }) => (
+
+                data.logo == 'bakers' ? 
+
+                <BakersLogo className={s.header__logo}/>
+
+                : null
+
+              )}   
+            </ContextConsumer> 
+            <ContextConsumer>
+              {({ data, set }) => (
+
+                data.logo == 'crowders' ?
+
+                <CrowdersLogo className={s.header__logo}/>
+
+                : null
+
+              )}   
+            </ContextConsumer> 
+            <ContextConsumer>
+              {({ data, set }) => (
+
+                data.logo == '' ?
+
+                <BakeryLogo className={s.header__logo}/>
+
+                : null
+
               )}   
             </ContextConsumer>           
             
           </TransitionLink>
 
+                        )}   
+            </ContextConsumer>   
+
           <div className={s.header__navigation}>
+
             {children}
-          </div>
 
-
-
-          
+          </div>         
 
       </div>
+
   </header>
-
-
 
 
 );

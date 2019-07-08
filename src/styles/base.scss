@@ -104,18 +104,7 @@ select {
     max-height: 100vh;
 }
 
-/*
 
-.scroll-content, .scroll-content > div, .tl-wrapper, .tl-edges {
-  min-height: 100vh;
-}
-
-
-.tl-edges {
-    overflow-y: hidden;  
-}
-
-*/
 .active > div {
   background-color: #000;
 }
@@ -138,7 +127,7 @@ select {
   min-height: 100vh;
   position: relative;
 
-  $padding-map: (375px: 110px, 767px: 180px, 768px: 90px, 2880px: 320px);
+  $padding-map: (375px: 110px, 959px: 200px, 960px: 110px, 2880px: 320px);
   @include poly-fluid-sizing('padding-top', $padding-map);
 
 }
@@ -168,22 +157,101 @@ select {
 
   display: block;
 
-  @media (min-width: $min-768) {  
-
+  @media (min-width: $min-960) { 
     display: none;
-
   }
 }
 
 .hide_on_mobile {
 
-    display: none;  
+  display: none;  
 
-  @media (min-width: $min-768) {  
-
+  @media (min-width: $min-960) {  
   display: block;
-
   }
+}
+
+.reverse_column_on_mobile {
+
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+
+  @media (min-width: $min-960) {  
+    flex-direction: column;
+  }
+
+}
+
+.scrollbar-track {
+    background: none!important;
+}
+
+.scrollbar-thumb {
+    background: rgba(0, 0, 0, .25)!important;
+}
+
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.white_text {
+  color:#fff;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+
+
+
+
+/* BAKERY MENU */
+
+.submenu_link {
+  text-decoration: none;
+}
+
+.submenu_link > h2:before, .submenu_link > h2:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #d4de4f;
+}
+
+.submenu_link > h2:before {
+  left: -2.5px;
+}
+
+.submenu_link > h2:after {
+  right: 2.5px;
+  background: #d4de4f;
+  transition: width 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.submenu_link > h2:hover:before {
+  background: #d4de4f;
+  width: 100%;
+  transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.submenu_link > h2:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
+
+
+
+.menu_row {
+  margin-top: 30vh;
 }
 
 /* BAKERY HOME SLIDER  */
@@ -247,27 +315,31 @@ select {
     position: absolute;
     top: 200px;    
 
-  @media (min-width: $min-768) {  
+  @media (min-width: $min-960) {  
     @include grid-col(3);
     @include grid-offset-left(7); 
     position: absolute!important;
-    top: 200px;
     z-index: 5;
-    transform: translateX(50px);    
+    left: 50px;  
+    top: 10vw;  
+    /*
+    $top-map: (320px: -0.15px, 959px: -0.25px, 960px: 250px, 2880px: 730px);  
+    @include poly-fluid-sizing('font-size', $top-map);
+    */
 
   }
 }
 
 .bakery_about__image_one {
 
-      position: relative;
-      height: 250px;
-      @include grid-col(16);
-      @include grid-offset-left(2);
-      margin-bottom: 50px;
+    position: relative;
+    height: 250px;
+    @include grid-col(16);
+    @include grid-offset-left(2);
+    margin-bottom: 50px;
 
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
 
       @include grid-col(8);
       @include grid-offset-right(1);
@@ -282,62 +354,66 @@ select {
 }
 
 
-.bakery_about__heading_group {
+.bakery_about__left_column_one {
 
-  @include grid-col(12);
+  @include grid-col(14);
   @include grid-offset-left(2);
 
-  @media (min-width: $min-768) {
-    @include grid-col(5);
-    @include grid-offset-left(3);
-   
-  }  
-}
 
+  @media (min-width: $min-960) {
 
-.bakery_about__heading_one {
-
-  margin-bottom: 35px;
-
-  @include grid-col(12);
-  @include grid-offset-left(2);
-
-  @media (min-width: $min-576) {
-
-
-  }  
-
-  @media (min-width: $min-768) {
-
-  @include grid-col(4);
-  @include grid-offset-left(3);
-
-  }
-
-  @media (min-width: $min-768) {
-
-
+    @include grid-col(6);
+    @include grid-offset-left(2);
 
   }    
 
+  @media (min-width: $min-1440) {
+
+    @include grid-col(5);
+    @include grid-offset-left(3);
+
+  }  
+
+
+
+}
+
+.bakery_about__heading_one {
+
+  width: 90%;
+  margin-bottom: 35px;
+
+  @media (min-width: $min-530) {
+
+    width: 75%;
+
+  }  
+
   @media (min-width: $min-768) {
 
+    width: 58%;
 
+  }
 
-  }      
+  @media (min-width: $min-960) {
+
+    width: 100%
+
+  }    
+
+  @media (min-width: $min-1440) {
+
+    width: 100%;
+    margin-bottom: 150px!important;    
+
+  }        
 
 }
 
 
 .bakery_about__paragraph {
-  position: relative;
 
-  font-weight: lighter;
 
-  @media (min-width: $min-768) {
-    line-height: 2.3vw;      
-
-  }
 }
 
 .background {
@@ -352,7 +428,11 @@ select {
 
 .bakery_about__greenboard {
 
-    @media (min-width: $min-768) {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+
+    @media (min-width: $min-960) {
       position: relative;
       background-size: cover;
       background-position: center;
@@ -378,7 +458,7 @@ select {
   margin-top: 100px; 
   letter-spacing: -0.6px;
 
-  @media (min-width: $min-768) {
+  @media (min-width: $min-960) {
 
     @include responsive-font(46px, 52px);    
     margin-top: 0;     
@@ -396,7 +476,7 @@ select {
       @include grid-offset-left(2); 
      margin-bottom: 50px;
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
       @include grid-col(3);
       @include grid-offset-right(5);
     }
@@ -412,7 +492,7 @@ select {
   color: #d4de4f;
       margin-bottom: 35px;  
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
     @include responsive-font(30px, 38px);    
         line-height: 38px;
       margin-bottom: 15px;
@@ -431,7 +511,7 @@ select {
   position: relative;  
 
 
-  @media (min-width: $min-768) {  
+  @media (min-width: $min-960) {  
 
     @include responsive-font(18px, 24px);
     line-height: 40px;
@@ -445,7 +525,7 @@ select {
       @include grid-offset-left(2);      
       margin-bottom: 60px;
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
       @include grid-col(9);
       @include grid-offset-left(4);      
       margin-bottom: 150px;
@@ -458,7 +538,7 @@ select {
 
     display: none;
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
 
       display: block;
 
@@ -490,7 +570,7 @@ select {
       margin-bottom: 100px;
 
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
       align-self: center!important;    
       @include grid-col(3);
       @include grid-offset-left(10); 
@@ -507,7 +587,7 @@ select {
       padding: 20px 10px 40px 40px !important;
       margin-top: -40px;      
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
   
       @include grid-col(3);
       @include grid-offset-left(2); 
@@ -529,7 +609,7 @@ select {
   letter-spacing: -0.6px;
   line-height: 46px;
 
-  @media (min-width: $min-768) {
+  @media (min-width: $min-960) {
 
     @include responsive-font(68px, 104px);    
     margin-top: 0;     
@@ -556,7 +636,7 @@ select {
       @include grid-offset-left(5); 
 
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
 
       @include grid-col(2);
       @include grid-offset-left(2); 

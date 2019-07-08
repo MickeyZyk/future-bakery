@@ -1,0 +1,15 @@
+@import '~styles/config';
+
+.heading {
+
+	position: relative;
+	font-weight: 900;
+
+	  $font-map: (320px: 28px, 375px: 30px, 768px: 46px, 959px: 50px, 960px: 33px, 2880px: 66px);
+	  @include poly-fluid-sizing('font-size', $font-map);  
+
+	  @include grid-offset-left(3); 
+	  width: max-content;  
+
+}
+

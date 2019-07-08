@@ -4,6 +4,7 @@ const defaultContextValue = {
   data: {
     // set your initial data shape here
     logo: 'bakery',
+    menuOpen: false
   },
   set: () => {},
 }

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { Link as InternalLink } from 'components/link/Link';
 
+
 import s from './Link.scss';
 
 interface ILinkProps {
@@ -11,7 +12,7 @@ interface ILinkProps {
   children: React.ReactNode;  
 }
 
-export const Link = ({ name, to, icon, permanent, children }: ILinkProps) => {
+export const Link = ({ className, name, to, icon, permanent, children, ...props }: ILinkProps) => {
   const isLink = (typeof to !== 'undefined');
   const isExternal = isLink && /^((https?:)?\/\/|[0-9a-zA-Z]+:)/.test(to || '');
 
@@ -24,7 +25,7 @@ export const Link = ({ name, to, icon, permanent, children }: ILinkProps) => {
 
   if (isExternal) {
     return (
-      <a className={s.link} target="_blank" rel="noopener noreferrer" href={to}>
+      <a className={s.link} {...props} target="_blank" rel="noopener noreferrer" href={to}>
           {content()}
       }
       </a>
@@ -32,8 +33,10 @@ export const Link = ({ name, to, icon, permanent, children }: ILinkProps) => {
   }
 
   return (
-      <InternalLink className={ permanent ? s.permanent : s.link } activeClassName={s.link__active} to={to}>
+ 
+      <InternalLink  {...props} className={permanent ? `${s.permanent} ${className}`: `${s.link} ${className}`} activeClassName={s.link__active} to={to}>
           {content()}
       </InternalLink>
+ 
   );
 };
