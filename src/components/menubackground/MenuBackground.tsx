@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Power1 } from "gsap/TweenMax";
+import { Power3 } from "gsap/TweenMax";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
@@ -21,11 +21,11 @@ export const MenuBackground = () => {
 							    from={ 
 							    	['entering'].includes(transitionStatus) ?
 							    	false :
-							    	{ opacity: 0, scaleX:0.005, scaleY:0.005, ease: Power1.easeInOut, transformOrigin:'68% 32%'} 
+							    	{ scaleX:0.0035, scaleY:0.0035, ease: Power3.easeIn, transformOrigin:'64.75% 35.2%'} 
 							    } 
 							    to={ 
 							    	['exiting'].includes(transitionStatus) ?
-							    	{ opacity: 0, scaleX:0.005, scaleY:0.005, ease: Power1.easeInOut, transformOrigin:'68% 32%'} :
+							    	{ scaleX:0.0035, scaleY:0.0035, ease: Power3.easeOut, transformOrigin:'64.75% 35.2%'} :
 							    	false 
 							    } 
 							  > 

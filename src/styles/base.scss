@@ -1,7 +1,73 @@
 @import '~styles/reset';
+
+
+
 /* @import '~styles/fonts.css'; */
 
+
+
+
+/* 18 GRID */
+
+.col-1 {@include grid-col(1);}
+.col-2 {@include grid-col(2);}
+.col-3 {@include grid-col(3);}
+.col-4 {@include grid-col(4);}
+.col-5 {@include grid-col(5);}
+.col-6 {@include grid-col(6);}
+.col-7 {@include grid-col(7);}
+.col-8 {@include grid-col(8);}
+.col-9 {@include grid-col(9);}
+.col-10 {@include grid-col(10);}
+.col-11 {@include grid-col(11);}
+.col-12 {@include grid-col(12);}
+.col-13 {@include grid-col(13);}
+.col-14 {@include grid-col(14);}
+.col-15 {@include grid-col(15);}
+.col-16 {@include grid-col(16);}
+.col-17 {@include grid-col(17);}
+.col-18 {@include grid-col(18);}
+
+.offset-left-1 {@include grid-offset-left(1);}
+.offset-left-2 {@include grid-offset-left(2);}
+.offset-left-3 {@include grid-offset-left(3);}
+.offset-left-4 {@include grid-offset-left(4);}
+.offset-left-5 {@include grid-offset-left(5);}
+.offset-left-6 {@include grid-offset-left(6);}
+.offset-left-7 {@include grid-offset-left(7);}
+.offset-left-8 {@include grid-offset-left(8);}
+.offset-left-9 {@include grid-offset-left(9);}
+.offset-left-10 {@include grid-offset-left(10);}
+.offset-left-11 {@include grid-offset-left(11);}
+.offset-left-12 {@include grid-offset-left(12);}
+.offset-left-13 {@include grid-offset-left(13);}
+.offset-left-14 {@include grid-offset-left(14);}
+.offset-left-15 {@include grid-offset-left(15);}
+.offset-left-16 {@include grid-offset-left(16);}
+.offset-left-17 {@include grid-offset-left(17);}
+.offset-left-18 {@include grid-offset-left(18);}
+
+.offset-right-1 {@include grid-offset-right(1);}
+.offset-right-2 {@include grid-offset-right(2);}
+.offset-right-3 {@include grid-offset-right(3);}
+.offset-right-4 {@include grid-offset-right(4);}
+.offset-right-5 {@include grid-offset-right(5);}
+.offset-right-6 {@include grid-offset-right(6);}
+.offset-right-7 {@include grid-offset-right(7);}
+.offset-right-8 {@include grid-offset-right(8);}
+.offset-right-9 {@include grid-offset-right(9);}
+.offset-right-10 {@include grid-offset-right(10);}
+.offset-right-11 {@include grid-offset-right(11);}
+.offset-right-12 {@include grid-offset-right(12);}
+.offset-right-13 {@include grid-offset-right(13);}
+.offset-right-14 {@include grid-offset-right(14);}
+.offset-right-15 {@include grid-offset-right(15);}
+.offset-right-16 {@include grid-offset-right(16);}
+.offset-right-17 {@include grid-offset-right(17);}
+.offset-right-18 {@include grid-offset-right(18);}
+
 /* stylelint-disable selector-max-type  */
+
 @-ms-viewport {
   width: device-width;
 }
@@ -193,6 +259,14 @@ select {
   overflow: hidden;
 }
 
+.fulscreen_slider {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+}
+
 .white_text {
   color:#fff;
 }
@@ -258,30 +332,31 @@ select {
 /* BAKERY HOME SLIDER  */
 
 
-.carousel .slide {
-
-    background: transparent!important;
+.slider_heading_wrapper {
+    position: relative;
+    margin-top: 27vw;
+    bottom: auto;  
+    z-index: 1; 
 }
 
-.carousel .slider-wrapper.axis-vertical {
-    max-height: 30vw;
+.slider_upper_image {
+
+  $margin-map: (375px: 110px, 959px: 200px, 960px: 110px, 2880px: 320px);
+  @include poly-fluid-sizing('margin-top', $margin-map);
+
+    position: absolute;
+    top: 0;
+    bottom: auto;   
 }
 
-.main_slider {
-
-    @include grid-col(6);
-    @include grid-offset-left(11); 
-
-
-  @media (min-width: $min-768) {  
-    @include grid-col(10);
-    @include grid-offset-left(2);
- 
-
-  }
+.slider_heading {
+  $font-map: (320px: 30px, 375px: 33px, 768px: 58px, 959px: 64px, 960px: 38px, 1920px: 85px, 2880px: 136px);
+  $height-map: (320px: 26px, 375px: 28px, 768px: 42px, 959px: 48px, 960px: 30px, 1920px: 67px, 2880px: 108px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map); 
 }
-
-
 
 
 
@@ -379,7 +454,14 @@ select {
 
 }
 
-.bakery_about__heading_one {
+.__heading_one {
+
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 75px, 2880px: 158px);
+  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 57px, 2880px: 138px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);  
 
   width: 90%;
   margin-bottom: 35px;

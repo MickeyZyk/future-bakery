@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'components/link/Link';
 import { useState } from 'react';
 import Helmet from 'react-helmet';
-import { Power3 } from 'gsap/TweenMax';
+import { Power2 } from 'gsap/TweenMax';
 import { Tween, Timeline, SplitWords, SplitLetters, Controls } from 'react-gsap';
 import { TransitionState } from 'gatsby-plugin-transition-link';
 import { MenuHeading } from 'components/heading/MenuHeading';
@@ -32,7 +32,7 @@ export default ({ state }) => {
 
 								<div className='menu_row'>
 
-					        <Tween staggerFrom={{ opacity: 0, yPercent: 100, easing: Power3.easeInOut }} duration={1} >		
+					        <Tween staggerFrom={{ opacity: 0, yPercent: 50, easing: Power2.easeInOut }} delay={0.3} duration={1} >		
 										
 <ul>
 										  <li className='menu_item_wrapper'>

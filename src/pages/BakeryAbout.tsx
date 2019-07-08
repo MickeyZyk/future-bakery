@@ -29,7 +29,7 @@ const BakeryAbout = ({ data, className }) => {
 
           <div className='bakery_about__left_column_one'>
 
-            <Split className='bakery_about__heading_one'>One way or new way.</Split>
+            <Split className='__heading_one'>One way or new way.</Split>
 
             <Figure2 className="show_on_mobile"/>
 
