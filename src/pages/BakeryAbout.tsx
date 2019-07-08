@@ -11,9 +11,10 @@ import { Split } from 'components/split/Split';
 import { Heading } from 'components/heading/Heading';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { Paragraph } from 'components/paragraph/Paragraph';
+import Texticon from 'components/texticon/Texticon';
 
 
-const BakeryAbout = ({data}) => {
+const BakeryAbout = ({ data, className }) => {
   return (
 
   <div className='wrapper'>
@@ -70,17 +71,42 @@ const BakeryAbout = ({data}) => {
 
         <SVGicon className='bakery_about__white_hearts' src='white_hearts.svg' />
 
+        <SVGiconReverse className='bakery_about__white_pan' src='white_pan.svg' />        
+
         <Row>
 
             <div className="bakery_about__green_heading_background">
 
               <Heading className="bakery_about__heading_three">What we bake?</Heading>     
 
-            </div>   
+            </div>
 
-        </Row>      
+            <div className="bakery_about__right_icons">
 
-        <SVGiconReverse className='bakery_about__white_pan' src='white_pan.svg' />
+
+                <Texticon className='bakery_about__graph_icon' name='STRATEGIC PLANNING &amp; CONSULTANCY' src='graph.svg' />
+
+                <Texticon className='bakery_about__graph_icon' name='IDEATION' src='bulb.svg' />
+
+                <Texticon className='bakery_about__graph_icon last' name='CREATIVE STRATEGY' src='target.svg' />
+
+                <Texticon className='bakery_about__graph_icon first' name='CAMPAIGN PLANNING' src='network.svg' />
+
+                <Texticon className='bakery_about__graph_icon' name='IDEATION' src='gauge.svg' />
+
+                <Texticon className='bakery_about__graph_icon last' name='IDEATION' src='rainbow.svg' />
+
+                <Texticon className='bakery_about__graph_icon first' name='IDEATION' src='fiver.svg' />
+
+                <Texticon className='bakery_about__graph_icon' name='IDEATION' src='bang.svg' />
+
+                <Texticon className='bakery_about__graph_icon last' name='IDEATION' src='phones.svg' />  
+                 
+
+            </div>          
+
+      </Row>
+
 
       </ReactCursorPosition>  
   

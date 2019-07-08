@@ -4,10 +4,11 @@ import s from './Row.scss';
 
 interface IRowProps {
   children: React.ReactNode;
+  className: string;
 }
 
-export const Row = ({ children, className }: IRowProps) => (
-  <div className={`${s.row} ${className}`}>
+export const Row = ({ children, className, ...props }: IRowProps) => (
+  <div className={`${s.row} ${props.className}`}>
     {children}
   </div>
 );

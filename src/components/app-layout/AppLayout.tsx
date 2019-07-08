@@ -14,6 +14,7 @@ import Circle from 'assets/svg/circle.svg';
 import WhiteCircle from 'assets/svg/white_circle.svg';
 import { Location } from '@reach/router';
 
+
 import s from './AppLayout.scss';
  
 interface IAppLayoutProps {
@@ -24,21 +25,11 @@ interface IAppLayoutProps {
 //const isDev = process.env.NODE_ENV === 'development';
 const isDev = true;
 
-export default ({ children, data, set, state, location }: IAppLayoutProps) => ( 
+export default ({ children, data, set, state, location, ...props }: IAppLayoutProps) => ( 
 
     <div className={s.layout}>
 
       <Helmet {...helmet} />
-
-      <Location>
-        {({ location }) => (
-          <ContextConsumer>
-            {({ data, set  }) => (
-              <div>{ location.pathname }</div>              
-            )}
-          </ContextConsumer>
-        )}
-      </Location>          
 
       <ContextProviderComponent>
 
@@ -79,7 +70,7 @@ export default ({ children, data, set, state, location }: IAppLayoutProps) => (
             {({ location }) => (
               <ContextConsumer>
                 {({ data, set }) => (
-                  <HeaderLink className={ location.pathname == '/BakeryMenu' ? `white_text` : '' } name="MENU" to={location.pathname == '/BakeryMenu' ? `/` : `/BakeryMenu`} icon={location.pathname == '/BakeryMenu' ? <WhiteCircle /> : <Circle />} permanent={true}>                
+                  <HeaderLink className={ location.pathname == '/BakeryMenu' ? `white_text` : '' } name="MENU" to={location.pathname == '/BakeryMenu' ? location.state.prevUrlPath : `/BakeryMenu`} icon={location.pathname == '/BakeryMenu' ? <WhiteCircle /> : <Circle />} permanent={true}>                
                     {location.pathname == '/BakeryMenu' ? ` CLOSE` : `MENU`}
                   </HeaderLink>
                 )}

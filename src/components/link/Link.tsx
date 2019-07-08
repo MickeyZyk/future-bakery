@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Location } from '@reach/router';
 import TransitionLink from 'gatsby-plugin-transition-link'
 
 interface ILinkProps {
@@ -11,13 +12,15 @@ export const Link = ({ children, state, ...props }: ILinkProps) => {
 
   return (
 
+    <Location>
+      {({ location }) => (      	
 
-	  <TransitionLink {...props} exit={{ length: 1 }} entry={{ length: 1 }}>        
-	    {children}
-	  </TransitionLink>                      
+			  <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 1 }} entry={{ length: 1 }} {...props} >        
+			    {children}
+			  </TransitionLink>  
 
-
-
+        )}
+    </Location>  
 
   );
 };

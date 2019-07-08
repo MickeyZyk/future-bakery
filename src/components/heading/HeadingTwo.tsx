@@ -10,7 +10,7 @@ interface IIntroProps {
 }
 
 
-export const HeadingTwo = ({ children, className, transitionStatus, entry, exit }: IIntroProps) => {
+export const HeadingTwo = ({ children, className }: IIntroProps) => {
 
   return (
 

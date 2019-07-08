@@ -1,0 +1,37 @@
+@import '~styles/config';
+
+.text_icon  {
+	opacity: 1;
+	z-index: 5;
+	position: relative;
+    margin-top: 5vw!important;    	
+
+
+
+	&>div>img {
+		width: 20%;
+		margin: 0 auto 15px auto;
+		min-height: 65px; 
+	}
+
+
+	&:hover h4 {
+		color: #d4de4f;
+		font-weight: 700;
+		transform:  font-weight 1s;
+	}
+
+}
+
+.icon_heading {
+
+	font-weight: lighter;
+	text-align: center;
+	
+
+  $font-map: (320px: 15px, 375px: 16px, 768px: 24px, 959px: 28px, 960px: 14px, 1920px: 16px, 2880px: 30px);
+  @include poly-fluid-sizing('font-size', $font-map);
+
+
+}
+

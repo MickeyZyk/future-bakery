@@ -149,10 +149,6 @@ select {
     align-items: center;  
 }
 
-.fullscreen_cursor_position {
-
-}
-
 .show_on_mobile {
 
   display: block;
@@ -194,6 +190,7 @@ select {
 .fullscreen {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .white_text {
@@ -203,6 +200,10 @@ select {
 .hidden {
   opacity: 0;
   transition: opacity 0.5s;
+}
+
+.menu_item_wrapper {
+    display: inline;
 }
 
 
@@ -342,7 +343,7 @@ select {
     @media (min-width: $min-960) {
 
       @include grid-col(8);
-      @include grid-offset-right(1);
+      @include grid-offset-left(1);
       height: 30vw;
   
     }
@@ -545,13 +546,14 @@ select {
       align-self: center!important;    
       @include grid-col(1);
       @include grid-offset-right(4); 
+      margin-left: auto;
 
       transform: translateX(2vw) scale(0.6);
       position: absolute;
       left: 0;
       right: 0;
       top: auto;
-      bottom: 400px;  
+      bottom: 680px;
 
     }   
 
@@ -595,6 +597,7 @@ select {
       padding: 260px 40px 40px 40px !important;      
       margin-top: -150px;
       z-index: 5;  
+      float: left;
 
     }  
 }
@@ -643,9 +646,84 @@ select {
 
       transform: translateX(-1vw) scale(1);
 
-      bottom: 360px;
-      z-index: 5;
+      bottom: 590px;
+      z-index: 6;
 
     }   
 
 }
+
+.bakery_about__right_icons {
+
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+  @media (max-width: $max-960) {
+
+    margin-top: 35px;       
+
+  }   
+
+
+  @media (min-width: $min-960) {
+
+    position: relative;
+    display: block;
+    margin-left: 5.5%;
+    @include grid-col(12);
+    float: left;        
+
+  }        
+
+}
+
+.bakery_about__graph_icon {
+
+    @include grid-col(10);
+    display: inline-block;
+
+  @media (min-width: $min-960) {
+
+    display: block;
+    float: left;
+    @include grid-col(3);
+    @include grid-offset-right(1.5);    
+        
+
+  } 
+
+}
+
+  .first {
+
+    @include grid-col(9);
+    display: inline-block;
+
+    @media (min-width: $min-960) {
+
+      display: block;
+      @include grid-col(3);
+      margin-left: 0;
+      clear: left;   
+          
+
+    }     
+
+  } 
+
+  .last {
+
+    @include grid-col(9);
+    display: inline-block;
+
+    @media (min-width: $min-960) {
+
+      display: block;
+      @include grid-col(3);
+      @include grid-offset-right(6);          
+
+    }
+
+  }
