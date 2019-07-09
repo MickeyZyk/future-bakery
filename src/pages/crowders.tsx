@@ -11,17 +11,7 @@ export default () => (
   <>
     <Helmet title="About" />
 
-      <Figure />
-
-      <Heading>THE ABOUT</Heading>
-      <Heading>PAGE HEADING</Heading>
-
-	    <Intro>
-	      Lorem Ipsum is simply dummy text of the 
-	    </Intro>
-      <Intro>
-        printing and typesetting industry. 
-      </Intro>      
+      <div className=''></div>    
 
 
   </>

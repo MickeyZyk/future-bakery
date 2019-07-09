@@ -8,7 +8,7 @@ interface IRowProps {
 }
 
 export const Row = ({ children, className, ...props }: IRowProps) => (
-  <div className={`${s.row} ${props.className}`}>
+  <div className={`${s.row} ${props.className ? props.className : ''}`}>
     {children}
   </div>
 );

@@ -18,7 +18,7 @@ export const MenuBackground = () => {
 
 					return (
 
-						<div>
+						<div className={s.menu_background_wrapper}>
 
 					        <If condition={ ['entering','entered'].includes(transitionStatus) }>
 

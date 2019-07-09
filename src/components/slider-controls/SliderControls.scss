@@ -3,8 +3,8 @@
 .slider {
 
     @media (min-width: $min-768) {
-      position: absolute;
-      bottom: 5.6vw;
+      position: relative;
+      bottom: 5.1vh;
       @include grid-col(5);
       @include grid-offset-left(10);
     }

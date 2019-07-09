@@ -9,6 +9,74 @@
 
 /* 18 GRID */
 
+
+/* mobile */
+
+
+.mob-col-1 {@include grid-col(1);}
+.mob-col-2 {@include grid-col(2);}
+.mob-col-3 {@include grid-col(3);}
+.mob-col-4 {@include grid-col(4);}
+.mob-col-5 {@include grid-col(5);}
+.mob-col-6 {@include grid-col(6);}
+.mob-col-7 {@include grid-col(7);}
+.mob-col-8 {@include grid-col(8);}
+.mob-col-9 {@include grid-col(9);}
+.mob-col-10 {@include grid-col(10);}
+.mob-col-11 {@include grid-col(11);}
+.mob-col-12 {@include grid-col(12);}
+.mob-col-13 {@include grid-col(13);}
+.mob-col-14 {@include grid-col(14);}
+.mob-col-15 {@include grid-col(15);}
+.mob-col-16 {@include grid-col(16);}
+.mob-col-17 {@include grid-col(17);}
+.mob-col-18 {@include grid-col(18);}
+
+.mob-offset-left-1 {@include grid-offset-left(1);}
+.mob-offset-left-2 {@include grid-offset-left(2);}
+.mob-offset-left-3 {@include grid-offset-left(3);}
+.mob-offset-left-4 {@include grid-offset-left(4);}
+.mob-offset-left-5 {@include grid-offset-left(5);}
+.mob-offset-left-6 {@include grid-offset-left(6);}
+.mob-offset-left-7 {@include grid-offset-left(7);}
+.mob-offset-left-8 {@include grid-offset-left(8);}
+.mob-offset-left-9 {@include grid-offset-left(9);}
+.mob-offset-left-10 {@include grid-offset-left(10);}
+.mob-offset-left-11 {@include grid-offset-left(11);}
+.mob-offset-left-12 {@include grid-offset-left(12);}
+.mob-offset-left-13 {@include grid-offset-left(13);}
+.mob-offset-left-14 {@include grid-offset-left(14);}
+.mob-offset-left-15 {@include grid-offset-left(15);}
+.mob-offset-left-16 {@include grid-offset-left(16);}
+.mob-offset-left-17 {@include grid-offset-left(17);}
+.mob-offset-left-18 {@include grid-offset-left(18);}
+
+.mob-offset-right-1 {@include grid-offset-right(1);}
+.mob-offset-right-2 {@include grid-offset-right(2);}
+.mob-offset-right-3 {@include grid-offset-right(3);}
+.mob-offset-right-4 {@include grid-offset-right(4);}
+.mob-offset-right-5 {@include grid-offset-right(5);}
+.mob-offset-right-6 {@include grid-offset-right(6);}
+.mob-offset-right-7 {@include grid-offset-right(7);}
+.mob-offset-right-8 {@include grid-offset-right(8);}
+.mob-offset-right-9 {@include grid-offset-right(9);}
+.mob-offset-right-10 {@include grid-offset-right(10);}
+.mob-offset-right-11 {@include grid-offset-right(11);}
+.mob-offset-right-12 {@include grid-offset-right(12);}
+.mob-offset-right-13 {@include grid-offset-right(13);}
+.mob-offset-right-14 {@include grid-offset-right(14);}
+.mob-offset-right-15 {@include grid-offset-right(15);}
+.mob-offset-right-16 {@include grid-offset-right(16);}
+.mob-offset-right-17 {@include grid-offset-right(17);}
+.mob-offset-right-18 {@include grid-offset-right(18);}
+
+
+
+
+/* desktop */
+
+@media (min-width: $min-960) {
+
 .col-1 {@include grid-col(1);}
 .col-2 {@include grid-col(2);}
 .col-3 {@include grid-col(3);}
@@ -65,6 +133,24 @@
 .offset-right-16 {@include grid-offset-right(16);}
 .offset-right-17 {@include grid-offset-right(17);}
 .offset-right-18 {@include grid-offset-right(18);}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* stylelint-disable selector-max-type  */
 
@@ -180,7 +266,7 @@ select {
 
 /* GLOBAL */
 
-
+/*
 
 .paragraph {
     @include responsive-font(16px, 24px);
@@ -189,6 +275,7 @@ select {
     margin-bottom: 100px;   
 }
 
+*/
 .wrapper {
   min-height: 100vh;
   position: relative;
@@ -260,10 +347,14 @@ select {
 }
 
 .fulscreen_slider {
+
+
+  @media (min-width: $min-960) {  
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   position: relative;
+  }  
 
 }
 
@@ -322,12 +413,23 @@ select {
   transition: 0s;
 }
 
+.mobile-row {
+  @media (max-width: $max-960) {  
+    @include grid-row;
+  }
 
-
+}
 
 .menu_row {
   margin-top: 30vh;
 }
+
+
+
+
+
+
+
 
 /* BAKERY HOME SLIDER  */
 
@@ -341,12 +443,16 @@ select {
 
 .slider_upper_image {
 
-  $margin-map: (375px: 110px, 959px: 200px, 960px: 110px, 2880px: 320px);
-  @include poly-fluid-sizing('margin-top', $margin-map);
+  @media (min-width: $min-960) {  
 
-    position: absolute;
-    top: 0;
-    bottom: auto;   
+  $margin-map: (375px: 110px, 959px: 200px, 960px: 110px, 2880px: 320px);
+  @include poly-fluid-sizing('margin-top', $margin-map);    
+      position: absolute;
+      top: 0;
+      bottom: auto;  
+  }
+
+ 
 }
 
 .slider_heading {
@@ -357,6 +463,15 @@ select {
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map); 
 }
+
+.slider_paragraph {
+
+
+
+
+}
+
+
 
 
 
@@ -432,7 +547,7 @@ select {
 
 .bakery_about__left_column_one {
 
-  @include grid-col(14);
+  @include grid-col(16);
   @include grid-offset-left(2);
 
 
@@ -495,6 +610,13 @@ select {
 
 
 .bakery_about__paragraph {
+
+
+  @media (max-width: $max-960) {
+
+    margin-right: 12.5%!important;
+
+  }    
 
 
 }
@@ -635,7 +757,9 @@ select {
       left: 0;
       right: 0;
       top: auto;
-      bottom: 680px;
+      
+      $bottom-map: (375px: 380px, 959px: 730px, 960px: 600px, 1920px: 680px, 2880px: 860px);
+      @include poly-fluid-sizing('bottom', $bottom-map);
 
     }   
 
@@ -668,18 +792,27 @@ select {
       @include grid-col(14);
       @include grid-offset-left(2);
       background: linear-gradient( to right, #d4de4f 57.14%, transparent 42.86% );      
-      padding: 20px 10px 40px 40px !important;
-      margin-top: -40px;      
+      margin-top: -40px; 
+
+      $margin-map: (375px: -43px, 959px: -110px, 960px: -41px, 2880px: -117px);
+      @include poly-fluid-sizing('margin-top', $margin-map);     
+
+      $height-map: (375px: 246px, 959px: 630px, 960px: 250px, 2880px: 745px);
+      @include poly-fluid-sizing('height', $height-map);
+
 
     @media (min-width: $min-960) {
   
       @include grid-col(3);
       @include grid-offset-left(2); 
       background: linear-gradient( to right, #d4de4f 66.6%, transparent 33.4% );
-      padding: 260px 40px 40px 40px !important;      
       margin-top: -150px;
       z-index: 5;  
       float: left;
+
+
+
+
 
     }  
 }
@@ -687,20 +820,28 @@ select {
 .bakery_about__heading_three {
 
   font-weight: 900;
-  @include responsive-font(60px, 68px);  
-  line-height: 28px;
+
+
   color: #231f20;
-  margin-top: 100px; 
-  letter-spacing: -0.6px;
-  line-height: 46px;
+  $margin-map: (375px: 120px, 959px: 300px, 960px: 110px, 2880px: 330px);
+  @include poly-fluid-sizing('margin-top', $margin-map);
+  margin-left: 7%;
+
+
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 45px, 2880px: 158px);
+  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 37px, 2880px: 125px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);  
 
   @media (min-width: $min-960) {
 
-    @include responsive-font(68px, 104px);    
-    margin-top: 0;     
-    line-height: 78px;
+    margin-left: 2vw;
 
   }
+
+
 }
 
 .bakery_about__white_pan {
@@ -712,10 +853,12 @@ select {
       right: 0;
       top: auto;  
       
-      bottom: 150px;
-      z-index: 5;
+      $bottom-map: (375px: 400px, 959px: 750px, 960px: 620px, 1920: 660px, 2880px: 830px);
+      @include poly-fluid-sizing('bottom', $bottom-map);
 
-      transform: translateX(-5vw) scale(1);
+      z-index: 6;
+
+      transform: translateX(-4vw) scale(1);
 
       @include grid-col(6);
       @include grid-offset-left(5); 
@@ -728,8 +871,6 @@ select {
 
       transform: translateX(-1vw) scale(1);
 
-      bottom: 590px;
-      z-index: 6;
 
     }   
 
@@ -809,3 +950,52 @@ select {
     }
 
   }
+
+
+
+.bakery_about__column_four {
+
+  padding-top: 250px;
+
+  @include grid-col(16);
+  @include grid-offset-left(2);  
+
+  @media (min-width: $min-960) {
+
+  @include grid-col(4);
+  @include grid-offset-left(4); 
+
+  }
+
+
+}
+
+
+
+.bakery_about__heading_four {
+
+
+  font-weight: 900;
+  color: #231f20;
+
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 45px, 2880px: 158px);
+  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 37px, 2880px: 125px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);  
+
+}
+
+
+.bakery_about__paragraph_four {
+
+
+  $font-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 14px, 2880px: 24px);
+  $height-map: (320px: 18px, 375px: 20px, 959px: 50px, 960px: 20px, 2880px: 48px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);  
+
+}

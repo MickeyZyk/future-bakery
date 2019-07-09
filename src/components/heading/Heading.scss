@@ -1,6 +1,7 @@
 @import '~styles/config';
 
 .heading {
+	/*
 
 	margin-bottom: 5vw!important;
 	font-weight: 900;
@@ -11,5 +12,7 @@
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);  
+
+  */
 
 }

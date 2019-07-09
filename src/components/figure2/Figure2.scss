@@ -2,11 +2,12 @@
 
 .figure {
 
-    height: 250px;
+    height: 67vw;
+    margin-bottom: 10vw;
 
     @include grid-col;
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
       position: absolute;
       @include grid-col(8);
       @include grid-offset-left(9);
@@ -21,11 +22,11 @@
 
 .background {
 
-  @media (max-width: 767px) {
-    height: 250px;
+  @media (max-width: 959px) {
+    height: 67vw;
     background-size: 220%;  
   }
-  @media (min-width: $min-768) {
+  @media (min-width: $min-960) {
     min-height: 32vw;
     background-size: 140%;
 

@@ -92,18 +92,31 @@ const BakeryAbout = ({ data, className }) => {
 
                 <Texticon className='bakery_about__graph_icon first' name='CAMPAIGN PLANNING' src='network.svg' />
 
-                <Texticon className='bakery_about__graph_icon' name='IDEATION' src='gauge.svg' />
+                <Texticon className='bakery_about__graph_icon' name='CAMPAIGN DEVELOPMENT &amp; PRODUCTION' src='gauge.svg' />
 
-                <Texticon className='bakery_about__graph_icon last' name='IDEATION' src='rainbow.svg' />
+                <Texticon className='bakery_about__graph_icon last' name='COMMUNITY BUILDING' src='rainbow.svg' />
 
-                <Texticon className='bakery_about__graph_icon first' name='IDEATION' src='fiver.svg' />
+                <Texticon className='bakery_about__graph_icon first' name='CROWD SOURCING' src='fiver.svg' />
 
-                <Texticon className='bakery_about__graph_icon' name='IDEATION' src='bang.svg' />
+                <Texticon className='bakery_about__graph_icon' name='INNOVATION' src='bang.svg' />
 
-                <Texticon className='bakery_about__graph_icon last' name='IDEATION' src='phones.svg' />  
+                <Texticon className='bakery_about__graph_icon last' name='ANALYTICS &amp; ON-LINE COMMUNITY' src='phones.svg' />  
                  
 
             </div>          
+
+      </Row>
+
+      <Row className="bakery_about__row_four">
+          <div className="bakery_about__column_four">
+
+              <Split className="bakery_about__heading_four">Meet the team</Split>
+
+              <Paragraph className="bakery_about__paragraph_four">Alena Pelcova</Paragraph>
+
+
+          </div>
+
 
       </Row>
 

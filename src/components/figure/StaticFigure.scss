@@ -2,16 +2,19 @@
 
 .figure {
 
-    height: 50vh;
+    height: 70vw;
+    margin-bottom: 12vw;
 /*
     @include grid-col;
 */
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
+
+    margin-bottom: 6vw;      
 /*
       @include grid-col(10);
       @include grid-offset-left(2);
 */
-      height: 65vh;
+      height: 45vh;
   
     }
 
@@ -23,11 +26,16 @@
 
 .background {
 
-    @media (min-width: $min-768) {
-      min-height: 65vh;
+    min-height: 70vw;
+
       background-repeat: no-repeat;
       background-size: cover; 
-      background-position: center top;
+      background-position: center top;    
+
+    @media (min-width: $min-960) {
+
+      min-height: 45vh;      
+
     }  
 
 }

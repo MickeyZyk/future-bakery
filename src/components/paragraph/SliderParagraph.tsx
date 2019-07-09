@@ -3,13 +3,13 @@ import { Power2 } from "gsap/TweenMax";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
-import s from './Paragraph.scss';
+import s from './SliderParagraph.scss';
 
 interface IIntroProps {
   children: React.ReactNode;
 }
 
-export const Paragraph = ({ children, className }: IIntroProps) => {
+export const SliderParagraph = ({ children, className }: IIntroProps) => {
   return (
 
     <TransitionState>

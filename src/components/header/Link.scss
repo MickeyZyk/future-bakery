@@ -26,7 +26,7 @@
   z-index: 10;
   transition: font-weight 0.2s ease-in-out;
 
-  $font-map: (375px: 16px, 767px: 24px, 768px: 14px, 2880px: 24px);
+  $font-map: (375px: 16px, 768px: 16px, 959px: 20px, 960px: 14px, 1920px: 16px, 2880px: 24px);
   @include poly-fluid-sizing('font-size', $font-map);
 
   &:nth-child(1) {
@@ -77,17 +77,16 @@
   &__icon {
     position: relative; 
 
-    $size-map: (375px: 14px, 767px: 20px, 768px: 12px, 2880px: 22px);
+    $size-map: (375px: 14px, 768px: 15px, 959px: 18px, 960px: 16px, 1920px: 16px, 2880px: 22px);
     @include poly-fluid-sizing('width', $size-map);
 
-    $top-map: (375px: 1px, 767px: 1.5px, 768px: 1.5px, 2880px: 3px);
+    $top-map: (375px: 1px, 959px: 1.5px, 960px: 1.5px, 2880px: 3px);
     @include poly-fluid-sizing('top', $top-map);
 
-    $margin-map: (375px: 14px, 767px: 16px, 768px: 10px, 2880px: 14px);
+    $margin-map: (375px: 14px, 959px: 16px, 960px: 10px, 2880px: 14px);
     @include poly-fluid-sizing('margin-left', $margin-map);    
 
     height: auto;    
-
 
   }
 
