@@ -24,9 +24,13 @@ export default ({ state }) => {
 
 					<>
 
+					<MenuBackground/>					
+
 					  <Helmet title="Future Bakery" />
 
 							<div className='fullscreen'>
+
+							
 
 						
 
@@ -90,8 +94,6 @@ export default ({ state }) => {
 
 							  </div>
 						  
-
-							  <MenuBackground/>
 
 							</div>
 

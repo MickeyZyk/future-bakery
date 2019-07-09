@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Power3 } from "gsap/TweenMax";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
+import { If } from 'react-if'
+
 
 import s from './MenuBackground.scss';
 
@@ -17,22 +19,28 @@ export const MenuBackground = () => {
 					return (
 
 						<div>
-							  <Tween delay={0} duration={1} 
-							    from={ 
-							    	['entering'].includes(transitionStatus) ?
-							    	false :
-							    	{ scaleX:0.0035, scaleY:0.0035, ease: Power3.easeIn, transformOrigin:'64.75% 35.2%'} 
-							    } 
-							    to={ 
-							    	['exiting'].includes(transitionStatus) ?
-							    	{ scaleX:0.0035, scaleY:0.0035, ease: Power3.easeOut, transformOrigin:'64.75% 35.2%'} :
-							    	false 
-							    } 
-							  > 
 
-							  	<div className={s.background}></div>
+					        <If condition={ ['entering','entered'].includes(transitionStatus) }>
+
+					            <Tween delay={0} duration={1} to={{ scaleX:600, scaleY:600, ease: Power3.easeIn }}>
+
+							  		<div className={s.background}></div>
+
+								</Tween>		
+
+					        </If>	
+
+
+					        <If condition={ ['exiting','exited'].includes(transitionStatus) }>
+
+							    <Tween delay={0} duration={1} easing={'Power3.easeIn'} from={{ scaleX:600, scaleY:600 }} to={{ scaleX:0.001, scaleY:0.001 }}>
+
+							  		<div className={s.background}></div>
 
 								</Tween>
+											            
+					        </If>	
+
 
 						</div>		
 

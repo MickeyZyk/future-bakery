@@ -3,12 +3,16 @@
 .background {
     background-color: #222222;
     position: absolute;
-    width: 300vw;
-    height: 300vw;
-    top: -100vw;
-    bottom: -100vw;
-    left: -100vw;
-    right: -100vw;
+    width: 15px;
+    height: 15px;
+
+    $top-map: (320px: 32px, 959px: 96px, 960px: 50px, 2880px: 150px);  
+    @include poly-fluid-sizing('top', $top-map);
+
+
+    bottom: 0;
+    left: auto;
+    right: 5.55556%;
     z-index: -1;
     border-radius: 50%;
 }

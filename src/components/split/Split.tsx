@@ -21,8 +21,8 @@ export const Split = ({ children, className, transitionStatus, entry, exit }) =>
           <h2 className={`${s.split} ${className}`}>
 
             <Tween
-              staggerFrom={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: 200, rotationX: 65 } }
-              staggerTo={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: 200, rotationX: -65} : false }
+              staggerFrom={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, color: '#fff', yPercent: 200, rotationX: 65 } }
+              staggerTo={ ['exiting'].includes(transitionStatus) ? { opacity: 0, color: '#fff', yPercent: 200, rotationX: -65} : false }
               stagger={0.15}
               duration={1}
               ease={Power3.easeInOut}
