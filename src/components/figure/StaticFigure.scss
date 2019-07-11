@@ -3,13 +3,13 @@
 .figure {
 
     height: 70vw;
-    margin-bottom: 12vw;
+
 /*
     @include grid-col;
 */
     @media (min-width: $min-960) {
 
-    margin-bottom: 6vw;      
+   
 /*
       @include grid-col(10);
       @include grid-offset-left(2);
