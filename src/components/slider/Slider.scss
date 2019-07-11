@@ -1,0 +1,30 @@
+@import '~styles/config';
+
+.slider {
+
+  color: red;
+
+    @media (min-width: $min-768) {
+      position: relative;
+      bottom: 5.1vh;
+      @include grid-col(5);
+      @include grid-offset-left(10);
+    }
+
+
+} 
+
+.slider_window {
+
+ 
+
+    @media (min-width: $min-960) {
+      position: absolute;
+      bottom: 5.1vh;
+      top: 0;
+      @include grid-col(5);
+      @include grid-offset-left(10);
+    }
+
+
+} 

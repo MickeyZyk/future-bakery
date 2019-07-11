@@ -35,7 +35,7 @@ export const Button = ({ to, children, className, disabled, ...rest }: IButtonPr
   if (isLink) {
     return (
       <Link
-        to={to || '#'}
+        to={to || '/'}
         {...passProps}
       >
         {children}
