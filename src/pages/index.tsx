@@ -20,7 +20,7 @@ export default () => (
 
 	    <div className="mob-offset-left-2 mob-col-16 offset-left-2 col-10 slider_upper_image">
 
-	    	<StaticFigure src='../images/image.jpg'/>
+	    	<img src='../images/image.jpg'/>
 	    	<SliderControls/>
 	    	<StaticFigure delay={0.15} src='../images/dude.jpg'/>	    	
 

@@ -4,27 +4,39 @@
 
   color: red;
 
-    @media (min-width: $min-768) {
+    @media (min-width: $min-960) {
       position: relative;
       bottom: 5.1vh;
-      @include grid-col(5);
-      @include grid-offset-left(10);
+      @include grid-col(10);
+      @include grid-offset-left(2);
     }
+
+  &__link {
+    display: inline-block;
+    margin-right: 25px;    
+  }
+
+  &__control {
+    width: 15px;
+    height:  15px;
+    border-radius: 7.5px;
+    border: 1px solid #000; 
+    background-color: transparent;    
+  }      
 
 
 } 
 
-.slider_window {
-
- 
+.slider_window { 
 
     @media (min-width: $min-960) {
       position: absolute;
       bottom: 5.1vh;
       top: 0;
-      @include grid-col(5);
-      @include grid-offset-left(10);
+      @include grid-col(10);
+      @include grid-offset-left(2);
     }
 
 
 } 
+
