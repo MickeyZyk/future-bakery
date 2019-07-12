@@ -38,5 +38,17 @@
     }
 
 
+}
+
+.carousel {
+
+    @media (min-width: $min-960) {
+      position: absolute;
+      bottom: 5.1vh;
+      top: 0;
+      @include grid-col(10);
+      @include grid-offset-left(2);
+    }
+  
 } 
 
