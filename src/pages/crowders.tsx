@@ -7,9 +7,8 @@ export default () => (
   <>
     <Helmet title="About" />
 
-    <div className='fullscreen'>
+    <div className='fulscreen_slider'>
 
-      <Heading className='slider_heading' delay={.75}>TRUE</Heading>
       <Slider className='new-slider'/>   
 
     </div>

@@ -351,14 +351,9 @@ select {
 }
 
 .fulscreen_slider {
-
-
-  @media (min-width: $min-960) {  
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  position: relative;
-  }  
 
 }
 
