@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { TweenMax, TimelineMax, Power2} from "gsap";
+import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import logo from 'assets/svg/bakery-logo.svg';
 import ReactDOM from 'react-dom';
@@ -29,9 +29,9 @@ export const Slider = () => {
             <>
 
           <If condition={['entering','entered'].includes(transitionStatus) }>
-              <Tween duration={1} to={{ opacity: 1, ease: Power3.easeIn }}>
-                <div className={s.carousel}><Carousel showButtons timeInBetween={5000} auto={false} arrayOfImages={images} /></div> 
-              </Tween>    
+            <Tween duration={1} to={{ opacity: 1, ease: Power3.easeIn }}>
+              <div className={s.carousel}><Carousel showButtons timeInBetween={5000} auto={false} arrayOfImages={images} /></div> 
+            </Tween>    
           </If> 
 
           <If condition={['exiting','exited'].includes(transitionStatus) }>
