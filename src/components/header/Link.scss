@@ -9,10 +9,15 @@
     @include grid-offset-right(1); 
     @include grid-col(6);  
 
-  @media (min-width: $min-768) {  
+  @media (min-width: $min-960) {  
     @include grid-offset-right(1); 
     @include grid-col(2);
   }
+
+  @media (min-width: $min-1440) {  
+    @include grid-offset-right(1); 
+    @include grid-col(1);
+  }  
 
 }
 

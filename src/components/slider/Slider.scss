@@ -16,12 +16,19 @@
     margin-right: 25px;    
   }
 
-  &__control > button {
-    width: 15px;
-    height:  15px;
-    border-radius: 7.5px;
-    border: 1px solid #000; 
-    background-color: transparent;    
+
+  &__control_left {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: -30px;
+    cursor: pointer;    
+  }      
+
+  &__control_right {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: -30px;
+    cursor: pointer;    
   }      
 
 
@@ -52,4 +59,6 @@
     }
 
 } 
+
+.dots {}
 
