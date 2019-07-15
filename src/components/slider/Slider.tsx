@@ -58,6 +58,7 @@ class Carousel extends React.Component {
     this.state ={
       which: slidesCount,
       showButtons: false,
+      isActive: 1
     };
     this.chidrenNodes =[];
   }
@@ -139,9 +140,9 @@ class Carousel extends React.Component {
 
   gotoSlide(i){
 
-    percentage = - i.currentTarget.getAttribute('data-test') * multiplier;
+    this.setState({ isActive: i });
 
-    console.log(this);
+    percentage = - i.currentTarget.getAttribute('data-test') * multiplier;
 
     var image_top = this.wrapperRef_top.current; 
     var image_bottom = this.wrapperRef_bottom.current;    
@@ -187,7 +188,7 @@ class Carousel extends React.Component {
 
     var dots =  this.props.arrayOfImages.map((image, i) =>{
       return(
-        <div className='dot' data-test={i} key={i} id={'dot'+i} onClick={this.gotoSlide.bind(this)}><Circle/></div>
+        <Dot className='dot' data-test={i} key={i} id={'dot'+i} onClick={this.gotoSlide.bind(this)}><Circle/></Dot>
       )
     })    
 
@@ -258,3 +259,23 @@ class CarouselImage extends React.Component {
 
 }
 
+
+class Dot extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount(){}
+
+  render() {
+
+    return (
+
+        <div isActive={this.props.isActive} className={this.props.className} ><Circle/></div>
+
+
+    );
+  }
+
+}
