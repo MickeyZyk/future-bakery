@@ -70,6 +70,9 @@ class Carousel extends React.Component {
     if(this.props.showButtons){
       this.setState({showButtons:true})
     };
+    if(this.props.showDots){
+      this.setState({showDots:true})
+    };    
 
   }
 
