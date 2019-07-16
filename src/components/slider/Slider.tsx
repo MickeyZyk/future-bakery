@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import { If } from 'react-if';
 import { TransitionState } from "gatsby-plugin-transition-link";
 import Circle from 'assets/svg/circle.svg';
+import FullCircle from 'assets/svg/full_circle.svg';
 import s from './Slider.scss';
 
 var startCarouselInterval;
@@ -25,19 +26,16 @@ export const Slider = () => {
           return (
 
             <>
-
               <If condition={['entering','entered'].includes(transitionStatus) }>
-                <Tween duration={1} to={{ opacity: 1, ease: Power3.easeIn }}>
-                  <div className={s.carousel}><Carousel showButtons={true} timeInBetween={5000} auto={false} arrayOfImages={images} /></div> 
+                <Tween duration={1} to={{ opacity: 1, ease: 'Power3.easeIn' }}>
+                  <div className={s.carousel}><Carousel showButtons={true} showDots={false} timeInBetween={5000} auto={false} arrayOfImages={images} /></div> 
                 </Tween>    
               </If> 
-
               <If condition={['exiting','exited'].includes(transitionStatus) }>
                 <Tween duration={1} easing={'Power3.easeIn'} from={{ opacity: 1 }} to={{ opacity: 0 }}>
-                  <div className={s.carousel}><Carousel showButtons={true} timeInBetween={5000} auto={false} arrayOfImages={images} /></div> 
+                  <div className={s.carousel}><Carousel showButtons={true} showDots={false} timeInBetween={5000} auto={false} arrayOfImages={images} /></div> 
                 </Tween>                          
               </If>
-
             </>
 
           )
@@ -58,7 +56,9 @@ class Carousel extends React.Component {
     this.state ={
       which: slidesCount,
       showButtons: false,
-      isActive: 1
+      showDots: true,
+      isActive: 1,
+      activeIndex: 0
     };
     this.chidrenNodes =[];
   }
@@ -138,11 +138,16 @@ class Carousel extends React.Component {
 
   }
 
+
   gotoSlide(i){
 
-    this.setState({ isActive: i });
+    console.log(i);
 
-    percentage = - i.currentTarget.getAttribute('data-test') * multiplier;
+    let current = i.currentTarget.getAttribute('data-test'); 
+
+    this.setState({activeIndex: current}, () => console.log(this.state.activeIndex, current));
+
+    percentage = - current * multiplier;
 
     var image_top = this.wrapperRef_top.current; 
     var image_bottom = this.wrapperRef_bottom.current;    
@@ -186,36 +191,36 @@ class Carousel extends React.Component {
       )
     })
 
-    var dots =  this.props.arrayOfImages.map((image, i) =>{
+    var dots = this.props.arrayOfImages.map((image, i) =>{
       return(
-        <Dot className='dot' data-test={i} key={i} id={'dot'+i} onClick={this.gotoSlide.bind(this)}><Circle/></Dot>
+        <div className='dot' data-test={i} key={i} id={i} onClick={this.gotoSlide.bind(this)}>
+          <Dot index={ i } isActive={ this.state.activeIndex == i }/></div>
       )
     })    
 
     return (
       <div style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
 
-        {this.state.showButtons  || !this.props.auto ? carouselLeftButton : null  } 
+        {this.state.showButtons  ? carouselLeftButton : null  } 
+
         <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '8vw', height: '35vw', overflow: 'hidden'}}>
-          <div ref={this.wrapperRef_top} className='mask_parent_top' style={{overflow: 'hidden', position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', height: `${slidesCount * 35}vw`, display: 'flex', flexDirection: 'column', alignContent: 'flex-end', alignItems: 'flex-end'}}>
-         
-              {carouselImages}
-            
+          <div ref={this.wrapperRef_top} className='mask_parent_top' style={{overflow: 'hidden', position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', height: `${slidesCount * 35}vw`, display: 'flex', flexDirection: 'column', alignContent: 'flex-end', alignItems: 'flex-end'}}>         
+            {carouselImages}            
           </div>
         </div>
-        <div className='dots'>
-          
-          {dots}
 
+        <div className='dots'>          
+          {this.state.showDots ? dots : null  }
         </div>
+
         <div className='mask_wrapper_bottom' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '0', height: '2.5vw', overflow: 'hidden'}}>        
           <div ref={this.wrapperRef_bottom} className='mask_parent_bottom' style={{overflow: 'hidden', position:'absolute', bottom: 0, top: '-35vw', left: 0, right: 0, width: '100%', height: `${slidesCount * 35}vw`, display: 'flex', flexDirection: 'column', alignContent: 'flex-end', alignItems: 'flex-end'}}>
-         
-              {carouselImages}
-            
+            {carouselImages}
           </div>          
         </div>
-        {this.state.showButtons  || !this.props.auto ? carouselRightButton : null  } 
+
+        {this.state.showButtons ? carouselRightButton : null  } 
+
       </div>
     );
 
@@ -226,6 +231,7 @@ class CarouselImage extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log(this.props)
     this.state = { imageStatus: null };
   }
  
@@ -259,23 +265,23 @@ class CarouselImage extends React.Component {
 
 }
 
-
 class Dot extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
+constructor (props){
+  super(props);
+    this.state ={
+      amActive: false
+    };  
 
-  componentDidMount(){}
+
+    //console.log("PROPS", this.props.isActive);
+}
+
 
   render() {
-
     return (
-
-        <div isActive={this.props.isActive} className={this.props.className} ><Circle/></div>
-
-
+        <div>{this.props.isActive ? <FullCircle/> : <Circle/>}</div>
     );
   }
-
 }
+
