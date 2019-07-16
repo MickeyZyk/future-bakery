@@ -28,12 +28,14 @@ export const Slider = () => {
             <>
               <If condition={['entering','entered'].includes(transitionStatus) }>
                 <Tween duration={1} to={{ opacity: 1, ease: 'Power3.easeIn' }}>
-                  <div className={s.carousel}><Carousel showButtons={true} showDots={false} timeInBetween={5000} auto={false} arrayOfImages={images} /></div> 
+                  <div className={s.carousel}><Carousel horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
+                  arrayOfImages={images} /></div> 
                 </Tween>    
               </If> 
               <If condition={['exiting','exited'].includes(transitionStatus) }>
                 <Tween duration={1} easing={'Power3.easeIn'} from={{ opacity: 1 }} to={{ opacity: 0 }}>
-                  <div className={s.carousel}><Carousel showButtons={true} showDots={false} timeInBetween={5000} auto={false} arrayOfImages={images} /></div> 
+                  <div className={s.carousel}><Carousel horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
+                  arrayOfImages={images} /></div> 
                 </Tween>                          
               </If>
             </>
@@ -55,13 +57,16 @@ class Carousel extends React.Component {
     this.wrapperRef_top = React.createRef();    
     this.state ={
       which: slidesCount,
+      horizontal: false,
       showButtons: false,
-      showDots: true,
+      showDots: false,
+      animating: false,
       isActive: 1,
       activeIndex: 0
     };
     this.chidrenNodes =[];
   }
+
 
   componentDidMount(){
     if(this.props.auto){
@@ -72,7 +77,10 @@ class Carousel extends React.Component {
     };
     if(this.props.showDots){
       this.setState({showDots:true})
-    };    
+    };   
+    if(this.props.horizontal){
+      this.setState({horizontal:true})
+    }; 
 
   }
 
@@ -83,9 +91,17 @@ class Carousel extends React.Component {
 
   prevSlide(){
 
+    setTimeout(
+        function() {
+          this.setState({ animating: true }, () => console.log('Animating', this.state.animating));
+        }
+        .bind(this),
+        1
+    );
+
     percentage = this.state.which < slidesCount-1 ? percentage + multiplier : 0 ;
 
-    console.log('percentage', percentage, 'this.state.which', this.state.which);    
+    //console.log('percentage', percentage, 'this.state.which', this.state.which);    
 
     var image_top = this.wrapperRef_top.current; 
     var image_bottom = this.wrapperRef_bottom.current;     
@@ -105,17 +121,23 @@ class Carousel extends React.Component {
         ntl.to(children, .2, {scale: 1}).to(children, .2, {scale: 1.05}).to(children, 1.1, {scale: 1});
      }
 
-    this.setState({
-      which: this.state.which < slidesCount ? ++this.state.which : slidesCount
-    })
+    this.setState({ which: this.state.which < slidesCount ? ++this.state.which : slidesCount })
 
   }
 
   nextSlide(){
 
+    setTimeout(
+        function() {
+          this.setState({ animating: true }, () => console.log('Animating', this.state.animating));
+        }
+        .bind(this),
+        1
+    );
+
     percentage = this.state.which > 1 ? percentage - multiplier : multiplier - slidesCount * multiplier ;
 
-    console.log('percentage', percentage, 'this.state.which', this.state.which);
+    //console.log('percentage', percentage, 'this.state.which', this.state.which);
 
     var image_top = this.wrapperRef_top.current; 
     var image_bottom = this.wrapperRef_bottom.current;    
@@ -135,20 +157,39 @@ class Carousel extends React.Component {
         ntl.to(children, .4, {scale: 1}).to(children, .4, {scale: 1.05}).to(children, 1.1, {scale: 1});
      }
 
-    this.setState({
-      which: this.state.which > 0 ? --this.state.which : 0    
-    })
+    this.setState({ which: this.state.which > 0 ? --this.state.which : 0, animating: false })
 
   }
 
+  animating() {
+    setTimeout(
+        function() {
+          this.setState({ animating: true }, () => console.log('Animating CB', this.state.animating));
+        }
+        .bind(this),
+        1
+    );    
+  }
+
+  notAnimating() {
+    setTimeout(
+        function() {
+          this.setState({ animating: false }, () => console.log('Animating CB', this.state.animating))          
+        }
+        .bind(this),
+        1000
+    );    
+  }
 
   gotoSlide(i){
 
-    console.log(i);
+    this.animating();
+
+    //console.log(i);
 
     let current = i.currentTarget.getAttribute('data-test'); 
 
-    this.setState({activeIndex: current}, () => console.log(this.state.activeIndex, current));
+    this.setState({ activeIndex: current });
 
     percentage = - current * multiplier;
 
@@ -159,7 +200,7 @@ class Carousel extends React.Component {
     ptlg1.to(image_top, 1.5, { top: `${percentage}vw`, ease: 'Expo.easeInOut'});
 
     var ptlg2 = new TimelineMax({repeat:0});
-    ptlg2.to(image_bottom, 1.5, { top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut'});    
+    ptlg2.to(image_bottom, 1.5, { top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut', onComplete: this.notAnimating()});    
 
     const node = ReactDOM.findDOMNode(this);
 
@@ -188,9 +229,30 @@ class Carousel extends React.Component {
         <div onClick={this.nextSlide.bind(this)} className="btn btn-primary">&gt;</div>
       </div>)
 
+    //console.log("IN RENDER",this.state.horizontal);
+
     var carouselImages =  this.props.arrayOfImages.map((image, i) =>{
       return(
-        <CarouselImage className='child_image' key={'key_'+i} label={labels[i]} timeInBetween={this.props.timeInBetween} whichOne={i} src={image} position={i*100} />
+        <div style={{ position: 'relative', width: '100%', height: '35vw' }} key={'2key_'+i}>
+        <CarouselImage horizontal={this.state.horizontal} animating={this.state.animating} className='child_image' key={'key_'+i} label={labels[i]} 
+        timeInBetween={this.props.timeInBetween} whichOne={i} src={image} position={i*100} />
+
+
+              <If condition={this.state.animating}>
+                  <h2 key={'2key_'+i} style={ this.state.activeIndex == i ? {display:'block'} : {display:'none'} } className='single_slide_heading'>{labels[i]}</h2>
+                       
+              </If>
+
+              <If condition={!this.state.animating}>
+                <Tween key={'1key_'+i} duration={1} to={{yPercent: 50, opacity: 1, ease: 'Power3.easeIn'}}>              
+                  <h2 key={'2key_'+i} style={ this.state.activeIndex == i ? {display:'block'} : {display:'none'} } className='single_slide_heading'>{labels[i]}</h2>
+                </Tween>                    
+              </If>              
+
+
+
+
+        </div>
       )
     })
 
@@ -207,7 +269,10 @@ class Carousel extends React.Component {
         {this.state.showButtons  ? carouselLeftButton : null  } 
 
         <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '8vw', height: '35vw', overflow: 'hidden'}}>
-          <div ref={this.wrapperRef_top} className='mask_parent_top' style={{overflow: 'hidden', position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', height: `${slidesCount * 35}vw`, display: 'flex', flexDirection: 'column', alignContent: 'flex-end', alignItems: 'flex-end'}}>         
+          <div ref={this.wrapperRef_top} className='mask_parent_top' 
+          style={{overflow: 'hidden', position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', height: `${slidesCount * 35}vw`, 
+          display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
+          alignItems: `${ this.state.horizontal ? 'center' : 'flex-end' }`}}>         
             {carouselImages}            
           </div>
         </div>
@@ -217,7 +282,10 @@ class Carousel extends React.Component {
         </div>
 
         <div className='mask_wrapper_bottom' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '0', height: '2.5vw', overflow: 'hidden'}}>        
-          <div ref={this.wrapperRef_bottom} className='mask_parent_bottom' style={{overflow: 'hidden', position:'absolute', bottom: 0, top: '-35vw', left: 0, right: 0, width: '100%', height: `${slidesCount * 35}vw`, display: 'flex', flexDirection: 'column', alignContent: 'flex-end', alignItems: 'flex-end'}}>
+          <div ref={this.wrapperRef_bottom} className='mask_parent_bottom' 
+          style={{overflow: 'hidden', position:'absolute', bottom: 0, top: '-35vw', left: 0, right: 0, width: '100%', height: `${slidesCount * 35}vw`, 
+          display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
+          alignItems: `${ this.state.horizontal ? 'center' : 'flex-end' }`}}>
             {carouselImages}
           </div>          
         </div>
@@ -234,7 +302,7 @@ class CarouselImage extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(this.props)
+    //console.log("Not Mounted", this.props)
     this.state = { imageStatus: null };
   }
  
@@ -243,7 +311,7 @@ class CarouselImage extends React.Component {
   }
 
   componentDidMount(){
-
+    console.log("Mounted", this.props)
   }
 
   _handleImageErrored() {
@@ -252,17 +320,17 @@ class CarouselImage extends React.Component {
 
   render(e) {
 
-    var pos =  `${this.props.position}`;
     var src = `${this.props.src}`;
     var srcTo = ' no-repeat center center';
     var srcToFull = 'url(' +  src + ')'+  srcTo;
 
     return (
-        <div className={this.props.className}
-         style={{ transform: 'scale(1)', display: 'block', zIndex:`${this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', width: '100%', height: '59vw', minHeight: '30vh'}}
-          onLoad={this._handleImageLoaded.bind(this)}
-          onError={this._handleImageErrored.bind(this)}
-          ></div>
+      <div className={this.props.className}
+       style={{ transform: 'scale(1)', display: 'block', zIndex:`${this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
+       width: '100%', height: '59vw', minHeight: '30vh'}}
+        onLoad={this._handleImageLoaded.bind(this)}
+        onError={this._handleImageErrored.bind(this)}
+        ></div>
     );
   }
 
@@ -270,21 +338,18 @@ class CarouselImage extends React.Component {
 
 class Dot extends React.Component {
 
-constructor (props){
+  constructor (props){
   super(props);
     this.state ={
       amActive: false
-    };  
-
-
-    //console.log("PROPS", this.props.isActive);
-}
-
+    }; 
+  }
 
   render() {
     return (
         <div>{this.props.isActive ? <FullCircle/> : <Circle/>}</div>
     );
   }
+
 }
 
