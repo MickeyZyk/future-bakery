@@ -7,22 +7,16 @@
   right: 0;
   bottom: 0;
   left: 0;
-  color: #ffffff;
   background-color: #222222;
   border-bottom: 40px solid #000000;
   text-transform: uppercase;
-  font-weight: 900;
-
-  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 75px, 2880px: 158px);
-  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 57px, 2880px: 138px);
-  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
-  @include poly-fluid-sizing('font-size', $font-map);
-  @include poly-fluid-sizing('line-height', $height-map);
-  @include poly-fluid-sizing('letter-spacing', $spacing-map);  
-
+  font-weight: 400;
 
   &__col1 {
-  padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-top: 200px;
     @include grid-col;
 
     @media (min-width: $min-960) {
@@ -32,7 +26,10 @@
   }
 
   &__col2 {
-  padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-top: 200px;
     @include grid-col;
 
     @media (min-width: $min-960) {
@@ -43,7 +40,10 @@
   }
 
   &__col3 {
-  padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-top: 200px;
     @include grid-col;
 
     @media (min-width: $min-960) {
@@ -51,7 +51,48 @@
       @include grid-offset-left(1);
     }
 
+  }
 
+  &__col4 {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end!important;
+    padding-top: 100px;
+    @include grid-col;
+
+    @media (min-width: $min-960) {
+      @include grid-col(2);
+      @include grid-offset-left(1);
+    }
+
+  }
+
+  &__link {
+  text-decoration: none;
+  $font-map: (320px: 8px, 375px: 9px, 768px: 10px, 959px: 12px, 960px: 14px, 2880px: 16px);
+  $height-map: (320px: 14px, 375px: 15px, 768px: 16px, 959px: 18px, 960px: 21px, 2880px: 24px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+    &__padd {
+      padding-top: 60px;
+      text-decoration: none;
+      $font-map: (320px: 8px, 375px: 9px, 768px: 10px, 959px: 12px, 960px: 14px, 2880px: 16px);
+      $height-map: (320px: 14px, 375px: 15px, 768px: 16px, 959px: 18px, 960px: 21px, 2880px: 24px);
+      $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+      @include poly-fluid-sizing('font-size', $font-map);
+      @include poly-fluid-sizing('line-height', $height-map);
+      @include poly-fluid-sizing('letter-spacing', $spacing-map);
+    }
+  }
+
+  &__h2 {
+  color: #2d2d2d;
+  }
+
+  &__p {
+  color: #6d6d6d;    
   }
 
 }
