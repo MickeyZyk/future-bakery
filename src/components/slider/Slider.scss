@@ -52,7 +52,7 @@
     @media (min-width: $min-960) {
       opacity: 0;
       position: absolute;
-      bottom: 5.1vh;
+      bottom: 0;
       top: 0;
       @include grid-col(10);
       @include grid-offset-left(2);

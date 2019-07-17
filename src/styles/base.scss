@@ -441,12 +441,6 @@ select {
 }
 
 
-
-
-
-
-
-
 /* BAKERY HOME SLIDER  */
 
 
@@ -481,12 +475,12 @@ select {
 }
 
 .single_slide_heading {
-  opacity: 0;
-  position: fixed;
-  top: 50vh;
-  left: 50vw;
-  right: auto;
-  bottom: auto;
+    opacity: 0;
+    position: fixed;
+    top: 35vw;
+    left: auto;
+    right: 25%;
+    bottom: 0;
   font-weight: 900;
   $font-map: (320px: 30px, 375px: 33px, 768px: 58px, 959px: 64px, 960px: 38px, 1920px: 85px, 2880px: 136px);
   $height-map: (320px: 26px, 375px: 28px, 768px: 42px, 959px: 48px, 960px: 30px, 1920px: 67px, 2880px: 108px);
@@ -496,8 +490,25 @@ select {
   @include poly-fluid-sizing('letter-spacing', $spacing-map); 
 }
 
+.single_slide_heading.current {
+  display: block;
+  opacity: 1;
+
+}
+
+.single_slide_heading.next {
+  display: block;
+  opacity: 0;
+}
+
+.single_slide_heading.prev {
+  display: block;
+  opacity: 0;
+}
+
 .mask_wrapper_bottom h2 {
   display: none;
+
 }
 
 
