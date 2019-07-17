@@ -1,18 +1,28 @@
 @import '~styles/config';
 
 .footer {
+  display: flex;
   height: 560px;
   position: relative;
   right: 0;
   bottom: 0;
   left: 0;
+  color: #ffffff;
   background-color: #222222;
+  border-bottom: 40px solid #000000;
+  text-transform: uppercase;
+  font-weight: 900;
+
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 75px, 2880px: 158px);
+  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 57px, 2880px: 138px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);  
+
 
   &__col1 {
-    padding: 40px 0;
-
-    border-bottom: 10px solid #000000;
-
+  padding-top: 200px;
     @include grid-col;
 
     @media (min-width: $min-960) {
@@ -22,10 +32,7 @@
   }
 
   &__col2 {
-    padding: 40px 0;
-
-    border-bottom: 10px solid #000000;
-
+  padding-top: 200px;
     @include grid-col;
 
     @media (min-width: $min-960) {
@@ -36,10 +43,7 @@
   }
 
   &__col3 {
-    padding: 40px 0;
-
-    border-bottom: 10px solid #000000;
-
+  padding-top: 200px;
     @include grid-col;
 
     @media (min-width: $min-960) {
