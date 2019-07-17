@@ -1,35 +1,53 @@
 @import '~styles/config';
 
 .footer {
+  height: 560px;
   position: relative;
   right: 0;
   bottom: 0;
   left: 0;
+  background-color: #222222;
 
-  &__logo {
-    display: flex;
-    justify-content: space-between;
-
+  &__col1 {
     padding: 40px 0;
 
-    border-bottom: 10px solid #8effbf;
+    border-bottom: 10px solid #000000;
 
+    @include grid-col;
 
     @media (min-width: $min-960) {
-
-        max-width: 200px;    
-    }
-
-
-  }  
-
-  &__link {
-    margin-left: 30px;
-
-    transition: 200ms opacity ease-in-out;
-
-    &:hover {
-      opacity: 0.5;
+      @include grid-col(2);
+      @include grid-offset-left(7);
     }
   }
+
+  &__col2 {
+    padding: 40px 0;
+
+    border-bottom: 10px solid #000000;
+
+    @include grid-col;
+
+    @media (min-width: $min-960) {
+      @include grid-col(2);
+      @include grid-offset-left(1);
+    }
+
+  }
+
+  &__col3 {
+    padding: 40px 0;
+
+    border-bottom: 10px solid #000000;
+
+    @include grid-col;
+
+    @media (min-width: $min-960) {
+      @include grid-col(2);
+      @include grid-offset-left(1);
+    }
+
+
+  }
+
 }

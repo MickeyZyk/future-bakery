@@ -6,6 +6,7 @@ import { BlockText } from 'components/block-text/BlockText';
 import { Figure } from 'components/figure/Figure';
 import { Heading } from 'components/heading/Heading';
 import Bulb1 from 'components/bulb1/Bulb1';
+import { Footer } from 'components/footer/Footer';
 
 import { SliderControls } from 'components/slider-controls/SliderControls';
 import ReactCursorPosition from 'react-cursor-position';
@@ -32,6 +33,8 @@ export default () => (
       </Intro>   
 
       <SliderControls />
+
+      <Footer />
 
     </ReactCursorPosition>     
 
