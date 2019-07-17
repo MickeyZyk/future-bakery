@@ -9,7 +9,6 @@
   left: 0;
   background-color: #222222;
   border-bottom: 40px solid #000000;
-  text-transform: uppercase;
   font-weight: 400;
 
   &__col1 {
@@ -69,6 +68,7 @@
 
   &__link {
   text-decoration: none;
+  text-transform: uppercase;
   $font-map: (320px: 8px, 375px: 9px, 768px: 10px, 959px: 12px, 960px: 14px, 2880px: 16px);
   $height-map: (320px: 14px, 375px: 15px, 768px: 16px, 959px: 18px, 960px: 21px, 2880px: 24px);
   $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
