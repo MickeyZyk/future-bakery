@@ -482,6 +482,7 @@ select {
     left: 55.66666%;
     bottom: 18vw;    
     top: auto;
+    z-index: 10;
   font-weight: 900;
   $font-map: (320px: 30px, 375px: 33px, 768px: 58px, 959px: 64px, 960px: 38px, 1920px: 85px, 2880px: 136px);
   $height-map: (320px: 26px, 375px: 28px, 768px: 42px, 959px: 48px, 960px: 30px, 1920px: 67px, 2880px: 108px);
