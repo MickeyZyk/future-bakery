@@ -162,9 +162,9 @@ class Carousel extends React.Component {
     //var prevTL = new TimelineMax(); 
     //if(prevHeading !== null){prevTL.from(prevHeading, 1.5, { yPercent: 50, opacity: 0 })};       
 
-    var currentTL = new TimelineMax({onComplete:(console.log('YEAH!'))}); 
+    var currentTL = new TimelineMax({onComplete:(console.log('YEAH 1!'))}); 
     if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
-    var currentTL1 = new TimelineMax({onComplete:(console.log('YEAH!'))}); 
+    var currentTL1 = new TimelineMax({onComplete:(console.log('YEAH 2!'))}); 
     if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};    
 
     //var nextTL = new TimelineMax(); 
@@ -182,7 +182,7 @@ class Carousel extends React.Component {
     if (node instanceof HTMLElement) {
         const children = node.querySelectorAll('.child_image');
         var ntlg = new TimelineMax({repeat:0});    
-        ntlg.to(children, .4, {scale: 1}).to(children, .4, {scale: 1.05}).to(children, 1.1, {scale: 1});
+        ntlg.to(children, .5, {scale: 1}).to(children, .5, {scale: 1.05, ease: 'Expo.easeInOut'}).to(children, .5, {scale: 1});
      }
 
 
