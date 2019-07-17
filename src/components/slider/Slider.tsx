@@ -26,18 +26,12 @@ export const Slider = () => {
           return (
 
             <>
-              <If condition={['entering','entered'].includes(transitionStatus) }>
-                <Tween duration={1} to={{ opacity: 1, ease: 'Power3.easeIn' }}>
-                  <div className={s.carousel}><Carousel horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
+                <Tween duration={1} 
+                from={ ['entering','entered'].includes(transitionStatus) ? { opacity: 1 } : { opacity: 1 } } 
+                to={ ['exiting','exited'].includes(transitionStatus) ? { opacity: 1 } : { opacity: 1 } } >
+                  <div style={{opacity: 1}}className={s.carousel}><Carousel horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
                   arrayOfImages={images} /></div> 
                 </Tween>    
-              </If> 
-              <If condition={['exiting','exited'].includes(transitionStatus) }>
-                <Tween duration={1} easing={'Power3.easeIn'} from={{ opacity: 1 }} to={{ opacity: 0 }}>
-                  <div className={s.carousel}><Carousel horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
-                  arrayOfImages={images} /></div> 
-                </Tween>                          
-              </If>
             </>
 
           )
@@ -166,13 +160,13 @@ class Carousel extends React.Component {
     if(allHeadings !== null){allTL.set(allHeadings,{ opacity: 0 })};      
 
     var prevTL = new TimelineMax(); 
-    if(prevHeading !== null){prevTL.set(prevHeading,{ opacity: 0 })};       
+    if(prevHeading !== null){prevTL.to(prevHeading, 1.5, { opacity: 0 })};       
 
     var currentTL = new TimelineMax(); 
-    if(currentHeading !== null){currentTL.from(currentHeading, 1.5,{ yPercent: 100, opacity: 0 })};    
+    if(currentHeading !== null){currentTL.to(currentHeading, 1.5, {opacity: 1 })};    
 
     var nextTL = new TimelineMax(); 
-    if(nextHeading !== null){nextTL.set(nextHeading,{ opacity: 0})};       
+    if(nextHeading !== null){nextTL.to(nextHeading, 1.5,{ opacity: 0 })};       
 
     var ptlg1 = new TimelineMax();
     ptlg1.to(image_top, 1.5, { top: `${percentage}vw`, ease: 'Expo.easeInOut'});
