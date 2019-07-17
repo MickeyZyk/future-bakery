@@ -12,7 +12,7 @@ import s from './Slider.scss';
 var startCarouselInterval;
 
 var images = ['../images/image.jpg', '../images/dude.jpg','../images/desk.jpg','../images/image.jpg', '../images/dude.jpg','../images/desk.jpg']
-var labels = ["Slide 1", "Slide 02", "Slide 003","Slide 0004", "Slide 00005", "Slide 000006" ]
+var labels = ["THE FUTURE IS HERE", "THE END IS NIGH", "THE HUNS ARE COMING","ROME HAS FALLEN", "APOCALYPSE NOW", "FLIGHT OVER THE COCKOO'S NEST" ]
 var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 30 ;
@@ -60,7 +60,6 @@ class Carousel extends React.Component {
       horizontal: false,
       showButtons: false,
       showDots: false,
-      animating: false,
       isActive: 1,
       activeIndex: 0
     };
@@ -91,14 +90,6 @@ class Carousel extends React.Component {
 
   prevSlide(){
 
-    setTimeout(
-        function() {
-          this.setState({ animating: true }, () => console.log('Animating', this.state.animating));
-        }
-        .bind(this),
-        1
-    );
-
     percentage = this.state.which < slidesCount-1 ? percentage + multiplier : 0 ;
 
     //console.log('percentage', percentage, 'this.state.which', this.state.which);    
@@ -127,14 +118,6 @@ class Carousel extends React.Component {
 
   nextSlide(){
 
-    setTimeout(
-        function() {
-          this.setState({ animating: true }, () => console.log('Animating', this.state.animating));
-        }
-        .bind(this),
-        1
-    );
-
     percentage = this.state.which > 1 ? percentage - multiplier : multiplier - slidesCount * multiplier ;
 
     //console.log('percentage', percentage, 'this.state.which', this.state.which);
@@ -157,72 +140,45 @@ class Carousel extends React.Component {
         ntl.to(children, .4, {scale: 1}).to(children, .4, {scale: 1.05}).to(children, 1.1, {scale: 1});
      }
 
-    this.setState({ which: this.state.which > 0 ? --this.state.which : 0, animating: false })
+    this.setState({ which: this.state.which > 0 ? --this.state.which : 0})
 
-  }
-
-  animating() {
-    setTimeout(
-        function() {
-          this.setState({ animating: true }, () => console.log('Animating CB', this.state.animating));
-        }
-        .bind(this),
-        1
-    );    
-  }
-
-  notAnimating() {
-    setTimeout(
-        function() {
-          this.setState({ animating: false }, () => console.log('Animating CB', this.state.animating))          
-        }
-        .bind(this),
-        1000
-    );    
   }
 
   gotoSlide(i, image){
 
-    this.animating();
-
-    //console.log(i);
-
-    //${this.state.activeIndex == i ? 'prev' : ''} ${this.state.activeIndex == i-1 ? 'current' : ''} ${this.state.activeIndex == i-2 ? 'next' : ''} 
-
     let current = i.currentTarget.getAttribute('data-test'); 
 
     this.setState({ activeIndex: current }, () => {
-
 
     percentage = - current * multiplier;
 
     var image_top = this.wrapperRef_top.current; 
     var image_bottom = this.wrapperRef_bottom.current; 
 
-    var allHeadings = image_top.querySelectorAll('.single_slide_heading');    
-    var prevHeading = image_top.querySelector('.prev');
-    var currentHeading = image_top.querySelector('.current'); 
-    var nextHeading = image_top.querySelector('.next');
+    var allHeadings = image_top.querySelectorAll('.mask_parent_top .single_slide_heading');    
+    var prevHeading = image_top.querySelector('.mask_parent_top .prev');
+    var currentHeading = image_top.querySelector('.mask_parent_top .current'); 
+    var nextHeading = image_top.querySelector('.mask_parent_top .next');
 
     console.log('index',this.state.activeIndex,'prev',prevHeading, 'current',currentHeading, 'next',nextHeading);
 
-    var allTL = new TimelineMax({repeat:0}); 
-    if(allHeadings !== null){allTL.set(allHeadings,{ opacity: 0})};      
+    var allTL = new TimelineMax(); 
+    if(allHeadings !== null){allTL.set(allHeadings,{ opacity: 0 })};      
 
-    var prevTL = new TimelineMax({repeat:0}); 
-    if(prevHeading !== null){prevTL.set(prevHeading,{ opacity: 0})};       
+    var prevTL = new TimelineMax(); 
+    if(prevHeading !== null){prevTL.set(prevHeading,{ opacity: 0 })};       
 
-    var currentTL = new TimelineMax({repeat:0}); 
-    if(currentHeading !== null){currentTL.set(currentHeading,{ opacity: 1})};    
+    var currentTL = new TimelineMax(); 
+    if(currentHeading !== null){currentTL.from(currentHeading, 1.5,{ yPercent: 100, opacity: 0 })};    
 
-    var nextTL = new TimelineMax({repeat:0}); 
+    var nextTL = new TimelineMax(); 
     if(nextHeading !== null){nextTL.set(nextHeading,{ opacity: 0})};       
 
-    var ptlg1 = new TimelineMax({repeat:0});
+    var ptlg1 = new TimelineMax();
     ptlg1.to(image_top, 1.5, { top: `${percentage}vw`, ease: 'Expo.easeInOut'});
 
-    var ptlg2 = new TimelineMax({repeat:0});
-    ptlg2.to(image_bottom, 1.5, { top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut', onComplete: this.notAnimating()});    
+    var ptlg2 = new TimelineMax();
+    ptlg2.to(image_bottom, 1.5, { top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut'});    
 
     const node = ReactDOM.findDOMNode(this);
 
@@ -266,7 +222,7 @@ class Carousel extends React.Component {
     var carouselImages =  this.props.arrayOfImages.map((image, i) =>{
       return(
         <div style={{ position: 'relative', width: '100%', height: '30vw' }} key={'2key_'+i}>
-          <CarouselImage horizontal={this.state.horizontal} animating={this.state.animating} className='child_image' key={'key_'+i} label={labels[i]} 
+          <CarouselImage horizontal={this.state.horizontal} className='child_image' key={'key_'+i} label={labels[i]} 
           timeInBetween={this.props.timeInBetween} whichOne={i} src={image} />
           <h2 key={'2key_'+i} id={'i0'+(i)} className= {`${'single_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>                    
         </div>
@@ -287,7 +243,7 @@ class Carousel extends React.Component {
 
         <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '8vw', height: '30vw', overflow: 'hidden'}}>
           <div ref={this.wrapperRef_top} className='mask_parent_top' 
-          style={{position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', height: `${slidesCount * 35}vw`, 
+          style={{position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', 
           display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
           alignItems: `${ this.state.horizontal ? 'center' : 'flex-end' }`}}>         
             {carouselImages}            
@@ -300,7 +256,7 @@ class Carousel extends React.Component {
 
         <div className='mask_wrapper_bottom' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '0', height: '2.5vw', overflow: 'hidden'}}>        
           <div ref={this.wrapperRef_bottom} className='mask_parent_bottom' 
-          style={{position:'absolute', bottom: 0, top: '-30vw', left: 0, right: 0, width: '100%', height: `${slidesCount * 35}vw`, 
+          style={{position:'absolute', bottom: 0, top: '-30vw', left: 0, right: 0, width: '100%', 
           display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
           alignItems: `${ this.state.horizontal ? 'center' : 'flex-end' }`}}>
             {carouselImages}

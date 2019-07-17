@@ -476,11 +476,12 @@ select {
 
 .single_slide_heading {
     opacity: 0;
+    width: 27.77777vw;
+    text-align: left;
     position: fixed;
-    top: 35vw;
-    left: auto;
-    right: 25%;
-    bottom: 0;
+    left: 55.66666%;
+    bottom: 18vw;    
+    top: auto;
   font-weight: 900;
   $font-map: (320px: 30px, 375px: 33px, 768px: 58px, 959px: 64px, 960px: 38px, 1920px: 85px, 2880px: 136px);
   $height-map: (320px: 26px, 375px: 28px, 768px: 42px, 959px: 48px, 960px: 30px, 1920px: 67px, 2880px: 108px);
@@ -506,9 +507,8 @@ select {
   opacity: 0;
 }
 
-.mask_wrapper_bottom h2 {
-  display: none;
-
+.mask_wrapper_bottom h2, .mask_parent_bottom h2 {
+  display: none!important;
 }
 
 
