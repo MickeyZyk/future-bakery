@@ -26,10 +26,10 @@ export const Slider = () => {
           return (
 
             <>
-                <Tween duration={1} 
-                from={ ['entering','entered'].includes(transitionStatus) ? { opacity: 1 } : { opacity: 1 } } 
-                to={ ['exiting','exited'].includes(transitionStatus) ? { opacity: 1 } : { opacity: 1 } } >
-                  <div style={{opacity: 1}}className={s.carousel}><Carousel horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
+                <Tween duration={2} 
+                from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, ease: Power3.easeInOut } } 
+                to={ ['exiting'].includes(transitionStatus) ? { yPercent: 100, ease: Power3.easeInOut } : false  } >
+                  <div style={{opacity: 1, top: 0}} className={s.carousel}><Carousel horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
                   arrayOfImages={images} /></div> 
                 </Tween>    
             </>
