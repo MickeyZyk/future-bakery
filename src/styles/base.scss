@@ -475,7 +475,6 @@ select {
 }
 
 .single_slide_heading {
-    opacity: 0;
     width: 27.77777vw;
     text-align: left;
     position: fixed;
@@ -492,10 +491,14 @@ select {
   @include poly-fluid-sizing('letter-spacing', $spacing-map); 
 }
 
+.single_slide_heading:not(.current) {
+   opacity: 0!important;
+}
+
+
 .single_slide_heading.current {
   display: block;
-  opacity: 1;
-
+  /* opacity: 1; */
 }
 
 .single_slide_heading.next {

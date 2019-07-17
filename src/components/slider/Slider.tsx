@@ -156,17 +156,19 @@ class Carousel extends React.Component {
 
     console.log('index',this.state.activeIndex,'prev',prevHeading, 'current',currentHeading, 'next',nextHeading);
 
-    var allTL = new TimelineMax(); 
-    if(allHeadings !== null){allTL.set(allHeadings,{ opacity: 0 })};      
+    //var allTL = new TimelineMax(); 
+    //if(allHeadings !== null){allTL.set(allHeadings,{ opacity: 0 })};      
 
-    var prevTL = new TimelineMax(); 
-    if(prevHeading !== null){prevTL.to(prevHeading, 1.5, { opacity: 0 })};       
+    //var prevTL = new TimelineMax(); 
+    //if(prevHeading !== null){prevTL.from(prevHeading, 1.5, { yPercent: 50, opacity: 0 })};       
 
-    var currentTL = new TimelineMax(); 
-    if(currentHeading !== null){currentTL.to(currentHeading, 1.5, {opacity: 1 })};    
+    var currentTL = new TimelineMax({onComplete:(console.log('YEAH!'))}); 
+    if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+    var currentTL1 = new TimelineMax({onComplete:(console.log('YEAH!'))}); 
+    if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};    
 
-    var nextTL = new TimelineMax(); 
-    if(nextHeading !== null){nextTL.to(nextHeading, 1.5,{ opacity: 0 })};       
+    //var nextTL = new TimelineMax(); 
+    //if(nextHeading !== null){nextTL.from(nextHeading, 1.5,{ yPercent: 50, opacity: 0 })};       
 
     var ptlg1 = new TimelineMax();
     ptlg1.to(image_top, 1.5, { top: `${percentage}vw`, ease: 'Expo.easeInOut'});
