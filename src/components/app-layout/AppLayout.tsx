@@ -26,6 +26,8 @@ const isDev = true;
 
 export default ({ children, data, set, state, location, ...props }: IAppLayoutProps) => ( 
 
+  <>
+
     <div className={s.layout}>
 
       <Helmet {...helmet} />
@@ -83,14 +85,13 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
 
       <Scrollbar className={s.scrollbar} damping={0.05} renderByPixels={true} alwaysShowTracks={true}>      
         {children}
-
       </Scrollbar>
 
       {isDev && <Devtools />}
 
-
-
     </div>
+    <Footer/>
 
+  </>  
 
 );
