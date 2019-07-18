@@ -1,21 +1,36 @@
 @import '~styles/config';
 
+.row {
+  display: block;
+  background-color: #222222;
+
+  &__one {
+    padding-top: 180px;
+  }
+
+  &__two {
+    padding-top: 60px;
+  }
+
+  &__three {
+    padding-top: 100px;
+    padding-bottom: 40px;
+    border-bottom: 40px solid black;
+  }
+}
+
 .footer {
   display: flex;
-  height: 560px;
   position: relative;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #222222;
-  border-bottom: 40px solid #000000;
   font-weight: 400;
 
   &__col1 {
     display: flex;
     flex-direction: column;
     align-self: flex-start;
-    padding-top: 200px;
     @include grid-col;
 
     @media (min-width: $min-960) {
@@ -28,7 +43,6 @@
     display: flex;
     flex-direction: column;
     align-self: flex-start;
-    padding-top: 200px;
     @include grid-col;
 
     @media (min-width: $min-960) {
@@ -42,7 +56,6 @@
     display: flex;
     flex-direction: column;
     align-self: flex-start;
-    padding-top: 200px;
     @include grid-col;
 
     @media (min-width: $min-960) {
@@ -55,13 +68,38 @@
   &__col4 {
     display: flex;
     flex-direction: column;
-    align-self: flex-end!important;
-    padding-top: 100px;
+    align-self: flex-start;
     @include grid-col;
 
     @media (min-width: $min-960) {
       @include grid-col(2);
-      @include grid-offset-left(1);
+      @include grid-offset-left(7);
+    }
+
+  }
+
+  &__col5 {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    @include grid-col;
+
+    @media (min-width: $min-960) {
+      @include grid-col(2);
+      @include grid-offset-left(7);
+    }
+
+  }
+
+  &__col6 {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    @include grid-col;
+
+    @media (min-width: $min-960) {
+      @include grid-col(2);
+      @include grid-offset-left(4);
     }
 
   }
@@ -75,16 +113,6 @@
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);
-    &__padd {
-      padding-top: 60px;
-      text-decoration: none;
-      $font-map: (320px: 8px, 375px: 9px, 768px: 10px, 959px: 12px, 960px: 14px, 2880px: 16px);
-      $height-map: (320px: 14px, 375px: 15px, 768px: 16px, 959px: 18px, 960px: 21px, 2880px: 24px);
-      $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
-      @include poly-fluid-sizing('font-size', $font-map);
-      @include poly-fluid-sizing('line-height', $height-map);
-      @include poly-fluid-sizing('letter-spacing', $spacing-map);
-    }
   }
 
   &__h2 {
@@ -92,7 +120,16 @@
   }
 
   &__p {
-  color: #6d6d6d;    
+  color: #6d6d6d;  
   }
 
+  &__s { 
+  color: #6d6d6d;   
+  $font-map: (320px: 4px, 375px: 5px, 768px: 6px, 959px: 8px, 960px: 10px, 2880px: 12px);
+  $height-map: (320px: 14px, 375px: 15px, 768px: 16px, 959px: 18px, 960px: 21px, 2880px: 24px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map); 
+  }
 }
