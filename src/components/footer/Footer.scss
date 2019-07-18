@@ -3,6 +3,13 @@
 .row {
   display: block;
   background-color: #222222;
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;  
+  right: 0;
+  transform: none!important;
+  z-index: -100;
 
   &__one {
     padding-top: 180px;
@@ -23,6 +30,7 @@
   display: flex;
   position: relative;
   right: 0;
+  top: auto;
   bottom: 0;
   left: 0;
   font-weight: 400;
@@ -109,10 +117,10 @@
   text-transform: uppercase;
   $font-map: (320px: 8px, 375px: 9px, 768px: 10px, 959px: 12px, 960px: 14px, 2880px: 16px);
   $height-map: (320px: 14px, 375px: 15px, 768px: 16px, 959px: 18px, 960px: 21px, 2880px: 24px);
-  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  /*$spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  */
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
-  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+ /* @include poly-fluid-sizing('letter-spacing', $spacing-map);*/
   }
 
   &__h2 {
@@ -127,9 +135,9 @@
   color: #6d6d6d;   
   $font-map: (320px: 4px, 375px: 5px, 768px: 6px, 959px: 8px, 960px: 10px, 2880px: 12px);
   $height-map: (320px: 14px, 375px: 15px, 768px: 16px, 959px: 18px, 960px: 21px, 2880px: 24px);
-  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  /*$spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  */
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
-  @include poly-fluid-sizing('letter-spacing', $spacing-map); 
+  /*@include poly-fluid-sizing('letter-spacing', $spacing-map); */
   }
 }

@@ -13,7 +13,6 @@ import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import Texticon from 'components/texticon/Texticon';
 
-
 const BakeryAbout = ({ data, className }) => {
   return (
 
@@ -119,7 +118,6 @@ const BakeryAbout = ({ data, className }) => {
 
 
       </Row>
-
 
       </ReactCursorPosition>  
   

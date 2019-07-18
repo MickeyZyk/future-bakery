@@ -5,7 +5,6 @@ import Helmet from 'react-helmet';
 import { helmet } from 'utils/helmet';
 import { Header } from 'components/header/Header';
 import { Link as HeaderLink } from 'components/header/Link';
-import { Footer } from 'components/footer/Footer';
 import { Devtools } from 'components/devtools/Devtools';
 import ReactDOM from 'react-dom';
 import SmoothScrollbar from 'smooth-scrollbar';
@@ -13,7 +12,7 @@ import Scrollbar from 'react-smooth-scrollbar';
 import Circle from 'assets/svg/circle.svg';
 import WhiteCircle from 'assets/svg/white_circle.svg';
 import { Location } from '@reach/router';
-
+import { Footer } from 'components/footer/Footer';
 
 import s from './AppLayout.scss';
  
@@ -84,9 +83,12 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
 
       <Scrollbar className={s.scrollbar} damping={0.05} renderByPixels={true} alwaysShowTracks={true}>      
         {children}
+
       </Scrollbar>
 
       {isDev && <Devtools />}
+
+        <Footer />
 
     </div>
 

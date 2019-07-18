@@ -208,7 +208,7 @@
 
 html,
 body {
-  background-color: $color-background;
+  /* background-color: $color-background; */
   overflow: hidden;  
 /*
   min-height: 100vh;
@@ -300,6 +300,8 @@ select {
 .wrapper {
   min-height: 100vh;
   position: relative;
+  background-color: #fff;
+  margin-bottom: 596px;  
 
   $padding-map: (375px: 110px, 959px: 200px, 960px: 110px, 2880px: 320px);
   @include poly-fluid-sizing('padding-top', $padding-map);
@@ -371,6 +373,7 @@ select {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background-color: #fff;
 
 }
 
@@ -806,14 +809,15 @@ select {
       margin-left: auto;
 
       transform: translateX(2vw) scale(0.6);
-      position: absolute;
+      position: relative;
       left: 0;
       right: 0;
       top: auto;
-      
-      $bottom-map: (375px: 380px, 959px: 730px, 960px: 600px, 1920px: 680px, 2880px: 860px);
+      bottom: 9vw;
+      /*
+      $bottom-map: (375px: 480px, 959px: 730px, 960px: 600px, 1920px: 780px, 2880px: 860px);
       @include poly-fluid-sizing('bottom', $bottom-map);
-
+*/
     }   
 
 }
@@ -901,13 +905,15 @@ select {
 
       align-self: center!important;    
 
-      position: absolute;
+      position: relative;
       left: 0;
       right: 0;
       top: auto;  
+      bottom: 0;
+      margin-top: -14vw;
       
-      $bottom-map: (375px: 400px, 959px: 750px, 960px: 620px, 1920: 660px, 2880px: 830px);
-      @include poly-fluid-sizing('bottom', $bottom-map);
+      /*$bottom-map: (375px: 400px, 959px: 750px, 960px: 620px, 1920: 660px, 2880px: 830px);
+      @include poly-fluid-sizing('bottom', $bottom-map);*/
 
       z-index: 6;
 
