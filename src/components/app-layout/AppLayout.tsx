@@ -88,7 +88,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
 
       {isDev && <Devtools />}
 
-        <Footer />
+
 
     </div>
 

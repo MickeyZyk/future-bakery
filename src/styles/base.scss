@@ -300,7 +300,7 @@ select {
 .wrapper {
   min-height: 100vh;
   position: relative;
-  background-color: #fff;
+  /* background-color: #fff; */
   margin-bottom: 596px;  
 
   $padding-map: (375px: 110px, 959px: 200px, 960px: 110px, 2880px: 320px);
@@ -373,7 +373,7 @@ select {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #fff;
+  /* background-color: #fff; */
 
 }
 
