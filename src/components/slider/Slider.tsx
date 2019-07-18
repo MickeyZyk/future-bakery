@@ -38,7 +38,7 @@ export const Slider = () => {
 
         }}
       </TransitionState>
-
+      
     )
   }
 
