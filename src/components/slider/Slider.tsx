@@ -38,7 +38,7 @@ export const Slider = () => {
 
         }}
       </TransitionState>
-      
+
     )
   }
 
@@ -144,54 +144,49 @@ class Carousel extends React.Component {
 
     this.setState({ activeIndex: current }, () => {
 
-    percentage = - current * multiplier;
+      percentage = - current * multiplier;
 
-    var image_top = this.wrapperRef_top.current; 
-    var image_bottom = this.wrapperRef_bottom.current; 
+      var image_top = this.wrapperRef_top.current; 
+      var image_bottom = this.wrapperRef_bottom.current; 
 
-    var allHeadings = image_top.querySelectorAll('.mask_parent_top .single_slide_heading');    
-    var prevHeading = image_top.querySelector('.mask_parent_top .prev');
-    var currentHeading = image_top.querySelector('.mask_parent_top .current'); 
-    var nextHeading = image_top.querySelector('.mask_parent_top .next');
+      var allHeadings = image_top.querySelectorAll('.mask_parent_top .single_slide_heading');    
+      var prevHeading = image_bottom.querySelector('.mask_parent_bottom .prev');
+      var currentHeading = image_top.querySelector('.mask_parent_top .current'); 
+      var nextHeading = image_bottom.querySelector('.mask_parent_bottom .next');
 
-    console.log('index',this.state.activeIndex,'prev',prevHeading, 'current',currentHeading, 'next',nextHeading);
+      console.log('index',this.state.activeIndex,'prev',prevHeading, 'current',currentHeading, 'next',nextHeading);
 
-    //var allTL = new TimelineMax(); 
-    //if(allHeadings !== null){allTL.set(allHeadings,{ opacity: 0 })};      
+      //var prevTL = new TimelineMax({onComplete:(console.log('YEAH 1!'))}); 
+      //if(prevHeading !== null){prevTL.to(prevHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+      //var prevTL1 = new TimelineMax({onComplete:(console.log('YEAH 2!'))}); 
+      //if(prevHeading !== null){prevTL1.to(prevHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};      
 
-    //var prevTL = new TimelineMax(); 
-    //if(prevHeading !== null){prevTL.from(prevHeading, 1.5, { yPercent: 50, opacity: 0 })};       
+      var currentTL = new TimelineMax({onComplete:(console.log('YEAH 1!'))}); 
+      if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+      var currentTL1 = new TimelineMax({onComplete:(console.log('YEAH 2!'))}); 
+      if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};    
 
-    var currentTL = new TimelineMax({onComplete:(console.log('YEAH 1!'))}); 
-    if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
-    var currentTL1 = new TimelineMax({onComplete:(console.log('YEAH 2!'))}); 
-    if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};    
+      //var nextTL = new TimelineMax({onComplete:(console.log('YEAH 1!'))}); 
+      //if(nextHeading !== null){nextTL.to(nextHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+      //var nextTL1 = new TimelineMax({onComplete:(console.log('YEAH 2!'))}); 
+      //if(nextHeading !== null){nextTL1.to(nextHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};      
 
-    //var nextTL = new TimelineMax(); 
-    //if(nextHeading !== null){nextTL.from(nextHeading, 1.5,{ yPercent: 50, opacity: 0 })};       
+      var ptlg1 = new TimelineMax();
+      ptlg1.to(image_top, 1.5, { top: `${percentage}vw`, ease: 'Expo.easeInOut'});
 
-    var ptlg1 = new TimelineMax();
-    ptlg1.to(image_top, 1.5, { top: `${percentage}vw`, ease: 'Expo.easeInOut'});
+      var ptlg2 = new TimelineMax();
+      ptlg2.to(image_bottom, 1.5, { top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut'});    
 
-    var ptlg2 = new TimelineMax();
-    ptlg2.to(image_bottom, 1.5, { top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut'});    
+      const node = ReactDOM.findDOMNode(this);
 
-    const node = ReactDOM.findDOMNode(this);
-
-    // Get child nodes
-    if (node instanceof HTMLElement) {
-        const children = node.querySelectorAll('.child_image');
-        var ntlg = new TimelineMax({repeat:0});    
-        ntlg.to(children, .5, {scale: 1}).to(children, .5, {scale: 1.05, ease: 'Expo.easeInOut'}).to(children, .5, {scale: 1});
-     }
-
-
-
-
+      // Get child nodes
+      if (node instanceof HTMLElement) {
+          const children = node.querySelectorAll('.child_image');
+          var ntlg = new TimelineMax({repeat:0});    
+          ntlg.to(children, .5, {scale: 1}).to(children, .5, {scale: 1.05, ease: 'Expo.easeInOut'}).to(children, .5, {scale: 1});
+      }
 
     });
-
-
 
   }
 

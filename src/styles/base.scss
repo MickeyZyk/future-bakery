@@ -491,30 +491,34 @@ select {
   @include poly-fluid-sizing('letter-spacing', $spacing-map); 
 }
 
-.single_slide_heading:not(.current) {
+.mask_parent_top .single_slide_heading:not(.current) {
    opacity: 0!important;
 }
 
 
-.single_slide_heading.current {
+.mask_parent_top .single_slide_heading.current {
   display: block;
   /* opacity: 1; */
 }
 
-.single_slide_heading.next {
+.mask_parent_top .single_slide_heading.next {
   display: block;
   opacity: 0;
 }
 
-.single_slide_heading.prev {
+.mask_parent_top .single_slide_heading.prev {
   display: block;
   opacity: 0;
 }
 
-.mask_wrapper_bottom h2, .mask_parent_bottom h2 {
+.mask_parent_bottom h2{
   display: none!important;
 }
-
+/*
+.mask_parent_bottom h2:not(.prev):not(.next){
+  display: none!important;
+}
+*/
 
 
 
