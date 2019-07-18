@@ -49,6 +49,7 @@ class Carousel extends React.Component {
     super(props);
     this.wrapperRef_bottom = React.createRef();
     this.wrapperRef_top = React.createRef();    
+    this.dotz = React.createRef();     
     this.state ={
       which: slidesCount,
       horizontal: false,
@@ -140,6 +141,8 @@ class Carousel extends React.Component {
 
   gotoSlide(i, image){
 
+    let currentIndex = this.state.activeIndex;
+
     let current = i.currentTarget.getAttribute('data-test'); 
 
     this.setState({ activeIndex: current }, () => {
@@ -153,23 +156,44 @@ class Carousel extends React.Component {
       var prevHeading = image_bottom.querySelector('.mask_parent_bottom .prev');
       var currentHeading = image_top.querySelector('.mask_parent_top .current'); 
       var nextHeading = image_bottom.querySelector('.mask_parent_bottom .next');
+      //dots 
 
-      console.log('index',this.state.activeIndex,'prev',prevHeading, 'current',currentHeading, 'next',nextHeading);
+      //console.log('index',this.state.activeIndex,'prev',prevHeading, 'current',currentHeading, 'next',nextHeading);
 
-      //var prevTL = new TimelineMax({onComplete:(console.log('YEAH 1!'))}); 
-      //if(prevHeading !== null){prevTL.to(prevHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
-      //var prevTL1 = new TimelineMax({onComplete:(console.log('YEAH 2!'))}); 
-      //if(prevHeading !== null){prevTL1.to(prevHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};      
+      console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
+      if (currentIndex < this.state.activeIndex && parseInt(currentIndex)+1 == this.state.activeIndex) {
 
-      var currentTL = new TimelineMax({onComplete:(console.log('YEAH 1!'))}); 
-      if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
-      var currentTL1 = new TimelineMax({onComplete:(console.log('YEAH 2!'))}); 
-      if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};    
+        console.log('CURR < ACT');
+        var prevTL = new TimelineMax(); 
+        if(prevHeading !== null){prevTL.set(prevHeading, {opacity: 1}).to(prevHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var prevTL1 = new TimelineMax(); 
+        if(prevHeading !== null){prevTL1.to(prevHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        var currentTLx = new TimelineMax(); 
+        if(currentHeading !== null){currentTLx.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var currentTLx1 = new TimelineMax(); 
+        if(currentHeading !== null){currentTLx1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};        
 
-      //var nextTL = new TimelineMax({onComplete:(console.log('YEAH 1!'))}); 
-      //if(nextHeading !== null){nextTL.to(nextHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
-      //var nextTL1 = new TimelineMax({onComplete:(console.log('YEAH 2!'))}); 
-      //if(nextHeading !== null){nextTL1.to(nextHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};      
+      } else if (currentIndex > this.state.activeIndex && currentIndex == parseInt(this.state.activeIndex)+1) {
+
+        console.log('CURR > ACT');
+        var nextTL = new TimelineMax(); 
+        if(nextHeading !== null){nextTL.set(nextHeading, {opacity: 1}).to(nextHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var nextTL1 = new TimelineMax(); 
+        if(nextHeading !== null){nextTL1.to(nextHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};   
+        var currentTLy = new TimelineMax(); 
+        if(currentHeading !== null){currentTLy.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var currentTLy1 = new TimelineMax(); 
+        if(currentHeading !== null){currentTLy1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+
+      } else {
+        console.log('NOGO');
+        var currentTL = new TimelineMax(); 
+        if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var currentTL1 = new TimelineMax(); 
+        if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};    
+      }  
+
+
 
       var ptlg1 = new TimelineMax();
       ptlg1.to(image_top, 1.5, { top: `${percentage}vw`, ease: 'Expo.easeInOut'});
@@ -241,7 +265,7 @@ class Carousel extends React.Component {
           </div>
         </div>
 
-        <div className='dots'>          
+        <div className='dots' ref={this.dots}>          
           {this.state.showDots ? dots : null  }
         </div>
 

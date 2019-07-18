@@ -1,3 +1,5 @@
+/*
+
 const axios = require('axios').default
 const createNodeHelpers  = require('gatsby-node-helpers').default
 const slug = require('slug')
@@ -44,6 +46,8 @@ fetchProducts = async () => {
     }
     catch (error) {
         console.log(error)
-        throw e
+        //throw e
     }
 }
+
+*/

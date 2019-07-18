@@ -511,14 +511,14 @@ select {
   opacity: 0;
 }
 
-.mask_parent_bottom h2{
-  display: none!important;
-}
-/*
 .mask_parent_bottom h2:not(.prev):not(.next){
   display: none!important;
 }
-*/
+
+.mask_parent_bottom h2.prev, .mask_parent_bottom h2.next {
+  opacity: 0;
+}
+
 
 
 
