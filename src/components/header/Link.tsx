@@ -7,7 +7,7 @@ interface ILinkProps {
   name: string;
   to: string;
   icon?: React.ReactNode;
-  children: React.ReactNode;  
+  children: React.ReactNode
 }
 
 export const Link = ({ className, name, to, icon, permanent, children, state, ...props }: ILinkProps) => {
@@ -17,7 +17,7 @@ export const Link = ({ className, name, to, icon, permanent, children, state, ..
   const content = () => (
     <>
       {children}
-      {icon && React.cloneElement((icon as any), { className: s.link__icon })}
+      {icon && React.cloneElement((icon as any), { className: `${s.link__icon} ${className}`})}
     </>
   );
 

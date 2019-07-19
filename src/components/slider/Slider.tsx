@@ -13,9 +13,15 @@ var startCarouselInterval;
 
 var images = ['../images/image.jpg', '../images/dude.jpg','../images/desk.jpg','../images/image.jpg', '../images/dude.jpg','../images/desk.jpg']
 var labels = ["THE FUTURE IS HERE", "THE END IS NIGH", "THE HUNS ARE COMING","ROME HAS FALLEN", "APOCALYPSE NOW", "FLIGHT OVER THE COCKOO'S NEST" ]
+var texts = ['Top creative and strategic minds joined forces with the largest crowd of consumers.', 
+'Many variations of Lorem Ipsum exist today, the text is altered to include humorous phrases.',
+'Using our Lorem Ipsum generator, you can easily select a variation.',
+'De finibus bonorum et malorum, a first century, philosophical text.',
+'Lorem Ipsum is filler text used by publishers and graphic designers.',
+'Virtually impossible to showcase a social media page layout without any content.']
 var slidesCount = images.length;
 var percentage = 0;
-var multiplier = 30 ;
+var multiplier = 35 ;
 
 export const Slider = () => { 
     return( 
@@ -152,10 +158,13 @@ class Carousel extends React.Component {
       var image_top = this.wrapperRef_top.current; 
       var image_bottom = this.wrapperRef_bottom.current; 
 
-      var allHeadings = image_top.querySelectorAll('.mask_parent_top .single_slide_heading');    
+      var allHeadings = image_top.querySelectorAll('.mask_parent_top .single_slide_heading');
       var prevHeading = image_bottom.querySelector('.mask_parent_bottom .prev');
       var currentHeading = image_top.querySelector('.mask_parent_top .current'); 
       var nextHeading = image_bottom.querySelector('.mask_parent_bottom .next');
+      var prevText = image_bottom.querySelector('.mask_parent_bottom .text_prev');
+      var currentText = image_top.querySelector('.mask_parent_top .text_current');       
+      var nextText = image_bottom.querySelector('.mask_parent_bottom .text_next');        
       //dots 
 
       //console.log('index',this.state.activeIndex,'prev',prevHeading, 'current',currentHeading, 'next',nextHeading);
@@ -171,7 +180,9 @@ class Carousel extends React.Component {
         var currentTLx = new TimelineMax(); 
         if(currentHeading !== null){currentTLx.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
         var currentTLx1 = new TimelineMax(); 
-        if(currentHeading !== null){currentTLx1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};        
+        if(currentHeading !== null){currentTLx1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        var currentTextTLx_prev = new TimelineMax(); 
+        if(currentText !== null){currentTextTLx_prev.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })};            
 
       } else if (currentIndex > this.state.activeIndex && currentIndex == parseInt(this.state.activeIndex)+1) {
 
@@ -183,14 +194,18 @@ class Carousel extends React.Component {
         var currentTLy = new TimelineMax(); 
         if(currentHeading !== null){currentTLy.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
         var currentTLy1 = new TimelineMax(); 
-        if(currentHeading !== null){currentTLy1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        if(currentHeading !== null){currentTLy1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};
+        var currentTextTLx_next = new TimelineMax(); 
+        if(currentText !== null){currentTextTLx_next.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })};         
 
       } else {
         console.log('NOGO');
         var currentTL = new TimelineMax(); 
         if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
         var currentTL1 = new TimelineMax(); 
-        if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};    
+        if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        var currentTextTLx = new TimelineMax(); 
+        if(currentText !== null){currentTextTLx.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })};           
       }  
 
 
@@ -236,10 +251,11 @@ class Carousel extends React.Component {
 
     var carouselImages =  this.props.arrayOfImages.map((image, i) =>{
       return(
-        <div style={{ position: 'relative', width: '100%', height: '30vw' }} key={'2key_'+i}>
+        <div style={{ position: 'relative', width: '100%', height: '35vw' }} key={'2key_'+i}>
           <CarouselImage horizontal={this.state.horizontal} className='child_image' key={'key_'+i} label={labels[i]} 
           timeInBetween={this.props.timeInBetween} whichOne={i} src={image} />
-          <h2 key={'2key_'+i} id={'i0'+(i)} className= {`${'single_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>                    
+          <h2 key={'2key_'+i} id={'i0'+(i)} className={`${'single_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>
+          <p key={'key_text_'+i} className={`${'single_slide_text'} ${this.state.activeIndex == (i-1) ? 'text_next' : ''} ${this.state.activeIndex == i ? 'text_current' : ''} ${this.state.activeIndex == (i+1) ? 'text_prev' : ''}`}>{texts[i]}</p>
         </div>
       )
     })
@@ -256,7 +272,7 @@ class Carousel extends React.Component {
 
         {this.state.showButtons  ? carouselLeftButton : null  } 
 
-        <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '8vw', height: '30vw', overflow: 'hidden'}}>
+        <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '7vw', height: '35vw', overflow: 'hidden'}}>
           <div ref={this.wrapperRef_top} className='mask_parent_top' 
           style={{position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', 
           display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
@@ -269,9 +285,9 @@ class Carousel extends React.Component {
           {this.state.showDots ? dots : null  }
         </div>
 
-        <div className='mask_wrapper_bottom' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '0', height: '2.5vw', overflow: 'hidden'}}>        
+        <div className='mask_wrapper_bottom' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '0', height: '1.5vw', overflow: 'hidden'}}>        
           <div ref={this.wrapperRef_bottom} className='mask_parent_bottom' 
-          style={{position:'absolute', bottom: 0, top: '-30vw', left: 0, right: 0, width: '100%', 
+          style={{position:'absolute', bottom: 0, top: '-35vw', left: 0, right: 0, width: '100%', 
           display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
           alignItems: `${ this.state.horizontal ? 'center' : 'flex-end' }`}}>
             {carouselImages}
@@ -315,7 +331,7 @@ class CarouselImage extends React.Component {
     return (
       <div className={this.props.className}
        style={{ transform: 'scale(1)', display: 'block', zIndex:`${-this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
-       width: '100%', height: '30vw', minHeight: '30vh'}}
+       width: '100%', height: '35vw', minHeight: '33vh'}}
         onLoad={this._handleImageLoaded.bind(this)}
         onError={this._handleImageErrored.bind(this)}
         ></div>

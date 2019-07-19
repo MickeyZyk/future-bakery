@@ -11,92 +11,69 @@ import { MenuBackground } from 'components/menubackground/MenuBackground';
 
 export default ({ state }) => {
 
-	const [hovered, setHovered] = useState(false);	
+  const [hovered, setHovered, section] = useState(false);	
   const toggleHover = () => setHovered(!hovered);
 
   return (
 
 	  <TransitionState>
-
 	  	{({ transitionStatus }) => {
-
 			  return (  	
-
 					<>
-
-					<MenuBackground/>					
-
+					<MenuBackground/>
 					  <Helmet title="Future Bakery" />
-
 							<div className='fullscreen'>
-
-							
-
-						
-
 								<div className='menu_row'>
-
-					        <Tween staggerFrom={{ opacity: 0, yPercent: 50, ease: Power2.easeInOut }} delay={0.3} duration={1} >		
-										
-<ul>
+			        		<Tween staggerFrom={{ opacity: 0, yPercent: 50, ease: Power2.easeInOut }} delay={0.3} duration={1} >		
+										<ul>
 										  <li className='menu_item_wrapper'>
 											  <Link 
-													onMouseEnter={toggleHover}
-							      			onMouseLeave={toggleHover} 
-							      			className={ hovered ? 'hovered submenu_link' : 'submenu_link'}
-							      			name="About us" 
-							      			to="/BakeryAbout"
-				      						>
+												onMouseEnter={toggleHover}
+						      			onMouseLeave={toggleHover} 
+						      			className={ hovered ? 'hovered submenu_link' : 'submenu_link'}
+						      			name="About us" 
+						      			to="/BakeryAbout"
+			      						>
 													<MenuHeading className='white_text'>About Us</MenuHeading>
 											  </Link>
 										  </li>
-
 										  <li className='menu_item_wrapper'>
 											  <Link 
-												  onMouseEnter={toggleHover}
-							      			onMouseLeave={toggleHover} 
-							      			className={ hovered ? 'hovered submenu_link' : 'submenu_link'}
-							      			name="Work" 
-							      			to="/work"
-						      				>
+											  onMouseEnter={toggleHover}
+						      			onMouseLeave={toggleHover} 
+						      			className={ hovered ? 'hovered submenu_link' : 'submenu_link'}
+						      			name="Work" 
+						      			to="/work"
+					      				>
 													<MenuHeading className='white_text'>Work</MenuHeading>
 											  </Link>
-										  </li>										  
-
+										  </li>
 										  <li className='menu_item_wrapper'>
 											  <Link 
-												  onMouseEnter={toggleHover}
-							      			onMouseLeave={toggleHover} 
-							      			className={ hovered ? 'hovered submenu_link' : 'submenu_link'}
-							      			name="About us" 
-							      			to="/BakeryAbout"
-						      				>
+											  onMouseEnter={toggleHover}
+						      			onMouseLeave={toggleHover} 
+						      			className={ hovered ? 'hovered submenu_link' : 'submenu_link'}
+						      			name="About us" 
+						      			to="/BakeryAbout"
+					      				>
 													<MenuHeading className='white_text'>Future Bakery family</MenuHeading>
 											  </Link>
-										  </li>										  
-
+										  </li>
 										  <li className='menu_item_wrapper'>
 											  <Link 
-												  onMouseEnter={toggleHover}
-							      			onMouseLeave={toggleHover} 
-							      			className={ hovered ? 'hovered submenu_link' : 'submenu_link'}
-							      			name="About us" 
-							      			to="/BakeryAbout"
-						      				>
+											  onMouseEnter={toggleHover}
+						      			onMouseLeave={toggleHover} 
+						      			className={ hovered ? 'hovered submenu_link' : 'submenu_link'}
+						      			name="About us" 
+						      			to="/BakeryAbout"
+					      				>
 													<MenuHeading className='white_text'>Contact</MenuHeading>
 											  </Link>
 										  </li>
-
-										  </ul>
-
-
+									  </ul>
 					    	  </Tween>	
-
 							  </div>
-						  
-
 							</div>
-
 					</>
 
 			  );	

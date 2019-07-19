@@ -396,6 +396,17 @@ select {
 
 /* BAKERY MENU */
 
+
+@keyframes all {
+    0%   {transform: scale(.1)}
+    100% {transform: scale(1)}
+}  
+.white_circle {
+    -webkit-animation: all 7s; /* Chrome, Safari, Opera */ 
+    animation: all 2s;
+    animation-fill-mode: forwards;
+}
+
 .submenu_link {
   text-decoration: none;
 }
@@ -482,7 +493,7 @@ select {
     text-align: left;
     position: fixed;
     left: 44.3333vw;
-    bottom: 18vw;    
+    bottom: 20vw;    
     top: auto;
     z-index: 10;
   font-weight: 900;
@@ -492,6 +503,23 @@ select {
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map); 
+}
+
+.single_slide_text {
+    width: 27.77777vw;
+    text-align: left;
+    position: fixed;
+    left: 44.3333vw;
+    bottom: 14.75vw;    
+    top: auto;
+    z-index: 10;
+  font-weight: lighter;
+  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 40px);
+  $height-map: (320px: 18px, 375px: 20px, 959px: 50px, 960px: 20px, 2880px: 48px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);  
 }
 
 .mask_parent_top .single_slide_heading:not(.current) {
@@ -515,6 +543,13 @@ select {
 }
 
 .mask_parent_bottom h2:not(.prev):not(.next){
+  display: none!important;
+}
+.mask_parent_bottom p {
+  display: none!important;
+}
+
+.mask_parent_top p:not(.text_current){
   display: none!important;
 }
 
