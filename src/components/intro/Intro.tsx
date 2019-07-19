@@ -17,7 +17,9 @@ export const Intro = ({ children, delay }: IIntroProps) => {
     <TransitionState>
       {({ transitionStatus }) => {
         return (
-          <Tween from={ ['entering'].includes(transitionStatus) ? false : {clipPath:'inset(0% 0% 100% 0%)', yPercent: 200, ease: Power2.easeOut, delay: delay } } to={ ['exiting'].includes(transitionStatus) ? { clipPath:'inset(0% 0% 100% 0%)', yPercent: 200, ease: Power2.easeIn, delay: delay } : false } >
+          <Tween 
+          from={ ['entering'].includes(transitionStatus) ? false : {clipPath:'inset(0% 0% 100% 0%)', yPercent: 200, ease: 'Power2.easeOut', delay: delay } } 
+          to={ ['exiting'].includes(transitionStatus) ? { clipPath:'inset(0% 0% 100% 0%)', yPercent: 200, ease: 'Power2.easeIn', delay: delay } : false } >
             <div className={s.intro}>
               <Row>
                 <div className={s.intro__col}>

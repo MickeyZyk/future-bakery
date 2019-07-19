@@ -12,7 +12,7 @@ import Scrollbar from 'react-smooth-scrollbar';
 import Circle from 'assets/svg/circle.svg';
 import WhiteCircle from 'assets/svg/white_circle.svg';
 import { Location } from '@reach/router';
-import { Footer } from 'components/footer/Footer';
+
 
 import s from './AppLayout.scss';
  
@@ -90,7 +90,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
       {isDev && <Devtools />}
 
     </div>
-    <Footer/>
+
 
   </>  
 

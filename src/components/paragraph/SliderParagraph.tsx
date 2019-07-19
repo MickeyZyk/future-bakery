@@ -16,7 +16,9 @@ export const SliderParagraph = ({ children, className }: IIntroProps) => {
       {({ transitionStatus }) => {
         return (
 
-	        <Tween delay={.75} duration={1} from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: 150, ease: Power2.easeOut } } to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: 150, ease: Power2.easeIn} : false } >
+	        <Tween delay={.75} duration={1} 
+          from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: 150, ease: 'Power2.easeOut' } } 
+          to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: 150, ease: 'Power2.easeIn' } : false } >
 	    	  	<p className={`${s.paragraph } ${className}`}>{children}</p>
 	    	  </Tween>
 

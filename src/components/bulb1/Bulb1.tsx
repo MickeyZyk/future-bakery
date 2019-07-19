@@ -47,9 +47,9 @@ const Bulb1 = (props) => {
           {({ transitionStatus }) => {
             return (
               <div className={s.figure}>
-                <Tween duration={1.5} delay={.5} from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: -200, ease: Power2.easeOut } } to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: -200, ease: Power2.easeIn} : false } >
+                <Tween duration={1.5} delay={.5} from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: -200, ease: 'Power2.easeOut' } } to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: -200, ease: 'Power2.easeIn' } : false } >
                   <div>
-                    <Tween duration={1} to={{ x: -0.02 * x, y: -0.02 * y, ease: Power2.easeOut, transformPerspective: 900, transformOrigin: 'center'}}>
+                    <Tween duration={1} to={{ x: -0.02 * x, y: -0.02 * y, ease: 'Power2.easeOut', transformPerspective: 900, transformOrigin: 'center'}}>
                       <div>
                         <Img fluid={data.file.childImageSharp.fluid} /> 
                       </div>

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { TransitionState } from 'gatsby-plugin-transition-link';
 import TransitionLink from 'gatsby-plugin-transition-link'
-import { Controller, Scene } from 'react-scrollmagic';
 
 import s from './Footer.scss';
 
@@ -12,8 +11,6 @@ interface IFooterProps {
 export const Footer = ({ className, delay }: IFooterProps) => (
 
 
-        <Controller refreshInterval={1}>
-          <Scene duration={'300%'} triggerHook={'onEnter'}>
 
             <div className={s.row}>
               <div className={s.row__one}>
@@ -89,8 +86,7 @@ export const Footer = ({ className, delay }: IFooterProps) => (
               </div>
             </div>
 
-          </Scene>
-        </Controller>        
+     
 
 
 

@@ -1,0 +1,63 @@
+@import '~styles/config';
+
+.figure {
+
+  position: relative;
+
+    height: 67vw;
+    margin-bottom: 10vw;
+
+    @include grid-col;
+
+    @media (min-width: $min-960) {
+      position: absolute;
+      @include grid-col(7);
+      @include grid-offset-left(10);
+    	height: 29.6vw;
+      top: 12vw;
+    }
+
+    > div {
+      clip-path: inset(.001% .002% .003% .004%);
+    }
+
+}
+
+.background {
+
+  @media (max-width: 959px) {
+    height: 67vw;
+    background-size: 220%;  
+  }
+  @media (min-width: $min-960) {
+    min-height: 32vw;
+    background-size: 140%;
+
+  }
+
+	background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.color {
+  z-index: 0;  
+  transform: translateY(-100%);  
+}
+.bw {
+  clip-path: inset(.001% .002% .003% .004%);
+  transition: opacity 1.25s;  
+  transition-timing-function: cubic-bezier(0, 0, 1, 1); 
+  z-index: 1;  
+}
+.arrow {
+  position: absolute;
+  width: 8vw;
+  top: 0.7vw;
+  left: -0.7vw;
+  bottom: auto;
+  right: auto;
+  z-index: 10;
+  transition: all 1.25s;  
+  transition-timing-function: cubic-bezier(0, 0, 1, 1);   
+}

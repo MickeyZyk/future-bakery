@@ -12,6 +12,9 @@ import { Heading } from 'components/heading/Heading';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import Texticon from 'components/texticon/Texticon';
+import { Footer } from 'components/footer/Footer';
+import { Controller, Scene } from 'react-scrollmagic';
+
 
 const BakeryAbout = ({ data, className }) => {
   return (
@@ -120,7 +123,8 @@ const BakeryAbout = ({ data, className }) => {
       </Row>
 
       </ReactCursorPosition>  
-  
+
+      
 
   </div>
 

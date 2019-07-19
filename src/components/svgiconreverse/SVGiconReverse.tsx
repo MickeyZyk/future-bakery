@@ -30,9 +30,11 @@ const SVGiconReverse = (props) => {
       {({ transitionStatus }) => {
         return (
           <div className={props.className} >
-            <Tween duration={1.5} delay={.5} from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: -200, ease: Power2.easeOut } } to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: -200, ease: Power2.easeIn} : false } >
+            <Tween duration={1.5} delay={.5} 
+            from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: -200, ease: 'Power2.easeOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: -200, ease: 'Power2.easeIn' } : false } >
               <div>
-                <Tween duration={1} to={{ x: 0.025 * x, y: 0.025 * y, ease: Power2.easeOut, transformPerspective: 900, transformOrigin: 'center'}}>
+                <Tween duration={1} to={{ x: 0.025 * x, y: 0.025 * y, ease: 'Power2.easeOut', transformPerspective: 900, transformOrigin: 'center'}}>
                   <div>
                     <img src={'../svg/' + props.src} />
                   </div>
