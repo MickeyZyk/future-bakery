@@ -33,9 +33,9 @@ export const MenuBackground = () => {
 
 					        <If condition={ ['exiting','exited'].includes(transitionStatus) }>
 
-							    <Tween easing={'Power3.easeOut'} delay={0} duration={1} 
-							    from={{ scaleX:600, scaleY:600 }} 
-							    to={{ scaleX:0.001, scaleY:0.001 }}>
+							    <Tween delay={0} duration={1} 
+							    from={{ scaleX:600, scaleY:600, ease: 'Power3.easeIn' }} 
+							    to={{ scaleX:0.001, scaleY:0.001, ease: 'Power3.easeOut'  }}>
 
 							  		<div className={s.background}></div>
 

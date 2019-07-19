@@ -2,6 +2,8 @@
 
 .figure {
 
+  clip-path: inset(.001% .002% .003% 2.004%);  
+
   position: relative;
 
     height: 67vw;
@@ -15,10 +17,6 @@
       @include grid-offset-left(10);
     	height: 29.6vw;
       top: 12vw;
-    }
-
-    > div {
-      clip-path: inset(.001% .002% .003% .004%);
     }
 
 }
@@ -45,7 +43,6 @@
   transform: translateY(-100%);  
 }
 .bw {
-  clip-path: inset(.001% .002% .003% .004%);
   transition: opacity 1.25s;  
   transition-timing-function: cubic-bezier(0, 0, 1, 1); 
   z-index: 1;  

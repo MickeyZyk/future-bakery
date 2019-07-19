@@ -51,10 +51,9 @@ export class Item extends React.Component {
               {({ transitionStatus }) => {
                 return (
                   <Tween duration={1} delay={1} 
-                  from={ ['entering','entered'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power3.easeOut', opacity: 1}: false } 
-                  to={ ['exiting','exited'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power3.easeIn', opacity: 0 } : false } >
+                  from={ ['entering'].includes(transitionStatus) ? false : {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeOut', opacity: 0} } 
+                  to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeIn', opacity: 0 } : false } >
                     <div className={s.figure} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
-                    { ['entering','entered'].includes(transitionStatus) ? 'true' : 'false' } { ['exiting','exited'].includes(transitionStatus) ? 'true' : 'false' }
                       <img style={this.state.hover ? {opacity: 1}:{opacity:0}} className={s.arrow} src={'../svg/work_arrow.svg'} />
                       <Img style={this.state.hover ? {opacity:0}:{opacity:1}} fluid={data.bwImage.childImageSharp.fluid} className={s.bw} />                        
                       <Img fluid={data.colorImage.childImageSharp.fluid} className={s.color}/>

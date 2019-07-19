@@ -36,7 +36,7 @@ export default ({ state }) => {
 
 								<div className='menu_row'>
 
-					        <Tween staggerFrom={{ opacity: 0, yPercent: 50, easing: Power2.easeInOut }} delay={0.3} duration={1} >		
+					        <Tween staggerFrom={{ opacity: 0, yPercent: 50, ease: Power2.easeInOut }} delay={0.3} duration={1} >		
 										
 <ul>
 										  <li className='menu_item_wrapper'>
