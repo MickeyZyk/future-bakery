@@ -14,7 +14,7 @@ var startCarouselInterval;
 var images = ['../images/image.jpg', '../images/dude.jpg','../images/desk.jpg','../images/image.jpg', '../images/dude.jpg','../images/desk.jpg']
 var labels = ["THE FUTURE IS HERE", "THE END IS NIGH", "THE HUNS ARE COMING","ROME HAS FALLEN", "APOCALYPSE NOW", "FLIGHT OVER THE COCKOO'S NEST" ]
 var texts = ['Top creative and strategic minds joined forces with the largest crowd of consumers.', 
-'Many variations of Lorem Ipsum exist today, the text is altered to include humorous phrases.',
+'Many variations of Lorem Ipsum exist today, the text includes humorous phrases.',
 'Using our Lorem Ipsum generator, you can easily select a variation.',
 'De finibus bonorum et malorum, a first century, philosophical text.',
 'Lorem Ipsum is filler text used by publishers and graphic designers.',
@@ -33,8 +33,8 @@ export const Slider = () => {
 
             <>
                 <Tween duration={2} 
-                from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, ease: 'Power3.easeInOut' } } 
-                to={ ['exiting'].includes(transitionStatus) ? { yPercent: 100, ease: 'Power3.easeInOut' } : false  } >
+                from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, ease: 'Power3.easeInOut' } } 
+                to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, ease: 'Power3.easeInOut' } : false  } >
                   <div style={{opacity: 1, top: 0}} className={s.carousel}><Carousel horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
                   arrayOfImages={images} /></div> 
                 </Tween>    
