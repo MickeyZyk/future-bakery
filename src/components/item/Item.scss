@@ -2,21 +2,15 @@
 
 .figure {
 
-  clip-path: inset(.001% .002% .003% 2.004%);  
+  clip-path: inset(.001% .002% .003% -2.004%);  
 
   position: relative;
 
-    height: 67vw;
-    margin-bottom: 10vw;
-
-    @include grid-col;
 
     @media (min-width: $min-960) {
       position: absolute;
-      @include grid-col(7);
-      @include grid-offset-left(10);
-    	height: 29.6vw;
-      top: 12vw;
+      height: 24.6vw;      
+
     }
 
 }
@@ -48,13 +42,89 @@
   z-index: 1;  
 }
 .arrow {
+  clip-path: inset(.001% 100% .003% -2.5%);    
   position: absolute;
   width: 8vw;
   top: 0.7vw;
-  left: -0.7vw;
+  left: -0.71vw;
   bottom: auto;
   right: auto;
   z-index: 10;
-  transition: all 1.25s;  
-  transition-timing-function: cubic-bezier(0, 0, 1, 1);   
+}
+.arrow_heading {
+  opacity: 0;
+  font-size: 1vw;
+  line-height: 1vw;  
+  font-weight: 900;
+  color: #fff;
+  position: absolute;
+  width: 4vw;
+  top: 2.5vw;
+  left: .5vw;
+  bottom: auto;
+  right: auto;
+  z-index: 10;  
+}
+.client_logo {
+  opacity: 0;  
+  position: absolute;
+  width: 3vw;
+  height: auto;
+  top: 2vw;
+  left: 28.57%;
+  bottom: auto;
+  right: auto;
+  z-index: 10;
+}
+.top_title {
+  opacity: 0;
+  font-weight: bold;
+  font-size: .75vw;
+  line-height: .65vw;
+  color: #fff;
+  position: absolute;
+  width: 28.57%;
+  height: auto;
+  top: 12vw;
+  left: 28.57%;
+  bottom: auto;
+  right: auto;
+  z-index: 10;  
+}
+.client_title {
+  clip-path: inset(.001% 100% .003% .004%);
+  font-weight: 900;
+  font-size: 2.95vw;
+  line-height: 2.5vw;
+  color: #fff;
+  position: absolute;
+  width: 57%;
+  height: auto;
+  top: 13.2vw;
+  left: 28.57%;
+  bottom: auto;
+  right: auto;
+  z-index: 10;     
+}
+.client_more {
+  opacity: 0;
+  position: absolute;
+  font-weight: bold;
+  width: 57%;
+  height: auto;
+  top: 22.2vw;
+  left: 28.57%;
+  bottom: auto;
+  right: auto;
+  z-index: 10;     
+  font-size: .75vw;
+  text-decoration: none;
+  color: #000;
+}
+.client_more a  {
+  text-decoration: none;
+  color: #000;
+}
+.client_more span, .white_text {
+  color:#fff;
 }

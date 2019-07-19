@@ -522,6 +522,30 @@ select {
   opacity: 0;
 }
 
+.no1 {
+      @include grid-col(7);
+      @include grid-offset-left(2);
+      top: 12vw;  
+}
+
+.no2 {
+      @include grid-col(7);
+      @include grid-offset-left(10);
+      top: 12vw;  
+}
+
+.no3 {
+      @include grid-col(7);
+      @include grid-offset-left(2);
+      top: 46vw;  
+}
+
+.no4 {
+      @include grid-col(7);
+      @include grid-offset-left(10);
+      top: 46vw;  
+}
+
 
 
 

@@ -56,8 +56,8 @@ export default ({ state }) => {
 												  onMouseEnter={toggleHover}
 							      			onMouseLeave={toggleHover} 
 							      			className={ hovered ? 'hovered submenu_link' : 'submenu_link'}
-							      			name="About us" 
-							      			to="/BakeryAbout"
+							      			name="Work" 
+							      			to="/work"
 						      				>
 													<MenuHeading className='white_text'>Work</MenuHeading>
 											  </Link>
