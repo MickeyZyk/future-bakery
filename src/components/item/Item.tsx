@@ -12,15 +12,40 @@ export class Item extends React.Component {
   constructor(props){
     super(props);
     this.state ={
-      hover: false,
+      hover: this.props.hovered ? true : false,
     };
-    this.toggleHover = this.toggleHover.bind(this);    
+    this.toggleHoverLeave = this.toggleHoverLeave.bind(this);  
+    this.toggleHoverEnter = this.toggleHoverEnter.bind(this);      
   }
 
-  toggleHover() {
-    this.setState({hover: !this.state.hover},
-    () => console.log(this.state.hover));
+  toggleHoverLeave() {
+
+      if (this.props.hovered) {
+        this.setState({hover: false});
+      } else {
+        this.setState({hover: !this.state.hover},
+        () => console.log(this.state.hover));
+      }      
+
   }
+
+  toggleHoverEnter() {
+
+
+      if (this.props.hovered) {
+        this.setState({hover: true});
+      } else {
+        this.setState({hover: !this.state.hover},
+        () => console.log(this.state.hover));
+      }      
+
+  }  
+
+
+  componentDidMount(){
+    
+
+  }  
 
 
   render() {
@@ -55,7 +80,7 @@ export class Item extends React.Component {
                   <Tween duration={1} delay={1} 
                   from={ ['entering'].includes(transitionStatus) ? false : {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeOut', opacity: 0} } 
                   to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeIn', opacity: 0 } : false } >
-                    <div className={`${s.figure} ${this.props.className}`} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+                    <div className={`${s.figure} ${this.props.className}`} onMouseEnter={this.toggleHoverEnter} onMouseLeave={this.toggleHoverLeave}>
                       <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', clipPath:'inset(0.001% 0.002% 0.003% 0.005%)'} : {ease: 'Power2.easeOut', clipPath:'inset(0.001% 100% 0.003% -2%)'}} >
                         <img className={s.arrow} src={'../svg/work_arrow.svg'} />
                       </Tween>
