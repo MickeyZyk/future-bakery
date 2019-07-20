@@ -78,6 +78,7 @@
     "@types/react-helmet": "5.0.8",
     "@ueno/stylelint-config": "1.1.2",
     "@ueno/tslint-config": "1.0.5",
+    "babel-preset-env": "^1.7.0",
     "imports-loader": "^0.8.0",
     "rimraf": "2.6.3",
     "stylelint": "9.10.1",
