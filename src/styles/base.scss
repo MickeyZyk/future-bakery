@@ -489,10 +489,10 @@ select {
 }
 
 .single_slide_heading {
-    width: 27.77777vw;
+    width: 30vw;
     text-align: left;
     position: fixed;
-    left: 44.3333vw;
+    left: 55.5555vw;
     bottom: 20vw;    
     top: auto;
     z-index: 10;
@@ -509,7 +509,7 @@ select {
     width: 27.77777vw;
     text-align: left;
     position: fixed;
-    left: 44.3333vw;
+    left: 55.5555vw;
     bottom: 14.75vw;    
     top: auto;
     z-index: 10;
@@ -526,31 +526,34 @@ select {
   width: 27.77777vw;
   text-align: left;
   position: fixed;
-  left: 44.3333vw;
+  left: 55.5555vw;
   bottom: 8.75vw;    
   top: auto;
   z-index: 10;
   letter-spacing: normal;
   font-weight: bold;
   $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 14px, 2880px: 24px);
-  @include poly-fluid-sizing('font-size', $font-map);
-
- 
+  @include poly-fluid-sizing('font-size', $font-map); 
 }
 
 .button_link a {
   display: none;
+  opacity: 0;
+  transform: all 1s;  
   text-decoration: none;
   color: #231f20; 
 } 
 
 .mask_parent_top .button_link.link_current a {
-  display: block!important;
+  display: block;
+  opacity: 1;  
+  transform: all 1s;  
 }
 
-.button_link a > span {
-  color: #fff; 
-} 
+.mask_parent_top .button_link.link_current.link_animating a {
+  transform: all 1s;
+  opacity: 0;  
+}
 
 .mask_parent_top .single_slide_heading:not(.current) {
    opacity: 0!important;
@@ -649,12 +652,21 @@ select {
 
 .home_arrow {
   position: fixed;
-  left: 44.3333vw;
-  bottom: 8.75vw; 
-  width: 6vw;
-  z-index:2
+  left: 72.22vw;
+  bottom: 6vw; 
+  width: 5vw;
+  z-index:2;
+  transform: rotate(-5deg);
 }
 
+.more_arrow {
+    display: inline;
+    font-weight: 900;
+    transform: scaleY(1.4) scalex(1);
+    position: absolute;
+    bottom: 0.075vw;
+    font-family: serif;
+}
 
       
 

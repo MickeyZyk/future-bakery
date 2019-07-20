@@ -112,16 +112,20 @@ class Carousel extends React.Component {
     if (node instanceof HTMLElement) {
         const children = node.querySelectorAll('.child_image');
         var ntl = new TimelineMax({repeat:0});    
-        ntl.to(children, .2, {scale: 1}).to(children, .2, {scale: 1.04}).to(children, 1.1, {scale: 1, onComplete:function(){
-          this.setState({ animating: false });
-        }});
+        ntl.to(children, .2, {scale: 1}).to(children, .2, {scale: 1.04}).to(children, 1.1, {scale: 1});
      }
 
     this.setState({ which: this.state.which < slidesCount ? ++this.state.which : slidesCount });
 
+    setTimeout(function() { //Start the timer
+        this.setState({ animating: false }) //After 1 second, set render to true
+    }.bind(this), 1000)     
+
   }
 
   nextSlide(){
+
+    this.setState({ animating: true });    
 
     percentage = this.state.which > 1 ? percentage - multiplier : multiplier - slidesCount * multiplier ;
 
@@ -147,6 +151,10 @@ class Carousel extends React.Component {
 
     this.setState({ which: this.state.which > 0 ? --this.state.which : 0})
 
+    setTimeout(function() { //Start the timer
+      this.setState({ animating: false }) //After 1 second, set render to true
+    }.bind(this), 1000)       
+
   }
 
   gotoSlide(i, image){
@@ -155,7 +163,13 @@ class Carousel extends React.Component {
 
     let current = i.currentTarget.getAttribute('data-test'); 
 
-    this.setState({ activeIndex: current }, () => {
+    this.setState({ animating: true, activeIndex: current }, () => {
+
+      setTimeout(function() { //Start the timer
+        this.setState({ animating: false }) //After 1 second, set render to true
+      }.bind(this), 1000)      
+
+      console.log(this.state.animating);
 
       percentage = - current * multiplier;
 
@@ -174,7 +188,7 @@ class Carousel extends React.Component {
       console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
       if (currentIndex < this.state.activeIndex && parseInt(currentIndex)+1 == this.state.activeIndex) {
 
-        console.log('CURR < ACT');
+        console.log('CURR < ACT'); 
         var prevTL = new TimelineMax(); 
         if(prevHeading !== null){prevTL.set(prevHeading, {opacity: 1}).to(prevHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
         var prevTL1 = new TimelineMax(); 
@@ -196,7 +210,7 @@ class Carousel extends React.Component {
         var currentTLy = new TimelineMax(); 
         if(currentHeading !== null){currentTLy.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
         var currentTLy1 = new TimelineMax(); 
-        if(currentHeading !== null){currentTLy1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};
+        if(currentHeading !== null){currentTLy1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut' })};
 
       } else {
         console.log('NOGO');
@@ -252,18 +266,16 @@ class Carousel extends React.Component {
     var carouselImages =  this.props.arrayOfImages.map((image, i) =>{
       return(
         <div style={{ position: 'relative', width: '100%', height: '35vw' }} key={'2key_'+i}>
-
-            <CarouselImage horizontal={this.state.horizontal} className='child_image' key={'key_'+i} label={labels[i]} 
-            timeInBetween={this.props.timeInBetween} whichOne={i} src={image} />
-            <h2 key={'2key_'+i} id={'i0'+(i)} className={`${'single_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>
-            <p key={'key_text_'+i} className={`${'single_slide_text'} ${this.state.activeIndex == (i-1) ? 'text_next' : ''} ${this.state.activeIndex == i ? 'text_current' : ''} ${this.state.activeIndex == (i+1) ? 'text_prev' : ''}`}>{texts[i]}</p>
-            <div className={`${'button_link'} ${this.state.activeIndex == i ? 'link_current': ''}`}>
-              <InternalLink to={links[i]}>LEARN MORE <span>&gt;</span></InternalLink>
-            </div>
-            <div className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>6</div>
-            <div className='indicator_divider'></div>
-            <div className={`${'slider_indicator'} ${this.state.activeIndex == i ? 'indicator_current': ''}`}>{i+1}</div>
-
+          <CarouselImage horizontal={this.state.horizontal} className='child_image' key={'key_'+i} label={labels[i]} 
+          timeInBetween={this.props.timeInBetween} whichOne={i} src={image} />
+          <h2 key={'2key_'+i} id={'i0'+(i)} className={`${'single_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>
+          <p key={'key_text_'+i} className={`${'single_slide_text'} ${this.state.activeIndex == (i-1) ? 'text_next' : ''} ${this.state.activeIndex == i ? 'text_current' : ''} ${this.state.activeIndex == (i+1) ? 'text_prev' : ''}`}>{texts[i]}</p>
+          <div className={`${'button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`}>
+            <InternalLink to={links[i]}>LEARN MORE&nbsp;&nbsp;<div className='more_arrow'>&gt;</div></InternalLink>
+          </div>
+          <div className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>6</div>
+          <div className='indicator_divider'></div>
+          <div className={`${'slider_indicator'} ${this.state.activeIndex == i ? 'indicator_current': ''}`}>{i+1}</div>
         </div>
       )
     })
@@ -277,12 +289,9 @@ class Carousel extends React.Component {
 
     return (
       <div style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
-        <ReactCursorPosition className='fullscreen_cursor_position'> 
-
+        <ReactCursorPosition className='fullscreen_cursor_position'>
           <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='home_arrow.svg'  />
-
-          {this.state.showButtons  ? carouselLeftButton : null  } 
-
+          {this.state.showButtons  ? carouselLeftButton : null }
           <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '7vw', height: '35vw', overflow: 'hidden'}}>
             <div ref={this.wrapperRef_top} className='mask_parent_top' 
             style={{position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', 
@@ -291,11 +300,9 @@ class Carousel extends React.Component {
               {carouselImages}            
             </div>
           </div>
-
           <div className='dots' ref={this.dots}>          
             {this.state.showDots ? dots : null  }
           </div>
-
           <div className='mask_wrapper_bottom' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '0', height: '1.5vw', overflow: 'hidden'}}>        
             <div ref={this.wrapperRef_bottom} className='mask_parent_bottom' 
             style={{position:'absolute', bottom: 0, top: '-35vw', left: 0, right: 0, width: '100%', 
@@ -304,8 +311,7 @@ class Carousel extends React.Component {
               {carouselImages}
             </div>          
           </div>
-
-          {this.state.showButtons ? carouselRightButton : null  } 
+          {this.state.showButtons ? carouselRightButton : null } 
         </ReactCursorPosition>
       </div>
     );
