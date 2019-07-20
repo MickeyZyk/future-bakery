@@ -7,7 +7,7 @@
   &__one {
     display: flex;
     flex-direction: row;
-    padding-top: 180px;
+    padding-top: 80px;
   }
 
   &__two {
@@ -51,6 +51,30 @@
   display: block;
   position: relative;
 
+  &__col0 {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    @include grid-col;
+    position: relative;
+
+    @media (min-width: $min-960) {
+      @include grid-col(2);
+      @include grid-offset-left(6);
+    }
+  }
+
+  &__col1_heading {
+    font-weight: 900;
+    $font-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 26px, 1920px: 58px, 2880px: 91px);
+    $height-map: (320px: 24px, 375px: 26px, 768px: 42px, 959px: 48px, 960px: 26px, 1920px: 46px, 2880px: 78px);
+    $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+    @include poly-fluid-sizing('font-size', $font-map);
+    @include poly-fluid-sizing('line-height', $height-map);
+    @include poly-fluid-sizing('letter-spacing', $spacing-map);  
+    margin-bottom: 6vw;     
+  }  
+
   &__col1 {
     display: flex;
     flex-direction: column;
@@ -59,7 +83,6 @@
 
     @media (min-width: $min-960) {
       @include grid-col(7);
-      @include grid-offset-left(8);
     }
   }
 
@@ -92,8 +115,9 @@
   &__col4 {
     display: block;
     @include grid-col;
-
+      position: relative;
     @media (min-width: $min-960) {
+
       @include grid-col(15);
       @include grid-offset-left(1.5);
     }
@@ -206,6 +230,98 @@
 }
 
 .fiat_img {
+  position: absolute;
+  top: 4vw;
+  z-index: -1;
+}
+.detail_wrapper {
   position: relative;
-  width: 100%;
+  @media (min-width: $min-960) {
+    @include grid-col(15);
+    @include grid-offset-left(1.5);
+  }
+}
+.arrow {
+  width: 8vw;
+  top: 0.7vw;
+  left: -0.71vw;
+  bottom: auto;
+  right: auto;
+  z-index: 10;
+}
+.arrow_heading {
+  font-size: 1vw;
+  line-height: .8vw;  
+  font-weight: 900;
+  color: #fff;
+  position: absolute;
+  width: 4vw;
+  top: 38%;
+  bottom: auto;
+  left: 1.5vw;  
+  right: auto;
+  z-index: 10;  
+}
+.wrapper {
+  position: relative;
+  top: 2vw;  
+}
+
+.way {
+  font-family: $font-family-handwriting;
+  color: #d4de4f;
+    $font-map: (320px: 16px, 375px: 20px, 768px: 42px, 959px: 50px, 960px: 16px, 1920px: 32px, 2880px: 48px);
+    @include poly-fluid-sizing('font-size', $font-map);
+    margin-bottom: 1vw;
+}
+
+.advice {
+  font-family: $font-family-handwriting;
+  color: #050708;
+    $font-map: (320px: 16px, 375px: 20px, 768px: 42px, 959px: 50px, 960px: 16px, 1920px: 32px, 2880px: 48px);
+    $height-map: (320px: 16px, 375px: 20px, 768px: 42px, 959px: 50px, 960px: 16px, 1920px: 32px, 2880px: 48px);
+    @include poly-fluid-sizing('font-size', $font-map);
+    @include poly-fluid-sizing('line-height', $height-map);    
+    margin-bottom: 1vw;
+}
+
+.larger_advice {
+  font-family: $font-family-handwriting;
+  color: #050708;
+    $font-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 26px, 1920px: 51px, 2880px: 78px);
+    $height-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 26px, 1920px: 51px, 2880px: 78px);
+    @include poly-fluid-sizing('font-size', $font-map);
+    @include poly-fluid-sizing('line-height', $height-map);    
+    margin-bottom: 1vw;
+}
+
+.work_details_no {
+
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+    top: 35vw;
+    @include grid-col(.5);
+    @include grid-offset-left(4);
+  }
+}  
+
+.work_details_ok {
+
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+    top: 33.5vw;
+    @include grid-col(.5);
+    @include grid-offset-left(8);
+  }
+}  
+
+.client_logo {
+  width: 2.8vw;
+  height: auto;
+  margin-top: -2vw;
+  margin-bottom: 1vw;
 }

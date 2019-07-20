@@ -47,7 +47,7 @@ export default class Work extends React.Component {
       <Item hovered='true' key='i01' ref={this.hovered_item} className='no1'/>
       <Item key='i02' className='no2'/>
       <Item key='i03' className='no3'/>
-	  <Item key='i04' className='no4'/>
+	    <Item key='i04' className='no4'/>
 
     </div>
 
