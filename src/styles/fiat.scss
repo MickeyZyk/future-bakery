@@ -7,25 +7,23 @@
   &__one {
     display: flex;
     flex-direction: row;
-    padding-top: 80px;
+    padding-top: 3vw;
   }
 
   &__two {
     display: flex;
     flex-direction: row;
-    padding-top: 60px;
+    padding-top: 4vw;
   }
 
   &__threetop {
     display: flex;
-    padding-top: 100px;
-    padding-bottom: 40px;
+    padding-top: 5.5vw; 
+    padding-bottom: 23vw;
   }
 
   &__threebot {
     display: flex;
-    padding-top: 100px;
-    padding-bottom: 40px;
   }
 
   &__threeimg {
@@ -125,40 +123,34 @@
   }
 
   &__col5 {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
+
     @include grid-col;
 
     @media (min-width: $min-960) {
-      @include grid-col(1);
-      @include grid-offset-left(7);
+      margin-left: 43.3%;
+      width: 8.6%;
     }
 
   }
 
   &__col6 {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
+
     @include grid-col;
 
     @media (min-width: $min-960) {
-      @include grid-col(2);
-      @include grid-offset-left(1);
+      margin-left: 4.7%;
+      width: 13.2%;
     }
 
   }
 
   &__col7 {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
+
     @include grid-col;
 
     @media (min-width: $min-960) {
-      @include grid-col(2);
-      @include grid-offset-left(4);
+      margin-left: 43.5%;
+      width: 24%;
     }
 
   }
@@ -323,5 +315,42 @@
   width: 2.8vw;
   height: auto;
   margin-top: -2vw;
-  margin-bottom: 1vw;
+  margin-bottom: 2vw;
+}
+
+.control {
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  $font-map: (375px: 16px, 768px: 16px, 959px: 20px, 960px: 14px, 1920px: 16px, 2880px: 24px);
+  @include poly-fluid-sizing('font-size', $font-map);
+}
+
+.award {
+  font-weight: bold;
+  color: #fff;
+  $font-map: (375px: 16px, 768px: 16px, 959px: 20px, 960px: 14px, 1920px: 16px, 2880px: 24px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  margin-bottom: 1vw;  
+}
+
+.green {
+  color: #d4de4f;
+}
+
+.explore {
+  display: inline;
+  width: 1.5vw;
+  height: auto;
+  margin-left: 0.5vw;
+  transform: translateY(0.45vw);
+}
+
+.award_heading {
+  color: #fff;
+  font-weight: 900;
+  $font-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 30px, 1920px: 58px, 2880px: 88px);
+  $height-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 26px, 1920px: 51px, 2880px: 78px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map); 
 }

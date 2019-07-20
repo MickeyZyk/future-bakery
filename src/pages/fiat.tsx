@@ -39,17 +39,19 @@ export default () => (
             </div>
           </div>
           <div className={s.detail_wrapper}>
-            <div className={s.row__threetop}>
+            <div className={s.row__threetop}> 
               <div className={s.column__col5}>
-                <p>Explore</p>
+                <p className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>
               </div>
               <div className={s.column__col6}>
-                <p>Watch video</p>
+                <p className={s.control}>WATCH VIDEO <img className={s.explore} src='../images/video_play.png' /></p>
               </div>
             </div>
             <div className={s.row__threebot}>
               <div className={s.column__col7}>
-                <p>Award</p>
+                <img className={s.client_logo} src='../images/client.png'/>              
+                <p className={s.award}>AWARD: <span className={s.green}>FIAT 500X</span></p>
+                <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
             <img src="../images/fiat.jpg" className={s.fiat_img} />                
