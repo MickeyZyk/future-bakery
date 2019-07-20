@@ -10,8 +10,6 @@ interface IFooterProps {
 
 export const Footer = ({ className, delay }: IFooterProps) => (
 
-
-
             <div className={s.row}>
               <div className={s.row__one}>
                 <div className={s.footer}>
@@ -85,9 +83,5 @@ export const Footer = ({ className, delay }: IFooterProps) => (
                 </div>
               </div>
             </div>
-
-     
-
-
 
 );

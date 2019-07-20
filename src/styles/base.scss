@@ -279,7 +279,7 @@ select {
 
 
 .active > div {
-  background-color: #000;
+  background-color: #231f20;
 }
 
 
@@ -522,6 +522,36 @@ select {
   @include poly-fluid-sizing('letter-spacing', $spacing-map);  
 }
 
+.button_link {
+  width: 27.77777vw;
+  text-align: left;
+  position: fixed;
+  left: 44.3333vw;
+  bottom: 8.75vw;    
+  top: auto;
+  z-index: 10;
+  letter-spacing: normal;
+  font-weight: bold;
+  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 14px, 2880px: 24px);
+  @include poly-fluid-sizing('font-size', $font-map);
+
+ 
+}
+
+.button_link a {
+  display: none;
+  text-decoration: none;
+  color: #231f20; 
+} 
+
+.mask_parent_top .button_link.link_current a {
+  display: block!important;
+}
+
+.button_link a > span {
+  color: #fff; 
+} 
+
 .mask_parent_top .single_slide_heading:not(.current) {
    opacity: 0!important;
 }
@@ -581,10 +611,52 @@ select {
       top: 46vw;  
 }
 
+.total_indicator {
+  transform: rotate(-90deg);  
+  text-align: center;
+  display: none;  
+  position: fixed;
+  margin-left: 82.74444%;
+  top: 48vh; 
+}
+
+.total_indicator.total_indicator_current {
+  display: block;
+}
+
+.slider_indicator {
+  transform: rotate(-90deg);   
+  text-align: center;
+  display: none;
+  position: fixed;
+  margin-left: 82.74444%;
+  top: 62vh;    
+
+}
+
+.slider_indicator.indicator_current {
+  display: block;
+}
+
+.indicator_divider {
+  position: fixed;
+  margin-left: 82.94444%;
+  top: 51vh;  
+  height: 9vh;
+  width: 1px;
+  background-color: #d4de4f;
+}
+
+.home_arrow {
+  position: fixed;
+  left: 44.3333vw;
+  bottom: 8.75vw; 
+  width: 6vw;
+  z-index:2
+}
 
 
-
-
+      
 
 
 

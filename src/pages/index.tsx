@@ -6,12 +6,8 @@ import { Heading } from 'components/heading/Heading';
 export default () => (
   <>
     <Helmet title="About" />
-
     <div className='fulscreen_slider'>
-
-      <Slider className='new-slider'/>   
-
+      <Slider className='new-slider'/>
     </div>
-
   </>
 );
