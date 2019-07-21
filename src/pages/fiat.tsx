@@ -54,25 +54,29 @@ export default () => (
                 <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
-            <img src="../images/fiat.jpg" className={s.fiat_img} />                
+            <img src="../images/fiat.jpg" className={s.fiat_img} />
+            <div className={s.embedded_video}>
+              <iframe frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" type="text/html" 
+              src="https://www.youtube.com/embed/9HQLdSHOHxU?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=8&end=0"></iframe>
+            </div>
           </div>
           <div className={s.row__four}>
             <div className={s.column__col8}>
-              <p>All cases</p>
+              <p className={s.control_dark}><span className={s.arrow_ml}>&lt;</span>&nbsp;&nbsp;ALL CASES</p>
             </div>
             <div className={s.column__col9}>
-              <p>Next case</p>
+              <p className={s.control_dark}>NEXT CASE</p>
             </div>
             <div className={s.column__col10}>
-              <p>Start</p>
+              <p className={s.control_dark_right}>START A PROJECT WITH US&nbsp;&nbsp;<span className={s.arrow_ml}>&gt;</span></p>
             </div>
           </div>
           <div className={s.row__five}>
             <div className={s.column__col11}>
-              <p>How to make people think OF SERIOUS TOPICS?</p>
+              <p className={s.topic}>How to make people think OF SERIOUS TOPICS?</p>
             </div>
             <div className={s.column__col12}>
-              <p>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
+              <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
             </div>
           </div>
         </div>
