@@ -15,10 +15,12 @@ export const Link = ({ children, state, ...props }: ILinkProps) => {
 
     <Location>
       {({ location }) => (      	
-
-        <AniLink cover direction="up" bg="#663399" state={{ prevUrlPath: location.pathname, ...state }} exit={{ length: 2, }} entry={{ length: 2, }} {...props} >        
+        <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 1,
+        }} entry={{ length: 1,
+        }} {...props} >        
           {children}
-        </AniLink>  
+        </TransitionLink>  
+
 
         )}
     </Location>  
@@ -28,10 +30,8 @@ export const Link = ({ children, state, ...props }: ILinkProps) => {
 
 /*
 
-        <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 1,
-        }} entry={{ length: 1,
-        }} {...props} >        
+        <AniLink cover direction="up" bg="#663399" state={{ prevUrlPath: location.pathname, ...state }} exit={{ length: 2, }} entry={{ length: 2, }} {...props} >        
           {children}
-        </TransitionLink>  
+        </AniLink>  
 
         */

@@ -1,9 +1,6 @@
 @import '~styles/reset';
 
-
-
 @import '~styles/fonts.css';
-
 
 a {text-decoration: none}
 
@@ -326,6 +323,10 @@ select {
 
 }
 
+.work-wrapper {
+    min-height: 80vw;
+}
+
 .section-wrapper {
   position: relative;
 }
@@ -561,6 +562,24 @@ select {
   text-decoration: none;
   color: #231f20; 
 } 
+
+.bakers_link a {
+  color: #ff7a00;
+}
+
+.bakers_divider {
+  background-color: #ff7a00!important;
+}
+
+.crowders_divider {
+  background-color: #00d0ff!important;
+}
+
+/*
+.crowders_link a {
+  color: #00d0ff;
+}
+*/
 
 .mask_parent_top .button_link.link_current a {
   display: block;
@@ -1217,5 +1236,97 @@ select {
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);  
+
+}
+
+/* BAKERS HOME */
+
+.bakers_home__bakers_crown {
+
+
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 25vw;
+  z-index: 5;  
+  @include grid-col(1);
+  @include grid-offset-left(5.65); 
+
+  }
+
+}
+
+.bakers_home__bakers_finger {
+  
+
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 23vw;
+  z-index: 5;  
+  @include grid-col(1);
+  @include grid-offset-left(7); 
+
+
+  }  
+}
+
+
+/* BAKERY HOME */
+
+.bakery_home__bakery_bulb {
+
+  transform: rotate(15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 15vw;
+  z-index: 5;  
+  @include grid-col(1);
+  @include grid-offset-left(8.75); 
+
+  }
+
+}
+
+.bakery_home__bakery_bulb_small {
+  
+
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 13vw;
+  z-index: 5;  
+  @include grid-col(.5);
+  @include grid-offset-left(5.15); 
+
+
+  }  
+}
+
+/* CROWDERS HOME */
+
+.crowders_home__crowders_bubble {
+
+  transform: rotate(15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 22vw;
+  z-index: 5;  
+  @include grid-col(1);
+  @include grid-offset-left(2.5); 
+
+  }
 
 }

@@ -42,7 +42,7 @@ export default class Work extends React.Component {
   <>
     <Helmet title="About" />
 
-    <div className='wrapper'>
+    <div className='wrapper work-wrapper'>
 
       <Item hovered='true' key='i01' ref={this.hovered_item} className='no1'/>
       <Item key='i02' className='no2'/>
