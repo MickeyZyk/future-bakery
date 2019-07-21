@@ -137,6 +137,24 @@
 }
 
 
+.fb_linkedin {
+  position: fixed;
+  left: 1.3vw;
+  bottom: 10.3vw;
+  transform: rotate(-90deg);
+  z-index: 100000;
+}
+
+.fb_linkedin a {
+  font-weight: lighter;
+  text-decoration: none;
+  color: #231f20;
+  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 26px, 1920px: 13px, 2880px: 20px);
+  @include poly-fluid-sizing('font-size', $font-map);
+ 
+}
+
+
 
 .mt-150 {
   margin-top: 150px;
@@ -523,7 +541,7 @@ select {
 }
 
 .button_link {
-  width: 27.77777vw;
+  width: 10vw;
   text-align: left;
   position: fixed;
   left: 55.5555vw;
@@ -644,8 +662,8 @@ select {
 .indicator_divider {
   position: fixed;
   margin-left: 82.94444%;
-  top: 51vh;  
-  height: 9vh;
+  top: 52vh;
+  height: 8vh;
   width: 1px;
   background-color: #d4de4f;
 }
@@ -653,7 +671,7 @@ select {
 .home_arrow {
   position: fixed;
   left: 72.22vw;
-  bottom: 6vw; 
+  bottom: 6.5vw; 
   width: 5vw;
   z-index:2;
   transform: rotate(-5deg);

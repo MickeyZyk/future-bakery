@@ -5,6 +5,7 @@ import logo from 'assets/svg/bakery-logo.svg';
 import ReactDOM from 'react-dom';
 import { If } from 'react-if';
 import { TransitionState } from "gatsby-plugin-transition-link";
+import TransitionLink from 'gatsby-plugin-transition-link'
 import Circle from 'assets/svg/circle.svg';
 import FullCircle from 'assets/svg/full_circle.svg';
 import SVGicon from 'components/svgicon/SVGicon';
@@ -313,6 +314,11 @@ class Carousel extends React.Component {
           </div>
           {this.state.showButtons ? carouselRightButton : null } 
         </ReactCursorPosition>
+        <div className={s.contact_button_link}>
+          <TransitionLink to={'/contact'} exit={{ length: 1 }} entry={{ delay: 1 }}>
+            START A PROJECT WITH US
+          </TransitionLink>  
+        </div>
       </div>
     );
 

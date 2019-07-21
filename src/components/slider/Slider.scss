@@ -60,5 +60,27 @@
 
 } 
 
-.dots {}
+.contact_button_link { 
+      position: fixed;
+      right: 0;
+      bottom: 8.5vw;
+      background-color: #d4de4f;
+      padding: 10px 85px;
+      @include grid-col;
+      margin-bottom: 100px;
+      text-align: center;      
 
+    @media (min-width: $min-960) {
+      align-self: center!important;    
+      @include grid-col(3);
+      @include grid-offset-right(1); 
+      margin-bottom: 0px;      
+
+    }  
+}
+
+.contact_button_link a {
+  color: #15311a;
+  font-weight: 700;
+  text-decoration: none;   
+}
