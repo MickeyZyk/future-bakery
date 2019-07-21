@@ -28,11 +28,12 @@
 
   &__four {
     display: flex;
-    padding-top: 10vw;
+    padding-top: 9vw;
   }
 
   &__five {
     display: flex;
+    padding-top: 2vw;    
   }
 }
 
@@ -217,6 +218,10 @@
   top: 4vw;
   z-index: -1;
 }
+.embedded_video div {
+  width: 0!important;
+  height: 0!important;
+}
 .embedded_video iframe {
   position: absolute;
   top: 4vw;  
@@ -224,6 +229,7 @@
   width: 83.35vw;
   height: 46.35vw;
 }
+
 .detail_wrapper {
   position: relative;
   @media (min-width: $min-960) {
@@ -373,19 +379,19 @@
 .topic {
   color: #231f20;
   font-weight: 900;
-  $font-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 30px, 1920px: 58px, 2880px: 88px);
-  $height-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 26px, 1920px: 51px, 2880px: 78px);
+  $font-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
+  $height-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map); 
 }  
 
 .project {
-  color: #231f20;
+  color: #d4de4f;
   font-weight: 900;
-  $font-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 30px, 1920px: 58px, 2880px: 88px);
-  $height-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 26px, 1920px: 51px, 2880px: 78px);
+  $font-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
+  $height-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map); 
+  text-align: right;
 } 
-
 

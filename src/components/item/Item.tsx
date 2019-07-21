@@ -23,8 +23,7 @@ export class Item extends React.Component {
       if (this.props.hovered) {
         this.setState({hover: false});
       } else {
-        this.setState({hover: !this.state.hover},
-        () => console.log(this.state.hover));
+        this.setState({hover: !this.state.hover});
       }      
 
   }
@@ -35,8 +34,7 @@ export class Item extends React.Component {
       if (this.props.hovered) {
         this.setState({hover: true});
       } else {
-        this.setState({hover: !this.state.hover},
-        () => console.log(this.state.hover));
+        this.setState({hover: !this.state.hover});
       }      
 
   }  

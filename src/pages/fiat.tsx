@@ -1,14 +1,49 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import { Heading } from 'components/heading/Heading';
-import TransitionLink from 'gatsby-plugin-transition-link';
+import { Link } from 'components/link/Link';
 import ReactCursorPosition from 'react-cursor-position';
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
+import ReactPlayer from 'react-player'
 
 import s from '../styles/fiat.scss';
 
-export default () => (
+export default class Fiat extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.videoPreview = React.createRef();
+    this.videoOverlay = React.createRef();    
+    this.videoPlayer = React.createRef();     
+    this.playVideo = this.playVideo.bind(this);   
+    this.state = {
+      url: null,
+      pip: false,
+      playing: false,
+      controls: false,
+      light: false,
+      volume: 1,
+      muted: false,
+      played: 0,
+      loaded: 0,
+      duration: 0,
+      playbackRate: 1.0,
+      loop: false
+    }
+      
+  } 
+
+  playVideo(){
+    console.log(this.videoPreview.current);
+    this.videoPreview.current.style.zIndex = -5;
+    this.videoOverlay.current.style.visibility = 'hidden';
+    this.setState({ playing: true })
+  }
+
+    render() {
+
+  return (
   <>
     <div className='wrapper'>
       <ReactCursorPosition className='fullscreen_cursor_position'>
@@ -44,25 +79,26 @@ export default () => (
                 <p className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>
               </div>
               <div className={s.column__col6}>
-                <p className={s.control}>WATCH VIDEO <img className={s.explore} src='../images/video_play.png' /></p>
+                <p onClick={this.playVideo} className={s.control}>WATCH VIDEO <img className={s.explore} src='../images/video_play.png' /></p>
               </div>
             </div>
-            <div className={s.row__threebot}>
+            <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
                 <img className={s.client_logo} src='../images/client.png'/>              
                 <p className={s.award}>AWARD: <span className={s.green}>FIAT 500X</span></p>
                 <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
-            <img src="../images/fiat.jpg" className={s.fiat_img} />
+            <img src="../images/fiat.jpg" ref={this.videoPreview} className={s.fiat_img} />
             <div className={s.embedded_video}>
-              <iframe frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" type="text/html" 
-              src="https://www.youtube.com/embed/9HQLdSHOHxU?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=8&end=0"></iframe>
+              <ReactPlayer ref={this.videoPlayer} url='https://www.youtube.com/watch?v=9HQLdSHOHxU' playing={this.state.playing} />            
             </div>
           </div>
           <div className={s.row__four}>
             <div className={s.column__col8}>
+            <Link to={'/work'}>
               <p className={s.control_dark}><span className={s.arrow_ml}>&lt;</span>&nbsp;&nbsp;ALL CASES</p>
+            </Link>
             </div>
             <div className={s.column__col9}>
               <p className={s.control_dark}>NEXT CASE</p>
@@ -83,4 +119,5 @@ export default () => (
       </ReactCursorPosition>
     </div>
   </>
-);
+)}
+}

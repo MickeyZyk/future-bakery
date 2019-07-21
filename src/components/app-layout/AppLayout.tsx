@@ -87,7 +87,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
         <a href='https://facebook.com' target='_blank'>FACEBOOK</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
       </div>
 
-      <Scrollbar className={s.scrollbar} damping={0.05} renderByPixels={true} alwaysShowTracks={true}>      
+      <Scrollbar className={s.scrollbar} damping={0.05} renderByPixels={true} alwaysShowTracks={false} >      
         {children}
       </Scrollbar>
 

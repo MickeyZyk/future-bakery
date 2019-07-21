@@ -15,7 +15,13 @@ export const Link = ({ children, state, ...props }: ILinkProps) => {
     <Location>
       {({ location }) => (      	
 
-			  <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 1 }} entry={{ length: 1 }} {...props} >        
+			  <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 1,
+        /*trigger: () =>
+          document.querySelector('.scroll-content').style.transform = 'translate3d(0px,0px,0px)'*/
+        }} entry={{ length: 1,
+        /*trigger: () =>
+          document.querySelector('.scroll-content').style.transform = 'translate3d(0px,0px,0px)'*/
+        }} {...props} >        
 			    {children}
 			  </TransitionLink>  
 
