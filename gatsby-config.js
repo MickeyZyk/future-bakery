@@ -44,8 +44,8 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
-          families: ['ProximaNovaBold','ProximaNovaLight', 'ProximaNovaRegularItalic', 'ProximaNovaRegular', 'ProximaNovaSemibold', 'ProximaNovaBlack'],
-          urls: ['../fonts/proxima-nova-webfontkit.css']
+          families: ['ProximaNovaBold','ProximaNovaLight', 'ProximaNovaRegularItalic', 'ProximaNovaRegular', 'ProximaNovaSemibold', 'ProximaNovaBlack', 'Bradley'],
+          urls: ['../fonts/proxima-nova-webfontkit.css','../fonts/bradley_webfontkit.css']
         }
       }
     },
