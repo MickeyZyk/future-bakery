@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Location } from '@reach/router';
 import TransitionLink from 'gatsby-plugin-transition-link'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 interface ILinkProps {
   children: React.ReactNode;
@@ -15,15 +16,9 @@ export const Link = ({ children, state, ...props }: ILinkProps) => {
     <Location>
       {({ location }) => (      	
 
-			  <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 1,
-        /*trigger: () =>
-          document.querySelector('.scroll-content').style.transform = 'translate3d(0px,0px,0px)'*/
-        }} entry={{ length: 1,
-        /*trigger: () =>
-          document.querySelector('.scroll-content').style.transform = 'translate3d(0px,0px,0px)'*/
-        }} {...props} >        
-			    {children}
-			  </TransitionLink>  
+        <AniLink cover direction="up" bg="#663399" state={{ prevUrlPath: location.pathname, ...state }} exit={{ length: 2, }} entry={{ length: 2, }} {...props} >        
+          {children}
+        </AniLink>  
 
         )}
     </Location>  
@@ -31,3 +26,12 @@ export const Link = ({ children, state, ...props }: ILinkProps) => {
   );
 };
 
+/*
+
+        <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 1,
+        }} entry={{ length: 1,
+        }} {...props} >        
+          {children}
+        </TransitionLink>  
+
+        */

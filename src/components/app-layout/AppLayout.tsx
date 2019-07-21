@@ -4,6 +4,7 @@ import ContextConsumer from "utils/Context";
 import Helmet from 'react-helmet';
 import { helmet } from 'utils/helmet';
 import { Header } from 'components/header/Header';
+import { Footer } from 'components/footer/Footer';
 import { Link as HeaderLink } from 'components/header/Link';
 import { Devtools } from 'components/devtools/Devtools';
 import ReactDOM from 'react-dom';
@@ -92,7 +93,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
       </Scrollbar>
 
       {isDev && <Devtools />}
-
+      <Footer/>
     </div>
 
 
