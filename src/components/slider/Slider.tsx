@@ -353,7 +353,7 @@ class CarouselImage extends React.Component {
 
     return (
       <div className={this.props.className}
-       style={{ transform: 'scale(1)', display: 'block', zIndex:`${-this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
+       style={{ transform: 'scale(1)', display: 'block', zIndex:`${this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
        width: '100%', height: '35vw', minHeight: '33vh'}}
         onLoad={this._handleImageLoaded.bind(this)}
         onError={this._handleImageErrored.bind(this)}

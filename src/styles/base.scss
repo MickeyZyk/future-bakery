@@ -317,7 +317,7 @@ select {
   position: relative;
   background-color: #fff;
   margin-bottom: 596px;  
-  z-index: -1;
+  z-index: 0;
   $padding-map: (375px: 110px, 959px: 200px, 960px: 110px, 2880px: 320px);
   @include poly-fluid-sizing('padding-top', $padding-map);
 
@@ -1250,7 +1250,7 @@ select {
   @media (min-width: $min-960) {
   position: absolute;
   top: 25vw;
-  z-index: 5;  
+  z-index: 15;  
   @include grid-col(1);
   @include grid-offset-left(5.65); 
 
@@ -1267,7 +1267,7 @@ select {
   @media (min-width: $min-960) {
   position: absolute;
   top: 23vw;
-  z-index: 5;  
+  z-index: 15;  
   @include grid-col(1);
   @include grid-offset-left(7); 
 
@@ -1287,7 +1287,7 @@ select {
   @media (min-width: $min-960) {
   position: absolute;
   top: 15vw;
-  z-index: 5;  
+  z-index: 15;  
   @include grid-col(1);
   @include grid-offset-left(8.75); 
 
@@ -1304,7 +1304,7 @@ select {
   @media (min-width: $min-960) {
   position: absolute;
   top: 13vw;
-  z-index: 5;  
+  z-index: 15;  
   @include grid-col(.5);
   @include grid-offset-left(5.15); 
 
@@ -1323,7 +1323,7 @@ select {
   @media (min-width: $min-960) {
   position: absolute;
   top: 22vw;
-  z-index: 5;  
+  z-index: 15;  
   @include grid-col(1);
   @include grid-offset-left(2.5); 
 
