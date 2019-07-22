@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { TweenMax, TimelineMax, Power3} from "gsap";
+import { TweenMax, TimelineMax, Power3 } from "gsap";
 import { Tween } from 'react-gsap';
 import logo from 'assets/svg/bakery-logo.svg';
 import ReactDOM from 'react-dom';
@@ -11,6 +11,7 @@ import FullCircle from 'assets/svg/full_circle.svg';
 import SVGicon from 'components/svgicon/SVGicon';
 import { Link as InternalLink } from 'components/link/Link';
 import ReactCursorPosition from 'react-cursor-position';
+import SplitText from 'utils/SplitText.min.js'
 import s from './Slider.scss';
 
 var startCarouselInterval;
@@ -42,7 +43,6 @@ export const Slider = () => {
               </Tween>    
             </>
           )
-
         }}
       </TransitionState>
     )
@@ -87,14 +87,19 @@ class Carousel extends React.Component {
 
 
   wheelCallback(ev){
-    console.log('DELTA:' + ev.deltaY);
-    if(ev.deltaY > 99){
+
+
+
+
+        if(ev.deltaY /120 > 0) {
       this.nextSlide()
-    } 
-    if(ev.deltaY < -99){
-      this.prevSlide()
-    }     
-  }
+        }
+        else{
+            this.prevSlide()
+        }
+
+
+}
 
   startCarousel(){
     startCarouselInterval = setInterval(this.nextSlide.bind(this), this.props.timeInBetween);
@@ -128,6 +133,7 @@ class Carousel extends React.Component {
 
           var image_top = this.wrapperRef_top.current; 
       var image_bottom = this.wrapperRef_bottom.current; 
+
 
       var allHeadings = image_top.querySelectorAll('.mask_parent_top .single_slide_heading');
       var prevHeading = image_bottom.querySelector('.mask_parent_bottom .prev');
@@ -319,6 +325,18 @@ class Carousel extends React.Component {
 
       percentage = - current * multiplier;
 
+      const split = new SplitText(
+        'h2',
+        {
+          type: "lines",
+          linesClass: "ts-line"
+        }
+      )
+
+      let lines = split.lines;
+
+      console.log('SPLIT' + lines);
+
       var image_top = this.wrapperRef_top.current; 
       var image_bottom = this.wrapperRef_bottom.current; 
 
@@ -328,6 +346,7 @@ class Carousel extends React.Component {
       var nextHeading = image_bottom.querySelector('.mask_parent_bottom .next');
       var currentText = image_top.querySelector('.mask_parent_top .text_current');       
       var buttonLink = image_top.querySelector('.mask_parent_top .button_link');
+      var tslines = image_top.querySelector('.mask_parent_top .ts-line');
 
       //console.log('index',this.state.activeIndex,'prev',prevHeading, 'current',currentHeading, 'next',nextHeading);
 
@@ -361,9 +380,9 @@ class Carousel extends React.Component {
       } else {
         console.log('NOGO');
         var currentTL = new TimelineMax(); 
-        if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        if(currentHeading !== null){currentTL.staggerTo(tslines, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' }, 1)};
         var currentTL1 = new TimelineMax(); 
-        if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        if(currentHeading !== null){currentTL1.staggerTo(tslines, 3, { color: '#fff', ease: 'Expo.easeInOut'  }, 1)}; 
         var currentTextTLx = new TimelineMax(); 
         if(currentText !== null){currentTextTLx.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })};           
       }  
