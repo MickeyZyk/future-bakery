@@ -14,5 +14,16 @@
     right: 5.55556%;
     z-index: -1;    
     $top-map: (320px: 32px, 959px: 96px, 960px: 50px, 2880px: 150px);  
-    @include poly-fluid-sizing('top', $top-map);    
+    @include poly-fluid-sizing('top', $top-map);  
+}
+.background_logo {
+    opacity: 0;
+    position: absolute;
+    width: 43vw;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;    
 }

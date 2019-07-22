@@ -23,7 +23,7 @@ var texts = ['Top creative and strategic minds joined forces with the largest cr
 'De finibus bonorum et malorum, a first century, philosophical text.',
 'Lorem Ipsum is filler text used by publishers and graphic designers.',
 'Virtually impossible to showcase a social media page layout without any content.']
-var links = ['/work', '/BakeryAbout', '/bakers', '/work', '/BakeryAbout', '/bakers']
+var links = ['/BakeryWork', '/BakeryAbout', '/bakers', '/BakeryWork', '/BakeryAbout', '/bakers']
 var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 35 ;
@@ -316,7 +316,7 @@ class Carousel extends React.Component {
         </ReactCursorPosition>
         <div className={s.contact_button_link}>
           <TransitionLink to={'/contact'} exit={{ length: 1 }} entry={{ delay: 1 }}>
-            START A PROJECT WITH US
+            START A PROJECT WITH US <span>&gt;</span>
           </TransitionLink>  
         </div>
       </div>

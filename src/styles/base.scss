@@ -315,7 +315,7 @@ select {
 .wrapper {
   min-height: 100vh;
   position: relative;
-  background-color: #fff;
+  /* background-color: #fff; */
   margin-bottom: 596px;  
   z-index: 0;
   $padding-map: (375px: 110px, 959px: 200px, 960px: 110px, 2880px: 320px);
@@ -392,7 +392,7 @@ select {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #fff;
+  /* background-color: #fff;*/
 
 }
 
@@ -1249,7 +1249,7 @@ select {
 
   @media (min-width: $min-960) {
   position: absolute;
-  top: 25vw;
+  bottom: 25vw;
   z-index: 15;  
   @include grid-col(1);
   @include grid-offset-left(5.65); 
@@ -1258,7 +1258,7 @@ select {
 
 }
 
-.bakers_home__bakers_finger {
+.bakers_home__bakers_bulb {
   
 
   @include grid-col;
@@ -1266,7 +1266,7 @@ select {
 
   @media (min-width: $min-960) {
   position: absolute;
-  top: 23vw;
+  bottom: 26vw;
   z-index: 15;  
   @include grid-col(1);
   @include grid-offset-left(7); 
@@ -1286,7 +1286,7 @@ select {
 
   @media (min-width: $min-960) {
   position: absolute;
-  top: 15vw;
+  bottom: 33vw;
   z-index: 15;  
   @include grid-col(1);
   @include grid-offset-left(8.75); 
@@ -1297,13 +1297,13 @@ select {
 
 .bakery_home__bakery_bulb_small {
   
-
+  transform: rotate(-15deg);
   @include grid-col;
  
 
   @media (min-width: $min-960) {
   position: absolute;
-  top: 13vw;
+  bottom: 40vw;
   z-index: 15;  
   @include grid-col(.5);
   @include grid-offset-left(5.15); 
@@ -1311,6 +1311,82 @@ select {
 
   }  
 }
+
+/* BAKERY MENU */
+
+.bakery_menu_drill {
+
+  transform: rotate(0deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 16vw;
+  z-index: 15;  
+  @include grid-col(.7);
+  @include grid-offset-left(5); 
+
+  }
+
+}
+
+.bakery_menu_saw {
+  
+  transform: rotate(5deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 16vw;
+  z-index: 15;  
+  @include grid-col(.9);
+  @include grid-offset-left(6.5); 
+
+
+  }  
+}
+
+.bakery_menu_paint {
+
+  transform: rotate(15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 15vw;
+  z-index: 15;  
+  @include grid-col(.65);
+  @include grid-offset-left(2); 
+
+  }
+
+}
+
+.fb_linkedin_menu {
+    color: #fff;
+
+  @media (min-width: $min-960) {
+  position: fixed;
+  bottom: 8vw;
+  z-index: 15;  
+  @include grid-col(3);
+  @include grid-offset-left(3); 
+
+  }    
+
+}
+
+.fb_linkedin_menu a {
+    color: #fff;
+    text-decoration: none;
+  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 26px, 1920px: 13px, 2880px: 20px);
+  @include poly-fluid-sizing('font-size', $font-map);    
+
+}
+
 
 /* CROWDERS HOME */
 
@@ -1322,7 +1398,7 @@ select {
 
   @media (min-width: $min-960) {
   position: absolute;
-  top: 22vw;
+  bottom: 29vw;
   z-index: 15;  
   @include grid-col(1);
   @include grid-offset-left(2.5); 

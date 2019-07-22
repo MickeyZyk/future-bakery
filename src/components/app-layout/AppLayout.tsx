@@ -93,7 +93,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
       </Scrollbar>
 
       {isDev && <Devtools />}
-      <Footer/>
+
     </div>
 
 

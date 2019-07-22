@@ -23,7 +23,7 @@ var texts = ['Top creative and strategic minds joined forces with the largest cr
 'De finibus bonorum et malorum, a first century, philosophical text.',
 'Lorem Ipsum is filler text used by publishers and graphic designers.',
 'Virtually impossible to showcase a social media page layout without any content.']
-var links = ['/work', '/BakeryAbout', '/bakers', '/work', '/BakeryAbout', '/bakers']
+var links = ['/BakeryWork', '/BakeryAbout', '/bakers', '/BakeryWork', '/BakeryAbout', '/bakers']
 var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 35 ;
@@ -66,6 +66,7 @@ class Carousel extends React.Component {
       animating: false
     };
     this.chidrenNodes = [];
+    this.wheelCallback = this.wheelCallback.bind(this);    
   }
 
 
@@ -82,7 +83,17 @@ class Carousel extends React.Component {
     if(this.props.horizontal){
       this.setState({horizontal:true})
     }; 
+  }
 
+
+  wheelCallback(ev){
+    console.log('DELTA:' + ev.deltaY);
+    if(ev.deltaY > 99){
+      this.nextSlide()
+    } 
+    if(ev.deltaY < -99){
+      this.prevSlide()
+    }     
   }
 
   startCarousel(){
@@ -108,6 +119,73 @@ class Carousel extends React.Component {
     ntl2.to(image_bottom , 1.5 , {top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut'});    
 
     const node = ReactDOM.findDOMNode(this);
+
+
+
+
+
+    let currentIndex = this.state.activeIndex;
+
+          var image_top = this.wrapperRef_top.current; 
+      var image_bottom = this.wrapperRef_bottom.current; 
+
+      var allHeadings = image_top.querySelectorAll('.mask_parent_top .single_slide_heading');
+      var prevHeading = image_bottom.querySelector('.mask_parent_bottom .prev');
+      var currentHeading = image_top.querySelector('.mask_parent_top .current'); 
+      var nextHeading = image_bottom.querySelector('.mask_parent_bottom .next');
+      var currentText = image_top.querySelector('.mask_parent_top .text_current');       
+      var buttonLink = image_top.querySelector('.mask_parent_top .button_link');
+
+
+
+
+
+      console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
+      if (currentIndex < this.state.activeIndex && parseInt(currentIndex)+1 == this.state.activeIndex) {
+
+        console.log('CURR < ACT'); 
+        var prevTL = new TimelineMax(); 
+        if(prevHeading !== null){prevTL.set(prevHeading, {opacity: 1}).to(prevHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var prevTL1 = new TimelineMax(); 
+        if(prevHeading !== null){prevTL1.to(prevHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        var currentTLx = new TimelineMax(); 
+        if(currentHeading !== null){currentTLx.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var currentTLx1 = new TimelineMax(); 
+        if(currentHeading !== null){currentTLx1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        var currentTextTLx_prev = new TimelineMax(); 
+        if(currentText !== null){currentTextTLx_prev.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })}; 
+
+      } else if (currentIndex > this.state.activeIndex && currentIndex == parseInt(this.state.activeIndex)+1) {
+
+        console.log('CURR > ACT');
+        var nextTL = new TimelineMax(); 
+        if(nextHeading !== null){nextTL.set(nextHeading, {opacity: 1}).to(nextHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var nextTL1 = new TimelineMax(); 
+        if(nextHeading !== null){nextTL1.to(nextHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};   
+        var currentTLy = new TimelineMax(); 
+        if(currentHeading !== null){currentTLy.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var currentTLy1 = new TimelineMax(); 
+        if(currentHeading !== null){currentTLy1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut' })};
+
+      } else {
+        console.log('NOGO');
+        var currentTL = new TimelineMax(); 
+        if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var currentTL1 = new TimelineMax(); 
+        if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        var currentTextTLx = new TimelineMax(); 
+        if(currentText !== null){currentTextTLx.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })};           
+      }  
+
+
+
+
+
+
+
+
+
+
 
     // Get child nodes
     if (node instanceof HTMLElement) {
@@ -142,6 +220,73 @@ class Carousel extends React.Component {
     ptl2.to(image_bottom, 1.5, { top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut'});    
 
     const node = ReactDOM.findDOMNode(this);
+
+
+
+
+
+
+
+    let currentIndex = this.state.activeIndex;
+
+          var image_top = this.wrapperRef_top.current; 
+      var image_bottom = this.wrapperRef_bottom.current; 
+
+      var allHeadings = image_top.querySelectorAll('.mask_parent_top .single_slide_heading');
+      var prevHeading = image_bottom.querySelector('.mask_parent_bottom .prev');
+      var currentHeading = image_top.querySelector('.mask_parent_top .current'); 
+      var nextHeading = image_bottom.querySelector('.mask_parent_bottom .next');
+      var currentText = image_top.querySelector('.mask_parent_top .text_current');       
+      var buttonLink = image_top.querySelector('.mask_parent_top .button_link');
+
+
+
+      console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
+      if (currentIndex < this.state.activeIndex && parseInt(currentIndex)+1 == this.state.activeIndex) {
+
+        console.log('CURR < ACT'); 
+        var prevTL = new TimelineMax(); 
+        if(prevHeading !== null){prevTL.set(prevHeading, {opacity: 1}).to(prevHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var prevTL1 = new TimelineMax(); 
+        if(prevHeading !== null){prevTL1.to(prevHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        var currentTLx = new TimelineMax(); 
+        if(currentHeading !== null){currentTLx.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var currentTLx1 = new TimelineMax(); 
+        if(currentHeading !== null){currentTLx1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        var currentTextTLx_prev = new TimelineMax(); 
+        if(currentText !== null){currentTextTLx_prev.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })}; 
+
+      } else if (currentIndex > this.state.activeIndex && currentIndex == parseInt(this.state.activeIndex)+1) {
+
+        console.log('CURR > ACT');
+        var nextTL = new TimelineMax(); 
+        if(nextHeading !== null){nextTL.set(nextHeading, {opacity: 1}).to(nextHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var nextTL1 = new TimelineMax(); 
+        if(nextHeading !== null){nextTL1.to(nextHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};   
+        var currentTLy = new TimelineMax(); 
+        if(currentHeading !== null){currentTLy.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var currentTLy1 = new TimelineMax(); 
+        if(currentHeading !== null){currentTLy1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut' })};
+
+      } else {
+        console.log('NOGO');
+        var currentTL = new TimelineMax(); 
+        if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
+        var currentTL1 = new TimelineMax(); 
+        if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        var currentTextTLx = new TimelineMax(); 
+        if(currentText !== null){currentTextTLx.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })};           
+      }  
+
+
+
+
+
+
+
+
+
+
 
     // Get child nodes
     if (node instanceof HTMLElement) {
@@ -289,7 +434,7 @@ class Carousel extends React.Component {
     }) 
 
     return (
-      <div style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
+      <div onWheel={this.wheelCallback} style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
         <ReactCursorPosition className='fullscreen_cursor_position'>
           <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='home_arrow.svg'  />
           {this.state.showButtons  ? carouselLeftButton : null }
@@ -316,7 +461,7 @@ class Carousel extends React.Component {
         </ReactCursorPosition>
         <div className={s.contact_button_link}>
           <TransitionLink to={'/contact'} exit={{ length: 1 }} entry={{ delay: 1 }}>
-            START A PROJECT WITH US
+            START A PROJECT WITH US <span>&gt;</span>
           </TransitionLink>  
         </div>
       </div>
