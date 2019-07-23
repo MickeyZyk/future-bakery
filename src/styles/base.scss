@@ -140,6 +140,9 @@ a {text-decoration: none}
   bottom: 6.3vw;
   transform: rotate(-90deg);
   z-index: 100000;
+  @media (max-width: $max-960) {
+    display: none;
+  }  
 }
 
 .fb_linkedin a {
@@ -1410,14 +1413,28 @@ select {
 
 /* FAMILY */
 
-.family-row {
+.family_row {
+
+    display: block;
+    width: 400vw;
+    margin-left: -0.5px;
+    margin-right: -0.5px;
+
+
+  @media (min-width: $min-960) {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: flex-start;
-    margin-left: -0.5px;
-    margin-right: -0.5px;
-    flex-direction: row;  
+    flex-direction: row; 
+        width: 100%;
+
+  }  
+ 
+}
+
+.Row--row--26xi7 {
+
 }
 
 .family_heading {
@@ -1480,20 +1497,28 @@ select {
 }
 
 .family_paragraph {
-  opacity: 0;
+  position: relative;
   transition: all 1s;   
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto 1vw;
-  top: 16vw;
-  font-weight: lighter;
   color: #fff;
-  text-align: left;
-  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 13px, 2880px: 36px);
+  text-align: center;
+  font-weight: lighter;
+  top: 43vh;
+  $font-map: (375px: 16px, 959px: 40px, 960px: 13px, 2880px: 36px);
   @include poly-fluid-sizing('font-size', $font-map);  
-  $height-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 14px, 2880px: 40px);
+  $height-map: (375px: 19px, 959px: 50px, 960px: 14px, 2880px: 40px);
   @include poly-fluid-sizing('line-height', $height-map);    
+
+  @media (min-width: $min-960) {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto 1vw;
+    top: 16vw;
+    color: #fff;
+    text-align: left;  
+
+  }  
 
 } 
 
@@ -1503,13 +1528,19 @@ select {
 } 
 
 .family_link {
-  opacity: 0;
+  position: relative;
+  top: 49vh;   
   transition: all 1s;    
-  position: absolute;
-  top: 23vw;  
   font-weight: bold;
   margin: auto 1vw; 
   color: #fff; 
+
+  @media (min-width: $min-960) {
+    opacity: 0;
+    position: absolute;
+    top: 23vw;      
+    
+  }   
 }
 
 .family_wrapper:hover .family_link {
@@ -1518,22 +1549,27 @@ select {
 }
 
 .family_wrapper {
-
+    transition: all 1s;    
+    opacity: 0;
     position: relative;
-    @include grid-col(14);
-    @include grid-offset-left(2);  
+    width: 77.77778vw;
+    margin-left: 11.11111vw;
+    height: 100vh;
+    top: 0; 
+    text-align: center; 
+    float: left;
+    clear: none;
 
   @media (min-width: $min-960) {
+    opacity: 1!important;
     min-height: 25vw;
     top: 19vw;
+    text-align: left;
   }  
 }
 
 
 .family_bakery_wrapper {
-
- 
-
 
   @media (min-width: $min-960) {
 
@@ -1566,14 +1602,15 @@ select {
 
 .family_icon {
     position: relative;
-
+    text-align: center;
     top: 35vh;
+    margin: 0 auto;    
 
   @media (min-width: $min-960) {
 
     top: 0;
-    margin: 0 auto;
-    text-align: center;
+
+
   }    
 }
 
@@ -1591,7 +1628,7 @@ select {
 }
 
 .family_bakery_icon {
-
+  transition: all 1s; 
     width: 35vw;
 
   @media (min-width: $min-960) {
@@ -1601,7 +1638,8 @@ select {
 }
 
 .family_bakers_icon {
-
+    width: 23.55vw;  
+  transition: all 1s; 
   filter: brightness(0.5) sepia(1) hue-rotate(-10deg) saturate(7.5);
   @media (min-width: $min-960) {
     width: 5vw;
@@ -1616,13 +1654,38 @@ select {
 
 .family_crowders_icon {
 
+    width: 26vw;
 
   @media (min-width: $min-960) {
     width: 5vw;
   }   
 }
 
+.mobile_slider_controls {
+  position: absolute;
+  bottom: 5vh;
+  @include grid-col(14);
+  @include grid-offset-left(2);   
 
+  @media (min-width: $min-960) {
+    display: none;
+  }    
+}
 
+.mobile_slider_controls svg {
+  width: 5%;
+  margin-right: 10%;
+}
 
+.mobile_slider_indicator {
+  position: absolute;
+  right: 0;
+  left: auto; 
+  bottom: 0;
+  color: #fff;
+  font-weight: bold;
 
+  @media (min-width: $min-960) {
+    display: none;
+  }      
+}
