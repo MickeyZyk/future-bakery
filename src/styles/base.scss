@@ -1689,3 +1689,50 @@ select {
     display: none;
   }      
 }
+
+
+
+
+/* BAKERY CONTACT */
+
+.bakery_contact_heading > div {
+  color: #d4de4f;
+}
+
+.bakery_contact_heading  {
+  position: relative;
+  color: #d4de4f;
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    top: 15vw;
+    @include grid-col(8);
+    @include grid-offset-left(3); 
+  }     
+}
+
+
+.bakery_contact_house {
+  position: absolute;  
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    top: 15vw;
+    @include grid-col(.75);
+    @include grid-offset-left(2); 
+  }     
+}
+
+.bakery_contact_image {
+  position: relative;
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    bottom: -1vw;
+    @include grid-col(10);
+    @include grid-offset-left(7); 
+  }     
+}
