@@ -1,0 +1,38 @@
+@import '~styles/config';
+
+.figure {
+
+    height: 67vw;
+    margin-bottom: 10vw;
+
+    @include grid-col;
+
+    @media (min-width: $min-960) {
+      position: absolute;
+      @include grid-col(9);
+      @include grid-offset-left(2);
+    	height: 29.6vw;
+    }
+
+    > div {
+      clip-path: inset(.001% .002% .003% .004%);
+    }
+
+}
+
+.background {
+
+  @media (max-width: 959px) {
+    height: 67vw;
+    background-size: 220%;  
+  }
+  @media (min-width: $min-960) {
+    min-height: 32vw;
+    background-size: 140%;
+
+  }
+
+	background-repeat: no-repeat;
+  background-position: center;
+
+}
