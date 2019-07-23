@@ -406,7 +406,7 @@ select {
 }
 
 .menu_item_wrapper {
-    display: inline;
+    display: block;
 }
 
 
@@ -1397,12 +1397,232 @@ select {
  
 
   @media (min-width: $min-960) {
-  position: absolute;
-  bottom: 29vw;
-  z-index: 15;  
-  @include grid-col(1);
-  @include grid-offset-left(2.5); 
+    position: absolute;
+    bottom: 29vw;
+    z-index: 15;  
+    @include grid-col(1);
+    @include grid-offset-left(2.5); 
 
   }
 
 }
+
+
+/* FAMILY */
+
+.family-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-left: -0.5px;
+    margin-right: -0.5px;
+    flex-direction: row;  
+}
+
+.family_heading {
+  position: absolute;
+  top: 15vh;
+  @include grid-col(5);
+  @include grid-offset-left(2); 
+
+  font-weight: 900;
+  color: #fff;
+  $font-map: (320px: 30px, 375px: 33px, 959px: 84px, 960px: 30px, 2880px: 88px);
+  @include poly-fluid-sizing('font-size', $font-map); 
+  $height-map: (320px: 26px, 375px: 30px, 959px: 74px, 960px: 27px, 2880px: 76px);
+  @include poly-fluid-sizing('line-height', $height-map);   
+
+  @include grid-col;
+
+  @media (min-width: $min-960) {
+
+    top: 10vw;
+    @include grid-col(5);
+    @include grid-offset-left(3); 
+
+  }
+
+}
+
+.family_subheading {
+  transition: all 1s;   
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 39vh;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  $font-map: (375px: 30px, 959px: 75px, 960px: 20px, 2880px: 60px);
+  @include poly-fluid-sizing('font-size', $font-map); 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  font-weight: lighter;
+  top: 9vw;
+  }
+
+}
+
+.family_wrapper:hover .family_subheading {
+
+  @media (min-width: $min-960) {
+
+  transition: all 1s;   
+  font-weight: 900;
+  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 30px, 2880px: 78px);
+  @include poly-fluid-sizing('font-size', $font-map); 
+
+  }
+
+
+}
+
+.family_paragraph {
+  opacity: 0;
+  transition: all 1s;   
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto 1vw;
+  top: 16vw;
+  font-weight: lighter;
+  color: #fff;
+  text-align: left;
+  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 13px, 2880px: 36px);
+  @include poly-fluid-sizing('font-size', $font-map);  
+  $height-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 14px, 2880px: 40px);
+  @include poly-fluid-sizing('line-height', $height-map);    
+
+} 
+
+.family_wrapper:hover .family_paragraph {
+  opacity: 1;
+  transition: all 1s; 
+} 
+
+.family_link {
+  opacity: 0;
+  transition: all 1s;    
+  position: absolute;
+  top: 23vw;  
+  font-weight: bold;
+  margin: auto 1vw; 
+  color: #fff; 
+}
+
+.family_wrapper:hover .family_link {
+  opacity: 1;
+  transition: all 1s;    
+}
+
+.family_wrapper {
+
+    position: relative;
+    @include grid-col(14);
+    @include grid-offset-left(2);  
+
+  @media (min-width: $min-960) {
+    min-height: 25vw;
+    top: 19vw;
+  }  
+}
+
+
+.family_bakery_wrapper {
+
+ 
+
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(4);
+    @include grid-offset-left(2); 
+
+  }  
+}
+
+.family_bakers_wrapper {
+
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(4);
+    @include grid-offset-left(1); 
+
+  }  
+}
+
+.family_crowders_wrapper {
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(4);
+    @include grid-offset-left(1); 
+
+  }  
+}
+
+.family_icon {
+    position: relative;
+
+    top: 35vh;
+
+  @media (min-width: $min-960) {
+
+    top: 0;
+    margin: 0 auto;
+    text-align: center;
+  }    
+}
+
+.family_icon img {
+  transition: all 1s; 
+}
+
+.family_wrapper:hover .family_icon img {
+  transition: all 1s;  
+
+  @media (min-width: $min-960) {
+    transform: scale(1.2);
+  }    
+
+}
+
+.family_bakery_icon {
+
+    width: 35vw;
+
+  @media (min-width: $min-960) {
+    width: 7vw;
+  }   
+
+}
+
+.family_bakers_icon {
+
+  filter: brightness(0.5) sepia(1) hue-rotate(-10deg) saturate(7.5);
+  @media (min-width: $min-960) {
+    width: 5vw;
+    filter: none;
+  }  
+}
+
+.family_wrapper:hover .family_bakers_icon {
+  transition: all 1s;     
+  filter: brightness(0.5) sepia(1) hue-rotate(-10deg) saturate(7.5);
+}
+
+.family_crowders_icon {
+
+
+  @media (min-width: $min-960) {
+    width: 5vw;
+  }   
+}
+
+
+
+
+
