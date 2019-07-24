@@ -15,48 +15,25 @@ export class AnimatedImage extends React.Component {
   componentDidMount(){
 
     var entering = ['entering'].includes(this.transitionStatus);
-      var h2 = this.heading.current; 
-      const split = new SplitText(
-        'h2',
-        {
-          type: "lines",
-          linesClass: "ts-line"
-        }
-      )
-
-      var tslines = h2.querySelectorAll('.ts-line');
+      var img = this.image.current; 
       var currentTL = new TimelineMax(); 
-      currentTL.staggerFrom(tslines, 1, { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut'}, .25, "+=0");    
+      currentTL.from(img, 1, { opacity: 0, ease: 'Power3.easeInOut'});    
 
   }
 
 
   componentWillUnmount(){
-      var h2 = this.heading.current; 
-      const split = new SplitText(
-        'h2',
-        {
-          type: "lines",
-          linesClass: "ts-line"
-        }
-      )
-
-      var tslines = h2.querySelectorAll('.ts-line');
-      var currentTL = new TimelineMax(); 
-      currentTL.staggerTo(tslines, 1, { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut'}, .25, "+=0");    
+  
   }
 
   render() {
 
     return(     
 
-    <img src={this.props.src} className={`${s.image} ${this.props.className}`} />
+    <img ref={this.image} src={this.props.src} className={`${s.image} ${this.props.className}`} />
 
     )
-
-
-
-  
+ 
 }
 
 }

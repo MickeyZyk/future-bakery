@@ -12,7 +12,6 @@ export class AnimatedHeading extends React.Component {
     this.heading = React.createRef();         
   }
 
-
   componentDidMount(){
       console.log(this.props);
       var entering = ['entering'].includes(this.transitionStatus);    
@@ -30,26 +29,23 @@ export class AnimatedHeading extends React.Component {
       var tslines = h2.querySelectorAll('.ts-line');
       var currentTL = new TimelineMax(); 
 
-        currentTL.staggerFrom(tslines, 1, { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut'}, .25, "+=0");           
-
+        currentTL.staggerFrom(tslines, 1.25, { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut'}, .25, "+=0"); 
 
   }
-
 
   componentWillUnmount(){
 
   }
 
   render() {
-
     return(
-    <TransitionState>
-      {({ transitionStatus }) => {       
-        return (
+      <TransitionState>
+        {({ transitionStatus }) => {       
+          return (
             <h2 ref={this.heading} className={`${s.heading} ${this.props.className}`}>{this.props.children}</h2>
-        )
-      }}
-    </TransitionState>
+          )
+        }}
+      </TransitionState>
     )
 
 

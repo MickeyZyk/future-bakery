@@ -58,7 +58,7 @@ const BakersAbout = ({ data, className }) => {
 
             <Paragraph className='bakers_we__paragraph paragraph'>We believe that a great idea can pop up anywhere: in a bar, during a wonderfully peaceful weekend, while running, before going to bed, while chatting with your loved one, from a student, retiree or stay-at-home mom or dad.</Paragraph>
 
-            <Link>LEARN MORE&nbsp;&nbsp;<div className='more_arrow'>&gt;</div></Link>
+            <Link to={'/'}>LEARN MORE&nbsp;&nbsp;<div className='more_arrow'>&gt;</div></Link>
 
           </div>
 
