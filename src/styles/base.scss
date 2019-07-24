@@ -2305,14 +2305,15 @@ select {
 }
 
 .crowders_about_heading {
- 
-
+  @include grid-col;
+  @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-    margin-top: 2vw;
-    width: 60%; 
-    margin-bottom: 6vw;
-  }     
+    position: relative;
+    top: 0;    
+    @include grid-col(3);
+    @include grid-offset-left(2); 
+  }      
 
 }
 
@@ -2329,8 +2330,10 @@ select {
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
+    position: relative;
+    top: 0;
     @include grid-col(8);
-    @include grid-offset-left(2); 
+    @include grid-offset-left(9); 
   }    
 
 }
