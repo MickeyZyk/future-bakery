@@ -1429,11 +1429,9 @@ select {
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);
-  font-weight: 900;
-  position: absolute;
-  bottom: 0;
-  padding: 2vw;
 }
+
+
 
 .bakers_about__paragraph {
   color: rgba(35, 31, 32, 0.6)
@@ -1497,7 +1495,7 @@ select {
   @include grid-offset-left(11);
   background: #ff7a00;
   position: absolute;
-  bottom: 17vw;
+  bottom: -5vw;
 
   $margin-map: (375px: -43px, 959px: -110px, 960px: -41px, 2880px: -117px);
   @include poly-fluid-sizing('margin-top', $margin-map);
@@ -1629,7 +1627,7 @@ select {
 
 .bakers_about__column_four {
 
-  padding-top: 250px;
+  margin-top: 25vw;
 
   @include grid-col(16);
   @include grid-offset-left(2);
@@ -1650,11 +1648,14 @@ select {
 
 
   font-weight: 900;
+  position: absolute;
+  bottom: 0;
+  padding: 2vw;
   color: #231f20;
 
-  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 45px, 2880px: 158px);
-  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 37px, 2880px: 125px);
-  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);
+  $font-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 20px, 2880px: 60px);
+  $height-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 20px, 2880px: 60px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);

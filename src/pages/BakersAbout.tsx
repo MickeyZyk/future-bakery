@@ -99,12 +99,13 @@ const BakersAbout = ({ data, className }) => {
 
       </Row>
       
+        <Row>
       <div className="bakers_about__orange_heading_background">
 
-          <Heading className="bakers_about__heading_three">Who is behind the scenes of Future Bakers?</Heading>     
+          <Heading className="bakers_about__heading_four">Who is behind the scenes of Future Bakers?</Heading>     
 
       </div>  
-
+</Row>
       <div className="meet">
 
         <Row>
