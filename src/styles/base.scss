@@ -1627,7 +1627,7 @@ select {
 
 .bakers_about__column_four {
 
-  margin-top: 25vw;
+  margin-top: 10vw;
 
   @include grid-col(16);
   @include grid-offset-left(2);
@@ -1675,6 +1675,95 @@ select {
 
 }
 
+
+.bakers_about__heading_five {
+
+  color: #ffffff;
+
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 60px, 2880px: 120px);
+  $height-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 60px, 2880px: 120px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+
+
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(8);
+    @include grid-offset-left(0);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(5);
+    @include grid-offset-left(0);
+
+  }
+}
+
+.bakers_about__paragraph_five {
+  color: #ffffff;
+
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 20px, 2880px: 40px);
+  $height-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 60px, 2880px: 120px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+  
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(8);
+    @include grid-offset-left(0);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(5);
+    @include grid-offset-left(0);
+
+  }
+}
+
+.bakers_about__paragraph_six {
+  color: #ff7a00;
+
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 10px, 2880px: 20px);
+  $height-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 60px, 2880px: 120px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(16);
+    @include grid-offset-left(0);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(5);
+    @include grid-offset-left(0);
+
+  }
+}
 
 /* BAKERS HOME */
 
