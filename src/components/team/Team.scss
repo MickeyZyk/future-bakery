@@ -1,0 +1,74 @@
+@import '~styles/config';
+
+.team {
+  display: block;
+}
+
+.data {
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(4);
+    @include grid-offset-left(4); 
+  }   
+}
+
+.name {
+  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 40px);
+  @include poly-fluid-sizing('font-size', $font-map);
+
+}
+
+.text {
+  $font-map: (375px: 16px, 959px: 40px, 960px: 7px, 2880px: 20px);
+  @include poly-fluid-sizing('font-size', $font-map);  
+  $height-map: (375px: 19px, 959px: 50px, 960px: 16px, 2880px: 48px);
+  @include poly-fluid-sizing('line-height', $height-map);    
+}
+
+.link {
+
+ 
+}
+
+.image {
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(5);
+    @include grid-offset-left(3);
+  }   
+}
+
+.previous {
+  font-weight: bold;
+  color: #37c6f4;
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(1);
+    @include grid-offset-left(4);
+  }   
+
+}
+
+.next {
+  font-weight: bold;
+  color: #37c6f4;
+  cursor: pointer;
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(1);
+    @include grid-offset-left(4);  
+  }   
+
+}

@@ -134,6 +134,11 @@ a {text-decoration: none}
 }
 
 
+.responsive_image {
+  max-width: 100%;
+  height: auto;
+}
+
 .fb_linkedin {
   position: fixed;
   left: 1.3vw;
@@ -2161,17 +2166,61 @@ select {
 
 /* CROWDERS ABOUT */
 
-.crowders_about_heading {
+.crowders_icecream  {
+  z-index: 10;
   @include grid-col;
-  @include grid-offset-left(2);   
+  @include grid-offset-left(2);  
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    margin-top: 3vw;    
+    @include grid-col(.5);
+    @include grid-offset-left(1.8); 
+  }   
+}
+
+.crowders_cheese {
+  @include grid-col;
+  @include grid-offset-left(2);  
+
+  @media (min-width: $min-960) {
+    margin-top: -3vw;
+    position: absolute;
+    @include grid-col(1);
+    @include grid-offset-left(2.8); 
+  }   
+}
+
+.crowders_about_first_left {
+  @include grid-col;
+  @include grid-offset-left(2);  
 
   @media (min-width: $min-960) {
     position: relative;
     top: 0;    
-    @include grid-col(3);
+    @include grid-col(5);
     @include grid-offset-left(2); 
-  }      
+  }   
+}
 
+.crowders_about_heading {
+ 
+
+
+  @media (min-width: $min-960) {
+    margin-top: 2vw;
+    width: 60%; 
+    margin-bottom: 6vw;
+  }     
+
+}
+
+.crowders_about_paragraph {
+
+
+  @media (min-width: $min-960) {
+    width: 100%
+  }      
 }
 
 .crowders_about_image {
@@ -2179,10 +2228,217 @@ select {
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-    position: relative;
-    top: 0;
     @include grid-col(8);
-    @include grid-offset-left(9); 
+    @include grid-offset-left(2); 
   }    
+
+}
+
+.crowders_about_button {
+  color: #37c6f4;
+  font-weight: bold;
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+
+  @include grid-col(3);
+  @include grid-offset-left(0);    
+  }    
+}
+
+.crowders_about_blueboard {
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+
+    @media (min-width: $min-960) {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      margin-top: 12vw;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }    
+}
+
+
+.crowders_about_heading_two {
+ 
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    margin-top: -7.3vw;
+    margin-bottom: 2vw;
+    @include grid-col(3);
+    @include grid-offset-left(6); 
+  }     
+
+}
+
+.crowders_about_paragraph_two {
+  position: relative;
+  font-weight: bold!important;
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(2);
+    @include grid-offset-left(6); 
+  }     
+
+
+}
+
+
+.crowders_phases_row {
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    margin-bottom: 5vw;
+    @include grid-col(10);
+    @include grid-offset-left(6); 
+    display: flex;
+    align-items: center;
+  }   
+}
+
+.crowders_phase_column img {
+  bottom: 2vw;
+  width: 40%;
+  margin-bottom: 2vw;
+}
+
+.crowders_phase_column p {
+  margin-bottom: 0;
+  font-weight: lighter;
+  $font-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 10px, 2880px: 30px);
+  $height-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 10px, 2880px: 30px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);  
+}
+
+.arrow_column {
+  width: 27%;
+  margin-top: -4vw;
+  position: relative;
+}
+
+.arrow_column img {
+  width: 70%;
+  margin: 0 auto;
+  margin-left: -1vw;
+}
+
+.crowders_about_button_two {
+
+      background-color: #37c6f4;
+      padding: 10px 85px ;
+      text-align: center;
+      color: #15311a;
+      font-weight: 700;
+      text-decoration: none;      
+      @include grid-col(14);
+      @include grid-offset-left(2);
+      margin-bottom: 2vw;
+
+
+    @media (min-width: $min-960) {
+      align-self: center!important;    
+      @include grid-col(3);
+      @include grid-offset-left(13); 
+      margin-bottom: 15vw;    
+
+    }  
+}
+
+.crowders_about_heading_background {
+      @include grid-col(14);
+      @include grid-offset-left(2);
+
+
+    @media (min-width: $min-960) {
+
+      height: 20vw;
+  
+      @include grid-col(7);
+      @include grid-offset-left(2); 
+      background:  linear-gradient(90deg, rgba(55,198,244,1) 0%, rgba(55,198,244,1) 28.5%, rgba(53,198,244,0) 28.501%, rgba(0,212,255,0) 100%);
+      margin-top: -1.9vw;
+      z-index: 5;  
+      float: left;
+
+
+    }  
+}
+
+.crowders_about_heading_three {
+
+  font-weight: 900;
+
+  color: #231f20;
+  $margin-map: (375px: 120px, 959px: 300px, 960px: 110px, 2880px: 330px);
+  @include poly-fluid-sizing('margin-top', $margin-map);
+  margin-left: 7%;
+
+
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 45px, 2880px: 158px);
+  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 37px, 2880px: 125px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);  
+
+  @media (min-width: $min-960) {
+    z-index: 5;
+    margin-left: 2vw;
+    max-width: 25%;
+
+  }
+
+
+}
+
+.crowders_about_middle_image {
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    z-index: -1;
+    margin-bottom: 5vw;
+    margin-top: -81%;
+    @include grid-col(12.8);
+    @include grid-offset-left(5.1); 
+    display: flex;
+    align-items: center;
+  }   
+}
+
+
+.crowders_about_right_icons {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+
+  @media (min-width: $min-960) {
+    transform: scale(1.2);
+    @include grid-offset-left(6);
+    @include grid-col(10);
+    
+
+  }        
 
 }

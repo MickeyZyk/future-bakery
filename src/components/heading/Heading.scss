@@ -1,18 +1,12 @@
 @import '~styles/config';
 
 .heading {
-	/*
-
-	margin-bottom: 5vw!important;
-	font-weight: 900;
-
-  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 75px, 2880px: 158px);
-  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 57px, 2880px: 138px);
-  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  font-weight: 900;
+  z-index: 5;
+  $font-map: (375px: 33px, 959px: 100px, 960px: 46px, 2880px: 158px);
+  $height-map: (375px: 28px, 959px: 72px, 960px: 37px, 2880px: 115px);
+  $spacing-map: (375px: -0.25px, 959px: -0.5px, 960px: -0.5px, 2880px: -3px);  
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);  
-
-  */
-
 }

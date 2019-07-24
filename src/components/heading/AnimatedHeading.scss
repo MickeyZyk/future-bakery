@@ -4,7 +4,7 @@
   font-weight: 900;
   z-index: 5;
   $font-map: (375px: 33px, 959px: 100px, 960px: 46px, 2880px: 158px);
-  $height-map: (375px: 28px, 959px: 72px, 960px: 36px, 2880px: 110px);
+  $height-map: (375px: 28px, 959px: 72px, 960px: 37px, 2880px: 115px);
   $spacing-map: (375px: -0.25px, 959px: -0.5px, 960px: -0.5px, 2880px: -3px);  
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);

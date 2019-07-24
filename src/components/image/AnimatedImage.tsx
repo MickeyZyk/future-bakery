@@ -21,19 +21,14 @@ export class AnimatedImage extends React.Component {
 
   }
 
-
   componentWillUnmount(){
   
   }
 
   render() {
-
-    return(     
-
-    <img ref={this.image} src={this.props.src} className={`${s.image} ${this.props.className}`} />
-
+    return( 
+      <img ref={this.image} src={this.props.src} className={`${s.image} ${this.props.className}`} />
     )
- 
 }
 
 }

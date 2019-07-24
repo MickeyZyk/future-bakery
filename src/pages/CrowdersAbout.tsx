@@ -17,6 +17,7 @@ import { Paragraph } from 'components/paragraph/Paragraph';
 import Texticon from 'components/texticon/Texticon';
 import { Footer } from 'components/footer/Footer';
 import { Controller, Scene } from 'react-scrollmagic';
+import { Team } from 'components/team/Team';
 
 
 const BakeryAbout = ({ data, className }) => {
@@ -28,89 +29,163 @@ const BakeryAbout = ({ data, className }) => {
 
         <Helmet title="About" />
 
-        <SVGicon className='bakery_about__green_rainbow' src='green_rainbow.svg'  />
+        <SVGicon className='crowders_icecream' src='crowders_icecream.svg'  />
+        <SVGiconReverse className='crowders_cheese' src='crowders_cheese.svg' />        
+
           <Row> 
 
-          <AnimatedHeading className='crowders_about_heading'>About us</AnimatedHeading>         
+            <div className="crowders_about_first_left">
 
-          <AnimatedImage className='crowders_about_image' src='../images/crowders_cone.jpg' />    
+              <AnimatedHeading className='crowders_about_heading'>About us</AnimatedHeading>         
 
+              <Paragraph className='crowders_about_paragraph paragraph'>We are a team of thousands individuals strong in opinion and power to change things.
+              We can address important topics / things in a way we are heard without having to be seen. 
+              Future crowders are a part of Future Bakery family - a strategic and innovation group of thousand individuals, lead by experienced team of strategic, 
+              creative and innovative minds. We work according to a validated methodology how to initiate change and create demand.</Paragraph>
 
-            <Paragraph className='crowders_about_paragraph paragraph'>We are a team of thousands individuals strong in opinion and power to change things.
-            We can address important topics / things in a way we are heard without having to be seen. 
-            Future crowders are a part of Future Bakery family - a strategic and innovation group of thousand individuals, lead by experienced team of strategic, 
-            creative and innovative minds. We work according to a validated methodology how to initiate change and create demand.</Paragraph>
+              <Link className='crowders_about_button' to={'/'}>START A PROJECT WITH US&nbsp;&nbsp;<span>&gt;</span></Link>            
 
-            <Link className='crowders_button' to={'/'}>START A PROJECT WITH US&nbsp;&nbsp;<span>&gt;</span></Link>
+            </div>
+
+            <AnimatedImage className='crowders_about_image responsive_image' src='../images/crowders_cone.jpg' />   
+
 
           </Row>
       
 
-        <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/how_we_do_it_image.jpg)`}}>
+        <div className="crowders_about_blueboard" style={{backgroundImage: `url(../images/how_we_do_it_image.jpg)`}}>
 
           <Row>
 
-            <HeadingTwo className="bakery_about__heading_two">Our creation process “From people to people”</HeadingTwo>
-
-            <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />   
-
-            <div className="bakery_about__green_block">
-
-              <p className="bakery_about__green_text">Usual closed innovation process “From office desks to people”</p>
-
-              <TransitionLink className="bakery_about__green_link" to={'/'} exit={{ length: 1 }} entry={{ delay: 1 }}>SHOW ME&nbsp;&nbsp;&#10095;</TransitionLink>
-
-            </div>
+            <Heading className='crowders_about_heading_two'>How we do it</Heading>  
 
           </Row>
 
-          <img src="../images/company.png" className="bakery_about__white_company hide_on_mobile" />
+          <Row>
 
-          <Row className="centered-row">
+            <Paragraph className="crowders_about_paragraph_two">There are 4 key phases to demonstrate our method to create demand.</Paragraph>
 
-            <TransitionLink className="bakery_about__button_link" to={'/'} exit={{ length: 1 }} entry={{ delay: 1 }}>START A PROJECT WITH US</TransitionLink>
+          </Row>
+
+          <Row>
+
+          <div className='crowders_phases_row'>
+
+            <div className='crowders_phase_column'>
+
+              <img src='../svg/crowders_arrowz.svg' />
+
+              <Paragraph>CHANGE THEME IDENTIFICATION</Paragraph>
+
+            </div>
+
+            <div className='crowders_phase_column arrow_column'>
+
+              <img src='../images/crowders_about_down_arrow.png' />
+
+
+            </div>
+
+            <div className='crowders_phase_column'>
+
+              <img src='../svg/crowders_turntable.svg' />
+
+              <Paragraph>THEME/TOPIC AMPLIFICATION</Paragraph>
+
+            </div>
+
+            <div className='crowders_phase_column arrow_column'>
+
+              <img src='../images/crowders_about_up_arrow.png' />
+
+
+            </div>
+
+            <div className='crowders_phase_column'>
+
+              <img src='../svg/crowders_tablet.svg' />
+
+              <Paragraph>COMMUNITY BUILD UP</Paragraph>
+
+            </div>
+
+            <div className='crowders_phase_column arrow_column'>
+
+              <img src='../images/crowders_about_down_arrow.png' />
+
+
+            </div>
+
+            <div className='crowders_phase_column'>
+
+              <img src='../svg/crowders_clipboard.svg' />
+
+              <Paragraph>DEMAND AND CONTENT</Paragraph>
+
+            </div>                                                
+
+          </div>
+
+
+
+
+          </Row>
+
+          <Row>
+
+            <Link className="crowders_about_button_two" to={'/'} >START A PROJECT WITH US</Link>
 
           </Row>
 
         </div>
 
-        <SVGicon className='bakery_about__white_hearts' src='white_hearts.svg' />
 
-        <SVGiconReverse className='bakery_about__white_pan' src='white_pan.svg' />        
 
         <Row>
 
-            <div className="bakery_about__green_heading_background">
 
-              <Heading className="bakery_about__heading_three">What we bake?</Heading>     
+
+            <div className="crowders_about_heading_background">
+
+              <Heading className="crowders_about_heading_three">What we do</Heading>     
+
+              <AnimatedImage src="../images/nail_sharpener.jpg" className="crowders_about_middle_image" />                 
 
             </div>
 
-            <div className="bakery_about__right_icons">
 
+
+            <div className="crowders_about_right_icons">
+
+                <Texticon className='bakery_about__graph_icon first' name='COMMUNITY BUILDING' src='rainbow.svg' />
 
                 <Texticon className='bakery_about__graph_icon' name='STRATEGIC PLANNING &amp; CONSULTANCY' src='graph.svg' />
 
-                <Texticon className='bakery_about__graph_icon' name='IDEATION' src='bulb.svg' />
-
                 <Texticon className='bakery_about__graph_icon last' name='CREATIVE STRATEGY' src='target.svg' />
+
+            </div>          
+
+
+
+            <div className="crowders_about_right_icons">
+
 
                 <Texticon className='bakery_about__graph_icon first' name='CAMPAIGN PLANNING' src='network.svg' />
 
                 <Texticon className='bakery_about__graph_icon' name='CAMPAIGN DEVELOPMENT &amp; PRODUCTION' src='gauge.svg' />
+                
+                <Texticon className='bakery_about__graph_icon last' name='IDEATION' src='bulb.svg' />
 
-                <Texticon className='bakery_about__graph_icon last' name='COMMUNITY BUILDING' src='rainbow.svg' />
 
-                <Texticon className='bakery_about__graph_icon first' name='CROWD SOURCING' src='fiver.svg' />
 
-                <Texticon className='bakery_about__graph_icon' name='INNOVATION' src='bang.svg' />
+            </div>
 
-                <Texticon className='bakery_about__graph_icon last' name='ANALYTICS &amp; ON-LINE COMMUNITY' src='phones.svg' />  
-                 
 
-            </div>          
+
 
       </Row>
+
+              <Team/>      
 
       <Row className="bakery_about__row_four">
           <div className="bakery_about__column_four">

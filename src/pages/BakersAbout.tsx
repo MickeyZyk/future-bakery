@@ -105,15 +105,14 @@ const BakersAbout = ({ data, className }) => {
       </Row>
 
       <Row className="bakers_about__row_four">
+
           <div className="bakers_about__column_four">
 
               <Split className="bakers_about__heading_four">Meet the team</Split>
 
               <Paragraph className="bakers_about__paragraph_four">Alena Pelcova</Paragraph>
 
-
           </div>
-
 
       </Row>
 
