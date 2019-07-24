@@ -1429,6 +1429,10 @@ select {
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);
+  font-weight: 900;
+  position: absolute;
+  bottom: 0;
+  padding: 2vw;
 }
 
 .bakers_about__paragraph {
@@ -1450,6 +1454,10 @@ select {
     @include grid-col(5);
     @include grid-offset-left(0);
   }
+}
+
+.meet {
+  background-color: #222222
 }
 
 .background {
@@ -1488,13 +1496,16 @@ select {
   @include grid-col(3);
   @include grid-offset-left(11);
   background: #ff7a00;
+  position: absolute;
+  bottom: 17vw;
 
   $margin-map: (375px: -43px, 959px: -110px, 960px: -41px, 2880px: -117px);
   @include poly-fluid-sizing('margin-top', $margin-map);
 
   $height-map: (375px: 246px, 959px: 630px, 960px: 250px, 2880px: 745px);
   @include poly-fluid-sizing('height', $height-map);
-
+  
+  position: relative;
 
   @media (min-width: $min-960) {
 

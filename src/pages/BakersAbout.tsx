@@ -95,27 +95,32 @@ const BakersAbout = ({ data, className }) => {
                  
 
             </div>       
-
-            <div className="bakers_about__orange_heading_background">
-
-              <Heading className="bakers_about__heading_three">Who is behind the scenes of Future Bakers?</Heading>     
-
-            </div>   
+ 
 
       </Row>
+      
+      <div className="bakers_about__orange_heading_background">
 
-      <Row className="bakers_about__row_four">
-          <div className="bakers_about__column_four">
+          <Heading className="bakers_about__heading_three">Who is behind the scenes of Future Bakers?</Heading>     
 
-              <Split className="bakers_about__heading_four">Meet the team</Split>
+      </div>  
 
-              <Paragraph className="bakers_about__paragraph_four">Alena Pelcova</Paragraph>
+      <div className="meet">
+
+        <Row>
+            <div className="bakers_about__column_four">
+
+                <Split className="bakers_about__heading_four">Meet the team</Split>
+
+                <Paragraph className="bakers_about__paragraph_four">Alena Pelcova</Paragraph>
 
 
-          </div>
+            </div>
 
 
-      </Row>
+        </Row>
+
+      </div>
 
       </ReactCursorPosition>  
 
