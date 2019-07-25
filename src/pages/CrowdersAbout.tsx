@@ -155,30 +155,27 @@ const BakeryAbout = ({ data, className }) => {
 
 
 
-            <div className="crowders_about_right_icons">
+              <div className="crowders_about_right_icons">
 
-                <Texticon className='bakery_about__graph_icon first' name='COMMUNITY BUILDING' src='rainbow.svg' />
+                  <Texticon className='bakery_about__graph_icon first' name='COMMUNITY BUILDING' src='rainbow.svg' />
 
-                <Texticon className='bakery_about__graph_icon' name='STRATEGIC PLANNING &amp; CONSULTANCY' src='graph.svg' />
+                  <Texticon className='bakery_about__graph_icon' name='STRATEGIC PLANNING &amp; CONSULTANCY' src='graph.svg' />
 
-                <Texticon className='bakery_about__graph_icon last' name='CREATIVE STRATEGY' src='target.svg' />
+                  <Texticon className='bakery_about__graph_icon last' name='CREATIVE STRATEGY' src='target.svg' />
 
-            </div>          
+              </div> 
 
-
-
-            <div className="crowders_about_right_icons">
+              <div className="crowders_about_right_icons">
 
 
-                <Texticon className='bakery_about__graph_icon first' name='CAMPAIGN PLANNING' src='network.svg' />
+                  <Texticon className='bakery_about__graph_icon first' name='CAMPAIGN PLANNING' src='network.svg' />
 
-                <Texticon className='bakery_about__graph_icon' name='CAMPAIGN DEVELOPMENT &amp; PRODUCTION' src='gauge.svg' />
-                
-                <Texticon className='bakery_about__graph_icon last' name='IDEATION' src='bulb.svg' />
+                  <Texticon className='bakery_about__graph_icon' name='CAMPAIGN DEVELOPMENT &amp; PRODUCTION' src='gauge.svg' />
+                  
+                  <Texticon className='bakery_about__graph_icon last' name='IDEATION' src='bulb.svg' />
 
+              </div>
 
-
-            </div>
 
 
 
@@ -186,19 +183,6 @@ const BakeryAbout = ({ data, className }) => {
       </Row>
 
               <Team/>      
-
-      <Row className="bakery_about__row_four">
-          <div className="bakery_about__column_four">
-
-              <Split className="bakery_about__heading_four">Meet the team</Split>
-
-              <Paragraph className="bakery_about__paragraph_four">Alena Pelcova</Paragraph>
-
-
-          </div>
-
-
-      </Row>
 
       </ReactCursorPosition>  
 

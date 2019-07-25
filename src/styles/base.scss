@@ -2312,7 +2312,8 @@ select {
     position: relative;
     top: 0;    
     @include grid-col(3);
-    @include grid-offset-left(2); 
+    @include grid-offset-left(0); 
+    margin-bottom: 3vw;    
   }      
 
 }
@@ -2333,7 +2334,7 @@ select {
     position: relative;
     top: 0;
     @include grid-col(8);
-    @include grid-offset-left(9); 
+    @include grid-offset-left(2); 
   }    
 
 }
@@ -2479,6 +2480,7 @@ select {
       @include grid-offset-left(2); 
       background:  linear-gradient(90deg, rgba(55,198,244,1) 0%, rgba(55,198,244,1) 28.5%, rgba(53,198,244,0) 28.501%, rgba(0,212,255,0) 100%);
       margin-top: -1.9vw;
+      margin-bottom: -9vw;      
       z-index: 5;  
       float: left;
 
