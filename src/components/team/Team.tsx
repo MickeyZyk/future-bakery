@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import { Link as InternalLink } from 'components/link/Link';
 import s from './Team.scss';
 
-var images = ['../images/pelcova.jpg', '../images/bw_pelcova.jpg','../images/pelcova.jpg','../images/bw_pelcova.jpg', '../images/bw_pelcova.jpg','../images/pelcova.jpg']
+var images = ['../images/pelcova.jpg', '../images/bw_pelcova.jpg','../images/pelcova.jpg','../images/bw_pelcova.jpg', '../images/pelcova.jpg','../images/bw_pelcova.jpg']
 var names = ["Alena Pelcova", "Pelcova Alena", "Alena Pelcova","Pelcova Alena ", "Alena Pelcova", "Pelcova Alena" ]
 var texts = ["Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to work well with this and give it all a life.",
  "Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to work well with this and give it all a life.",
@@ -36,8 +36,9 @@ class Member extends React.Component {
     this.state = {
       activeIndex: 0,
     };    
+    this.strip = React.createRef(); 
     this.prevSlide = this.prevSlide.bind(this); 
-    this.nextSlide = this.nextSlide.bind(this);     
+    this.nextSlide = this.nextSlide.bind(this);    
 
   }
 
@@ -46,19 +47,44 @@ class Member extends React.Component {
 
   }
 
-  prevSlide(){   
-
+  prevSlide(){
     if ( this.state.activeIndex > 0 ) {
-    console.log("PREV",this.state.activeIndex )      
-      this.setState({activeIndex: this.state.activeIndex - 1}, () => {console.log(this.state.activeIndex)})
+      console.log("PREV",this.state.activeIndex )      
+      this.setState({activeIndex: this.state.activeIndex - 1}, () => {
+
+        var imageStrip = this.strip.current; 
+        var children = imageStrip.querySelectorAll('img');
+        console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex) * -27.77778, );    
+
+        var currentTL = new TimelineMax(); 
+        currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -27.77778, ease: 'Expo.easeInOut' });
+        var currentTLZoom = new TimelineMax(); 
+        currentTLZoom.to(children, .5, {scale: 1, xPercent: 0}).to(children, .25, {scale: 1.04, transformOrigin:'right 50%'}).to(children, 1.5, {scale: 1, xPercent: 0});
+
+      })
+
     }
+
   }
 
   nextSlide(){    
-    if ( this.state.activeIndex < this.props.arrayOfImages.length-1 ) {
-        console.log("next",this.state.activeIndex,  this.props.arrayOfImages.length)
-      this.setState({activeIndex: this.state.activeIndex + 1})
+    if ( this.state.activeIndex < this.props.arrayOfImages.length - 1 ) {
+      console.log("next",this.state.activeIndex,  this.props.arrayOfImages.length)
+      this.setState({activeIndex: this.state.activeIndex + 1}, () => {
+
+        var imageStrip = this.strip.current; 
+        var children = imageStrip.querySelectorAll('img');
+        console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex + 1) * -27.77778, );  
+
+        var currentTL = new TimelineMax(); 
+        currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -27.77778, ease: 'Expo.easeInOut' });
+        var currentTLZoom = new TimelineMax(); 
+        currentTLZoom.to(children, .5, {scale: 1, xPercent: 0}).to(children, .25, {scale: 1.04, transformOrigin:'right 50%'}).to(children, 1.5, {scale: 1, xPercent: 0});
+
+      })
+
     }
+
   }
 
   componentWillUnmount(){
@@ -68,7 +94,7 @@ class Member extends React.Component {
   render() {
 
 
-    var members =  this.props.arrayOfImages.map((image, i) =>{
+    var members = this.props.arrayOfImages.map((image, i) =>{
       return(
         <div className={s.member} key={'team'+i} position={i}>
           <div className={`${s.data} ${this.state.activeIndex == i ? s.current_data : ''}`}>
@@ -82,7 +108,7 @@ class Member extends React.Component {
 
     var imagesStrip =  this.props.arrayOfImages.map((image, j) =>{
       return(
-        <img className={s.image} src={image} style={{ zIndex : -j , right: -j*530 }} key={'image'+j}/>
+        <img className={s.image} src={image} style={{ zIndex : -j , right: `${-j * 27.77778}%` }} key={'image'+j}/>
       )
     }) 
 
@@ -90,8 +116,11 @@ class Member extends React.Component {
       <>
         {members}
           <div className={s.window}>
-              <div className={s.bar}></div>
-              {imagesStrip}
+              <div className={s.before_bar}></div>            
+              <div className={s.strip} ref={this.strip}>
+                {imagesStrip}
+              </div>
+              <div className={s.after_bar}></div>              
           </div>        
 
         <Row>

@@ -36,7 +36,9 @@ const BakeryAbout = ({ data, className }) => {
 
             <div className="crowders_about_first_left">
 
-              <AnimatedHeading className='crowders_about_heading'>About us</AnimatedHeading>         
+              <AnimatedHeading className='crowders_about_heading'>About us</AnimatedHeading>   
+
+              <AnimatedImage className='crowders_about_image responsive_image show_on_mobile' src='../images/crowders_cone.jpg' />         
 
               <Paragraph className='crowders_about_paragraph paragraph'>We are a team of thousands individuals strong in opinion and power to change things.
               We can address important topics / things in a way we are heard without having to be seen. 
@@ -47,7 +49,7 @@ const BakeryAbout = ({ data, className }) => {
 
             </div>
 
-            <AnimatedImage className='crowders_about_image responsive_image' src='../images/crowders_cone.jpg' />   
+            <AnimatedImage className='crowders_about_image responsive_image hide_on_mobile' src='../images/crowders_cone.jpg' />   
 
 
           </Row>

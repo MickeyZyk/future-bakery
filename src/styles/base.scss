@@ -2269,11 +2269,12 @@ select {
 
 .crowders_icecream  {
   z-index: 10;
-  @include grid-col;
-  @include grid-offset-left(2);  
+  position: absolute;
+  margin-top: 20vw;  
+  @include grid-col(2.5);
+  @include grid-offset-left(6);  
 
   @media (min-width: $min-960) {
-    position: absolute;
     margin-top: 3vw;    
     @include grid-col(.5);
     @include grid-offset-left(1.8); 
@@ -2281,23 +2282,25 @@ select {
 }
 
 .crowders_cheese {
-  @include grid-col;
-  @include grid-offset-left(2);  
+  position: absolute;
+  @include grid-col(4);
+  @include grid-offset-left(11);  
 
   @media (min-width: $min-960) {
     margin-top: -3vw;
-    position: absolute;
     @include grid-col(1);
     @include grid-offset-left(2.8); 
   }   
 }
 
 .crowders_about_first_left {
+  position: relative;  
+  min-height: 230vw;
   @include grid-col;
   @include grid-offset-left(2);  
 
   @media (min-width: $min-960) {
-    position: relative;
+  min-height: 0vw;    
     top: 0;    
     @include grid-col(5);
     @include grid-offset-left(2); 
@@ -2305,12 +2308,12 @@ select {
 }
 
 .crowders_about_heading {
-  @include grid-col;
-  @include grid-offset-left(2);   
+  position: relative;
+  top: 0;
+  @include grid-col(10);
+  @include grid-offset-left(0);   
 
   @media (min-width: $min-960) {
-    position: relative;
-    top: 0;    
     @include grid-col(3);
     @include grid-offset-left(0); 
     margin-bottom: 3vw;    
@@ -2319,19 +2322,23 @@ select {
 }
 
 .crowders_about_paragraph {
-
+  position: relative;
+  top: 40vw;
 
   @media (min-width: $min-960) {
+    top: 0vw;    
     width: 100%
   }      
 }
 
 .crowders_about_image {
+  position: relative;  
   @include grid-col;
-  @include grid-offset-left(2);   
+  @include grid-offset-left(0);   
+  position: relative;  
+  top: 40vw;
 
   @media (min-width: $min-960) {
-    position: relative;
     top: 0;
     @include grid-col(8);
     @include grid-offset-left(2); 

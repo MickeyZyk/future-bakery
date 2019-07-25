@@ -71,7 +71,7 @@
 
   @media (min-width: $min-960) {
     position: absolute;
-    transform: translateY(-98%);
+    /* transform: translateY(-98%); */
     @include grid-col(5);
     @include grid-offset-right(2);
   }   
@@ -118,6 +118,7 @@
   @media (min-width: $min-960) {
     @include grid-col(1);
     @include grid-offset-left(4);
+    margin-top: -1vw;
   }   
 
 }
@@ -133,6 +134,7 @@
   @media (min-width: $min-960) {
     @include grid-col(1);
     @include grid-offset-left(4);  
+    margin-top: -1vw;
   }   
 
 }
@@ -141,14 +143,30 @@
   display: block;
 }
 
-.bar {
+
+.before_bar {
 
   display: none;
 
   @media (min-width: $min-960) {
     
     display: block;    
-    margin-top: -38vw;
+    position: absolute;
+    height:50vw;
+    @include grid-col(11);
+    background-color: #fff;
+    z-index: 5;
+  } 
+}
+
+
+.after_bar {
+
+  display: none;
+
+  @media (min-width: $min-960) {
+    
+    display: block;    
     position: absolute;
     height:50vw;
     @include grid-col(1);
@@ -158,6 +176,7 @@
   } 
 }
 
+
 .window {
 
   display: none;
@@ -166,6 +185,14 @@
 
     display: block;
     overflow: hidden;
+    height: 37vw;
+    margin-top: -37vw;  
+    z-index: -1;
+    position: relative;
   }   
 
+}
+
+.strip {
+  opacity: 1;
 }
