@@ -1,0 +1,235 @@
+.bakers_login__main {
+  position: relative;
+  @include grid-col(18);
+}
+
+.bakers_login__main_image {
+  position: relative;
+
+  @include grid-col(10);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(10);
+    @include grid-offset-left(2);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(10);
+    @include grid-offset-left(2);
+
+  }
+
+}
+
+.bakers_login__main_header {
+  position: absolute;
+  top: 2vw;
+  font-weight: 900;
+
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 45px, 2880px: 130px);
+  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 57px, 2880px: 138px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);  
+
+  @include grid-col(6);
+  @include grid-offset-left(10);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(6);
+    @include grid-offset-left(10);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(6);
+    @include grid-offset-left(10);
+
+  }
+
+}
+
+.bakers_login__main_subheader {
+  position: absolute;
+  top: 25vw;
+
+  @include grid-col(6);
+  @include grid-offset-left(10);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(6);
+    @include grid-offset-left(10);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(6);
+    @include grid-offset-left(10);
+
+  }
+
+}
+
+
+.bakers_login__main_login {
+  position: absolute;
+  top: 35vw;
+
+  @include grid-col(1);
+  @include grid-offset-left(13);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(1);
+    @include grid-offset-left(13);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(1);
+    @include grid-offset-left(13);
+
+  }
+
+}
+
+.bakers_login__main_joinus {
+  position: absolute;
+  top: 35vw;
+
+  @include grid-col(2);
+  @include grid-offset-left(15);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(2);
+    @include grid-offset-left(15);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(2);
+    @include grid-offset-left(15);
+
+  }
+
+}
+
+.bakers_login__main_projects {
+  position: relative;
+  top: 2vw;
+
+  $font-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 10px, 2880px: 20px);
+  $height-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 10px, 2880px: 20px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+
+  @include grid-col(3);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(3);
+    @include grid-offset-left(2);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(3);
+    @include grid-offset-left(2);
+
+  }
+
+}
+
+.bakers_login__main_briefs {
+  position: relative;
+  top: 2vw;
+
+  $font-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 10px, 2880px: 20px);
+  $height-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 10px, 2880px: 20px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+
+  @include grid-col(2);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(2);
+    @include grid-offset-left(1);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(2);
+    @include grid-offset-left(1);
+
+  }
+
+}
+
+.bakers_login__projects {
+  position: relative;
+  top: 10vw;
+  @include grid-col(18);
+}
+
+.bakers_login__projects_boxl {
+  position: relative;
+  
+  @include grid-col(7);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(7);
+    @include grid-offset-left(2);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(7);
+    @include grid-offset-left(2);
+
+  }
+}
+
+.bakers_login__projects_boxr {
+  position: relative;
+  
+  @include grid-col(7);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(7);
+    @include grid-offset-left(1);
+
+  }
+
+  @media (min-width: $min-1440) {
+
+    @include grid-col(7);
+    @include grid-offset-left(1);
+
+  }
+}
