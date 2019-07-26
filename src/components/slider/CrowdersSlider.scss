@@ -68,7 +68,9 @@
       padding: 10px 85px;
       @include grid-col;
       margin-bottom: 100px;
-      text-align: center;      
+      text-align: center; 
+      @include grid-col(14);
+      @include grid-offset-right(2); 
 
     @media (min-width: $min-960) {
       align-self: center!important;    
