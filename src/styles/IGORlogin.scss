@@ -192,7 +192,31 @@
   @include grid-col(18);
 }
 
-.bakers_login__projects_boxl {
+
+.bakers_login__projects_big_arrow {
+  position: absolute;
+  top: 1.5vw;
+  height: 8vw;
+  left: -1vw;
+}
+
+.bakers_login__projects_text_arrow {
+  color: #ffffff;
+  position: absolute;
+  top: 5vw;
+  font-weight: 900;
+
+
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 15px, 2880px: 44px);
+  $height-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 15px, 2880px: 44px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+}
+
+
+.bakers_login__projects_box_l {
   position: relative;
   
   @include grid-col(7);
@@ -213,7 +237,7 @@
   }
 }
 
-.bakers_login__projects_boxr {
+.bakers_login__projects_box_r {
   position: relative;
   
   @include grid-col(7);

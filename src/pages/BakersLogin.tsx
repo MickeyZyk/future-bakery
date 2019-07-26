@@ -74,28 +74,36 @@ const BakersLogin = ({ data, className }) => {
           <div className='bakers_login__projects'>
 
             <Row>
-              <div className="bakers_login__projects_boxl">
+              <div className="bakers_login__projects_box_l">
                 <img src="../images/rum.jpg" />
+                <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
+                <p className="bakers_login__projects_text_arrow">3 x 3,000 CZK</p>
                 <p>Recepty s Captain Morgan</p>
                 <p>Ukonceny projektu 12.06.2019.</p>
                 <p>zaobrazit projekt</p>
               </div>
-              <div className="bakers_login__projects_boxr">
+              <div className="bakers_login__projects_box_r">
                 <img src="../images/dogs.jpg" />
+                <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
+                <p className="bakers_login__projects_text_arrow">3 x 3,000 CZK</p>
                 <p>Some new brief headline</p>
                 <p>Ukonceny projektu 23.08.2019.</p>
                 <p>zaobrazit projekt</p>
               </div>
             </Row>  
             <Row>
-              <div className="bakers_login__projects_boxl">
+              <div className="bakers_login__projects_box_l">
                 <img src="../images/rum.jpg" />
+                <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
+                <p className="bakers_login__projects_text_arrow">3 x 3,000 CZK</p>
                 <p>Recepty s Captain Morgan</p>
                 <p>Ukonceny projektu 12.06.2019.</p>
                 <p>zaobrazit projekt</p>
               </div>
-              <div className="bakers_login__projects_boxr">
+              <div className="bakers_login__projects_box_r">
                 <img src="../images/dogs.jpg" />
+                <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
+                <p className="bakers_login__projects_text_arrow">3 x 3,000 CZK</p>
                 <p>Some new brief headline</p>
                 <p>Ukonceny projektu 23.08.2019.</p>
                 <p>zaobrazit projekt</p>
