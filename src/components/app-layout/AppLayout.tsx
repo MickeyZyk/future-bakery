@@ -80,7 +80,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
             {({ location }) => (
               <ContextConsumer>
                 {({ data, set }) => (
-                  <HeaderLink className={ location.pathname == '/BakeryMenu' ? `white_text white_circle` : '' } name="MENU" to={location.pathname == '/BakeryMenu' ? location.state.prevUrlPath : `/BakeryMenu`} icon={location.pathname == '/BakeryMenu' ? <WhiteCircle/> : <Circle />} permanent={true}>                
+                  <HeaderLink className={ location.pathname == '/BakeryMenu' ? `white_text white_circle` : '' } name="MENU" to={location.pathname == '/BakeryMenu' ? location.state.prevUrlPath : `/BakeryMenu`} icon={location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu' || location.pathname == '/CrowdersMenu'? <WhiteCircle/> : <Circle />} permanent={true}>                
                     {location.pathname == '/BakeryMenu' ? ` CLOSE` : `MENU`}
                   </HeaderLink>
                 )}
