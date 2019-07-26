@@ -444,6 +444,7 @@ select {
   text-decoration: none;
 }
 
+
 .submenu_link > h2:before, .submenu_link > h2:after {
   content: '';
   position: absolute;
@@ -487,6 +488,157 @@ select {
   margin-top: 30vh;
 }
 
+/* BAKERS MENU */
+
+
+.bakers_menu .submenu_link > h2:before, .bakers_menu  .submenu_link > h2:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #f47a20;
+}
+
+.bakers_menu .submenu_link > h2:after {
+  right: 2.5px;
+  background: #f47a20;
+  transition: width 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.bakers_menu .submenu_link > h2:hover:before {
+  background: #f47a20;
+  width: 100%;
+  transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.bakers_menu_crown {
+
+  transform: rotate(-15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 10vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(2.75); 
+
+  }
+
+}
+
+.bakers_menu_baloons {
+  
+  transform: rotate(5deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 9vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(5); 
+
+
+  }  
+}
+
+.bakers_menu_temple {
+
+  transform: rotate(-15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 11vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(6.5); 
+
+  }
+
+}
+
+/* CROWDERS MENU */
+
+
+.crowders_menu .submenu_link > h2:before, .crowders_menu .submenu_link > h2:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #37c6f4;
+}
+
+.crowders_menu .submenu_link > h2:after {
+  right: 2.5px;
+  background: #37c6f4;
+  transition: width 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.crowders_menu .submenu_link > h2:hover:before {
+  background: #37c6f4;
+  width: 100%;
+  transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.crowders_menu_phone {
+
+  transform: rotate(-15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 30vw;
+  z-index: 15;  
+  @include grid-col(1);
+  @include grid-offset-left(6); 
+
+  }
+
+}
+
+.crowders_menu_blah {
+  
+  transform: rotate(5deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 33vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(7); 
+
+
+  }  
+}
+
+.crowders_menu_chat {
+
+  transform: rotate(-15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 32vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(9.5); 
+
+  }
+
+}
 
 /* BAKERY HOME SLIDER  */
 
@@ -508,7 +660,6 @@ select {
       top: 0;
       bottom: auto;  
   }
-
  
 }
 
@@ -1967,10 +2118,6 @@ select {
  
 }
 
-.Row--row--26xi7 {
-
-}
-
 .family_heading {
   position: absolute;
   top: 15vh;
@@ -2167,23 +2314,29 @@ select {
 
   @media (min-width: $min-960) {
     width: 7vw;
+    filter: brightness(0) invert(1);    
   }   
 
+}
+
+.family_wrapper:hover .family_bakery_icon {
+  transition: all 1s; 
+  filter: none;
 }
 
 .family_bakers_icon {
     width: 23.55vw;  
   transition: all 1s; 
-  filter: brightness(0.5) sepia(1) hue-rotate(-10deg) saturate(7.5);
   @media (min-width: $min-960) {
     width: 5vw;
-    filter: none;
+    filter: brightness(0) invert(1);    
+
   }  
 }
 
 .family_wrapper:hover .family_bakers_icon {
-  transition: all 1s;     
-  filter: brightness(0.5) sepia(1) hue-rotate(-10deg) saturate(7.5);
+  transition: all 1s; 
+  filter: none;
 }
 
 .family_crowders_icon {
@@ -2192,7 +2345,13 @@ select {
 
   @media (min-width: $min-960) {
     width: 5vw;
+    filter: brightness(0) invert(1);       
   }   
+}
+
+.family_wrapper:hover .family_crowders_icon {
+  transition: all 1s; 
+  filter: none;
 }
 
 .mobile_slider_controls {
@@ -2224,6 +2383,9 @@ select {
   }      
 }
  
+.family_bakery_link {color: #d4de4f}
+.family_bakers_link {color: #ff7a00}
+.family_crowders_link {color: #37c6f4}
 
 
 /* BAKERY CONTACT */

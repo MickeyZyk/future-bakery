@@ -55,10 +55,10 @@ export default class BEakeryMenu extends React.Component {
 							<div className='fullscreen'>
 						    <ReactCursorPosition className='fullscreen_cursor_position'>   
 						      <Helmet title="Bakery" />
-						      <SVGicon className='bakers_menu_crown' src='bakers_menu_crown.svg' /> 
-						      <SVGiconReverse  className='bakers_menu_baloons' src='bakers_menu_baloons.svg' /> 
-						      <SVGicon className='bakers_menu_temple' src='bakers_menu_temple.svg' /> 						      
-									<div className='menu_row bakers_menu'>
+						      <SVGicon className='crowders_menu_phone' src='crowders_menu_phone.svg' /> 
+						      <SVGiconReverse  className='crowders_menu_blah' src='crowders_menu_blah.svg' /> 
+						      <SVGicon className='crowders_menu_chat' src='crowders_menu_chat.svg' /> 						      
+									<div className='menu_row crowders_menu'>
 											<ul ref={this.unorderedList}>
 											  <li className='menu_item_wrapper'>
 												  <Link 
@@ -71,17 +71,6 @@ export default class BEakeryMenu extends React.Component {
 														<MenuHeading className='white_text'>About Us</MenuHeading>
 												  </Link>
 											  </li>
-											  <li className='menu_item_wrapper'>
-												  <Link 
-												  onMouseEnter={this.toggleHover}
-							      			onMouseLeave={this.toggleHover} 
-							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
-							      			name="For Companies" 
-							      			to="/"
-						      				>
-														<MenuHeading className='white_text'>Work</MenuHeading>
-												  </Link>
-											  </li>											  
 											  <li className='menu_item_wrapper'>
 												  <Link 
 												  onMouseEnter={this.toggleHover}
