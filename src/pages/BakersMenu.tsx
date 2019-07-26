@@ -66,7 +66,7 @@ export default class BEakeryMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="About us" 
-							      			to="/BakeryAbout"
+							      			to="/BakersAbout"
 				      						>
 														<MenuHeading className='white_text'>About Us</MenuHeading>
 												  </Link>
@@ -76,7 +76,18 @@ export default class BEakeryMenu extends React.Component {
 												  onMouseEnter={this.toggleHover}
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
-							      			name="Work" 
+							      			name="For Companies" 
+							      			to="/"
+						      				>
+														<MenuHeading className='white_text'>Work</MenuHeading>
+												  </Link>
+											  </li>											  
+											  <li className='menu_item_wrapper'>
+												  <Link 
+												  onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Work"
 							      			to="/BakeryWork"
 						      				>
 														<MenuHeading className='white_text'>Work</MenuHeading>

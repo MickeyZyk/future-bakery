@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ContextProviderComponent } from "utils/Context";
+import { globalHistory } from "@reach/router"
 import ContextConsumer from "utils/Context";
 import Helmet from 'react-helmet';
 import { helmet } from 'utils/helmet';
@@ -20,6 +21,13 @@ import s from './AppLayout.scss';
 interface IAppLayoutProps {
   children: React.ReactNode;
 }
+
+globalHistory.listen(({ location }) => {
+  if (location.pathname.includes('Bakery') || location.pathname.includes('bakery')){
+
+    console.log("BAKERYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY")
+  }; 
+})
 
 /* remove in production */
 //const isDev = process.env.NODE_ENV === 'development';
