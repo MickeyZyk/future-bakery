@@ -239,8 +239,8 @@ p {font-weight: lighter;}
   -moz-osx-font-smoothing: grayscale;
 }
 
-html,
 body {
+    box-sizing: border-box;
   /* background-color: $color-background; */
   overflow: hidden;  
 /*
@@ -248,14 +248,15 @@ body {
   overflow: hidden;
 */  
 }
+/*
 
 html {
   -webkit-overflow-scrolling: touch;
   /* overflow-y: scroll; // always show the vertical scrollbar so that content doesn't jump */
-
+/*
   box-sizing: border-box;
 }
-
+*/
 // inherited from <html>
 *,
 *::before,
@@ -308,6 +309,7 @@ select {
 [data-scrollbar] {
     width: 100vw;
     max-height: 100vh;
+    z-index: 0;
 }
 
 
@@ -333,8 +335,8 @@ select {
 .wrapper {
   min-height: 100vh;
   position: relative;
-  /* background-color: #fff; */
-  margin-bottom: 596px;  
+  background-color: #fff;
+  /* margin-bottom: 596px;   */
   z-index: 0;
   $padding-map: (375px: 110px, 959px: 200px, 960px: 110px, 2880px: 320px);
   @include poly-fluid-sizing('padding-top', $padding-map);
@@ -351,7 +353,19 @@ select {
 
 .tl-edges {
     max-width: 100%;
+    overflow-x: hidden;
+    margin-bottom: 50vh;
+}
+
+.fs .tl-edges {
+    margin-bottom: 24vh;
+}
+
+.tl-wrapper {
+    width: 100%;
+    float: left;
     overflow: hidden;
+    position: relative;
 }
 
 .grid-row {
@@ -396,6 +410,10 @@ select {
     background: none!important;
 }
 
+.scroll-content {
+  /* padding-bottom: 27.5vw; */
+}
+
 .scrollbar-thumb {
     background: rgba(0, 0, 0, .25)!important;
 }
@@ -410,7 +428,7 @@ select {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  /* background-color: #fff;*/
+  background-color: #fff;
 
 }
 
@@ -901,7 +919,7 @@ select {
 
 
 
-/* BAKERY - ABOUT */
+/* BAKERY ABOUT */
 
 
 .bakery_about__green_rainbow {
@@ -983,33 +1001,17 @@ select {
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);  
 
-  width: 90%;
-  margin-bottom: 35px;
-
-  @media (min-width: $min-530) {
-
-    width: 75%;
-
-  }  
-
-  @media (min-width: $min-768) {
-
-    width: 58%;
-
-  }
+  @include grid-col(16);
+  @include grid-offset-left(0);
+  margin-bottom: 10vw;
 
   @media (min-width: $min-960) {
+    
+    @include grid-col(14);
+    @include grid-offset-left(0);
+    margin-bottom: 6vw;    
 
-    width: 100%
-
-  }    
-
-  @media (min-width: $min-1440) {
-
-    width: 100%;
-    margin-bottom: 150px!important;    
-
-  }        
+  }     
 
 }
 
@@ -1072,7 +1074,7 @@ select {
 
     @include responsive-font(46px, 52px);    
     margin-top: 0;     
-    @include grid-col(3);
+    @include grid-col(4);
     @include grid-offset-left(4);
     line-height: 51px;
     margin-bottom: 5.6vw;
@@ -1407,6 +1409,47 @@ select {
   @include poly-fluid-sizing('letter-spacing', $spacing-map);  
 
 }
+
+
+.bakery_team {
+  padding-bottom: 12vw;
+}
+
+
+.whom_01 {
+  align-self: center!important;
+  @include grid-col;
+
+  @media (min-width: $min-960) {
+    @include grid-col(1.2);
+    @include grid-offset-left(4.7);
+  }  
+
+}
+
+.whom_02 {
+  align-self: center!important;
+  @include grid-col;
+
+  @media (min-width: $min-960) {
+    @include grid-col(1.2);
+    @include grid-offset-left(3);
+  }  
+
+}
+
+
+.whom_03 {
+  align-self: center!important;
+  @include grid-col;
+
+  @media (min-width: $min-960) {
+    @include grid-col(1.2);
+    @include grid-offset-left(3);
+  }  
+
+}
+
 
 
 
@@ -1982,7 +2025,7 @@ select {
   bottom: 33vw;
   z-index: 15;  
   @include grid-col(1);
-  @include grid-offset-left(2); 
+  @include grid-offset-left(9); 
 
   }
 
@@ -2730,3 +2773,4 @@ select {
   }        
 
 }
+

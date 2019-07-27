@@ -52,6 +52,7 @@
     "gsap-tools": "1.0.9",
     "lodash": "4.17.11",
     "react": "16.8.4",
+    "react-bottom-scroll-listener": "^3.0.0",
     "react-cursor-position": "^3.0.3",
     "react-dom": "16.8.4",
     "react-gsap": "^1.2.0",

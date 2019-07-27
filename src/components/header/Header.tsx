@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ContextConsumer from "utils/Context";
 import { Switch, Case, Default } from 'react-if';
+import { globalHistory, Location } from "@reach/router"
 import { Link } from 'components/link/Link';
 import BakeryLogo from 'assets/svg/bakery-logo.svg';
 import BakersLogo from 'assets/svg/bakers-logo.svg';
@@ -24,57 +25,29 @@ export const Header = ({ children, logo, data, set }: IHeaderProps) => (
         <ContextConsumer>
           {({ data, set }) => (   
 
-          <TransitionLink to="/" onClick={() => set({ menuOpen: !data.menuOpen })} className={s.header__logo} exit={{ length: 1 }} entry={{ delay: 0 }}>
+            <TransitionLink to={ location.pathname == '/' ?  '/Bakery'
+                  :  location.pathname.includes('Bakery') ? '/Bakery' 
+                  :  location.pathname.includes('Bakers') ? '/Bakers' 
+                  :  location.pathname.includes('Crowders') ? '/Crowders' 
+                  :  '/Bakery' }  onClick={() => set({ menuOpen: !data.menuOpen })} className={s.header__logo} exit={{ length: 1 }} entry={{ delay: 0 }}>
 
-            <ContextConsumer>
-              {({ data, set }) => (
+              <Location>
+                {({ location }) => (          
 
-                data.logo == 'bakery' ? 
+                  data.logo == 'bakery' || location.pathname.includes('Bakery') ? <BakeryLogo className={s.header__logo}/>
 
-                <BakeryLogo className={s.header__logo}/>
+                  : data.logo == 'bakers' || location.pathname.includes('Bakers') ? <BakersLogo className={s.header__logo}/>
 
-                : null
+                  : data.logo == 'crowders' || location.pathname.includes('Crowders') ? <CrowdersLogo className={s.header__logo}/>
 
-              )}   
-            </ContextConsumer> 
-            <ContextConsumer>
-              {({ data, set }) => (
+                  : <BakeryLogo className={s.header__logo}/>
+                )}
+              </Location>         
+              
+            </TransitionLink>
 
-                data.logo == 'bakers' ? 
-
-                <BakersLogo className={s.header__logo}/>
-
-                : null
-
-              )}   
-            </ContextConsumer> 
-            <ContextConsumer>
-              {({ data, set }) => (
-
-                data.logo == 'crowders' ?
-
-                <CrowdersLogo className={s.header__logo}/>
-
-                : null
-
-              )}   
-            </ContextConsumer> 
-            <ContextConsumer>
-              {({ data, set }) => (
-
-                data.logo == '' ?
-
-                <BakeryLogo className={s.header__logo}/>
-
-                : null
-
-              )}   
-            </ContextConsumer>           
-            
-          </TransitionLink>
-
-                        )}   
-            </ContextConsumer>   
+          )}   
+        </ContextConsumer>   
 
           <div className={s.header__navigation}>
 

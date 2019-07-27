@@ -3,7 +3,7 @@ import React from "react"
 const defaultContextValue = {
   data: {
     // set your initial data shape here
-    logo: 'bakery',
+    logo: '',
     menuOpen: false
   },
   set: () => {},

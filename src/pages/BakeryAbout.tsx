@@ -8,9 +8,12 @@ import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Row } from 'components/row/Row';
 import { Figure2 } from 'components/figure2/Figure2';
 import { Split } from 'components/split/Split';
+import { AnimatedHeading  } from 'components/heading/AnimatedHeading';
+import { AnimatedHeadingTwo  } from 'components/heading/AnimatedHeadingTwo';
 import { Heading } from 'components/heading/Heading';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { Paragraph } from 'components/paragraph/Paragraph';
+import { Team} from 'components/team/Team';
 import Texticon from 'components/texticon/Texticon';
 import { Footer } from 'components/footer/Footer';
 import { Controller, Scene } from 'react-scrollmagic';
@@ -31,7 +34,7 @@ const BakeryAbout = ({ data, className }) => {
 
           <div className='bakery_about__left_column_one'>
 
-            <Split className='__heading_one'>One way or new way.</Split>
+            <AnimatedHeading className='__heading_one'>One way or new way.</AnimatedHeading>            
 
             <Figure2 className="show_on_mobile"/>
 
@@ -109,16 +112,29 @@ const BakeryAbout = ({ data, className }) => {
 
       </Row>
 
-      <Row className="bakery_about__row_four">
-          <div className="bakery_about__column_four">
+      <div className="bakery_team">
+        <Team />
+      </div>
 
-              <Split className="bakery_about__heading_four">Meet the team</Split>
+      <Row>
 
-              <Paragraph className="bakery_about__paragraph_four">Alena Pelcova</Paragraph>
+        <img src="../images/about_fiat_logo.png" className="whom_01"/>
+        <img src="../images/about_nike_logo.png" className="whom_02"/>
+        <img src="../images/about_fiat_logo.png" className="whom_03"/>      
 
+      </Row>
+      <Row>
 
-          </div>
+        <img src="../images/about_nike_logo.png" className="whom_01"/>
+        <img src="../images/about_fiat_logo.png" className="whom_02"/>
+        <img src="../images/about_nike_logo.png" className="whom_03"/>      
 
+      </Row>
+      <Row>
+
+        <img src="../images/about_fiat_logo.png" className="whom_01"/>
+        <img src="../images/about_nike_logo.png" className="whom_02"/>
+        <img src="../images/about_fiat_logo.png" className="whom_03"/>      
 
       </Row>
 

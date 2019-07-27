@@ -14,28 +14,25 @@ export const Footer = ({ className, delay }: IFooterProps) => (
               <div className={s.row__one}>
                 <div className={s.footer}>
                   <div className={s.footer__col1}>
-                    <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                    <TransitionLink  to="/Bakery" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                     	<h2 className={`${s.footer__h2} ${className}`}>Future Bakery</h2>
                     </TransitionLink>
-                    <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                    <TransitionLink  to="/BakeryAbout" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                      <p className={`${s.footer__p} ${className}`}>About us</p>
+                    </TransitionLink>
+                    <TransitionLink  to="/BakeryWork" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                     	<p className={`${s.footer__p} ${className}`}>Work</p>
-                    </TransitionLink>
-                    <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
-                    	<p className={`${s.footer__p} ${className}`}>About us</p>
-                    </TransitionLink>
-                    <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
-                    	<p className={`${s.footer__p} ${className}`}>Whom we bake with</p>
-                    </TransitionLink>       
+                    </TransitionLink>     
                   </div>
                   <div className={s.footer__col2}>      
                     <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                     	<h2 className={`${s.footer__h2} ${className}`}>Future Bakers</h2>
                     </TransitionLink>
                     <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
-                    	<p className={`${s.footer__p} ${className}`}>Work</p>
+                    	<p className={`${s.footer__p} ${className}`}>About us</p>
                     </TransitionLink>
                     <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
-                    	<p className={`${s.footer__p} ${className}`}>Who we are</p>
+                    	<p className={`${s.footer__p} ${className}`}>Work</p>
                     </TransitionLink>
                     <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                     	<p className={`${s.footer__p} ${className}`}>How we work</p>
@@ -49,10 +46,10 @@ export const Footer = ({ className, delay }: IFooterProps) => (
                     	<p className={`${s.footer__p} ${className}`}>About us</p>
                     </TransitionLink>
                     <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
-                    	<p className={`${s.footer__p} ${className}`}>What we do</p>
-                    </TransitionLink>
+                      <p className={`${s.footer__p} ${className}`}>About us</p>
+                    </TransitionLink>                    
                     <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
-                    	<p className={`${s.footer__p} ${className}`}>Projects</p>
+                    	<p className={`${s.footer__p} ${className}`}>What we do</p>
                     </TransitionLink>
                   </div>
                 </div>
@@ -78,7 +75,7 @@ export const Footer = ({ className, delay }: IFooterProps) => (
                       <p className={`${s.footer__s} ${className}`}>&copy; 2019 Future Bakery. All rights reserved.</p>
                   </div>
                   <div className={s.footer__col6}>
-                      <p className={`${s.footer__s} ${className}`}>Crafted by Kitchen</p>
+                      <p className={`${s.footer__s} ${className}`}>Crafted by MATBOLD</p>
                   </div>
                 </div>
               </div>

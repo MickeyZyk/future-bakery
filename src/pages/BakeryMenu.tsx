@@ -11,7 +11,7 @@ import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import ReactDOM from 'react-dom';
 
-export default class BEakeryMenu extends React.Component {
+export default class BakeryMenu extends React.Component {
 
   constructor(props){
     super(props);
@@ -88,7 +88,7 @@ export default class BEakeryMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="Future Bakery Family" 
-							      			to="/family"
+							      			to="/Family"
 						      				>
 														<MenuHeading className='white_text'>Future Bakery family</MenuHeading>
 												  </Link>
@@ -99,7 +99,7 @@ export default class BEakeryMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="Contact" 
-							      			to="/contact"
+							      			to="/Contact"
 						      				>
 														<MenuHeading className='white_text'>Contact</MenuHeading>
 												  </Link>
