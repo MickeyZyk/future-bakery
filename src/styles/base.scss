@@ -446,8 +446,199 @@ select {
 }
 
 
+/* ALL MENUS */
+
+.fb_linkedin_menu {
+    color: #fff;
+
+  @media (min-width: $min-960) {
+  position: fixed;
+  bottom: 8vw;
+  z-index: 15;  
+  @include grid-col(3);
+  @include grid-offset-left(3); 
+
+  }    
+
+}
+
+.fb_linkedin_menu a {
+    color: #fff;
+    text-decoration: none;
+  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 26px, 1920px: 13px, 2880px: 20px);
+  @include poly-fluid-sizing('font-size', $font-map);    
+
+}
 
 
+.menu_cursor_position {
+  transition: opacity 1s;
+  pointer-events: none;
+  opacity: 0;  
+  width: 100%;
+  height: 7vh;
+  position: absolute;  
+}
+
+.submenu_link:hover .menu_cursor_position {
+  transition: opacity 1s;  
+  pointer-events: all;
+  opacity: 1;
+}
+
+
+.menu_crown {
+
+  transform: rotate(-15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  z-index: 15;  
+  bottom: 4vw;  
+  @include grid-col(.75);
+  @include grid-offset-left(2.75); 
+
+  }
+
+}
+
+.menu_baloons {
+  
+  transform: rotate(5deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  z-index: 15;  
+  bottom: 4vw;  
+  @include grid-col(.75);
+  @include grid-offset-left(5); 
+
+
+  }  
+}
+
+.menu_temple {
+
+  transform: rotate(-15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  bottom: 4vw;  
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(6.5); 
+
+  }
+
+}
+
+.menu_drill {
+
+  transform: rotate(0deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  bottom: 1vw;
+  z-index: 15;  
+  @include grid-col(.7);
+  @include grid-offset-left(5); 
+
+  }
+
+}
+
+.menu_saw {
+  
+  transform: rotate(5deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  bottom: 1vw;
+  z-index: 15;  
+  @include grid-col(.9);
+  @include grid-offset-left(6.5); 
+
+
+  }  
+}
+
+.menu_paint {
+
+  transform: rotate(15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  bottom: 1vw;
+  z-index: 15;  
+  @include grid-col(.65);
+  @include grid-offset-left(2); 
+
+  }
+
+}
+
+.menu_phone {
+
+  transform: rotate(-15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 3vw;
+  z-index: 15;  
+  @include grid-col(1);
+  @include grid-offset-left(6); 
+
+  }
+
+}
+
+.menu_blah {
+  
+  transform: rotate(5deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 3vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(7); 
+
+
+  }  
+}
+
+.menu_chat {
+
+  transform: rotate(-15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 3vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(9.5); 
+
+  }
+
+}
 
 /* BAKERY MENU */
 
@@ -510,7 +701,57 @@ select {
   margin-top: 30vh;
 }
 
+
 /* BAKERS MENU */
+
+.bakers_menu_crown {
+
+  transform: rotate(-15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 10vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(2.75); 
+
+  }
+
+}
+
+.bakers_menu_baloons {
+  
+  transform: rotate(5deg);
+  @include grid-col; 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 9vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(5); 
+
+
+  }  
+}
+
+.bakers_menu_temple {
+
+  transform: rotate(-15deg);
+  @include grid-col; 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 11vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(6.5); 
+
+  }
+
+}
 
 
 .bakers_menu .submenu_link > h2:before, .bakers_menu  .submenu_link > h2:after {
@@ -535,81 +776,9 @@ select {
   transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.bakers_menu_crown {
-
-  transform: rotate(-15deg);
-  @include grid-col;
- 
-
-  @media (min-width: $min-960) {
-  position: absolute;
-  top: 10vw;
-  z-index: 15;  
-  @include grid-col(.75);
-  @include grid-offset-left(2.75); 
-
-  }
-
-}
-
-.bakers_menu_baloons {
-  
-  transform: rotate(5deg);
-  @include grid-col;
- 
-
-  @media (min-width: $min-960) {
-  position: absolute;
-  top: 9vw;
-  z-index: 15;  
-  @include grid-col(.75);
-  @include grid-offset-left(5); 
-
-
-  }  
-}
-
-.bakers_menu_temple {
-
-  transform: rotate(-15deg);
-  @include grid-col;
- 
-
-  @media (min-width: $min-960) {
-  position: absolute;
-  top: 11vw;
-  z-index: 15;  
-  @include grid-col(.75);
-  @include grid-offset-left(6.5); 
-
-  }
-
-}
 
 /* CROWDERS MENU */
 
-
-.crowders_menu .submenu_link > h2:before, .crowders_menu .submenu_link > h2:after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 4px;
-  top: 50%;
-  margin-top: -0.5px;
-  background: #37c6f4;
-}
-
-.crowders_menu .submenu_link > h2:after {
-  right: 2.5px;
-  background: #37c6f4;
-  transition: width 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.crowders_menu .submenu_link > h2:hover:before {
-  background: #37c6f4;
-  width: 100%;
-  transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
 
 .crowders_menu_phone {
 
@@ -635,6 +804,7 @@ select {
  
 
   @media (min-width: $min-960) {
+
   position: absolute;
   top: 33vw;
   z-index: 15;  
@@ -643,6 +813,7 @@ select {
 
 
   }  
+
 }
 
 .crowders_menu_chat {
@@ -650,7 +821,6 @@ select {
   transform: rotate(-15deg);
   @include grid-col;
  
-
   @media (min-width: $min-960) {
   position: absolute;
   top: 32vw;
@@ -661,6 +831,31 @@ select {
   }
 
 }
+
+
+.crowders_menu .submenu_link > h2:before, .crowders_menu .submenu_link > h2:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #37c6f4;
+}
+
+.crowders_menu .submenu_link > h2:after {
+  right: 2.5px;
+  background: #37c6f4;
+  transition: width 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.crowders_menu .submenu_link > h2:hover:before {
+  background: #37c6f4;
+  width: 100%;
+  transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+
 
 /* BAKERY HOME SLIDER  */
 
@@ -892,35 +1087,95 @@ select {
     font-family: serif;
 }
 
+
+/* TEAM */
+
       
+.team_previous {
+  font-weight: bold;
+  color: #37c6f4;
+  cursor: pointer;  
 
+  @include grid-col;
+  @include grid-offset-left(2);
 
+  @media (min-width: $min-960) {
+    @include grid-col(1);
+    @include grid-offset-left(4);
+    margin-top: -1vw;
+  }   
 
+}
 
+.team_next {
+  font-weight: bold;
+  color: #37c6f4;
+  cursor: pointer;
 
+  @include grid-col;
+  @include grid-offset-left(2);
 
+  @media (min-width: $min-960) {
+    @include grid-col(1);
+    @include grid-offset-left(4);  
+    margin-top: -1vw;
+  }   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 /* BAKERY ABOUT */
 
+
+.bakery_team .team_previous, .bakery_team .team_next {
+  color: #d4de4f;
+}
+
+
+.b_image {
+  transform: translateY(-38vw);
+  opacity: 0;
+}
+
+.whom_01 {
+  align-self: center!important;
+  @include grid-col;
+
+  @media (min-width: $min-960) {
+    margin-top: 3vw; 
+    margin-bottom: 3vw;     
+    @include grid-col(1.2);
+    @include grid-offset-left(4.7);
+  }  
+
+}
+
+.whom_02 {
+  align-self: center!important;
+  @include grid-col;
+
+  @media (min-width: $min-960) {
+    margin-top: 3vw; 
+    margin-bottom: 3vw;    
+    @include grid-col(1.2);
+    @include grid-offset-left(3);
+  }  
+
+}
+
+
+.whom_03 {
+  align-self: center!important;
+  @include grid-col;
+
+  @media (min-width: $min-960) {
+    margin-top: 3vw; 
+    margin-bottom: 3vw;     
+    @include grid-col(1.2);
+    @include grid-offset-left(3);
+  }  
+
+}
 
 .bakery_about__green_rainbow {
 
@@ -1231,8 +1486,9 @@ select {
 
 
   color: #231f20;
+  position: relative;
   $margin-map: (375px: 120px, 959px: 300px, 960px: 110px, 2880px: 330px);
-  @include poly-fluid-sizing('margin-top', $margin-map);
+  @include poly-fluid-sizing('top', $margin-map);
   margin-left: 7%;
 
 
@@ -1306,7 +1562,8 @@ select {
     display: block;
     margin-left: 5.5%;
     @include grid-col(12);
-    float: left;        
+    float: left;    
+    margin-bottom: 5vw;    
 
   }        
 
@@ -1416,39 +1673,107 @@ select {
 }
 
 
-.whom_01 {
-  align-self: center!important;
-  @include grid-col;
+.bakery_about_clients_heading {
+  color: #d4de4f!important;
+  @include grid-col(6);
+  @include grid-offset-left(11);
+
 
   @media (min-width: $min-960) {
-    @include grid-col(1.2);
-    @include grid-offset-left(4.7);
-  }  
+    position: relative;
+    top: 14vw;
+    @include grid-col(4);
+    @include grid-offset-left(2);
+
+  }
 
 }
 
-.whom_02 {
-  align-self: center!important;
-  @include grid-col;
+.bakery_about_clients_background {
+  @include grid-col(6);
+  @include grid-offset-left(11);
+
 
   @media (min-width: $min-960) {
-    @include grid-col(1.2);
-    @include grid-offset-left(3);
-  }  
 
+    @include grid-col(18);
+    @include grid-offset-left(0);
+    background-size: 83.333%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    max-height: 60vw;
+
+  }  
+}
+
+.bakery_about_clients {
+
+    @include grid-col(6);
+    @include grid-offset-left(11); 
+  
+
+  @media (min-width: $min-960) {  
+    @include grid-offset-left(-2); 
+
+  }
 }
 
 
-.whom_03 {
-  align-self: center!important;
+.bakery_about_team_heading {
   @include grid-col;
+  @include grid-offset-left(2);
 
   @media (min-width: $min-960) {
-    @include grid-col(1.2);
-    @include grid-offset-left(3);
-  }  
+    @include grid-col(3);
+    @include grid-offset-left(4);
+    position: relative; 
+    top: 4vw;
+  }   
 
 }
+
+.bakery_about_chef {
+
+    display: none;
+
+    @media (min-width: $min-960) {
+      position: relative;
+      top: 16vw;
+      display: block;  
+      @include grid-col(0.6);
+      @include grid-offset-left(3); 
+
+
+    }   
+
+}
+
+.bakery_about_soldier {
+
+    display: none;
+
+    @media (min-width: $min-960) {
+      position: relative;
+      display: block;  
+      @include grid-col(0.4);
+      @include grid-offset-left(3.7); 
+      z-index: 15;
+
+    }   
+
+}
+
+.bakery_about__green_heading_background > div{
+  transform: perspective(500)
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -2049,80 +2374,7 @@ select {
   }  
 }
 
-/* BAKERY MENU */
 
-.bakery_menu_drill {
-
-  transform: rotate(0deg);
-  @include grid-col;
- 
-
-  @media (min-width: $min-960) {
-  position: absolute;
-  top: 16vw;
-  z-index: 15;  
-  @include grid-col(.7);
-  @include grid-offset-left(5); 
-
-  }
-
-}
-
-.bakery_menu_saw {
-  
-  transform: rotate(5deg);
-  @include grid-col;
- 
-
-  @media (min-width: $min-960) {
-  position: absolute;
-  top: 16vw;
-  z-index: 15;  
-  @include grid-col(.9);
-  @include grid-offset-left(6.5); 
-
-
-  }  
-}
-
-.bakery_menu_paint {
-
-  transform: rotate(15deg);
-  @include grid-col;
- 
-
-  @media (min-width: $min-960) {
-  position: absolute;
-  top: 15vw;
-  z-index: 15;  
-  @include grid-col(.65);
-  @include grid-offset-left(2); 
-
-  }
-
-}
-
-.fb_linkedin_menu {
-    color: #fff;
-
-  @media (min-width: $min-960) {
-  position: fixed;
-  bottom: 8vw;
-  z-index: 15;  
-  @include grid-col(3);
-  @include grid-offset-left(3); 
-
-  }    
-
-}
-
-.fb_linkedin_menu a {
-    color: #fff;
-    text-decoration: none;
-  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 26px, 1920px: 13px, 2880px: 20px);
-  @include poly-fluid-sizing('font-size', $font-map);    
-
-}
 
 
 /* CROWDERS HOME */

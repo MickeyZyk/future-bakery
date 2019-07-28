@@ -53,11 +53,8 @@ export default class BakeryMenu extends React.Component {
 					<MenuBackground/>
 					  <Helmet title="Future Bakery" />
 							<div className='fullscreen'>
-						    <ReactCursorPosition className='fullscreen_cursor_position'>   
+  
 						      <Helmet title="Bakery" />
-						      <SVGicon className='bakery_menu_saw' src='bakery_menu_saw.svg' /> 
-						      <SVGiconReverse  className='bakery_menu_drill' src='bakery_menu_drill.svg' /> 
-						      <SVGicon className='bakery_menu_paint' src='bakery_menu_paint.svg' /> 						      
 									<div className='menu_row'>
 											<ul ref={this.unorderedList}>
 											  <li className='menu_item_wrapper'>
@@ -68,6 +65,11 @@ export default class BakeryMenu extends React.Component {
 							      			name="About us" 
 							      			to="/BakeryAbout"
 				      						>
+							    					<ReactCursorPosition className='menu_cursor_position'> 						      				
+												      <SVGicon className='menu_crown' src='bakery_menu_crown.svg' /> 
+												      <SVGiconReverse  className='menu_baloons' src='bakery_menu_baloons.svg' /> 
+												      <SVGicon className='menu_temple' src='bakery_menu_temple.svg' /> 
+												    </ReactCursorPosition>				      						
 														<MenuHeading className='white_text'>About Us</MenuHeading>
 												  </Link>
 											  </li>
@@ -79,7 +81,13 @@ export default class BakeryMenu extends React.Component {
 							      			name="Work" 
 							      			to="/BakeryWork"
 						      				>
+							    					<ReactCursorPosition className='menu_cursor_position'> 						      				
+												      <SVGicon className='menu_saw' src='bakery_menu_saw.svg' /> 
+												      <SVGiconReverse  className='menu_drill' src='bakery_menu_drill.svg' /> 
+												      <SVGicon className='menu_paint' src='bakery_menu_paint.svg' />
+												    </ReactCursorPosition>												      
 														<MenuHeading className='white_text'>Work</MenuHeading>
+
 												  </Link>
 											  </li>
 											  <li className='menu_item_wrapper'>
@@ -90,7 +98,7 @@ export default class BakeryMenu extends React.Component {
 							      			name="Future Bakery Family" 
 							      			to="/Family"
 						      				>
-														<MenuHeading className='white_text'>Future Bakery family</MenuHeading>
+														<MenuHeading className='white_text'>Future Bakery family</MenuHeading>												    
 												  </Link>
 											  </li>
 											  <li className='menu_item_wrapper'>
@@ -101,12 +109,17 @@ export default class BakeryMenu extends React.Component {
 							      			name="Contact" 
 							      			to="/Contact"
 						      				>
+							    					<ReactCursorPosition className='menu_cursor_position'> 								      				
+												      <SVGicon className='menu_phone' src='bakery_menu_phone.svg' /> 
+												      <SVGiconReverse  className='menu_blah' src='bakery_menu_blah.svg' /> 
+												      <SVGicon className='menu_chat' src='bakery_menu_chat.svg' /> 						      				
+												    </ReactCursorPosition>						      				
 														<MenuHeading className='white_text'>Contact</MenuHeading>
 												  </Link>
 											  </li>
 										  </ul>
 								  </div>
-						    </ReactCursorPosition>
+
 							</div>
 
 				      <div className='fb_linkedin_menu'>

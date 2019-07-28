@@ -315,7 +315,7 @@ class Carousel extends React.Component {
           {this.state.showButtons ? carouselRightButton : null } 
         </ReactCursorPosition>
         <div className={s.contact_button_link}>
-          <TransitionLink to={'/contact'} exit={{ length: 1 }} entry={{ delay: 1 }}>
+          <TransitionLink to={'/Contact'} exit={{ length: 1 }} entry={{ delay: 1 }}>
             START A PROJECT WITH US <span>&gt;</span>
           </TransitionLink>  
         </div>

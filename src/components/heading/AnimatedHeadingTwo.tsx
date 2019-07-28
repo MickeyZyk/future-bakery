@@ -16,26 +16,6 @@ export class AnimatedHeadingTwo extends React.Component {
 
   componentDidMount(){
 
-    /*
-      console.log(this.props);
-      var entering = ['entering'].includes(this.transitionStatus);    
-      var exiting = ['exiting'].includes(this.transitionStatus);          
-      var h2 = this.heading.current; 
-      const split = new SplitText(
-        'h2',
-        {
-          type: "lines",
-          linesClass: "ts-line"
-        }
-      )
-
-      //var tslines = h2.querySelectorAll('.ts-line');
-      var currentTL = new TimelineMax(); 
-
-        //currentTL.staggerFrom(tslines, 1.25, { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut'}, .25, "+=0"); 
-
-        */
-
   }
 
   componentWillUnmount(){
@@ -48,11 +28,11 @@ export class AnimatedHeadingTwo extends React.Component {
         {({ transitionStatus }) => {       
           return (
             <Controller refreshInterval={1}>
-              <Scene duration={'200%'} triggerHook={'onEnter'}>
-                <Tween
-                  staggerFrom={{ yPercent: 100, opacity: 0 }}
-                  stagger={0.5}
-                  duration={0.3}
+              <Scene duration={'50%'} triggerHook={0.75}>
+                <Tween 
+                  staggerFrom={{ yPercent: 75, opacity: 0, ease: 'Power3.easeInOut'}}
+                  stagger={2}
+                  duration={2}
                   ease="Power3.easeInOut"
                 >
                   <SplitWords>

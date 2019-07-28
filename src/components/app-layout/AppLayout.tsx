@@ -91,12 +91,13 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
               <ContextConsumer>
                 {({ data, set }) => (
                   <HeaderLink className={ location.pathname.includes('Menu') ? `white_text white_circle` : '' } name="MENU" 
-                  to={ location.pathname == '/' ?  '/BakeryMenu' : location.pathname == '/Family/' ?  '/Bakery'
-                  :  location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu'  || location.pathname == '/CrowdersMenu'   ? ( location.state.prevUrlPath ? location.state.prevUrlPath : '/BakeryMenu' )
+                  to={ location.pathname == '/' ?  '/BakeryMenu' 
+                  : location.pathname == '/Family/' ?   ( location.state != null  ? location.state.prevUrlPath : '/BakeryMenu' )
+                  :  location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu'  || location.pathname == '/CrowdersMenu'   ? ( location.state != null  ? location.state.prevUrlPath : '/BakeryMenu' )
                   :  location.pathname.includes('Bakery') && !( location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu'  || location.pathname == '/CrowdersMenu') ? '/BakeryMenu' 
                   :  location.pathname.includes('Bakers') && !( location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu'  || location.pathname == '/CrowdersMenu') ? '/BakersMenu' 
                   :  location.pathname.includes('Crowders') && !( location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu'  || location.pathname == '/CrowdersMenu') ? '/CrowdersMenu' 
-                  :  ( location.state.prevUrlPath ? location.state.prevUrlPath : '/BakeryMenu' ) } 
+                  :  ( location.state != null  ? location.state.prevUrlPath : '/BakeryMenu' ) } 
                   icon={ ( location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu' || location.pathname == '/CrowdersMenu') ? <WhiteCircle/> : <Circle />} permanent={true}>                
                     {location.pathname.includes('Menu') ? `CLOSE` : `MENU`}
                   </HeaderLink>

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { TweenMax, TimelineMax, Power3 } from "gsap";
 import { Tween } from 'react-gsap';
 import { Row } from 'components/row/Row';
-import { Heading } from 'components/heading/Heading';
+import { AnimatedHeadingTwo  } from 'components/heading/AnimatedHeadingTwo';
 import ReactDOM from 'react-dom';
 import { Link as InternalLink } from 'components/link/Link';
 import s from './Team.scss';
@@ -23,7 +23,6 @@ var linkURLs = ["mailto:alena.pelcova@futurebakers.com", "mailto:alena.pelcova@f
 export const Team = () => { 
   return( 
     <div className={s.team}>
-      <Heading className={s.heading}>Meet the team</Heading>
       <Member arrayOfImages={images} />
     </div> 
   )
@@ -124,8 +123,8 @@ class Member extends React.Component {
           </div>        
 
         <Row>
-          <div className={s.previous} onClick={this.prevSlide.bind(this)}><span>&lt;</span>&nbsp;&nbsp;PREVIOUS</div>
-          <div className={s.next} onClick={this.nextSlide.bind(this)}>NEXT&nbsp;&nbsp;<span>&gt;</span></div>        
+          <div className="team_previous" onClick={this.prevSlide.bind(this)}><span>&lt;</span>&nbsp;&nbsp;PREVIOUS</div>
+          <div className="team_next" onClick={this.nextSlide.bind(this)}>NEXT&nbsp;&nbsp;<span>&gt;</span></div>        
         </Row>
       </>
     );

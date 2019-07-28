@@ -1,17 +1,5 @@
 @import '~styles/config';
 
-.heading {
-  @include grid-col;
-  @include grid-offset-left(2);
-
-  @media (min-width: $min-960) {
-    @include grid-col(3);
-    @include grid-offset-left(4); 
-    margin-bottom: 3vw;
-  }   
-
-}
-
 .team {
   display: block;
   margin-top: 10vw;
@@ -107,37 +95,6 @@
 */
 
 
-.previous {
-  font-weight: bold;
-  color: #37c6f4;
-  cursor: pointer;  
-
-  @include grid-col;
-  @include grid-offset-left(2);
-
-  @media (min-width: $min-960) {
-    @include grid-col(1);
-    @include grid-offset-left(4);
-    margin-top: -1vw;
-  }   
-
-}
-
-.next {
-  font-weight: bold;
-  color: #37c6f4;
-  cursor: pointer;
-
-  @include grid-col;
-  @include grid-offset-left(2);
-
-  @media (min-width: $min-960) {
-    @include grid-col(1);
-    @include grid-offset-left(4);  
-    margin-top: -1vw;
-  }   
-
-}
 
 .current_image, .next_image, .previous_image {
   display: block;
