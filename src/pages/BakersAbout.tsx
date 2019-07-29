@@ -11,10 +11,15 @@ import { Figure4 } from 'components/figure4/Figure4';
 import { Split } from 'components/split/Split';
 import { Heading } from 'components/heading/Heading';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
+import { AnimatedHeading  } from 'components/heading/AnimatedHeading';
+import { AnimatedHeadingTwo  } from 'components/heading/AnimatedHeadingTwo';
+import { AnimatedHeadingThree } from 'components/heading/AnimatedHeadingThree';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import Texticon from 'components/texticon/Texticon';
 import { Link } from 'components/link/Link';
 import { Footer } from 'components/footer/Footer';
+import { TweenMax, TimelineMax, Power3 } from "gsap";
+import { Tween, SplitWords } from 'react-gsap'
 import { Controller, Scene } from 'react-scrollmagic';
 
 
@@ -30,85 +35,83 @@ const BakersAbout = ({ data, className }) => {
         <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  /> 
 
         <Row>
-
-          <div className='bakers_about__left_column_one'>
-
-            <Split className='bakers_about__heading_one'>Who we are</Split>
-
-            <Figure3 className="show_on_mobile"/>
-
-            <Split className='bakers_about__heading_two'>A space for creative people with amazing ideas.</Split>      
-
-            <Paragraph className='bakers_about__paragraph paragraph'>A safe place where those who are searching for the great idea meet with the ones that have them. And where they have access not just to one amazing idea, but to several of them. A place, where the idea creators – who we call BAKERS get rewarded if their idea is selected by the client. We are a constantly growing group of bakers and creative thinkers. We believe it is important to provide a space for ideas and wonderful creations. We want to give everybody a chance to contribute. We believe the more idea makers we have, the more we can all move forward.</Paragraph>
-          </div>
-
           <Figure3 className="bakers_about__image_one hide_on_mobile dropped"/>
 
+          <AnimatedHeading className='bakers_about__heading_one'>Who we are</AnimatedHeading>  
+
+          <Figure3 className="show_on_mobile"/>
+
+          <HeadingTwo className='bakers_about__heading_two'>A space for creative people with amazing ideas.</HeadingTwo>      
+        </Row>
+        <Row>
+          <Paragraph className='bakers_about__paragraph paragraph'>A safe place where those who are searching for the great idea meet with the ones that have them. And where they have access not just to one amazing idea, but to several of them. A place, where the idea creators – who we call BAKERS get rewarded if their idea is selected by the client. We are a constantly growing group of bakers and creative thinkers. We believe it is important to provide a space for ideas and wonderful creations. We want to give everybody a chance to contribute. We believe the more idea makers we have, the more we can all move forward.</Paragraph>
         </Row>
 
         <SVGicon className='bakers_about__brains' src='brains.svg'  /> 
 
         <Row>
 
-          <div className='bakers_about__right_column_one'>
-
             <Figure4 className="show_on_mobile"/>
 
-            <Split className='bakers_about__heading_three'>We are a group of enthusi- asts and passionate thinkers</Split>      
+            <Figure4 className="bakers_about__image_two hide_on_mobile"/>            
+
+            <Split className='bakers_about__heading_three'>We are a group of enthusiasts and passionate thinkers</Split>      
 
             <Paragraph className='bakers_we__paragraph paragraph'>We believe that a great idea can pop up anywhere: in a bar, during a wonderfully peaceful weekend, while running, before going to bed, while chatting with your loved one, from a student, retiree or stay-at-home mom or dad.</Paragraph>
 
-            <Link to={'/'}>LEARN MORE&nbsp;&nbsp;<div className='more_arrow'>&gt;</div></Link>
+            <Link className="bakers_about__join_link" to={'/Contact'}>JOIN US&nbsp;&nbsp;<span>&gt;</span></Link>
 
-          </div>
 
-          <Figure4 className="bakers_about__image_one hide_on_mobile"/>
+
+
 
         </Row>     
 
-        <Row>
+  <Row className="tags_row">
 
 
-            <div className="bakers_about__right_icons">
+            <Controller refreshInterval={1}>
+              <Scene duration={'110%'} triggerHook={1}>
+                <Tween 
+                  staggerFrom={{ opacity: 0, ease: 'Power3.easeInOut'}}
+                  stagger={2}
+                  duration={2}
+                  ease="Power3.easeInOut"
+                >
+                  <div className="tags_heading"><HeadingTwo>Problem</HeadingTwo></div>
+                  <p className="tag tag_01">how can be a name for fishermans beer?</p>
+                  <p className="tag tag_02">how can be a name for fishermans beer?</p>
+                  <p className="tag tag_03">how can be a name for fishermans beer?</p>
+                  <p className="tag tag_04">how can be a name for fishermans beer?</p>
+                  <img className="tag_arrow_01" src="../images/tag_arow_01.png" />
+                  <img className="phone_logo" src="../images/phone_logo.png " /> 
+                  <img className="tag_arrow_02" src="../images/tag_arow_02.png" /> 
+                  <img className="hip" src="../svg/hip.svg"/>
+                  <img className="nerd" src="../svg/nerd.svg"/> 
+                  <p className="tag nerd_text">Marketa grafik miluje horska kola</p>
+                  <img className="granny" src="../svg/granny.svg"/>
+                  <p className="tag granny_text">Marketa grafik miluje horska kola</p>
+                  <img className="afro" src="../svg/afro.svg"/>                  
+                </Tween>
+              </Scene>
+            </Controller>   
 
 
-                <Texticon className='bakers_about__graph_icon' name='STRATEGIC PLANNING &amp; CONSULTANCY' src='asset 23.svg' />
 
-                <Texticon className='bakers_about__graph_icon' name='IDEATION' src='asset 35.svg' />
+  
 
-                <Texticon className='bakers_about__graph_icon last' name='CREATIVE STRATEGY' src='asset 36.svg' />
-
-                <Texticon className='bakers_about__graph_icon first' name='CAMPAIGN PLANNING' src='asset 38.svg' />
-
-                <Texticon className='bakers_about__graph_icon' name='CAMPAIGN DEVELOPMENT &amp; PRODUCTION' src='asset 39.svg' />
-
-                <Texticon className='bakers_about__graph_icon last' name='COMMUNITY BUILDING' src='asset 40.svg' />
-
-                <Texticon className='bakers_about__graph_icon first' name='CROWD SOURCING' src='asset 41.svg' />
-
-                <Texticon className='bakers_about__graph_icon' name='INNOVATION' src='asset 42.svg' />
-
-                <Texticon className='bakers_about__graph_icon last' name='ANALYTICS &amp; ON-LINE COMMUNITY' src='asset 43.svg' />
-
-                <Texticon className='bakers_about__graph_icon' name='INNOVATION' src='asset 44.svg' />
-
-                 
-
-            </div>       
- 
-
-      </Row>
+  </Row>
       
-        <Row>
+    <Row>
       <div className="bakers_about__orange_heading_background">
 
           <Heading className="bakers_about__heading_four">Who is behind the scenes of Future Bakers?</Heading>     
 
       </div>  
-</Row>
+    </Row>
       <div className="meet">
 
-        <Row>
+     <Row>
             <div className="bakers_about__column_four">
 
                 <Split className="bakers_about__heading_five">Meet the team</Split>
@@ -121,7 +124,7 @@ const BakersAbout = ({ data, className }) => {
             </div>
 
 
-        </Row>
+     </Row>
 
       </div>
 
