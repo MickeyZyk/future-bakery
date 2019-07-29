@@ -16,7 +16,7 @@ interface IHeaderProps {
   children: React.ReactNode;
 }
 
-export const Header = ({ children, logo, data, set }: IHeaderProps) => (
+export const Header = ({ children, logo, data, set, location, ...props }: IHeaderProps) => (
 
   <header className={s.header}>
 
@@ -25,26 +25,33 @@ export const Header = ({ children, logo, data, set }: IHeaderProps) => (
         <ContextConsumer>
           {({ data, set }) => (   
 
+
+              <Location>
+                {({ location }) => (              
+
             <TransitionLink to={ location.pathname == '/' ?  '/Bakery'
                   :  location.pathname.includes('Bakery') ? '/Bakery' 
                   :  location.pathname.includes('Bakers') ? '/Bakers' 
                   :  location.pathname.includes('Crowders') ? '/Crowders' 
                   :  '/Bakery' }  onClick={() => set({ menuOpen: !data.menuOpen })} className={s.header__logo} exit={{ length: 1 }} entry={{ delay: 0 }}>
 
-              <Location>
-                {({ location }) => (          
+   
 
-                  data.logo == 'bakery' || location.pathname.includes('Bakery') ? <BakeryLogo className={s.header__logo}/>
+                 { data.logo == 'bakery' || location.pathname.includes('Bakery') ? <BakeryLogo className={s.header__logo}/>
 
                   : data.logo == 'bakers' || location.pathname.includes('Bakers') ? <BakersLogo className={s.header__logo}/>
 
                   : data.logo == 'crowders' || location.pathname.includes('Crowders') ? <CrowdersLogo className={s.header__logo}/>
 
-                  : <BakeryLogo className={s.header__logo}/>
-                )}
-              </Location>         
+                  : <BakeryLogo className={s.header__logo}/>}
+       
               
             </TransitionLink>
+
+
+                )}
+              </Location>  
+            
 
           )}   
         </ContextConsumer>   
