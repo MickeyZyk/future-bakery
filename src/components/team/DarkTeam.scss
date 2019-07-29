@@ -1,0 +1,191 @@
+@import '~styles/config';
+
+.dark_team {
+  display: block;
+  margin-top: 10vw;
+    top: -1px;
+    position: relative;
+    margin-bottom: -5px;    
+}
+
+.data {
+
+  display: none;
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(4);
+    @include grid-offset-left(4); 
+  }   
+}
+
+.current_data {
+  display: block;
+  @media (min-width: $min-960) {
+    margin-bottom: 5vw;
+  }     
+}
+
+.name {
+  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 40px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  font-weight: lighter;
+  color: #fff;
+  @media (min-width: $min-960) {
+    margin-bottom: 2vw;
+  }  
+
+}
+
+.text {
+    color: #fff;
+  $font-map: (375px: 16px, 959px: 40px, 960px: 7px, 2880px: 20px);
+  @include poly-fluid-sizing('font-size', $font-map);  
+  $height-map: (375px: 19px, 959px: 50px, 960px: 16px, 2880px: 48px);
+  @include poly-fluid-sizing('line-height', $height-map);    
+  @media (min-width: $min-960) {
+    margin-bottom: 5vw;
+  }     
+}
+
+.link {
+  color: #fff; 
+  margin-bottom: 3vw; 
+  font-weight: bold; 
+}
+
+.image {
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    /* transform: translateY(-98%); */
+    @include grid-col(5);
+    @include grid-offset-right(2);
+  }   
+}  
+
+.current_image {
+
+  /* display: none; */
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    transform: none;    
+    @include grid-col(5);
+    @include grid-offset-left(3);
+  }   
+}
+
+/*
+.image_secondary {
+  
+  /* display: none; */
+
+/*
+  @media (min-width: $min-960) {
+    position: absolute;
+    @include grid-col(5);
+    @include grid-offset-left(17.5);
+  }
+}
+*/
+
+
+
+.current_image, .next_image, .previous_image {
+  display: block;
+}
+
+
+.before_bar {
+
+  display: none;
+
+  @media (min-width: $min-960) {
+    
+    display: block;    
+    position: absolute;
+    height:50vw;
+    @include grid-col(11);
+    background-color: #222222;
+    z-index: 5;
+  } 
+}
+
+
+.after_bar {
+
+  display: none;
+
+  @media (min-width: $min-960) {
+    
+    display: block;    
+    position: absolute;
+    height:50vw;
+    @include grid-col(1);
+    @include grid-offset-left(16);
+    background-color: #222222;
+    z-index: 5;
+  } 
+}
+
+
+.window {
+
+  display: none;
+
+  @media (min-width: $min-960) {
+
+    display: block;
+    overflow: hidden;
+    height: 37vw;
+    margin-top: -37vw;  
+    z-index: -1;
+    position: relative;
+  }   
+
+}
+
+.strip {
+  opacity: 1;
+}
+
+
+.team_previous {
+  font-weight: bold;
+  color: #ff7a00;
+  cursor: pointer;  
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(1);
+    @include grid-offset-left(4);
+    margin-top: -1vw;
+  }   
+
+}
+
+.team_next {
+  font-weight: bold;
+  color: #ff7a00;
+  cursor: pointer;
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(1);
+    @include grid-offset-left(4);  
+    margin-top: -1vw;
+  }   
+
+}

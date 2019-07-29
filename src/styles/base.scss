@@ -1990,7 +1990,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -29vw;    
+    top: -20vw;    
     @include grid-col(3);
     @include grid-offset-left(12);
   }
@@ -2006,14 +2006,14 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -25vw;    
+    top: -17vw;    
     @include grid-col(3);
     @include grid-offset-left(12);
   }  
 }
 
 .tags_row {
-  min-height: 100vw;
+  min-height: 80vw;
 }
 
 .tags_row > div {
@@ -2122,8 +2122,8 @@ select {
   @media (min-width: $min-960) {
     position: relative;
     top: 31vw;    
-    @include grid-col(1);
-    @include grid-offset-left(-1);
+    @include grid-col(1.25);
+    @include grid-offset-left(-.75);
   }  
 }
 .hip {
@@ -2134,7 +2134,7 @@ select {
   @media (min-width: $min-960) {
     position: relative;
     top: 24vw;    
-    @include grid-col(0.65);
+    @include grid-col(0.6);
     @include grid-offset-left(4.2);
   }  
 }
@@ -2145,7 +2145,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -22vw;    
+    top: -8vw;    
     @include grid-col(0.6);
     @include grid-offset-left(12);
   }  
@@ -2158,7 +2158,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -16.7vw;    
+    top: -3vw;    
     @include grid-col(0.8);
     @include grid-offset-left(-.65);
   }  
@@ -2170,7 +2170,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -20vw;    
+    top: -6vw;    
     @include grid-col(0.6);
     @include grid-offset-left(.55);
   }  
@@ -2183,7 +2183,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -14.7vw;    
+    top: -.7vw;    
     @include grid-col(0.8);
     @include grid-offset-left(-.7);
   }  
@@ -2195,18 +2195,270 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -17vw;    
+    top: -7vw;    
     @include grid-col(0.72);
     @include grid-offset-left(-3.2);
   }  
 }
+.dude {
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -3vw;    
+    @include grid-col(0.6);
+    @include grid-offset-left(-5.2);
+  }  
+}
+.dude_text {
+  text-align: center;
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 2.2vw;    
+    @include grid-col(1);
+    @include grid-offset-left(-.85);
+  }  
+}
+.smart {
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 4vw;    
+    @include grid-col(0.8);
+    @include grid-offset-left(0.4);
+  }  
+}
+.smart_text {
+  text-align: center;
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 9vw;    
+    @include grid-col(0.8);
+    @include grid-offset-left(-.78);
+  }  
+}
+.kid {
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 8vw;    
+    @include grid-col(0.63);
+    @include grid-offset-left(0.4);
+  }  
+}
+.kid_text {
+  text-align: center;
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 13vw;    
+    @include grid-col(0.8);
+    @include grid-offset-left(-.78);
+  }  
+}
+.tags_heading_middle {
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -2vw;    
+    @include grid-col(1.75);
+    @include grid-offset-left(0);
+  }  
+}
+.fireman {
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 8vw;    
+    @include grid-col(0.63);
+    @include grid-offset-left(.9);
+  }  
+}
+.fireman_text {
+  text-align: center;
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 13vw;    
+    @include grid-col(0.8);
+    @include grid-offset-left(-.7);
+  }  
+}
+.girl {
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 13vw;    
+    @include grid-col(0.63);
+    @include grid-offset-left(.1);
+  }  
+}
+.girl_text {
+  text-align: center;
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 17.1vw;    
+    @include grid-col(0.8);
+    @include grid-offset-left(-.7);
+  }  
+}
+.mlada {
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 15vw;    
+    @include grid-col(0.63);
+    @include grid-offset-left(-2.6);
+  }  
+}
+.tag_arrow_03 {
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 12vw;    
+    @include grid-col(1.6);
+    @include grid-offset-left(-2.5);
+  }  
+}
+.vial {
+  align-self: flex-start!important;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 22vw;    
+    @include grid-col(1);
+    @include grid-offset-left(-3.25);
+  }  
+}
 
 
+.bakers_about_team_row {
+  margin-top: -8vw;
+}
 
+.tags_heading_bottom {
+
+  $font-map: (375px: 60px, 959px: 90px, 960px: 34px, 2880px: 100px);
+  @include poly-fluid-sizing('font-size', $font-map);
+
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -13vw;    
+    @include grid-col(2);
+    @include grid-offset-left(7);
+  }      
+}
+
+
+.bakers_about__join_link_two {
+
+
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -14vw;    
+    @include grid-col(3);
+    @include grid-offset-left(7);
+  }  
+}
+
+.bakers_about__join_link_three {
+
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -16.4vw;    
+    @include grid-col(3);
+    @include grid-offset-left(9.4);
+  }  
+}
+
+.divider_text {
+
+  @include grid-col(16);
+  @include grid-offset-left(0);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -15.22vw;
+    @include grid-col(3);
+    @include grid-offset-left(8);
+  } 
+}
+
+
+.bakers_about_team_heading {
+  color: #fff!important;
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(3);
+    @include grid-offset-left(4);
+    position: relative; 
+    top: 6vw;
+  }   
+
+}
 
 
 .meet {
-  background-color: #222222
+    background-color: #222222;
+    padding-top: 4vw;
 }
 
 .background {
@@ -2515,6 +2767,49 @@ select {
 
   }
 }
+
+.bakers_about_chef {
+
+    display: none;
+
+    @media (min-width: $min-960) {
+      position: relative;
+      top: 42vw;
+      display: block;  
+      @include grid-col(1);
+      @include grid-offset-left(2.75); 
+
+
+    }   
+
+}
+
+.bakers_about_soldier {
+    transform: rotate(15deg);
+    display: none;
+
+    @media (min-width: $min-960) {
+      position: relative;
+      top: 12vw;      
+      display: block;  
+      @include grid-col(0.6);
+      @include grid-offset-left(4.3); 
+      z-index: 15;
+
+    }   
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* BAKERS HOME */
 

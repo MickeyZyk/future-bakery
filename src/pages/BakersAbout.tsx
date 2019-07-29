@@ -17,6 +17,7 @@ import { AnimatedHeadingThree } from 'components/heading/AnimatedHeadingThree';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import Texticon from 'components/texticon/Texticon';
 import { Link } from 'components/link/Link';
+import { DarkTeam} from 'components/team/DarkTeam';
 import { Footer } from 'components/footer/Footer';
 import { TweenMax, TimelineMax, Power3 } from "gsap";
 import { Tween, SplitWords } from 'react-gsap'
@@ -71,11 +72,10 @@ const BakersAbout = ({ data, className }) => {
 
 
             <Controller refreshInterval={1}>
-              <Scene duration={'110%'} triggerHook={1}>
+              <Scene duration={'135%'} triggerHook={.85}>
                 <Tween 
                   staggerFrom={{ opacity: 0, ease: 'Power3.easeInOut'}}
-                  stagger={2}
-                  duration={2}
+                  stagger={2} duration={10}
                   ease="Power3.easeInOut"
                 >
                   <div className="tags_heading"><HeadingTwo>Problem</HeadingTwo></div>
@@ -92,41 +92,59 @@ const BakersAbout = ({ data, className }) => {
                   <img className="granny" src="../svg/granny.svg"/>
                   <p className="tag granny_text">Marketa grafik miluje horska kola</p>
                   <img className="afro" src="../svg/afro.svg"/>                  
+                  <img className="dude" src="../svg/dude.svg"/>   
+                  <p className="tag dude_text">Honza marketer miluje reklamu</p>
+                  <img className="smart" src="../svg/smart.svg"/>
+                  <p className="tag smart_text">Marketa grafik miluje horska kola</p> 
+                  <img className="kid" src="../svg/kid.svg"/>
+                  <p className="tag kid_text">Honza marketer miluje reklamu</p> 
+                  <div className="tags_heading_middle"><HeadingTwo>Spousta lidy spousta napadu</HeadingTwo></div> 
+                  <img className="fireman" src="../svg/fireman.svg"/>
+                  <p className="tag fireman_text">Karel hasic</p>
+                  <img className="girl" src="../svg/girl.svg"/>
+                  <p className="tag girl_text">Marketa grafik miluje horska kola</p>
+                  <img className="mlada" src="../svg/mlada.svg"/>   
+                  <img className="tag_arrow_03" src="../images/tag_arow_03.png" /> 
+                  <img className="vial" src="../svg/vial.svg"/>   
+              
                 </Tween>
               </Scene>
             </Controller>   
 
-
-
-  
-
   </Row>
-      
-    <Row>
+
+    <Split className="tags_heading_bottom">Reseni</Split>
+    <Link className="bakers_about__join_link_two" to={'/Contact'}>JOIN US&nbsp;&nbsp;<span>&gt;</span></Link>
+    <div className="divider_text">or find out how to</div>
+    <Link className="bakers_about__join_link_three" to={'/Contact'}>BRIEF US&nbsp;&nbsp;<span>&gt;</span></Link>    
+          
+    <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
+    <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
+    
+    <Row className="bakers_about_team_row">
       <div className="bakers_about__orange_heading_background">
 
-          <Heading className="bakers_about__heading_four">Who is behind the scenes of Future Bakers?</Heading>     
+          <Split className="bakers_about__heading_four">Who is behind the scenes of Future Bakers?</Split>     
 
       </div>  
     </Row>
+
+
+
+
+
       <div className="meet">
 
-     <Row>
-            <div className="bakers_about__column_four">
-
-                <Split className="bakers_about__heading_five">Meet the team</Split>
-
-                <Paragraph className="bakers_about__paragraph_five">Alena Pelcova</Paragraph>
-
-                <Paragraph className="bakers_about__paragraph_six">Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to work well with this and give it all a life.</Paragraph>
-
-
-            </div>
-
-
-     </Row>
+      <AnimatedHeadingTwo className="bakers_about_team_heading">Meet the team</AnimatedHeadingTwo>     
 
       </div>
+
+
+     <Row>
+
+     <DarkTeam/>
+
+     </Row>      
 
       </ReactCursorPosition>  
 

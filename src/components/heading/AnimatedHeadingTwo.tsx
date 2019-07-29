@@ -28,11 +28,11 @@ export class AnimatedHeadingTwo extends React.Component {
         {({ transitionStatus }) => {       
           return (
             <Controller refreshInterval={1}>
-              <Scene duration={'50%'} triggerHook={0.75}>
+              <Scene duration={'75%'} triggerHook={.85}>
                 <Tween 
-                  staggerFrom={{ yPercent: 75, opacity: 0, ease: 'Power3.easeInOut'}}
+                  staggerFrom={{  opacity: 0, ease: 'Power3.easeInOut'}}
                   stagger={2}
-                  duration={2}
+                  duration={10}
                   ease="Power3.easeInOut"
                 >
                   <SplitWords>

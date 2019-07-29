@@ -9,19 +9,17 @@ interface ILinkProps {
   [key: string]: any;
 }
 
-export const Link = ({ children, state, ...props }: ILinkProps) => {
+export const Link = ({ children, state, to, className }: ILinkProps) => {
 
   return (
 
     <Location>
       {({ location }) => (      	
-        <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 1,
-        }} entry={{ length: 1,
-        }} {...props} >        
-          {children}
-        </TransitionLink>  
-
-
+          <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 1,
+          }} entry={{ length: 1,
+          }} to={to} className={className}>        
+            {children}
+          </TransitionLink>  
         )}
     </Location>  
 

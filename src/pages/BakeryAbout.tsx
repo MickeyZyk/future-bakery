@@ -102,7 +102,7 @@ const BakeryAbout = ({ data, className }) => {
       
       <SVGicon className='bakery_about_chef' src='bakery_about_chef.svg' />
       <SVGiconReverse className='bakery_about_soldier' src='bakery_about_soldier.svg' />  
-      <AnimatedHeadingTwo className="bakery_about_team_heading">Meet the team</AnimatedHeadingTwo>
+      <AnimatedHeadingTwo className="bakers_about_team_heading">Meet the team</AnimatedHeadingTwo>
       <div className="bakery_team">
         <Team />
       </div>
