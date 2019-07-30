@@ -864,7 +864,8 @@ select {
 /* CROWDERS WORK */
 
 .crowders_wrapper {
-  position: relative
+  position: relative;
+  min-height: 90vw;
 }
 
 .crowders_work_headline {
@@ -880,12 +881,26 @@ select {
   @include grid-offset-left(2);
 
   @media (min-width: $min-960) {
-    @include grid-col(1);
+    position: relative;
+    @include grid-col(4.84);
     @include grid-offset-left(4);
-    margin-top: -1vw;
+    top: 5vw;
   } 
 
 
+}
+
+.crowders_work_swirl {
+  position: relative;
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    top: 15vw;
+    @include grid-col(1);
+    @include grid-offset-left(4);
+    z-index: 5; 
+  }     
 }
 
 
@@ -1056,13 +1071,13 @@ select {
 .no3 {
       @include grid-col(7);
       @include grid-offset-left(2);
-      top: 46vw;  
+      top: 43vw;  
 }
 
 .no4 {
       @include grid-col(7);
       @include grid-offset-left(10);
-      top: 46vw;  
+      top: 43vw;  
 }
 
 .total_indicator {
