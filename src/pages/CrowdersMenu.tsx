@@ -51,7 +51,7 @@ export default class CrowdersMenu extends React.Component {
 			  return (  	
 					<>
 					<MenuBackground/>
-					  <Helmet title="Future Bakery" />
+					  <Helmet title="Future Crowders" />
 							<div className='fullscreen'>
 						    <ReactCursorPosition className='fullscreen_cursor_position'>   
 						      <Helmet title="Bakery" />
@@ -66,7 +66,7 @@ export default class CrowdersMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="About us" 
-							      			to="/BakersAbout"
+							      			to="/CrowdersAbout"
 				      						>
 														<MenuHeading className='white_text'>About Us</MenuHeading>
 												  </Link>
@@ -77,7 +77,7 @@ export default class CrowdersMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="Work"
-							      			to="/BakeryWork"
+							      			to="/CrowdersWork"
 						      				>
 														<MenuHeading className='white_text'>Work</MenuHeading>
 												  </Link>

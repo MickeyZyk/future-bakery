@@ -26,7 +26,7 @@ module.exports = {
     },     
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-styled-components',
+    //'gatsby-plugin-styled-components',
     'grav-headless-plugin',
     {
       resolve: 'gatsby-plugin-manifest',
