@@ -11,7 +11,7 @@ import { Power2 } from "gsap/TweenMax";
 import { Tween } from 'react-gsap';
 
 import s from './Header.scss';
-
+ 
 interface IHeaderProps {
   children: React.ReactNode;
 }
