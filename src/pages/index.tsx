@@ -1,2 +1,2 @@
-import index from './Bakery';
+import index from 'pages/Bakery';
 export default index;
