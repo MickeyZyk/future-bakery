@@ -14,13 +14,13 @@ export const Footer = ({ className, delay }: IFooterProps) => (
               <div className={s.row__one}>
                 <div className={s.footer}>
                   <div className={s.footer__col1}>
-                    <TransitionLink  to="/Bakery" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                    <TransitionLink  to="/bakery" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                     	<h2 className={`${s.footer__h2} ${className}`}>Future Bakery</h2>
                     </TransitionLink>
-                    <TransitionLink  to="/BakeryAbout" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                    <TransitionLink  to="/bakeryabout" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                       <p className={`${s.footer__p} ${className}`}>About us</p>
                     </TransitionLink>
-                    <TransitionLink  to="/BakeryWork" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                    <TransitionLink  to="/bakerywork" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                     	<p className={`${s.footer__p} ${className}`}>Work</p>
                     </TransitionLink>     
                   </div>

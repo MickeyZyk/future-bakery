@@ -63,7 +63,7 @@ export default class BakeryMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="About us" 
-							      			to="/BakeryAbout"
+							      			to="/bakeryabout"
 				      						>
 							    					<ReactCursorPosition className='menu_cursor_position'> 						      				
 												      <SVGicon className='menu_crown' src='bakery_menu_crown.svg' /> 
@@ -96,7 +96,7 @@ export default class BakeryMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="Future Bakery Family" 
-							      			to="/Family"
+							      			to="/family"
 						      				>
 														<MenuHeading className='white_text'>Future Bakery family</MenuHeading>												    
 												  </Link>
@@ -107,7 +107,7 @@ export default class BakeryMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="Contact" 
-							      			to="/Contact"
+							      			to="/contact"
 						      				>
 							    					<ReactCursorPosition className='menu_cursor_position'> 								      				
 												      <SVGicon className='menu_phone' src='bakery_menu_phone.svg' /> 

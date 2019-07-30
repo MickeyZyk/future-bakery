@@ -66,7 +66,7 @@ export default class BakersMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="About us" 
-							      			to="/BakersAbout"
+							      			to="/bakersabout"
 				      						>
 														<MenuHeading className='white_text'>About Us</MenuHeading>
 												  </Link>
@@ -77,7 +77,7 @@ export default class BakersMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="For Companies" 
-							      			to="/Bakery"
+							      			to="/bakery"
 						      				>
 														<MenuHeading className='white_text'>For companies</MenuHeading>
 												  </Link>
@@ -88,7 +88,7 @@ export default class BakersMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="Work"
-							      			to="/BakeryWork"
+							      			to="/bakerywork"
 						      				>
 														<MenuHeading className='white_text'>Work</MenuHeading>
 												  </Link>
@@ -99,7 +99,7 @@ export default class BakersMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="Future Bakery Family" 
-							      			to="/Family"
+							      			to="/family"
 						      				>
 														<MenuHeading className='white_text'>Future Bakery family</MenuHeading>
 												  </Link>
@@ -110,7 +110,7 @@ export default class BakersMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="Contact" 
-							      			to="/Contact"
+							      			to="/contact"
 						      				>
 														<MenuHeading className='white_text'>Contact</MenuHeading>
 												  </Link>
