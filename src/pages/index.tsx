@@ -1,2 +1,2 @@
-import index from 'pages/Bakery';
+import index from './Bakery.tsx';
 export default index;
