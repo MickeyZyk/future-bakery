@@ -29,11 +29,11 @@ export const Header = ({ children, logo, data, set, location, ...props }: IHeade
               <Location>
                 {({ location }) => (              
 
-            <TransitionLink to={ location.pathname == '/' ?  '/Bakery'
-                  :  location.pathname.includes('Bakery') ? '/Bakery' 
-                  :  location.pathname.includes('Bakers') ? '/Bakers' 
-                  :  location.pathname.includes('Crowders') ? '/Crowders' 
-                  :  '/Bakery' }  onClick={() => set({ menuOpen: !data.menuOpen })} className={s.header__logo} exit={{ length: 1 }} entry={{ delay: 0 }}>
+            <TransitionLink to={ location.pathname == '/' ?  '/bakery'
+                  :  location.pathname.includes('Bakery') ? '/bakery' 
+                  :  location.pathname.includes('Bakers') ? '/bakers' 
+                  :  location.pathname.includes('Crowders') ? '/crowders' 
+                  :  '/bakery' }  onClick={() => set({ menuOpen: !data.menuOpen })} className={s.header__logo} exit={{ length: 1 }} entry={{ delay: 0 }}>
 
    
 

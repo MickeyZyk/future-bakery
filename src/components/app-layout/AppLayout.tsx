@@ -91,15 +91,15 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
               <ContextConsumer>
                 {({ data, set }) => (
                   <HeaderLink className={ location.pathname.includes('Menu') ? `white_text white_circle` : '' } name="MENU" 
-                  to={ location.pathname == '/' ?  '/BakeryMenu' 
-                  : location.pathname == '/Family/' ?   ( location.state != null  ? location.state.prevUrlPath : '/BakeryMenu' )
-                  :  location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu'  || location.pathname == '/CrowdersMenu'   ? ( location.state != null  ? location.state.prevUrlPath : '/BakeryMenu' )
-                  :  location.pathname.includes('Bakery') && !( location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu'  || location.pathname == '/CrowdersMenu') ? '/BakeryMenu' 
-                  :  location.pathname.includes('Bakers') && !( location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu'  || location.pathname == '/CrowdersMenu') ? '/BakersMenu' 
-                  :  location.pathname.includes('Crowders') && !( location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu'  || location.pathname == '/CrowdersMenu') ? '/CrowdersMenu' 
-                  :  ( location.state != null  ? location.state.prevUrlPath : '/BakeryMenu' ) } 
-                  icon={ ( location.pathname == '/BakeryMenu' || location.pathname == '/BakersMenu' || location.pathname == '/CrowdersMenu') ? <WhiteCircle/> : <Circle />} permanent={true}>                
-                    {location.pathname.includes('Menu') ? `CLOSE` : `MENU`}
+                  to={ location.pathname == '/' ?  '/bakerymenu'  
+                  : location.pathname == '/Family/' ?   ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )
+                  :  location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu'   ? ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )
+                  :  location.pathname.includes('bakery') && !( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu') ? '/bakerymenu'  
+                  :  location.pathname.includes('bakers') && !( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu') ? '/bakersmenu' 
+                  :  location.pathname.includes('crowders') && !( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu') ? '/crowdersmenu' 
+                  :  ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  ) } 
+                  icon={ ( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu' || location.pathname == '/crowdersmenu') ? <WhiteCircle/> : <Circle />} permanent={true}>                
+                    {location.pathname.includes('menu') ? `CLOSE` : `MENU`}
                   </HeaderLink>
                 )}
               </ContextConsumer> 
@@ -117,20 +117,20 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
       <Location>
         {({ location }) => (        
           <If condition={ 
-            location.pathname != '/Bakery' && 
-            location.pathname != '/Bakery/' &&
-            location.pathname != '/Bakers' && 
-            location.pathname != '/Bakers/' &&
-            location.pathname != '/Crowders' && 
-            location.pathname != '/Crowders/' &&
-            location.pathname != '/Family' && 
-            location.pathname != '/Family/' &&
-            location.pathname != '/BakeryMenu' && 
-            location.pathname != '/BakeryMenu/' &&
-            location.pathname != '/BakersMenu' && 
-            location.pathname != '/BakersMenu/' &&
-            location.pathname != '/CrowdersMenu' &&  
-            location.pathname != '/CrowdersMenu/' &&
+            location.pathname != '/bakery' && 
+            location.pathname != '/bakery/' &&
+            location.pathname != '/bakers' && 
+            location.pathname != '/bakers/' &&
+            location.pathname != '/crowders' && 
+            location.pathname != '/crowders/' &&
+            location.pathname != '/family' && 
+            location.pathname != '/family/' &&
+            location.pathname != '/bakerymenu'  && 
+            location.pathname != '/bakerymenu/' &&
+            location.pathname != '/bakersmenu' && 
+            location.pathname != '/bakersmenu/' &&
+            location.pathname != '/crowdersmenu' &&  
+            location.pathname != '/crowdersmenu/' &&
             location.pathname != '/'
              
           }>

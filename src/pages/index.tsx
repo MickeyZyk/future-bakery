@@ -2,7 +2,7 @@ import React from 'react'
 import { Redirect } from '@reach/router'
 
 const IndexPage = props => (
-  <Redirect to='/Bakery' noThrow />
+  <Redirect to='/bakery' noThrow />
 )
 
 export default IndexPage

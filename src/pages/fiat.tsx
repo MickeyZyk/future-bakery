@@ -96,7 +96,7 @@ export default class Fiat extends React.Component {
           </div>
           <div className={s.row__four}>
             <div className={s.column__col8}>
-            <Link to={'/BakeryWork'}>
+            <Link to={'/bakerywork'}>
               <p className={s.control_dark}><span className={s.arrow_ml}>&lt;</span>&nbsp;&nbsp;ALL CASES</p>
             </Link>
             </div>
