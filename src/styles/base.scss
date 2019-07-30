@@ -141,6 +141,11 @@ a {
   @include poly-fluid-sizing('font-size', $font-map);  
 }
 
+.active {
+  font-weight: bold;
+  transition: all .5s;
+}
+
 p {font-weight: lighter;}
 
 .responsive_image {
@@ -855,6 +860,33 @@ select {
   transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
+
+/* CROWDERS WORK */
+
+.crowders_wrapper {
+  position: relative
+}
+
+.crowders_work_headline {
+
+  $font-map: (375px: 33px, 959px: 64px, 960px: 30px, 2880px: 88px);
+  $height-map: (375px: 28px, 959px: 48px, 960px: 23px, 2880px: 70px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -2px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map); 
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(1);
+    @include grid-offset-left(4);
+    margin-top: -1vw;
+  } 
+
+
+}
 
 
 /* BAKERY HOME SLIDER  */

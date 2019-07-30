@@ -44,10 +44,14 @@ export default class Work extends React.Component {
 
     <div className='wrapper work-wrapper'>
 
-      <CrowdersItem hovered='true' key='i01' ref={this.hovered_item} className='no1'/>
-      <CrowdersItem key='i02' className='no2'/>
-      <CrowdersItem key='i03' className='no3'/>
-	    <CrowdersItem key='i04' className='no4'/>
+      <Heading className="crowders_work_headline">HEADLINE ABOUT CROWDERS WORK</Heading>
+
+      <div className="crowders_wrapper">
+        <CrowdersItem hovered='true' key='i01' ref={this.hovered_item} className='no1'/>
+        <CrowdersItem key='i02' className='no2'/>
+        <CrowdersItem key='i03' className='no3'/>
+  	    <CrowdersItem key='i04' className='no4'/>
+      </div>
 
     </div>
 

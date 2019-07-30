@@ -10,68 +10,13 @@ import s from './MenuBackground.scss';
 export const MenuBackground = () => {	
 
 	return (
+		<>	
 
-		<>
-			<TransitionState>
-
-			  {({ transitionStatus }) => {	
-
-					return (
-
-					<>
-
-					        <If condition={ ['entering','entered'].includes(transitionStatus) }>
-
-					            <Tween delay={1} duration={1} to={{ opacity: 1, ease: 'Power3.easeIn' }}>					
-
-								  			<img className={s.background_logo} src="../images/bakery_menu_logo.png"/>		
-
-								  	</Tween>
-
-								  </If>
-
-						<div className={s.menu_background_wrapper}>
-
-					        <If condition={ ['entering','entered'].includes(transitionStatus) }>
-
-					            <Tween delay={0} duration={1} to={{ scaleX:600, scaleY:600, ease: 'Power3.easeIn' }}>
-
-							  		<div className={s.background}>
-
-							  		</div>
-
-								</Tween>		
-
-					        </If>	
-
-
-					        <If condition={ ['exiting','exited'].includes(transitionStatus) }>
-
-							    <Tween delay={0} duration={1} 
-							    from={{ scaleX:600, scaleY:600, ease: 'Power3.easeIn' }} 
-							    to={{ scaleX:0.001, scaleY:0.001, ease: 'Power3.easeOut'  }}>
-
-							  		<div className={s.background}>
-					  			
-							  		</div>
-
-								</Tween>
-											            
-					        </If>	
-
-	
-						</div>		
-
-					</>
-
-					)
-
-			  }}
-
-			</TransitionState>
+			<div className={s.background}>
+				<img className={s.background_logo} src="../images/bakery_menu_logo.png"/>					
+			</div>
 
 		</>
-
 	)
 
 }
