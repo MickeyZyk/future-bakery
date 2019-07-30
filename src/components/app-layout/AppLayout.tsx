@@ -59,7 +59,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
             {({ location }) => (
               <ContextConsumer>
                 {({ data, set  }) => (
-                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('Bakery') ? 'active' : ''} onClick={() => set({ logo: 'bakery' })} name="FUTURE BAKERY" to="/Bakery">FUTURE BAKERY</HeaderLink>
+                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('bakery') ? 'active' : ''} onClick={() => set({ logo: 'bakery' })} name="FUTURE BAKERY" to="/bakery">FUTURE BAKERY</HeaderLink>
                 )}
               </ContextConsumer>
             )}
@@ -69,7 +69,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
             {({ location }) => (
               <ContextConsumer>
                 {({ data, set }) => (
-                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('Bakers') ? 'active' : '' } onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERS" to="/Bakers">FUTURE BAKERS</HeaderLink>
+                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('bakers') ? 'active' : '' } onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERS" to="/bakers">FUTURE BAKERS</HeaderLink>
                 )}
               </ContextConsumer>
             )}
@@ -79,7 +79,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
             {({ location }) => (
               <ContextConsumer>
                 {({ data, set }) => (
-                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('Crowders') ? 'active' : '' } onClick={() => set({ logo: 'crowders' })} name="FUTURE CROWDERS" to="/Crowders" >FUTURE CROWDERS</HeaderLink>
+                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('crowders') ? 'active' : '' } onClick={() => set({ logo: 'crowders' })} name="FUTURE CROWDERS" to="/crowders" >FUTURE CROWDERS</HeaderLink>
                 )}
               </ContextConsumer>
             )}

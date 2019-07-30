@@ -37,11 +37,11 @@ export const Header = ({ children, logo, data, set, location, ...props }: IHeade
 
    
 
-                 { data.logo == 'bakery' || location.pathname.includes('Bakery') ? <BakeryLogo className={s.header__logo}/>
+                 { data.logo == 'bakery' || location.pathname.includes('bakery') ? <BakeryLogo className={s.header__logo}/>
 
-                  : data.logo == 'bakers' || location.pathname.includes('Bakers') ? <BakersLogo className={s.header__logo}/>
+                  : data.logo == 'bakers' || location.pathname.includes('bakers') ? <BakersLogo className={s.header__logo}/>
 
-                  : data.logo == 'crowders' || location.pathname.includes('Crowders') ? <CrowdersLogo className={s.header__logo}/>
+                  : data.logo == 'crowders' || location.pathname.includes('crowders') ? <CrowdersLogo className={s.header__logo}/>
 
                   : <BakeryLogo className={s.header__logo}/>}
        
