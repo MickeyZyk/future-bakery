@@ -1633,7 +1633,23 @@ select {
 
 }
 
-  .first {
+
+  .bakery_about__right_icons > div:nth-child(3) > div.bakery_about__graph_icon {
+
+    @include grid-col(9);
+    display: inline-block;
+
+    @media (min-width: $min-960) {
+
+      display: block;
+      @include grid-col(3);
+      @include grid-offset-right(6);          
+
+    }
+
+  }
+
+  .bakery_about__right_icons > div:nth-child(4) > div.bakery_about__graph_icon {
 
     @include grid-col(9);
     display: inline-block;
@@ -1648,9 +1664,9 @@ select {
 
     }     
 
-  } 
+  }
 
-  .last {
+  .bakery_about__right_icons > div:nth-child(6) > div.bakery_about__graph_icon {
 
     @include grid-col(9);
     display: inline-block;
@@ -1664,6 +1680,40 @@ select {
     }
 
   }
+
+  .bakery_about__right_icons > div:nth-child(7) > div.bakery_about__graph_icon {
+
+    @include grid-col(9);
+    display: inline-block;
+
+    @media (min-width: $min-960) {
+
+      display: block;
+      @include grid-col(3);
+      margin-left: 0;
+      clear: left;   
+          
+
+    }     
+
+  }  
+
+  .bakery_about__right_icons > div:nth-child(9) > div.bakery_about__graph_icon {
+
+    @include grid-col(9);
+    display: inline-block;
+
+    @media (min-width: $min-960) {
+
+      display: block;
+      @include grid-col(3);
+      @include grid-offset-right(6);          
+
+    }
+
+  }  
+
+
 
 
 
