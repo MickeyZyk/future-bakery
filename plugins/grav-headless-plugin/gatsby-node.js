@@ -19,8 +19,6 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     return
 }
 
-
-
 fetchSlides = async () => {
     const {
         createNodeFactory,
@@ -37,7 +35,7 @@ fetchSlides = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://localhost:8000/bakery-slider', {
+        const response = await axios.get('http://admin.aptours.ba/bakery-slider', {
             params: {
                 "return-as": "json"
             }
@@ -72,7 +70,7 @@ fetchPages = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://localhost:8000/en/bakery', {
+        const response = await axios.get('http://admin.aptours.ba/en/bakery', {
             params: {
                 "return-as": "json"
             }

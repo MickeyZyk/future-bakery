@@ -6,6 +6,7 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Row } from 'components/row/Row';
+import { Figure } from 'components/figure/Figure';
 import { Figure2 } from 'components/figure2/Figure2';
 import { AnimatedHeading  } from 'components/heading/AnimatedHeading';
 import { AnimatedHeadingTwo  } from 'components/heading/AnimatedHeadingTwo';
@@ -37,11 +38,11 @@ const BakeryAbout = ({ data, className, query }) => {
 
             <Figure2 className="show_on_mobile"/>
 
-            <Paragraph className='bakery_about__paragraph paragraph'>We have liaised top creative and strategic minds with creativity, life experience and levity of thousands people from the crowd. People who don’t sit in the office or development centre, but have a real life… with real problems and needs. We link ideas and insights, trends or strategies. We look for future. We seek diversity, new perspective and link together what seems incompatible. We listen and get inspired by the crowd. We look into numbers but do not make the average. We regularly check “temperature” to know what people really feel. We want to know what our future will look like and we want to participate on it. We help individuals as well as organizations to find their place in the future. We fuel the brands with relevant product and experience concepts, offer a fresh perspective on your business and ideate original campaign ideas.</Paragraph>      
+            <Paragraph className='bakery_about__paragraph paragraph'>{data.gravBakeryPages.paragraph_one}</Paragraph>      
 
           </div>
 
-          <Figure2 className="bakery_about__image_one hide_on_mobile"/>
+          <Figure src={ 'http://admin.aptours.ba/en/bakery/about-us/' + data.gravBakeryPages.image_one } className="bakery_about__image_one hide_on_mobile"/>
 
         </Row>
 
@@ -116,10 +117,7 @@ const BakeryAbout = ({ data, className, query }) => {
       </div>      
       
 
-
-
       </ReactCursorPosition>  
-
 
 
   </div>
@@ -127,11 +125,12 @@ const BakeryAbout = ({ data, className, query }) => {
   )
 }
 
-export const query = graphql`
+export const BakeryAboutquery = graphql`
   query BakeryAboutPageQuery {
     gravBakeryPages {
       heading_one
       paragraph_one
+      image_one
     }    
   }
 `

@@ -195,18 +195,6 @@ const BakeryAbout = ({ data, className }) => {
   )
 }
 
-export const query = graphql`
-  query BakersAboutPageQuery {
-    file(relativePath: { eq: "desk.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 1600) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
+
 
 export default BakeryAbout
