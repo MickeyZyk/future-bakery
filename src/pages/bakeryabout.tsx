@@ -26,7 +26,7 @@ const BakeryAbout = ({ data, className, query }) => {
 
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
-        <Helmet title="About us" />
+        <Helmet title={data.gravBakeryPages.title} />
 
         <SVGicon className='bakery_about__green_rainbow' src='green_rainbow.svg'  /> 
 
@@ -50,15 +50,15 @@ const BakeryAbout = ({ data, className, query }) => {
 
           <Row>
 
-            <HeadingTwo className="bakery_about__heading_two">Our creation process “From people to people”</HeadingTwo>
+            <HeadingTwo className="bakery_about__heading_two">{data.gravBakeryPages.heading_two}</HeadingTwo>
 
             <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />   
 
             <div className="bakery_about__green_block">
 
-              <p className="bakery_about__green_text">Usual closed innovation process “From office desks to people”</p>
+              <p className="bakery_about__green_text">{data.gravBakeryPages.show_me_text}</p>
 
-              <TransitionLink className="bakery_about__green_link" to={'/'} exit={{ length: 1 }} entry={{ delay: 1 }}>SHOW ME&nbsp;&nbsp;&#10095;</TransitionLink>
+              <TransitionLink className="bakery_about__green_link" to={data.gravBakeryPages.show_me_link} exit={{ length: 1 }} entry={{ delay: 1 }}>SHOW ME&nbsp;&nbsp;&#10095;</TransitionLink>
 
             </div>
 
@@ -68,7 +68,7 @@ const BakeryAbout = ({ data, className, query }) => {
 
           <Row className="centered-row">
 
-            <TransitionLink className="bakery_about__button_link" to={'/'} exit={{ length: 1 }} entry={{ delay: 1 }}>START A PROJECT WITH US</TransitionLink>
+            <TransitionLink className="bakery_about__button_link" to={'/contact'} exit={{ length: 1 }} entry={{ delay: 1 }}>START A PROJECT WITH US</TransitionLink>
 
           </Row>
 
@@ -82,7 +82,7 @@ const BakeryAbout = ({ data, className, query }) => {
 
             <div className="bakery_about__green_heading_background">
 
-              <AnimatedHeadingTwo className="bakery_about__heading_three">What we bake?</AnimatedHeadingTwo>     
+              <AnimatedHeadingTwo className="bakery_about__heading_three">{data.gravBakeryPages.heading_three}</AnimatedHeadingTwo>     
 
             </div>
 
@@ -128,9 +128,18 @@ const BakeryAbout = ({ data, className, query }) => {
 export const BakeryAboutquery = graphql`
   query BakeryAboutPageQuery {
     gravBakeryPages {
-      heading_one
-      paragraph_one
-      image_one
+    heading_two
+    heading_three
+    heading_one
+    image_one
+    paragraph_one
+    show_me_link
+    show_me_text
+    svg_icons {
+      svg
+      svg_text
+    }
+    title
     }    
   }
 `
