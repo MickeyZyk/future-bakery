@@ -18,7 +18,7 @@ import Texticon from 'components/texticon/Texticon';
 import { Footer } from 'components/footer/Footer';
 
 
-const BakeryAbout = ({ data, className }) => {
+const BakeryAbout = ({ data, className, query }) => {
   return (
 
   <div className='wrapper'>
@@ -33,7 +33,7 @@ const BakeryAbout = ({ data, className }) => {
 
           <div className='bakery_about__left_column_one'>
 
-            <AnimatedHeading className='__heading_one'>One way or new way.</AnimatedHeading>            
+            <AnimatedHeading className='__heading_one'>{data.gravBakeryPages.heading_one}</AnimatedHeading>  
 
             <Figure2 className="show_on_mobile"/>
 
@@ -128,16 +128,11 @@ const BakeryAbout = ({ data, className }) => {
 }
 
 export const query = graphql`
-  query HomePageQuery {
-    file(relativePath: { eq: "desk.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 1600) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+  query BakeryAboutPageQuery {
+    gravBakeryPages {
+      heading_one
+      paragraph_one
+    }    
   }
 `
 

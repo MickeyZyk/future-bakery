@@ -79,7 +79,7 @@ export default class BakeryMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="Work" 
-							      			to="/BakeryWork"
+							      			to="/bakerywork"
 						      				>
 							    					<ReactCursorPosition className='menu_cursor_position'> 						      				
 												      <SVGicon className='menu_saw' src='bakery_menu_saw.svg' /> 
