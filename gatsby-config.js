@@ -54,15 +54,5 @@ module.exports = {
           layout: require.resolve('./src/components/app-layout/AppLayout.tsx'),
       }
     },
-    {
-      resolve: `gatsby-plugin-remote-images`,
-      options: {
-        nodeType: 'gravBakeryPages',
-        imagePath: 'nodes/image_one',
-        // OPTIONAL: Name you want to give new image field on the node.
-        // Defaults to 'localImage'.
-        name: 'allItemImages',
-      },
-    },    
   ],
 }
