@@ -62,7 +62,7 @@ const BakeryAbout = ({ data, className, query }) => {
         </Row>      
         <SVGicon className='bakery_about_chef' src='bakery_about_chef.svg' />
         <SVGiconReverse className='bakery_about_soldier' src='bakery_about_soldier.svg' />  
-        <AnimatedHeadingTwo className="bakers_about_team_heading">Meet the team</AnimatedHeadingTwo>
+        <AnimatedHeadingTwo className="bakery_about_team_heading">Meet the team</AnimatedHeadingTwo>
         <div className="bakery_team">
           <Team />
         </div>      
@@ -78,18 +78,18 @@ const BakeryAbout = ({ data, className, query }) => {
 export const BakeryAboutquery = graphql`
   query BakeryAboutPageQuery {
     gravBakeryPages {
-    heading_two
-    heading_three
-    heading_one
-    image_one
-    paragraph_one
-    show_me_link
-    show_me_text
-    svg_icons {
-      svg
-      svg_text
-    }
-    title
+      heading_two
+      heading_three
+      heading_one
+      image_one
+      paragraph_one
+      show_me_link
+      show_me_text
+      svg_icons {
+        svg
+        svg_text
+      }
+      title
     }    
   }
 `
