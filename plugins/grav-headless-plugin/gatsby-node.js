@@ -11,9 +11,9 @@ exports.sourceNodes = async ({boundActionCreators}) => {
         createNode(x)
     })
     
-    const bakeryPages = await fetchBakeryPages()
+    const bakeryAbout = await fetchBakeryAbout()
 
-    bakeryPages.forEach(x => {
+    bakeryAbout.forEach(x => {
         createNode(x)
     })
 
@@ -55,7 +55,7 @@ fetchBakerySlides = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://admin.aptours.ba/bakery/slider', {
+        const response = await axios.get('http://future.stratego.ba/bakery/slider', {
             params: {
                 "return-as": "json"
             }
@@ -64,7 +64,7 @@ fetchBakerySlides = async () => {
         return response.data.children
             .map(x => x.header)
             .map(x => Object.assign(x, {
-                path: `/bakery-slides/${slug(x.name)}`.toLowerCase()
+                path: `/bakery-slides/${slug(x.title)}`.toLowerCase()
             }))
             .map(ProductNode)
     }
@@ -74,7 +74,7 @@ fetchBakerySlides = async () => {
     }
 }
 
-fetchBakeryPages = async () => {
+fetchBakeryAbout = async () => {
     const {
         createNodeFactory,
         generateNodeId,
@@ -83,14 +83,14 @@ fetchBakeryPages = async () => {
         typePrefix: `grav`
     })
 
-    const ProductNode = createNodeFactory('BakeryPages', node => {
+    const ProductNode = createNodeFactory('BakeryAbout', node => {
         return node
     })
 
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://admin.aptours.ba/en/bakery', {
+        const response = await axios.get('http://future.stratego.ba/en/bakery/pages', {
             params: {
                 "return-as": "json"
             }
@@ -99,7 +99,7 @@ fetchBakeryPages = async () => {
         return response.data.children
             .map(x => x.header)
             .map(x => Object.assign(x, {
-                path: `/grav-page/${slug(x.title)}`.toLowerCase()
+                path: `/grav-page-bakery-about/${slug(x.title)}`.toLowerCase()
             }))
             .map(ProductNode)
     }
@@ -125,7 +125,7 @@ fetchBakeryWork = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://admin.aptours.ba/en/bakerywork', {
+        const response = await axios.get('http://future.stratego.ba/en/bakerywork', {
             params: {
                 "return-as": "json"
             }
@@ -134,7 +134,7 @@ fetchBakeryWork = async () => {
         return response.data.children
             .map(x => x.header)
             .map(x => Object.assign(x, {
-                path: `/grav-page/${slug(x.title)}`.toLowerCase()
+                path: `/grav-page-bakery-work/${slug(x.title)}`.toLowerCase()
             }))
             .map(ProductNode)
     }
@@ -160,7 +160,7 @@ fetchBakersPages = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://admin.aptours.ba/en/bakers', {
+        const response = await axios.get('http://future.stratego.ba/en/bakers', {
             params: {
                 "return-as": "json"
             }
@@ -169,7 +169,7 @@ fetchBakersPages = async () => {
         return response.data.children
             .map(x => x.header)
             .map(x => Object.assign(x, {
-                path: `/grav-page/${slug(x.title)}`.toLowerCase()
+                path: `/grav-page-bakers-about/${slug(x.title)}`.toLowerCase()
             }))
             .map(ProductNode)
     }
@@ -195,7 +195,7 @@ fetchCrowdersPages = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://admin.aptours.ba/en/crowders', {
+        const response = await axios.get('http://future.stratego.ba/en/crowders', {
             params: {
                 "return-as": "json"
             }
@@ -204,7 +204,7 @@ fetchCrowdersPages = async () => {
         return response.data.children
             .map(x => x.header)
             .map(x => Object.assign(x, {
-                path: `/grav-page/${slug(x.title)}`.toLowerCase()
+                path: `/grav-page-crowders-about/${slug(x.title)}`.toLowerCase()
             }))
             .map(ProductNode)
     }

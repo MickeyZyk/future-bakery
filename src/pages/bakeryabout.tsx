@@ -77,20 +77,20 @@ const BakeryAbout = ({ data, className, query }) => {
 
 export const BakeryAboutquery = graphql`
   query BakeryAboutPageQuery {
-    gravBakeryPages {
-      heading_two
-      heading_three
+    gravBakeryAbout {
       heading_one
+      heading_three
+      heading_two
       image_one
       paragraph_one
       show_me_link
       show_me_text
+      title
       svg_icons {
         svg
         svg_text
       }
-      title
-    }    
+    }   
   }
 `
 
