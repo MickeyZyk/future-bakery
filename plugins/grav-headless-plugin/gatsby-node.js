@@ -20,7 +20,13 @@ exports.sourceNodes = async ({boundActionCreators}) => {
 
     bakersPages.forEach(x => {
         createNode(x)
-    })    
+    }) 
+
+    const crowdersPages = await fetchCrowdersPages()
+
+    bakersPages.forEach(x => {
+        createNode(x)
+    }) 
 
     return
 }
@@ -112,6 +118,41 @@ fetchBakersPages = async () => {
     {
         // This is where we call Grav API.
         const response = await axios.get('http://admin.aptours.ba/en/bakers', {
+            params: {
+                "return-as": "json"
+            }
+        })
+    
+        return response.data.children
+            .map(x => x.header)
+            .map(x => Object.assign(x, {
+                path: `/grav-page/${slug(x.title)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
+fetchCrowdersPages = async () => {
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `grav`
+    })
+
+    const ProductNode = createNodeFactory('CrowdersPages', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('http://admin.aptours.ba/en/crowders', {
             params: {
                 "return-as": "json"
             }

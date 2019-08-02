@@ -135,7 +135,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
              
           }>
             <Then>
-              <Scrollbar className={s.scrollbar} damping={0.05} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
+              <Scrollbar className={s.scrollbar} damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
                 {children}
               </Scrollbar>
               <Controller refreshInterval={1}>
