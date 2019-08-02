@@ -27,7 +27,7 @@ const BakeryAbout = ({ data, className }) => {
 
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
-        <Helmet title="About" />
+        <Helmet title={data.gravCrowdersPages.title} />
 
         <SVGicon className='crowders_icecream' src='crowders_icecream.svg'  />
         <SVGiconReverse className='crowders_cheese' src='crowders_cheese.svg' />        
@@ -36,20 +36,17 @@ const BakeryAbout = ({ data, className }) => {
 
             <div className="crowders_about_first_left">
 
-              <AnimatedHeading className='crowders_about_heading'>About us</AnimatedHeading>   
+              <AnimatedHeading className='crowders_about_heading'>{data.gravCrowdersPages.heading_one}</AnimatedHeading>   
 
-              <AnimatedImage className='crowders_about_image responsive_image show_on_mobile' src='../images/crowders_cone.jpg' />         
+              <AnimatedImage className='crowders_about_image responsive_image show_on_mobile' src={data.gravCrowdersPages.image_one} />         
 
-              <Paragraph className='crowders_about_paragraph paragraph'>We are a team of thousands individuals strong in opinion and power to change things.
-              We can address important topics / things in a way we are heard without having to be seen. 
-              Future crowders are a part of Future Bakery family - a strategic and innovation group of thousand individuals, lead by experienced team of strategic, 
-              creative and innovative minds. We work according to a validated methodology how to initiate change and create demand.</Paragraph>
+              <Paragraph className='crowders_about_paragraph paragraph'>{data.gravCrowdersPages.paragraph_one}</Paragraph>
 
-              <Link className='crowders_about_button' to={'/'}>START A PROJECT WITH US&nbsp;&nbsp;<span>&gt;</span></Link>            
+              <Link className='crowders_about_button' to={data.gravCrowdersPages.link_one}>{data.gravCrowdersPages.link_one_text}&nbsp;&nbsp;<span>&gt;</span></Link>            
 
             </div>
 
-            <AnimatedImage className='crowders_about_image responsive_image hide_on_mobile' src='../images/crowders_cone.jpg' />   
+            <AnimatedImage className='crowders_about_image responsive_image hide_on_mobile' src={data.gravCrowdersPages.image_two} />   
 
 
           </Row>
@@ -59,13 +56,13 @@ const BakeryAbout = ({ data, className }) => {
 
           <Row>
 
-            <Heading className='crowders_about_heading_two'>How we do it</Heading>  
+            <Heading className='crowders_about_heading_two'>{data.gravCrowdersPages.heading_two}</Heading>  
 
           </Row>
 
           <Row>
 
-            <Paragraph className="crowders_about_paragraph_two">There are 4 key phases to demonstrate our method to create demand.</Paragraph>
+            <Paragraph className="crowders_about_paragraph_two">{data.gravCrowdersPages.subheading_two}</Paragraph>
 
           </Row>
 
@@ -92,7 +89,7 @@ const BakeryAbout = ({ data, className }) => {
 
               <img src='../svg/crowders_turntable.svg' />
 
-              <Paragraph>THEME/TOPIC AMPLIFICATION</Paragraph>
+              <Paragraph>THEME/TOPIC AMPLIFICATION</Paragraph> 
 
             </div>
 
@@ -186,7 +183,7 @@ const BakeryAbout = ({ data, className }) => {
 
               <Team/>      
 
-      </ReactCursorPosition>  
+      </ReactCursorPosition>   
 
       
 
@@ -196,5 +193,31 @@ const BakeryAbout = ({ data, className }) => {
 }
 
 
+export const CrowdersAboutquery = graphql`
+  query CrowdersAboutPageQuery {
+    gravCrowdersPages {
+      heading_one
+      heading_three
+      heading_two
+      image_one
+      image_two
+      link_one
+      link_one_text
+      link_two
+      link_two_text
+      paragraph_one
+      subheading_two
+      title
+      svg_icons_two {
+        svg_two
+        svg_text_two
+      }
+      svg_icons {
+        svg_text
+        svg
+      }
+    }    
+  }
+`
 
 export default BakeryAbout

@@ -45,7 +45,7 @@ const BakersAbout = ({ data, className }) => {
         <Figure4 className="bakers_about__image_two hide_on_mobile"/>            
         <Split className='bakers_about__heading_three'>We are a group of enthusiasts and passionate thinkers</Split>      
         <Paragraph className='bakers_we__paragraph paragraph'>We believe that a great idea can pop up anywhere: in a bar, during a wonderfully peaceful weekend, while running, before going to bed, while chatting with your loved one, from a student, retiree or stay-at-home mom or dad.</Paragraph>
-        <Link className="bakers_about__join_link" to={'/Contact'}>JOIN US&nbsp;&nbsp;<span>&gt;</span></Link>
+        <Link className="bakers_about__join_link" to={'/contact'}>JOIN US&nbsp;&nbsp;<span>&gt;</span></Link>
       </Row>
       <Row className="tags_row">
         <Controller refreshInterval={1}>
@@ -88,9 +88,9 @@ const BakersAbout = ({ data, className }) => {
         </Controller>
       </Row>
       <Split className="tags_heading_bottom">Reseni</Split>
-      <Link className="bakers_about__join_link_two" to={'/Contact'}>JOIN US&nbsp;&nbsp;<span>&gt;</span></Link>
+      <Link className="bakers_about__join_link_two" to={'/contact'}>JOIN US&nbsp;&nbsp;<span>&gt;</span></Link>
       <div className="divider_text">or find out how to</div>
-      <Link className="bakers_about__join_link_three" to={'/Contact'}>BRIEF US&nbsp;&nbsp;<span>&gt;</span></Link>          
+      <Link className="bakers_about__join_link_three" to={'/contact'}>BRIEF US&nbsp;&nbsp;<span>&gt;</span></Link>          
       <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
       <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
       <Row className="bakers_about_team_row">

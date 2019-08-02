@@ -24,7 +24,7 @@ exports.sourceNodes = async ({boundActionCreators}) => {
 
     const crowdersPages = await fetchCrowdersPages()
 
-    bakersPages.forEach(x => {
+    crowdersPages.forEach(x => {
         createNode(x)
     }) 
 
