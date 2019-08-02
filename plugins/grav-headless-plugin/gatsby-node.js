@@ -4,9 +4,10 @@ const slug = require('slug')
 
 exports.sourceNodes = async ({boundActionCreators}) => {
     const {createNode} = boundActionCreators
-    const data = await fetchSlides()
 
-    data.forEach(x => {
+    const bakerySlides = await fetchBakerySlides()
+
+    bakerySlides.forEach(x => {
         createNode(x)
     })
     
@@ -15,6 +16,12 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     bakeryPages.forEach(x => {
         createNode(x)
     })
+
+    const bakeryWork = await fetchBakeryWork()
+
+    bakeryWork.forEach(x => {
+        createNode(x)
+    })       
 
     const bakersPages = await fetchBakersPages()
 
@@ -28,10 +35,11 @@ exports.sourceNodes = async ({boundActionCreators}) => {
         createNode(x)
     }) 
 
+
     return
 }
 
-fetchSlides = async () => {
+fetchBakerySlides = async () => {
     const {
         createNodeFactory,
         generateNodeId,
@@ -47,7 +55,7 @@ fetchSlides = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://admin.aptours.ba/bakery-slider', {
+        const response = await axios.get('http://admin.aptours.ba/bakery/slider', {
             params: {
                 "return-as": "json"
             }
@@ -83,6 +91,41 @@ fetchBakeryPages = async () => {
     {
         // This is where we call Grav API.
         const response = await axios.get('http://admin.aptours.ba/en/bakery', {
+            params: {
+                "return-as": "json"
+            }
+        })
+    
+        return response.data.children
+            .map(x => x.header)
+            .map(x => Object.assign(x, {
+                path: `/grav-page/${slug(x.title)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
+fetchBakeryWork = async () => {
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `grav`
+    })
+
+    const ProductNode = createNodeFactory('BakeryWork', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('http://admin.aptours.ba/en/bakerywork', {
             params: {
                 "return-as": "json"
             }
