@@ -9,7 +9,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
-          families: ['ProximaNovaBold','ProximaNovaLight', 'ProximaNovaRegularItalic', 'ProximaNovaRegular', 'ProximaNovaSemibold', 'ProximaNovaBlack', 'Bradley'],
+          families: ['ProximaNova', 'Bradley'],
           urls: ['../fonts/proxima-nova-webfontkit.css','../fonts/bradley_webfontkit.css']
         }
       }
@@ -54,5 +54,6 @@ module.exports = {
           layout: require.resolve('./src/components/app-layout/AppLayout.tsx'),
       }
     },
+    `gatsby-plugin-subfont`
   ],
 }

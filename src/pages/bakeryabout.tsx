@@ -22,23 +22,23 @@ const BakeryAbout = ({ data, className, query }) => {
   return (
     <div className='wrapper'>
       <ReactCursorPosition className='fullscreen_cursor_position'>
-        <Helmet title={data.gravBakeryPages.title} />
+        <Helmet title={data.gravBakeryAbout.title} />
         <SVGicon className='bakery_about__green_rainbow' src='green_rainbow.svg'  />
         <Row>
           <div className='bakery_about__left_column_one'>
-            <AnimatedHeading className='__heading_one'>{data.gravBakeryPages.heading_one}</AnimatedHeading>
+            <AnimatedHeading className='__heading_one'>{data.gravBakeryAbout.heading_one}</AnimatedHeading>
             <Figure2 className="show_on_mobile"/>
-            <Paragraph className='bakery_about__paragraph paragraph'>{data.gravBakeryPages.paragraph_one}</Paragraph>
+            <Paragraph className='bakery_about__paragraph paragraph'>{data.gravBakeryAbout.paragraph_one}</Paragraph>
           </div>
-          <Figure src={ 'http://admin.aptours.ba/en/bakery/about-us/' + data.gravBakeryPages.image_one } className="bakery_about__image_one hide_on_mobile"/>
+          <Figure src={ 'http://admin.aptours.ba/en/bakery/about-us/' + data.gravBakeryAbout.image_one } className="bakery_about__image_one hide_on_mobile"/>
         </Row>
         <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/greenboard.jpg)`}}>
           <Row>
-            <HeadingTwo className="bakery_about__heading_two">{data.gravBakeryPages.heading_two}</HeadingTwo>
+            <HeadingTwo className="bakery_about__heading_two">{data.gravBakeryAbout.heading_two}</HeadingTwo>
             <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />   
             <div className="bakery_about__green_block">
-              <p className="bakery_about__green_text">{data.gravBakeryPages.show_me_text}</p>
-              <TransitionLink className="bakery_about__green_link" to={data.gravBakeryPages.show_me_link} exit={{ length: 1 }} entry={{ delay: 1 }}>SHOW ME&nbsp;&nbsp;&#10095;</TransitionLink>
+              <p className="bakery_about__green_text">{data.gravBakeryAbout.show_me_text}</p>
+              <TransitionLink className="bakery_about__green_link" to={data.gravBakeryAbout.show_me_link} exit={{ length: 1 }} entry={{ delay: 1 }}>SHOW ME&nbsp;&nbsp;&#10095;</TransitionLink>
             </div>
           </Row>
           <img src="../images/company.png" className="bakery_about__white_company hide_on_mobile" />
@@ -50,10 +50,10 @@ const BakeryAbout = ({ data, className, query }) => {
         <SVGiconReverse className='bakery_about__white_pan' src='white_pan.svg' />        
         <Row>
           <div className="bakery_about__green_heading_background">
-            <AnimatedHeadingTwo className="bakery_about__heading_three">{data.gravBakeryPages.heading_three}</AnimatedHeadingTwo>     
+            <AnimatedHeadingTwo className="bakery_about__heading_three">{data.gravBakeryAbout.heading_three}</AnimatedHeadingTwo>     
           </div>
           <div className="bakery_about__right_icons">
-            {data.gravBakeryPages.svg_icons.map(({ svg, svg_text }) => (
+            {data.gravBakeryAbout.svg_icons.map(({ svg, svg_text }) => (
               <div key={svg_text}>
                 <Texticon className='bakery_about__graph_icon' name={svg_text} src={svg} />
               </div>

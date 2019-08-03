@@ -27,7 +27,7 @@ const BakeryAbout = ({ data, className }) => {
 
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
-        <Helmet title={data.gravCrowdersPages.title} />
+        <Helmet title={data.gravCrowdersAbout.title} />
 
         <SVGicon className='crowders_icecream' src='crowders_icecream.svg'  />
         <SVGiconReverse className='crowders_cheese' src='crowders_cheese.svg' />        
@@ -36,17 +36,17 @@ const BakeryAbout = ({ data, className }) => {
 
             <div className="crowders_about_first_left">
 
-              <AnimatedHeading className='crowders_about_heading'>{data.gravCrowdersPages.heading_one}</AnimatedHeading>   
+              <AnimatedHeading className='crowders_about_heading'>{data.gravCrowdersAbout.heading_one}</AnimatedHeading>   
 
-              <AnimatedImage className='crowders_about_image responsive_image show_on_mobile' src={data.gravCrowdersPages.image_one} />         
+              <AnimatedImage className='crowders_about_image responsive_image show_on_mobile' src={data.gravCrowdersAbout.image_one} />         
 
-              <Paragraph className='crowders_about_paragraph paragraph'>{data.gravCrowdersPages.paragraph_one}</Paragraph>
+              <Paragraph className='crowders_about_paragraph paragraph'>{data.gravCrowdersAbout.paragraph_one}</Paragraph>
 
-              <Link className='crowders_about_button' to={data.gravCrowdersPages.link_one}>{data.gravCrowdersPages.link_one_text}&nbsp;&nbsp;<span>&gt;</span></Link>            
+              <Link className='crowders_about_button' to={data.gravCrowdersAbout.link_one}>{data.gravCrowdersAbout.link_one_text}&nbsp;&nbsp;<span>&gt;</span></Link>            
 
             </div>
 
-            <AnimatedImage className='crowders_about_image responsive_image hide_on_mobile' src={data.gravCrowdersPages.image_two} />   
+            <AnimatedImage className='crowders_about_image responsive_image hide_on_mobile' src={data.gravCrowdersAbout.image_two} />   
 
 
           </Row>
@@ -56,13 +56,13 @@ const BakeryAbout = ({ data, className }) => {
 
           <Row>
 
-            <Heading className='crowders_about_heading_two'>{data.gravCrowdersPages.heading_two}</Heading>  
+            <Heading className='crowders_about_heading_two'>{data.gravCrowdersAbout.heading_two}</Heading>  
 
           </Row>
 
           <Row>
 
-            <Paragraph className="crowders_about_paragraph_two">{data.gravCrowdersPages.subheading_two}</Paragraph>
+            <Paragraph className="crowders_about_paragraph_two">{data.gravCrowdersAbout.subheading_two}</Paragraph>
 
           </Row>
 
@@ -195,7 +195,7 @@ const BakeryAbout = ({ data, className }) => {
 
 export const CrowdersAboutquery = graphql`
   query CrowdersAboutPageQuery {
-    gravCrowdersPages {
+    gravCrowdersAbout {
       heading_one
       heading_three
       heading_two

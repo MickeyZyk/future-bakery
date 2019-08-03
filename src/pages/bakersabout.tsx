@@ -28,11 +28,11 @@ const BakersAbout = ({ data, className }) => {
 
   <div className='wrapper'>
     <ReactCursorPosition className='fullscreen_cursor_position'>
-      <Helmet title={data.gravBakersPages.title} />
+      <Helmet title={data.gravBakersAbout.title} />
       <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
       <Row>
         <Figure3 className="bakers_about__image_one hide_on_mobile dropped"/>
-        <AnimatedHeading className='bakers_about__heading_one'>{data.gravBakersPages.heading_one}</AnimatedHeading>
+        <AnimatedHeading className='bakers_about__heading_one'>{data.gravBakersAbout.heading_one}</AnimatedHeading>
         <Figure3 className="show_on_mobile"/>
         <HeadingTwo className='bakers_about__heading_two'>A space for creative people with amazing ideas.</HeadingTwo>      
       </Row>
@@ -111,7 +111,7 @@ const BakersAbout = ({ data, className }) => {
 
 export const BakersAboutquery = graphql`
   query BakersAboutPageQuery {
-    gravBakersPages {
+    gravBakersAbout {
       heading_one
       subheading_one
       icon01_text

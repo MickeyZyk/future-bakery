@@ -23,15 +23,15 @@ exports.sourceNodes = async ({boundActionCreators}) => {
         createNode(x)
     })       
 
-    const bakersPages = await fetchBakersPages()
+    const bakersAbout = await fetchBakersAbout()
 
-    bakersPages.forEach(x => {
+    bakersAbout.forEach(x => {
         createNode(x)
     }) 
 
-    const crowdersPages = await fetchCrowdersPages()
+    const crowdersAbout = await fetchCrowdersAbout()
 
-    crowdersPages.forEach(x => {
+    crowdersAbout.forEach(x => {
         createNode(x)
     }) 
 
@@ -125,7 +125,7 @@ fetchBakeryWork = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakerywork', {
+        const response = await axios.get('http://future.stratego.ba/en/bakers/work', {
             params: {
                 "return-as": "json"
             }
@@ -144,7 +144,7 @@ fetchBakeryWork = async () => {
     }
 }
 
-fetchBakersPages = async () => {
+fetchBakersAbout = async () => {
     const {
         createNodeFactory,
         generateNodeId,
@@ -153,14 +153,14 @@ fetchBakersPages = async () => {
         typePrefix: `grav`
     })
 
-    const ProductNode = createNodeFactory('BakersPages', node => {
+    const ProductNode = createNodeFactory('BakersAbout', node => {
         return node
     })
 
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakers', {
+        const response = await axios.get('http://future.stratego.ba/en/bakers/pages', {
             params: {
                 "return-as": "json"
             }
@@ -179,7 +179,7 @@ fetchBakersPages = async () => {
     }
 }
 
-fetchCrowdersPages = async () => {
+fetchCrowdersAbout = async () => {
     const {
         createNodeFactory,
         generateNodeId,
@@ -188,14 +188,14 @@ fetchCrowdersPages = async () => {
         typePrefix: `grav`
     })
 
-    const ProductNode = createNodeFactory('CrowdersPages', node => {
+    const ProductNode = createNodeFactory('CrowdersAbout', node => {
         return node
     })
 
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/crowders', {
+        const response = await axios.get('http://future.stratego.ba/en/crowders/pages', {
             params: {
                 "return-as": "json"
             }
