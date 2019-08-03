@@ -54,6 +54,5 @@ module.exports = {
           layout: require.resolve('./src/components/app-layout/AppLayout.tsx'),
       }
     },
-    `gatsby-plugin-subfont` 
   ],
 }
