@@ -60,6 +60,7 @@
     "react-player": "^1.11.1",
     "react-scrollmagic": "^2.1.0",
     "react-smooth-scrollbar": "^8.0.6",
+    "react-throttle": "^0.3.0",
     "rfs": "^8.0.4",
     "slug": "^1.1.0",
     "smooth-scrollbar": "^8.4.0",

@@ -12,9 +12,13 @@ import SVGicon from 'components/svgicon/SVGicon';
 import { Link as InternalLink } from 'components/link/Link';
 import ReactCursorPosition from 'react-cursor-position';
 import SplitText from 'utils/SplitText.min.js'
+import { Throttle } from 'react-throttle';
 import s from './Slider.scss';
 
+
 var startCarouselInterval;
+var CarouselInterval;
+var myEfficientFn;
 
 var images = ['../images/image.jpg', '../images/dude.jpg','../images/desk.jpg','../images/image.jpg', '../images/dude.jpg','../images/desk.jpg']
 var labels = ["THE FUTURE IS HERE", "THE END IS NIGH", "THE HUNS ARE COMING","ROME HAS FALLEN", "APOCALYPSE NOW", "FLIGHT OVER THE COCKOO'S NEST" ]
@@ -66,9 +70,8 @@ class Carousel extends React.Component {
       animating: false
     };
     this.chidrenNodes = [];
-    this.wheelCallback = this.wheelCallback.bind(this);    
+    this.wheelCallback = this.wheelCallback.bind(this);
   }
-
 
   componentDidMount(){
     if(this.props.auto){
@@ -87,24 +90,35 @@ class Carousel extends React.Component {
 
 
   wheelCallback(ev){
+      if( ev.deltaY / 120 > 0 ) {  
+        this.nextSlide()
+      }
+      else{      
+        this.prevSlide()    
+      }  
+  }
 
+  
 
-
-
-        if(ev.deltaY /120 > 0) {
-      this.nextSlide()
-        }
-        else{
-            this.prevSlide()
-        }
-
-
-}
+  debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
+  
 
   startCarousel(){
     startCarouselInterval = setInterval(this.nextSlide.bind(this), this.props.timeInBetween);
   }
-
 
   prevSlide(){
 
@@ -125,15 +139,10 @@ class Carousel extends React.Component {
 
     const node = ReactDOM.findDOMNode(this);
 
-
-
-
-
     let currentIndex = this.state.activeIndex;
 
-          var image_top = this.wrapperRef_top.current; 
+      var image_top = this.wrapperRef_top.current; 
       var image_bottom = this.wrapperRef_bottom.current; 
-
 
       var allHeadings = image_top.querySelectorAll('.mask_parent_top .single_slide_heading');
       var prevHeading = image_bottom.querySelector('.mask_parent_bottom .prev');
@@ -141,10 +150,6 @@ class Carousel extends React.Component {
       var nextHeading = image_bottom.querySelector('.mask_parent_bottom .next');
       var currentText = image_top.querySelector('.mask_parent_top .text_current');       
       var buttonLink = image_top.querySelector('.mask_parent_top .button_link');
-
-
-
-
 
       console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
       if (currentIndex < this.state.activeIndex && parseInt(currentIndex)+1 == this.state.activeIndex) {
@@ -172,15 +177,6 @@ class Carousel extends React.Component {
         var currentTextTLx = new TimelineMax(); 
         if(currentText !== null){currentTextTLx.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })};           
       }  
-
-
-
-
-
-
-
-
-
 
 
     // Get child nodes
@@ -217,12 +213,6 @@ class Carousel extends React.Component {
 
     const node = ReactDOM.findDOMNode(this);
 
-
-
-
-
-
-
     let currentIndex = this.state.activeIndex;
 
       var image_top = this.wrapperRef_top.current; 
@@ -234,8 +224,6 @@ class Carousel extends React.Component {
       var nextHeading = image_bottom.querySelector('.mask_parent_bottom .next');
       var currentText = image_top.querySelector('.mask_parent_top .text_current');       
       var buttonLink = image_top.querySelector('.mask_parent_top .button_link');
-
-
 
       console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
       if (currentIndex < this.state.activeIndex && parseInt(currentIndex)+1 == this.state.activeIndex) {
@@ -264,14 +252,6 @@ class Carousel extends React.Component {
         var currentTextTLx = new TimelineMax(); 
         if(currentText !== null){currentTextTLx.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })};           
       }  
-
-
-
-
-
-
-
-
 
 
 
@@ -427,37 +407,39 @@ class Carousel extends React.Component {
     }) 
 
     return (
-      <div onWheel={this.wheelCallback} style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
-        <ReactCursorPosition className='fullscreen_cursor_position'>
-          <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='home_arrow.svg'  />
-          {this.state.showButtons  ? carouselLeftButton : null }
-          <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '7vw', height: '35vw', overflow: 'hidden'}}>
-            <div ref={this.wrapperRef_top} className='mask_parent_top' 
-            style={{position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', 
-            display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
-            alignItems: `${ this.state.horizontal ? 'center' : 'flex-end' }`}}>         
-              {carouselImages}            
+      <Throttle time="3000" handler="onWheel">
+        <div onWheel={this.wheelCallback} style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
+          <ReactCursorPosition className='fullscreen_cursor_position'>
+            <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='home_arrow.svg'  />
+            {this.state.showButtons  ? carouselLeftButton : null }
+            <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '7vw', height: '35vw', overflow: 'hidden'}}>
+              <div ref={this.wrapperRef_top} className='mask_parent_top' 
+              style={{position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', 
+              display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
+              alignItems: `${ this.state.horizontal ? 'center' : 'flex-end' }`}}>         
+                {carouselImages}            
+              </div>
             </div>
+            <div className='dots' ref={this.dots}>          
+              {this.state.showDots ? dots : null  }
+            </div>
+            <div className='mask_wrapper_bottom' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '0', height: '1.5vw', overflow: 'hidden'}}>        
+              <div ref={this.wrapperRef_bottom} className='mask_parent_bottom' 
+              style={{position:'absolute', bottom: 0, top: '-35vw', left: 0, right: 0, width: '100%', 
+              display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
+              alignItems: `${ this.state.horizontal ? 'center' : 'flex-end' }`}}>
+                {carouselImages}
+              </div>          
+            </div>
+            {this.state.showButtons ? carouselRightButton : null } 
+          </ReactCursorPosition>
+          <div className={s.contact_button_link}>
+            <TransitionLink to={'/Contact'} exit={{ length: 1 }} entry={{ delay: 1 }}>
+              START A PROJECT WITH US <span>&gt;</span>
+            </TransitionLink>  
           </div>
-          <div className='dots' ref={this.dots}>          
-            {this.state.showDots ? dots : null  }
-          </div>
-          <div className='mask_wrapper_bottom' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '0', height: '1.5vw', overflow: 'hidden'}}>        
-            <div ref={this.wrapperRef_bottom} className='mask_parent_bottom' 
-            style={{position:'absolute', bottom: 0, top: '-35vw', left: 0, right: 0, width: '100%', 
-            display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
-            alignItems: `${ this.state.horizontal ? 'center' : 'flex-end' }`}}>
-              {carouselImages}
-            </div>          
-          </div>
-          {this.state.showButtons ? carouselRightButton : null } 
-        </ReactCursorPosition>
-        <div className={s.contact_button_link}>
-          <TransitionLink to={'/Contact'} exit={{ length: 1 }} entry={{ delay: 1 }}>
-            START A PROJECT WITH US <span>&gt;</span>
-          </TransitionLink>  
         </div>
-      </div>
+      </Throttle>
     );
 
   }
