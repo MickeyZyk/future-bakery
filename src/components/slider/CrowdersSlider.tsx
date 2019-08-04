@@ -6,11 +6,10 @@ import logo from 'assets/svg/bakery-logo.svg';
 import ReactDOM from 'react-dom';
 import { If } from 'react-if';
 import { TransitionState } from "gatsby-plugin-transition-link";
-import TransitionLink from 'gatsby-plugin-transition-link'
 import Circle from 'assets/svg/circle.svg';
 import FullCircle from 'assets/svg/full_circle.svg';
 import SVGicon from 'components/svgicon/SVGicon';
-import { Link as InternalLink } from 'components/link/Link';
+import { Link } from 'components/link/Link';
 import ReactCursorPosition from 'react-cursor-position';
 import { Throttle } from 'react-throttle';
 import _ from 'lodash';
@@ -90,8 +89,14 @@ class Carousel extends React.Component {
         }
       ) 
 
+      this.gotoSlide(0)
 
   }
+
+  componentWillUnmount() {
+    this.prevSlide()
+    clearInterval(startCarouselInterval);      
+  }  
 
 
   wheelCallback(ev) {
@@ -246,7 +251,7 @@ class Carousel extends React.Component {
 
     let currentIndex = this.state.activeIndex;
 
-    let current = i.currentTarget.getAttribute('data-test'); 
+    let current = i.currentTarget ? i.currentTarget.getAttribute('data-test') : 0; 
 
     this.setState({ animating: true, activeIndex: current }, () => {
 
@@ -328,9 +333,6 @@ class Carousel extends React.Component {
 
   }
 
-  componentWillUnmount(){
-    clearInterval(startCarouselInterval);
-  }
 
   render() {
 
@@ -354,7 +356,7 @@ class Carousel extends React.Component {
           <h2 key={'2key_'+i} id={'i0'+(i)} className={`${'single_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>
           <h3 key={'key_text_'+i} className={`${'single_slide_text'} ${this.state.activeIndex == (i-1) ? 'text_next' : ''} ${this.state.activeIndex == i ? 'text_current' : ''} ${this.state.activeIndex == (i+1) ? 'text_prev' : ''}`}>{texts[i]}</h3>
           <div className={`${'button_link crowders_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`}>
-            <InternalLink to={links[i]}>LEARN MORE&nbsp;&nbsp;<div className='more_arrow'>&gt;</div></InternalLink>
+            <Link to={links[i]}>LEARN MORE&nbsp;&nbsp;<div className='more_arrow'>&gt;</div></Link>
           </div>
           <div className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>6</div>
           <div className='indicator_divider crowders_divider'></div>
@@ -398,9 +400,9 @@ class Carousel extends React.Component {
             {this.state.showButtons ? carouselRightButton : null } 
           </ReactCursorPosition>
           <div className={s.contact_button_link}>
-            <TransitionLink to={'/Contact'} exit={{ length: 1 }} entry={{ delay: 1 }}>
+            <Link to={'/contact'}>
               START A PROJECT WITH US <span>&gt;</span>
-            </TransitionLink>  
+            </Link>  
           </div>
         </div>
 
@@ -436,12 +438,30 @@ class CarouselImage extends React.Component {
     var srcToFull = 'url(' +  src + ')'+  srcTo;
 
     return (
-      <div className={this.props.className}
-       style={{ transform: 'scale(1)', display: 'block', zIndex:`${this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
-       width: '100%', height: '35vw', minHeight: '33vh'}}
-        onLoad={this._handleImageLoaded.bind(this)}
-        onError={this._handleImageErrored.bind(this)}
-        ></div>
+
+      <TransitionState>
+        {({ transitionStatus }) => {
+          return (
+
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', opacity: 0, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { clipPath:'inset(.001% .002% .003% .004%)', opacity: 0, ease: 'Power3.easeInOut' } : false  } >
+
+              <div className={this.props.className}
+               style={{ clipPath: 'inset(.001% .002% .003% .004%)', transform: 'scale(1)', display: 'block', zIndex:`${this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
+               width: '100%', height: '35vw', minHeight: '33vh'}}
+                onLoad={this._handleImageLoaded.bind(this)}
+                onError={this._handleImageErrored.bind(this)}
+              ></div>
+
+            </Tween>
+          )
+
+        }}
+      </TransitionState>
+
+
     );
   }
 
