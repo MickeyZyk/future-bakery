@@ -11,7 +11,7 @@ export default () => (
     	<Helmet title="Crowders" />
       <SVGiconReverse className='crowders_home__crowders_bubble' src='crowders_bubble.svg'  />     	
     	<div className='fulscreen_slider'>
-      	<CrowdersSlider className='new-slider'/>   
+	      <CrowdersSlider className='new-slider'/>   
     	</div>
     </ReactCursorPosition>
   </>
