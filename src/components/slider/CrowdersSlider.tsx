@@ -55,12 +55,8 @@ class Carousel extends React.Component {
       animating: false
     };
     this.chidrenNodes = [];
-    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 3000);    
+    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 3500);    
   }
-
-
- 
-
 
 
   componentDidMount(){
@@ -98,14 +94,14 @@ class Carousel extends React.Component {
 
 
   wheelCallback(ev) {
-    if( ev.deltaY / 120 > 0 ) {
-      console.log(ev)
-      this.state.activeIndex < slidesCount-1 ? this.nextSlide(this.state.activeIndex + 1) : false
+    if( ev.deltaY / 150 > 0 ) {
+      console.log( this.state.activeIndex + 1, "delta", ev.deltaY / 150 )
+      this.state.activeIndex < slidesCount-1 && !this.state.animating ? this.nextSlide(this.state.activeIndex + 1) : false
     }
-    else {  
-      console.log(ev)
-      this.state.activeIndex > 0 ? this.prevSlide(this.state.activeIndex - 1) : false
-    }  
+    else if( ev.deltaY / 150 < 0 ) {  
+      console.log( this.state.activeIndex - 1, "delta", ev.deltaY / 150 )
+      this.state.activeIndex  > 0 && !this.state.animating ? this.prevSlide(this.state.activeIndex - 1) : false
+    }
   }
 
   _onMouseMove = (e) => {
@@ -119,6 +115,8 @@ class Carousel extends React.Component {
 
 
   prevSlide(i){
+
+    console.log("prev", i);
 
     let current = i;     
 
@@ -137,6 +135,23 @@ class Carousel extends React.Component {
 
       var ntl2 = new TimelineMax({repeat:0});
       ntl2.to(image_bottom , 1.5 , {top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut'});    
+
+      var prevHeading = image_bottom.querySelectorAll('.mask_parent_bottom div .prev .ts-line');
+      var currentHeading = image_top.querySelectorAll('.mask_parent_top .current .ts-line'); 
+      var nextHeading = image_bottom.querySelectorAll('.mask_parent_bottom .next .ts-line');
+      var prevText = image_bottom.querySelectorAll('.mask_parent_bottom .text_prev .ts-text-line'); 
+      var currentText = image_top.querySelectorAll('.mask_parent_top .text_current .ts-text-line');   
+      var nextText = image_bottom.querySelectorAll('.mask_parent_bottom .text_next .ts-text-line'); 
+
+      var prevTLback = new TimelineMax(); 
+      if(nextHeading !== null){prevTLback.set(nextHeading, {opacity: 1}).staggerTo(nextHeading, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .1, "+=0")};
+      var currentTLback = new TimelineMax(); 
+      if(currentHeading !== null){currentTLback.staggerFrom(currentHeading, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
+
+      var nextTXback = new TimelineMax(); 
+      if(nextText !== null){nextTXback.set(nextText, {opacity: 1}).staggerTo(nextText, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
+      var currentTXback = new TimelineMax(); 
+      if(currentText !== null){currentTXback.staggerFrom(currentText, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut', delay: 1 }, .15, "+=0")};
 
       const node = ReactDOM.findDOMNode(this);
 
@@ -162,6 +177,8 @@ class Carousel extends React.Component {
 
   nextSlide(i){
 
+    console.log("next", i)    
+
     let current = i;     
 
     this.setState({ animating: true, activeIndex: current }, () => {
@@ -177,7 +194,24 @@ class Carousel extends React.Component {
       ptl1.to(image_top, 1.5, { top: `${percentage}vw`, ease: 'Expo.easeInOut'});
 
       var ptl2 = new TimelineMax({repeat:0});
-      ptl2.to(image_bottom, 1.5, { top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut'});    
+      ptl2.to(image_bottom, 1.5, { top: `${percentage-multiplier}vw`, ease: 'Expo.easeInOut'}); 
+
+      var prevHeading = image_bottom.querySelectorAll('.mask_parent_bottom div .prev .ts-line');
+      var currentHeading = image_top.querySelectorAll('.mask_parent_top .current .ts-line'); 
+      var nextHeading = image_bottom.querySelectorAll('.mask_parent_bottom .next .ts-line');
+      var prevText = image_bottom.querySelectorAll('.mask_parent_bottom .text_prev .ts-text-line'); 
+      var currentText = image_top.querySelectorAll('.mask_parent_top .text_current .ts-text-line');   
+      var nextText = image_bottom.querySelectorAll('.mask_parent_bottom .text_next .ts-text-line'); 
+
+      var prevTLforward = new TimelineMax(); 
+      if(prevHeading !== null){prevTLforward.set(prevHeading, {opacity: 1}).staggerTo(prevHeading, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .1, "+=0")};
+      var currentTLforward = new TimelineMax(); 
+      if(currentHeading !== null){currentTLforward.staggerFrom(currentHeading, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=.5")};
+
+      var prevTXforward = new TimelineMax(); 
+      if(prevText !== null){prevTXforward.set(prevText, {opacity: 1}).staggerTo(prevText, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
+      var currentTXforward = new TimelineMax(); 
+      if(currentText !== null){currentTXforward.staggerFrom(currentText, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut', delay: 1 }, .15, "+=0")};
 
       const node = ReactDOM.findDOMNode(this);
 
@@ -201,7 +235,7 @@ class Carousel extends React.Component {
 
   }
 
-  gotoSlide(i, image){
+  gotoSlide(i){
 
     let currentIndex = this.state.activeIndex;
 
@@ -224,17 +258,13 @@ class Carousel extends React.Component {
       var prevHeading = image_bottom.querySelectorAll('.mask_parent_bottom div .prev .ts-line');
       var currentHeading = image_top.querySelectorAll('.mask_parent_top .current .ts-line'); 
       var nextHeading = image_bottom.querySelectorAll('.mask_parent_bottom .next .ts-line');
-      var prevText = image_top.querySelectorAll('.mask_parent_top .text_prev .ts-text-line'); 
+      var prevText = image_bottom.querySelectorAll('.mask_parent_bottom .text_prev .ts-text-line'); 
       var currentText = image_top.querySelectorAll('.mask_parent_top .text_current .ts-text-line');   
-      var nextText = image_top.querySelectorAll('.mask_parent_top .text_next .ts-text-line'); 
-      var buttonLink = image_top.querySelector('.mask_parent_top .button_link');
-
-      //console.log('index',this.state.activeIndex,'prev',prevHeading, 'current',currentHeading, 'next',nextHeading);
+      var nextText = image_bottom.querySelectorAll('.mask_parent_bottom .text_next .ts-text-line'); 
 
       console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
       if (currentIndex < this.state.activeIndex && parseInt(currentIndex)+1 == this.state.activeIndex) {
-
-        console.log('CURR < ACT'); 
+        console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex), 'CURR < ACT == FORWARD');
 
         var prevTLforward = new TimelineMax(); 
         if(prevHeading !== null){prevTLforward.set(prevHeading, {opacity: 1}).staggerTo(prevHeading, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .1, "+=0")};
@@ -244,28 +274,30 @@ class Carousel extends React.Component {
         var prevTXforward = new TimelineMax(); 
         if(prevText !== null){prevTXforward.set(prevText, {opacity: 1}).staggerTo(prevText, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
         var currentTXforward = new TimelineMax(); 
-        if(currentText !== null){currentTXforward.staggerFrom(currentText, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut', delay: 1 }, .15, "+=.5")};
+        if(currentText !== null){currentTXforward.staggerFrom(currentText, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut', delay: 1 }, .15, "+=0")};
+
 
       } else if (currentIndex > this.state.activeIndex && currentIndex == parseInt(this.state.activeIndex)+1) {
+        console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex), 'CURR > ACT == BACK');
 
-        console.log('CURR > ACT');
-        var nextTL = new TimelineMax(); 
-        if(nextHeading !== null){nextTL.set(nextHeading, {opacity: 1}).to(nextHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
-        var nextTL1 = new TimelineMax(); 
-        if(nextHeading !== null){nextTL1.to(nextHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })};   
-        var currentTLy = new TimelineMax(); 
-        if(currentHeading !== null){currentTLy.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
-        var currentTLy1 = new TimelineMax(); 
-        if(currentHeading !== null){currentTLy1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut' })};
+        var prevTLback = new TimelineMax(); 
+        if(nextHeading !== null){prevTLback.set(nextHeading, {opacity: 1}).staggerTo(nextHeading, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .1, "+=0")};
+        var currentTLback = new TimelineMax(); 
+        if(currentHeading !== null){currentTLback.staggerFrom(currentHeading, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
+
+        var nextTXback = new TimelineMax(); 
+        if(nextText !== null){nextTXback.set(nextText, {opacity: 1}).staggerTo(nextText, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
+        var currentTXback = new TimelineMax(); 
+        if(currentText !== null){currentTXback.staggerFrom(currentText, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut', delay: 1 }, .15, "+=0")};
 
       } else {
-        console.log('NOGO');
+        console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex), 'NOGO == RANDOM');        
+
         var currentTL = new TimelineMax(); 
-        if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
-        var currentTL1 = new TimelineMax(); 
-        if(currentHeading !== null){currentTL1.from(currentHeading, 3, { color: '#fff', ease: 'Expo.easeInOut'  })}; 
+        if(currentHeading !== null){currentTL.staggerFrom(currentHeading, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
+
         var currentTextTLx = new TimelineMax(); 
-        if(currentText !== null){currentTextTLx.from(currentText, 3.75, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' })};           
+        if(currentText !== null){currentTextTLx.staggerFrom(currentText, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut', delay: 1 }, .15, "+=0")};        
       }  
 
 
