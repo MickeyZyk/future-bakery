@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { TweenMax, TimelineMax, Power3} from "gsap";
+import { TweenMax, TimelineMax, Power3, SplitText} from "gsap";
 import { Tween } from 'react-gsap';
 import logo from 'assets/svg/bakery-logo.svg';
 import ReactDOM from 'react-dom';
@@ -55,7 +55,7 @@ class Carousel extends React.Component {
       animating: false
     };
     this.chidrenNodes = [];
-    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 3500);    
+    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 5500);    
   }
 
 
