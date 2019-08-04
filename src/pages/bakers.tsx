@@ -7,14 +7,18 @@ import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 
 export default () => (
-  <>
-    <ReactCursorPosition className='fullscreen_cursor_position'>  
-	    <Helmet title="Bakers" />
-      <SVGicon className='bakers_home__bakers_crown' src='bakers_crown.svg'  /> 
-      <SVGiconReverse className='bakers_home__bakers_bulb' src='bakers_bulb.svg'  /> 
-	    <div className='fulscreen_slider'>
-	    	<BakersSlider className='new-slider'/>
-	    </div>
-    </ReactCursorPosition>
-  </>
+  
+
+            <ReactCursorPosition className='fullscreen_cursor_position'>  
+        	    <Helmet title="Bakers" />
+              <SVGicon className='bakers_home__bakers_crown' src='bakers_crown.svg'  /> 
+              <SVGiconReverse className='bakers_home__bakers_bulb' src='bakers_bulb.svg'  /> 
+        	    <div className='fulscreen_slider'>
+        	    	<BakersSlider className='new-slider'/>
+        	    </div>
+            </ReactCursorPosition>
+
+
+
+
 );
