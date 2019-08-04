@@ -56,7 +56,7 @@ class Carousel extends React.Component {
       animating: false
     };
     this.chidrenNodes = [];
-    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 5500);    
+    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 3000);    
   }
 
 
@@ -145,7 +145,10 @@ class Carousel extends React.Component {
       var nextText = image_bottom.querySelectorAll('.mask_parent_bottom .text_next .ts-text-line'); 
 
       var prevTLback = new TimelineMax(); 
-      if(nextHeading !== null){prevTLback.set(nextHeading, {opacity: 1}).staggerTo(nextHeading, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .1, "+=0")};
+      prevTLback.eventCallback("onComplete", function() {
+        prevTLback.pause(0);
+      }); 
+      if(nextHeading !== null){prevTLback.set(nextHeading, {opacity: 0}).set(nextHeading, {opacity: 1}).staggerTo(nextHeading, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .1, "+=0")};
       var currentTLback = new TimelineMax(); 
       if(currentHeading !== null){currentTLback.staggerFrom(currentHeading, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
 
@@ -204,8 +207,11 @@ class Carousel extends React.Component {
       var currentText = image_top.querySelectorAll('.mask_parent_top .text_current .ts-text-line');   
       var nextText = image_bottom.querySelectorAll('.mask_parent_bottom .text_next .ts-text-line'); 
 
-      var prevTLforward = new TimelineMax(); 
-      if(prevHeading !== null){prevTLforward.set(prevHeading, {opacity: 1}).staggerTo(prevHeading, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .1, "+=0")};
+      var prevTLforward = new TimelineMax();
+      prevTLforward.eventCallback("onComplete", function() {
+        prevTLforward.pause(0);
+      }); 
+      if(prevHeading !== null){prevTLforward.set(prevHeading, {opacity: 0}).set(prevHeading, {opacity: 1}).staggerTo(prevHeading, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .1, "+=0")};
       var currentTLforward = new TimelineMax(); 
       if(currentHeading !== null){currentTLforward.staggerFrom(currentHeading, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=.5")};
 
