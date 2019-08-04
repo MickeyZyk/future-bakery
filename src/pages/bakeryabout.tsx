@@ -30,7 +30,7 @@ const BakeryAbout = ({ data, className, query }) => {
             <Figure2 className="show_on_mobile"/>
             <Paragraph className='bakery_about__paragraph paragraph'>{data.gravBakeryAbout.paragraph_one}</Paragraph>
           </div>
-          <Figure src={ 'http://admin.aptours.ba/en/bakery/about-us/' + data.gravBakeryAbout.image_one } className="bakery_about__image_one hide_on_mobile"/>
+          <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + data.gravBakeryAbout.image_one } className="bakery_about__image_one hide_on_mobile"/>
         </Row>
         <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/greenboard.jpg)`}}>
           <Row>

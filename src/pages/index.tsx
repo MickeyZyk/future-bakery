@@ -6,11 +6,28 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 
+/*
+
+async function fetchSlides(endpoint) {
+  const res = await fetch(endpoint);
+  let data = await res.json();
+
+  data = data.map(x => x.header);
+
+  console.log(data);
+}
+
+let data = fetchSlides('http://future.stratego.ba/en/bakers/slider?return-as=json');
+
+
+*/
+
+
 const index = () => (
   <>
     <ReactCursorPosition className='fullscreen_cursor_position'>   
       <Helmet title="Bakery" />
-      <SVGicon  className='bakery_home__bakery_bulb_small' src='bakery_bulb_small.svg' /> 
+      <SVGicon className='bakery_home__bakery_bulb_small' src='bakery_bulb_small.svg' /> 
       <SVGiconReverse className='bakery_home__bakery_bulb' src='bakery_bulb.svg'  />     
 	    <div className='fulscreen_slider'>
 	      <Slider className='new-slider'/>

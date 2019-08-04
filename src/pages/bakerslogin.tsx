@@ -35,7 +35,7 @@ const BakersLogin = ({ data, className }) => {
 
 
             <div className='bakers_login__main_header'>
-              <h1>Vymýšlejte s námi nápady — odměnujeme ty nejlepší</h1>
+              <h1>Vymýšlejte s námi nápady - odměnujeme ty nejlepší</h1>
             </div>
 
 
