@@ -360,3 +360,261 @@
   }
 
 }
+
+/* bakersabout */
+
+.bakers_about__talk_bubbles {
+  @include grid-col(6);
+  @include grid-offset-left(8);
+  position: absolute;
+  top: 45vw;
+
+  @media (min-width: $min-960) {
+    @include grid-col(1.3);
+    @include grid-offset-left(4.3);
+    position: absolute;
+    z-index: 6;
+    top: 22vw;
+    /*
+    $top-map: (320px: -0.15px, 959px: -0.25px, 960px: 250px, 2880px: 730px);  
+    @include poly-fluid-sizing('font-size', $top-map);
+    */
+  }
+}
+
+.bakers_about__brains {
+  @include grid-col(4);
+  @include grid-offset-left(2);
+  position: relative;
+  top: 25vw;
+
+  @media (min-width: $min-960) {
+    @include grid-col(1.3);
+    @include grid-offset-left(12);
+    position: absolute !important;
+    z-index: 5;
+    top: 63vw;
+    /*
+    $top-map: (320px: -0.15px, 959px: -0.25px, 960px: 250px, 2880px: 730px);  
+    @include poly-fluid-sizing('font-size', $top-map);
+    */
+  }
+}
+
+.bakers_about__heading_one {
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 75px, 2880px: 158px);
+  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 57px, 2880px: 138px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+
+  @include grid-col(6);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(2.5);
+    @include grid-offset-left(3);
+  }
+}
+
+.bakers_about__heading_two {
+  $font-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 20px, 2880px: 60px);
+  $height-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 20px, 2880px: 60px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map); 
+
+  @include grid-col(13);
+  @include grid-offset-left(2);
+  top: 25vw;
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 12vw;
+    @include grid-col(2);
+    @include grid-offset-left(-.5);
+  }
+}
+
+.bakers_about__heading_three {
+  $font-map: (375px: 30px, 959px: 41px, 960px: 20px, 2880px: 60px);
+  $height-map: (375px: 30px, 959px: 41px, 960px: 20px, 2880px: 60px);
+  $spacing-map: (375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);
+
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+  
+  @include grid-col(10);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(5);
+    @include grid-offset-left(1);
+  }
+}
+
+.bakers_about__paragraph {
+  color: rgba(35, 31, 32, 0.6);
+
+  @include grid-col(14);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 10vw;
+    margin-bottom: 18vw;
+    @include grid-col(4);
+    @include grid-offset-left(3);
+  }
+}
+
+.bakers_we__paragraph {
+  color: rgba(35, 31, 32, 0.6);
+
+  @include grid-col(14);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -20vw;    
+    @include grid-col(3);
+    @include grid-offset-left(12);
+  }
+}
+
+.bakers_about__join_link {
+  color: #ff7a00;
+  font-weight: bold;
+  @include grid-col(4);
+  @include grid-offset-left(2);
+
+  top: 15vw;
+  bottom: 10vw;
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -17vw;
+    bottom: 0;    
+    @include grid-col(3);
+    @include grid-offset-left(12);
+  }  
+}
+
+
+.tags_heading {
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 75px, 2880px: 158px);
+  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 57px, 2880px: 138px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);
+
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+
+  @include grid-col(11);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 3vw;    
+    @include grid-col(2);
+    @include grid-offset-left(7.5);
+  }      
+}
+
+.tag_01 {
+  top: 15vw;
+  bottom: 8vw;
+  @include grid-col(8);
+  @include grid-offset-left(2);
+  
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 0vw;  
+    bottom: 0vw;  
+    @include grid-col(2);
+    @include grid-offset-left(-2.8);
+  }    
+}
+.tag_02 {
+  top: 10vw;
+  @include grid-col(8);
+  @include grid-offset-left(6);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 7vw;
+    @include grid-col(2);
+    @include grid-offset-left(-2.1);
+  }   
+}
+.tag_03 {
+  top: 10vw;
+  @include grid-col(8);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 6.2vw;    
+    @include grid-col(2);
+    @include grid-offset-left(.5);
+  }   
+}
+.tag_04 {
+  top: 10vw;
+  @include grid-col(8);
+  @include grid-offset-left(4);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 13vw;    
+    @include grid-col(2);
+    @include grid-offset-left(-5.1);
+  }     
+}
+
+.tag_arrow_01 {
+  align-self: flex-start!important;
+  top: -50vw;
+  @include grid-col(3);
+  @include grid-offset-left(13);
+  
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 7vw;    
+    @include grid-col(.5);
+    @include grid-offset-left(.5);
+  }  
+}
+
+.phone_logo {
+  align-self: flex-start!important;
+  top: 25vw;
+  @include grid-col(6);
+  @include grid-offset-left(6);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 21vw;    
+    height: auto;
+    @include grid-col(1.2);
+    @include grid-offset-left(-2);
+  }  
+}
+.tag_arrow_02 {
+  align-self: flex-start!important;
+  top: -50vw;
+
+  @include grid-col(3);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 31vw;
+    height: auto;
+    @include grid-col(1.25);
+    @include grid-offset-left(-.75);
+  }  
+}
