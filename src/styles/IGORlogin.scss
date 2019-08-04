@@ -60,7 +60,7 @@
 
 .bakers_login__main_subheader {
   position: absolute;
-  top: 25vw;
+  top: 20vw;
 
   $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 40px);
   $height-map: (320px: 18px, 375px: 20px, 959px: 50px, 960px: 20px, 2880px: 48px);
@@ -92,6 +92,10 @@
 .bakers_login__main_login {
   position: absolute;
   top: 35vw;
+
+  font-weight: bold;
+  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 14px, 2880px: 24px);
+  @include poly-fluid-sizing('font-size', $font-map);   
 
   @include grid-col(1);
   @include grid-offset-left(13);

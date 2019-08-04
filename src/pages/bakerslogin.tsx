@@ -40,17 +40,17 @@ const BakersLogin = ({ data, className }) => {
 
 
             <div className='bakers_login__main_subheader'>
-              <p>Jsou nás tu tisíce, co to už udělali. Ale stále je více těch, kteří vaše nápady potřebují.</p>
+              <p>Jsou nás tu tisíce, co to uz udelali. Ale stále je více tech, kterí vase nápady potrebují.</p>
             </div>
 
 
             <div className='bakers_login__main_login'>
-              <p>login</p>
+              <p>LOGIN&nbsp;&nbsp;<span>&gt;</span></p>
             </div>
 
 
             <div className='bakers_login__main_joinus'>
-              <p>join us</p>
+              <p>JOIN US&nbsp;&nbsp;<span>&gt;</span></p>
             </div>
 
             </Row>

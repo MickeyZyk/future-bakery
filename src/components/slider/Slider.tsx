@@ -64,7 +64,7 @@ class Carousel extends React.Component {
       which: slidesCount,
       horizontal: false,
       showButtons: false,
-      showDots: false,
+      showDots: true,
       isActive: 1,
       activeIndex: 0,
       animating: false
@@ -98,24 +98,6 @@ class Carousel extends React.Component {
       }  
   }
 
-  
-
-  debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
-  
-
   startCarousel(){
     startCarouselInterval = setInterval(this.nextSlide.bind(this), this.props.timeInBetween);
   }
@@ -125,8 +107,6 @@ class Carousel extends React.Component {
     this.setState({ animating: true });
 
     percentage = this.state.which < slidesCount-1 ? percentage + multiplier : 0 ;
-
-    //console.log('percentage', percentage, 'this.state.which', this.state.which);    
 
     var image_top = this.wrapperRef_top.current; 
     var image_bottom = this.wrapperRef_bottom.current;     
