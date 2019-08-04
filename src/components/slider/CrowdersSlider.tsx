@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { TweenMax, TimelineMax, Power3, SplitText} from "gsap";
+import SplitText from 'utils/SplitText.min.js'
+import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import logo from 'assets/svg/bakery-logo.svg';
 import ReactDOM from 'react-dom';
