@@ -137,14 +137,17 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
             <Then>
               <Scrollbar className={s.scrollbar} damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
                 {children}
+                <Controller refreshInterval={1}>
+                  <Scene duration={'528px'} triggerHook={1} indicators={true}  >
+                    <Tween to={{ yPercent: 100 }}>
+                      <div style={{position: 'relative'}}>
+                        <Footer/>
+                      </div>
+                    </Tween>
+                  </Scene>
+                </Controller>                
               </Scrollbar>
-              <Controller refreshInterval={1}>
-                <Scene duration={'100%'} triggerHook={'onEnter'}>
-                  <Tween from={{css: {zIndex: 0} }} to={{css: {zIndex: 1} }}>
-                    <div><Footer/></div>
-                  </Tween>
-                </Scene>
-              </Controller>
+
             </Then>
             <Else>
               {children}          

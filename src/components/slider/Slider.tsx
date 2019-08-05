@@ -60,6 +60,7 @@ class Carousel extends React.Component {
 
 
   componentDidMount(){
+
     if(this.props.auto){
       this.startCarousel()
     };
@@ -90,7 +91,6 @@ class Carousel extends React.Component {
       ) 
 
       this.gotoSlide(0)
-
   }
 
   componentWillUnmount() {

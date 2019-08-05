@@ -14,6 +14,12 @@ export default () => (
 	    <div className='fulscreen_slider'>
 	      <AnimatedHeading className='bakery_contact_heading'>Headline call to action for contact page.</AnimatedHeading>
         <img src="../images/paper_plane.png" className='bakery_contact_image'/>
+        <div className="bakery_contact_flip_button bakery_flip">
+          <Link to={'/contact'}>
+            <div className="front">START A PROJECT WITH US</div>
+            <div className="back">START A PROJECT WITH US</div>
+          </Link>
+        </div>
 	    </div>
     </ReactCursorPosition>	    
   </>

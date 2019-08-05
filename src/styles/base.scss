@@ -240,6 +240,101 @@ a {
 
 
 
+
+
+
+.bakery_flip {
+  font-weight: bold;
+  position: absolute;
+  perspective: 500px;
+  bottom: 8.5vw;
+  left: 83%;
+  width: 15vw;
+  height: 2.25vw;  
+  margin: -24px 0 0 -80px;
+}
+.bakery_flip a {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: translateZ(-24px);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.bakery_flip a .front,
+.bakery_flip a .back {
+  margin: 0;
+  width: 15vw;
+  height: 2.25vw;
+  line-height: 2.25vw;
+  position: absolute;
+  text-align: center;
+}
+.bakery_flip a .front {
+  opacity: 1;
+  background-color: #d4de4f; 
+  color: #222; 
+  transform: rotateY(0) translateZ(21px);
+}
+.bakery_flip a .back {
+  background-color: rgba(255,255,255,0);
+  color: rgba(34,34,34,0);
+  transform: rotateX(90deg) translateZ(21px);
+  overflow: hidden;
+}
+.bakery_flip a .back:after {
+  content: '';
+  opacity: 0;
+  position: absolute;
+  top: -45%;
+  left: -10%;
+  width: 120%;
+  height: 50%;
+  background: #fff;
+  transform: rotate(12deg);
+  transition: all 0.5s ease;
+  transition-delay: 0.15s;
+}
+.bakery_flip a:hover {
+  transform: translateZ(-24px) rotateX(-90deg);
+}
+.bakery_flip a:hover .front {
+  background: #fff;
+  transition: all 0.8s ease;
+  opacity: 0;
+}
+.bakery_flip a:hover .back {
+  color: #fff;
+  transition: all 0.6s linear;
+  background: #222;
+}
+.bakery_flip a:hover .back:after {
+  transform: rotate(6deg) translate(100px, -24px);
+  opacity: 1;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .active {
   font-weight: bold;
   transition: all .5s;
