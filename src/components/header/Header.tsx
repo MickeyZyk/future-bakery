@@ -30,9 +30,9 @@ export const Header = ({ children, logo, data, set, location, ...props }: IHeade
                 {({ location }) => (              
 
             <TransitionLink to={ location.pathname == '/' ?  '/bakery'
-                  :  location.pathname.includes('Bakery') ? '/bakery' 
-                  :  location.pathname.includes('Bakers') ? '/bakers' 
-                  :  location.pathname.includes('Crowders') ? '/crowders' 
+                  :  location.pathname.includes('bakery') ? '/bakery' 
+                  :  location.pathname.includes('bakers') ? '/bakers' 
+                  :  location.pathname.includes('crowders') ? '/crowders' 
                   :  '/bakery' }  onClick={() => set({ menuOpen: !data.menuOpen })} className={s.header__logo} exit={{ length: 1 }} entry={{ delay: 0 }}>
 
    

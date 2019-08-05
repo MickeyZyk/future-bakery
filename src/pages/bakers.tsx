@@ -16,6 +16,7 @@ export default () => (
     <Helmet title="Bakers" />
     <SVGicon className='bakers_home__bakers_crown' src='bakers_crown.svg'  /> 
     <SVGiconReverse className='bakers_home__bakers_bulb' src='bakers_bulb.svg'  /> 
+
       <TransitionState>
         {({ transitionStatus }) => {
           return (
@@ -46,6 +47,7 @@ export default () => (
           )
         }}
       </TransitionState>
+      
   </ReactCursorPosition>
 
 );
