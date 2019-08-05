@@ -35,7 +35,7 @@ const index = () => (
               </div>
 
               <div className="flip_button flip">
-                <Link to={'/contact'}>
+                <Link to={'/bakerycontact'}>
                   <div className="front">START A PROJECT WITH US</div>
                   <div className="back">START A PROJECT WITH US</div>
                 </Link>

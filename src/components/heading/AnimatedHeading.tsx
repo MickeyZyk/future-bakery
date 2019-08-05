@@ -29,7 +29,7 @@ export class AnimatedHeading extends React.Component {
       var tslines = h2.querySelectorAll('.ts-line');
       var currentTL = new TimelineMax(); 
 
-        currentTL.staggerFrom(tslines, 1.25, { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut'}, .25, "+=0"); 
+        currentTL.staggerFrom(tslines, 2.5, { yPercent: -100, ease: 'Power3.easeOut'}, .15, "+=1.5").staggerFrom(tslines, 1, { opacity: 0, ease: 'Power3.easeOut'}, .15, "-=3"); 
 
   }
 

@@ -139,12 +139,26 @@ a {text-decoration: none}
 }
 
 
+.text-bold {
+  font-weight: bold;
+}
 
+.text-bolder {
+  font-weight: bolder;
+}
+
+.color-black {
+  color: #222;
+}
 
 a {
   $font-map: (375px: 14px, 959px: 38px, 960px: 8px, 2880px: 24px);
   @include poly-fluid-sizing('font-size', $font-map);  
 }
+
+.bakery_color, .bakery_color > * {color: #d4de4f!important}
+.bakers_color, .bakers_color > * {color: #ff7a00!important}
+.crowders_color, .crowders_color > * {color: #37c6f4!important}
 
 .bakery_back {background-color: #d4de4f}
 .bakers_back {background-color: #ff7a00}
@@ -245,10 +259,7 @@ a {
 
 .bakery_flip {
   font-weight: bold;
-  position: absolute;
   perspective: 500px;
-  bottom: 8.5vw;
-  left: 83%;
   width: 15vw;
   height: 2.25vw;  
   margin: -24px 0 0 -80px;
@@ -318,6 +329,154 @@ a {
 
 
 
+
+
+
+.bakers_flip {
+  font-weight: bold;
+  perspective: 500px;
+  width: 15vw;
+  height: 2.25vw;  
+  margin: -24px 0 0 -80px;
+}
+.bakers_flip a {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: translateZ(-24px);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.bakers_flip a .front,
+.bakers_flip a .back {
+  margin: 0;
+  width: 15vw;
+  height: 2.25vw;
+  line-height: 2.25vw;
+  position: absolute;
+  text-align: center;
+}
+.bakers_flip a .front {
+  opacity: 1;
+  background-color: #ff7a00; 
+  color: #222; 
+  transform: rotateY(0) translateZ(21px);
+}
+.bakers_flip a .back {
+  background-color: rgba(255,255,255,0);
+  color: rgba(34,34,34,0);
+  transform: rotateX(90deg) translateZ(21px);
+  overflow: hidden;
+}
+.bakers_flip a .back:after {
+  content: '';
+  opacity: 0;
+  position: absolute;
+  top: -45%;
+  left: -10%;
+  width: 120%;
+  height: 50%;
+  background: #fff;
+  transform: rotate(12deg);
+  transition: all 0.5s ease;
+  transition-delay: 0.15s;
+}
+.bakers_flip a:hover {
+  transform: translateZ(-24px) rotateX(-90deg);
+}
+.bakers_flip a:hover .front {
+  background: #fff;
+  transition: all 0.8s ease;
+  opacity: 0;
+}
+.bakers_flip a:hover .back {
+  color: #fff;
+  transition: all 0.6s linear;
+  background: #222;
+}
+.bakers_flip a:hover .back:after {
+  transform: rotate(6deg) translate(100px, -24px);
+  opacity: 1;  
+}
+
+
+
+
+
+
+
+.crowders_flip {
+  font-weight: bold;
+  perspective: 500px;
+  width: 15vw;
+  height: 2.25vw;  
+  margin: -24px 0 0 -80px;
+}
+.crowders_flip a {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: translateZ(-24px);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.crowders_flip a .front,
+.crowders_flip a .back {
+  margin: 0;
+  width: 15vw;
+  height: 2.25vw;
+  line-height: 2.25vw;
+  position: absolute;
+  text-align: center;
+}
+.crowders_flip a .front {
+  opacity: 1;
+  background-color: #37c6f4; 
+  color: #222; 
+  transform: rotateY(0) translateZ(21px);
+}
+.crowders_flip a .back {
+  background-color: rgba(255,255,255,0);
+  color: rgba(34,34,34,0);
+  transform: rotateX(90deg) translateZ(21px);
+  overflow: hidden;
+}
+.crowders_flip a .back:after {
+  content: '';
+  opacity: 0;
+  position: absolute;
+  top: -45%;
+  left: -10%;
+  width: 120%;
+  height: 50%;
+  background: #fff;
+  transform: rotate(12deg);
+  transition: all 0.5s ease;
+  transition-delay: 0.15s;
+}
+.crowders_flip a:hover {
+  transform: translateZ(-24px) rotateX(-90deg);
+}
+.crowders_flip a:hover .front {
+  background: #fff;
+  transition: all 0.8s ease;
+  opacity: 0;
+}
+.crowders_flip a:hover .back {
+  color: #fff;
+  transition: all 0.6s linear;
+  background: #222;
+}
+.crowders_flip a:hover .back:after {
+  transform: rotate(6deg) translate(100px, -24px);
+  opacity: 1;  
+}
 
 
 
@@ -3523,6 +3682,33 @@ select {
 
 
 /* BAKERY CONTACT */
+
+.bakery_contact_adress_block {  
+
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    top: 30vw;
+    @include grid-col(8);
+    @include grid-offset-left(3); 
+  } 
+}
+
+.bakery_contact_flip_button {  
+
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    top: 45vw;
+    @include grid-col(8);
+    @include grid-offset-left(3); 
+  } 
+}
+
 
 .bakery_contact_heading > div {
   color: #d4de4f;

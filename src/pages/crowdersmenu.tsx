@@ -107,7 +107,7 @@ export default class CrowdersMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="Contact" 
-							      			to="/contact"
+							      			to="/crowderscontact"
 						      				>
 														<MenuHeading className='white_text'>Contact</MenuHeading>
 												  </Link>

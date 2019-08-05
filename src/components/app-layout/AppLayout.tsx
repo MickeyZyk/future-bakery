@@ -131,6 +131,12 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
             location.pathname != '/bakersmenu/' &&
             location.pathname != '/crowdersmenu' &&  
             location.pathname != '/crowdersmenu/' &&
+            location.pathname != '/crowderscontact' &&  
+            location.pathname != '/crowderscontact/' &&
+            location.pathname != '/bakerycontact' &&  
+            location.pathname != '/bakerycontact/' &&
+            location.pathname != '/bakerscontact' &&  
+            location.pathname != '/bakerscontact/' &&            
             location.pathname != '/'
              
           }>
@@ -138,16 +144,13 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
               <Scrollbar className={s.scrollbar} damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
                 {children}
                 <Controller refreshInterval={1}>
-                  <Scene duration={'528px'} triggerHook={1} indicators={true}  >
-                    <Tween to={{ yPercent: 100 }}>
-                      <div style={{position: 'relative'}}>
-                        <Footer/>
-                      </div>
-                    </Tween>
+                  <Scene duration={528} enabled={true} triggerHook={1} indicators={true} pin={true} >
+                    <div style={{position: 'relative'}}>
+                      <Footer/>
+                    </div>
                   </Scene>
                 </Controller>                
               </Scrollbar>
-
             </Then>
             <Else>
               {children}          

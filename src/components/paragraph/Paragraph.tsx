@@ -23,18 +23,15 @@ export class Paragraph extends React.Component {
     const node = this.paragraph.current;
 
     const split = new SplitText(
-      'p.bakery_about__paragraph',
+      'p',
       {
         type: "lines",
         linesClass: "ts-line"
       }
     )
-
     let lines = split.lines
 
 
-
-    
 
   }
 
@@ -42,24 +39,17 @@ export class Paragraph extends React.Component {
 
     return (
 
+
       <TransitionState>
         {({ transitionStatus }) => {
           return (
-  	        <Tween delay={.75} duration={1} 
-            from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: 150, ease: 'Power2.easeOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: 150, ease: 'Power2.easeIn'} : false } >
-              <Controller refreshInterval={1}>
-                <Scene duration={'100%'} triggerHook={'onEnter'}>
-                  <Tween staggerFrom={{ yPercent: 150}}>
-                    <p ref={this.paragraph} className={`${s.paragraph } ${this.props.className}`}>
-                      {this.props.children}
-                    </p>
-                  </Tween>
-                </Scene>
-              </Controller>
-  	    	  </Tween>
+            <p ref={this.paragraph} className={`${s.paragraph } ${this.props.className}`}>
+              {this.props.children}
+            </p>
+
           )
         }}
+
       </TransitionState>
 
     );

@@ -43,7 +43,7 @@ const BakeryAbout = ({ data, className, query }) => {
           </Row>
           <img src="../images/company.png" className="bakery_about__white_company hide_on_mobile" />
           <Row className="centered-row">
-            <TransitionLink className="bakery_about__button_link" to={'/contact'} exit={{ length: 1 }} entry={{ delay: 1 }}>START A PROJECT WITH US</TransitionLink>
+            <TransitionLink className="bakery_about__button_link" to={'/bakerycontact'} exit={{ length: 1 }} entry={{ delay: 1 }}>START A PROJECT WITH US</TransitionLink>
           </Row>
         </div>
         <SVGicon className='bakery_about__white_hearts' src='white_hearts.svg' />
