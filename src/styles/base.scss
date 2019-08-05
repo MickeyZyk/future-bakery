@@ -5,6 +5,18 @@
 @import '~styles/IGORlogin';
 
 
+/* PREVENT FOUT */
+
+/* we want Tagesschrift to apply to all h2's */
+.wf-loading h2 {
+  visibility: hidden;
+}
+.wf-active h2, .wf-inactive h2 {
+  visibility: visible;
+}
+
+
+
 a {text-decoration: none}
 
 /* 18 GRID */

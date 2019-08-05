@@ -59,7 +59,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
             {({ location }) => (
               <ContextConsumer>
                 {({ data, set  }) => (
-                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('bakery') ? 'active' : ''} onClick={() => set({ logo: 'bakery' })} name="FUTURE BAKERY" to="/bakery">FUTURE BAKERY</HeaderLink>
+                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('bakery') || location.pathname == '/' ? 'active' : ''} onClick={() => set({ logo: 'bakery' })} name="FUTURE BAKERY" to="/bakery">FUTURE BAKERY</HeaderLink>
                 )}
               </ContextConsumer>
             )}
