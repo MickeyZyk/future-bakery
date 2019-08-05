@@ -8,10 +8,10 @@
 /* PREVENT FOUT */
 
 /* we want Tagesschrift to apply to all h2's */
-.wf-loading h2 {
+.wf-loading * {
   visibility: hidden;
 }
-.wf-active h2, .wf-inactive h2 {
+.wf-active *, .wf-inactive * {
   visibility: visible;
 }
 
