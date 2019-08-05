@@ -55,7 +55,7 @@ class Carousel extends React.Component {
       animating: false
     };
     this.chidrenNodes = [];
-    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 3000);    
+    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 1500);    
   }
 
 
@@ -158,7 +158,10 @@ class Carousel extends React.Component {
       if(currentHeading !== null){currentTLback.staggerFrom(currentHeading, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
 
       var nextTXback = new TimelineMax(); 
-      if(nextText !== null){nextTXback.set(nextText, {opacity: 1}).staggerTo(nextText, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
+      nextTXback.eventCallback("onComplete", function() {
+        nextTXback.pause(0);
+      });       
+      if(nextText !== null){nextTXback.set(nextText, {opacity: 0}).set(nextText, {opacity: 1}).staggerTo(nextText, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
       var currentTXback = new TimelineMax(); 
       if(currentText !== null){currentTXback.staggerFrom(currentText, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut', delay: 1 }, .15, "+=0")};
 
@@ -221,7 +224,10 @@ class Carousel extends React.Component {
       if(currentHeading !== null){currentTLforward.staggerFrom(currentHeading, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=.5")};
 
       var prevTXforward = new TimelineMax(); 
-      if(prevText !== null){prevTXforward.set(prevText, {opacity: 1}).staggerTo(prevText, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
+      prevTXforward.eventCallback("onComplete", function() {
+        prevTXforward.pause(0);
+      });       
+      if(prevText !== null){prevTXforward.set(prevText, {opacity: 0}).set(prevText, {opacity: 1}).staggerTo(prevText, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
       var currentTXforward = new TimelineMax(); 
       if(currentText !== null){currentTXforward.staggerFrom(currentText, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut', delay: 1 }, .15, "+=0")};
 
@@ -445,8 +451,8 @@ class CarouselImage extends React.Component {
 
 
             <Tween duration={1.5} delay={1.5}
-            from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', opacity: 0, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { clipPath:'inset(100% 0% 0% 0%)', opacity: 0, ease: 'Power3.easeOut' } : false  } >
+            from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', opacity: 0, ease: 'Power3.easeOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { clipPath:'inset(100% 0% 0% 0%)', opacity: 0, ease: 'Power3.easeInOut' } : false  } >
 
               <div className={this.props.className}
                style={{ clipPath: 'inset(.001% .002% .003% .004%)', transform: 'scale(1)', display: 'block', zIndex:`${this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
