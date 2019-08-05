@@ -5,16 +5,6 @@
 @import '~styles/IGORlogin';
 
 
-/* PREVENT FOUT */
-
-/* we want Tagesschrift to apply to all h2's */
-.wf-loading * {
-  visibility: hidden;
-}
-.wf-active *, .wf-inactive * {
-  visibility: visible;
-}
-
 
 
 a {text-decoration: none}
