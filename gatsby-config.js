@@ -31,8 +31,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'ueno-gatsby-starter',
-        short_name: 'starter',
+        name: 'FutureBakery',
+        short_name: 'fb',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',

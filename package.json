@@ -9,14 +9,13 @@
     "react",
     "typescript",
     "gatsby-starter",
-    "ueno"
   ],
   "contributors": [
     "Dado <dalibor.ilic.dado@gmail.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ueno-llc/ueno-gatsby-starter"
+    "url": "https://github.com/DaliborIlic/future-bakery.git"
   },
   "scripts": {
     "dev": "gatsby develop",
