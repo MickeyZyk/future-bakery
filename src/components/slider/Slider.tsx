@@ -155,7 +155,7 @@ class Carousel extends React.Component {
       }); 
       if(nextHeading !== null){prevTLback.set(nextHeading, {opacity: 0}).set(nextHeading, {opacity: 1}).staggerTo(nextHeading, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .1, "+=0")};
       var currentTLback = new TimelineMax(); 
-      if(currentHeading !== null){currentTLback.staggerFrom(currentHeading, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=0")};
+      if(currentHeading !== null){currentTLback.staggerFrom(currentHeading, 3, { yPercent: 150, ease: 'Expo.easeInOut' }, .15, "+=0").staggerFrom(currentHeading, 3, { opacity: 0, ease: 'Expo.easeInOut' }, .15, "-=2.75")};
 
       var nextTXback = new TimelineMax(); 
       nextTXback.eventCallback("onComplete", function() {
@@ -221,7 +221,7 @@ class Carousel extends React.Component {
       }); 
       if(prevHeading !== null){prevTLforward.set(prevHeading, {opacity: 0}).set(prevHeading, {opacity: 1}).staggerTo(prevHeading, 1.25, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .1, "+=0")};
       var currentTLforward = new TimelineMax(); 
-      if(currentHeading !== null){currentTLforward.staggerFrom(currentHeading, 3, { yPercent: 150, opacity: 0, ease: 'Expo.easeInOut' }, .15, "+=.5")};
+      if(currentHeading !== null){currentTLforward.staggerFrom(currentHeading, 3, { yPercent: 150, ease: 'Expo.easeInOut' }, .15, "+=0").staggerFrom(currentHeading, 3, { opacity: 0, ease: 'Expo.easeInOut' }, .15, "-=2.75")};
 
       var prevTXforward = new TimelineMax(); 
       prevTXforward.eventCallback("onComplete", function() {

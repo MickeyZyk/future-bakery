@@ -4,13 +4,13 @@ const slug = require('slug')
 
 exports.sourceNodes = async ({boundActionCreators}) => {
     const {createNode} = boundActionCreators
-
+/*
     const bakerySlides = await fetchBakerySlides()
 
     bakerySlides.forEach(x => {
         createNode(x)
     })
-    
+*/    
     const bakeryAbout = await fetchBakeryAbout()
 
     bakeryAbout.forEach(x => {
@@ -64,6 +64,7 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     return
 }
 
+/*
 fetchBakerySlides = async () => {
     const {
         createNodeFactory,
@@ -80,13 +81,13 @@ fetchBakerySlides = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/bakery/slider', {
+        const response = await axios.get('http://future.stratego.ba/bakery', {
             params: {
                 "return-as": "json"
             }
         })
     
-        return response.data.children
+        return response.data
             .map(x => x.header)
             .map(x => Object.assign(x, {
                 path: `/bakery-slides/${slug(x.title)}`.toLowerCase()
@@ -98,7 +99,7 @@ fetchBakerySlides = async () => {
         //throw e
     }
 }
-
+*/
 fetchBakeryAbout = async () => {
     const {
         createNodeFactory,
