@@ -90,7 +90,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
             {({ location }) => (
               <ContextConsumer>
                 {({ data, set }) => (
-                  <HeaderLink className={ location.pathname.includes('Menu') ? `white_text white_circle` : '' } name="MENU" 
+                  <HeaderLink className={ location.pathname.includes('menu') ? `white_text white_circle` : '' } name="MENU" 
                   to={ location.pathname == '/' ?  '/bakerymenu'  
                   : location.pathname == '/family/' ?   ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )
                   :  location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu'   ? ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )

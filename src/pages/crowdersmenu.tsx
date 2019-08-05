@@ -48,7 +48,15 @@ export default class CrowdersMenu extends React.Component {
 
 	  <TransitionState>
 	  	{({ transitionStatus }) => {
-			  return (  	
+			  return (
+
+
+
+
+
+
+
+
 					<>
 					<MenuBackground/>
 					  <Helmet title="Future Crowders" />
@@ -114,6 +122,19 @@ export default class CrowdersMenu extends React.Component {
 				      </div>
 
 					</>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 			  );	
 

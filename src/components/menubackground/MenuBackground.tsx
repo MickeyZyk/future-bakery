@@ -12,9 +12,27 @@ export const MenuBackground = () => {
 	return (
 		<>	
 
-			<div className={s.background}>
-				<img className={s.background_logo} src="../images/bakery_menu_logo.png"/>					
-			</div>
+
+	  <TransitionState>
+	  	{({ transitionStatus }) => {
+			  return (  
+
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+				<div className={s.background}>
+					<img className={s.background_logo} src="../images/bakery_menu_logo.png"/>					
+				</div>
+
+            </Tween>
+
+			  );	
+
+	  	}}
+
+		</TransitionState>	
 
 		</>
 	)

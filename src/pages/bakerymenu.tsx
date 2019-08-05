@@ -3,6 +3,7 @@ import { Link } from 'components/link/Link';
 import { useState } from 'react';
 import Helmet from 'react-helmet';
 import { TweenMax, TimelineMax, Power2, Power3 } from "gsap";
+import { Tween } from 'react-gsap';
 import { TransitionState } from 'gatsby-plugin-transition-link';
 import { MenuHeading } from 'components/heading/MenuHeading';
 import { MenuBackground } from 'components/menubackground/MenuBackground';
@@ -48,9 +49,23 @@ export default class BakeryMenu extends React.Component {
 
 	  <TransitionState>
 	  	{({ transitionStatus }) => {
-			  return (  	
+			  return (  
+
+
+
 					<>
+
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
 					<MenuBackground/>
+
+            </Tween>
+
+
+
 					  <Helmet title="Future Bakery" />
 							<div className='fullscreen'>
   
@@ -127,6 +142,18 @@ export default class BakeryMenu extends React.Component {
 				      </div>
 
 					</>
+
+
+
+
+
+
+
+
+
+
+
+
 
 			  );	
 

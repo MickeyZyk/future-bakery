@@ -49,6 +49,16 @@ export default class BakersMenu extends React.Component {
 	  <TransitionState>
 	  	{({ transitionStatus }) => {
 			  return (  	
+
+
+
+
+
+
+
+
+
+
 					<>
 					<MenuBackground/>
 					  <Helmet title="Future Bakery" />
@@ -125,6 +135,17 @@ export default class BakersMenu extends React.Component {
 				      </div>
 
 					</>
+
+
+
+
+
+
+
+
+
+
+					
 
 			  );	
 
