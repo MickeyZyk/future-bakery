@@ -33,19 +33,19 @@ const BakersAbout = ({ data, className }) => {
       <Row>
         <Figure3 className="bakers_about__image_one hide_on_mobile dropped"/>
         <AnimatedHeading className='bakers_about__heading_one'>{data.gravBakersAbout.heading_one}</AnimatedHeading>
-        <Figure3 className="show_on_mobile"/>
         <HeadingTwo className='bakers_about__heading_two'>A space for creative people with amazing ideas.</HeadingTwo>      
+        <Figure3 className="show_on_mobile"/>
       </Row>
       <Row>
         <Paragraph className='bakers_about__paragraph paragraph'>A safe place where those who are searching for the great idea meet with the ones that have them. And where they have access not just to one amazing idea, but to several of them. A place, where the idea creators – who we call BAKERS get rewarded if their idea is selected by the client. We are a constantly growing group of bakers and creative thinkers. We believe it is important to provide a space for ideas and wonderful creations. We want to give everybody a chance to contribute. We believe the more idea makers we have, the more we can all move forward.</Paragraph>
       </Row>
       <SVGicon className='bakers_about__brains' src='brains.svg' /> 
       <Row>
-        <Figure4 className="show_on_mobile"/>
         <Figure4 className="bakers_about__image_two hide_on_mobile"/>            
         <Split className='bakers_about__heading_three'>We are a group of enthusiasts and passionate thinkers</Split>      
         <Paragraph className='bakers_we__paragraph paragraph'>We believe that a great idea can pop up anywhere: in a bar, during a wonderfully peaceful weekend, while running, before going to bed, while chatting with your loved one, from a student, retiree or stay-at-home mom or dad.</Paragraph>
         <Link className="bakers_about__join_link" to={'/contact'}>JOIN US&nbsp;&nbsp;<span>&gt;</span></Link>
+        <Figure4 className="show_on_mobile"/>
       </Row>
       <Row className="tags_row">
         <Controller refreshInterval={1}>
@@ -55,14 +55,25 @@ const BakersAbout = ({ data, className }) => {
               stagger={2} duration={10}
               ease="Power3.easeInOut"
             >
-              <div className="tags_heading"><HeadingTwo>Problem</HeadingTwo></div>
-              <p className="tag tag_01">how can be a name for fishermans beer?</p>
-              <p className="tag tag_02">how can be a name for fishermans beer?</p>
-              <p className="tag tag_03">how can be a name for fishermans beer?</p>
-              <p className="tag tag_04">how can be a name for fishermans beer?</p>
+              <div className="tags_heading hide_on_mobile"><HeadingTwo>Problem</HeadingTwo></div>
+              <div className="tag_01">
+              <p className="tag">how can be a name for fishermans beer?</p>
+              </div>
+              <div className="tags_heading show_on_mobile"><AnimatedHeading>Problem</AnimatedHeading></div>
+              <div className="tag_02">
+              <p className="tag">how can be a name for fishermans beer?</p>
+              </div>
+              <div className="tag_03">
+              <p className="tag">how can be a name for fishermans beer?</p>
+              </div>
+              <div className="tag_04">
+              <p className="tag">how can be a name for fishermans beer?</p>
+              </div>
               <img className="tag_arrow_01" src="../images/tag_arow_01.png" />
+              <img className="tag_arrow_01l show_on_mobile" src="../images/tag_arow_01l.png" />
               <img className="phone_logo" src="../images/phone_logo.png " /> 
-              <img className="tag_arrow_02" src="../images/tag_arow_02.png" /> 
+              <div className="tags_heading_middle show_on_mobile"><HeadingTwo>Spousta lidy spousta napadu</HeadingTwo></div>
+              <img className="tag_arrow_02 hide_on_mobile" src="../images/tag_arow_02.png" /> 
               <img className="hip" src="../svg/hip.svg"/>
               <img className="nerd" src="../svg/nerd.svg"/> 
               <p className="tag nerd_text">Marketa grafik miluje horska kola</p>
@@ -75,7 +86,7 @@ const BakersAbout = ({ data, className }) => {
               <p className="tag smart_text">Marketa grafik miluje horska kola</p> 
               <img className="kid" src="../svg/kid.svg"/>
               <p className="tag kid_text">Honza marketer miluje reklamu</p> 
-              <div className="tags_heading_middle"><HeadingTwo>Spousta lidy spousta napadu</HeadingTwo></div> 
+              <div className="tags_heading_middle hide_on_mobile"><HeadingTwo>Spousta lidy spousta napadu</HeadingTwo></div> 
               <img className="fireman" src="../svg/fireman.svg"/>
               <p className="tag fireman_text">Karel hasic</p>
               <img className="girl" src="../svg/girl.svg"/>

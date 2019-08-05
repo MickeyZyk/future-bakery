@@ -1,17 +1,19 @@
 @import '~styles/config';
 
 .figure {
-
+    position: relative;
     height: 67vw;
-    margin-bottom: 10vw;
-
-    @include grid-col;
+    margin-top: 25vw;
+    
+    @include grid-col(16);
+    @include grid-offset-left(2);
 
     @media (min-width: $min-960) {
       position: absolute;
       @include grid-col(8);
       @include grid-offset-left(9);
     	height: 29.6vw;
+      margin-top: auto;
     }
 
     > div {
