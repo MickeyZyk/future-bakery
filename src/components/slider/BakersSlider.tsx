@@ -55,7 +55,7 @@ class Carousel extends React.Component {
       animating: false
     };
     this.chidrenNodes = [];
-    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 1500);    
+    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 2500);    
   }
 
 

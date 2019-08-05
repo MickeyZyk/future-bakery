@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { Slider } from 'components/slider/Slider';
 import { Heading } from 'components/heading/Heading';
 import SVGicon from 'components/svgicon/SVGicon';
+import { Link } from 'components/link/Link';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 
@@ -32,6 +33,14 @@ const index = () => (
               <div className='fulscreen_slider'>
                 <Slider className='new-slider'/>
               </div>
+
+              <div className="flip_button flip">
+                <Link to={'/contact'}>
+                  <div className="front">START A PROJECT WITH US</div>
+                  <div className="back">START A PROJECT WITH US</div>
+                </Link>
+              </div>
+
 
             </Tween>
 

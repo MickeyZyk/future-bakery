@@ -55,7 +55,7 @@ class Carousel extends React.Component {
       animating: false
     };
     this.chidrenNodes = [];
-    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 1500);    
+    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 2500);    
   }
 
 
@@ -405,11 +405,7 @@ class Carousel extends React.Component {
             </div>
             {this.state.showButtons ? carouselRightButton : null } 
           </ReactCursorPosition>
-          <div className={s.contact_button_link}>
-            <Link to={'/contact'}>
-              START A PROJECT WITH US <span>&gt;</span>
-            </Link>  
-          </div>
+
         </div>
 
     );
