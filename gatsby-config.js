@@ -10,7 +10,7 @@ module.exports = {
       options: {
         custom: {
           families: ['ProximaNova', 'Bradley'],
-          urls: ['../fonts/proxima-nova-webfontkit.css','../fonts/bradley_webfontkit.css']
+          urls: ['static/fonts/proxima-nova-webfontkit.css','static/fonts/bradley_webfontkit.css']
         }
       }
     },  
