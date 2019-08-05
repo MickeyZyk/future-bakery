@@ -444,9 +444,9 @@ class CarouselImage extends React.Component {
           return (
 
 
-            <Tween duration={2} 
-            from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', opacity: 0, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { clipPath:'inset(0% 0% 0% 0%)', opacity: 0, ease: 'Power3.easeOut' } : false  } >
+            <Tween duration={1.5} delay={1.5}
+            from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', opacity: 0, ease: 'Power3.easeOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { clipPath:'inset(100% 0% 0% 0%)', opacity: 0, ease: 'Power3.easeOut' } : false  } >
 
               <div className={this.props.className}
                style={{ clipPath: 'inset(.001% .002% .003% .004%)', transform: 'scale(1)', display: 'block', zIndex:`${this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 

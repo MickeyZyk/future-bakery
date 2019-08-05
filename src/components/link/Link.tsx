@@ -15,8 +15,8 @@ export const Link = ({ children, state, to, className }: ILinkProps) => {
 
     <Location>
       {({ location }) => (      	
-          <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 1,
-          }} entry={{ length: 1,
+          <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  exit={{ length: 2,
+          }} entry={{ length: 2,
           }} to={to} className={className}>        
             {children}
           </TransitionLink>  

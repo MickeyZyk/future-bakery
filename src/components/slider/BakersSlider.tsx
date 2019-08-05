@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import SplitText from 'utils/SplitText.min.js'
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
+import { TransitionState } from "gatsby-plugin-transition-link";
 import logo from 'assets/svg/bakery-logo.svg';
 import ReactDOM from 'react-dom';
 import { If } from 'react-if';
-import { TransitionState } from "gatsby-plugin-transition-link";
 import Circle from 'assets/svg/circle.svg';
 import FullCircle from 'assets/svg/full_circle.svg';
 import SVGicon from 'components/svgicon/SVGicon';
@@ -445,9 +445,9 @@ class CarouselImage extends React.Component {
           return (
 
 
-            <Tween duration={2} 
-            from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', opacity: 0, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { clipPath:'inset(0% 0% 0% 0%)', opacity: 0, ease: 'Power3.easeOut' } : false  } >
+            <Tween duration={1.5} delay={1.5}
+            from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', opacity: 0, ease: 'Power3.easeOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { clipPath:'inset(100% 0% 0% 0%)', opacity: 0, ease: 'Power3.easeInOut' } : false  } >
 
               <div className={this.props.className}
                style={{ clipPath: 'inset(.001% .002% .003% .004%)', transform: 'scale(1)', display: 'block', zIndex:`${this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
