@@ -212,7 +212,7 @@ a {
   left: -10%;
   width: 120%;
   height: 50%;
-  background: #d4de4f;
+  background: #fff;
   transform: rotate(12deg);
   transition: all 0.5s ease;
   transition-delay: 0.15s;
@@ -226,9 +226,9 @@ a {
   opacity: 0;
 }
 .flip a:hover .back {
-  color: #222;
+  color: #fff;
   transition: all 0.4s linear;
-  background: #fff;
+  background: #222;
 }
 .flip a:hover .back:after {
   transform: rotate(6deg) translate(100px, -18px);
