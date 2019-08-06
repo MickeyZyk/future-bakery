@@ -90,11 +90,8 @@ export default class Work extends React.Component {
 
         <If condition={ this.props.data.gravBakeryWork.one_way }>
             <Then>
-
-
               <SVGicon className={s.work_details_no} src='work_details_no.svg'  />       
               <SVGiconReverse className={s.work_details_ok} src='work_details_ok.svg'  /> 
-
             </Then>
         </If>
 

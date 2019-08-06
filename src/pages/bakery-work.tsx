@@ -11,6 +11,7 @@ import ReactCursorPosition from 'react-cursor-position';
 import { Link } from 'components/link/Link';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import { Footer } from 'components/footer/Footer';
+import { graphql } from 'gatsby'
 
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
@@ -68,6 +69,8 @@ export default class Work extends React.Component {
 	}
 
   componentDidMount(){
+
+    console.log(this.props.data.allGravBakeryWork.edges)
     
     var hovered = ReactDOM.findDOMNode(this.hovered_item.current);
     this.fireEvent(this.hovered_item.current, "mouseover"); 
@@ -76,51 +79,47 @@ export default class Work extends React.Component {
 
   render() {
 
+      var item =  this.props.data.allGravBakeryWork.edges.map((o, i) =>{
 
+        console.log("o LOG", o, i)
 
-
-        var item=(
-
-
-
-
-            <TransitionState>
-              {({ transitionStatus }) => {
-                return (
-                  <Tween duration={2} delay={this.props.delay}
-                  from={ ['entering'].includes(transitionStatus) ? false : {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeOut', opacity: 0} } 
-                  to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeIn', opacity: 0 } : false } >
-                    <div className={`${s.figure} ${this.props.className}`} onMouseEnter={this.toggleHoverEnter} onMouseLeave={this.toggleHoverLeave}>
-                      <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', clipPath:'inset(0.001% 0.002% 0.003% 0.005%)'} : {ease: 'Power2.easeOut', clipPath:'inset(0.001% 100% 0.003% -2%)'}} >
-                        <img className={s.arrow} src={'../svg/work_arrow.svg'} />
-                      </Tween>
-                      <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut',  opacity: 0}} >                      
-                        <h4 className={s.arrow_heading}>Creative strategy</h4>     
-                      </Tween>
-                      <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                               
-                        <img className={s.client_logo} src='../images/client.png'/>
-                      </Tween>
-                      <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                      
-                        <h4 className={s.top_title}>FIAT 500X</h4>
-                      </Tween>
-                      <Tween duration={2} to={ this.state.hover ? {delay: 1, ease: 'Power2.easeOut', clipPath:'inset(0.001% 0.002% 0.003% 0.005%)'} : {delay: 1, ease: 'Power2.easeOut', clipPath:'inset(0.001% 100% 0.003% 0.004%)'}} >                      
-                        <h2 className={s.client_title}>BEAUTY AND FUNCTION COMBINED</h2>
-                      </Tween>
-                      <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >  
-                        <h3 className={s.client_more}><Link to={'/fiat-study'}>FIND OUT MORE <LinkArrow className="link_arrow"/></Link></h3>
-                      </Tween>                      
-                      <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src='../images/fiat_bw.jpg'/>                        
-                      <img className={s.color} src='../images/fiat_color.jpg'/>
-                    </div>
-                  </Tween>                   
-                )
-              }}
-            </TransitionState>
- 
-
-)
-
-
+          return(
+            <div key={'it0' + i}>
+              <TransitionState>
+                {({ transitionStatus}) => {
+                  return (
+                    <Tween duration={2}
+                    from={ ['entering'].includes(transitionStatus) ? false : {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeOut', opacity: 0} } 
+                    to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeIn', opacity: 0 } : false } >
+                      <div delay={i} key={'i0' + i} className={`${s.figure} ${'no' + (i+1)}`} onMouseEnter={this.toggleHoverEnter} onMouseLeave={this.toggleHoverLeave}>
+                        <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', clipPath:'inset(0.001% 0.002% 0.003% 0.005%)'} : {ease: 'Power2.easeOut', clipPath:'inset(0.001% 100% 0.003% -2%)'}} >
+                          <img className={s.arrow} src={'../svg/work_arrow.svg'} />
+                        </Tween>
+                        <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut',  opacity: 0}} >                      
+                          <h4 className={s.arrow_heading}>Creative Story</h4>     
+                        </Tween>
+                        <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                               
+                          <img className={s.client_logo} src='../images/client.png'/>
+                        </Tween>
+                        <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                      
+                          <h4 className={s.top_title}>FIAT 500X</h4>
+                        </Tween>
+                        <Tween duration={2} to={ this.state.hover ? {delay: 1, ease: 'Power2.easeOut', clipPath:'inset(0.001% 0.002% 0.003% 0.005%)'} : {delay: 1, ease: 'Power2.easeOut', clipPath:'inset(0.001% 100% 0.003% 0.004%)'}} >                      
+                          <h2 className={s.client_title}>BEAUTY AND FUNCTION COMBINED</h2>
+                        </Tween>
+                        <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >  
+                          <h3 className={s.client_more}><Link to={'/fiat-study'}>FIND OUT MORE <LinkArrow className="link_arrow"/></Link></h3>
+                        </Tween>                      
+                        <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src={ 'http://future.stratego.ba/en/bakery/work/'+ o.node.title.toLowerCase() + '/' + o.node.big_image}/>                        
+                        <img className={s.color} src={ 'http://future.stratego.ba/en/bakery/work/'+ o.node.title.toLowerCase() + '/' + o.node.big_image} />
+                      </div>
+                    </Tween>                   
+                  )
+                }}
+              </TransitionState>
+            </div>
+        )
+      }) 
 
 
     return (
@@ -155,12 +154,8 @@ export default class Work extends React.Component {
                 <Split className="bakery_work_headline">COLLECTIVE INTELLIGENCE AND CREATIVE POWER IN ACTION</Split>
 
                 <div className='wrapper work-wrapper'>
-                  <Item hovered='true' key='i01' delay={1} ref={this.hovered_item} className='no1'/>
-                  <Item key='i02' delay={1.5} className='no2'/>
-                  <Item key='i03' delay={2} className='no3'/>
-                  <div key='i04' delay={2.5} className='no4'>{item}</div>                  
 
-                  
+                  {item}                   
 
                 </div>
 
@@ -183,10 +178,6 @@ export default class Work extends React.Component {
 
               </>
 
-
-
-
-
             )
           }}
         </TransitionState>
@@ -203,3 +194,28 @@ export default class Work extends React.Component {
 
 
 }
+
+
+export const query = graphql`
+  query AllBakeryWork {
+    allGravBakeryWork {
+      edges {
+        node {
+          id
+          title
+          one_way
+          new_way
+          logo_light
+          logo_dark
+          heading_two
+          heading_one
+          big_image
+          video
+          category
+          category_name
+        }
+      }
+    }
+  }
+
+`
