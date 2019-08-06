@@ -1,11 +1,13 @@
 @import '~styles/config';
 
 .dark_team {
-  display: block;
-  margin-top: 10vw;
+    display: block;
+    padding-top: 12vw;
     top: -1px;
     position: relative;
-    margin-bottom: -5px;    
+    margin-bottom: -5px;
+    width: 100vw;
+    margin-top: -3.7vw;
 }
 
 .data {

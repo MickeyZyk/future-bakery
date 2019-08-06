@@ -184,9 +184,9 @@ const BakersAbout = ({ data, className }) => {
         </Controller>
       </Row>
       <Split className="tags_heading_bottom">Reseni</Split>
-      <Link className="bakers_about__join_link_two" to={'/contact'}>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+      <Link className="bakers_about__join_link_two" to={'/bakerscontact'}>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
       <div className="divider_text">or find out how to</div>
-      <Link className="bakers_about__join_link_three" to={'/contact'}>BRIEF US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
+      <Link className="bakers_about__join_link_three" to={'/bakerscontact'}>BRIEF US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
       <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
       <Row className="bakers_about_team_row">
@@ -195,13 +195,18 @@ const BakersAbout = ({ data, className }) => {
         </div>  
       </Row>
       <div className="meet">
-        <AnimatedHeadingTwo className="bakers_about_team_heading">Meet the team</AnimatedHeadingTwo>     
+        <AnimatedHeadingTwo className="bakers_about_team_heading">Meet the team</AnimatedHeadingTwo>
       </div>
       <Row>
         <DarkTeam/>
-     </Row>      
+      </Row>
+
+
+     
     </ReactCursorPosition>
   </div>
+
+
 
 </Scrollbar>
 

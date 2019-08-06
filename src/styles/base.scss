@@ -4697,7 +4697,7 @@ select {
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-    top: 45.85vw;
+    bottom: 8.5vw;
     @include grid-col(3);
     @include grid-offset-left(14.2);
     z-index: 5; 

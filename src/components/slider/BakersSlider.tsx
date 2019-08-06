@@ -103,11 +103,11 @@ class Carousel extends React.Component {
   wheelCallback(ev) {
     if( ev.deltaY > 0 ) {
       console.log( this.state.activeIndex + 1, "delta", ev.deltaY / 150 )
-      this.state.activeIndex < slidesCount-1 && !this.state.animating ? this.nextSlide(this.state.activeIndex + 1) : false
+      this.state.activeIndex < slidesCount-1 && !this.state.animating ? this.nextSlide(parseInt(this.state.activeIndex) + 1) : false
     }
     else if( ev.deltaY < 0 ) {  
       console.log( this.state.activeIndex - 1, "delta", ev.deltaY / 150 )
-      this.state.activeIndex  > 0 && !this.state.animating ? this.prevSlide(this.state.activeIndex - 1) : false
+      this.state.activeIndex  > 0 && !this.state.animating ? this.prevSlide(parseInt(this.state.activeIndex) - 1) : false
     }
   }
 
@@ -130,7 +130,7 @@ class Carousel extends React.Component {
     this.setState({ animating: true, activeIndex: current }, () => {
 
 
-      percentage = this.state.which < slidesCount-1 ? percentage + multiplier : 0 ;
+      percentage = this.state.activeIndex < slidesCount ? percentage + multiplier : 0 ;
 
       //console.log('percentage', percentage, 'this.state.which', this.state.which);    
 
@@ -196,7 +196,7 @@ class Carousel extends React.Component {
 
     this.setState({ animating: true, activeIndex: current }, () => {
 
-      percentage = this.state.which > 1 ? percentage - multiplier : multiplier - slidesCount * multiplier ;
+      percentage = this.state.activeIndex > 0 ? percentage - multiplier : multiplier - slidesCount * multiplier ;
 
       //console.log('percentage', percentage, 'this.state.which', this.state.which);
 
