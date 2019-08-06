@@ -61,7 +61,7 @@ const BakeryAbout = ({ data, className }) => {
 
               <AnimatedHeading className='crowders_about_heading'>{data.gravCrowdersAbout.heading_one}</AnimatedHeading>   
 
-              <AnimatedImage className='crowders_about_image responsive_image show_on_mobile' src={'http://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />         
+              <AnimatedImage className='crowders_about_image responsive_image show_on_mobile' src={'https://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />         
 
               <Paragraph className='crowders_about_paragraph paragraph'>{data.gravCrowdersAbout.paragraph_one}</Paragraph>
 
