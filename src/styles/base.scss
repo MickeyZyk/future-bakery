@@ -600,7 +600,7 @@ p {font-weight: lighter;}
 body {
     box-sizing: border-box;
   /* background-color: $color-background; */
-  overflow: hidden;  
+  /* overflow: hidden;   */
 /*
   min-height: 100vh;
   overflow: hidden;
@@ -693,8 +693,6 @@ select {
 .wrapper {
   min-height: 100vh;
   position: relative;
-  background-color: #fff;
-  /* margin-bottom: 596px;   */
   z-index: 0;
   $padding-map: (375px: 110px, 959px: 200px, 960px: 110px, 2880px: 320px);
   @include poly-fluid-sizing('padding-top', $padding-map);
@@ -712,11 +710,12 @@ select {
 .tl-edges {
     max-width: 100%;
     overflow-x: hidden;
-    margin-bottom: 50vh;
 }
 
 .fs .tl-edges {
+  /*
     margin-bottom: 24vh;
+  */
 }
 
 .tl-wrapper {

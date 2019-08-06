@@ -19,11 +19,6 @@ export default () => (
       <SVGicon className='bakery_contact_house' src='crowders_home.svg' /> 
 
 
-
-
-
-
-
       <TransitionState>
         {({ transitionStatus }) => {
           return (

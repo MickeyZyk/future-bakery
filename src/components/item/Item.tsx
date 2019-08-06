@@ -75,7 +75,7 @@ export class Item extends React.Component {
             <TransitionState>
               {({ transitionStatus }) => {
                 return (
-                  <Tween duration={1} delay={1} 
+                  <Tween duration={2} delay={this.props.delay}
                   from={ ['entering'].includes(transitionStatus) ? false : {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeOut', opacity: 0} } 
                   to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeIn', opacity: 0 } : false } >
                     <div className={`${s.figure} ${this.props.className}`} onMouseEnter={this.toggleHoverEnter} onMouseLeave={this.toggleHoverLeave}>

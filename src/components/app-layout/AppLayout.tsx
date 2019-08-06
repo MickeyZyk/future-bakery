@@ -137,25 +137,18 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
             location.pathname != '/bakerycontact/' &&
             location.pathname != '/bakerscontact' &&  
             location.pathname != '/bakerscontact/' &&            
-            location.pathname != '/'
-             
+            location.pathname != '/'            
           }>
             <Then>
               <Scrollbar className={s.scrollbar} damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
                 {children}
-                <Controller refreshInterval={1}>
-                  <Scene duration={528} enabled={true} triggerHook={1} indicators={true} pin={true} >
-                    <div style={{position: 'relative'}}>
-                      <Footer/>
-                    </div>
-                  </Scene>
-                </Controller>                
+                <Footer/>               
               </Scrollbar>
             </Then>
             <Else>
-              {children}          
+                {children}
             </Else>
-          </If>
+          </If>  
         )}
       </Location>
 
