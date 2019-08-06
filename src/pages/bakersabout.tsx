@@ -74,26 +74,47 @@ const BakersAbout = ({ data, className }) => {
               <img className="phone_logo" src="../images/phone_logo.png " /> 
               <div className="tags_heading_middle show_on_mobile"><HeadingTwo>Spousta lidy spousta napadu</HeadingTwo></div>
               <img className="tag_arrow_02 hide_on_mobile" src="../images/tag_arow_02.png" /> 
-              <img className="hip" src="../svg/hip.svg"/>
-              <img className="nerd" src="../svg/nerd.svg"/> 
-              <p className="tag nerd_text">Marketa grafik miluje horska kola</p>
-              <img className="granny" src="../svg/granny.svg"/>
-              <p className="tag granny_text">Marketa grafik miluje horska kola</p>
-              <img className="afro" src="../svg/afro.svg"/>                  
-              <img className="dude" src="../svg/dude.svg"/>   
-              <p className="tag dude_text">Honza marketer miluje reklamu</p>
-              <img className="smart" src="../svg/smart.svg"/>
-              <p className="tag smart_text">Marketa grafik miluje horska kola</p> 
-              <img className="kid" src="../svg/kid.svg"/>
-              <p className="tag kid_text">Honza marketer miluje reklamu</p> 
+              <img className="hip hide_on_mobile" src="../svg/hip.svg"/>
+              <img className="nerd hide_on_mobile" src="../svg/nerd.svg"/> 
+              <p className="tag nerd_text hide_on_mobile">Marketa grafik miluje horska kola</p>
+              <img className="granny hide_on_mobile" src="../svg/granny.svg"/>
+              <p className="tag granny_text hide_on_mobile">Marketa grafik miluje horska kola</p>
+              <img className="afro hide_on_mobile" src="../svg/afro.svg"/>                  
+              <img className="dude hide_on_mobile" src="../svg/dude.svg"/>   
+              <p className="tag dude_text hide_on_mobile">Honza marketer miluje reklamu</p>
+              <img className="smart hide_on_mobile" src="../svg/smart.svg"/>
+              <p className="tag smart_text hide_on_mobile">Marketa grafik miluje horska kola</p> 
+              <img className="kid hide_on_mobile" src="../svg/kid.svg"/>
+              <p className="tag kid_text hide_on_mobile">Honza marketer miluje reklamu</p> 
               <div className="tags_heading_middle hide_on_mobile"><HeadingTwo>Spousta lidy spousta napadu</HeadingTwo></div> 
-              <img className="fireman" src="../svg/fireman.svg"/>
-              <p className="tag fireman_text">Karel hasic</p>
-              <img className="girl" src="../svg/girl.svg"/>
-              <p className="tag girl_text">Marketa grafik miluje horska kola</p>
-              <img className="mlada" src="../svg/mlada.svg"/>   
-              <img className="tag_arrow_03" src="../images/tag_arow_03.png" /> 
-              <img className="vial" src="../svg/vial.svg"/>              
+              <img className="fireman hide_on_mobile" src="../svg/fireman.svg"/>
+              <p className="tag fireman_text hide_on_mobile">Karel hasic</p>
+              <img className="girl hide_on_mobile" src="../svg/girl.svg"/>
+              <p className="tag girl_text hide_on_mobile">Marketa grafik miluje horska kola</p>
+              <img className="mlada hide_on_mobile" src="../svg/mlada.svg"/>   
+              <img className="tag_arrow_03 hide_on_mobile" src="../images/tag_arow_03.png" /> 
+              <img className="vial hide_on_mobile" src="../svg/vial.svg"/>  
+              <div className="people_doodles show_on_mobile">
+                <img className="people_doodle hip" src="../svg/hip.svg"/>
+                <img className="people_doodle nerd" src="../svg/nerd.svg"/> 
+                <p className="people_doodle tag nerd_text">Marketa grafik miluje horska kola</p>
+                <img className="people_doodle granny" src="../svg/granny.svg"/>
+                <p className="people_doodle tag granny_text">Marketa grafik miluje horska kola</p>
+                <img className="people_doodle afro" src="../svg/afro.svg"/>                  
+                <img className="people_doodle dude" src="../svg/dude.svg"/>   
+                <p className="people_doodle tag dude_text">Honza marketer miluje reklamu</p>
+                <img className="people_doodle smart" src="../svg/smart.svg"/>
+                <p className="people_doodle tag smart_text">Marketa grafik miluje horska kola</p> 
+                <img className="people_doodle kid" src="../svg/kid.svg"/>
+                <p className="people_doodle tag kid_text">Honza marketer miluje reklamu</p> 
+                <img className="people_doodle fireman" src="../svg/fireman.svg"/>
+                <p className="people_doodle tag fireman_text">Karel hasic</p>
+                <img className="people_doodle girl" src="../svg/girl.svg"/>
+                <p className="people_doodle tag girl_text">Marketa grafik miluje horska kola</p>
+                <img className="people_doodle mlada" src="../svg/mlada.svg"/>   
+                <img className="people_doodle tag_arrow_03" src="../images/tag_arow_03.png" /> 
+                <img className="people_doodle vial" src="../svg/vial.svg"/>
+              </div>
             </Tween>
           </Scene>
         </Controller>
