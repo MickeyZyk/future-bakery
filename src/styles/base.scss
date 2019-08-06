@@ -228,7 +228,7 @@ a {
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transform: translateZ(-24px);
+  transform: translateZ(-1.1vw);
   transition: transform 0.3s;
   cursor: pointer;
 }
@@ -245,12 +245,12 @@ a {
   opacity: 1;
   background-color: #d4de4f; 
   color: #222; 
-  transform: rotateY(0) translateZ(21px);
+  transform: rotateY(0) translateZ(1.1vw);
 }
 .flip a .back {
   background-color: rgba(255,255,255,0);
   color: rgba(34,34,34,0);
-  transform: rotateX(90deg) translateZ(21px);
+  transform: rotateX(90deg) translateZ(1.1vw);
   overflow: hidden;
 }
 .flip a .back:after {
@@ -280,7 +280,7 @@ a {
   background: #222;
 }
 .flip a:hover .back:after {
-  transform: rotate(6deg) translate(100px, -24px);
+  transform: rotate(6deg) translate(100px, -1.1vw);
   opacity: 1;  
 }
 
@@ -320,12 +320,12 @@ a {
   opacity: 1;
   background-color: #d4de4f; 
   color: #222; 
-  transform: rotateY(0) translateZ(21px);
+  transform: rotateY(0) translateZ(1.1vw);
 }
 .bakery_flip a .back {
   background-color: rgba(255,255,255,0);
   color: rgba(34,34,34,0);
-  transform: rotateX(90deg) translateZ(21px);
+  transform: rotateX(90deg) translateZ(1.1vw);
   overflow: hidden;
 }
 .bakery_flip a .back:after {
@@ -342,7 +342,7 @@ a {
   transition-delay: 0.15s;
 }
 .bakery_flip a:hover {
-  transform: translateZ(-24px) rotateX(-90deg);
+  transform: translateZ(-1.1vw) rotateX(-90deg);
 }
 .bakery_flip a:hover .front {
   background: #fff;
@@ -355,7 +355,7 @@ a {
   background: #222;
 }
 .bakery_flip a:hover .back:after {
-  transform: rotate(6deg) translate(100px, -24px);
+  transform: rotate(6deg) translate(100px, -1.1vw);
   opacity: 1;  
 }
 
@@ -378,7 +378,7 @@ a {
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transform: translateZ(-24px);
+  transform: translateZ(-1.1vw);
   transition: transform 0.3s;
   cursor: pointer;
 }
@@ -395,12 +395,12 @@ a {
   opacity: 1;
   background-color: #ff7a00; 
   color: #222; 
-  transform: rotateY(0) translateZ(21px);
+  transform: rotateY(0) translateZ(1.1vw);
 }
 .bakers_flip a .back {
   background-color: rgba(255,255,255,0);
   color: rgba(34,34,34,0);
-  transform: rotateX(90deg) translateZ(21px);
+  transform: rotateX(90deg) translateZ(1.1vw);
   overflow: hidden;
 }
 .bakers_flip a .back:after {
@@ -417,7 +417,7 @@ a {
   transition-delay: 0.15s;
 }
 .bakers_flip a:hover {
-  transform: translateZ(-24px) rotateX(-90deg);
+  transform: translateZ(-1.1vw) rotateX(-90deg);
 }
 .bakers_flip a:hover .front {
   background: #fff;
@@ -430,7 +430,7 @@ a {
   background: #222;
 }
 .bakers_flip a:hover .back:after {
-  transform: rotate(6deg) translate(100px, -24px);
+  transform: rotate(6deg) translate(100px, -1.1vw);
   opacity: 1;  
 }
 
@@ -454,7 +454,7 @@ a {
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transform: translateZ(-24px);
+  transform: translateZ(-1.1vw);
   transition: transform 0.3s;
   cursor: pointer;
 }
@@ -471,12 +471,12 @@ a {
   opacity: 1;
   background-color: #37c6f4; 
   color: #222; 
-  transform: rotateY(0) translateZ(21px);
+  transform: rotateY(0) translateZ(1.1vw);
 }
 .crowders_flip a .back {
   background-color: rgba(255,255,255,0);
   color: rgba(34,34,34,0);
-  transform: rotateX(90deg) translateZ(21px);
+  transform: rotateX(90deg) translateZ(1.1vw);
   overflow: hidden;
 }
 .crowders_flip a .back:after {
@@ -493,7 +493,7 @@ a {
   transition-delay: 0.15s;
 }
 .crowders_flip a:hover {
-  transform: translateZ(-24px) rotateX(-90deg);
+  transform: translateZ(-1.1vw) rotateX(-90deg);
 }
 .crowders_flip a:hover .front {
   background: #fff;
@@ -506,7 +506,7 @@ a {
   background: #222;
 }
 .crowders_flip a:hover .back:after {
-  transform: rotate(6deg) translate(100px, -24px);
+  transform: rotate(6deg) translate(100px, -1.1vw);
   opacity: 1;  
 }
 
