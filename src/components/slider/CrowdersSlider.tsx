@@ -103,11 +103,11 @@ class Carousel extends React.Component {
   wheelCallback(ev) {
     if( ev.deltaY > 0 ) {
       console.log( this.state.activeIndex + 1, "delta", ev.deltaY / 150 )
-      this.state.activeIndex < slidesCount-1 && !this.state.animating ? this.nextSlide(this.state.activeIndex + 1) : false
+      this.state.activeIndex < slidesCount-1 && !this.state.animating ? this.nextSlide(parseInt(this.state.activeIndex) + 1) : false
     }
     else if( ev.deltaY < 0 ) {  
       console.log( this.state.activeIndex - 1, "delta", ev.deltaY / 150 )
-      this.state.activeIndex  > 0 && !this.state.animating ? this.prevSlide(this.state.activeIndex - 1) : false
+      this.state.activeIndex  > 0 && !this.state.animating ? this.prevSlide(parseInt(this.state.activeIndex) - 1) : false
     }
   }
 
