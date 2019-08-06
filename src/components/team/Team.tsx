@@ -100,7 +100,7 @@ class Member extends React.Component {
           <div className={`${s.data} ${this.state.activeIndex == i ? s.current_data : ''}`}>
             <h4 className={s.name}>{names[i]}</h4>
             <p className={s.text}>{texts[i]}</p>
-            <a className={s.link} href={linkURLs[i]}>CONTACT {linkNames[i]}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></a>
+            <a className={s.link} href={linkURLs[i]}>CONTACT {linkNames[i]}&nbsp;&nbsp;<LinkArrow className="link_arrow relative"/></a>
           </div>
         </div>
       )
@@ -125,7 +125,7 @@ class Member extends React.Component {
 
         <Row>
           <div className="team_previous" onClick={this.prevSlide.bind(this)}><span>&lt;</span>&nbsp;&nbsp;PREVIOUS</div>
-          <div className="team_next" onClick={this.nextSlide.bind(this)}>NEXT&nbsp;&nbsp;<LinkArrow className="link_arrow"/></div>        
+          <div className="team_next" onClick={this.nextSlide.bind(this)}>NEXT&nbsp;&nbsp;<LinkArrow className="link_arrow relative"/></div>        
         </Row>
       </>
     );

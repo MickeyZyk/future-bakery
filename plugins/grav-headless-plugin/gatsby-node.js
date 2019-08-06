@@ -23,13 +23,13 @@ exports.sourceNodes = async ({boundActionCreators}) => {
         createNode(x)
     })    
 
-
+/*
     const bakersSlides = await fetchBakersSlides()
 
     bakersSlides.forEach(x => {
         createNode(x)
     })       
-
+*/
     const bakersAbout = await fetchBakersAbout()
 
     bakersAbout.forEach(x => {
@@ -41,13 +41,13 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     bakersWork.forEach(x => {
         createNode(x)
     })     
-
+/*
     const crowdersSlides = await fetchCrowdersSlides()
 
     crowdersSlides.forEach(x => {
         createNode(x)
     })       
-
+*/
     const crowdersAbout = await fetchCrowdersAbout()
 
     crowdersAbout.forEach(x => {
@@ -170,7 +170,7 @@ fetchBakeryWork = async () => {
     }
 }
 
-
+/*
 fetchBakersSlides = async () => {
     const {
         createNodeFactory,
@@ -205,7 +205,7 @@ fetchBakersSlides = async () => {
         //throw e
     }
 }
-
+*/
 
 fetchBakersAbout = async () => {
     const {
@@ -276,7 +276,7 @@ fetchBakersWork = async () => {
         //throw e
     }
 }
-
+/*
 fetchCrowdersSlides = async () => {
     const {
         createNodeFactory,
@@ -311,7 +311,7 @@ fetchCrowdersSlides = async () => {
         //throw e
     }
 }
-
+*/
 fetchCrowdersAbout = async () => {
     const {
         createNodeFactory,

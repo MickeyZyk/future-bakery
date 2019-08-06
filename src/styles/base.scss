@@ -138,6 +138,12 @@ a {text-decoration: none}
 
 }
 
+.relative {
+    position: relative !important;
+    bottom: 0!important;
+    margin-bottom: -0.05vw!important;
+}
+
 .scrollbar {
   position: sticky;
 }
