@@ -45,7 +45,7 @@ export default class Work extends React.Component {
   } 
 
   componentDidMount(){
-    console.log(this.videoPreview.current)
+    console.log(this.props.data.gravBakeryWork.one_way)
   }
 
   playVideo(){
@@ -85,8 +85,22 @@ export default class Work extends React.Component {
 <>
     <div className='wrapper'>
       <ReactCursorPosition className='fullscreen_cursor_position'>
-        <SVGicon className={s.work_details_no} src='work_details_no.svg'  />       
-        <SVGiconReverse className={s.work_details_ok} src='work_details_ok.svg'  />          
+
+
+
+        <If condition={ this.props.data.gravBakeryWork.one_way }>
+            <Then>
+
+
+              <SVGicon className={s.work_details_no} src='work_details_no.svg'  />       
+              <SVGiconReverse className={s.work_details_ok} src='work_details_ok.svg'  /> 
+
+            </Then>
+        </If>
+
+
+
+
         <Helmet title={this.props.data.gravBakeryWork.title} />
         <div className={s.row}>
           <div className={s.row__one}>
@@ -102,7 +116,7 @@ export default class Work extends React.Component {
             </div>
           </div>
 
-        <If condition={ this.props.data.gravBakeryWork.one_way != '' }>
+        <If condition={ this.props.data.gravBakeryWork.one_way }>
             <Then>
 
               <div className={s.row__two}>

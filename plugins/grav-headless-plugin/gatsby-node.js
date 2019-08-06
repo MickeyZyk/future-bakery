@@ -24,9 +24,9 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     console.log("RAW" , bakeryWork)
 
     bakeryWork.forEach(x => {
-        console.log("NODE:", x)
+
         createNode(x)
-        console.log("CREATED", this)
+
     })    
 /*
 
@@ -154,16 +154,12 @@ fetchBakeryWork = async () => {
         return node
     })
 
-    var today = new Date();
-    var time = today.getSeconds();
-
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakers/work', {
+        const response = await axios.get('http://future.stratego.ba/en/bakery/work', {
             params: {
-                "return-as": "json",
-                "bust": time
+                "return-as": "json"
             }
         })
     

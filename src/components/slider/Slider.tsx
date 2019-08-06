@@ -497,23 +497,3 @@ class Dot extends React.Component {
   }
 
 }
-
-export default props => (
-  <StaticQuery
-    query={graphql`
-      query {
-        bakerySlides {
-          header {
-            slider {
-              image
-              link
-              subheading
-              title
-            }
-          }
-        }
-      }
-    `}
-    render={({ projects }) => <GlobalLayout projects={projects} {...props} />}
-  />
-)
