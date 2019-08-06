@@ -10,7 +10,9 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     bakerySlides.forEach(x => {
         createNode(x)
     })
-   */
+
+*/
+
     const bakeryAbout = await fetchBakeryAbout()
 
     bakeryAbout.forEach(x => {
@@ -19,8 +21,12 @@ exports.sourceNodes = async ({boundActionCreators}) => {
 
     const bakeryWork = await fetchBakeryWork()
 
+    console.log("RAW" , bakeryWork)
+
     bakeryWork.forEach(x => {
+        console.log("NODE:", x)
         createNode(x)
+        console.log("CREATED", this)
     })    
 /*
 
@@ -148,18 +154,23 @@ fetchBakeryWork = async () => {
         return node
     })
 
+    var today = new Date();
+    var time = today.getSeconds();
+
     try
     {
         // This is where we call Grav API.
         const response = await axios.get('http://future.stratego.ba/en/bakers/work', {
             params: {
-                "return-as": "json"
+                "return-as": "json",
+                "bust": time
             }
         })
     
         return response.data.children
             .map(x => x.header)
             .map(x => Object.assign(x, {
+                id: x.title,
                 path: `/grav-page-bakery-work/${slug(x.title)}`.toLowerCase()
             }))
             .map(ProductNode)

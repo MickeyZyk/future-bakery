@@ -5,6 +5,20 @@ module.exports = {
     title: 'Future Bakery',
   },
   plugins: [
+
+    {
+      resolve: 'gatsby-source-apiserver',
+      options: {
+        url: 'http://future.stratego.ba/en/bakery?return-as=json',
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        typePrefix: 'bakery__',
+        name: `slides`,
+        verboseOutput: true,
+      }
+    },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {

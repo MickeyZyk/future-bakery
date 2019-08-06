@@ -43,17 +43,24 @@ var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 35 ;
 
-export const Slider = () => { 
+  export const TestSlider = ({ data, ...props }: ILinkProps) => { 
+    console.log("XDATA", data)
     return( 
       <div style={{opacity: 1, top: 0}} className={s.carousel}><Carousel horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
       arrayOfImages={images} /></div>
     )
   }
 
+
+
 class Carousel extends React.Component {
 
   constructor(props){
     super(props);
+
+    console.log("MAIN PROPS", this.props)
+
+
     this.wrapperRef_bottom = React.createRef();
     this.wrapperRef_top = React.createRef();    
     this.dotz = React.createRef();     
@@ -366,8 +373,20 @@ class Carousel extends React.Component {
       </div>
     )
 
+
+    const { data } = this.props; // add more props here as needed
+
+
+    console.log ( "DATA" , data)
+
+/*
+    const slides = data.bakerySlides.header;
+*/
+
+
     var carouselImages =  this.props.arrayOfImages.map((image, i) =>{
       return(
+ 
         <div style={{ position: 'relative', width: '100%', height: '35vw' }} key={'2key_'+i}>
           <CarouselImage horizontal={this.state.horizontal} className='child_image' key={'key_'+i} label={labels[i]} 
           timeInBetween={this.props.timeInBetween} whichOne={i} src={image} />
@@ -382,6 +401,7 @@ class Carousel extends React.Component {
         </div>
       )
     })
+
 
     var dots = this.props.arrayOfImages.map((image, i) =>{
       return(
@@ -417,6 +437,7 @@ class Carousel extends React.Component {
             </div>
             {this.state.showButtons ? carouselRightButton : null } 
           </ReactCursorPosition>
+   
 
         </div>
 
@@ -424,6 +445,26 @@ class Carousel extends React.Component {
 
   }
 }
+
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        bakerySlides {
+          header {
+            slider {
+              image
+              link
+              subheading
+              title
+            }
+          }
+        }
+      }
+    `}
+    render={data => <TestSlider data={data} {...props} />}
+  />
+);
 
 class CarouselImage extends React.Component {
 
@@ -498,22 +539,5 @@ class Dot extends React.Component {
 
 }
 
-export default props => (
-  <StaticQuery
-    query={graphql`
-      query {
-        bakerySlides {
-          header {
-            slider {
-              image
-              link
-              subheading
-              title
-            }
-          }
-        }
-      }
-    `}
-    render={({ projects }) => <GlobalLayout projects={projects} {...props} />}
-  />
-)
+
+

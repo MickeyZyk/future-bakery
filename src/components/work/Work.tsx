@@ -7,6 +7,8 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactPlayer from 'react-player'
 import { Footer } from 'components/footer/Footer';
+import { graphql } from 'gatsby'
+import { If, Then, Else, Switch, Case, Default } from 'react-if'
 
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
@@ -15,16 +17,16 @@ import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
-import s from 'styles/fiat.scss';
+import s from './Work.scss';
 
-export default class Fiat extends React.Component {
+export default class Work extends React.Component {
 
   constructor(props){
     super(props);
     this.videoPreview = React.createRef();
     this.videoOverlay = React.createRef();    
     this.videoPlayer = React.createRef();     
-    this.playVideo = this.playVideo.bind(this);   
+    this.playVideo = this.playVideo.bind(this);  
     this.state = {
       url: null,
       pip: false,
@@ -42,6 +44,10 @@ export default class Fiat extends React.Component {
       
   } 
 
+  componentDidMount(){
+    console.log(this.videoPreview.current)
+  }
+
   playVideo(){
     console.log(this.videoPreview.current);
     this.videoPreview.current.style.zIndex = -5;
@@ -49,14 +55,16 @@ export default class Fiat extends React.Component {
     this.setState({ playing: true })
   }
 
+  handleClick(){
+    this.videoPreview.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });  
+  }  
+
     render() {
 
   return (
-
-
-
-
-
 
 
 
@@ -78,35 +86,43 @@ export default class Fiat extends React.Component {
     <div className='wrapper'>
       <ReactCursorPosition className='fullscreen_cursor_position'>
         <SVGicon className={s.work_details_no} src='work_details_no.svg'  />       
-        <SVGiconReverse className={s.work_details_ok} src='work_details_ok.svg'  />         
-        <Helmet title="Fiat" />
+        <SVGiconReverse className={s.work_details_ok} src='work_details_ok.svg'  />          
+        <Helmet title={this.props.data.gravBakeryWork.title} />
         <div className={s.row}>
           <div className={s.row__one}>
             <div className={s.column__col0}>
               <div className={s.wrapper}>
                 <img className={s.arrow} src={'../svg/work_arrow.svg'} />
-                <h4 className={s.arrow_heading}>Creative strategy</h4>
+                <h4 className={s.arrow_heading}>Creative Strategy</h4>
               </div>
             </div>   
             <div className={s.column__col1}>
-              <img className={s.client_logo} src={'../images/fiat.png'} />
-              <h1 className={s.column__col1_heading}>How do you explain and sell the legal insurance to<br/>people that are afraid of lawyers and hate insurance houses?</h1>
+              <img className={s.client_logo} src={ 'http://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.logo_dark } />
+              <h1 className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</h1>
             </div>
           </div>
-          <div className={s.row__two}>
-            <div className={s.column__col2}>
-              <p className={s.way}>one way</p>
-              <p className={s.advice}>Tell the consumers about unique benefits of your product.</p>
-            </div>
-            <div className={s.column__col3}>
-              <p className={s.way}>new way</p>      
-              <p className={s.larger_advice}>How about not selling insurance, but “help the good” instead?</p>
-            </div>
-          </div>
+
+        <If condition={ this.props.data.gravBakeryWork.one_way != '' }>
+            <Then>
+
+              <div className={s.row__two}>
+                <div className={s.column__col2}>
+                  <p className={s.way}>one way</p>
+                  <p className={s.advice}>{this.props.data.gravBakeryWork.one_way}</p>
+                </div>
+                <div className={s.column__col3}>
+                  <p className={s.way}>new way</p>      
+                  <p className={s.larger_advice}>{this.props.data.gravBakeryWork.new_way}</p>
+                </div>
+              </div>
+
+            </Then>
+        </If>
+
           <div className={s.detail_wrapper}>
             <div className={s.row__threetop}> 
               <div className={s.column__col5}>
-                <p className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>
+                <p onClick={() => this.handleClick()} className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>
               </div>
               <div className={s.column__col6}>
                 <p onClick={this.playVideo} className={s.control}>WATCH VIDEO <img className={s.explore} src='../images/video_play.png' /></p>
@@ -114,12 +130,12 @@ export default class Fiat extends React.Component {
             </div>
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <img className={s.client_logo} src='../images/client.png'/>              
+                <img className={s.client_logo} src={ 'http://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.logo_light } />              
                 <p className={s.award}>AWARD: <span className={s.green}>FIAT 500X</span></p>
                 <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
-            <img src="../images/fiat.jpg" ref={this.videoPreview} className={s.fiat_img} />
+            <img src={ 'http://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
             <div className={s.embedded_video}>
               <ReactPlayer ref={this.videoPlayer} url='https://www.youtube.com/watch?v=9HQLdSHOHxU' playing={this.state.playing} />            
             </div>
@@ -150,10 +166,7 @@ export default class Fiat extends React.Component {
     </div>
   </>
 
-
-
-
-    <Footer/>               
+  <Footer/>               
   </Scrollbar>
 
 
@@ -174,20 +187,27 @@ export default class Fiat extends React.Component {
       </TransitionState>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 )}
 }
+
+
+export const query = graphql`
+  query BakeryWorkQueryByTitle($id: String!) {
+    gravBakeryWork(id: {eq: $id}) {
+      big_image
+      category
+      category_name
+      heading_one
+      heading_two
+      logo_dark
+      logo_light
+      new_way
+      one_way
+      title
+      video
+      id
+    }
+  }
+
+`

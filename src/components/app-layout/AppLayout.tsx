@@ -12,7 +12,6 @@ import ReactDOM from 'react-dom';
 
 import Circle from 'assets/svg/circle.svg';
 import WhiteCircle from 'assets/svg/white_circle.svg';
-import { If, Then, Else, Switch, Case, Default } from 'react-if'
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Controls } from 'react-gsap'
 import { Power2 } from "gsap/TweenMax";
