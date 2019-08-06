@@ -165,6 +165,13 @@ a {
   @include poly-fluid-sizing('font-size', $font-map);  
 }
 
+.bakery_contact_adress_block p, .contact-email {
+  $font-map: (375px: 14px, 959px: 38px, 960px: 8px, 2880px: 28px);
+  @include poly-fluid-sizing('font-size', $font-map);  
+}
+
+
+
 .bakery_color, .bakery_color > * {color: #d4de4f!important}
 .bakers_color, .bakers_color > * {color: #ff7a00!important}
 .crowders_color, .crowders_color > * {color: #37c6f4!important}
@@ -180,7 +187,7 @@ a {
   position: absolute;
   bottom: 0.2vw;
   padding-top: 0.1vw;
-  $size-map: (375px: 14px, 959px: 38px, 960px: 8px, 2880px: 24px);
+  $size-map: (375px: 14px, 959px: 38px, 960px: 10px, 2880px: 24px);
   @include poly-fluid-sizing('height', $size-map);   
 }
 

@@ -45,7 +45,7 @@ export default () => (
                   <p>&nbsp;</p>
                   <p className="text-bolder">Máte zájem se na cokoliv zeptat?</p>
                   <p>Neváhejte a kontaktujte nás.</p>
-                  <a className="color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
+                  <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
                 </div>
                 <div className="bakery_contact_flip_button bakers_flip">
                   <Link to={'/bakerycontact'}>
@@ -73,14 +73,6 @@ export default () => (
           )
         }}
       </TransitionState>
-
-
-
-
-
-
-
-
 
 
     </ReactCursorPosition>	    
