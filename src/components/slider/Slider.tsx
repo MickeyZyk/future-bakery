@@ -37,7 +37,7 @@ var texts = [
 'Largest crowd of consumers joined forces with the top creative and strategic minds.',
 
 ]
-var links = ['/bakeryabout', '/bakeryabout',]
+var links = ['/bakery-about', '/bakery-about',]
 var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 35 ;
