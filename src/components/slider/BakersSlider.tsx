@@ -35,7 +35,7 @@ var labels = [
 var texts = [
 
 'Top creative and strategic minds joined forces with the largest crowd of consumers.', 
-'Many variations of Lorem Ipsum exist today, the text includes humorous phrases.',
+'Many variations of text.',
 
 ]
 
