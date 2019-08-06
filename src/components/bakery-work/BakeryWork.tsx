@@ -19,20 +19,18 @@ import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
-import s from '../components/item/Item.scss';
-
-export default class Work extends React.Component {
+export default class BakeryWork extends React.Component {
 
 
   constructor(props){
     super(props);
-    this.hovered_item = React.createRef();    
+    this.hovered_item = React.createRef();
     this.state ={
       hover: this.props.hovered ? true : false,
     };
     this.toggleHoverLeave = this.toggleHoverLeave.bind(this);  
-    this.toggleHoverEnter = this.toggleHoverEnter.bind(this);      
-  }
+    this.toggleHoverEnter = this.toggleHoverEnter.bind(this);
+  }	
 
   toggleHoverLeave() {
 
@@ -54,6 +52,8 @@ export default class Work extends React.Component {
       }      
 
   }  
+
+
 
 	fireEvent(elementId, eventName) {
 	  if(document.getElementById(elementId) != null) {   
@@ -78,8 +78,7 @@ export default class Work extends React.Component {
 
 
 
-
-        var item=(
+var item=(
 
 
 
@@ -118,8 +117,11 @@ export default class Work extends React.Component {
             </TransitionState>
  
 
-)
 
+
+
+
+)
 
 
 
@@ -132,7 +134,6 @@ export default class Work extends React.Component {
 
       <>
         <Helmet title="Work" />
-
 
         <TransitionState>
           {({ transitionStatus }) => {
@@ -155,12 +156,16 @@ export default class Work extends React.Component {
                 <Split className="bakery_work_headline">COLLECTIVE INTELLIGENCE AND CREATIVE POWER IN ACTION</Split>
 
                 <div className='wrapper work-wrapper'>
+
+
+
+
                   <Item hovered='true' key='i01' delay={1} ref={this.hovered_item} className='no1'/>
                   <Item key='i02' delay={1.5} className='no2'/>
                   <Item key='i03' delay={2} className='no3'/>
-                  <div key='i04' delay={2.5} className='no4'>{item}</div>                  
+                  <Item key='i04' delay={2.5} className='no4'/>
 
-                  
+
 
                 </div>
 
