@@ -10,7 +10,7 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     bakerySlides.forEach(x => {
         createNode(x)
     })
-*/    
+   */
     const bakeryAbout = await fetchBakeryAbout()
 
     bakeryAbout.forEach(x => {
@@ -22,13 +22,14 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     bakeryWork.forEach(x => {
         createNode(x)
     })    
-
 /*
+
     const bakersSlides = await fetchBakersSlides()
 
     bakersSlides.forEach(x => {
         createNode(x)
     })       
+
 */
     const bakersAbout = await fetchBakersAbout()
 
@@ -60,7 +61,6 @@ exports.sourceNodes = async ({boundActionCreators}) => {
         createNode(x)
     })     
 
-
     return
 }
 
@@ -87,8 +87,8 @@ fetchBakerySlides = async () => {
             }
         })
     
-        return response.data
-            .map(x => x.header)
+        return response.data.header
+            .map(x => x.slider)
             .map(x => Object.assign(x, {
                 path: `/bakery-slides/${slug(x.title)}`.toLowerCase()
             }))
@@ -187,14 +187,14 @@ fetchBakersSlides = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/bakers/slider', {
+        const response = await axios.get('http://future.stratego.ba/bakers', {
             params: {
                 "return-as": "json"
             }
         })
     
-        return response.data.children
-            .map(x => x.header)
+        return response.header
+            .map(x => x.slider)
             .map(x => Object.assign(x, {
                 path: `/bakers-slides/${slug(x.title)}`.toLowerCase()
             }))
@@ -205,8 +205,8 @@ fetchBakersSlides = async () => {
         //throw e
     }
 }
-*/
 
+*/
 fetchBakersAbout = async () => {
     const {
         createNodeFactory,
@@ -293,14 +293,14 @@ fetchCrowdersSlides = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/crowders/slider', {
+        const response = await axios.get('http://future.stratego.ba/crowders', {
             params: {
                 "return-as": "json"
             }
         })
     
-        return response.data.children
-            .map(x => x.header)
+        return response.header
+            .map(x => x.slider)
             .map(x => Object.assign(x, {
                 path: `/crowders-slides/${slug(x.title)}`.toLowerCase()
             }))

@@ -18,15 +18,33 @@ import s from './CrowdersSlider.scss';
 
 var startCarouselInterval;
 
-var images = ['../images/crowders_01.jpg', '../images/dude.jpg','../images/desk.jpg','../images/image.jpg', '../images/dude.jpg','../images/desk.jpg']
-var labels = ["WE SEEK AND DEVELOP CROSS-SOCIAL TOPICS.", "THE END IS NIGH", "THE HUNS ARE COMING","ROME HAS FALLEN", "APOCALYPSE NOW", "FLIGHT OVER THE COCKOO'S NEST" ]
-var texts = ['Top creative and strategic minds joined forces with the largest crowd of consumers.', 
+var images = [
+
+'../images/crowders_01.jpg',
+'../images/dude.jpg',
+
+]
+
+var labels = [
+
+"WE SEEK AND DEVELOP CROSS-SOCIAL TOPICS.",
+"EXAMPLE HEADING PLACEHOLDER",
+
+]
+
+var texts = [
+
+'Top creative and strategic minds joined forces with the largest crowd of consumers.', 
 'Many variations of Lorem Ipsum exist today, the text includes humorous phrases.',
-'Using our Lorem Ipsum generator, you can easily select a variation.',
-'De finibus bonorum et malorum, a first century, philosophical text.',
-'Lorem Ipsum is filler text used by publishers and graphic designers.',
-'Virtually impossible to showcase a social media page layout without any content.']
-var links = ['/bakery-work', '/bakery-about', '/bakers', '/bakery-work', '/bakery-about', '/bakers']
+
+]
+var links = [
+
+'/crowders-about', 
+'/crowders-about',
+
+]
+
 var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 35 ;
