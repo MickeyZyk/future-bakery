@@ -76,7 +76,7 @@ const BakersAbout = ({ data, className }) => {
       </Row>
       <SVGicon className='bakers_about__brains' src='brains.svg' /> 
       <Row>
-        <Figure4 className="bakers_about__image_two hide_on_mobile"/>            
+        <Figure4 className="bakers_about__image_two hide_on_mobile"/>
         <Split className='bakers_about__heading_three'>We are a group of enthusiasts and passionate thinkers</Split>      
         <Paragraph className='bakers_we__paragraph paragraph'>We believe that a great idea can pop up anywhere: in a bar, during a wonderfully peaceful weekend, while running, before going to bed, while chatting with your loved one, from a student, retiree or stay-at-home mom or dad.</Paragraph>
         <Link className="bakers_about__join_link" to={'/contact'}>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
@@ -184,19 +184,30 @@ const BakersAbout = ({ data, className }) => {
         </Controller>
       </Row>
       <Split className="tags_heading_bottom">Reseni</Split>
-      <Link className="bakers_about__join_link_two" to={'/bakerscontact'}>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
-      <div className="divider_text">or find out how to</div>
-      <Link className="bakers_about__join_link_three" to={'/bakerscontact'}>BRIEF US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
+      <Row>
+        <Link className="bakers_about__join_link_two" to={'/bakerscontact'}>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+        <div className="divider_text">or find out how to</div>
+        <Link className="bakers_about__join_link_three" to={'/bakerscontact'}>BRIEF US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
+      </Row>
       <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
       <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
-      <Row className="bakers_about_team_row">
-        <div className="bakers_about__orange_heading_background">
-            <Split className="bakers_about__heading_four">Who is behind the scenes of Future Bakers?</Split>
-        </div>  
-      </Row>
+      
       <div className="meet">
+        <Row className="bakers_about_team_row">
+          <div className="people_doodle">
+            <img className="orange-hat" src="../images/orange-hat.png"/>     
+          </div>
+          <div className="bakers_about__orange_heading_background">
+              <Split className="bakers_about__heading_four">Who is behind the scenes of Future Bakers?</Split>
+          </div>  
+        </Row>
         <AnimatedHeadingTwo className="bakers_about_team_heading">Meet the team</AnimatedHeadingTwo>
-      </div>
+        <img className="chef-hat" src="../images/chef.png"/>
+        <img className="smile-girl" src="../images/smile.png"/>
+        <div className="smile-girl-header"><p>Alena Pelcová</p></div>
+        <div className="smile-girl-text"><p>Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to </p></div>
+        <Link className="bakers_about__join_link_four" to={'/'}>CONTACT ALENA&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+        </div>
       <Row>
         <DarkTeam/>
       </Row>
