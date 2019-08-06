@@ -34,6 +34,12 @@ const index = () => (
                 <Slider className='new-slider'/>
               </div>
 
+            </Tween>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >                         
+
               <div className="flip_button flip">
                 <Link to={'/bakerycontact'}>
                   <div className="front">START A PROJECT WITH US</div>

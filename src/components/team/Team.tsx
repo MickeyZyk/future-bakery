@@ -5,6 +5,7 @@ import { Row } from 'components/row/Row';
 import { AnimatedHeadingTwo  } from 'components/heading/AnimatedHeadingTwo';
 import ReactDOM from 'react-dom';
 import { Link as InternalLink } from 'components/link/Link';
+import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './Team.scss';
 
 var images = ['../images/pelcova.jpg', '../images/bw_pelcova.jpg','../images/pelcova.jpg','../images/bw_pelcova.jpg', '../images/pelcova.jpg','../images/bw_pelcova.jpg']
@@ -99,7 +100,7 @@ class Member extends React.Component {
           <div className={`${s.data} ${this.state.activeIndex == i ? s.current_data : ''}`}>
             <h4 className={s.name}>{names[i]}</h4>
             <p className={s.text}>{texts[i]}</p>
-            <a className={s.link} href={linkURLs[i]}>CONTACT {linkNames[i]}&nbsp;&nbsp;<span>&gt;</span></a>
+            <a className={s.link} href={linkURLs[i]}>CONTACT {linkNames[i]}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></a>
           </div>
         </div>
       )
@@ -124,7 +125,7 @@ class Member extends React.Component {
 
         <Row>
           <div className="team_previous" onClick={this.prevSlide.bind(this)}><span>&lt;</span>&nbsp;&nbsp;PREVIOUS</div>
-          <div className="team_next" onClick={this.nextSlide.bind(this)}>NEXT&nbsp;&nbsp;<span>&gt;</span></div>        
+          <div className="team_next" onClick={this.nextSlide.bind(this)}>NEXT&nbsp;&nbsp;<LinkArrow className="link_arrow"/></div>        
         </Row>
       </>
     );

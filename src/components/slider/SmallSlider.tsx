@@ -12,6 +12,7 @@ import SVGicon from 'components/svgicon/SVGicon';
 import { Link as InternalLink } from 'components/link/Link';
 import ReactCursorPosition from 'react-cursor-position';
 import SplitText from 'utils/SplitText.min.js'
+import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './Slider.scss';
 
 var startCarouselInterval;
@@ -24,7 +25,7 @@ var texts = ['Top creative and strategic minds joined forces with the largest cr
 'De finibus bonorum et malorum, a first century, philosophical text.',
 'Lorem Ipsum is filler text used by publishers and graphic designers.',
 'Virtually impossible to showcase a social media page layout without any content.']
-var links = ['/bakerywork', '/bakeryabout', '/bakers', '/bakerywork', '/bakeryabout', '/bakers']
+var links = ['/bakery-work', '/bakery-about', '/bakers', '/bakery-work', '/bakery-about', '/bakers']
 var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 35 ;
@@ -454,7 +455,7 @@ class Carousel extends React.Component {
         </ReactCursorPosition>
         <div className={s.contact_button_link}>
           <TransitionLink to={'/bakerycontact'} exit={{ length: 1 }} entry={{ delay: 1 }}>
-            START A PROJECT WITH US <span>&gt;</span>
+            START A PROJECT WITH US <LinkArrow className="link_arrow"/>
           </TransitionLink>  
         </div>
       </div>

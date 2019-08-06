@@ -22,9 +22,44 @@ import { Footer } from 'components/footer/Footer';
 import { TweenMax, TimelineMax, Power3 } from "gsap";
 import { Tween, SplitWords } from 'react-gsap'
 import { Controller, Scene } from 'react-scrollmagic';
+import LinkArrow from 'assets/svg/link_arrow.svg'
+
+
+import { TransitionState } from "gatsby-plugin-transition-link";
+
+import SmoothScrollbar from 'smooth-scrollbar';
+import Scrollbar from 'react-smooth-scrollbar';
 
 const BakersAbout = ({ data, className }) => {
   return (
+
+
+
+
+
+
+
+      <TransitionState>
+        {({ transitionStatus }) => {
+          return (
+
+            <>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+
+
+
+
+
+
+
+
+
+
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
 
   <div className='wrapper'>
     <ReactCursorPosition className='fullscreen_cursor_position'>
@@ -44,7 +79,7 @@ const BakersAbout = ({ data, className }) => {
         <Figure4 className="bakers_about__image_two hide_on_mobile"/>            
         <Split className='bakers_about__heading_three'>We are a group of enthusiasts and passionate thinkers</Split>      
         <Paragraph className='bakers_we__paragraph paragraph'>We believe that a great idea can pop up anywhere: in a bar, during a wonderfully peaceful weekend, while running, before going to bed, while chatting with your loved one, from a student, retiree or stay-at-home mom or dad.</Paragraph>
-        <Link className="bakers_about__join_link" to={'/contact'}>JOIN US&nbsp;&nbsp;<span>&gt;</span></Link>
+        <Link className="bakers_about__join_link" to={'/contact'}>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
         <Figure4 className="show_on_mobile"/>
       </Row>
       <Row className="tags_row">
@@ -120,9 +155,9 @@ const BakersAbout = ({ data, className }) => {
         </Controller>
       </Row>
       <Split className="tags_heading_bottom">Reseni</Split>
-      <Link className="bakers_about__join_link_two" to={'/contact'}>JOIN US&nbsp;&nbsp;<span>&gt;</span></Link>
+      <Link className="bakers_about__join_link_two" to={'/contact'}>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
       <div className="divider_text">or find out how to</div>
-      <Link className="bakers_about__join_link_three" to={'/contact'}>BRIEF US&nbsp;&nbsp;<span>&gt;</span></Link>          
+      <Link className="bakers_about__join_link_three" to={'/contact'}>BRIEF US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
       <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
       <Row className="bakers_about_team_row">
@@ -138,6 +173,46 @@ const BakersAbout = ({ data, className }) => {
      </Row>      
     </ReactCursorPosition>
   </div>
+
+</Scrollbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </Tween>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+              <div className='fulscreen_white' style={{zIndex: -1, backgroundColor: '#ffffff', position: 'absolute', width: '100vw', height: '100vh', top: 0, bottom: 0, left: 0, right: 0}}></div>
+
+            </Tween>
+
+            </>
+
+          )
+        }}
+      </TransitionState>
+
+
+
+
+
+ 
+
   )
 }
 

@@ -5,6 +5,7 @@ import { TransitionState } from "gatsby-plugin-transition-link";
 import { Tween } from 'react-gsap'
 import { Power3 } from "gsap/TweenMax";
 import { Link } from 'components/link/Link';
+import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './Item.scss';
 
 export class Item extends React.Component {
@@ -95,7 +96,7 @@ export class Item extends React.Component {
                         <h2 className={s.client_title}>BEAUTY AND FUNCTION COMBINED</h2>
                       </Tween>
                       <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >  
-                        <h3 className={s.client_more}><Link to={'/fiat'}>FIND OUT MORE <span>&gt;</span></Link></h3>
+                        <h3 className={s.client_more}><Link to={'/fiat-study'}>FIND OUT MORE <LinkArrow className="link_arrow"/></Link></h3>
                       </Tween>                      
                       <Img style={this.state.hover ? {opacity:0}:{opacity:1}} fluid={data.bwImage.childImageSharp.fluid} className={s.bw} />                        
                       <Img fluid={data.colorImage.childImageSharp.fluid} className={s.color}/>

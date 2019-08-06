@@ -18,8 +18,33 @@ import { Clients } from 'components/clients/Clients';
 import Texticon from 'components/texticon/Texticon';
 import { Footer } from 'components/footer/Footer';
 
+import { TweenMax, TimelineMax, Power3} from "gsap";
+import { Tween } from 'react-gsap';
+import { TransitionState } from "gatsby-plugin-transition-link";
+
+import SmoothScrollbar from 'smooth-scrollbar';
+import Scrollbar from 'react-smooth-scrollbar';
+
 const BakeryAbout = ({ data, className, query }) => {
   return (
+
+
+
+      <TransitionState>
+        {({ transitionStatus }) => {
+          return (
+
+            <>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+
+
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>
+
+
     <div className='wrapper'>
       <ReactCursorPosition className='fullscreen_cursor_position'>
         <Helmet title={data.gravBakeryAbout.title} />
@@ -72,6 +97,38 @@ const BakeryAbout = ({ data, className, query }) => {
       </div>
       </ReactCursorPosition>
     </div>
+<Footer/>
+</Scrollbar>
+
+
+
+
+
+            </Tween>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+              <div className='fulscreen_white' style={{zIndex: -1, backgroundColor: '#ffffff', position: 'absolute', width: '100vw', height: '100vh', top: 0, bottom: 0, left: 0, right: 0}}></div>
+
+            </Tween>
+
+            </>
+
+          )
+        }}
+      </TransitionState>
+
+
+
+
+
+
+
+ 
+
+
   )
 }
 

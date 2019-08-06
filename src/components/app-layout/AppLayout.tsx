@@ -9,11 +9,10 @@ import { Footer } from 'components/footer/Footer';
 import { Link as HeaderLink } from 'components/header/Link';
 import { Devtools } from 'components/devtools/Devtools';
 import ReactDOM from 'react-dom';
-import SmoothScrollbar from 'smooth-scrollbar';
-import Scrollbar from 'react-smooth-scrollbar';
+
 import Circle from 'assets/svg/circle.svg';
 import WhiteCircle from 'assets/svg/white_circle.svg';
-import { If, Then, Else } from 'react-if'
+import { If, Then, Else, Switch, Case, Default } from 'react-if'
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Controls } from 'react-gsap'
 import { Power2 } from "gsap/TweenMax";
@@ -26,28 +25,14 @@ interface IAppLayoutProps {
 }
 
 
-/*
-globalHistory.listen(({ location }) => {
-  if (location.pathname.includes('Bakery') || location.pathname.includes('bakery')){
-
-    console.log("BAKERYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY")
-  }; 
-})
-*/
-/* remove in production */
-//const isDev = process.env.NODE_ENV === 'development';
-const isDev = true;
-
-function callback(){
-  console.log('BOTTOM');
-}
-
-
-export default ({ children, data, set, state, location, ...props }: IAppLayoutProps) => ( 
+export default ({  children, data, set, state, location, ...props }: IAppLayoutProps) => ( 
 
   <>
+      <Devtools />
+
 
     <div className={s.layout}>
+
 
       <Helmet {...helmet} />
 
@@ -56,55 +41,73 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
         <Header>
 
           <Location>
-            {({ location }) => (
+            {({ location }) => (          
+
               <ContextConsumer>
                 {({ data, set  }) => (
-                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('bakery') || location.pathname == '/' ? 'active' : ''} onClick={() => set({ logo: 'bakery' })} name="FUTURE BAKERY" to="/bakery">FUTURE BAKERY</HeaderLink>
+                  <HeaderLink className={ location.pathname.includes('menu') ? 'hidden' : location.pathname.includes('bakery') || location.pathname == '/' ? 'active' : ''} onClick={() => set({ logo: 'bakery' })} name="FUTURE BAKERY" to="/bakery">FUTURE BAKERY</HeaderLink>
                 )}
               </ContextConsumer>
-            )}
-          </Location>          
 
+            )}
+          </Location>  
+          
           <Location>
-            {({ location }) => (
+            {({ location }) => (    
+  
               <ContextConsumer>
                 {({ data, set }) => (
-                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('bakers') ? 'active' : '' } onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERS" to="/bakers">FUTURE BAKERS</HeaderLink>
+                  <HeaderLink className={ location.pathname.includes('menu') ? 'hidden' : location.pathname.includes('bakers') ? 'active' : '' } onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERS" to="/bakers">FUTURE BAKERS</HeaderLink>
                 )}
               </ContextConsumer>
-            )}
-          </Location>                  
 
+
+            )}
+          </Location>  
+          
           <Location>
-            {({ location }) => (
+            {({ location }) => (                
+
               <ContextConsumer>
                 {({ data, set }) => (
-                  <HeaderLink className={ location.pathname.includes('Menu') ? 'hidden' : location.pathname.includes('crowders') ? 'active' : '' } onClick={() => set({ logo: 'crowders' })} name="FUTURE CROWDERS" to="/crowders" >FUTURE CROWDERS</HeaderLink>
+                  <HeaderLink className={ location.pathname.includes('menu') ? 'hidden' : location.pathname.includes('crowders') ? 'active' : '' } onClick={() => set({ logo: 'crowders' })} name="FUTURE CROWDERS" to="/crowders" >FUTURE CROWDERS</HeaderLink>
                 )}
               </ContextConsumer>
+
+
             )}
-          </Location>                  
-
-
+          </Location>  
+          
           <Location>
-            {({ location }) => (
+            {({ location }) => (                
+
               <ContextConsumer>
                 {({ data, set }) => (
                   <HeaderLink className={ location.pathname.includes('menu') ? `white_text white_circle` : '' } name="MENU" 
-                  to={ location.pathname == '/' ?  '/bakerymenu'  
+                 
+                  to={ 
+
+                  location.pathname == '/' ?  '/bakerymenu'  
                   : location.pathname == '/family/' ?   ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )
-                  :  location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu'   ? ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )
-                  :  location.pathname.includes('bakery') && !( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu') ? '/bakerymenu'  
-                  :  location.pathname.includes('bakers') && !( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu') ? '/bakersmenu' 
-                  :  location.pathname.includes('crowders') && !( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu') ? '/crowdersmenu' 
-                  :  ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  ) } 
-                  icon={ ( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu' || location.pathname == '/crowdersmenu') ? <WhiteCircle/> : <Circle />} permanent={true}>                
+                  : location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu' ? ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )
+                  : location.pathname.includes('bakery') && !location.pathname.includes('menu') ? '/bakerymenu'  
+                  : location.pathname.includes('bakers') && !location.pathname.includes('menu') ? '/bakersmenu' 
+                  : location.pathname.includes('crowders') && !location.pathname.includes('menu') ? '/crowdersmenu' 
+                  : ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu' ) 
+
+
+
+                  } 
+
+                  icon={ ( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu' || location.pathname == '/crowdersmenu') ? <WhiteCircle/> : <Circle/>} permanent={true}>                
                     {location.pathname.includes('menu') ? `CLOSE` : `MENU`}
                   </HeaderLink>
                 )}
               </ContextConsumer> 
+
             )}
-          </Location>
+          </Location>               
+
 
         </Header>
 
@@ -112,49 +115,17 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
 
       <div className='fb_linkedin'>
         <a href='https://facebook.com' target='_blank'>FACEBOOK</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
-      </div>
+      </div>    
+     
+      {children}
 
-      <Location>
-        {({ location }) => (        
-          <If condition={ 
-            location.pathname != '/bakery' && 
-            location.pathname != '/bakery/' &&
-            location.pathname != '/bakers' && 
-            location.pathname != '/bakers/' &&
-            location.pathname != '/crowders' && 
-            location.pathname != '/crowders/' &&
-            location.pathname != '/family' && 
-            location.pathname != '/family/' &&
-            location.pathname != '/bakerymenu'  && 
-            location.pathname != '/bakerymenu/' &&
-            location.pathname != '/bakersmenu' && 
-            location.pathname != '/bakersmenu/' &&
-            location.pathname != '/crowdersmenu' &&  
-            location.pathname != '/crowdersmenu/' &&
-            location.pathname != '/crowderscontact' &&  
-            location.pathname != '/crowderscontact/' &&
-            location.pathname != '/bakerycontact' &&  
-            location.pathname != '/bakerycontact/' &&
-            location.pathname != '/bakerscontact' &&  
-            location.pathname != '/bakerscontact/' &&            
-            location.pathname != '/'            
-          }>
-            <Then>
-              <Scrollbar className={s.scrollbar} damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
-                {children}
-                <Footer/>               
-              </Scrollbar>
-            </Then>
-            <Else>
-                {children}
-            </Else>
-          </If>  
-        )}
-      </Location>
 
-      {isDev && <Devtools />}
 
     </div>
+
+
+
+
 
   </>  
 

@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { CrowdersSlider } from 'components/slider/CrowdersSlider';
 import { Heading } from 'components/heading/Heading';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
+import { Link } from 'components/link/Link';
 import ReactCursorPosition from 'react-cursor-position';
 
 import { TweenMax, TimelineMax, Power3} from "gsap";
@@ -29,11 +30,24 @@ export default () => (
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
-		    	<div className='fulscreen_slider'>
-			      <CrowdersSlider className='new-slider'/>   
-		    	</div>
+  		    	<div className='fulscreen_slider'>
+  			      <CrowdersSlider className='new-slider'/>   
+  		    	</div>
 
             </Tween>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >             
+
+                <div className="crowders_home_flip_button crowders_flip" >
+                  <Link to={'/crowderscontact'}>
+                    <div className="front">START A PROJECT WITH US</div>
+                    <div className="back">START A PROJECT WITH US</div>
+                  </Link>
+                </div>    
+
+            </Tween>            
 
 
             <Tween duration={2} 

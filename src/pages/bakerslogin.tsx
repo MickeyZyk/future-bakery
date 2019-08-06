@@ -13,6 +13,7 @@ import Texticon from 'components/texticon/Texticon';
 import { Link } from 'components/link/Link';
 import { Footer } from 'components/footer/Footer';
 import { Controller, Scene } from 'react-scrollmagic';
+import LinkArrow from 'assets/svg/link_arrow.svg'
 
 
 const BakersLogin = ({ data, className }) => {
@@ -45,12 +46,12 @@ const BakersLogin = ({ data, className }) => {
 
 
             <div className='bakers_login__main_login'>
-              <p>LOGIN&nbsp;&nbsp;<span>&gt;</span></p>
+              <p>LOGIN&nbsp;&nbsp;<LinkArrow className="link_arrow"/></p>
             </div>
 
 
             <div className='bakers_login__main_joinus'>
-              <p>JOIN US&nbsp;&nbsp;<span>&gt;</span></p>
+              <p>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></p>
             </div>
 
             </Row>

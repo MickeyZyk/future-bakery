@@ -63,7 +63,7 @@
     @include poly-fluid-sizing('font-size', $font-map);
     @include poly-fluid-sizing('line-height', $height-map);
     @include poly-fluid-sizing('letter-spacing', $spacing-map);  
-    margin-bottom: 6vw;     
+    margin-bottom: 3.7vw;     
   }  
 
   &__col1 {
@@ -97,7 +97,7 @@
     @include grid-col;
 
     @media (min-width: $min-960) {
-      @include grid-col(7);
+      @include grid-col(8);
       @include grid-offset-left(1);
     }
 
@@ -267,7 +267,7 @@
 .way {
   font-family: $font-family-handwriting;
   color: #d4de4f;
-    $font-map: (320px: 16px, 375px: 20px, 768px: 42px, 959px: 50px, 960px: 16px, 1920px: 32px, 2880px: 48px);
+    $font-map: (375px: 20px, 959px: 50px, 960px: 16px, 2880px: 48px);
     @include poly-fluid-sizing('font-size', $font-map);
     margin-bottom: 1vw;
 }
@@ -275,8 +275,8 @@
 .advice {
   font-family: $font-family-handwriting;
   color: #050708;
-    $font-map: (320px: 16px, 375px: 20px, 768px: 42px, 959px: 50px, 960px: 16px, 1920px: 32px, 2880px: 48px);
-    $height-map: (320px: 16px, 375px: 20px, 768px: 42px, 959px: 50px, 960px: 16px, 1920px: 32px, 2880px: 48px);
+    $font-map: (375px: 20px, 959px: 50px, 960px: 16px, 2880px: 48px);
+    $height-map: (375px: 20px, 959px: 50px, 960px: 16px, 2880px: 48px);
     @include poly-fluid-sizing('font-size', $font-map);
     @include poly-fluid-sizing('line-height', $height-map);    
     margin-bottom: 1vw;
@@ -285,8 +285,8 @@
 .larger_advice {
   font-family: $font-family-handwriting;
   color: #050708;
-    $font-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 26px, 1920px: 51px, 2880px: 78px);
-    $height-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 26px, 1920px: 51px, 2880px: 78px);
+    $font-map: (375px: 30px, 959px: 60px, 960px: 26px, 2880px: 77px);
+    $height-map: (375px: 30px, 959px: 60px, 960px: 26px, 2880px: 77px);
     @include poly-fluid-sizing('font-size', $font-map);
     @include poly-fluid-sizing('line-height', $height-map);    
     margin-bottom: 1vw;
@@ -298,7 +298,7 @@
   position: absolute;
 
   @media (min-width: $min-960) {
-    top: 35vw;
+    top: 33vw;
     @include grid-col(.5);
     @include grid-offset-left(4);
   }
@@ -310,7 +310,7 @@
   position: absolute;
 
   @media (min-width: $min-960) {
-    top: 33.5vw;
+    top: 31.5vw;
     @include grid-col(.5);
     @include grid-offset-left(8);
   }

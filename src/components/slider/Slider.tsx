@@ -25,7 +25,7 @@ var texts = ['Top creative and strategic minds joined forces with the largest cr
 'De finibus bonorum et malorum, a first century, philosophical text.',
 'Lorem Ipsum is filler text used by publishers and graphic designers.',
 'Virtually impossible to showcase a social media page layout without any content.']
-var links = ['/bakerywork', '/bakeryabout', '/bakers', '/bakerywork', '/bakeryabout', '/bakers']
+var links = ['/bakery-work', '/bakery-about', '/bakers', '/bakery-work', '/bakery-about', '/bakers']
 var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 35 ;

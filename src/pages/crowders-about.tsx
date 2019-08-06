@@ -17,11 +17,34 @@ import { Paragraph } from 'components/paragraph/Paragraph';
 import Texticon from 'components/texticon/Texticon';
 import { Footer } from 'components/footer/Footer';
 import { Controller, Scene } from 'react-scrollmagic';
+import LinkArrow from 'assets/svg/link_arrow.svg'
 import { Team } from 'components/team/Team';
+
+import { TweenMax, TimelineMax, Power3} from "gsap";
+import { Tween } from 'react-gsap';
+import { TransitionState } from "gatsby-plugin-transition-link";
+
+import SmoothScrollbar from 'smooth-scrollbar';
+import Scrollbar from 'react-smooth-scrollbar';
 
 
 const BakeryAbout = ({ data, className }) => {
   return (
+
+
+      <TransitionState>
+        {({ transitionStatus }) => {
+          return (
+
+            <>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+
+
+  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>   
 
   <div className='wrapper'>
 
@@ -38,15 +61,15 @@ const BakeryAbout = ({ data, className }) => {
 
               <AnimatedHeading className='crowders_about_heading'>{data.gravCrowdersAbout.heading_one}</AnimatedHeading>   
 
-              <AnimatedImage className='crowders_about_image responsive_image show_on_mobile' src={data.gravCrowdersAbout.image_one} />         
+              <AnimatedImage className='crowders_about_image responsive_image show_on_mobile' src={'http://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />         
 
               <Paragraph className='crowders_about_paragraph paragraph'>{data.gravCrowdersAbout.paragraph_one}</Paragraph>
 
-              <Link className='crowders_about_button' to={data.gravCrowdersAbout.link_one}>{data.gravCrowdersAbout.link_one_text}&nbsp;&nbsp;<span>&gt;</span></Link>            
+              <Link className='crowders_about_button' to={data.gravCrowdersAbout.link_one}>{data.gravCrowdersAbout.link_one_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>            
 
             </div>
 
-            <AnimatedImage className='crowders_about_image responsive_image hide_on_mobile' src={data.gravCrowdersAbout.image_two} />   
+            <AnimatedImage className='crowders_about_image responsive_image hide_on_mobile' src={'http://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />   
 
 
           </Row>
@@ -188,6 +211,29 @@ const BakeryAbout = ({ data, className }) => {
       
 
   </div>
+<Footer/>
+</Scrollbar>
+
+
+
+            </Tween>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+              <div className='fulscreen_white' style={{zIndex: -1, backgroundColor: '#ffffff', position: 'absolute', width: '100vw', height: '100vh', top: 0, bottom: 0, left: 0, right: 0}}></div>
+
+            </Tween>
+
+            </>
+
+          )
+        }}
+      </TransitionState>
+
+
+
 
   )
 }

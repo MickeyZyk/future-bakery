@@ -12,6 +12,7 @@ import SVGicon from 'components/svgicon/SVGicon';
 import { Link } from 'components/link/Link';
 import ReactCursorPosition from 'react-cursor-position';
 import { Throttle } from 'react-throttle';
+import LinkArrow from 'assets/svg/link_arrow.svg'
 import _ from 'lodash';
 import s from './CrowdersSlider.scss';
 
@@ -25,7 +26,7 @@ var texts = ['Top creative and strategic minds joined forces with the largest cr
 'De finibus bonorum et malorum, a first century, philosophical text.',
 'Lorem Ipsum is filler text used by publishers and graphic designers.',
 'Virtually impossible to showcase a social media page layout without any content.']
-var links = ['/bakerywork', '/bakeryabout', '/bakers', '/bakerywork', '/bakeryabout', '/bakers']
+var links = ['/bakery-work', '/bakery-about', '/bakers', '/bakery-work', '/bakery-about', '/bakers']
 var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 35 ;
@@ -405,11 +406,6 @@ class Carousel extends React.Component {
             </div>
             {this.state.showButtons ? carouselRightButton : null } 
           </ReactCursorPosition>
-          <div className={s.contact_button_link}>
-            <Link to={'/contact'}>
-              START A PROJECT WITH US <span>&gt;</span>
-            </Link>  
-          </div>
         </div>
 
     );

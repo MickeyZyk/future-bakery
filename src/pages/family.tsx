@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'components/link/Link';
 import { useState } from 'react';
 import Helmet from 'react-helmet';
-import { Power2 } from 'gsap/TweenMax';
+import { TweenMax, TimelineMax, Power3, Power2} from "gsap";
 import { Tween, Timeline, SplitWords, SplitLetters, Controls } from 'react-gsap';
 import { TransitionState } from 'gatsby-plugin-transition-link';
 import { MenuHeading } from 'components/heading/MenuHeading';
@@ -13,8 +13,6 @@ import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import LeftArrow from 'assets/svg/slider_arrow_left.svg'
 import RightArrow from 'assets/svg/slider_arrow_right.svg'
-
-
 
 export default ({ state }) => {
 
@@ -39,12 +37,26 @@ export default ({ state }) => {
 
   return (
 
+
 	  <TransitionState>
 	  	{({ transitionStatus }) => {
 			  return (  	
-					<>
+
+
+
+			  	
+			<>
+
+
+
+
 					<MenuBackground/>
 					  <Helmet title="Future Bakery" />
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
 						<div className='fullscreen'>
 						    <ReactCursorPosition className='fullscreen_cursor_position'>   
 						      <Helmet title="Bakery" />
@@ -76,6 +88,16 @@ export default ({ state }) => {
 									</div>
 						    </ReactCursorPosition>
 						</div>
+
+            </Tween>
+
+
+
+
+
+
+
+
 					</>
 
 			  );	

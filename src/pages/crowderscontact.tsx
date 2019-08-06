@@ -68,16 +68,6 @@ export default () => (
           )
         }}
       </TransitionState>
-
-
-
-
-
-
-
-
-
-
     </ReactCursorPosition>	    
   </>
 );

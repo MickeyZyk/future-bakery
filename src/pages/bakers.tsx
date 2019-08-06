@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { BakersSlider } from 'components/slider/BakersSlider';
 import { Heading } from 'components/heading/Heading';
 import SVGicon from 'components/svgicon/SVGicon';
+import { Link } from 'components/link/Link';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 
@@ -30,6 +31,19 @@ export default () => (
         	    <div className='fulscreen_slider'>
         	    	<BakersSlider className='new-slider'/>
         	    </div>
+
+            </Tween>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >             
+
+                <div className="bakers_home_flip_button bakers_flip">
+                  <Link to={'/bakerscontact'}>
+                    <div className="front">START A PROJECT WITH US</div>
+                    <div className="back">START A PROJECT WITH US</div>
+                  </Link>
+                </div>              
 
             </Tween>
 

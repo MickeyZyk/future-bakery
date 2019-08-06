@@ -138,6 +138,9 @@ a {text-decoration: none}
 
 }
 
+.scrollbar {
+  position: sticky;
+}
 
 .text-bold {
   font-weight: bold;
@@ -164,6 +167,21 @@ a {
 .bakers_back {background-color: #ff7a00}
 .crowders_back {background-color: #37c6f4}
 
+
+
+
+.link_arrow {
+  position: absolute;
+  bottom: 0.2vw;
+  padding-top: 0.1vw;
+  $size-map: (375px: 14px, 959px: 38px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('height', $size-map);   
+}
+
+
+
+
+
 .flip_button {
 /*
       @include grid-col(14);
@@ -178,6 +196,7 @@ a {
     }
 */
 }
+
 
 .flip {
   font-weight: bold;
@@ -994,6 +1013,75 @@ select {
   @include grid-offset-left(9.5); 
 
   }
+
+}
+
+/* BAKERY WORK */
+
+.bakery_work_icon {
+  position: relative;
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    top: 11vw;
+    @include grid-col(1);
+    @include grid-offset-left(4);
+    z-index: 5; 
+  }     
+}
+
+.bakery_work_harmonica {
+  position: relative;
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    top: 15vw;
+    @include grid-col(2);
+    @include grid-offset-left(8.75);
+    z-index: 5; 
+  }     
+}
+
+
+.bakery_work_headline {
+  position: relative;
+  $font-map: (375px: 33px, 959px: 64px, 960px: 30px, 2880px: 88px);
+  $height-map: (375px: 28px, 959px: 48px, 960px: 23px, 2880px: 70px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -2px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map); 
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(6);
+    @include grid-offset-left(4);
+    top: 5vw;
+  } 
+
+
+}
+
+.bakery_work_download {
+  font-weight: bold;
+  color: #222;
+
+  position: relative;
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+
+  @media (min-width: $min-960) {
+    top: -5vw;
+    @include grid-col(2.5);
+    @include grid-offset-left(10);
+    z-index: 5; 
+  }   
 
 }
 
@@ -4049,7 +4137,7 @@ select {
 
 
 
-/* bakersabout */
+/* bakers-about */
 
 .bakers_about__talk_bubbles {
   @include grid-col(6);
@@ -4589,4 +4677,24 @@ select {
     @include grid-col(1);
     @include grid-offset-left(-3.25);
   }  
+}
+
+
+
+/*  additional */
+
+.bakers_home_flip_button,
+.crowders_home_flip_button {
+
+  position: absolute;
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    top: 45.85vw;
+    @include grid-col(3);
+    @include grid-offset-left(14.2);
+    z-index: 5; 
+  } 
+
 }

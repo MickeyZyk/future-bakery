@@ -4,6 +4,16 @@ import { Slider } from 'components/slider/Slider';
 import { Heading } from 'components/heading/Heading';
 import { Item } from 'components/item/Item';
 import ReactDOM from 'react-dom';
+import { Split } from 'components/split/Split';
+import SVGicon from 'components/svgicon/SVGicon';
+import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
+import ReactCursorPosition from 'react-cursor-position';
+import { Link } from 'components/link/Link';
+import LinkArrow from 'assets/svg/link_arrow.svg'
+import { Footer } from 'components/footer/Footer';
+
+import SmoothScrollbar from 'smooth-scrollbar';
+import Scrollbar from 'react-smooth-scrollbar';
 
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
@@ -42,8 +52,12 @@ export default class Work extends React.Component {
     return (
 
 
+
+  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
+
+
       <>
-        <Helmet title="About" />
+        <Helmet title="Work" />
 
         <TransitionState>
           {({ transitionStatus }) => {
@@ -51,18 +65,31 @@ export default class Work extends React.Component {
 
               <>
 
+
+
               <Tween duration={2} 
               from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
               to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
+
+              <ReactCursorPosition className='fullscreen_cursor_position'>  
+
+                <SVGicon className='bakery_work_icon' src='swirl.svg' /> 
+                <SVGiconReverse className='bakery_work_harmonica' src='harmonica.svg' />                
+
+                <Split className="bakery_work_headline">COLLECTIVE INTELLIGENCE AND CREATIVE POWER IN ACTION</Split>
+
                 <div className='wrapper work-wrapper'>
-                  <h2>{transitionStatus}</h2>
-                  <Item hovered='true' key='i01' ref={this.hovered_item} className='no1'/>
-                  <Item key='i02' delay={.5} className='no2'/>
-                  <Item key='i03' delay={1} className='no3'/>
-                  <Item key='i04' delay={1.5} className='no4'/>
+                  <Item hovered='true' key='i01' delay={1} ref={this.hovered_item} className='no1'/>
+                  <Item key='i02' delay={1.5} className='no2'/>
+                  <Item key='i03' delay={2} className='no3'/>
+                  <Item key='i04' delay={2.5} className='no4'/>
 
                 </div>
+
+                <Link className="bakery_work_download" to={'/'}>DOWNLOAD MORE PROJECTS&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+
+              </ReactCursorPosition>                
 
               </Tween>
 
@@ -75,7 +102,13 @@ export default class Work extends React.Component {
 
               </Tween>
 
+
+
               </>
+
+
+
+
 
             )
           }}
@@ -83,6 +116,8 @@ export default class Work extends React.Component {
 
       </>
 
+<Footer/>
+</Scrollbar>
 
     )
 
