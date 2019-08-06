@@ -4427,6 +4427,7 @@ select {
 .people_doodles {
   position: relative;
   top: 30vw;
+  margin-bottom: 30vw;
 }
 
 .people_doodle {
@@ -4708,6 +4709,236 @@ select {
     top: 22vw;    
     @include grid-col(1);
     @include grid-offset-left(-3.25);
+  }  
+}
+
+
+
+.tags_heading_bottom {
+  $font-map: (375px: 60px, 959px: 90px, 960px: 34px, 2880px: 100px);
+  @include poly-fluid-sizing('font-size', $font-map);
+
+  @include grid-col(9);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -13vw;    
+    @include grid-col(2);
+    @include grid-offset-left(7);
+  }      
+}
+
+.bakers_about__join_link_two {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -14vw;    
+    @include grid-col(3);
+    @include grid-offset-left(7);
+  }  
+}
+
+.bakers_about__join_link_three {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -16.4vw;    
+    @include grid-col(3);
+    @include grid-offset-left(9.4);
+  }  
+}
+
+
+.divider_text {
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -15.22vw;
+    @include grid-col(3);
+    @include grid-offset-left(8);
+  } 
+}
+
+
+.bakers_about_team_row {
+  margin-top: 45vw;
+
+  @media (min-width: $min-960) {
+  margin-top: -8vw;
+  }
+
+}
+
+
+.bakers_about__orange_heading_background {
+
+  @include grid-col(10);
+  @include grid-offset-left(6);
+  background: #ff7a00;
+  position: relative;
+
+  $margin-map: (375px: -250px, 959px: -110px, 960px: -41px, 2880px: -117px);
+  @include poly-fluid-sizing('margin-top', $margin-map);
+
+  $height-map: (375px: 400px, 959px: 630px, 960px: 250px, 2880px: 745px);
+  @include poly-fluid-sizing('height', $height-map);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(3);
+    @include grid-offset-left(11);
+    z-index: 5;
+    float: left;
+  }
+}
+
+.bakers_about__heading_four {
+  @include grid-col(12);
+  @include grid-offset-left(3);
+  position: absolute;
+
+  $font-map: (375px: 33px, 959px: 64px, 960px: 30px, 2880px: 88px);
+  $height-map: (375px: 28px, 959px: 48px, 960px: 23px, 2880px: 70px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -2px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map); 
+
+  @media (min-width: $min-960) {
+    font-weight: 900;
+    bottom: 0;
+    padding: 2vw;
+    color: #231f20;
+    }
+}
+
+
+.meet {
+    background-color: #222222;
+    min-height: 300vw;
+}
+
+.orange-hat {
+  position: relative;
+  top: -2vw;
+  @include grid-col(2);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    @include grid-col(0.63);
+    @include grid-offset-left(-2.6);
+  }
+}
+
+.chef-hat {
+  position: relative;
+  top: -20vw;
+  @include grid-col(3);
+  @include grid-offset-left(11);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    @include grid-col(0.63);
+    @include grid-offset-left(-2.6);
+  }
+}
+
+
+.bakers_about_team_heading {
+  color: #fff!important;
+  position: relative; 
+  top: 25vw;
+  @include grid-col (7);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(3);
+    @include grid-offset-left(4);
+    position: relative; 
+    top: 6vw;
+  }   
+
+}
+
+.smile-girl {  
+  position: relative; 
+  top: 10vw;
+  @include grid-col (16);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative; 
+    top: 10vw;
+    @include grid-col(3);
+    @include grid-offset-left(4);
+  }
+}
+
+.smile-girl-header {  
+  color: #ffffff;
+  position: relative;
+  top: 20vw;
+
+  $font-map: (375px: 30px, 959px: 41px, 960px: 20px, 2880px: 60px);
+  $height-map: (375px: 30px, 959px: 41px, 960px: 20px, 2880px: 60px);
+  $spacing-map: (375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);
+
+  @include grid-col(6);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -16.4vw;
+    @include grid-col(6);
+    @include grid-offset-left(2);
+  }  
+}
+
+.smile-girl-text {
+  color: #ffffff;
+  position: relative;
+  top: 30vw;
+
+  $font-map: (375px: 30px, 959px: 41px, 960px: 20px, 2880px: 60px);
+  $height-map: (375px: 30px, 959px: 41px, 960px: 20px, 2880px: 60px);
+  $spacing-map: (375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);
+
+  @include grid-col(14);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -16.4vw;
+    @include grid-col(6);
+    @include grid-offset-left(2);
+  }    
+}
+
+.bakers_about__join_link_four {
+  font-weight: bold;
+  color: #ff7a00;
+  position: relative;
+  top: 40vw;
+  @include grid-col(7);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -16.4vw;
+    @include grid-col(3);
+    @include grid-offset-left(9.4);
   }  
 }
 
