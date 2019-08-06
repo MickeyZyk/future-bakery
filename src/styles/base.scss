@@ -4141,8 +4141,6 @@ select {
 
 
 
-
-
 /* bakers-about */
 
 .bakers_about__talk_bubbles {
@@ -4419,10 +4417,18 @@ select {
   }  
 }
 
-.tags_heading_middle {
-  align-self: flex-start!important;
+.people_doodles {
   position: relative;
-  top: 30vw; 
+  top: 30vw;
+}
+
+.people_doodle {
+  display: block;
+  width: 100vw;
+}
+
+.tags_heading_middle {
+  position: relative;
   @include grid-col(6);
   @include grid-offset-left(6);
 
@@ -4435,10 +4441,10 @@ select {
 }
 
 .hip {
-  align-self: flex-start!important;
-  top: 24vw;
-  @include grid-col(2.5);
-  @include grid-offset-left(13.5);
+  position: relative;
+  top: -5vw;
+  @include grid-col(3);
+  @include grid-offset-left(13);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4448,8 +4454,9 @@ select {
   }  
 }
 .nerd {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
+  position: relative;
+  top: -5vw;
+  @include grid-col(3);
   @include grid-offset-left(2.5);
 
   @media (min-width: $min-960) {
@@ -4460,9 +4467,10 @@ select {
   }  
 }
 .nerd_text {
+  position: relative;
   text-align: center;
-  align-self: flex-start!important;
-  @include grid-col(2.5);
+  top: 0vw;
+  @include grid-col(3);
   @include grid-offset-left(2.5);
 
   @media (min-width: $min-960) {
@@ -4473,11 +4481,10 @@ select {
   }  
 }
 .granny {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  @include grid-col(3);
+  @include grid-offset-left(8);
+  top: -30vw;
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4488,9 +4495,10 @@ select {
 }
 .granny_text {
   text-align: center;
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  @include grid-col(3);
+  @include grid-offset-left(8);
+  top: -25vw;
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4500,9 +4508,10 @@ select {
   }  
 }
 .afro {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  top: -40vw;
+  @include grid-col(3);
+  @include grid-offset-left(2);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4512,8 +4521,8 @@ select {
   }  
 }
 .dude {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
+  position: relative;
+  @include grid-col(3);
   @include grid-offset-left(14);
 
   @media (min-width: $min-960) {
@@ -4525,8 +4534,8 @@ select {
 }
 .dude_text {
   text-align: center;
-  align-self: flex-start!important;
-  @include grid-col(2.5);
+  position: relative;
+  @include grid-col(3);
   @include grid-offset-left(14);
 
   @media (min-width: $min-960) {
@@ -4537,9 +4546,10 @@ select {
   }  
 }
 .smart {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  top: -45vw;
+  @include grid-col(3);
+  @include grid-offset-left(8);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4550,9 +4560,10 @@ select {
 }
 .smart_text {
   text-align: center;
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  top: -40vw;
+  @include grid-col(3);
+  @include grid-offset-left(8);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4562,9 +4573,10 @@ select {
   }  
 }
 .kid {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  top: -40vw;
+  @include grid-col(3);
+  @include grid-offset-left(2);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4575,9 +4587,10 @@ select {
 }
 .kid_text {
   text-align: center;
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  top: -35vw;
+  @include grid-col(3);
+  @include grid-offset-left(2);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4587,9 +4600,9 @@ select {
   }  
 }
 .tags_heading_middle {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  @include grid-col(6);
+  @include grid-offset-left(6);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4599,9 +4612,10 @@ select {
   }  
 }
 .fireman {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  top: -25vw;
+  @include grid-col(3);
+  @include grid-offset-left(4);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4612,9 +4626,10 @@ select {
 }
 .fireman_text {
   text-align: center;
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  top: -20vw;
+  @include grid-col(3);
+  @include grid-offset-left(4);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4624,9 +4639,10 @@ select {
   }  
 }
 .girl {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  top: -35vw;
+  @include grid-col(3);
+  @include grid-offset-left(11);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4637,9 +4653,10 @@ select {
 }
 .girl_text {
   text-align: center;
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+  position: relative;
+  top: -30vw;
+  @include grid-col(3);
+  @include grid-offset-left(11);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4649,8 +4666,8 @@ select {
   }  
 }
 .mlada {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
+  position: relative;
+  @include grid-col(3);
   @include grid-offset-left(14);
 
   @media (min-width: $min-960) {
@@ -4660,10 +4677,11 @@ select {
     @include grid-offset-left(-2.6);
   }  
 }
-.tag_arrow_03 {
-  align-self: flex-start!important;
-  @include grid-col(2.5);
-  @include grid-offset-left(14);
+.tag_arrow_04 {
+  position: absolute;
+  top: 40vw;
+  @include grid-col(7);
+  @include grid-offset-left(9);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4673,9 +4691,10 @@ select {
   }  
 }
 .vial {
-  align-self: flex-start!important;
-  @include grid-col(16);
-  @include grid-offset-left(0);
+  position: relative;
+  top: -5vw;
+  @include grid-col(7);
+  @include grid-offset-left(2);
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4684,6 +4703,7 @@ select {
     @include grid-offset-left(-3.25);
   }  
 }
+
 
 
 
