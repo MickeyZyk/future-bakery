@@ -30,7 +30,7 @@
 
   &__four {
     display: flex;
-    padding-top: 9vw;
+    padding-top: 15vw;
   }
 
   &__five {
@@ -222,7 +222,8 @@
   position: absolute;
   top: 4vw;
   z-index: 0;
-  height: 108.1%;
+  width: 100%;
+  height: auto;
 }
 .embedded_video {
   position: absolute;
@@ -239,7 +240,7 @@
   top: 4vw;  
   z-index: -2;  
     width: 83.35vw;
-    height: 46.85vw;
+    height: 46.35vw;
 }
 
 .detail_wrapper {
