@@ -87,7 +87,7 @@ export default class BakersMenu extends React.Component {
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
 							      			name="For Companies" 
-							      			to="/bakery"
+							      			to="/bakers-for-clients"
 						      				>
 														<MenuHeading className='white_text'>For companies</MenuHeading>
 												  </Link>

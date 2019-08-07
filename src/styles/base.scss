@@ -3851,6 +3851,114 @@ select {
   }     
 }
 
+/* FOR CLIENTS */
+
+.for_clients_about_paragraph {
+  position: relative;
+  top: 35vw;
+  width: 77.5%;
+
+  @media (min-width: $min-960) {
+    top: 0vw;    
+    width: 80%
+  }      
+}
+
+.for_clients_image {
+  position: relative;  
+  width: 90%;
+  top: 25vw;
+
+  @media (min-width: $min-960) {
+    top: 4vw;
+    @include grid-col(8);
+    @include grid-offset-left(2); 
+  }    
+
+}
+
+.for_clients_about_heading {
+
+
+  $font-map: (375px: 60px, 959px: 90px, 960px: 24px, 2880px: 72px);
+  $height-map: (375px: 50px, 959px: 70px, 960px: 20px, 2880px: 60px);
+  $spacing-map: (375px: -0.25px, 960px: -0.35px, 2880px: -1px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+
+
+  position: relative;
+  top: 0;
+  @include grid-col(10);
+  @include grid-offset-left(0);   
+
+  @media (min-width: $min-960) {
+    @include grid-col(12);
+    @include grid-offset-left(0); 
+    margin-bottom: 3vw;    
+  }      
+
+}
+
+
+.for__join_link_two {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 3vw;    
+    @include grid-col(2.3);
+    @include grid-offset-left(2);
+  }  
+}
+
+.for__join_link_three {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 3vw;    
+    @include grid-col(3);
+    @include grid-offset-left(0);
+  }  
+}
+
+
+.for_divider_text {
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 3vw;
+    @include grid-col(0.7);
+    @include grid-offset-left(0);
+  } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* CROWDERS ABOUT */
 
