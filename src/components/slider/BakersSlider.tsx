@@ -46,6 +46,7 @@ var links = [
 
 '/bakers-about', 
 '/bakers-about', 
+'/bakers-about',
 
 ]
 var slidesCount = images.length;

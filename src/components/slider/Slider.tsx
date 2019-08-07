@@ -48,6 +48,8 @@ var links = [
 
 '/bakery-about',
 '/bakery-about',
+'/bakery-about',
+'/bakery-about',
 
 ]
 
