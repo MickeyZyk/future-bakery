@@ -24,6 +24,7 @@ export default class Work extends React.Component {
   constructor(props){
     super(props);
     this.videoPreview = React.createRef();
+    this.videoEmbed = React.createRef();    
     this.videoOverlay = React.createRef();    
     this.videoPlayer = React.createRef();     
     this.playVideo = this.playVideo.bind(this);  
@@ -45,23 +46,19 @@ export default class Work extends React.Component {
   } 
 
   componentDidMount(){
-    console.log(this.props.data.gravBakeryWork.one_way)
+    console.log("PRP", this.props.data.gravBakeryWork)
   }
 
   playVideo(){
     console.log(this.videoPreview.current);
     this.videoPreview.current.style.zIndex = -5;
+    this.videoEmbed.current.style.zIndex = 1;    
     this.videoOverlay.current.style.visibility = 'hidden';
     this.setState({ playing: true },() => {
       console.log("PLAYING", this.state.playing)
     })
   }
 
-  pauseVideo(){
-    this.setState({ playing: false },() => {
-      console.log("PAUSING", this.state.playing)
-    })
-  }  
 
   handleClick(){
     this.videoPreview.current.scrollIntoView({
@@ -71,6 +68,9 @@ export default class Work extends React.Component {
   }  
 
     render() {
+
+  const { prev, next } = this.props.pageContext
+
 
   return (
 
@@ -114,7 +114,7 @@ export default class Work extends React.Component {
               </div>
             </div>   
             <div className={s.column__col1}>
-              <img className={s.client_logo} src={ 'http://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.logo_dark } />
+              <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.logo_dark } />
               <h1 className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</h1>
             </div>
           </div>
@@ -147,13 +147,13 @@ export default class Work extends React.Component {
             </div>
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <img className={s.client_logo} src={ 'http://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.logo_light } />              
+                <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.logo_light } />              
                 <p className={s.award}>AWARD: <span className={s.green}>FIAT 500X</span></p>
                 <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
-            <img src={ 'http://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
-            <div className={s.embedded_video}>
+            <img src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
+            <div className={s.embedded_video} ref={this.videoEmbed}>
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravBakeryWork.video} playing={this.state.playing} />            
             </div>
           </div>
@@ -163,9 +163,21 @@ export default class Work extends React.Component {
               <p className={s.control_dark}><span className={s.arrow_ml}>&lt;</span>&nbsp;&nbsp;ALL CASES</p>
             </Link>
             </div>
-            <div className={s.column__col9}>
-              <p className={s.control_dark}>NEXT CASE</p>
-            </div>
+
+            <If condition={next}>
+              <Then>
+                <Link className={s.column__col9} to={next ? "/bakery-work/" + next.title.toLowerCase() : '/'}>
+                  <p className={s.control_dark}>NEXT CASE</p>
+                </Link>
+              </Then>
+              <Else>
+                <div className={s.column__col9}>
+                  <p className={s.control_dark}>&nbsp;</p>
+                </div>
+              </Else>              
+            </If>
+
+
             <div className={s.column__col10}>
               <p className={s.control_dark_right}>START A PROJECT WITH US&nbsp;&nbsp;<span className={s.arrow_ml}>&gt;</span></p>
             </div>

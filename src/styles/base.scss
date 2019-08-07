@@ -3855,6 +3855,24 @@ select {
 
 /* CROWDERS ABOUT */
 
+.crowders_about_team_heading {
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(3);
+    @include grid-offset-left(29);
+    position: relative; 
+    top: 4vw;
+  }   
+
+}
+
+.crowders_about_team_wrapper {
+  padding-top: 6vw;
+  padding-bottom: 6vw;  
+}
+
 .crowders_icecream  {
   z-index: 10;
   position: absolute;
@@ -3942,7 +3960,7 @@ select {
   @include grid-offset-left(0);   
 
   @media (min-width: $min-960) {
-      top: 0vw;
+      top: 2vw;
 
   @include grid-col(3);
   @include grid-offset-left(0);    
@@ -4139,7 +4157,7 @@ select {
     transform: scale(1.2);
     @include grid-offset-left(6);
     @include grid-col(10);
-    
+ 
 
   }        
 

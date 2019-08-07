@@ -14,7 +14,7 @@ export const Figure = ({ src }) => (
           {({ transitionStatus }) => {
             return (
               <div className={s.figure}>
-                <Tween duration={1.2} from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', yPercent: 250, ease: 'Power2.easeOut' } } to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', yPercent: -200, ease: 'Power2.easeIn' } : false } >
+                <Tween duration={2} delay={1} from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeOut' } } to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)',  ease: 'Power2.easeIn' } : false } >
                   <div>
                     <Controller refreshInterval={1}>
                       <Scene duration={'200%'} triggerHook={'onEnter'}>

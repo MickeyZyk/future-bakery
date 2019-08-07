@@ -32,12 +32,18 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
     result.data.allGravBakeryWork
         .edges
         .map(x => x.node)
-        .forEach(node => {
+        .forEach((node, index) => {
+
+        const prev = index === 0 ? null : result.data.allGravBakeryWork.edges[index - 1].node
+        const next = index === result.data.allGravBakeryWork.edges.length - 1 ? null : result.data.allGravBakeryWork.edges[index + 1].node
+
             createPage({
                 path: `/bakery-work/${slug(node.title)}`.toLowerCase(),
                 component: slash(productTemplate),
                 context: {
-                    id: node.id
+                    id: node.id,
+                    prev,
+                    next
                 }
             })
         })

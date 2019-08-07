@@ -12,6 +12,7 @@ import { Split } from 'components/split/Split';
 import { Heading } from 'components/heading/Heading';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { AnimatedHeading } from 'components/heading/AnimatedHeading';
+import { AnimatedHeadingTwo } from 'components/heading/AnimatedHeadingTwo';
 import { AnimatedImage } from 'components/image/AnimatedImage';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import Texticon from 'components/texticon/Texticon';
@@ -201,11 +202,11 @@ const BakeryAbout = ({ data, className }) => {
 
 
 
-
       </Row>
-
-              <Team/>      
-
+      <Row className="crowders_about_team_wrapper">
+        <AnimatedHeadingTwo className="crowders_about_team_heading">Meet the team</AnimatedHeadingTwo>
+              <Team className="crowders_about_team"/>      
+</Row>
       </ReactCursorPosition>   
 
       

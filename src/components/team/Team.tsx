@@ -21,9 +21,9 @@ var linkURLs = ["mailto:alena.pelcova@futurebakers.com", "mailto:alena.pelcova@f
 
 
 
-export const Team = () => { 
+export const Team = ({props, className}) => { 
   return( 
-    <div className={s.team}>
+    <div className={`${s.team} ${className}`} >
       <Member arrayOfImages={images} />
     </div> 
   )

@@ -72,54 +72,17 @@ export default class Work extends React.Component {
 
     console.log(this.props.data.allGravBakeryWork.edges)
     
-    var hovered = ReactDOM.findDOMNode(this.hovered_item.current);
-    this.fireEvent(this.hovered_item.current, "mouseover"); 
+    var hovered = this.hovered_item.current; 
+
+    //var hovered = ReactDOM.findDOMNode(this.hovered_item.current);
+    var hover_el = hovered.querySelector('.hover_element');
+    console.log("HHOVERR",hover_el)
+    this.fireEvent('hover_element', "mouseover");
 
   }
 
   render() {
 
-      var items =  this.props.data.allGravBakeryWork.edges.map((o, i) =>{
-
-        console.log("o LOG", o, i)
-
-          return(
-            <div key={'it0' + i}>
-              <TransitionState>
-                {({ transitionStatus}) => {
-                  return (
-                    <Tween duration={2}
-                    from={ ['entering'].includes(transitionStatus) ? false : {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeOut', opacity: 0} } 
-                    to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeIn', opacity: 0 } : false } >
-                      <div delay={i} key={'i0' + i} className={`${s.figure} ${'no' + (i+1)}`} onMouseEnter={this.toggleHoverEnter} onMouseLeave={this.toggleHoverLeave}>
-                        <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', clipPath:'inset(0.001% 0.002% 0.003% 0.005%)'} : {ease: 'Power2.easeOut', clipPath:'inset(0.001% 100% 0.003% -2%)'}} >
-                          <img className={s.arrow} src={'../svg/work_arrow.svg'} />
-                        </Tween>
-                        <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut',  opacity: 0}} >                      
-                          <h4 className={s.arrow_heading}>Creative Story</h4>     
-                        </Tween>
-                        <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                               
-                          <img className={s.client_logo} src='../images/client.png'/>
-                        </Tween>
-                        <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                      
-                          <h4 className={s.top_title}>FIAT 500X</h4>
-                        </Tween>
-                        <Tween duration={2} to={ this.state.hover ? {delay: 1, ease: 'Power2.easeOut', clipPath:'inset(0.001% 0.002% 0.003% 0.005%)'} : {delay: 1, ease: 'Power2.easeOut', clipPath:'inset(0.001% 100% 0.003% 0.004%)'}} >                      
-                          <h2 className={s.client_title}>BEAUTY AND FUNCTION COMBINED</h2>
-                        </Tween>
-                        <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >  
-                          <h3 className={s.client_more}><Link to={'/fiat-study'}>FIND OUT MORE <LinkArrow className="link_arrow"/></Link></h3>
-                        </Tween>                      
-                        <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src={ 'http://future.stratego.ba/en/bakery/work/'+ o.node.title.toLowerCase() + '/' + o.node.big_image}/>                        
-                        <img className={s.color} src={ 'http://future.stratego.ba/en/bakery/work/'+ o.node.title.toLowerCase() + '/' + o.node.big_image} />
-                      </div>
-                    </Tween>                   
-                  )
-                }}
-              </TransitionState>
-            </div>
-        )
-      }) 
 
 
     return (
@@ -153,15 +116,17 @@ export default class Work extends React.Component {
 
                 <Split className="bakery_work_headline">COLLECTIVE INTELLIGENCE AND CREATIVE POWER IN ACTION</Split>
 
-                <div className='wrapper work-wrapper'>
+                <div className='wrapper work-wrapper' ref={this.hovered_item}>
 
 
 
                 {this.props.data.allGravBakeryWork.edges.map(( node, i ) => (
-
-                  <Item data={node} i={i} key={i}/> 
+                  <div key={i}>
+                  <Item data={node} i={i} /> 
+                  </div>
 
                 ))}
+
 
 
                

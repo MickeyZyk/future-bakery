@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import SplitText from 'utils/SplitText.min.js'
 import ReactDOM from 'react-dom';
-import { TweenMax, TimelineMax, Power3 } from "gsap";
+import { TweenMax, TimelineMax, Power3, Power2 } from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 import { Controller, Scene } from 'react-scrollmagic';
@@ -42,10 +42,23 @@ export class Paragraph extends React.Component {
 
       <TransitionState>
         {({ transitionStatus }) => {
+
+
+
+
           return (
+
+
+          <Tween duration={1} delay={1} 
+          from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: 100, ease: 'Power2.easeOut' }} 
+          to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: 100, ease: 'Power2.easeIn' } : false } >
             <p ref={this.paragraph} className={`${s.paragraph } ${this.props.className}`}>
               {this.props.children}
             </p>
+          </Tween>
+
+
+
 
           )
         }}
