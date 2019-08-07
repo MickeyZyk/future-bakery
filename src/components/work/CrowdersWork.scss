@@ -24,6 +24,8 @@
 
   &__threebot {
     display: flex;
+  position: relative;
+  z-index: 1;    
   }
 
   &__four {
@@ -227,12 +229,13 @@
 .fiat_img {
   position: absolute;
   top: 4vw;
-  z-index: -1;
+  z-index: 0;
   height: 108.1%;
 }
 .embedded_video {
   position: absolute;
   top: 0;
+  z-index: -1;
 
 }
 .embedded_video div {
@@ -337,6 +340,8 @@
   height: auto;
   margin-top: -2vw;
   margin-bottom: 2vw;
+    position: relative;
+  z-index: 1;
 }
 
 .control {
@@ -345,6 +350,8 @@
   color: #fff;
   $font-map: (375px: 16px, 768px: 16px, 959px: 20px, 960px: 14px, 1920px: 16px, 2880px: 24px);
   @include poly-fluid-sizing('font-size', $font-map);
+    position: relative;
+  z-index: 1;
 }
 
 .control_dark {

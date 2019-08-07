@@ -24,6 +24,8 @@
 
   &__threebot {
     display: flex;
+  position: relative;
+  z-index: 1;    
   }
 
   &__four {
@@ -219,12 +221,13 @@
 .fiat_img {
   position: absolute;
   top: 4vw;
-  z-index: -1;
+  z-index: 0;
   height: 108.1%;
 }
 .embedded_video {
   position: absolute;
   top: 0;
+  z-index: -1;  
 
 }
 .embedded_video div {
@@ -329,9 +332,13 @@
   height: auto;
   margin-top: -2vw;
   margin-bottom: 2vw;
+  position: relative;
+  z-index: 1;  
 }
 
 .control {
+  position: relative;
+  z-index: 1;
   cursor: pointer;
   font-weight: bold;
   color: #fff;
@@ -340,6 +347,8 @@
 }
 
 .control_dark {
+  position: relative;
+  z-index: 1;  
   cursor: pointer;
   font-weight: bold;
   color: #231f20;
@@ -348,6 +357,8 @@
 }
 
 .control_dark_right {
+  position: relative;
+  z-index: 1;  
   cursor: pointer;
   font-weight: bold;
   color: #231f20;
@@ -357,6 +368,8 @@
 }
 
 .award {
+  position: relative;
+  z-index: 1;  
   font-weight: bold;
   color: #fff;
   $font-map: (375px: 16px, 768px: 16px, 959px: 20px, 960px: 14px, 1920px: 16px, 2880px: 24px);
@@ -365,10 +378,14 @@
 }
 
 .green {
+  position: relative;
+  z-index: 1;  
   color: #d4de4f;
 }
 
 .explore {
+  position: relative;
+  z-index: 1;  
   display: inline;
   width: 1.5vw;
   height: auto;
@@ -377,6 +394,8 @@
 }
 
 .award_heading {
+  position: relative;
+  z-index: 1;  
   color: #fff;
   font-weight: 900;
   $font-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 30px, 1920px: 58px, 2880px: 88px);
@@ -386,6 +405,8 @@
 }
  
 .topic {
+  position: relative;
+  z-index: 1;  
   color: #231f20;
   font-weight: 900;
   $font-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
@@ -395,6 +416,8 @@
 }  
 
 .project {
+  position: relative;
+  z-index: 1;  
   color: #d4de4f;
   font-weight: 900;
   $font-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
