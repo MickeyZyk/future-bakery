@@ -162,7 +162,7 @@ export default class Work extends React.Component {
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
                 <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.logo_light } />              
-                <p className={s.award}>{this.props.data.gravBakeryWork.category}<span className={s.green}>{this.props.data.gravBakeryWork.category_name}</span></p>
+                <p className={s.award}>{this.props.data.gravBakeryWork.category ? this.props.data.gravBakeryWork.category : '&nbsp;'}<span className={s.green}>{this.props.data.gravBakeryWork.category_name ? this.props.data.gravBakeryWork.category_name : '&nbsp;'}</span></p>
                 <h1 className={s.award_heading}>{this.props.data.gravBakeryWork.heading_two}</h1>
               </div>
             </div>

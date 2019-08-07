@@ -132,7 +132,7 @@ export default class Work extends React.Component {
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
                 <img className={s.client_logo} src={ 'https://future.stratego.ba/en/crowders/work/'+ this.props.data.gravCrowdersWork.title.toLowerCase() + '/' + this.props.data.gravCrowdersWork.logo_light } />              
-                <p className={s.award}>AWARD: <span className={s.green}>FIAT 500X</span></p>
+                <p className={s.award}>{this.props.data.gravCrowdersWork.title.toUpperCase()}</p>
                 <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
@@ -174,7 +174,7 @@ export default class Work extends React.Component {
                 <Link className={s.column__col9} to={next ? "/crowders-work/" + next.title.toLowerCase() : '/'}>
                   <p className={s.topic}>{next ? next.title : ''}</p>
                 </Link>
-            
+
               
             </div>
             <div className={s.column__col12}>
