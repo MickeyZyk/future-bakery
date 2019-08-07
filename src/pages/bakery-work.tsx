@@ -79,7 +79,7 @@ export default class Work extends React.Component {
 
   render() {
 
-      var item =  this.props.data.allGravBakeryWork.edges.map((o, i) =>{
+      var items =  this.props.data.allGravBakeryWork.edges.map((o, i) =>{
 
         console.log("o LOG", o, i)
 
@@ -155,7 +155,16 @@ export default class Work extends React.Component {
 
                 <div className='wrapper work-wrapper'>
 
-                  {item}                   
+
+
+                {this.props.data.allGravBakeryWork.edges.map(( node, i ) => (
+
+                  <Item data={node} i={i} key={i}/> 
+
+                ))}
+
+
+               
 
                 </div>
 
@@ -213,6 +222,7 @@ export const query = graphql`
           video
           category
           category_name
+          heading_tag
         }
       }
     }

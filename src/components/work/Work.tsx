@@ -52,8 +52,16 @@ export default class Work extends React.Component {
     console.log(this.videoPreview.current);
     this.videoPreview.current.style.zIndex = -5;
     this.videoOverlay.current.style.visibility = 'hidden';
-    this.setState({ playing: true })
+    this.setState({ playing: true },() => {
+      console.log("PLAYING", this.state.playing)
+    })
   }
+
+  pauseVideo(){
+    this.setState({ playing: false },() => {
+      console.log("PAUSING", this.state.playing)
+    })
+  }  
 
   handleClick(){
     this.videoPreview.current.scrollIntoView({
@@ -88,12 +96,10 @@ export default class Work extends React.Component {
 
 
 
-        <If condition={ this.props.data.gravBakeryWork.one_way }>
-            <Then>
-              <SVGicon className={s.work_details_no} src='work_details_no.svg'  />       
-              <SVGiconReverse className={s.work_details_ok} src='work_details_ok.svg'  /> 
-            </Then>
-        </If>
+
+              <SVGicon className={this.props.data.gravBakeryWork.one_way ? s.work_details_no : s.hidden} src='work_details_no.svg'  />       
+              <SVGiconReverse className={this.props.data.gravBakeryWork.one_way ? s.work_details_ok : s.hidden } src='work_details_ok.svg'  /> 
+
 
 
 
@@ -113,7 +119,7 @@ export default class Work extends React.Component {
             </div>
           </div>
 
-        <If condition={ this.props.data.gravBakeryWork.one_way }>
+        <If condition={() => this.props.data.gravBakeryWork.one_way}>
             <Then>
 
               <div className={s.row__two}>
@@ -136,7 +142,7 @@ export default class Work extends React.Component {
                 <p onClick={() => this.handleClick()} className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>
               </div>
               <div className={s.column__col6}>
-                <p onClick={this.playVideo} className={s.control}>WATCH VIDEO <img className={s.explore} src='../images/video_play.png' /></p>
+                <p onClick={ this.playVideo } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
               </div>
             </div>
             <div className={s.row__threebot} ref={this.videoOverlay}>
@@ -148,7 +154,7 @@ export default class Work extends React.Component {
             </div>
             <img src={ 'http://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
             <div className={s.embedded_video}>
-              <ReactPlayer ref={this.videoPlayer} url='https://www.youtube.com/watch?v=9HQLdSHOHxU' playing={this.state.playing} />            
+              <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravBakeryWork.video} playing={this.state.playing} />            
             </div>
           </div>
           <div className={s.row__four}>
