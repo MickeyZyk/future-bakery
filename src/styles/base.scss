@@ -1337,11 +1337,14 @@ select {
     position: relative;
     @include grid-col(4.84);
     @include grid-offset-left(4);
-    top: 5vw;
+    top: 12vw;
   } 
-
-
 }
+
+.crowders_work_wrapper {
+  margin-top: 10vw;
+}
+
 
 .crowders_work_swirl {
   position: relative;
@@ -1349,7 +1352,7 @@ select {
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-    top: 15vw;
+    top: 12vw;
     @include grid-col(1);
     @include grid-offset-left(4);
     z-index: 5; 

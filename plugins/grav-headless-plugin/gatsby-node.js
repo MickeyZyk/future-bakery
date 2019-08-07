@@ -379,6 +379,7 @@ fetchCrowdersWork = async () => {
         return response.data.children
             .map(x => x.header)
             .map(x => Object.assign(x, {
+                id: x.title,
                 path: `/grav-page-crowders-work/${slug(x.title)}`.toLowerCase()
             }))
             .map(ProductNode)
