@@ -9,6 +9,7 @@ import ReactPlayer from 'react-player'
 import { Footer } from 'components/footer/Footer';
 import { graphql } from 'gatsby'
 import { If, Then, Else, Switch, Case, Default } from 'react-if'
+import { ScrollTo } from "react-scroll-to";
 
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
@@ -28,6 +29,7 @@ export default class Work extends React.Component {
     this.videoOverlay = React.createRef();    
     this.videoPlayer = React.createRef();     
     this.playVideo = this.playVideo.bind(this);  
+    this.handleClick= this.handleClick.bind(this);
     this.state = {
       url: null,
       pip: false,
@@ -46,7 +48,7 @@ export default class Work extends React.Component {
   } 
 
   componentDidMount(){
-    console.log("PRP", this.props.data.gravBakeryWork)
+    console.log("TO SCROLL", this.videoEmbed.current)
   }
 
   playVideo(){
@@ -61,9 +63,11 @@ export default class Work extends React.Component {
 
 
   handleClick(){
-    this.videoPreview.current.scrollIntoView({
+    console.log("TO SCROLL X", this.videoEmbed.current)    
+    this.videoEmbed.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
+      inline: 'nearest'
     });  
   }  
 
@@ -139,7 +143,11 @@ export default class Work extends React.Component {
           <div className={s.detail_wrapper}>
             <div className={s.row__threetop}> 
               <div className={s.column__col5}>
-                <p onClick={() => this.handleClick()} className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>
+                <ScrollTo>
+                  {({ scrollTo }) => (
+                    <a href="#video" className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></a>                    
+                  )}
+                </ScrollTo>
               </div>
               <div className={s.column__col6}>
                 <p onClick={ this.playVideo } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
@@ -153,7 +161,7 @@ export default class Work extends React.Component {
               </div>
             </div>
             <img src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
-            <div className={s.embedded_video} ref={this.videoEmbed}>
+            <div id="video" className={s.embedded_video} ref={this.videoEmbed}>
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravBakeryWork.video} playing={this.state.playing} />            
             </div>
           </div>

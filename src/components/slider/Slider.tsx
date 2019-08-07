@@ -21,9 +21,9 @@ var startCarouselInterval;
 var images = [
 
 '../images/image.jpg', 
-'../images/dude.jpg',
-'../images/dogs.jpg',
-'../images/desk.jpg',
+'../images/shutterstock_155344466_small.jpg',
+'../images/shutterstock_771033703_small.jpg',
+'../images/shutterstock_1159947316_small.jpg',
 
 ]
 

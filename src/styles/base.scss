@@ -1563,6 +1563,30 @@ select {
       top: 40vw;  
 }
 
+.no5 {
+      @include grid-col(7);
+      @include grid-offset-left(2);
+      top: 68vw;  
+}
+
+.no6 {
+      @include grid-col(7);
+      @include grid-offset-left(10);
+      top: 68vw;  
+}
+
+.no7 {
+      @include grid-col(7);
+      @include grid-offset-left(2);
+      top: 96vw;  
+}
+
+.no8 {
+      @include grid-col(7);
+      @include grid-offset-left(10);
+      top: 96vw;  
+}
+
 .total_indicator {
   transform: rotate(-90deg);  
   text-align: center;

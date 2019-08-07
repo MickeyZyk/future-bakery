@@ -46,5 +46,18 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
                     next
                 }
             })
+
+            createPage({
+                path: `/bakers-work/${slug(node.title)}`.toLowerCase(),
+                component: slash(productTemplate),
+                context: {
+                    id: node.id,
+                    prev,
+                    next
+                }
+            })
+
+
+
         })
 }

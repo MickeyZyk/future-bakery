@@ -82,20 +82,9 @@ const BakeryAbout = ({ data, className }) => {
       </ReactCursorPosition>   
 
 
-
         </div>
 
 
-
- 
-
-   
-
-
-
-      
-
- 
 <Footer/>
 </Scrollbar>
 
