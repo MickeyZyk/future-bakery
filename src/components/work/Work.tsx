@@ -162,8 +162,8 @@ export default class Work extends React.Component {
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
                 <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.logo_light } />              
-                <p className={s.award}>AWARD: <span className={s.green}>FIAT 500X</span></p>
-                <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
+                <p className={s.award}>{this.props.data.gravBakeryWork.category}<span className={s.green}>{this.props.data.gravBakeryWork.category_name}</span></p>
+                <h1 className={s.award_heading}>{this.props.data.gravBakeryWork.heading_two}</h1>
               </div>
             </div>
             <img src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
@@ -196,7 +196,9 @@ export default class Work extends React.Component {
 
 
             <div className={s.column__col10}>
-              <p className={s.control_dark_right}>START A PROJECT WITH US&nbsp;&nbsp;<span className={s.arrow_ml}>&gt;</span></p>
+                <Link className={s.column__col9} to={next ? "/bakery-work/" + next.title.toLowerCase() : '/'}>
+                  <p className={s.control_dark}>{next ? next.title : ''}</p>
+                </Link>
             </div>
           </div>
           <div className={s.row__five}>

@@ -127,7 +127,7 @@ export default class Work extends React.Component {
               </div>
             </div>
 
-          
+      
 
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
@@ -170,7 +170,12 @@ export default class Work extends React.Component {
           </div>
           <div className={s.row__five}>
             <div className={s.column__col11}>
-              <p className={s.topic}>{next ? next.title : ''}</p>
+
+                <Link className={s.column__col9} to={next ? "/crowders-work/" + next.title.toLowerCase() : '/'}>
+                  <p className={s.topic}>{next ? next.title : ''}</p>
+                </Link>
+            
+              
             </div>
             <div className={s.column__col12}>
               <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
