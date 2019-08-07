@@ -127,6 +127,11 @@ export default class Work extends React.Component {
                 <p onClick={ this.playVideo } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
               </div>
             </div>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >             
+
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
                 <img className={s.client_logo} src={ 'https://future.stratego.ba/en/crowders/work/'+ this.props.data.gravCrowdersWork.title.toLowerCase() + '/' + this.props.data.gravCrowdersWork.logo_light } />              
@@ -138,6 +143,9 @@ export default class Work extends React.Component {
             <div id="video" className={s.embedded_video} ref={this.videoEmbed}>
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravCrowdersWork.video} playing={this.state.playing} />            
             </div>
+
+            </Tween>
+
           </div>
           <div className={s.row__four}>
             <div className={s.column__col8}>
