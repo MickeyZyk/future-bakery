@@ -41,7 +41,7 @@ var texts = [
 'Top creative and strategic minds joined forces with the largest crowd of consumers.', 
 'We are eager to hear and listen to the crowd',
 'Original content by and for your future consumers.',
-'Innovations and ideas for real life.',
+'Not the presentation decks',
 
 ]
 var links = [
