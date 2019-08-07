@@ -2362,6 +2362,7 @@ select {
 
 
 
+
 .bakers_about__brains {
 
   @include grid-col(6);
@@ -2955,9 +2956,7 @@ select {
 }
 
 
-.bakers_about_team_row {
-  margin-top: -8vw;
-}
+
 
 .tags_heading_bottom {
 
@@ -3354,7 +3353,7 @@ select {
 
     @media (min-width: $min-960) {
       position: relative;
-      top: 42vw;
+      top: 39vw;
       display: block;  
       @include grid-col(1);
       @include grid-offset-left(2.75); 
@@ -3370,7 +3369,7 @@ select {
 
     @media (min-width: $min-960) {
       position: relative;
-      top: 12vw;      
+      top: 6vw;      
       display: block;  
       @include grid-col(0.6);
       @include grid-offset-left(4.3); 
@@ -4793,7 +4792,7 @@ select {
   margin-top: 45vw;
 
   @media (min-width: $min-960) {
-  margin-top: -8vw;
+  margin-top: -30vw;
   }
 
 }
@@ -4818,6 +4817,7 @@ select {
     @include grid-offset-left(11);
     z-index: 5;
     float: left;
+    top: 16vw;
   }
 }
 
@@ -4836,7 +4836,6 @@ select {
   @media (min-width: $min-960) {
     font-weight: 900;
     bottom: 0;
-    padding: 2vw;
     color: #231f20;
     }
 }
@@ -4885,7 +4884,7 @@ select {
     @include grid-col(3);
     @include grid-offset-left(4);
     position: relative; 
-    top: 6vw;
+    top: 16vw;
   }   
 
 }

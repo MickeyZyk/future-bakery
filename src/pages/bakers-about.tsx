@@ -192,7 +192,7 @@ const BakersAbout = ({ data, className }) => {
       <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
       <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
       
-      <div className="meet">
+
         <Row className="bakers_about_team_row">
           <div className="people_doodle">
             <img className="orange-hat" src="../images/orange-hat.png"/>     
@@ -200,39 +200,21 @@ const BakersAbout = ({ data, className }) => {
           <div className="bakers_about__orange_heading_background">
               <Split className="bakers_about__heading_four">Who is behind the scenes of Future Bakers?</Split>
           </div>  
+
         </Row>
-        <AnimatedHeadingTwo className="bakers_about_team_heading">Meet the team</AnimatedHeadingTwo>
-        <img className="chef-hat" src="../images/chef.png"/>
-        <img className="smile-girl" src="../images/smile.png"/>
-        <div className="smile-girl-header"><p>Alena Pelcová</p></div>
-        <div className="smile-girl-text"><p>Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to </p></div>
-        <Link className="bakers_about__join_link_four" to={'/'}>CONTACT ALENA&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
-        </div>
-      <Row>
-        <DarkTeam/>
-      </Row>
+          <AnimatedHeadingTwo className="bakers_about_team_heading">Meet the team</AnimatedHeadingTwo>
+          <DarkTeam/> 
 
+          <Row>
 
-     
+          </Row>      
+
+   
     </ReactCursorPosition>
   </div>
 
-
-
+<Footer/>
 </Scrollbar>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

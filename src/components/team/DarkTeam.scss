@@ -36,6 +36,8 @@
   font-weight: lighter;
   color: #fff;
   @media (min-width: $min-960) {
+    position: relative;
+    top: 12vw;
     margin-bottom: 2vw;
   }  
 
@@ -49,13 +51,17 @@
   @include poly-fluid-sizing('line-height', $height-map);    
   @media (min-width: $min-960) {
     margin-bottom: 5vw;
+        position: relative;
+    top: 12vw;
   }     
 }
 
 .link {
   color: #fff; 
   margin-bottom: 3vw; 
-  font-weight: bold; 
+  font-weight: bold;
+           position: relative;
+    top: 12vw;
 }
 
 .image {
@@ -147,10 +153,12 @@
 
     display: block;
     overflow: hidden;
-    height: 37vw;
-    margin-top: -37vw;  
+    height: 55vw;
+    margin-top: -37vw;
     z-index: -1;
     position: relative;
+    background: #222;
+    padding-top: 12vw;
   }   
 
 }
@@ -171,7 +179,7 @@
   @media (min-width: $min-960) {
     @include grid-col(1);
     @include grid-offset-left(4);
-    margin-top: -1vw;
+    margin-top: -7vw;
   }   
 
 }
@@ -187,7 +195,7 @@
   @media (min-width: $min-960) {
     @include grid-col(1);
     @include grid-offset-left(4);  
-    margin-top: -1vw;
+    margin-top: -7vw;
   }   
 
 }
