@@ -11,7 +11,7 @@ import { graphql } from 'gatsby'
 import { If, Then, Else, Switch, Case, Default } from 'react-if'
 import { ScrollTo } from "react-scroll-to";
 
-import SmoothScrollbar from 'smooth-scrollbar';
+import { SmoothScrollbar } from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 
 import { TweenMax, TimelineMax, Power3} from "gsap";
@@ -48,6 +48,7 @@ export default class Work extends React.Component {
   } 
 
   componentDidMount(){
+    // Scrollbar.init(document.querySelector('#topper'));
     console.log("TO SCROLL", this.videoEmbed.current)
   }
 
@@ -64,11 +65,17 @@ export default class Work extends React.Component {
 
   handleClick(){
     console.log("TO SCROLL X", this.videoEmbed.current)    
-    this.videoEmbed.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest'
-    });  
+    
+/*
+    scrollbar.scrollIntoView(document.querySelector('#video'), {
+      offsetLeft: 34,
+      offsetBottom: 12,
+      alignToTop: false,
+      onlyScrollIfNeeded: true,
+    }); 
+
+*/
+
   }  
 
     render() {
@@ -92,20 +99,16 @@ export default class Work extends React.Component {
 
           
 
-  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
+    
 
 <>
+  <div id ="topper">
     <div className='wrapper'>
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
 
-
-
-              <SVGicon className={this.props.data.gravBakeryWork.one_way ? s.work_details_no : s.hidden} src='work_details_no.svg'  />       
-              <SVGiconReverse className={this.props.data.gravBakeryWork.one_way ? s.work_details_ok : s.hidden } src='work_details_ok.svg'  /> 
-
-
-
+        <SVGicon className={this.props.data.gravBakeryWork.one_way ? s.work_details_no : s.hidden} src='work_details_no.svg'  />       
+        <SVGiconReverse className={this.props.data.gravBakeryWork.one_way ? s.work_details_ok : s.hidden } src='work_details_ok.svg'  /> 
 
 
         <Helmet title={this.props.data.gravBakeryWork.title} />
@@ -145,7 +148,7 @@ export default class Work extends React.Component {
               <div className={s.column__col5}>
                 <ScrollTo>
                   {({ scrollTo }) => (
-                    <a href="#video" className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></a>                    
+                    <p onClick={ this.handleClick} className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>                    
                   )}
                 </ScrollTo>
               </div>
@@ -201,10 +204,11 @@ export default class Work extends React.Component {
         </div>
       </ReactCursorPosition>
     </div>
+  </div>
   </>
 
   <Footer/>               
-  </Scrollbar>
+
 
 
               </Tween>
