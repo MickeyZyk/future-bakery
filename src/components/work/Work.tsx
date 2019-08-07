@@ -29,7 +29,7 @@ export default class Work extends React.Component {
     this.videoOverlay = React.createRef();    
     this.videoPlayer = React.createRef();     
     this.playVideo = this.playVideo.bind(this);  
-    this.handleClick= this.handleClick.bind(this);
+    //this.handleClick= this.handleClick.bind(this);
     this.state = {
       url: null,
       pip: false,
@@ -53,9 +53,8 @@ export default class Work extends React.Component {
   }
 
   playVideo(){
-    console.log(this.videoPreview.current);
     this.videoPreview.current.style.zIndex = -5;
-    this.videoEmbed.current.style.zIndex = 1;    
+    this.videoEmbed.current.style.zIndex = 10;    
     this.videoOverlay.current.style.visibility = 'hidden';
     this.setState({ playing: true },() => {
       console.log("PLAYING", this.state.playing)
@@ -158,9 +157,7 @@ export default class Work extends React.Component {
             </div>
 
 
-            <Tween duration={2} 
-            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
 
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
@@ -174,7 +171,7 @@ export default class Work extends React.Component {
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravBakeryWork.video} playing={this.state.playing} />            
             </div>
 
-            </Tween>
+
 
           </div>
           <div className={s.row__four}>
