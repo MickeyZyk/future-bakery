@@ -203,10 +203,10 @@ const BakeryAbout = ({ data, className }) => {
 
 
       </Row>
-      <Row className="crowders_about_team_wrapper">
+
         <AnimatedHeadingTwo className="crowders_about_team_heading">Meet the team</AnimatedHeadingTwo>
               <Team className="crowders_about_team"/>      
-</Row>
+
       </ReactCursorPosition>   
 
       

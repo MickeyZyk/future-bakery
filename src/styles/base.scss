@@ -3861,7 +3861,7 @@ select {
 
   @media (min-width: $min-960) {
     @include grid-col(3);
-    @include grid-offset-left(29);
+    @include grid-offset-left(4);
     position: relative; 
     top: 4vw;
   }   
