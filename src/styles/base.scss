@@ -3863,12 +3863,12 @@ select {
     @include grid-col(3);
     @include grid-offset-left(4);
     position: relative; 
-    top: 4vw;
+    top: 8vw;
   }   
 
 }
 
-.crowders_about_team_wrapper {
+.crowders_about_team {
   padding-top: 6vw;
   padding-bottom: 6vw;  
 }
