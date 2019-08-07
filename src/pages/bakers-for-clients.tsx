@@ -74,7 +74,7 @@ const BakeryAbout = ({ data, className }) => {
 
      <Row>
         <Link className="for__join_link_two" to={'/bakerscontact'}>BRIEF US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
-        <div className="for_divider_text">or simply</div>
+        <div className="for_divider_text">Or simply</div>
         <Link className="for__join_link_three" to={'/bakerscontact'}>CALL US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       </Row>
       
