@@ -34,7 +34,6 @@ export class Clients extends React.Component {
     this.imageb_09 = React.createRef();
 
 
-
     this.prevSlide = this.prevSlide.bind(this); 
  
 

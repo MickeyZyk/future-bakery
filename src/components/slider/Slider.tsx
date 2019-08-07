@@ -22,23 +22,36 @@ var images = [
 
 '../images/image.jpg', 
 '../images/dude.jpg',
+'../images/dogs.jpg',
+'../images/desk.jpg',
 
 ]
 
 var labels = [
 
 "THE FUTURE IS HERE",
-"EXAMPLE HEADING PLACEHOLDER",
+"TRUE INSIGHTS",
+"FRESH IDEAS",
+"INNOVATIONS AND IDEAS FOR REAL LIFE"
 
 ]
 
 var texts = [
 
 'Top creative and strategic minds joined forces with the largest crowd of consumers.', 
-'Largest crowd of consumers joined forces with the top creative and strategic minds.',
+'We are eager to hear and listen to the crowd',
+'Original content by and for your future consumers.',
+'Innovations and ideas for real life.',
 
 ]
-var links = ['/bakery-about', '/bakery-about',]
+var links = [
+
+'/bakery-about',
+'/bakery-about',
+
+]
+
+
 var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 35 ;

@@ -21,21 +21,21 @@ var startCarouselInterval;
 var images = [
 
 '../images/crowders_01.jpg',
-'../images/dude.jpg',
+'../images/shutterstock_1043564689_small.jpg',
 
 ]
 
 var labels = [
 
 "WE SEEK AND DEVELOP CROSS-SOCIAL TOPICS.",
-"EXAMPLE HEADING PLACEHOLDER",
+"WE FORM SPECIFIC INTEREST GROUPS",
 
 ]
 
 var texts = [
 
-'Top creative and strategic minds joined forces with the largest crowd of consumers.', 
-'Many variations of Lorem Ipsum exist today, the text includes humorous phrases.',
+'Team of thousands individuals strong in opinion and power to change things', 
+'Team of thousands individuals strong in opinion and power to change things',
 
 ]
 var links = [

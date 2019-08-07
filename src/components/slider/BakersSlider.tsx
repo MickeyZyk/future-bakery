@@ -20,22 +20,25 @@ var startCarouselInterval;
 
 var images = [
 
-'../images/bakers_01.jpg',
-'../images/dude.jpg',
+'../images/bakers_01.jpg', 
+'../images/shutterstock_770336959_small.jpg',
+'../images/shutterstock_150332981_small.jpg',
 
 ]
 
 var labels = [
 
-"UNLEASH YOUR CREATIVITY AND IDEAS.", 
-"EXAMPLE HEADING PLACEHOLDER", 
+"UNLEASH YOUR CREATIVITY AND IDEAS",
+"CREATE FUTURE WITH US",
+"JOIN THOUSANDS OF OTHERS",
 
 ]
 
 var texts = [
 
-'Top creative and strategic minds joined forces with the largest crowd of consumers.', 
-'Many variations of text.',
+'The largest creative and innovation platform in the Czech Republic', 
+'Join thousands of other creative souls who are eager to hear ideas',
+'Come and work with our team of strategic and creative minds',
 
 ]
 
