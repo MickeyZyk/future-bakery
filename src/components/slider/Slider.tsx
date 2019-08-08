@@ -68,13 +68,15 @@ export class Slider extends React.Component {
   }
 
   componentDidMount(){
-    console.log("PARENT PROPS", this.props)
+
   }
 
   render() {
 
+    console.log("PARENT PROPS", this.props)
+
    return( 
-      <div style={{opacity: 1, top: 0}} className={s.carousel}><Carousel subs={this.props.subs} titles={this.props.titles} links={this.props.links} images={this.props.images} horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
+      <div style={{opacity: 1, top: 0}} className={s.carousel}><Carousel titles={this.props.titles} links={this.props.links} images={this.props.images} subs={this.props.subs}  horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
       /></div>
     )
 
