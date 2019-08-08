@@ -28,8 +28,6 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
               node {
                 id
                 big_image
-                category
-                category_name
                 paragraph
                 logo_light
                 heading_two
