@@ -34,11 +34,6 @@ const BakersAbout = ({ data, className }) => {
   return (
 
 
-
-
-
-
-
       <TransitionState>
         {({ transitionStatus }) => {
           return (
@@ -48,14 +43,6 @@ const BakersAbout = ({ data, className }) => {
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
-
-
-
-
-
-
-
-
 
 
 
@@ -194,9 +181,6 @@ const BakersAbout = ({ data, className }) => {
       
 
         <Row className="bakers_about_team_row">
-          <div className="people_doodle">
-            <img className="orange-hat" src="../images/orange-hat.png"/>     
-          </div>
           <div className="bakers_about__orange_heading_background">
               <Split className="bakers_about__heading_four">Who is behind the scenes of Future Bakers?</Split>
           </div>  
@@ -205,9 +189,64 @@ const BakersAbout = ({ data, className }) => {
           <AnimatedHeadingTwo className="bakers_about_team_heading">Meet the team</AnimatedHeadingTwo>
           <DarkTeam/> 
 
-          <Row>
+      <SVGicon className='bakers_about_treasure' src='treasure.svg' />
 
-          </Row>      
+        <Row>
+          <Heading className="bakers_about_bakers_heading">Bakers</Heading>
+          <img src="../images/kid.jpg" className="bakers_about_bakers_image"/>
+            <Paragraph className="bakers_about_bakers_p_one">Let your creativity shine and your ideas out. We will have an abundance of great projects, that will inspire you. Help us solve them!! Have fun with it!</Paragraph>
+            <Paragraph className="bakers_about_bakers_p_two">Are you always thinking of that next wonderful product or are you passionate about creativity, writing or digital design? Or you just love sharing your opinion.</Paragraph>
+
+          <div className="bakers_about_flip_button bakers_flip">
+            <Link to={'/bakerscontact'}>
+              <div className="front">START A PROJECT WITH US</div>
+              <div className="back">START A PROJECT WITH US</div>
+            </Link>
+          </div>
+
+        </Row>  
+
+        <Row className="bakers_about_steps">
+          <div className="bakers_about_numbers_first">1</div>
+          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_numbers">2</div>
+          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_numbers">3</div>
+          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_numbers">4</div>
+          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
+          <div className="bakers_about_numbers">5</div>
+          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
+          <div className="bakers_about_numbers">6</div>
+        </Row>
+        <Row className="bakers_about_steps_two">
+          <img className="bakers_about_step_icons_first" src="../svg/register.svg"/>
+          <img className="bakers_about_step_icons" src="../svg/location.svg"/>
+          <img className="bakers_about_step_icons" src="../svg/envelope.svg"/>
+          <img className="bakers_about_step_icons" src="../svg/clock.svg"/>
+          <img className="bakers_about_step_icons" src="../svg/gold.svg"/>
+          <img className="bakers_about_step_icons" src="../svg/smile.svg"/>
+        </Row>
+        <Row className="bakers_about_steps_three">
+          <div className="bakers_about_steps_text_first"><span style={{fontWeight: 'bold'}}>REGISTER</span> and you will be a part of our global creative family</div>
+          <div className="bakers_about_steps_text">Choose your Areas of Interest</div>
+          <div className="bakers_about_steps_text">Send your ideas</div>
+          <div className="bakers_about_steps_text">Then you can wait and see if you are the selected baker</div>
+          <div className="bakers_about_steps_text">If you are, enjoy your reward</div>
+          <div className="bakers_about_steps_text">If not this time, no worries, there will be more projects</div>
+        </Row>   
+
+      <SVGicon className='bakers_about_like' src='like.svg' />
+      <SVGiconReverse className='bakers_about_book' src='book.svg' />         
+
+        <Row className="bakers_about_authors">
+
+          <img className="bakers_about_authors_image" src="../images/hipster.jpg"/>
+          <Heading className="bakers_about_authors_heading">What authors say...</Heading>
+
+
+        </Row>     
+
 
    
     </ReactCursorPosition>
@@ -278,3 +317,18 @@ export const BakersAboutquery = graphql`
 `
 
 export default BakersAbout
+
+
+class Dot extends React.Component {
+
+  constructor (props){
+    super(props);
+  }
+
+  render() {
+    return (
+        <div>{this.props.isActive ? <FullCircle/> : <Circle/>}</div>
+    );
+  }
+
+}

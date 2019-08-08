@@ -17,6 +17,7 @@ import _ from 'lodash';
 import s from './CrowdersSlider.scss';
 
 var startCarouselInterval;
+/*
 
 var images = [
 
@@ -44,20 +45,32 @@ var links = [
 '/crowders-about',
 
 ]
+*/
 
-var slidesCount = images.length;
 var percentage = 0;
 var multiplier = 35 ;
 
-export const CrowdersSlider = () => { 
+export class CrowdersSlider extends React.Component {
+
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    console.log("PARENT PROPS", this.props)
+  }
+  render() {
+
+
     return( 
-      <div style={{opacity: 1, top: 0}} className={s.carousel}><Carousel horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} 
-      arrayOfImages={images} /></div>
+      <div style={{opacity: 1, top: 0}} className={s.carousel}><Carousel subs={this.props.subs} titles={this.props.titles} links={this.props.links} images={this.props.images} horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} /></div>
     )
   }
+}
 
 
 class Carousel extends React.Component {
+
 
   constructor(props){
     super(props);
@@ -65,7 +78,7 @@ class Carousel extends React.Component {
     this.wrapperRef_top = React.createRef();    
     this.dotz = React.createRef();     
     this.state ={
-      which: slidesCount,
+      which: this.props.images.length,
       horizontal: false,
       showButtons: false,
       showDots: false,
@@ -121,7 +134,7 @@ class Carousel extends React.Component {
   wheelCallback(ev) {
     if( ev.deltaY > 0 ) {
       console.log( this.state.activeIndex + 1, "delta", ev.deltaY / 150 )
-      this.state.activeIndex < slidesCount-1 && !this.state.animating ? this.nextSlide(parseInt(this.state.activeIndex) + 1) : false
+      this.state.activeIndex < this.props.images.length-1 && !this.state.animating ? this.nextSlide(parseInt(this.state.activeIndex) + 1) : false
     }
     else if( ev.deltaY < 0 ) {  
       console.log( this.state.activeIndex - 1, "delta", ev.deltaY / 150 )
@@ -148,7 +161,7 @@ class Carousel extends React.Component {
     this.setState({ animating: true, activeIndex: current }, () => {
 
 
-      percentage = this.state.activeIndex < slidesCount ? percentage + multiplier : 0 ;
+      percentage = this.state.activeIndex < this.props.images.length ? percentage + multiplier : 0 ;
 
       //console.log('percentage', percentage, 'this.state.which', this.state.which);    
 
@@ -193,7 +206,7 @@ class Carousel extends React.Component {
           ntl.to(children, .2, {scale: 1}).to(children, .2, {scale: 1.04}).to(children, 1.1, {scale: 1});
        }
 
-      this.setState({ which: this.state.which < slidesCount ? ++this.state.which : slidesCount });
+      this.setState({ which: this.state.which < this.props.images.length ? ++this.state.which : this.props.images.length });
 
       setTimeout(function() { //Start the timer
           this.setState({ animating: false }) //After 1 second, set render to true
@@ -214,7 +227,7 @@ class Carousel extends React.Component {
 
     this.setState({ animating: true, activeIndex: current }, () => {
 
-      percentage = this.state.activeIndex > 0 ? percentage - multiplier : multiplier - slidesCount * multiplier ;
+      percentage = this.state.activeIndex > 0 ? percentage - multiplier : multiplier - this.props.images.length * multiplier ;
 
       //console.log('percentage', percentage, 'this.state.which', this.state.which);
 
@@ -361,6 +374,12 @@ class Carousel extends React.Component {
 
   render() {
 
+    var texts = this.props.subs
+    var labels = this.props.titles
+    var links = this.props.links
+    var images = this.props.images    
+
+
     var carouselLeftButton = (
       <div className={s.slider__control_left} style={{ display:'flex', zIndex:9999, alignItems:'center', alignContent:'center', height:'100vh'}}>
         <div onClick={this.prevSlide.bind(this)} className="btn btn-primary">&lt;</div>
@@ -373,7 +392,7 @@ class Carousel extends React.Component {
       </div>
     )
 
-    var carouselImages =  this.props.arrayOfImages.map((image, i) =>{
+    var carouselImages =  images.map((image, i) =>{
       return(
         <div style={{ position: 'relative', width: '100%', height: '35vw' }} key={'2key_'+i}>
           <CarouselImage horizontal={this.state.horizontal} className='child_image' key={'key_'+i} label={labels[i]} 
@@ -383,14 +402,14 @@ class Carousel extends React.Component {
           <div className={`${'button_link crowders_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`}>
             <Link to={links[i]}>LEARN MORE&nbsp;&nbsp;<div className='more_arrow'>&gt;</div></Link>
           </div>
-          <div className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>{slidesCount}</div>
+          <div className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>{this.props.images.length}</div>
           <div className='indicator_divider crowders_divider'></div>
           <div className={`${'slider_indicator'} ${this.state.activeIndex == i ? 'indicator_current': ''}`}>{i+1}</div>
         </div>
       )
     })
 
-    var dots = this.props.arrayOfImages.map((image, i) =>{
+    var dots = images.map((image, i) =>{
       return(
         <div className='dot' data-test={i} key={i} id={i} onClick={this.gotoSlide.bind(this)}>
           <Dot index={ i } isActive={ this.state.activeIndex == i }/></div>

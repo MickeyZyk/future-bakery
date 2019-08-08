@@ -11,8 +11,58 @@ import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
-const index = () => (
-  <>
+export default class BakeryIndex extends React.Component {
+
+  constructor(props){
+    super(props);   
+  }
+
+
+  componentDidMount(){
+
+
+
+  }  
+
+
+  render() {
+
+
+  function getSubheadings(item) {
+    var sub = [item.node.subheading];
+    return sub;
+  }
+
+  function getLinks(item) {
+    var link = [item.node.link];
+    return link;
+  }  
+
+  function getTitles(item) {
+    var title = [item.node.title];
+    return title;
+  } 
+
+  function getImages(item) {
+    var image = ['https://future.stratego.ba/en/bakery/' + item.node.image];
+    return image;
+  }     
+
+  const subs = this.props.data.allBakerySlide.edges.map(getSubheadings)
+  var mergedSubs = [].concat.apply([], subs);
+
+  const links = this.props.data.allBakerySlide.edges.map(getLinks)
+  var mergedLinks = [].concat.apply([], links);
+
+  const titles = this.props.data.allBakerySlide.edges.map(getTitles)
+  var mergedTitles = [].concat.apply([], titles);
+
+  const images = this.props.data.allBakerySlide.edges.map(getImages)
+  var mergedImages = [].concat.apply([], images);
+
+    return (
+
+<>
     <ReactCursorPosition className='fullscreen_cursor_position'>   
       <Helmet title="Bakery" />
       <SVGicon  className='bakery_home__bakery_bulb_small' src='bakery_bulb_small.svg' /> 
@@ -31,7 +81,7 @@ const index = () => (
 
           
               <div className='fulscreen_slider'>
-                <Slider className='new-slider'/>
+                <Slider subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} className='new-slider'/>
               </div>
 
             </Tween>
@@ -67,8 +117,31 @@ const index = () => (
 
 
 
-    </ReactCursorPosition>	    
+    </ReactCursorPosition>      
   </>
-);
 
-export default index
+      )
+
+
+  }
+
+}
+
+
+
+export const query = graphql`
+  query AllBakerySlides {
+    allBakerySlide {
+      edges {
+        node {
+          id
+          image
+          link
+          subheading
+          title
+        }
+      }
+    }
+  }
+
+`

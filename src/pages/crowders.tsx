@@ -10,7 +10,54 @@ import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
-export default () => (
+export default class CrowdersIndex extends React.Component {
+
+  constructor(props){
+    super(props);   
+  }
+
+
+  componentDidMount(){
+
+  }  
+
+
+  render() {
+
+
+  function getSubheadings(item) {
+    var sub = [item.node.subheading];
+    return sub;
+  }
+
+  function getLinks(item) {
+    var link = [item.node.link];
+    return link;
+  }  
+
+  function getTitles(item) {
+    var title = [item.node.title];
+    return title;
+  } 
+
+  function getImages(item) {
+    var image = ['https://future.stratego.ba/en/crowders/' + item.node.image];
+    return image;
+  }     
+
+  const subs = this.props.data.allCrowdersSlide.edges.map(getSubheadings)
+  var mergedSubs = [].concat.apply([], subs);
+
+  const links = this.props.data.allCrowdersSlide.edges.map(getLinks)
+  var mergedLinks = [].concat.apply([], links);
+
+  const titles = this.props.data.allCrowdersSlide.edges.map(getTitles)
+  var mergedTitles = [].concat.apply([], titles);
+
+  const images = this.props.data.allCrowdersSlide.edges.map(getImages)
+  var mergedImages = [].concat.apply([], images);
+
+    return (
   <>
     <ReactCursorPosition className='fullscreen_cursor_position'>   
 
@@ -31,7 +78,7 @@ export default () => (
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
   		    	<div className='fulscreen_slider'>
-  			      <CrowdersSlider className='new-slider'/>   
+  			      <CrowdersSlider subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} className='new-slider'/>   
   		    	</div>
 
             </Tween>
@@ -69,3 +116,25 @@ export default () => (
     </ReactCursorPosition>
   </>
 );
+
+}
+
+}
+
+
+export const query = graphql`
+  query AllCrowdersSlides {
+    allCrowdersSlide {
+      edges {
+        node {
+          id
+          image
+          link
+          subheading
+          title
+        }
+      }
+    }
+  }
+
+`

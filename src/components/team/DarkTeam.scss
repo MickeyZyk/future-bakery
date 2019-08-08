@@ -26,7 +26,9 @@
 .current_data {
   display: block;
   @media (min-width: $min-960) {
+    top: 5vw;
     margin-bottom: 5vw;
+    position: relative;
   }     
 }
 
@@ -37,22 +39,23 @@
   color: #fff;
   @media (min-width: $min-960) {
     position: relative;
-    top: 12vw;
+    top: 18vw;
     margin-bottom: 2vw;
   }  
 
 }
 
 .text {
-    color: #fff;
+    color: #ff7a00;
   $font-map: (375px: 16px, 959px: 40px, 960px: 7px, 2880px: 20px);
   @include poly-fluid-sizing('font-size', $font-map);  
   $height-map: (375px: 19px, 959px: 50px, 960px: 16px, 2880px: 48px);
   @include poly-fluid-sizing('line-height', $height-map);    
   @media (min-width: $min-960) {
     margin-bottom: 5vw;
-        position: relative;
-    top: 12vw;
+    position: relative;
+    top: 18vw;
+    min-height: 18vw;
   }     
 }
 
@@ -60,8 +63,8 @@
   color: #fff; 
   margin-bottom: 3vw; 
   font-weight: bold;
-           position: relative;
-    top: 12vw;
+    position: relative;
+    top: 11vw;
 }
 
 .image {
@@ -124,6 +127,7 @@
     @include grid-col(11);
     background-color: #222222;
     z-index: 5;
+    bottom: 1vw;
   } 
 }
 
@@ -141,6 +145,7 @@
     @include grid-offset-left(16);
     background-color: #222222;
     z-index: 5;
+    bottom: 1vw;
   } 
 }
 
@@ -153,12 +158,12 @@
 
     display: block;
     overflow: hidden;
-    height: 55vw;
+    height: 61.2vw;
     margin-top: -37vw;
     z-index: -1;
     position: relative;
     background: #222;
-    padding-top: 12vw;
+    padding-top: 18vw;
   }   
 
 }
