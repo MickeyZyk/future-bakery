@@ -29,7 +29,7 @@ export default class BakeryIndex extends React.Component {
 
 
   function getSubheadings(item) {
-    var sub = [item.node.subheading];
+    var sub = [item.node.subheading]; 
     return sub;
   }
 
