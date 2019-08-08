@@ -1,4 +1,7 @@
 import * as React from 'react';
+import ReactDOM from 'react-dom'
+import Scrollbar from 'react-smooth-scrollbar';
+import { SmoothScrollbar } from 'smooth-scrollbar';
 import Helmet from 'react-helmet';
 import { Heading } from 'components/heading/Heading';
 import { Link } from 'components/link/Link';
@@ -11,9 +14,6 @@ import { graphql } from 'gatsby'
 import { If, Then, Else, Switch, Case, Default } from 'react-if'
 import { ScrollTo } from "react-scroll-to";
 
-import { SmoothScrollbar } from 'smooth-scrollbar';
-import Scrollbar from 'react-smooth-scrollbar';
-
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
@@ -25,12 +25,14 @@ export default class Work extends React.Component {
 
   constructor(props){
     super(props);
+    this.myRef = React.createRef();
     this.videoPreview = React.createRef();
     this.videoEmbed = React.createRef();    
     this.videoOverlay = React.createRef();    
     this.videoPlayer = React.createRef();     
     this.playVideo = this.playVideo.bind(this);  
-    //this.handleClick= this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);  
+    this.scrollPlay= this.scrollPlay.bind(this);
     this.state = {
       url: null,
       pip: false,
@@ -49,8 +51,9 @@ export default class Work extends React.Component {
   } 
 
   componentDidMount(){
-    // Scrollbar.init(document.querySelector('#topper'));
-    console.log("TO SCROLL", this.videoEmbed.current)
+
+
+
   }
 
   playVideo(){
@@ -64,44 +67,36 @@ export default class Work extends React.Component {
 
 
   handleClick(){
-    console.log("TO SCROLL X", this.videoEmbed.current)    
-    
-/*
+    const { scrollbar } = this.$container;
     scrollbar.scrollIntoView(document.querySelector('#video'), {
       offsetLeft: 34,
       offsetBottom: 12,
-      alignToTop: false,
+      alignToTop: true,
       onlyScrollIfNeeded: true,
-    }); 
-
-*/
-
+    });
   }  
 
-    render() {
+   scrollPlay(event) {
+      this.handleClick();
+      this.playVideo();
+   }
+
+  render() {
 
   const { prev, next } = this.props.pageContext
 
 
   return (
 
+<>
 
 
-      <TransitionState>
-        {({ transitionStatus }) => {
-          return (
 
-            <>
-
-            <Tween duration={2} 
-            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
-
-          
-  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>   
+       
+  <Scrollbar ref={c => this.$container = c} className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>   
     
 
-<>
+
   <div id ="topper">
     <div className='wrapper'>
       <ReactCursorPosition className='fullscreen_cursor_position'>
@@ -148,17 +143,14 @@ export default class Work extends React.Component {
               <div className={s.column__col5}>
                 <ScrollTo>
                   {({ scrollTo }) => (
-                    <p onClick={ this.handleClick} className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>                    
+                    <p onClick={ this.handleClick } className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>                    
                   )}
                 </ScrollTo>
               </div>
               <div className={s.column__col6}>
-                <p onClick={ this.playVideo } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
+                <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
               </div>
             </div>
-
-
-
 
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
@@ -214,15 +206,16 @@ export default class Work extends React.Component {
       </ReactCursorPosition>
     </div>
   </div>
-  </>
+
 
   <Footer/>    
 </Scrollbar>
-           
 
+      <TransitionState>
+        {({ transitionStatus, ...props }) => {
+          return (
 
-
-              </Tween>
+            <>
 
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
@@ -238,7 +231,7 @@ export default class Work extends React.Component {
         }}
       </TransitionState>
 
-
+</>
   
 )}
 }
