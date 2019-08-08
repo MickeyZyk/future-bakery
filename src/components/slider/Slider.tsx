@@ -86,6 +86,7 @@ class Carousel extends React.Component {
 
   constructor(props){
     super(props);
+    console.log("IMG", this.props.images.length)    
     this.wrapperRef_bottom = React.createRef();
     this.wrapperRef_top = React.createRef();    
     this.dotz = React.createRef();     
@@ -105,7 +106,7 @@ class Carousel extends React.Component {
 
   componentDidMount(){
 
-    console.log("PROPS", this.props)
+   // console.log("PROPS", this.props)
 
     if(this.props.auto){
       this.startCarousel()
