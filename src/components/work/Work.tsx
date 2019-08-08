@@ -19,6 +19,7 @@ import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
 import s from './Work.scss';
+const slug = require('slug')
 
 export default class Work extends React.Component {
 
@@ -120,7 +121,7 @@ export default class Work extends React.Component {
               </div>
             </div>   
             <div className={s.column__col1}>
-              <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.logo_dark } />
+              <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_dark } />
               <h1 className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</h1>
             </div>
           </div>
@@ -161,12 +162,12 @@ export default class Work extends React.Component {
 
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.logo_light } />              
+                <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_light } />              
                 <p className={s.award}>{this.props.data.gravBakeryWork.category ? this.props.data.gravBakeryWork.category : ' '}<span className={s.green}>{this.props.data.gravBakeryWork.category_name ? this.props.data.gravBakeryWork.category_name : ' '}</span></p>
                 <h1 className={s.award_heading}>{this.props.data.gravBakeryWork.heading_two}</h1>
               </div>
             </div>
-            <img src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.gravBakeryWork.title.toLowerCase() + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
+            <img src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
             <div id="video" className={s.embedded_video} ref={this.videoEmbed}>
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravBakeryWork.video} playing={this.state.playing} />            
             </div>

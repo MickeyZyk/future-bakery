@@ -20,6 +20,7 @@ import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
 import s from './CrowdersWork.scss';
+const slug = require('slug')
 
 export default class Work extends React.Component {
 
@@ -131,12 +132,12 @@ export default class Work extends React.Component {
 
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <img className={s.client_logo} src={ 'https://future.stratego.ba/en/crowders/work/'+ this.props.data.gravCrowdersWork.title.toLowerCase() + '/' + this.props.data.gravCrowdersWork.logo_light } />              
+                <img className={s.client_logo} src={ 'https://future.stratego.ba/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.logo_light } />              
                 <p className={s.award}>{this.props.data.gravCrowdersWork.title.toUpperCase()}</p>
                 <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
-            <img src={ 'https://future.stratego.ba/en/crowders/work/'+ this.props.data.gravCrowdersWork.title.toLowerCase() + '/' + this.props.data.gravCrowdersWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
+            <img src={ 'https://future.stratego.ba/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
             <div id="video" className={s.embedded_video} ref={this.videoEmbed}>
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravCrowdersWork.video} playing={this.state.playing} />            
             </div>
