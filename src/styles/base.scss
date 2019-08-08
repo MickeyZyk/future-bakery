@@ -3606,7 +3606,7 @@ select {
 
     @media (min-width: $min-960) {
       position: relative;
-      top: 20vw;
+      top: 24vw;
       display: block;  
       @include grid-col(1);
       @include grid-offset-left(4.5); 
@@ -3622,7 +3622,7 @@ select {
 
     @media (min-width: $min-960) {
       position: relative;
-      top: 20vw;
+      top: 26vw;
       display: block;  
       @include grid-col(1);
       @include grid-offset-left(9.5); 
@@ -3667,8 +3667,39 @@ select {
 }
 
 
+.bakers_about_authors_texts {
 
+  @include grid-col(16);
+  @include grid-offset-left(2);
 
+  @media (min-width: $min-960) {
+    top: -6vw;
+    position: relative;
+    @include grid-col(5);
+    @include grid-offset-left(9);
+
+  }
+}
+
+.bakers_about_dots {
+
+  @include grid-col(16);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -4vw;
+    @include grid-col(2);
+    @include grid-offset-left(9);
+
+  }
+}
+
+.bakers_about_dots > div {
+    width: 0.9vw;
+    display: inline-block;
+    margin: auto 0.6vw;
+}
 
 
 

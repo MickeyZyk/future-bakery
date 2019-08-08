@@ -23,6 +23,8 @@ import { TweenMax, TimelineMax, Power3 } from "gsap";
 import { Tween, SplitWords } from 'react-gsap'
 import { Controller, Scene } from 'react-scrollmagic';
 import LinkArrow from 'assets/svg/link_arrow.svg'
+import Circle from 'assets/svg/circle.svg';
+import FullCircle from 'assets/svg/full_circle.svg';
 
 
 import { TransitionState } from "gatsby-plugin-transition-link";
@@ -243,7 +245,10 @@ const BakersAbout = ({ data, className }) => {
 
           <img className="bakers_about_authors_image" src="../images/hipster.jpg"/>
           <Heading className="bakers_about_authors_heading">What authors say...</Heading>
-
+          <Paragraph className="bakers_about_authors_texts">”Let your creativity shine and your ideas out. We will have an abundance of great projects, that will inspire you. Help us solve them!! Have fun with it! Let your creativity shine and your ideas out. We will have an abundance of great projects, that will inspire you. Help us solve them!! Have fun with it! Let your creativity shine and your ideas out. We will have an abundance of great projects, that will inspire you. Help us solve them!! Have fun with it!Let your creativity shine and your ideas out. We will have an abundance of great projects, that will inspire you. Help us solve them!! Have fun with it! ” </Paragraph>
+          <div className="bakers_about_dots">
+              <Dot isActive /><Dot/><Dot/><Dot/>
+          </div>
 
         </Row>     
 
