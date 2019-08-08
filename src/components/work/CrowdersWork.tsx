@@ -220,8 +220,6 @@ export const query = graphql`
     gravCrowdersWork(id: {eq: $id}) {
         id
         big_image
-        category
-        category_name
         paragraph
         logo_light
         heading_two

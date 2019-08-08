@@ -177,16 +177,11 @@ export const query = graphql`
         node {
           id
           title
-          one_way
-          new_way
           logo_light
-          logo_dark
           heading_two
           heading_one
           big_image
           video
-          category
-          category_name
           heading_tag
         }
       }
