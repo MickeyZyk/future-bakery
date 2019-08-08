@@ -201,8 +201,8 @@ const BakersAbout = ({ data, className }) => {
 
           <div className="bakers_about_flip_button bakers_flip">
             <Link to={'/bakerscontact'}>
-              <div className="front">START A PROJECT WITH US</div>
-              <div className="back">START A PROJECT WITH US</div>
+              <div className="front">JOIN US</div>
+              <div className="back">JOIN US</div>
             </Link>
           </div>
 
@@ -250,7 +250,20 @@ const BakersAbout = ({ data, className }) => {
               <Dot isActive /><Dot/><Dot/><Dot/>
           </div>
 
-        </Row>     
+          <div className="bakers_about_authors_flip_button bakers_flip">
+            <Link to={'/bakerscontact'}>
+              <div className="front">JOIN US</div>
+              <div className="back">JOIN US</div>
+            </Link>
+          </div>          
+
+        </Row> 
+
+        <Row className="bakers_about_authors">
+
+          <HeadingTwo className="bakers_about_in_numbers_heading">Our bakers in numbers</HeadingTwo>
+
+        </Row>
 
 
    

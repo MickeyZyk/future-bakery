@@ -2355,20 +2355,7 @@ select {
 
 }
 
-.bakery_about_soldier {
 
-    display: none;
-
-    @media (min-width: $min-960) {
-      position: relative;
-      display: block;  
-      @include grid-col(0.4);
-      @include grid-offset-left(3.7); 
-      z-index: 15;
-
-    }   
-
-}
 
 .bakery_about__green_heading_background > div{
   transform: perspective(500)
@@ -3360,7 +3347,7 @@ select {
 
     @media (min-width: $min-960) {
       position: relative;
-      top: -22vw;      
+      top: -16vw;      
       display: block;  
       @include grid-col(0.6);
       @include grid-offset-left(4.3); 
@@ -3622,7 +3609,7 @@ select {
 
     @media (min-width: $min-960) {
       position: relative;
-      top: 26vw;
+      top: 28vw;
       display: block;  
       @include grid-col(1);
       @include grid-offset-left(9.5); 
@@ -3700,6 +3687,51 @@ select {
     display: inline-block;
     margin: auto 0.6vw;
 }
+
+.bakers_about_authors_flip_button {
+
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 4vw;
+    @include grid-col(3);
+    @include grid-offset-left(-2);
+    z-index: 5; 
+  } 
+
+}
+.bakers_about_in_numbers_heading {
+  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 60px, 2880px: 120px);
+  $height-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 60px, 2880px: 120px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);
+
+  @include grid-col(16);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(4);
+    @include grid-offset-left(5);
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
