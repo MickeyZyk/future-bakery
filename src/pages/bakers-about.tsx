@@ -265,6 +265,23 @@ const BakersAbout = ({ data, className }) => {
 
         </Row>
 
+        <Row className="bakers_about_in_numbers">
+          <div className="bakers_about_in_numbers_icons_first"><img src="../svg/gold.svg"/></div>
+          <div className="bakers_about_in_numbers_icons"><img src="../svg/bulb.svg"/></div>
+          <div className="bakers_about_in_numbers_icons"><img src="../svg/fiver.svg"/></div>
+        </Row>
+        <Row className="bakers_about_in_numbers_two">
+          <div className="bakers_about_in_numbers_numbers_first">287 000 USD</div>
+          <div className="bakers_about_in_numbers_numbers">42 587</div>
+          <div className="bakers_about_in_numbers_numbers">11 893</div>
+        </Row>
+        <Row className="bakers_about_in_numbers_three">
+          <div className="bakers_about_in_numbers_texts_first">Reward</div>
+          <div className="bakers_about_in_numbers_texts">creative ideas</div>
+          <div className="bakers_about_in_numbers_texts">Bakers</div>
+
+        </Row>         
+
 
    
     </ReactCursorPosition>
