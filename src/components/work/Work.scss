@@ -66,6 +66,7 @@
     @include poly-fluid-sizing('line-height', $height-map);
     @include poly-fluid-sizing('letter-spacing', $spacing-map);  
     margin-bottom: 3.7vw;     
+    min-height: 10vw;
   }  
 
   &__col1 {
@@ -329,10 +330,10 @@
 }  
 
 .client_logo {
-  width: 2.8vw;
+  width: 5vw;
   height: auto;
-  margin-top: -2vw;
-  margin-bottom: 2vw;
+  margin-top: -3vw;
+  margin-bottom: 1vw;
   position: relative;
   z-index: 1;  
 }
