@@ -57,18 +57,18 @@ const BakersAbout = ({ data, className }) => {
       <Row>
         <Figure3 className="bakers_about__image_one hide_on_mobile dropped"/>
         <AnimatedHeading className='bakers_about__heading_one'>{data.gravBakersAbout.heading_one}</AnimatedHeading>
-        <HeadingTwo className='bakers_about__heading_two'>A space for creative people with amazing ideas.</HeadingTwo>      
+        <HeadingTwo className='bakers_about__heading_two'>{data.gravBakersAbout.subheading_one}</HeadingTwo>      
         <Figure3 className="show_on_mobile"/>
       </Row>
       <Row>
-        <Paragraph className='bakers_about__paragraph paragraph'>A safe place where those who are searching for the great idea meet with the ones that have them. And where they have access not just to one amazing idea, but to several of them. A place, where the idea creators – who we call BAKERS get rewarded if their idea is selected by the client. We are a constantly growing group of bakers and creative thinkers. We believe it is important to provide a space for ideas and wonderful creations. We want to give everybody a chance to contribute. We believe the more idea makers we have, the more we can all move forward.</Paragraph>
+        <Paragraph className='bakers_about__paragraph paragraph'>{data.gravBakersAbout.paragraph_one}</Paragraph>
       </Row>
       <SVGicon className='bakers_about__brains' src='brains.svg' /> 
       <Row>
         <Figure4 className="bakers_about__image_two hide_on_mobile"/>
-        <Split className='bakers_about__heading_three'>We are a group of enthusiasts and passionate thinkers</Split>      
-        <Paragraph className='bakers_we__paragraph paragraph'>We believe that a great idea can pop up anywhere: in a bar, during a wonderfully peaceful weekend, while running, before going to bed, while chatting with your loved one, from a student, retiree or stay-at-home mom or dad.</Paragraph>
-        <Link className="bakers_about__join_link" to={'/contact'}>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+        <Split className='bakers_about__heading_three'>{data.gravBakersAbout.subheading_two}</Split>      
+        <Paragraph className='bakers_we__paragraph paragraph'>{data.gravBakersAbout.paragraph_one}</Paragraph>
+        <Link className="bakers_about__join_link" to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
         <Figure4 className="show_on_mobile"/>
       </Row>
       <Row className="tags_row">
@@ -79,19 +79,23 @@ const BakersAbout = ({ data, className }) => {
               stagger={2} duration={10}
               ease="Power3.easeInOut"
             >
-              <div className="tags_heading hide_on_mobile"><HeadingTwo>Problem</HeadingTwo></div>
+              <div className="tags_heading hide_on_mobile"><HeadingTwo>{data.gravBakersAbout.problem_heading_one}</HeadingTwo></div>
               <div className="tag_01">
-              <p className="tag">how can be a name for fishermans beer?</p>
+              <p className="tag">{data.gravBakersAbout.problem_text}</p>
               </div>
-              <div className="tags_heading show_on_mobile"><AnimatedHeading>Problem</AnimatedHeading></div>
+
+
+              <div className="tags_heading show_on_mobile"><AnimatedHeading>{data.gravBakersAbout.problem_heading_one}</AnimatedHeading></div>
+
+
               <div className="tag_02">
-              <p className="tag">how can be a name for fishermans beer?</p>
+              <p className="tag">{data.gravBakersAbout.problem_text}</p>
               </div>
               <div className="tag_03">
-              <p className="tag">how can be a name for fishermans beer?</p>
+              <p className="tag">{data.gravBakersAbout.problem_text}</p>
               </div>
               <div className="tag_04">
-              <p className="tag">how can be a name for fishermans beer?</p>
+              <p className="tag">{data.gravBakersAbout.problem_text}</p>
               </div>
               <img className="tag_arrow_01" src="../images/tag_arow_01.png" />
               <img className="tag_arrow_01l show_on_mobile" src="../images/tag_arow_01l.png" />
@@ -99,24 +103,26 @@ const BakersAbout = ({ data, className }) => {
               <img className="tag_arrow_02 hide_on_mobile" src="../images/tag_arow_02.png" /> 
               <img className="hip hide_on_mobile" src="../svg/hip.svg"/>
               <img className="nerd hide_on_mobile" src="../svg/nerd.svg"/> 
-              <p className="tag nerd_text hide_on_mobile">Marketa grafik miluje horska kola</p>
+              <p className="tag nerd_text hide_on_mobile">{data.gravBakersAbout.icon01_text}</p>
               <img className="granny hide_on_mobile" src="../svg/granny.svg"/>
-              <p className="tag granny_text hide_on_mobile">Marketa grafik miluje horska kola</p>
+              <p className="tag granny_text hide_on_mobile">{data.gravBakersAbout.icon02_text}</p>
               <img className="afro hide_on_mobile" src="../svg/afro.svg"/>                  
               <img className="dude hide_on_mobile" src="../svg/dude.svg"/>   
-              <p className="tag dude_text hide_on_mobile">Honza marketer miluje reklamu</p>
+              <p className="tag dude_text hide_on_mobile">{data.gravBakersAbout.icon03_text}</p>
               <img className="smart hide_on_mobile" src="../svg/smart.svg"/>
-              <p className="tag smart_text hide_on_mobile">Marketa grafik miluje horska kola</p> 
+              <p className="tag smart_text hide_on_mobile">{data.gravBakersAbout.icon04_text}</p> 
               <img className="kid hide_on_mobile" src="../svg/kid.svg"/>
-              <p className="tag kid_text hide_on_mobile">Honza marketer miluje reklamu</p> 
-              <div className="tags_heading_middle hide_on_mobile"><HeadingTwo>Spousta lidy spousta napadu</HeadingTwo></div> 
+              <p className="tag kid_text hide_on_mobile">{data.gravBakersAbout.icon05_text}</p> 
+              <div className="tags_heading_middle hide_on_mobile"><HeadingTwo>{data.gravBakersAbout.problem_heading_two}</HeadingTwo></div> 
               <img className="fireman hide_on_mobile" src="../svg/fireman.svg"/>
-              <p className="tag fireman_text hide_on_mobile">Karel hasic</p>
+              <p className="tag fireman_text hide_on_mobile">{data.gravBakersAbout.icon06_text}</p>
               <img className="girl hide_on_mobile" src="../svg/girl.svg"/>
-              <p className="tag girl_text hide_on_mobile">Marketa grafik miluje horska kola</p>
+              <p className="tag girl_text hide_on_mobile">{data.gravBakersAbout.icon07_text}</p>
               <img className="mlada hide_on_mobile" src="../svg/mlada.svg"/>   
               <img className="tag_arrow_03 hide_on_mobile" src="../images/tag_arow_03.png" /> 
               <img className="vial hide_on_mobile" src="../svg/vial.svg"/>  
+
+
               <div className="people_doodles show_on_mobile">
                 <div className="people_doodle">
                   <div className="tags_heading_middle"><HeadingTwo>Spousta lidy spousta napadu</HeadingTwo></div>
@@ -168,15 +174,18 @@ const BakersAbout = ({ data, className }) => {
                   <img className="vial" src="../svg/vial.svg"/>
                 </div>
               </div>
+
+
+
             </Tween>
           </Scene>
         </Controller>
       </Row>
-      <Split className="tags_heading_bottom">Reseni</Split>
+      <Split className="tags_heading_bottom">{data.gravBakersAbout.problem_heading_three}</Split>
       <Row>
-        <Link className="bakers_about__join_link_two" to={'/bakerscontact'}>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+        <Link className="bakers_about__join_link_two" to={data.gravBakersAbout.icons_link_one}>{data.gravBakersAbout.icons_link_one_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
         <div className="divider_text">or find out how to</div>
-        <Link className="bakers_about__join_link_three" to={'/bakerscontact'}>BRIEF US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
+        <Link className="bakers_about__join_link_three" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       </Row>
       <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
       <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
@@ -184,25 +193,44 @@ const BakersAbout = ({ data, className }) => {
 
         <Row className="bakers_about_team_row">
           <div className="bakers_about__orange_heading_background">
-              <Split className="bakers_about__heading_four">Who is behind the scenes of Future Bakers?</Split>
+              <Split className="bakers_about__heading_four">{data.gravBakersAbout.team_section_heading}</Split>
           </div>  
 
         </Row>
-          <AnimatedHeadingTwo className="bakers_about_team_heading">Meet the team</AnimatedHeadingTwo>
+          <AnimatedHeadingTwo className="bakers_about_team_heading">{data.gravBakersAbout.team_heading}</AnimatedHeadingTwo>
+
+
+
+
+
+
+
+
+
           <DarkTeam/> 
+
+
+
+
+
+
+
+
+
+
 
       <SVGicon className='bakers_about_treasure' src='treasure.svg' />
 
         <Row>
-          <Heading className="bakers_about_bakers_heading">Bakers</Heading>
+          <Heading className="bakers_about_bakers_heading">{data.gravBakersAbout.bakers_heading}</Heading>
           <img src="../images/kid.jpg" className="bakers_about_bakers_image"/>
-            <Paragraph className="bakers_about_bakers_p_one">Let your creativity shine and your ideas out. We will have an abundance of great projects, that will inspire you. Help us solve them!! Have fun with it!</Paragraph>
-            <Paragraph className="bakers_about_bakers_p_two">Are you always thinking of that next wonderful product or are you passionate about creativity, writing or digital design? Or you just love sharing your opinion.</Paragraph>
+            <Paragraph className="bakers_about_bakers_p_one">{data.gravBakersAbout.bakers_paragraph_one}</Paragraph>
+            <Paragraph className="bakers_about_bakers_p_two">{data.gravBakersAbout.bakers_paragraph_two}</Paragraph>
 
           <div className="bakers_about_flip_button bakers_flip">
-            <Link to={'/bakerscontact'}>
-              <div className="front">JOIN US</div>
-              <div className="back">JOIN US</div>
+            <Link to={data.gravBakersAbout.link_two}>
+              <div className="front">{data.gravBakersAbout.link_two_text}</div>
+              <div className="back">{data.gravBakersAbout.link_two_text}</div>
             </Link>
           </div>
 
@@ -222,7 +250,11 @@ const BakersAbout = ({ data, className }) => {
           <div className="bakers_about_numbers">6</div>
         </Row>
         <Row className="bakers_about_steps_two">
-          <img className="bakers_about_step_icons_first" src="../svg/register.svg"/>
+
+
+          <img className="bakers_about_step_icons_first" src={data.gravBakersAbout.svg_icons.svg}/>
+
+          
           <img className="bakers_about_step_icons" src="../svg/location.svg"/>
           <img className="bakers_about_step_icons" src="../svg/envelope.svg"/>
           <img className="bakers_about_step_icons" src="../svg/clock.svg"/>
@@ -320,33 +352,50 @@ const BakersAbout = ({ data, className }) => {
 export const BakersAboutquery = graphql`
   query BakersAboutPageQuery {
     gravBakersAbout {
-      heading_one
-      subheading_one
-      icon01_text
-      icon02_text
-      icon03_text
-      icon04_text
-      icon05_text
-      icon06_text
-      icon07_text
-      image_one
-      image_two
-      link_one
-      link_one_text
-      link_two
-      link_two_text
-      paragraph_one
-      paragraph_two
-      problem_heading_one
-      problem_heading_three
-      problem_heading_two
-      problem_text
-      subheading_two
-      team_heading
+      team {
+        member_text
+        member
+        link_two
+        image
+      }
       title
+      team_heading
+      subheading_two
+      subheading_one
+      problem_text
+      problem_heading_two
+      problem_heading_three
+      problem_heading_one
+      path
+      paragraph_two
+      paragraph_one
+      link_two_text
+      link_two
+      link_one_text
+      link_one
+      image_two
+      image_one
+      icon07_text
+      icon06_text
+      icon05_text
+      icon04_text
+      icon03_text
+      icon02_text
+      icon01_text
+      heading_one
       bakers_paragraph_two
       bakers_paragraph_one
       bakers_heading
+      team_section_heading
+      icons_link_one
+      icons_link_one_text
+      icons_link_two
+      icons_link_two_text
+      authors_image
+      authors_heading
+      author_texts {
+        text
+      }  
     }   
   }
 `
