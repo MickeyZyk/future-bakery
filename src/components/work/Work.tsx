@@ -59,6 +59,7 @@ export default class Work extends React.Component {
 
   playVideo(){
     this.videoPreview.current.style.zIndex = -5;
+    this.videoPreview.current.style.opacity = 0;    
     this.videoEmbed.current.style.zIndex = 10;    
     //this.videoOverlay.current.style.visibility = 'hidden';
     this.setState({ playing: true },() => {
