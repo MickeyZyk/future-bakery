@@ -1,5 +1,14 @@
 @import '~styles/config';
 
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
 .row {
   display: block;
   position: relative;
@@ -227,6 +236,7 @@
   height: auto;
 }
 .embedded_video {
+    animation: fadeIn ease 5s;
   position: absolute;
   top: 0;
   z-index: -1;  

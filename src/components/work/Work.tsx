@@ -247,17 +247,20 @@ export default class Work extends React.Component {
               </div>
             </div>
             <img src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
+              
+            </Tween>
+
+          </>
+
+        )
+      }}
+    </TransitionState>         
+
             <div id="video" className={s.embedded_video} ref={this.videoEmbed}>
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravBakeryWork.video} playing={this.state.playing} />            
             </div>
 
-            </Tween>
 
-            </>
-
-          )
-        }}
-      </TransitionState>
 
 
 
