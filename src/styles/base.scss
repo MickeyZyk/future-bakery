@@ -15,6 +15,34 @@ a {text-decoration: none}
 /* mobile */
 
 
+
+
+
+
+
+
+.bakery_about_soldier {
+    transform: rotate(15deg);
+    display: none;
+
+    @media (min-width: $min-960) {
+      position: relative;
+      top: -2vw;      
+      display: block;  
+      @include grid-col(0.6);
+      @include grid-offset-left(4.3); 
+      z-index: 15;
+
+    }   
+
+}
+
+
+
+
+
+
+
 .mob-col-1 {@include grid-col(1);}
 .mob-col-2 {@include grid-col(2);}
 .mob-col-3 {@include grid-col(3);}
