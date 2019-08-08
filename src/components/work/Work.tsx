@@ -162,14 +162,9 @@ export default class Work extends React.Component {
               }}
             </TransitionState>            
 
-
-
               <HeadingTwo className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</HeadingTwo>
             </div>
           </div>
-
-
-
 
               <If condition={() => this.props.data.gravBakeryWork.one_way}>
                   <Then>
