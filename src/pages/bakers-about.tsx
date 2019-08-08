@@ -250,11 +250,7 @@ const BakersAbout = ({ data, className }) => {
           <div className="bakers_about_numbers">6</div>
         </Row>
         <Row className="bakers_about_steps_two">
-
-
-          <img className="bakers_about_step_icons_first" src={data.gravBakersAbout.svg_icons.svg}/>
-
-          
+          <img className="bakers_about_step_icons_first" src="../svg/register.svg"/>
           <img className="bakers_about_step_icons" src="../svg/location.svg"/>
           <img className="bakers_about_step_icons" src="../svg/envelope.svg"/>
           <img className="bakers_about_step_icons" src="../svg/clock.svg"/>
