@@ -4,6 +4,7 @@ import Scrollbar from 'react-smooth-scrollbar';
 import { SmoothScrollbar } from 'smooth-scrollbar';
 import Helmet from 'react-helmet';
 import { Heading } from 'components/heading/Heading';
+import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { Link } from 'components/link/Link';
 import ReactCursorPosition from 'react-cursor-position';
 import SVGicon from 'components/svgicon/SVGicon';
@@ -109,34 +110,86 @@ export default class Work extends React.Component {
         <Helmet title={this.props.data.gravBakeryWork.title} />
         <div className={s.row}>
           <div className={s.row__one}>
-            <div className={s.column__col0}>
-              <div className={s.wrapper}>
-                <img className={s.arrow} src={'../svg/work_arrow.svg'} />
-                <h4 className={s.arrow_heading}>Creative Strategy</h4>
-              </div>
-            </div>   
+            <TransitionState>
+              {({ transitionStatus, ...props }) => {
+                return (
+
+                  <>
+
+                  <Tween duration={2} 
+                  from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
+                  to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
+                  <div className={s.column__col0}>
+                    <div className={s.wrapper}>
+                      <img className={s.arrow} src={'../svg/work_arrow.svg'} />
+                      <h4 className={s.arrow_heading}>Creative Strategy</h4>
+                    </div>
+                  </div> 
+
+                  </Tween>
+
+                  </>
+
+                )
+              }}
+            </TransitionState>
             <div className={s.column__col1}>
               <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_dark } />
-              <h1 className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</h1>
+              <HeadingTwo className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</HeadingTwo>
             </div>
           </div>
 
-        <If condition={() => this.props.data.gravBakeryWork.one_way}>
-            <Then>
 
-              <div className={s.row__two}>
-                <div className={s.column__col2}>
-                  <p className={s.way}>one way</p>
-                  <p className={s.advice}>{this.props.data.gravBakeryWork.one_way}</p>
-                </div>
-                <div className={s.column__col3}>
-                  <p className={s.way}>new way</p>      
-                  <p className={s.larger_advice}>{this.props.data.gravBakeryWork.new_way}</p>
-                </div>
-              </div>
 
-            </Then>
-        </If>
+
+              <If condition={() => this.props.data.gravBakeryWork.one_way}>
+                  <Then>
+
+
+
+      <TransitionState>
+        {({ transitionStatus, ...props }) => {
+          return (
+
+            <>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
+
+
+
+                    <div className={s.row__two}>
+                      <div className={s.column__col2}>
+                        <p className={s.way}>one way</p>
+                        <p className={s.advice}>{this.props.data.gravBakeryWork.one_way}</p>
+                      </div>
+                      <div className={s.column__col3}>
+                        <p className={s.way}>new way</p>      
+                        <p className={s.larger_advice}>{this.props.data.gravBakeryWork.new_way}</p>
+                      </div>
+                    </div>
+
+
+
+
+
+            </Tween>
+
+            </>
+
+          )
+        }}
+      </TransitionState>
+
+
+                    
+
+                  </Then>
+              </If>
+
+
+
 
           <div className={s.detail_wrapper}>
             <div className={s.row__threetop}> 
@@ -152,6 +205,16 @@ export default class Work extends React.Component {
               </div>
             </div>
 
+      <TransitionState>
+        {({ transitionStatus, ...props }) => {
+          return (
+
+            <>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
+
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
                 <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_light } />              
@@ -163,6 +226,14 @@ export default class Work extends React.Component {
             <div id="video" className={s.embedded_video} ref={this.videoEmbed}>
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravBakeryWork.video} playing={this.state.playing} />            
             </div>
+
+            </Tween>
+
+            </>
+
+          )
+        }}
+      </TransitionState>
 
 
 
@@ -208,7 +279,9 @@ export default class Work extends React.Component {
   </div>
 
 
-  <Footer/>    
+  <Footer/>  
+
+
 </Scrollbar>
 
       <TransitionState>
@@ -219,7 +292,7 @@ export default class Work extends React.Component {
 
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+            to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut'} : false  } >  
 
               <div className='fulscreen_white' style={{zIndex: -1, backgroundColor: '#ffffff', position: 'absolute', width: '100vw', height: '100vh', top: 0, bottom: 0, left: 0, right: 0}}></div>
 
