@@ -17,7 +17,7 @@ import _ from 'lodash';
 import s from './BakersSlider.scss';
 
 var startCarouselInterval;
-
+/*
 var images = [
 
 '../images/bakers_01.jpg', 
@@ -49,7 +49,7 @@ var links = [
 '/bakers-about',
 
 ]
-var slidesCount = images.length;
+*/
 var percentage = 0;
 var multiplier = 35 ;
 
@@ -69,7 +69,6 @@ class Carousel extends React.Component {
     this.wrapperRef_top = React.createRef();    
     this.dotz = React.createRef();     
     this.state ={
-      which: slidesCount,
       horizontal: false,
       showButtons: false,
       showDots: false,

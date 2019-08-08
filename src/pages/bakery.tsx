@@ -60,6 +60,8 @@ export default class BakeryIndex extends React.Component {
   const images = this.props.data.allBakerySlide.edges.map(getImages)
   var mergedImages = [].concat.apply([], images);
 
+  var imagesCount = images.length
+
     return (
 
 <>
@@ -81,7 +83,7 @@ export default class BakeryIndex extends React.Component {
 
           
               <div className='fulscreen_slider'>
-                <Slider subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} className='new-slider'/>
+                <Slider subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>
               </div>
 
             </Tween>

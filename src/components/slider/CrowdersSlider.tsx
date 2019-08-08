@@ -63,7 +63,7 @@ export class CrowdersSlider extends React.Component {
 
 
     return( 
-      <div style={{opacity: 1, top: 0}} className={s.carousel}><Carousel subs={this.props.subs} titles={this.props.titles} links={this.props.links} images={this.props.images} horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} /></div>
+      <div style={{opacity: 1, top: 0}} className={s.carousel}><Carousel ount={this.props.count} subs={this.props.subs} titles={this.props.titles} links={this.props.links} images={this.props.images} horizontal={false} showButtons={false} showDots={true} timeInBetween={5000} auto={false} /></div>
     )
   }
 }
@@ -78,7 +78,6 @@ class Carousel extends React.Component {
     this.wrapperRef_top = React.createRef();    
     this.dotz = React.createRef();     
     this.state ={
-      which: this.props.images.length,
       horizontal: false,
       showButtons: false,
       showDots: false,
@@ -92,6 +91,12 @@ class Carousel extends React.Component {
 
 
   componentDidMount(){
+
+    if(this.props.count){
+      this.setState({which:this.props.count})
+    };
+
+
     if(this.props.auto){
       this.startCarousel()
     };

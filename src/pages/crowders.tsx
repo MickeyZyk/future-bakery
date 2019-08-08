@@ -57,6 +57,8 @@ export default class CrowdersIndex extends React.Component {
   const images = this.props.data.allCrowdersSlide.edges.map(getImages)
   var mergedImages = [].concat.apply([], images);
 
+  var imagesCount = images.length
+
     return (
   <>
     <ReactCursorPosition className='fullscreen_cursor_position'>   
@@ -78,7 +80,7 @@ export default class CrowdersIndex extends React.Component {
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
   		    	<div className='fulscreen_slider'>
-  			      <CrowdersSlider subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} className='new-slider'/>   
+  			      <CrowdersSlider subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>   
   		    	</div>
 
             </Tween>
