@@ -110,6 +110,8 @@ export default class Work extends React.Component {
         <Helmet title={this.props.data.gravBakeryWork.title} />
         <div className={s.row}>
           <div className={s.row__one}>
+
+
             <TransitionState>
               {({ transitionStatus, ...props }) => {
                 return (
@@ -133,8 +135,35 @@ export default class Work extends React.Component {
                 )
               }}
             </TransitionState>
+
+
             <div className={s.column__col1}>
-              <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_dark } />
+
+
+            <TransitionState>
+              {({ transitionStatus, ...props }) => {
+                return (
+
+                  <>
+
+                  <Tween duration={2} 
+                  from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
+                  to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
+              
+
+                    <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_dark } />
+
+
+                  </Tween>
+
+                  </>
+
+                )
+              }}
+            </TransitionState>            
+
+
+
               <HeadingTwo className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</HeadingTwo>
             </div>
           </div>
@@ -183,7 +212,7 @@ export default class Work extends React.Component {
       </TransitionState>
 
 
-                    
+
 
                   </Then>
               </If>
