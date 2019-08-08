@@ -62,8 +62,8 @@ const BakeryAbout = ({ data, className, query }) => {
             <HeadingTwo className="bakery_about__heading_two">{data.gravBakeryAbout.heading_two}</HeadingTwo>
             <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />   
             <div className="bakery_about__green_block">
-              <p className="bakery_about__green_text">{data.gravBakeryAbout.show_me_text}</p>
-              <TransitionLink className="bakery_about__green_link" to={data.gravBakeryAbout.show_me_link} exit={{ length: 1 }} entry={{ delay: 1 }}>SHOW ME&nbsp;&nbsp;&#10095;</TransitionLink>
+              <p className="bakery_about__green_text">&nbsp;</p>
+              <TransitionLink className="bakery_about__green_link" to={data.gravBakeryAbout.show_me_link} exit={{ length: 1 }} entry={{ delay: 1 }}>&nbsp;</TransitionLink>
             </div>
           </Row>
           <img src="../images/company.png" className="bakery_about__white_company hide_on_mobile" />
