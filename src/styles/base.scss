@@ -5,14 +5,177 @@
 @import '~styles/IGORlogin';
 
 
+.bakery_color {color: #d4de4f}
+.bakers_color {color: #ff7a00}
+.crowders_color {color: #37c6f4}
+
+.bakery_back {background-color: #d4de4f}
+.bakers_back {background-color: #ff7a00}
+.crowders_back {background-color: #37c6f4}
 
 
 a {text-decoration: none}
+
+
+.the_link {
+  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('height', $size-map);
+  left: 0;
+  transition: all 1s;  
+}
+
+.the_arrow_link {
+    font-weight: bold;
+}
+
+.the_arrow {
+  transition: all 1s;  
+  left: 0.3vw;  
+  position: relative;
+  bottom: -0.05vw;
+  padding-top: 0.1vw;
+  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('height', $size-map);   
+}
+
+.the_link_text {
+  display: inline;
+  position: relative;
+  left:0;
+  text-align: center;
+  transition: all 1s;  
+}
+
+.the_link:not(.the_button_link):hover .the_arrow {
+  left: .8vw;
+  transition: all 1s;
+}
+
+.bakers_arrow polygon {
+    fill: #ff7a00;
+}
+
+.bakery_arrow polygon {
+    fill: #37c6f4;
+}
+
+.crowders_arrow polygon {
+    fill: #37c6f4;
+}
+
+.the_button_link.bakery_color {
+  color: #222;
+  background-color: #d4de4f;
+
+}
+
+.the_button_link.bakers_color {
+  color: #222;
+  background-color: #ff7a00;
+  text-align: center;
+}
+
+.the_button_link:hover .the_link_text {
+  left: -.7vw;
+  transition: all 1s;
+}
+
+.the_button_link.bakers_color .bakers_arrow {
+    left: -.5vw;
+    transition: opacity .5s transform 1s;   
+    opacity: 0;
+}
+
+.the_button_link.bakers_color .bakers_arrow polygon {
+    fill: #222;
+}
+
+.the_button_link.bakers_color:hover .bakers_arrow  {
+    opacity: 1;
+    transition: opacity .5s transform 1s;  
+    left: .2vw;
+}
+
+.the_button_link {
+  height: 2vw;
+  line-height: 2vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 18 GRID */
 
 
 /* mobile */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -202,17 +365,6 @@ a {
   $font-map: (375px: 14px, 959px: 38px, 960px: 8px, 2880px: 28px);
   @include poly-fluid-sizing('font-size', $font-map);  
 }
-
-
-
-.bakery_color, .bakery_color > * {color: #d4de4f!important}
-.bakers_color, .bakers_color > * {color: #ff7a00!important}
-.crowders_color, .crowders_color > * {color: #37c6f4!important}
-
-.bakery_back {background-color: #d4de4f}
-.bakers_back {background-color: #ff7a00}
-.crowders_back {background-color: #37c6f4}
-
 
 
 
@@ -735,11 +887,11 @@ select {
     z-index: 0;
 }
 
-
+/*
 .active > div {
   background-color: #231f20;
 }
-
+*/
 
 
 
@@ -2615,8 +2767,8 @@ select {
 
 
 .bakers_about__join_link {
-  color: #ff7a00;
-  font-weight: bold;
+
+
   @include grid-col(16);
   @include grid-offset-left(0);
 

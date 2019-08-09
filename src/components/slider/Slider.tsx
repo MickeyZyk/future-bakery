@@ -18,46 +18,6 @@ import s from './Slider.scss';
 
 var startCarouselInterval;
 
-/*
-var images = [
-
-'../images/image.jpg', 
-'../images/shutterstock_155344466_small.jpg',
-'../images/shutterstock_771033703_small.jpg',
-'../images/shutterstock_1159947316_small.jpg',
-
-]
-
-
-var labels = [
-
-"THE FUTURE IS HERE",
-"TRUE INSIGHTS",
-"FRESH IDEAS",
-"INNOVATIONS AND IDEAS FOR REAL LIFE"
-
-]
-
-var texts = [
-
-'Top creative and strategic minds joined forces with the largest crowd of consumers.', 
-'We are eager to hear and listen to the crowd',
-'Original content by and for your future consumers.',
-'Not the presentation decks',
-
-]
-var links = [
-
-'/bakery-about',
-'/bakery-about',
-'/bakery-about',
-'/bakery-about',
-
-]
-*/
-
-
-
 var percentage = 0;
 var multiplier = 35 ;
 

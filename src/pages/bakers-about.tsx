@@ -121,7 +121,7 @@ const BakersAbout = ({ data, className }) => {
         />      
         <Split className='bakers_about__heading_three'>{data.gravBakersAbout.subheading_two}</Split>      
         <Paragraph className='bakers_we__paragraph paragraph'>{data.gravBakersAbout.paragraph_one}</Paragraph>
-        <Link className="bakers_about__join_link" to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+        <Link className="bakers_about__join_link" arrow bakers to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}</Link>
         <Figure4 className="show_on_mobile"/>
       </Row>
       <Row className="tags_row">
@@ -236,7 +236,7 @@ const BakersAbout = ({ data, className }) => {
       </Row>
       <Split className="tags_heading_bottom">{data.gravBakersAbout.problem_heading_three}</Split>
       <Row>
-        <Link className="bakers_about__join_link_two" to={data.gravBakersAbout.icons_link_one}>{data.gravBakersAbout.icons_link_one_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+        <Link bakers arrow className="bakers_about__join_link_two" to={data.gravBakersAbout.icons_link_one}>{data.gravBakersAbout.icons_link_one_text}</Link>
         <div className="divider_text">or find out how to</div>
         <Link className="bakers_about__join_link_three" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       </Row>
@@ -317,12 +317,8 @@ const BakersAbout = ({ data, className }) => {
 
           <Authors texts={mergedAuthorTexts}/>
 
-          <div className="bakers_about_authors_flip_button bakers_flip">
-            <Link to={'/bakerscontact'}>
-              <div className="front">JOIN US</div>
-              <div className="back">JOIN US</div>
-            </Link>
-          </div>          
+          <Link bakers arrow button to={'/bakerscontact'} className="bakers_about_authors_flip_button">JOIN US</Link>
+
 
         </Row> 
 
