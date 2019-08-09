@@ -116,9 +116,54 @@ a {text-decoration: none}
 
 
 
+/* menu links */
+
+.submenu_link {
+  text-decoration: none;
+}
 
 
+.submenu_link h2:before, .submenu_link h2:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  top: 50%;
+  margin-top: -0.5px;
+}
 
+.bakery_color h2:before, .bakery_color h2:before {
+  background: #d4de4f;
+}
+
+.bakers_color h2:before, .bakers_color h2:before {
+  background: #ff7a00;
+}
+
+.crowders_color h2:before, .crowders_color h2:before {
+  background: #37c6f4;
+}
+
+
+.submenu_link h2:before {
+  left: -2.5px;
+}
+
+.submenu_link h2:after {
+  right: 2.5px;
+  transition: width 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.submenu_link h2:hover:before {
+  width: 100%;
+  transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.submenu_link h2:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
 
 
 
@@ -1296,42 +1341,7 @@ select {
     animation-fill-mode: forwards;
 }
 
-.submenu_link {
-  text-decoration: none;
-}
 
-
-.submenu_link > h2:before, .submenu_link > h2:after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 4px;
-  top: 50%;
-  margin-top: -0.5px;
-  background: #d4de4f;
-}
-
-.submenu_link > h2:before {
-  left: -2.5px;
-}
-
-.submenu_link > h2:after {
-  right: 2.5px;
-  background: #d4de4f;
-  transition: width 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.submenu_link > h2:hover:before {
-  background: #d4de4f;
-  width: 100%;
-  transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.submenu_link > h2:hover:after {
-  background: transparent;
-  width: 100%;
-  transition: 0s;
-}
 
 .mobile-row {
   @media (max-width: $max-960) {  
@@ -1404,17 +1414,14 @@ select {
   height: 4px;
   top: 50%;
   margin-top: -0.5px;
-  background: #f47a20;
 }
 
 .bakers_menu .submenu_link > h2:after {
   right: 2.5px;
-  background: #f47a20;
   transition: width 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .bakers_menu .submenu_link > h2:hover:before {
-  background: #f47a20;
   width: 100%;
   transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -1483,7 +1490,6 @@ select {
   height: 4px;
   top: 50%;
   margin-top: -0.5px;
-  background: #37c6f4;
 }
 
 .crowders_menu .submenu_link > h2:after {

@@ -73,7 +73,7 @@ export default class BakeryMenu extends React.Component {
 									<div className='menu_row'>
 											<ul ref={this.unorderedList}>
 											  <li className='menu_item_wrapper'>
-												  <Link 
+												  <Link bakery
 													onMouseEnter={this.toggleHover}
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
@@ -89,7 +89,7 @@ export default class BakeryMenu extends React.Component {
 												  </Link>
 											  </li>
 											  <li className='menu_item_wrapper'>
-												  <Link 
+												  <Link bakery
 												  onMouseEnter={this.toggleHover}
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
@@ -106,7 +106,7 @@ export default class BakeryMenu extends React.Component {
 												  </Link>
 											  </li>
 											  <li className='menu_item_wrapper'>
-												  <Link 
+												  <Link bakery
 												  onMouseEnter={this.toggleHover}
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
@@ -117,7 +117,7 @@ export default class BakeryMenu extends React.Component {
 												  </Link>
 											  </li>
 											  <li className='menu_item_wrapper'>
-												  <Link 
+												  <Link bakery
 												  onMouseEnter={this.toggleHover}
 							      			onMouseLeave={this.toggleHover} 
 							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
