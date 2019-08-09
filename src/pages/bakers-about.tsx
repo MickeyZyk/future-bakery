@@ -262,14 +262,16 @@ const BakersAbout = ({ data, className }) => {
             <Paragraph className="bakers_about_bakers_p_one">{data.gravBakersAbout.bakers_paragraph_one}</Paragraph>
             <Paragraph className="bakers_about_bakers_p_two">{data.gravBakersAbout.bakers_paragraph_two}</Paragraph>
 
+        </Row>  
+
+        <Row>
           <div className="bakers_about_flip_button bakers_flip">
             <Link to={data.gravBakersAbout.link_two}>
               <div className="front">{data.gravBakersAbout.link_two_text}</div>
               <div className="back">{data.gravBakersAbout.link_two_text}</div>
             </Link>
           </div>
-
-        </Row>  
+        </Row>
 
         <Row className="bakers_about_steps">
           <div className="bakers_about_numbers_first">1</div>
@@ -336,9 +338,9 @@ const BakersAbout = ({ data, className }) => {
           <div className="bakers_about_in_numbers_icons"><img src="../svg/fiver.svg"/></div>
         </Row>
         <Row className="bakers_about_in_numbers_two">
-          <div className="bakers_about_in_numbers_numbers_first">287 000 USD</div>
-          <div className="bakers_about_in_numbers_numbers">42 587</div>
-          <div className="bakers_about_in_numbers_numbers">11 893</div>
+          <div className="bakers_about_in_numbers_numbers_first">{data.gravBakersAbout.reward}</div>
+          <div className="bakers_about_in_numbers_numbers">{data.gravBakersAbout.ideas}</div>
+          <div className="bakers_about_in_numbers_numbers">{data.gravBakersAbout.bakers}</div>
         </Row>
         <Row className="bakers_about_in_numbers_three">
           <div className="bakers_about_in_numbers_texts_first">Reward</div>
@@ -432,6 +434,9 @@ export const BakersAboutquery = graphql`
       author_texts {
         text
       }
+      ideas
+      reward
+      bakers      
     }   
   }
 `

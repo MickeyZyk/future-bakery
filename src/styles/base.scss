@@ -3453,16 +3453,16 @@ select {
   }
 }
 
-.bakers_about_flip_button {
+.bakers_about_flip_button { 
 
   @include grid-col;
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -1vw;
+    top: -7.8vw;
     @include grid-col(3);
-    @include grid-offset-left(-4);
+    @include grid-offset-left(3);
     z-index: 5; 
   } 
 
@@ -3716,9 +3716,9 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: 4vw;
-    @include grid-col(3);
-    @include grid-offset-left(-2);
+    top: 26vw;
+    @include grid-col(2);
+    @include grid-offset-left(-5);
     z-index: 5; 
   } 
 

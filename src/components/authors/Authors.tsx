@@ -69,17 +69,21 @@ class AuthorCarousel extends React.Component {
 
   render() {
 
-     
-
-
     var texts = this.props.texts
-
 
     var authorTexts = texts.map((text, i) =>{
       return(
-      <div key={'text'+i}  className={ this.state.activeIndex == i ? s.text_active : s.text}>
-        <Paragraph position={i}>{texts[i]}</Paragraph>
-      </div>
+
+      <Tween duration={2} key={'text'+i} 
+      to={ this.state.activeIndex == i ? { opacity: 1, ease: 'Power3.easeInOut' } : { opacity: 0, ease: 'Power3.easeInOut' }  } >          
+
+        <div className={s.text}>
+          <Paragraph position={i}>{texts[i]}</Paragraph>
+        </div>
+
+
+      </Tween>
+
       )
     })  
 
