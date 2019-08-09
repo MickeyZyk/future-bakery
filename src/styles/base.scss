@@ -4,6 +4,19 @@
 
 @import '~styles/IGORlogin';
 
+@keyframes fadein {
+    0%   {opacity: 0}
+    50%   {opacity: 0}    
+    100% {opacity: 1}
+}  
+
+
+.white_wrapper {
+  opacity: 1;  
+  background-color: #fff;
+  animation: fadein 2s;
+}
+
 
 .bakery_color {color: #d4de4f}
 .bakers_color {color: #ff7a00}
@@ -150,7 +163,6 @@ a {text-decoration: none}
   height: 2vw;
   line-height: 2vw;
 }
-
 
 
 
@@ -867,13 +879,17 @@ p {font-weight: lighter;}
   height: auto;
 }
 
+
+/* SOCIAL */
+
 .fb_linkedin {
   position: fixed;
-  left: 1.02vw;
+  left: 0vw;
   bottom: 8vw;
   transform: rotate(-90deg);
   transform-origin: 54% 50%;  
   z-index: 100000;
+
   @media (max-width: $max-960) {
     display: none;
   }  
@@ -885,9 +901,17 @@ p {font-weight: lighter;}
   color: #231f20;
   $font-map: (960px: 8px, 2880px: 20px);
   @include poly-fluid-sizing('font-size', $font-map);
- 
+  display: inline-block; 
+  transition: transform 0.5s; 
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 
+
+.fb_linkedin a:hover {
+  transform: scale(1.15);
+  transition: transform 0.5s;
+}
 
 
 .mt-150 {
@@ -1435,7 +1459,7 @@ select {
     100% {transform: scale(1)}
 }  
 .white_circle {
-    -webkit-animation: all 7s; /* Chrome, Safari, Opera */ 
+    -webkit-animation: all 2s; /* Chrome, Safari, Opera */ 
     animation: all 2s;
     animation-fill-mode: forwards;
 }

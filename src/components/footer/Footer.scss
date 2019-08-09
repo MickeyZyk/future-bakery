@@ -1,10 +1,23 @@
 @import '~styles/config';
 
+
+@keyframes fadein {
+    0%   {opacity: 0}
+    5%   {opacity: 0}    
+    100% {opacity: 1}
+}  
+
 .row {
   display: block;
   background-color: #222222;
-  position: relative;
-  z-index: 0;
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  bottom: 0;
+  opacity: 1;
+  transition: all 2s;
+  animation: fadein 2s;
+
 
   &__one {
     padding-top: 180px;

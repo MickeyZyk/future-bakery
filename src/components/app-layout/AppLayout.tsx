@@ -137,7 +137,7 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
       </ContextProviderComponent> 
 
       <div className='fb_linkedin'>
-        <a href='https://facebook.com' target='_blank'>FACEBOOK</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
+        <a href='https://facebook.com' target='_blank'>FACEBOOK</a><a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
       </div>    
      
       {children}

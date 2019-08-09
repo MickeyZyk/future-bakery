@@ -90,14 +90,16 @@ const BakersAbout = ({ data, className }) => {
             <>
 
             <Tween duration={2} 
-            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
 
 
- <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={true} syncCallbacks={true}>      
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
 
-  <div className='wrapper'>
+
+
+  <div className='wrapper white_wrapper'>
     <ReactCursorPosition className='fullscreen_cursor_position'>
       <Helmet title={data.gravBakersAbout.title} />
       <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
@@ -343,14 +345,15 @@ const BakersAbout = ({ data, className }) => {
           <div className="bakers_about_in_numbers_texts">creative ideas</div>
           <div className="bakers_about_in_numbers_texts">Bakers</div>
 
-        </Row>         
+        </Row>
+
+
 
 
    
     </ReactCursorPosition>
   </div>
-
-<Footer/>
+  <div style={{minHeight: '20vw'}}></div>
 </Scrollbar>
 
 
@@ -364,6 +367,8 @@ const BakersAbout = ({ data, className }) => {
               <div className='fulscreen_white' style={{zIndex: -1, backgroundColor: '#ffffff', position: 'absolute', width: '100vw', height: '100vh', top: 0, bottom: 0, left: 0, right: 0}}></div>
 
             </Tween>
+
+            <Footer/>
 
             </>
 
