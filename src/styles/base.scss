@@ -905,20 +905,57 @@ p {font-weight: lighter;}
   transition: transform 0.5s; 
   margin-left: 1vw;
   margin-right: 1vw;
+  transform: translateZ(0);
+
 }
 
 
 .fb_linkedin a:hover {
-  transform: scale(1.15);
+  transform: scale(1.124);
   transition: transform 0.5s;
 }
 
 
-.mt-150 {
-  margin-top: 150px;
-  position: absolute;
-  z-index: 2000;
+
+.fb_linkedin_menu {
+    color: #fff;
+
+  @media (min-width: $min-960) {
+  position: fixed;
+  bottom: 8vw;
+  z-index: 15;  
+  @include grid-col(3);
+  @include grid-offset-left(3); 
+
+  }    
+
 }
+
+.fb_linkedin_menu a {
+  color: #fff;
+  text-decoration: none;
+  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 8px, 2880px: 20px);
+  @include poly-fluid-sizing('font-size', $font-map);    
+  display: inline-block; 
+  transition: transform 0.5s; 
+  transform: translateZ(0);
+
+}
+
+
+.fb_linkedin_menu a:hover {
+  transform: scale(1.124);
+  transition: transform 0.5s;
+}
+
+
+
+
+
+
+
+
+
 
 
 /* carousel dots */
@@ -1190,27 +1227,7 @@ select {
 
 /* ALL MENUS */
 
-.fb_linkedin_menu {
-    color: #fff;
 
-  @media (min-width: $min-960) {
-  position: fixed;
-  bottom: 8vw;
-  z-index: 15;  
-  @include grid-col(3);
-  @include grid-offset-left(3); 
-
-  }    
-
-}
-
-.fb_linkedin_menu a {
-    color: #fff;
-    text-decoration: none;
-  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 26px, 1920px: 13px, 2880px: 20px);
-  @include poly-fluid-sizing('font-size', $font-map);    
-
-}
 
 
 .menu_cursor_position {
