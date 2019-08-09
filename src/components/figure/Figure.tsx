@@ -18,7 +18,7 @@ export const Figure = ({ src, className }) => (
                   <div>
                     <Controller refreshInterval={1}>
                       <Scene duration={'200%'} triggerHook={'onEnter'}>
-                        <Tween from={{ backgroundPositionY: '200px' }}>
+                        <Tween from={{ backgroundPositionY: '250px' }}>
                           <div className={s.background} style={{ backgroundImage: `url(${src})` }}></div>
                         </Tween>
                       </Scene>
