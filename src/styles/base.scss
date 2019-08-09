@@ -4945,12 +4945,7 @@ select {
 
 .crowders_about_button_two {
 
-      background-color: #37c6f4;
-      padding: 10px 85px ;
-      text-align: center;
-      color: #15311a;
-      font-weight: 700;
-      text-decoration: none;      
+   
       @include grid-col(14);
       @include grid-offset-left(2);
       margin-bottom: 2vw;

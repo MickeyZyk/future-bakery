@@ -3,7 +3,7 @@
 .figure {
 
     height: 67vw;
-    margin-bottom: 10vw;
+
 
     @media (min-width: $min-960) {
       z-index: -1;
@@ -24,9 +24,9 @@
     background-size: 220%;  
   }
   @media (min-width: $min-960) {
-    min-height: 32vw;
-    background-size: 110%;
-    background-position: bottom center;
+    height: 30vw;
+    background-size: 100%;
+    background-position: top center;
 
   }
 

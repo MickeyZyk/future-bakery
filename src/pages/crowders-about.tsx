@@ -10,6 +10,7 @@ import { Row } from 'components/row/Row';
 import { Figure2 } from 'components/figure2/Figure2';
 import { Split } from 'components/split/Split';
 import { Heading } from 'components/heading/Heading';
+import { Figure } from 'components/figure/Figure';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { AnimatedHeading } from 'components/heading/AnimatedHeading';
 import { AnimatedHeadingTwo } from 'components/heading/AnimatedHeadingTwo';
@@ -62,15 +63,15 @@ const BakeryAbout = ({ data, className }) => {
 
               <AnimatedHeading className='crowders_about_heading'>{data.gravCrowdersAbout.heading_one}</AnimatedHeading>   
 
-              <AnimatedImage className='crowders_about_image responsive_image show_on_mobile' src={'https://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />         
+              <Figure className='crowders_about_image responsive_image show_on_mobile' src={'https://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />         
 
               <Paragraph className='crowders_about_paragraph paragraph'>{data.gravCrowdersAbout.paragraph_one}</Paragraph>
 
-              <Link className='crowders_about_button' to={data.gravCrowdersAbout.link_one}>{data.gravCrowdersAbout.link_one_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>            
+              <Link arrow crowders className='crowders_about_button' to={data.gravCrowdersAbout.link_one}>{data.gravCrowdersAbout.link_one_text}</Link>            
 
             </div>
 
-            <AnimatedImage className='crowders_about_image responsive_image hide_on_mobile' src={'http://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />   
+            <Figure className='crowders_about_image responsive_image hide_on_mobile' src={'http://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />   
 
 
           </Row>
@@ -156,7 +157,7 @@ const BakeryAbout = ({ data, className }) => {
 
           <Row>
 
-            <Link className="crowders_about_button_two" to={'/'} >START A PROJECT WITH US</Link>
+            <Link button crowders arrow className="crowders_about_button_two" to={'/'} >START A PROJECT WITH US</Link>
 
           </Row>
 

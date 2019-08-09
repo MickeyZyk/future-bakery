@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import SplitText from 'utils/SplitText.min.js'
 import ReactDOM from 'react-dom';
+import * as ScrollMagic from 'scrollmagic'
+import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import { TweenMax, TimelineMax, Power3, Power2 } from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
@@ -13,14 +15,11 @@ interface IIntroProps {
 }
 
 export class Paragraph extends React.Component {
-/*
-  static contextTypes = {
-      getScrollbar: PropTypes.func
-  };
-*/
+
   constructor(props){
     super(props);
-    this.paragraph = React.createRef();    
+    this.paragraph = React.createRef();  
+    this.controller = new ScrollMagic.Controller();
   }
 
   componentDidMount(){
@@ -37,13 +36,31 @@ export class Paragraph extends React.Component {
 
     let lines = split.lines
 
-      var currentTLback = new TimelineMax(); 
-      currentTLback.staggerFrom(lines, 3, { yPercent: 150, ease: 'Expo.easeInOut' }, .15, "+=0")
+
+
+
 
 /*
-      this.context.getScrollbar((scrollbar) => {
-          console.log(scrollbar)
-      });   
+      var currentTLback = new TimelineMax(); 
+      currentTLback.staggerFrom(lines, 3, { yPercent: 150, ease: 'Expo.easeInOut' }, .15, "+=0")
+*/
+
+    var thisParagraph = this.paragraph.current
+    var thisParagraphLines = thisParagraph.querySelectorAll('.ts-line');
+
+    console.log("LINEEEES", thisParagraphLines )
+/*
+
+    var tween = TweenMax.staggerFromTo(thisParagraphLines, 0.5, {yPercent: 150,ease: 'Expo.easeInOut'}, 1);    
+
+    new ScrollMagic.Scene({
+      triggerElement: thisParagraph,
+      duration: 400, // scroll distance
+      offset: 200 // start this scene after scrolling for 50px
+    })
+      .setTween(tween)
+      .setPin(thisParagraph) // pins the element for the the scene's duration
+      .addTo(this.controller); // assign the scene to the controller
 */
 
   }
@@ -53,23 +70,10 @@ export class Paragraph extends React.Component {
     return (
 
 
-      <TransitionState>
-        {({ transitionStatus }) => {
-
-          return (
-
-          <Tween duration={1} delay={1} 
-          from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: 100, ease: 'Power2.easeOut' }} 
-          to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: 100, ease: 'Power2.easeIn' } : false } >
             <p ref={this.paragraph} className={`${s.paragraph } ${this.props.className}`}>
               {this.props.children}
             </p>
-          </Tween>
 
-          )
-        }}
-
-      </TransitionState>
 
     );
   }
