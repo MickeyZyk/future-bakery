@@ -17,7 +17,8 @@ import { AnimatedHeadingThree } from 'components/heading/AnimatedHeadingThree';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import Texticon from 'components/texticon/Texticon';
 import { Link } from 'components/link/Link';
-import { DarkTeam} from 'components/team/DarkTeam';
+import { DarkTeam } from 'components/team/DarkTeam';
+import { Authors } from 'components/authors/Authors';
 import { Footer } from 'components/footer/Footer';
 import { TweenMax, TimelineMax, Power3 } from "gsap";
 import { Tween, SplitWords } from 'react-gsap'
@@ -32,14 +33,6 @@ import { TransitionState } from "gatsby-plugin-transition-link";
 
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
-
-
-/*
-
-
-*/
-
-
 
 const BakersAbout = ({ data, className }) => {
 
@@ -64,6 +57,12 @@ const BakersAbout = ({ data, className }) => {
     return image;
   }  
 
+  function getAuthorTexts(item) {
+    var text = [item.text];
+    return text;
+  }   
+
+
   const members = data.gravBakersAbout.team.map(getMembers)
   var mergedMembers = [].concat.apply([], members);
 
@@ -76,7 +75,10 @@ const BakersAbout = ({ data, className }) => {
   const images = data.gravBakersAbout.team.map(getImages)
   var mergedImages = [].concat.apply([], images);
 
+  const authorTexts = data.gravBakersAbout.author_texts.map(getAuthorTexts)
+  var mergedAuthorTexts = [].concat.apply([], authorTexts);  
 
+  console.log("AUTH" + mergedAuthorTexts);
 
   return (
 
@@ -93,7 +95,7 @@ const BakersAbout = ({ data, className }) => {
 
 
 
- <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={true} syncCallbacks={false}>      
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={true} syncCallbacks={true}>      
 
   <div className='wrapper'>
     <ReactCursorPosition className='fullscreen_cursor_position'>
@@ -309,10 +311,9 @@ const BakersAbout = ({ data, className }) => {
 
           <img className="bakers_about_authors_image" src="../images/hipster.jpg"/>
           <Heading className="bakers_about_authors_heading">What authors say...</Heading>
-          <Paragraph className="bakers_about_authors_texts">”Let your creativity shine and your ideas out. We will have an abundance of great projects, that will inspire you. Help us solve them!! Have fun with it! Let your creativity shine and your ideas out. We will have an abundance of great projects, that will inspire you. Help us solve them!! Have fun with it! Let your creativity shine and your ideas out. We will have an abundance of great projects, that will inspire you. Help us solve them!! Have fun with it!Let your creativity shine and your ideas out. We will have an abundance of great projects, that will inspire you. Help us solve them!! Have fun with it! ” </Paragraph>
-          <div className="bakers_about_dots">
-              <Dot isActive /><Dot/><Dot/><Dot/>
-          </div>
+
+
+          <Authors texts={mergedAuthorTexts}/>
 
           <div className="bakers_about_authors_flip_button bakers_flip">
             <Link to={'/bakerscontact'}>
@@ -436,18 +437,3 @@ export const BakersAboutquery = graphql`
 `
 
 export default BakersAbout
-
-
-class Dot extends React.Component {
-
-  constructor (props){
-    super(props);
-  }
-
-  render() {
-    return (
-        <div>{this.props.isActive ? <FullCircle/> : <Circle/>}</div>
-    );
-  }
-
-}

@@ -9,22 +9,6 @@ import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './DarkTeam.scss';
 import _ from 'lodash';
 
-/*
-var images = ['../images/pelcova.jpg', '../images/bw_pelcova.jpg','../images/pelcova.jpg','../images/bw_pelcova.jpg', '../images/pelcova.jpg','../images/bw_pelcova.jpg']
-var names = ["Alena Pelcova", "Pelcova Alena", "Alena Pelcova","Pelcova Alena ", "Alena Pelcova", "Pelcova Alena" ]
-var texts = ["Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to work well with this and give it all a life.",
- "Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to work well with this and give it all a life.",
- "Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to work well with this and give it all a life.",
- "Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to work well with this and give it all a life.",
- "Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to work well with this and give it all a life.",
- "Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to work well with this and give it all a life." ]
-var linkNames = ["ALENA", "ALENA", "ALENA","ALENA", "ALENA", "ALENA" ]
-var linkURLs = ["mailto:alena.pelcova@futurebakers.com", "mailto:alena.pelcova@futurebakers.com", "mailto:alena.pelcova@futurebakers.com","mailto:alena.pelcova@futurebakers.com", "mailto:alena.pelcova@futurebakers.com", "mailto:alena.pelcova@futurebakers.com" ]
-
-//var firstWord = _.first( str.split(" ");
-
-*/
-
 export class DarkTeam extends React.Component {
 
   constructor(props){

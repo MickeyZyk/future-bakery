@@ -1,0 +1,27 @@
+@import '~styles/config';
+
+.texts {
+  @include grid-col(16);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    top: 0vw;
+    position: relative;
+    @include grid-col(5);
+    @include grid-offset-left(9);
+    min-height: 22vw;
+
+  }  
+}
+.text_active {
+  opacity: 1;
+  position: absolute;
+}
+.text {
+  position: absolute;
+  opacity: 0
+}
+.dots{
+  position: absolute;
+  top: 20vw;
+}
