@@ -6,9 +6,9 @@ import { Power2 } from "gsap/TweenMax";
 import { Controller, Scene } from 'react-scrollmagic';
 import { TransitionState } from "gatsby-plugin-transition-link";
 import { add } from 'gsap-tools';
-import s from './Figure.scss';
+import s from './SmallFigure.scss';
 
-export const Figure = ({ src, className }) => (
+export const SmallFigure = ({ src, className }) => (
   <>
         <TransitionState>
           {({ transitionStatus }) => {
@@ -18,7 +18,7 @@ export const Figure = ({ src, className }) => (
                   <div>
                     <Controller refreshInterval={1}>
                       <Scene duration={'200%'} triggerHook={'onEnter'}>
-                        <Tween from={{ backgroundPositionY: '-300px' }}>
+                        <Tween from={{ backgroundPositionY: '150px' }}>
                           <div className={s.background} style={{ backgroundImage: `url(${src})` }}></div>
                         </Tween>
                       </Scene>

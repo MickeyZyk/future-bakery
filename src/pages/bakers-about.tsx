@@ -6,10 +6,12 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Row } from 'components/row/Row';
+import { SmallFigure } from 'components/figure/SmallFigure';
 import { Figure3 } from 'components/figure3/Figure3';
 import { Figure4 } from 'components/figure4/Figure4';
 import { Split } from 'components/split/Split';
 import { Heading } from 'components/heading/Heading';
+import { Figure } from 'components/figure/Figure';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { AnimatedHeading  } from 'components/heading/AnimatedHeading';
 import { AnimatedHeadingTwo  } from 'components/heading/AnimatedHeadingTwo';
@@ -90,24 +92,30 @@ const BakersAbout = ({ data, className }) => {
             <>
 
             <Tween duration={2} 
-            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
 
 
- <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={true} syncCallbacks={true}>      
 
-
-
-  <div className='wrapper white_wrapper'>
+  <div className='wrapper'>
     <ReactCursorPosition className='fullscreen_cursor_position'>
       <Helmet title={data.gravBakersAbout.title} />
       <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
       <Row>
-        <img 
-        src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_one } 
-        className="bakers_about__image_one hide_on_mobile dropped"
-        />
+
+
+
+
+          <Figure 
+          src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_one } 
+          className="bakers_about__image_one hide_on_mobile dropped"
+          />
+
+
+
+
         <AnimatedHeading className='bakers_about__heading_one'>{data.gravBakersAbout.heading_one}</AnimatedHeading>
         <HeadingTwo className='bakers_about__heading_two'>{data.gravBakersAbout.subheading_one}</HeadingTwo>      
         <Figure3 className="show_on_mobile"/>
@@ -117,7 +125,7 @@ const BakersAbout = ({ data, className }) => {
       </Row>
       <SVGicon className='bakers_about__brains' src='brains.svg' /> 
       <Row>
-        <img 
+        <Figure
         src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_two } 
         className="bakers_about__image_two hide_on_mobile"
         />      
@@ -260,7 +268,12 @@ const BakersAbout = ({ data, className }) => {
 
         <Row>
           <Heading className="bakers_about_bakers_heading">{data.gravBakersAbout.bakers_heading}</Heading>
-          <img src="../images/kid.jpg" className="bakers_about_bakers_image"/>
+
+          <Figure 
+          src="../images/kid.jpg" className="bakers_about_bakers_image"
+          />
+
+
             <Paragraph className="bakers_about_bakers_p_one">{data.gravBakersAbout.bakers_paragraph_one}</Paragraph>
             <Paragraph className="bakers_about_bakers_p_two">{data.gravBakersAbout.bakers_paragraph_two}</Paragraph>
 
@@ -313,8 +326,13 @@ const BakersAbout = ({ data, className }) => {
 
         <Row className="bakers_about_authors">
 
-          <img className="bakers_about_authors_image" src="../images/hipster.jpg"/>
-          <Heading className="bakers_about_authors_heading">What authors say...</Heading>
+
+          <SmallFigure
+          src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.authors_image } 
+          className="bakers_about_authors_image"
+          />
+
+          <Heading className="bakers_about_authors_heading">{data.gravBakersAbout.authors_heading}</Heading>
 
 
           <Authors texts={mergedAuthorTexts}/>
@@ -345,15 +363,14 @@ const BakersAbout = ({ data, className }) => {
           <div className="bakers_about_in_numbers_texts">creative ideas</div>
           <div className="bakers_about_in_numbers_texts">Bakers</div>
 
-        </Row>
-
-
+        </Row>         
 
 
    
     </ReactCursorPosition>
   </div>
-  <div style={{minHeight: '20vw'}}></div>
+
+<Footer/>
 </Scrollbar>
 
 
@@ -368,19 +385,12 @@ const BakersAbout = ({ data, className }) => {
 
             </Tween>
 
-            <Footer/>
-
             </>
 
           )
         }}
       </TransitionState>
 
-
-
-
-
- 
 
   )
 }

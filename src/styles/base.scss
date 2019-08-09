@@ -4,19 +4,9 @@
 
 @import '~styles/IGORlogin';
 
-@keyframes fadein {
-    0%   {opacity: 0}
-    50%   {opacity: 0}    
-    100% {opacity: 1}
-}  
-
-
-.white_wrapper {
-  opacity: 1;  
-  background-color: #fff;
-  animation: fadein 2s;
-}
-
+img {
+      clip-path: inset(.001% .002% .003% .004%);
+    }
 
 .bakery_color {color: #d4de4f}
 .bakers_color {color: #ff7a00}
