@@ -44,7 +44,15 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
 
               <ContextConsumer>
                 {({ data, set  }) => (
-                  <HeaderLink className={ location.pathname.includes('menu') ? 'hidden' : location.pathname.includes('bakery') || location.pathname == '/' ? 'active' : ''} onClick={() => set({ logo: 'bakery' })} name="FUTURE BAKERY" to="/bakery">FUTURE BAKERY</HeaderLink>
+                  <HeaderLink 
+                  className={ 
+                    location.pathname.includes('menu') ? 'hidden' 
+                    : location.pathname.includes('bakery') || location.pathname == '/' ? 'active bakery_header_menu_link submenu_link' 
+                    : location.pathname.includes('bakers') ? 'bakers_header_menu_link submenu_link' 
+                    : location.pathname.includes('crowders') ? 'crowders_header_menu_link submenu_link'  
+                    : 'submenu_link'
+                  } 
+                  onClick={() => set({ logo: 'bakery' })} name="FUTURE BAKERY" to="/bakery">FUTURE BAKERY</HeaderLink>
                 )}
               </ContextConsumer>
 
@@ -56,7 +64,15 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
   
               <ContextConsumer>
                 {({ data, set }) => (
-                  <HeaderLink className={ location.pathname.includes('menu') ? 'hidden' : location.pathname.includes('bakers') ? 'active' : '' } onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERS" to="/bakers">FUTURE BAKERS</HeaderLink>
+                  <HeaderLink
+                    className={ 
+                    location.pathname.includes('menu') ? 'hidden' 
+                    : location.pathname.includes('bakers') ? 'active bakers_header_menu_link submenu_link' 
+                    : location.pathname.includes('bakery') ? 'bakery_header_menu_link submenu_link' 
+                    : location.pathname.includes('crowders') ? 'crowders_header_menu_link submenu_link'  
+                    : 'submenu_link'
+                  } 
+                  onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERS" to="/bakers">FUTURE BAKERS</HeaderLink>
                 )}
               </ContextConsumer>
 
@@ -69,7 +85,15 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
 
               <ContextConsumer>
                 {({ data, set }) => (
-                  <HeaderLink className={ location.pathname.includes('menu') ? 'hidden' : location.pathname.includes('crowders') ? 'active' : '' } onClick={() => set({ logo: 'crowders' })} name="FUTURE CROWDERS" to="/crowders" >FUTURE CROWDERS</HeaderLink>
+                  <HeaderLink 
+                    className={ 
+                    location.pathname.includes('menu') ? 'hidden' 
+                    : location.pathname.includes('crowders') ? 'active crowders_header_menu_link submenu_link' 
+                    : location.pathname.includes('bakery') ? 'bakery_header_menu_link submenu_link' 
+                    : location.pathname.includes('bakers') ? 'bakers_header_menu_link submenu_link'  
+                    : 'submenu_link'
+                  }                   
+                  onClick={() => set({ logo: 'crowders' })} name="FUTURE CROWDERS" to="/crowders" >FUTURE CROWDERS</HeaderLink>
                 )}
               </ContextConsumer>
 

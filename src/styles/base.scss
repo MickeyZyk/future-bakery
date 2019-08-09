@@ -51,6 +51,7 @@ a {text-decoration: none}
   transition: all 1s;
 }
 
+
 .bakers_arrow polygon {
     fill: #ff7a00;
 }
@@ -63,9 +64,11 @@ a {text-decoration: none}
     fill: #37c6f4;
 }
 
+
 .the_button_link.bakery_color {
   color: #222;
   background-color: #d4de4f;
+  text-align: center;  
 
 }
 
@@ -75,10 +78,37 @@ a {text-decoration: none}
   text-align: center;
 }
 
+.the_button_link.crowders_color {
+  color: #222;
+  background-color: #37c6f4;
+  text-align: center;
+}
+
+
 .the_button_link:hover .the_link_text {
   left: -.7vw;
   transition: all 1s;
 }
+
+
+
+.the_button_link.bakery_color .bakery_arrow {
+    left: -.5vw;
+    transition: opacity .5s transform 1s;   
+    opacity: 0;
+}
+
+.the_button_link.bakery_color .bakery_arrow polygon {
+    fill: #222;
+}
+
+.the_button_link.bakery_color:hover .bakery_arrow  {
+    opacity: 1;
+    transition: opacity .5s transform 1s;  
+    left: .2vw;
+}
+
+
 
 .the_button_link.bakers_color .bakers_arrow {
     left: -.5vw;
@@ -95,6 +125,26 @@ a {text-decoration: none}
     transition: opacity .5s transform 1s;  
     left: .2vw;
 }
+
+
+
+.the_button_link.crowders_color .crowders_arrow {
+    left: -.5vw;
+    transition: opacity .5s transform 1s;   
+    opacity: 0;
+}
+
+.the_button_link.crowders_color .crowders_arrow polygon {
+    fill: #222;
+}
+
+.the_button_link.crowders_color:hover .crowders_arrow  {
+    opacity: 1;
+    transition: opacity .5s transform 1s;  
+    left: .2vw;
+}
+
+
 
 .the_button_link {
   height: 2vw;
@@ -169,6 +219,55 @@ a {text-decoration: none}
 
 
 
+.bakery_header_menu_link.submenu_link > div:before, .bakery_header_menu_link.submenu_link > div:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #d4de4f;  
+}
+.bakers_header_menu_link.submenu_link > div:before, .bakers_header_menu_link.submenu_link > div:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #ff7a00;  
+}
+
+.crowders_header_menu_link.submenu_link > div:before, .crowders_header_menu_link.submenu_link > div:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #37c6f4;  
+}
+
+
+.bakery_header_menu_link.submenu_link > div:before, .bakers_header_menu_link.submenu_link > div:before, .crowders_header_menu_link.submenu_link > div:before {
+  left: -2.5px;
+}
+
+.bakery_header_menu_link.submenu_link > div:after, .bakers_header_menu_link.submenu_link > div:after, .crowders_header_menu_link.submenu_link > div:after {
+  right: 2.5px;
+  transition: width 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.bakery_header_menu_link.submenu_link > div:hover:before, .bakers_header_menu_link.submenu_link > div:hover:before, .crowders_header_menu_link.submenu_link > div:hover:before {
+  width: 100%;
+  transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.bakery_header_menu_link.submenu_link > div:hover:after, .bakers_header_menu_link.submenu_link > div:hover:after, .crowders_header_menu_link.submenu_link > div:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
 
 
 
