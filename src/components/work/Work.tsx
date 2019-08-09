@@ -214,8 +214,6 @@ export default class Work extends React.Component {
               </If>
 
 
-
-
           <div className={s.detail_wrapper}>
             <div className={s.row__threetop}> 
               <div className={s.column__col5}>
@@ -225,9 +223,14 @@ export default class Work extends React.Component {
                   )}
                 </ScrollTo>
               </div>
-              <div className={s.column__col6}>
-                <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
-              </div>
+
+              <If condition={this.props.data.gravBakeryWork.video != 'null'}>
+                <Then>              
+                  <div className={s.column__col6}>
+                    <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
+                  </div>
+                </Then>
+              </If>
             </div>
 
       <TransitionState>

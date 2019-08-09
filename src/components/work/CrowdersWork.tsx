@@ -123,13 +123,14 @@ export default class Work extends React.Component {
                   )}
                 </ScrollTo>
               </div>
-              <div className={s.column__col6}>
-                <p onClick={ this.playVideo } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
-              </div>
+              <If condition={this.props.data.gravCrowdersWork.video != 'null'}>
+                <Then>
+                  <div className={s.column__col6}>
+                    <p onClick={ this.playVideo } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
+                  </div>
+                </Then>
+              </If>
             </div>
-
-      
-
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
                 <img className={s.client_logo} src={ 'https://future.stratego.ba/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.logo_light } />              
