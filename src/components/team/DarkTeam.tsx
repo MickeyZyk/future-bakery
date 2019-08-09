@@ -7,7 +7,9 @@ import ReactDOM from 'react-dom';
 import { Link as InternalLink } from 'components/link/Link';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './DarkTeam.scss';
+import _ from 'lodash';
 
+/*
 var images = ['../images/pelcova.jpg', '../images/bw_pelcova.jpg','../images/pelcova.jpg','../images/bw_pelcova.jpg', '../images/pelcova.jpg','../images/bw_pelcova.jpg']
 var names = ["Alena Pelcova", "Pelcova Alena", "Alena Pelcova","Pelcova Alena ", "Alena Pelcova", "Pelcova Alena" ]
 var texts = ["Imagine you have a family with thousands of relatives. This is exactly the family Alena takes care of. Future Bakery family comprising of twenty five thousands people from the crowd. People with great energy and ideas. We know very well that none of us is as smart as we all together. Also, that we are all creative. It’s enough to give impulse and it rolls off. This world is full of creativity, fresh and - for somebody - weird ideas and insights. Our work is to work well with this and give it all a life.",
@@ -19,14 +21,29 @@ var texts = ["Imagine you have a family with thousands of relatives. This is exa
 var linkNames = ["ALENA", "ALENA", "ALENA","ALENA", "ALENA", "ALENA" ]
 var linkURLs = ["mailto:alena.pelcova@futurebakers.com", "mailto:alena.pelcova@futurebakers.com", "mailto:alena.pelcova@futurebakers.com","mailto:alena.pelcova@futurebakers.com", "mailto:alena.pelcova@futurebakers.com", "mailto:alena.pelcova@futurebakers.com" ]
 
+//var firstWord = _.first( str.split(" ");
 
+*/
 
-export const DarkTeam = () => { 
+export class DarkTeam extends React.Component {
+
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    console.log(this.props)
+  }
+
+  render() {
   return( 
     <div className={s.dark_team}>
-      <Member arrayOfImages={images} />
+      <Member members={this.props.members} links={this.props.links} texts={this.props.texts} images={this.props.images} arrayOfImages={this.props.images} />
     </div> 
   )
+
+  }  
+
 }
 
 class Member extends React.Component {
@@ -93,6 +110,15 @@ class Member extends React.Component {
 
   render() {
 
+     
+
+var names = this.props.members
+var texts = this.props.texts
+var linkNames = ["ALENA", "ALENA", "ALENA","ALENA", "ALENA", "ALENA" ]
+var linkURLs = this.props.links
+
+//var firstWord = _.first( str.split(" ");
+
 
     var members = this.props.arrayOfImages.map((image, i) =>{
       return(
@@ -100,13 +126,13 @@ class Member extends React.Component {
           <div className={`${s.data} ${this.state.activeIndex == i ? s.current_data : ''}`}>
             <h4 className={s.name}>{names[i]}</h4>
             <p className={s.text}>{texts[i]}</p>
-            <a className={s.link} href={linkURLs[i]}>CONTACT {linkNames[i]}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></a>
+            <a className={s.link} href={'mailto:' + linkURLs[i]}>CONTACT {_.first( names[i].split(" ")).toUpperCase()}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></a>
           </div>
         </div>
       )
     })  
 
-    var imagesStrip =  this.props.arrayOfImages.map((image, j) =>{
+    var imagesStrip = this.props.arrayOfImages.map((image, j) =>{
       return(
         <img className={s.image} src={image} style={{ zIndex : -j , right: `${-j * 27.77778}%` }} key={'image'+j}/>
       )

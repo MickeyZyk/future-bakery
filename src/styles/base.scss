@@ -166,6 +166,11 @@ a {text-decoration: none}
 
 }
 
+
+strong {
+  font-weight: bold!important;
+}
+
 .relative {
     position: relative !important;
     bottom: 0!important;
@@ -2449,6 +2454,7 @@ select {
 
 .bakers_about__image_one {
 
+
   position: relative;
   height: 250px;
   @include grid-col(16);
@@ -2457,9 +2463,9 @@ select {
 
 
   @media (min-width: $min-960) {
-
+    position: absolute;
     @include grid-col(8);
-    @include grid-offset-left(1);
+    @include grid-offset-left(9);
     height: 30vw;
 
   }
@@ -2482,7 +2488,7 @@ select {
   @media (min-width: $min-960) {
 
     @include grid-col(8);
-    @include grid-offset-left(1);
+    @include grid-offset-left(2);
     height: 30vw;
 
   }
@@ -2582,7 +2588,7 @@ select {
   @media (min-width: $min-960) {
 
     @include grid-col(5);
-    @include grid-offset-left(1);
+    @include grid-offset-left(0);
   }
 
 
@@ -2605,20 +2611,7 @@ select {
 
 }
 
-.bakers_we__paragraph {
-  color: rgba(35, 31, 32, 0.6);
 
-  @include grid-col(16);
-  @include grid-offset-left(0);
-
-  @media (min-width: $min-960) {
-    position: relative;
-    top: -20vw;    
-    @include grid-col(3);
-    @include grid-offset-left(12);
-  }
-
-}
 
 
 .bakers_about__join_link {
@@ -3548,13 +3541,13 @@ select {
 
 }
 
-.bakers_about_step_icons_first {
+.bakers_about_step_icons:first-child {
 
   @include grid-col;
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-
+    padding-left: 0vw!important;
     @include grid-col(.5);
     @include grid-offset-left(3.2);
 
@@ -3577,7 +3570,7 @@ select {
 
 }
 
-.bakers_about_steps_text_first {
+.bakers_about_steps_text:first-child  {
 
   $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 26px, 1920px: 13px, 2880px: 20px);
   @include poly-fluid-sizing('font-size', $font-map); 
@@ -3588,7 +3581,7 @@ select {
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-
+    padding-left: 0!important;
     @include grid-col(1.2);
     @include grid-offset-left(2.9);
 
@@ -4896,7 +4889,7 @@ select {
     position: relative;
     top: -20vw;    
     @include grid-col(3);
-    @include grid-offset-left(12);
+    @include grid-offset-left(11);
   }
 }
 
@@ -4914,7 +4907,7 @@ select {
     top: -17vw;
     bottom: 0;    
     @include grid-col(3);
-    @include grid-offset-left(12);
+    @include grid-offset-left(11);
   }  
 }
 

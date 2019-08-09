@@ -25,6 +25,7 @@ import { Controller, Scene } from 'react-scrollmagic';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import Circle from 'assets/svg/circle.svg';
 import FullCircle from 'assets/svg/full_circle.svg';
+const slug = require('slug')
 
 
 import { TransitionState } from "gatsby-plugin-transition-link";
@@ -32,7 +33,51 @@ import { TransitionState } from "gatsby-plugin-transition-link";
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 
+
+/*
+
+
+*/
+
+
+
 const BakersAbout = ({ data, className }) => {
+
+
+ function getMembers(item) {
+    var sub = [item.member];
+    return sub;
+  }
+
+  function getLinks(item) {
+    var link = [item.link_two];
+    return link;
+  }  
+
+  function getTexts(item) {
+    var title = [item.member_text];
+    return title;
+  } 
+
+  function getImages(item) {
+    var image = ['https://future.stratego.ba/en/bakers/pages/'  + slug(data.gravBakersAbout.title.toLowerCase()) + '/' + item.image];
+    return image;
+  }  
+
+  const members = data.gravBakersAbout.team.map(getMembers)
+  var mergedMembers = [].concat.apply([], members);
+
+  const links = data.gravBakersAbout.team.map(getLinks)
+  var mergedLinks = [].concat.apply([], links);
+
+  const texts = data.gravBakersAbout.team.map(getTexts)
+  var mergedTexts = [].concat.apply([], texts);
+
+  const images = data.gravBakersAbout.team.map(getImages)
+  var mergedImages = [].concat.apply([], images);
+
+
+
   return (
 
 
@@ -48,14 +93,17 @@ const BakersAbout = ({ data, className }) => {
 
 
 
- <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={true} syncCallbacks={false}>      
 
   <div className='wrapper'>
     <ReactCursorPosition className='fullscreen_cursor_position'>
       <Helmet title={data.gravBakersAbout.title} />
       <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
       <Row>
-        <Figure3 className="bakers_about__image_one hide_on_mobile dropped"/>
+        <img 
+        src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_one } 
+        className="bakers_about__image_one hide_on_mobile dropped"
+        />
         <AnimatedHeading className='bakers_about__heading_one'>{data.gravBakersAbout.heading_one}</AnimatedHeading>
         <HeadingTwo className='bakers_about__heading_two'>{data.gravBakersAbout.subheading_one}</HeadingTwo>      
         <Figure3 className="show_on_mobile"/>
@@ -65,7 +113,10 @@ const BakersAbout = ({ data, className }) => {
       </Row>
       <SVGicon className='bakers_about__brains' src='brains.svg' /> 
       <Row>
-        <Figure4 className="bakers_about__image_two hide_on_mobile"/>
+        <img 
+        src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_two } 
+        className="bakers_about__image_two hide_on_mobile"
+        />      
         <Split className='bakers_about__heading_three'>{data.gravBakersAbout.subheading_two}</Split>      
         <Paragraph className='bakers_we__paragraph paragraph'>{data.gravBakersAbout.paragraph_one}</Paragraph>
         <Link className="bakers_about__join_link" to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
@@ -199,25 +250,7 @@ const BakersAbout = ({ data, className }) => {
         </Row>
           <AnimatedHeadingTwo className="bakers_about_team_heading">{data.gravBakersAbout.team_heading}</AnimatedHeadingTwo>
 
-
-
-
-
-
-
-
-
-          <DarkTeam/> 
-
-
-
-
-
-
-
-
-
-
+          <DarkTeam members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages}/> 
 
       <SVGicon className='bakers_about_treasure' src='treasure.svg' />
 
@@ -249,21 +282,24 @@ const BakersAbout = ({ data, className }) => {
           <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
           <div className="bakers_about_numbers">6</div>
         </Row>
+
         <Row className="bakers_about_steps_two">
-          <img className="bakers_about_step_icons_first" src="../svg/register.svg"/>
-          <img className="bakers_about_step_icons" src="../svg/location.svg"/>
-          <img className="bakers_about_step_icons" src="../svg/envelope.svg"/>
-          <img className="bakers_about_step_icons" src="../svg/clock.svg"/>
-          <img className="bakers_about_step_icons" src="../svg/gold.svg"/>
-          <img className="bakers_about_step_icons" src="../svg/smile.svg"/>
+
+
+          {data.gravBakersAbout.svg_icons.map((svg, i) => (
+            <img key={i} className="bakers_about_step_icons" 
+            src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + svg.svg }
+            />       
+          ))}
+
         </Row>
+
         <Row className="bakers_about_steps_three">
-          <div className="bakers_about_steps_text_first"><span style={{fontWeight: 'bold'}}>REGISTER</span> and you will be a part of our global creative family</div>
-          <div className="bakers_about_steps_text">Choose your Areas of Interest</div>
-          <div className="bakers_about_steps_text">Send your ideas</div>
-          <div className="bakers_about_steps_text">Then you can wait and see if you are the selected baker</div>
-          <div className="bakers_about_steps_text">If you are, enjoy your reward</div>
-          <div className="bakers_about_steps_text">If not this time, no worries, there will be more projects</div>
+
+          {data.gravBakersAbout.svg_icons.map((svg, i) => (
+            <div key={i} className="bakers_about_steps_text" dangerouslySetInnerHTML={{ __html: svg.svg_text }}/>
+          ))}
+
         </Row>   
 
       <SVGicon className='bakers_about_like' src='like.svg' />
@@ -348,21 +384,25 @@ const BakersAbout = ({ data, className }) => {
 export const BakersAboutquery = graphql`
   query BakersAboutPageQuery {
     gravBakersAbout {
+      svg_icons {
+        svg
+        svg_text
+      }
+      title
+      team_section_heading
+      team_heading
       team {
         member_text
         member
         link_two
         image
       }
-      title
-      team_heading
       subheading_two
       subheading_one
       problem_text
       problem_heading_two
       problem_heading_three
       problem_heading_one
-      path
       paragraph_two
       paragraph_one
       link_two_text
@@ -371,6 +411,10 @@ export const BakersAboutquery = graphql`
       link_one
       image_two
       image_one
+      icons_link_two_text
+      icons_link_two
+      icons_link_one_text
+      icons_link_one
       icon07_text
       icon06_text
       icon05_text
@@ -382,16 +426,11 @@ export const BakersAboutquery = graphql`
       bakers_paragraph_two
       bakers_paragraph_one
       bakers_heading
-      team_section_heading
-      icons_link_one
-      icons_link_one_text
-      icons_link_two
-      icons_link_two_text
       authors_image
       authors_heading
       author_texts {
         text
-      }  
+      }
     }   
   }
 `
