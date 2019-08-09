@@ -36,7 +36,7 @@
   transition: opacity 1.25s;  
   z-index: 0;  
   transform: translateY(-100%);  
-  filter: grayscale(100%);
+  filter: sepia(1) blur(0px) saturate(1.82) drop-shadow(rgb(0, 0, 0) 0px 0px 0px) opacity(1) hue-rotate(38deg) contrast(101%) ;
   background-color: #7a802e;
 }
 .bw {
