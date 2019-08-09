@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import SplitText from 'utils/SplitText.min.js'
 import ReactDOM from 'react-dom';
-//import * as ScrollMagic from 'scrollmagic'
+import ScrollMagic from 'scrollmagic'
 //import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import { TweenMax, TimelineMax, Power3, Power2 } from "gsap";
 import { Tween } from 'react-gsap';
