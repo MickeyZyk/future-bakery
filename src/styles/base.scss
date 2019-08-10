@@ -4876,107 +4876,105 @@ select {
 
 
 
+  div.crowders_about__graph_icon {
 
-
-
-
-
-.crowders_about__graph_icon {
-
-    @include grid-col(10);
-    display: inline-block;
-
-  @media (min-width: $min-960) {
-
-    display: block;
-    float: left;
-    @include grid-col(6);
-    @include grid-offset-right(2);    
-        
-
-  } 
-
-}
-
-
-  .bakery_about__right_icons > div:nth-child(3) > div.crowders_about__graph_icon {
-
-    @include grid-col(9);
-    display: inline-block;
+      @include grid-col(10);
+      display: inline-block;
 
     @media (min-width: $min-960) {
 
       display: block;
-      @include grid-col(3);
-      @include grid-offset-right(6);          
+      float: left;
+      @include grid-col(4);
+      @include grid-offset-right(3.2);  
 
-    }
+    } 
 
   }
 
-  .bakery_about__right_icons > div:nth-child(4) > div.crowders_about__graph_icon {
+   div.crowders_about__graph_icon > div > img {
 
-    @include grid-col(9);
-    display: inline-block;
 
     @media (min-width: $min-960) {
 
-      display: block;
-      @include grid-col(3);
-      margin-left: 0;
-      clear: left;   
-          
+      min-height: 4vw; 
 
-    }     
+    } 
 
   }
 
-  .bakery_about__right_icons > div:nth-child(6) > div.crowders_about__graph_icon {
 
-    @include grid-col(9);
-    display: inline-block;
+
+
+  div.cr_one > div:nth-child(1) > div > img {
+
+
 
     @media (min-width: $min-960) {
+      width: 35%;          
 
-      display: block;
-      @include grid-col(3);
-      @include grid-offset-right(6);          
-
-    }
+    } 
 
   }
 
-  .bakery_about__right_icons > div:nth-child(7) > div.crowders_about__graph_icon {
+    div.cr_one > div:nth-child(2) > div > img {
 
-    @include grid-col(9);
-    display: inline-block;
 
-    @media (min-width: $min-960) {
-
-      display: block;
-      @include grid-col(3);
-      margin-left: 0;
-      clear: left;   
-          
-
-    }     
-
-  }  
-
-  .bakery_about__right_icons > div:nth-child(9) > div.crowders_about__graph_icon {
-
-    @include grid-col(9);
-    display: inline-block;
 
     @media (min-width: $min-960) {
+      width: 22%;          
 
-      display: block;
-      @include grid-col(3);
-      @include grid-offset-right(6);          
+    } 
 
-    }
+  }
 
-  }  
+    div.cr_one > div:nth-child(3) > div > img {
+
+
+
+    @media (min-width: $min-960) {
+      width: 24%;          
+
+    } 
+
+  }
+
+    div.cr_two > div:nth-child(1) > div > img {
+
+
+
+    @media (min-width: $min-960) {
+      width: 21%;          
+
+    } 
+
+  }
+
+    div.cr_two > div:nth-child(2) > div > img {
+
+
+
+    @media (min-width: $min-960) {
+      width: 19%;          
+
+    } 
+
+  }
+
+    div.cr_two > div:nth-child(3) > div > img {
+
+
+
+    @media (min-width: $min-960) {
+      width: 21%;          
+
+    } 
+
+  }
+
+
+
+
 
 
 

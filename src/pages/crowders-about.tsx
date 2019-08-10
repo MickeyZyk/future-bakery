@@ -180,24 +180,23 @@ const BakeryAbout = ({ data, className }) => {
 
 
 
-              <div className="crowders_about_right_icons">
+              <div className="crowders_about_right_icons cr_one">
 
-                  <CrowdersTexticon className='crowders_about__graph_icon first' name='COMMUNITY BUILDING' src='cr_rainbow.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon' name='COMMUNITY BUILDING' src='cr_rainbow.svg' />
 
-                  <CrowdersTexticon className='crowders_about__graph_icon' name='STRATEGIC PLANNING &amp; CONSULTANCY' src='cr_graph.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon' name='"CHANGE THEME" IDENTIFICATION' src='cr_recycle.svg' />
 
-                  <CrowdersTexticon className='crowders_about__graph_icon last' name='CREATIVE STRATEGY' src='cr_target.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon' name='IDEA GENERATION' src='cr_bulb.svg' />
 
-              </div> 
+              </div>  
 
-              <div className="crowders_about_right_icons">
+              <div className="crowders_about_right_icons cr_two">
 
+                  <CrowdersTexticon className='crowders_about__graph_icon cr_first cr_second_row' name='STRATEGIC PLANNING' src='cr_target.svg' />
 
-                  <CrowdersTexticon className='crowders_about__graph_icon first' name='CAMPAIGN PLANNING' src='cr_network.svg' />
-
-                  <CrowdersTexticon className='crowders_about__graph_icon' name='CAMPAIGN DEVELOPMENT &amp; PRODUCTION' src='cr_gauge.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon cr_second_row' name='COMMUNICATION STEPS' src='cr_gauge.svg' />
                   
-                  <CrowdersTexticon className='crowders_about__graph_icon last' name='IDEATION' src='cr_bulb.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon cr_second_row' name='ON-LINE RESEARCH SPACE' src='cr_globe.svg' />
 
               </div>
 
