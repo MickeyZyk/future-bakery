@@ -1,0 +1,48 @@
+@import '~styles/config';
+
+.text_icon  {
+	opacity: 1;
+	z-index: 15;
+	position: relative;
+  	
+
+
+
+	&>div>img {
+		width: 20%;
+		/* margin: 0 auto 15px auto; */
+		min-height: 7vw; 
+		transition: transform 1s;	
+		transform-origin: bottom left;	
+
+	}
+
+	&:hover >div>img {
+		transform: scale(1.1248);
+		transition: transform .5s ;
+		transform-origin: bottom left;
+		/* margin: 0 auto 15px auto; */
+	}	
+
+
+
+	&:hover h4 {
+		color: #37c6f4;
+		/* font-weight: 700; */
+		/* transition: font-weight 1s; */
+	}
+
+}
+
+.icon_heading {
+	font-weight: lighter;
+	text-align: left;
+	
+
+	$font-map: (375px: 16px, 959px: 28px, 960px: 14px, 2880px: 40px);
+	@include poly-fluid-sizing('font-size', $font-map);
+
+	$height-map: (375px: 16px, 959px: 28px, 960px: 14px, 2880px: 40px);
+	@include poly-fluid-sizing('line-height', $font-map);
+
+}

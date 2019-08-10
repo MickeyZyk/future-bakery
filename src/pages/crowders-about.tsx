@@ -11,13 +11,13 @@ import { Split } from 'components/split/Split';
 import { Heading } from 'components/heading/Heading';
 import { Figure } from 'components/figure/Figure';
 import { ReverseFigure } from 'components/figure/ReverseFigure';
-import { SmallFigure } from 'components/figure/SmallFigure';
+import { CrowdersSmallFigure } from 'components/figure/CrowdersSmallFigure';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { AnimatedHeading } from 'components/heading/AnimatedHeading';
 import { AnimatedHeadingTwo } from 'components/heading/AnimatedHeadingTwo';
 import { AnimatedImage } from 'components/image/AnimatedImage';
 import { Paragraph } from 'components/paragraph/Paragraph';
-import Texticon from 'components/texticon/Texticon';
+import CrowdersTexticon from 'components/texticon/CrowdersTexticon';
 import { Footer } from 'components/footer/Footer';
 import { Controller, Scene } from 'react-scrollmagic';
 import LinkArrow from 'assets/svg/link_arrow.svg'
@@ -174,7 +174,7 @@ const BakeryAbout = ({ data, className }) => {
 
               <Heading className="crowders_about_heading_three">What we do</Heading>     
 
-              <SmallFigure src="../images/nail_sharpener.jpg" className="crowders_about_middle_image" />                 
+              <CrowdersSmallFigure src="../images/nail_sharpener.jpg" className="crowders_about_middle_image" />                 
 
             </div>
 
@@ -182,26 +182,24 @@ const BakeryAbout = ({ data, className }) => {
 
               <div className="crowders_about_right_icons">
 
-                  <Texticon className='bakery_about__graph_icon first' name='COMMUNITY BUILDING' src='rainbow.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon first' name='COMMUNITY BUILDING' src='cr_rainbow.svg' />
 
-                  <Texticon className='bakery_about__graph_icon' name='STRATEGIC PLANNING &amp; CONSULTANCY' src='graph.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon' name='STRATEGIC PLANNING &amp; CONSULTANCY' src='cr_graph.svg' />
 
-                  <Texticon className='bakery_about__graph_icon last' name='CREATIVE STRATEGY' src='target.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon last' name='CREATIVE STRATEGY' src='cr_target.svg' />
 
               </div> 
 
               <div className="crowders_about_right_icons">
 
 
-                  <Texticon className='bakery_about__graph_icon first' name='CAMPAIGN PLANNING' src='network.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon first' name='CAMPAIGN PLANNING' src='cr_network.svg' />
 
-                  <Texticon className='bakery_about__graph_icon' name='CAMPAIGN DEVELOPMENT &amp; PRODUCTION' src='gauge.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon' name='CAMPAIGN DEVELOPMENT &amp; PRODUCTION' src='cr_gauge.svg' />
                   
-                  <Texticon className='bakery_about__graph_icon last' name='IDEATION' src='bulb.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon last' name='IDEATION' src='cr_bulb.svg' />
 
               </div>
-
-
 
 
       </Row>

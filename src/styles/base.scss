@@ -214,6 +214,11 @@ a {text-decoration: none}
 
 /* menu links */
 
+.menu_white_svg {
+  
+}
+
+
 .submenu_link {
   text-decoration: none;
 }
@@ -2575,6 +2580,7 @@ select {
 
 }
 
+
 .bakery_about__graph_icon {
 
     @include grid-col(10);
@@ -4865,6 +4871,119 @@ select {
 
 /* CROWDERS ABOUT */
 
+
+
+
+
+
+
+
+
+
+
+.crowders_about__graph_icon {
+
+    @include grid-col(10);
+    display: inline-block;
+
+  @media (min-width: $min-960) {
+
+    display: block;
+    float: left;
+    @include grid-col(6);
+    @include grid-offset-right(2);    
+        
+
+  } 
+
+}
+
+
+  .bakery_about__right_icons > div:nth-child(3) > div.crowders_about__graph_icon {
+
+    @include grid-col(9);
+    display: inline-block;
+
+    @media (min-width: $min-960) {
+
+      display: block;
+      @include grid-col(3);
+      @include grid-offset-right(6);          
+
+    }
+
+  }
+
+  .bakery_about__right_icons > div:nth-child(4) > div.crowders_about__graph_icon {
+
+    @include grid-col(9);
+    display: inline-block;
+
+    @media (min-width: $min-960) {
+
+      display: block;
+      @include grid-col(3);
+      margin-left: 0;
+      clear: left;   
+          
+
+    }     
+
+  }
+
+  .bakery_about__right_icons > div:nth-child(6) > div.crowders_about__graph_icon {
+
+    @include grid-col(9);
+    display: inline-block;
+
+    @media (min-width: $min-960) {
+
+      display: block;
+      @include grid-col(3);
+      @include grid-offset-right(6);          
+
+    }
+
+  }
+
+  .bakery_about__right_icons > div:nth-child(7) > div.crowders_about__graph_icon {
+
+    @include grid-col(9);
+    display: inline-block;
+
+    @media (min-width: $min-960) {
+
+      display: block;
+      @include grid-col(3);
+      margin-left: 0;
+      clear: left;   
+          
+
+    }     
+
+  }  
+
+  .bakery_about__right_icons > div:nth-child(9) > div.crowders_about__graph_icon {
+
+    @include grid-col(9);
+    display: inline-block;
+
+    @media (min-width: $min-960) {
+
+      display: block;
+      @include grid-col(3);
+      @include grid-offset-right(6);          
+
+    }
+
+  }  
+
+
+
+
+
+
+
 .crowders_about_team_heading {
   @include grid-col;
   @include grid-offset-left(2);
@@ -5089,6 +5208,8 @@ select {
 }
 
 .crowders_about_heading_background {
+
+      pointer-events: none;
       @include grid-col(14);
       @include grid-offset-left(2);
 
@@ -5157,9 +5278,10 @@ select {
 
 
   @media (min-width: $min-960) {
-    transform: scale(1.2);
+    margin-top: 5vw;
     @include grid-offset-left(6);
     @include grid-col(10);
+
  
 
   }        

@@ -29,8 +29,11 @@
 	text-align: center;
 	
 
-  $font-map: (320px: 15px, 375px: 16px, 768px: 24px, 959px: 28px, 960px: 14px, 1920px: 16px, 2880px: 30px);
+  $font-map: (375px: 16px, 959px: 28px, 960px: 10px, 2880px: 30px);
   @include poly-fluid-sizing('font-size', $font-map);
+
+  $height-map: (375px: 16px, 959px: 28px, 960px: 10px, 2880px: 30px);
+  @include poly-fluid-sizing('line-height', $font-map);
 
 
 }

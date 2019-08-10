@@ -122,7 +122,7 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
 
                   } 
 
-                  icon={ ( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu' || location.pathname == '/crowdersmenu') ? <WhiteCircle/> : <Circle/>} permanent={true}>                
+                  icon={ ( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu' || location.pathname == '/crowdersmenu') ? <WhiteCircle className="menu_white_svg"/> : <Circle/>} permanent={true}>                
                     {location.pathname.includes('menu') ? `CLOSE` : `MENU`}
                   </HeaderLink>
                 )}

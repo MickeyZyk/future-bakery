@@ -1,0 +1,35 @@
+@import '~styles/config';
+
+.figure {
+
+    height: 67vw;
+    margin-bottom: 10vw;
+
+    @media (min-width: $min-960) {
+      z-index: -1;
+      height: 17vw;
+    }
+
+    > div {
+      clip-path: inset(.001% .002% .003% .004%);
+    }
+
+}
+
+.background {
+
+  @media (max-width: 959px) {
+    height: 67vw;
+    background-size: 220%;  
+  }
+  @media (min-width: $min-960) {
+    min-height: 24vw;
+    background-size: 110%;
+    background-position: bottom center;
+
+  }
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
