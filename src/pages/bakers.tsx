@@ -82,7 +82,13 @@ export default class BakersIndex extends React.Component {
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
         	    <div className='fulscreen_slider'>
-        	    	<BakersSlider subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages}  className='new-slider'/>
+        	    	<BakersSlider auto 
+                timeInBetween={2000}
+                subs={mergedSubs} 
+                titles={mergedTitles} 
+                links={mergedLinks} 
+                images={mergedImages}  
+                className='new-slider'/>
         	    </div>
 
             </Tween>
@@ -91,9 +97,12 @@ export default class BakersIndex extends React.Component {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >             
 
-              <Row>
-                  <Link bakers arrow button className="bakers_home_flip_button" to={'/bakerscontact'}>START A PROJECT WITH US</Link>
-              </Row>
+
+                <div className="bakers_home_flip_button">
+                  <Row>
+                    <Link bakers arrow button className="home_cta_button" to={'/bakerscontact'}>START A PROJECT WITH US</Link>
+                  </Row>
+                </div>
 
             </Tween>
 

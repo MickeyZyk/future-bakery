@@ -8,7 +8,7 @@ interface ILinkProps {
   to: string;
 }
 
-export const Link = ({ children, state, to, className, arrow, button, bakery, bakers, crowders, gray  }: ILinkProps) => {
+export const Link = ({ children, state, to, className, arrow, button, bakery, bakers, crowders, gray, onClick  }: ILinkProps) => {
 
   return (
 
@@ -17,7 +17,8 @@ export const Link = ({ children, state, to, className, arrow, button, bakery, ba
           <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  
           exit={{ length: 2}} 
           entry={{ length: 2}}
-          to={to} 
+          to={to}
+          onClick={onClick} 
           className={`${'the_link'} ${ arrow ? 'the_arrow_link' 
           : ''} ${ button ? 'the_button_link' 
           : ''} ${ bakery ? 'bakery_color' 

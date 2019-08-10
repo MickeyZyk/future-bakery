@@ -4,7 +4,8 @@ import { Tween } from 'react-gsap';
 import { Row } from 'components/row/Row';
 import { AnimatedHeadingTwo  } from 'components/heading/AnimatedHeadingTwo';
 import ReactDOM from 'react-dom';
-import { Link as InternalLink } from 'components/link/Link';
+import { LeftLink } from 'components/link/LeftLink';
+import { Link } from 'components/link/Link';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './DarkTeam.scss';
 import _ from 'lodash';
@@ -22,7 +23,12 @@ export class DarkTeam extends React.Component {
   render() {
   return( 
     <div className={s.dark_team}>
-      <Member members={this.props.members} links={this.props.links} texts={this.props.texts} images={this.props.images} arrayOfImages={this.props.images} />
+      <Member 
+      members={this.props.members} 
+      links={this.props.links} 
+      texts={this.props.texts} 
+      images={this.props.images} 
+      arrayOfImages={this.props.images} />
     </div> 
   )
 
@@ -134,8 +140,8 @@ var linkURLs = this.props.links
           </div>        
 
         <Row>
-          <div className={s.team_previous} onClick={this.prevSlide.bind(this)}><span>&lt;</span>&nbsp;&nbsp;PREVIOUS</div>
-          <div className={s.team_next} onClick={this.nextSlide.bind(this)}>NEXT&nbsp;&nbsp;<LinkArrow className="link_arrow"/></div>        
+          <LeftLink arrow bakers to={'/bakers-about'} className={s.team_previous} onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
+          <Link arrow bakers to={'/bakers-about'} className={s.team_next} onClick={this.nextSlide.bind(this)}>NEXT</Link>     
         </Row>
       </>
     );

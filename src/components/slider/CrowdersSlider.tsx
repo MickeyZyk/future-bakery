@@ -17,35 +17,6 @@ import _ from 'lodash';
 import s from './CrowdersSlider.scss';
 
 var startCarouselInterval;
-/*
-
-var images = [
-
-'../images/crowders_01.jpg',
-'../images/shutterstock_1043564689_small.jpg',
-
-]
-
-var labels = [
-
-"WE SEEK AND DEVELOP CROSS-SOCIAL TOPICS.",
-"WE FORM SPECIFIC INTEREST GROUPS",
-
-]
-
-var texts = [
-
-'Team of thousands individuals strong in opinion and power to change things', 
-'Team of thousands individuals strong in opinion and power to change things',
-
-]
-var links = [
-
-'/crowders-about', 
-'/crowders-about',
-
-]
-*/
 
 var percentage = 0;
 var multiplier = 35 ;
@@ -404,9 +375,7 @@ class Carousel extends React.Component {
           timeInBetween={this.props.timeInBetween} whichOne={i} src={image} />
           <h2 key={'2key_'+i} id={'i0'+(i)} className={`${'single_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>
           <h3 key={'key_text_'+i} className={`${'single_slide_text'} ${this.state.activeIndex == (i-1) ? 'text_next' : ''} ${this.state.activeIndex == i ? 'text_current' : ''} ${this.state.activeIndex == (i+1) ? 'text_prev' : ''}`}>{texts[i]}</h3>
-          <div className={`${'button_link crowders_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`}>
-            <Link to={links[i]}>LEARN MORE&nbsp;&nbsp;<div className='more_arrow'>&gt;</div></Link>
-          </div>
+            <Link gray arrow className={`${'button_link crowders_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>LEARN MORE</Link>
           <div className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>{this.props.images.length}</div>
           <div className='indicator_divider crowders_divider'></div>
           <div className={`${'slider_indicator'} ${this.state.activeIndex == i ? 'indicator_current': ''}`}>{i+1}</div>
@@ -425,7 +394,7 @@ class Carousel extends React.Component {
      
         <div onWheel={this._onMouseMove} style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
           <ReactCursorPosition className='fullscreen_cursor_position'>
-            <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='crowders_arrow.svg'  />
+            <SVGicon className={`${'crowders_home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='crowders_arrow.svg'  />
             {this.state.showButtons  ? carouselLeftButton : null }
             <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '7vw', height: '35vw', overflow: 'hidden'}}>
               <div ref={this.wrapperRef_top} className='mask_parent_top' 

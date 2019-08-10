@@ -25,8 +25,50 @@ import { TransitionState } from "gatsby-plugin-transition-link";
 
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
+const slug = require('slug')
 
 const BakeryAbout = ({ data, className, query }) => {
+
+
+
+ function getMembers(item) {
+    var sub = [item.member];
+    return sub;
+  }
+
+  function getLinks(item) {
+    var link = [item.link_two];
+    return link;
+  }  
+
+  function getTexts(item) {
+    var title = [item.member_text];
+    return title;
+  } 
+
+  function getImages(item) {
+    var image = ['https://future.stratego.ba/en/bakery/pages/'  + slug(data.gravBakeryAbout.title.toLowerCase()) + '/' + item.image];
+    return image;
+  }  
+
+  function getAuthorTexts(item) {
+    var text = [item.text];
+    return text;
+  }   
+
+
+  const members = data.gravBakeryAbout.team.map(getMembers)
+  var mergedMembers = [].concat.apply([], members);
+
+  const links = data.gravBakeryAbout.team.map(getLinks)
+  var mergedLinks = [].concat.apply([], links);
+
+  const texts = data.gravBakeryAbout.team.map(getTexts)
+  var mergedTexts = [].concat.apply([], texts);
+
+  const images = data.gravBakeryAbout.team.map(getImages)
+  var mergedImages = [].concat.apply([], images);
+
   return (
 
 
@@ -46,7 +88,7 @@ const BakeryAbout = ({ data, className, query }) => {
  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>
 
 
-    <div className='wrapper'>
+    <div className='wrapper about-wrapper'>
       <ReactCursorPosition className='fullscreen_cursor_position'>
         <Helmet title={data.gravBakeryAbout.title} />
         <SVGicon className='bakery_about__green_rainbow' src='green_rainbow.svg'  />
@@ -90,7 +132,7 @@ const BakeryAbout = ({ data, className, query }) => {
         <SVGiconReverse className='bakery_about_soldier' src='bakery_about_soldier.svg' />  
         <AnimatedHeadingTwo className="bakery_about_team_heading">Meet the team</AnimatedHeadingTwo>
         <div className="bakery_team">
-          <Team />
+          <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages}/>
         </div>      
         <div style={{backgroundImage: "url('../images/clients_bck.png')"}} className="bakery_about_clients_background">
         <AnimatedHeadingTwo className="bakery_about_clients_heading">Whom we bake with</AnimatedHeadingTwo>
@@ -139,6 +181,7 @@ const BakeryAbout = ({ data, className, query }) => {
 export const BakeryAboutquery = graphql`
   query BakeryAboutPageQuery {
     gravBakeryAbout {
+      id
       heading_one
       heading_three
       heading_two
@@ -147,11 +190,19 @@ export const BakeryAboutquery = graphql`
       show_me_link
       show_me_text
       title
-      svg_icons {
-        svg
-        svg_text
+      team {
+        member_text
+        member
+        link_two
+        image
       }
-    }   
+      svg_icons {
+        svg_text
+        svg
+      }
+      show_me_two_text
+      show_me_two_link
+    }  
   }
 `
 

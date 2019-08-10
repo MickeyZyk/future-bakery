@@ -81,7 +81,7 @@ export default class CrowdersIndex extends React.Component {
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
   		    	<div className='fulscreen_slider'>
-  			      <CrowdersSlider subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>   
+  			      <CrowdersSlider auto subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>   
   		    	</div>
 
             </Tween>
@@ -94,8 +94,11 @@ export default class CrowdersIndex extends React.Component {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } > 
 
-
-                  <Link crowders arrow button className="crowders_home_flip_button" to={'/crowderscontact'}>START A PROJECT WITH US</Link>
+                <div className="crowders_home_flip_button">
+                  <Row>
+                    <Link crowders arrow button className="home_cta_button" to={'/crowderscontact'}>JOIN US</Link>
+                  </Row>
+                </div>
 
 
             </Tween>  

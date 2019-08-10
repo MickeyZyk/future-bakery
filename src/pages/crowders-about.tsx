@@ -29,9 +29,49 @@ import { TransitionState } from "gatsby-plugin-transition-link";
 
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
+const slug = require('slug')
+
+const CrowdersAbout = ({ data, className }) => {
 
 
-const BakeryAbout = ({ data, className }) => {
+ function getMembers(item) {
+    var sub = [item.member];
+    return sub;
+  }
+
+  function getLinks(item) {
+    var link = [item.link_two];
+    return link;
+  }  
+
+  function getTexts(item) {
+    var title = [item.member_text];
+    return title;
+  } 
+
+  function getImages(item) {
+    var image = ['https://future.stratego.ba/en/bakery/pages/'  + slug(data.gravCrowdersAbout.title.toLowerCase()) + '/' + item.image];
+    return image;
+  }  
+
+  function getAuthorTexts(item) {
+    var text = [item.text];
+    return text;
+  }   
+
+
+  const members = data.gravCrowdersAbout.team.map(getMembers)
+  var mergedMembers = [].concat.apply([], members);
+
+  const links = data.gravCrowdersAbout.team.map(getLinks)
+  var mergedLinks = [].concat.apply([], links);
+
+  const texts = data.gravCrowdersAbout.team.map(getTexts)
+  var mergedTexts = [].concat.apply([], texts);
+
+  const images = data.gravCrowdersAbout.team.map(getImages)
+  var mergedImages = [].concat.apply([], images);
+
   return (
 
 
@@ -49,7 +89,7 @@ const BakeryAbout = ({ data, className }) => {
 
   <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>   
 
-  <div className='wrapper'>
+  <div className='wrapper about-wrapper'>
 
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
@@ -158,7 +198,7 @@ const BakeryAbout = ({ data, className }) => {
 
           <Row>
 
-            <Link button crowders arrow className="crowders_about_button_two" to={'/'} >START A PROJECT WITH US</Link>
+            <Link button crowders arrow className="crowders_about_button_two" to={'/crowderscontact'} >START A PROJECT WITH US</Link>
 
           </Row>
 
@@ -204,7 +244,7 @@ const BakeryAbout = ({ data, className }) => {
       </Row>
 
         <AnimatedHeadingTwo className="crowders_about_team_heading">Meet the team</AnimatedHeadingTwo>
-              <Team className="crowders_about_team"/>      
+              <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages} className="crowders_about_team"/>      
 
       </ReactCursorPosition>   
 
@@ -245,25 +285,31 @@ export const CrowdersAboutquery = graphql`
       heading_one
       heading_three
       heading_two
-      image_one
-      image_two
       link_one
       link_one_text
       link_two
       link_two_text
       paragraph_one
       subheading_two
-      title
-      svg_icons_two {
-        svg_two
-        svg_text_two
-      }
       svg_icons {
-        svg_text
         svg
+        svg_text
       }
-    }    
+      svg_icons_two {
+        svg_text_two
+        svg_two
+      }
+      title
+      team {
+        image
+        link_two
+        member
+        member_text
+      }
+      image_two
+      image_one
+    }  
   }
 `
 
-export default BakeryAbout
+export default CrowdersAbout

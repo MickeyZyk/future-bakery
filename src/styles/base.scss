@@ -23,6 +23,28 @@ img {
 .crowders_back {background-color: #37c6f4}
 
 
+
+
+
+/* slider links */
+
+.button_link {
+  display: none;
+}
+
+.mask_wrapper_top .button_link.link_current {
+  display: block;
+}
+
+.home_cta_button {
+  width: 100%;
+}
+
+
+
+
+
+
 a {text-decoration: none}
 
 
@@ -1160,6 +1182,15 @@ select {
 
 }
 
+.about-wrapper {
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  $padding-map: (375px: 110px, 959px: 200px, 960px: 136px, 2880px: 406px);
+  @include poly-fluid-sizing('padding-top', $padding-map);
+
+}
+
 .work-wrapper {
     min-height: 100vh;
     position: relative;
@@ -1894,6 +1925,8 @@ select {
   color: #231f20; 
 } 
 
+
+
 .bakers_link a {
   color: #ff7a00;
 }
@@ -2075,6 +2108,15 @@ select {
 .home_arrow {
   position: fixed;
   left: 72.22vw;
+  bottom: 6.5vw; 
+  width: 5vw;
+  z-index:2;
+  transform: rotate(-5deg);
+}
+
+.crowders_home_arrow {
+  position: fixed;
+  left: 78.22vw;
   bottom: 6.5vw; 
   width: 5vw;
   z-index:2;
@@ -6088,8 +6130,7 @@ select {
 
 /*  additional */
 
-.bakers_home_flip_button,
-.crowders_home_flip_button {
+.bakers_home_flip_button {
 
   position: absolute;
   @include grid-col;
@@ -6099,6 +6140,21 @@ select {
     bottom: 8.5vw;
     @include grid-col(3);
     @include grid-offset-left(14);
+    z-index: 5; 
+  } 
+
+}
+
+.crowders_home_flip_button {
+
+  position: absolute;
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    bottom: 8.5vw;
+    @include grid-col(2);
+    @include grid-offset-left(15);
     z-index: 5; 
   } 
 

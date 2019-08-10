@@ -84,7 +84,7 @@ export default class BakeryIndex extends React.Component {
 
           
               <div className='fulscreen_slider'>
-                <Slider subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>
+                <Slider auto subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>
               </div>
 
             </Tween>
@@ -99,7 +99,13 @@ export default class BakeryIndex extends React.Component {
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >    
 
 
-              <Link bakery arrow button className="bakery_home_flip_button" to={'/bakerycontact'}>START A PROJECT WITH US</Link>
+                <div className="bakery_home_flip_button">
+                  <Row>
+                    <Link bakery arrow button className="home_cta_button" to={'/bakerycontact'}>START A PROJECT WITH US</Link>
+                  </Row>
+                </div>
+
+              
 
 
 

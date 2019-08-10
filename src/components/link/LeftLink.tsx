@@ -8,7 +8,7 @@ interface ILinkProps {
   to: string;
 }
 
-export const LeftLink = ({ children, state, to, className, arrow, button, bakery, bakers, crowders, gray  }: ILinkProps) => {
+export const LeftLink = ({ children, state, to, className, arrow, button, bakery, bakers, crowders, gray, onClick  }: ILinkProps) => {
 
   return (
 
@@ -18,6 +18,7 @@ export const LeftLink = ({ children, state, to, className, arrow, button, bakery
           exit={{ length: 2}} 
           entry={{ length: 2}}
           to={to} 
+          onClick={onClick}
           className={`${'the_left_link'} ${ arrow ? 'the_arrow_left_link' : ''} ${ className ? className : '' }`}>        
             { arrow ? <LinkLeftArrow className={`${'the_left_arrow'}`}/> : null }<div className="the_link_text">{children}</div>
           </TransitionLink>  

@@ -99,7 +99,7 @@ const BakersAbout = ({ data, className }) => {
 
  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
 
-  <div className='wrapper'>
+  <div className='wrapper about-wrapper'>
     <ReactCursorPosition className='fullscreen_cursor_position'>
       <Helmet title={data.gravBakersAbout.title} />
       <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
@@ -326,7 +326,7 @@ const BakersAbout = ({ data, className }) => {
 
           <Authors texts={mergedAuthorTexts}/>
 
-          <Link bakers arrow button to={'/bakerscontact'} className="bakers_about_authors_flip_button">JOIN US</Link>
+          <Link bakers arrow button to={'/bakerslogin'} className="bakers_about_authors_flip_button">JOIN US</Link>
 
 
         </Row> 
