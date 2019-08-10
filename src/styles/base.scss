@@ -2124,6 +2124,22 @@ select {
 
 /* BAKERY ABOUT */
 
+.bakery_about_clients_contact_link {
+
+      @include grid-col;
+      @include grid-offset-left(2);      
+
+
+    @media (min-width: $min-960) {
+
+      @include grid-col(2);
+      @include grid-offset-left(2);   
+       position: relative;
+    top: -59vw;
+
+    }     
+}
+
 
 .bakery_team .team_previous, .bakery_team .team_next {
   color: #d4de4f;
@@ -5119,18 +5135,16 @@ select {
 }
 
 .crowders_about_middle_image {
+
   @include grid-col;
   @include grid-offset-left(2);
 
   @media (min-width: $min-960) {
-    position: absolute;
-    z-index: -1;
-    margin-bottom: 5vw;
-    margin-top: -81%;
+    position: relative;
+    top: -35vw;
     @include grid-col(12.8);
     @include grid-offset-left(5.1); 
-    display: flex;
-    align-items: center;
+
   }   
 }
 

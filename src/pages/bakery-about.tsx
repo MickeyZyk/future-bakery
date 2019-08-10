@@ -95,6 +95,9 @@ const BakeryAbout = ({ data, className, query }) => {
         <div style={{backgroundImage: "url('../images/clients_bck.png')"}} className="bakery_about_clients_background">
         <AnimatedHeadingTwo className="bakery_about_clients_heading">Whom we bake with</AnimatedHeadingTwo>
         <Clients className="bakery_about_clients"/>
+        <Row>
+          <Link gray arrow className="bakery_about_clients_contact_link" to={'/bakerycontact'}>CONTACT US</Link>
+        </Row>
       </div>
       </ReactCursorPosition>
     </div>

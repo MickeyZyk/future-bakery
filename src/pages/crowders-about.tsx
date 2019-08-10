@@ -7,10 +7,10 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Link } from 'components/link/Link';
 import { Row } from 'components/row/Row';
-import { Figure2 } from 'components/figure2/Figure2';
 import { Split } from 'components/split/Split';
 import { Heading } from 'components/heading/Heading';
 import { Figure } from 'components/figure/Figure';
+import { SmallFigure } from 'components/figure/SmallFigure';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { AnimatedHeading } from 'components/heading/AnimatedHeading';
 import { AnimatedHeadingTwo } from 'components/heading/AnimatedHeadingTwo';
@@ -173,7 +173,7 @@ const BakeryAbout = ({ data, className }) => {
 
               <Heading className="crowders_about_heading_three">What we do</Heading>     
 
-              <AnimatedImage src="../images/nail_sharpener.jpg" className="crowders_about_middle_image" />                 
+              <SmallFigure src="../images/nail_sharpener.jpg" className="crowders_about_middle_image" />                 
 
             </div>
 
