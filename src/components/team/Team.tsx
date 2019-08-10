@@ -4,10 +4,12 @@ import { Tween } from 'react-gsap';
 import { Row } from 'components/row/Row';
 import { AnimatedHeadingTwo  } from 'components/heading/AnimatedHeadingTwo';
 import ReactDOM from 'react-dom';
-import { Link as InternalLink } from 'components/link/Link';
+import { Link } from 'components/link/Link';
+import { LeftLink } from 'components/link/LeftLink';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './Team.scss';
 import _ from 'lodash';
+import { Location } from '@reach/router';
 
 export class Team extends React.Component {
 
@@ -139,8 +141,14 @@ var linkURLs = this.props.links
           </div>        
 
         <Row>
-          <div className={s.team_previous} onClick={this.prevSlide.bind(this)}><span>&lt;</span>&nbsp;&nbsp;PREVIOUS</div>
-          <div className={s.team_next} onClick={this.nextSlide.bind(this)}>NEXT&nbsp;&nbsp;<LinkArrow className="link_arrow"/></div>        
+          <Location>
+            {({ location }) => (
+              <>              
+                <LeftLink to={location.pathname} arrow gray className="team_left_link" onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
+                <Link to={location.pathname} arrow gray className="team_right_link" onClick={this.nextSlide.bind(this)}>NEXT</Link>      
+              </>
+            )}
+          </Location> 
         </Row>
       </>
     );

@@ -1911,10 +1911,6 @@ select {
   bottom: 8.75vw;    
   top: auto;
   z-index: 10;
-  letter-spacing: normal;
-  font-weight: bold;
-  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 14px, 2880px: 24px);
-  @include poly-fluid-sizing('font-size', $font-map); 
 }
 
 .button_link a {
@@ -1924,8 +1920,6 @@ select {
   text-decoration: none;
   color: #231f20; 
 } 
-
-
 
 .bakers_link a {
   color: #ff7a00;

@@ -105,10 +105,6 @@ export default class BakeryIndex extends React.Component {
                   </Row>
                 </div>
 
-              
-
-
-
             </Tween>
 
 
