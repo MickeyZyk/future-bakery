@@ -12,7 +12,7 @@ import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
-export default class BakeryIndex extends React.Component {
+export default class Bakery extends React.Component {
 
   constructor(props){
     super(props);   

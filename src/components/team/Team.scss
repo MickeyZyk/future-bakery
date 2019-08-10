@@ -153,3 +153,35 @@
 .strip {
   opacity: 1;
 }
+
+.team_previous {
+
+  display: none;
+
+  @media (min-width: $min-960) {
+    
+    display: block;    
+    position: absolute;
+    height:50vw;
+    @include grid-col(1);
+    @include grid-offset-left(16);
+    background-color: #fff;
+    z-index: 5;
+  } 
+}
+
+.team_next {
+
+  display: none;
+
+  @media (min-width: $min-960) {
+    
+    display: block;    
+    position: absolute;
+    height:50vw;
+    @include grid-col(1);
+    @include grid-offset-left(16);
+    background-color: #fff;
+    z-index: 5;
+  } 
+}

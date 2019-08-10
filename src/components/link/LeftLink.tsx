@@ -17,10 +17,23 @@ export const LeftLink = ({ children, state, to, className, arrow, button, bakery
           <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  
           exit={{ length: 2}} 
           entry={{ length: 2}}
-          to={to} 
-          onClick={onClick}
-          className={`${'the_left_link'} ${ arrow ? 'the_arrow_left_link' : ''} ${ className ? className : '' }`}>        
-            { arrow ? <LinkLeftArrow className={`${'the_left_arrow'}`}/> : null }<div className="the_link_text">{children}</div>
+          to={to}
+          onClick={onClick} 
+          className={`${'the_left_link'} ${ arrow ? 'the_arrow_link' 
+          : ''} ${ button ? 'the_button_link' 
+          : ''} ${ bakery ? 'bakery_color' 
+          : ''} ${ bakers ? 'bakers_color' 
+          : ''} ${ crowders ? 'crowders_color' 
+          : ''} ${ gray ? 'gray_color'           
+          : ''} ${ className ? className 
+            : '' }`}>        
+            { arrow ? <LinkLeftArrow 
+              className={`${'the_left_arrow'} ${ bakery ? 'bakery_arrow' 
+              : ''} ${ bakers ? 'bakers_arrow' 
+              : ''} ${ crowders ? 'crowders_arrow' 
+              : ''} ${ gray ? 'gray_arrow'               
+              : ''}`}/> : null }
+              <div className="the_link_text">{children}</div>
           </TransitionLink>  
         )}
     </Location>  
