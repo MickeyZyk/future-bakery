@@ -11,8 +11,9 @@
 	&>div>img {
 		width: 20%;
 		/* margin: 0 auto 15px auto; */
-    	margin-bottom: 1.2vw; 
-		transition: transform 1s;	
+    	margin-bottom: 1vw; 
+		transition: transform 1s;
+		transition-delay: .3s;
 		transform-origin: bottom left;	
 
 	}
@@ -21,6 +22,7 @@
 		transform: scale(1.1248);
 		transition: transform .5s ;
 		transform-origin: bottom left;
+		transition-delay: .3s;
 		/* margin: 0 auto 15px auto; */
 	}	
 
@@ -28,8 +30,8 @@
 
 	&:hover h4 {
 		color: #37c6f4;
-		/* font-weight: 700; */
-		/* transition: font-weight 1s; */
+		/* font-weight: 700;  */
+
 	}
 
 }
@@ -37,6 +39,7 @@
 .icon_heading {
 	font-weight: lighter;
 	text-align: left;
+
 	
 
 	$font-map: (375px: 16px, 959px: 28px, 960px: 14px, 2880px: 40px);
