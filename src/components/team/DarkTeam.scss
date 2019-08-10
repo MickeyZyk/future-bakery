@@ -46,7 +46,7 @@
 }
 
 .text {
-    color: #ff7a00;
+    color: #ff4500;
   $font-map: (375px: 16px, 959px: 40px, 960px: 7px, 2880px: 20px);
   @include poly-fluid-sizing('font-size', $font-map);  
   $height-map: (375px: 19px, 959px: 50px, 960px: 16px, 2880px: 48px);
@@ -175,7 +175,7 @@
 
 .team_previous {
   font-weight: bold;
-  color: #ff7a00;
+  color: #ff4500;
   cursor: pointer;  
 
   @include grid-col;
@@ -191,7 +191,7 @@
 
 .team_next {
   font-weight: bold;
-  color: #ff7a00;
+  color: #ff4500;
   cursor: pointer;
 
   @include grid-col;
