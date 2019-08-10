@@ -15,11 +15,11 @@ img {
     }
 
 .bakery_color {color: #d4de4f}
-.bakers_color {color: #ff7a00}
+.bakers_color {color: #ff4500}
 .crowders_color {color: #37c6f4}
 
 .bakery_back {background-color: #d4de4f}
-.bakers_back {background-color: #ff7a00}
+.bakers_back {background-color: #ff4500}
 .crowders_back {background-color: #37c6f4}
 
 
@@ -85,7 +85,7 @@ a {text-decoration: none}
 
 
 .bakers_arrow polygon {
-    fill: #ff7a00;
+    fill: #ff4500;
 }
 
 .bakery_arrow polygon {
@@ -110,7 +110,7 @@ a {text-decoration: none}
 
 .the_button_link.bakers_color {
   color: #222;
-  background-color: #ff7a00;
+  background-color: #ff4500;
   text-align: center;
 }
 
@@ -260,7 +260,7 @@ a {text-decoration: none}
 }
 
 .bakers_color h2:before, .bakers_color h2:before {
-  background: #ff7a00;
+  background: #ff4500;
 }
 
 .crowders_color h2:before, .crowders_color h2:before {
@@ -308,7 +308,7 @@ a {text-decoration: none}
   height: 4px;
   top: 50%;
   margin-top: -0.5px;
-  background: #ff7a00;  
+  background: #ff4500;  
 }
 
 .crowders_header_menu_link.submenu_link > div:before, .crowders_header_menu_link.submenu_link > div:after {
@@ -795,7 +795,7 @@ a {
 }
 .bakers_flip a .front {
   opacity: 1;
-  background-color: #ff7a00; 
+  background-color: #ff4500; 
   color: #222; 
   transform: rotateY(0) translateZ(1.1vw);
 }
@@ -1922,11 +1922,11 @@ select {
 } 
 
 .bakers_link a {
-  color: #ff7a00;
+  color: #ff4500;
 }
 
 .bakers_divider {
-  background-color: #ff7a00!important;
+  background-color: #ff4500!important;
 }
 
 .crowders_divider {
@@ -3472,7 +3472,7 @@ select {
 
 
   font-weight: bold;
-  color: #ff7a00;
+  color: #ff4500;
   @include grid-col(16);
   @include grid-offset-left(0);
 
@@ -3487,7 +3487,7 @@ select {
 .bakers_about__join_link_three {
 
   font-weight: bold;
-  color: #ff7a00;
+  color: #ff4500;
   @include grid-col(16);
   @include grid-offset-left(0);
 
@@ -3776,7 +3776,7 @@ select {
 }
 
 .bakers_about__paragraph_six {
-  color: #ff7a00;
+  color: #ff4500;
 
   $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 10px, 2880px: 20px);
   $height-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 60px, 2880px: 120px);
@@ -4721,7 +4721,7 @@ select {
 }
  
 .family_bakery_link {color: #d4de4f}
-.family_bakers_link {color: #ff7a00}
+.family_bakers_link {color: #ff4500}
 .family_crowders_link {color: #37c6f4}
 
 
@@ -4849,7 +4849,7 @@ select {
 
 .for__join_link_two {
   font-weight: bold;
-  color: #ff7a00;
+  color: #ff4500;
   @include grid-col(4);
   @include grid-offset-left(2);
 
@@ -4863,7 +4863,7 @@ select {
 
 .for__join_link_three {
   font-weight: bold;
-  color: #ff7a00;
+  color: #ff4500;
   @include grid-col(4);
   @include grid-offset-left(1);
 
@@ -5459,7 +5459,7 @@ select {
 }
 
 .bakers_about__join_link {
-  color: #ff7a00;
+  color: #ff4500;
   font-weight: bold;
   @include grid-col(4);
   @include grid-offset-left(2);
@@ -5908,7 +5908,7 @@ select {
 
 .bakers_about__join_link_two {
   font-weight: bold;
-  color: #ff7a00;
+  color: #ff4500;
   @include grid-col(4);
   @include grid-offset-left(2);
 
@@ -5922,7 +5922,7 @@ select {
 
 .bakers_about__join_link_three {
   font-weight: bold;
-  color: #ff7a00;
+  color: #ff4500;
   @include grid-col(4);
   @include grid-offset-left(1);
 
@@ -5962,7 +5962,7 @@ select {
 
   @include grid-col(10);
   @include grid-offset-left(6);
-  background: #ff7a00;
+  background: #ff4500;
   position: relative;
 
   $margin-map: (375px: -250px, 959px: -110px, 960px: -41px, 2880px: -117px);
@@ -6105,7 +6105,7 @@ select {
 
 .bakers_about__join_link_four {
   font-weight: bold;
-  color: #ff7a00;
+  color: #ff4500;
   position: relative;
   top: 40vw;
   @include grid-col(7);
