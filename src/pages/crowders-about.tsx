@@ -10,6 +10,7 @@ import { Row } from 'components/row/Row';
 import { Split } from 'components/split/Split';
 import { Heading } from 'components/heading/Heading';
 import { Figure } from 'components/figure/Figure';
+import { ReverseFigure } from 'components/figure/ReverseFigure';
 import { SmallFigure } from 'components/figure/SmallFigure';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { AnimatedHeading } from 'components/heading/AnimatedHeading';
@@ -63,7 +64,7 @@ const BakeryAbout = ({ data, className }) => {
 
               <AnimatedHeading className='crowders_about_heading'>{data.gravCrowdersAbout.heading_one}</AnimatedHeading>   
 
-              <Figure className='crowders_about_image responsive_image show_on_mobile' src={'https://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />         
+              <ReverseFigure className='crowders_about_image responsive_image show_on_mobile' src={'https://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />         
 
               <Paragraph className='crowders_about_paragraph paragraph'>{data.gravCrowdersAbout.paragraph_one}</Paragraph>
 
@@ -71,7 +72,7 @@ const BakeryAbout = ({ data, className }) => {
 
             </div>
 
-            <Figure className='crowders_about_image responsive_image hide_on_mobile' src={'http://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />   
+            <ReverseFigure className='crowders_about_image responsive_image hide_on_mobile' src={'http://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />   
 
 
           </Row>
