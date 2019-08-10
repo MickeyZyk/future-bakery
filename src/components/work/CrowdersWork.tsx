@@ -56,8 +56,9 @@ export default class Work extends React.Component {
 
   playVideo(){
     this.videoPreview.current.style.zIndex = -5;
+    this.videoPreview.current.style.opacity = 0;    
     this.videoEmbed.current.style.zIndex = 10;    
-    this.videoOverlay.current.style.visibility = 'hidden';
+    //this.videoOverlay.current.style.visibility = 'hidden';
     this.setState({ playing: true },() => {
       console.log("PLAYING", this.state.playing)
     })
@@ -65,21 +66,21 @@ export default class Work extends React.Component {
 
 
   handleClick(){
-    console.log("TO SCROLL X", this.videoEmbed.current)    
-    
-/*
-    scrollbar.scrollIntoView(document.querySelector('#video'), {
-      offsetLeft: 34,
-      offsetBottom: 12,
-      alignToTop: false,
-      onlyScrollIfNeeded: true,
-    }); 
-
-*/
-
+    console.log("ANCHOR" + document.querySelector('#video_image_anchor'))    
+    const { scrollbar } = this.$container;
+    scrollbar.scrollIntoView(document.querySelector('#video_image_anchor'), {
+      alignToTop: true,
+      onlyScrollIfNeeded: false,
+    });
   }  
 
-    render() {
+   scrollPlay(event) {
+      this.handleClick();
+      this.playVideo();
+   }
+
+
+  render() {
 
   const { prev, next } = this.props.pageContext
 
@@ -103,8 +104,8 @@ export default class Work extends React.Component {
     
 
 <>
-  <div id ="topper">
-    <div className='wrapper'>
+  <div id ="topper" style={{overflowX: 'hidden'}}>
+    <div className='wrapper' style={{overflowX: 'hidden'}}>
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
 
@@ -114,7 +115,7 @@ export default class Work extends React.Component {
         <Heading className={s.column__col1_heading}>{this.props.data.gravCrowdersWork.heading_one}</Heading>
         <p className={s.paragraph}>{this.props.data.gravCrowdersWork.paragraph}</p>
 
-          <div className={s.detail_wrapper}>
+          <div id="video_image_anchor" className={s.detail_wrapper}>
             <div className={s.row__threetop}> 
               <div className={s.column__col5}>
                 <ScrollTo>
@@ -126,7 +127,7 @@ export default class Work extends React.Component {
               <If condition={this.props.data.gravCrowdersWork.video != 'null'}>
                 <Then>
                   <div className={s.column__col6}>
-                    <p onClick={ this.playVideo } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
+                    <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
                   </div>
                 </Then>
               </If>
@@ -138,7 +139,7 @@ export default class Work extends React.Component {
                 <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
-            <img src={ 'https://future.stratego.ba/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
+            <img id="video_image" src={ 'https://future.stratego.ba/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
             <div id="video" className={s.embedded_video} ref={this.videoEmbed}>
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravCrowdersWork.video} playing={this.state.playing} />            
             </div>

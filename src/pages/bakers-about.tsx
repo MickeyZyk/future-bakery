@@ -97,7 +97,7 @@ const BakersAbout = ({ data, className }) => {
 
 
 
- <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={true} syncCallbacks={true}>      
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
 
   <div className='wrapper'>
     <ReactCursorPosition className='fullscreen_cursor_position'>
@@ -105,16 +105,10 @@ const BakersAbout = ({ data, className }) => {
       <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
       <Row>
 
-
-
-
           <Figure 
           src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_one } 
           className="bakers_about__image_one hide_on_mobile dropped"
           />
-
-
-
 
         <AnimatedHeading className='bakers_about__heading_one'>{data.gravBakersAbout.heading_one}</AnimatedHeading>
         <HeadingTwo className='bakers_about__heading_two'>{data.gravBakersAbout.subheading_one}</HeadingTwo>      
@@ -248,7 +242,7 @@ const BakersAbout = ({ data, className }) => {
       <Row>
         <Link bakers arrow className="bakers_about__join_link_two" to={data.gravBakersAbout.icons_link_one}>{data.gravBakersAbout.icons_link_one_text}</Link>
         <div className="divider_text">or find out how to</div>
-        <Link className="bakers_about__join_link_three" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
+        <Link bakers arrow className="bakers_about__join_link_three" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       </Row>
       <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
       <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
@@ -280,12 +274,7 @@ const BakersAbout = ({ data, className }) => {
         </Row>  
 
         <Row>
-          <div className="bakers_about_flip_button bakers_flip">
-            <Link to={data.gravBakersAbout.link_two}>
-              <div className="front">{data.gravBakersAbout.link_two_text}</div>
-              <div className="back">{data.gravBakersAbout.link_two_text}</div>
-            </Link>
-          </div>
+          <Link bakers arrow button className="bakers_about_flip_button" to={data.gravBakersAbout.link_two}>{data.gravBakersAbout.link_two_text}</Link>
         </Row>
 
         <Row className="bakers_about_steps">

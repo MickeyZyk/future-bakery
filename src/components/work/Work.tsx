@@ -6,6 +6,7 @@ import Helmet from 'react-helmet';
 import { Heading } from 'components/heading/Heading';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { Link } from 'components/link/Link';
+import { LeftLink } from 'components/link/LeftLink';
 import ReactCursorPosition from 'react-cursor-position';
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
@@ -69,12 +70,11 @@ export default class Work extends React.Component {
 
 
   handleClick(){
+    console.log("ANCHOR" + document.querySelector('#video_image_anchor'))
     const { scrollbar } = this.$container;
-    scrollbar.scrollIntoView(document.querySelector('#video'), {
-      offsetLeft: 34,
-      offsetBottom: 12,
+    scrollbar.scrollIntoView(document.querySelector('#video_image_anchor'), {
       alignToTop: true,
-      onlyScrollIfNeeded: true,
+      onlyScrollIfNeeded: false,
     });
   }  
 
@@ -99,8 +99,8 @@ export default class Work extends React.Component {
     
 
 
-  <div id ="topper">
-    <div className='wrapper'>
+  <div id ="topper" style={{overflowX: 'hidden'}}>
+    <div className='wrapper' style={{overflowX: 'hidden'}}>
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
 
@@ -214,7 +214,7 @@ export default class Work extends React.Component {
               </If>
 
 
-          <div className={s.detail_wrapper}>
+          <div id="video_image_anchor" className={s.detail_wrapper}>
             <div className={s.row__threetop}> 
               <div className={s.column__col5}>
                 <ScrollTo>
@@ -258,7 +258,7 @@ export default class Work extends React.Component {
       }}
     </TransitionState>              
             
-            <img src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
+            <img id="video_image" src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
               
 
 
@@ -273,35 +273,27 @@ export default class Work extends React.Component {
           </div>
           <div className={s.row__four}>
             <div className={s.column__col8}>
-            <Link to={'/bakery-work'}>
-              <p className={s.control_dark}><span className={s.arrow_ml}>&lt;</span>&nbsp;&nbsp;ALL CASES</p>
-            </Link>
+            <LeftLink arrow to={'/bakery-work'}>
+              <p className={s.control_dark}>ALL CASES</p>
+            </LeftLink>
             </div>
 
-            <If condition={next}>
-              <Then>
-                <Link className={s.column__col9} to={next ? "/bakery-work/" + next.title.toLowerCase() : '/'}>
-                  <p className={s.control_dark}>NEXT CASE</p>
-                </Link>
-              </Then>
-              <Else>
-                <div className={s.column__col9}>
-                  <p className={s.control_dark}>&nbsp;</p>
-                </div>
-              </Else>              
-            </If>
-
+            <div className={s.column__col9}>
+              <p className="bold">NEXT CASE</p>
+            </div>
 
             <div className={s.column__col10}>
-                <Link className={s.column__col9} to={next ? "/bakery-work/" + next.title.toLowerCase() : '/'}>
-                  <p className={s.control_dark}>{next ? next.title : ''}</p>
+                <Link className="bakery_work_start_link" gray arrow to={next ? "/bakery-work/" + next.title.toLowerCase() : '/'}>
+                  <p className={s.control_dark}>START A PROJECT WITH US</p>
                 </Link>
             </div>
           </div>
+
+
           <div className={s.row__five}>
-            <div className={s.column__col11}>
-              <p className={s.topic}>How to make people think OF SERIOUS TOPICS?</p>
-            </div>
+            <Link gray className={s.column__col11} to={next ? "/bakery-work/" + next.title.toLowerCase() : '/'}>
+              <p className={s.topic}>{next ? next.title : ''}</p>
+            </Link>
             <div className={s.column__col12}>
               <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
             </div>

@@ -4,6 +4,12 @@
 
 @import '~styles/IGORlogin';
 
+
+
+.bold {
+  font-weight: bold;
+}
+
 img {
       clip-path: inset(.001% .002% .003% .004%);
     }
@@ -22,9 +28,10 @@ a {text-decoration: none}
 
 .the_link {
   $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
-  @include poly-fluid-sizing('height', $size-map);
+  @include poly-fluid-sizing('font-size', $size-map);
   left: 0;
-  transition: all 1s;  
+  transition: all .5s; 
+  color:#222; 
 }
 
 .the_arrow_link {
@@ -32,7 +39,7 @@ a {text-decoration: none}
 }
 
 .the_arrow {
-  transition: all 1s;  
+  transition: all .5s;  
   left: 0.3vw;  
   position: relative;
   bottom: -0.05vw;
@@ -46,12 +53,12 @@ a {text-decoration: none}
   position: relative;
   left:0;
   text-align: center;
-  transition: all 1s;  
+  transition: all .5s;  
 }
 
 .the_link:not(.the_button_link):hover .the_arrow {
   left: .8vw;
-  transition: all 1s;
+  transition: all .5s;
 }
 
 
@@ -60,11 +67,15 @@ a {text-decoration: none}
 }
 
 .bakery_arrow polygon {
-    fill: #37c6f4;
+    fill: #d4de4f;
 }
 
 .crowders_arrow polygon {
     fill: #37c6f4;
+}
+
+.gray_arrow polygon {
+    fill: #222222;
 }
 
 
@@ -90,7 +101,7 @@ a {text-decoration: none}
 
 .the_button_link:hover .the_link_text {
   left: -.7vw;
-  transition: all 1s;
+  transition: all .5s;
 }
 
 
@@ -157,10 +168,43 @@ a {text-decoration: none}
 
 
 
+/* left arrow */
 
+.the_left_link {
+  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('font-size', $size-map);
+  left: 0;
+  transition: all .5s; 
+  color:#222; 
+}
 
+.the_arrow_left_link {
+    font-weight: bold;
+}
 
+.the_left_arrow {
+  transition: all .5s;  
+  right: 0.3vw;  
+  position: relative;
+  bottom: -0.05vw;
+  padding-top: 0.1vw;
+  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('height', $size-map);   
+}
 
+.the_left_link:hover .the_left_arrow {
+  right: .8vw;
+  transition: all .5s;
+}
+
+.the_left_link polygon {
+    fill: #222222;
+}
+
+.the_left_link .the_link_text {
+  display: inline-block;
+
+}
 
 
 
@@ -1112,8 +1156,10 @@ select {
 }
 
 .work-wrapper {
-    min-height: 80vw;
+    min-height: 100vh;
+    position: relative;
 }
+
 
 .section-wrapper {
   position: relative;
@@ -1391,6 +1437,14 @@ select {
 
 /* BAKERY WORK */
 
+.bakery_work_start_link > .the_link_text {
+  display: inline-block;
+}
+
+.work_item_wrapper {
+  height: 15.3vw;
+}
+
 .bakery_work_icon {
   position: relative;
   @include grid-col;
@@ -1450,9 +1504,27 @@ select {
 
 
   @media (min-width: $min-960) {
-    top: -5vw;
+    top: -8vw;
     @include grid-col(2.5);
     @include grid-offset-left(10);
+    z-index: 5; 
+  }   
+
+}
+
+.bakery_work_project {
+  font-weight: bold;
+  color: #222;
+
+  position: relative;
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+
+  @media (min-width: $min-960) {
+    top: -8vw;
+    @include grid-col(2.5);
+  @include grid-offset-left(2.75);
     z-index: 5; 
   }   
 
@@ -1664,6 +1736,38 @@ select {
 
 .crowders_work_wrapper {
   margin-top: 10vw;
+  margin-bottom: 10vw;
+}
+
+.crowders_work_item_wrapper {
+    height: 18.3vw;
+}
+
+.crowders_work_cta_paragraph {
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -3vw;
+    @include grid-col(4);
+    @include grid-offset-left(10);
+
+  }   
+}
+
+.crowders_work_cta_link {
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -1vw;
+    @include grid-col(3);
+    @include grid-offset-left(10);
+    margin-bottom: 4vw;
+
+  }   
 }
 
 
@@ -1682,6 +1786,22 @@ select {
 
 
 /* BAKERY HOME SLIDER  */
+
+
+
+
+.bakery_home_flip_button {
+
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    top: 44.6vw;
+    @include grid-col(3);
+    @include grid-offset-left(14);
+  }     
+}
 
 
 .slider_heading_wrapper {
@@ -2248,8 +2368,6 @@ select {
 
 .bakery_about__green_link {
 
-  @include responsive-font(15px, 20px);
-  line-height: 24px;  
   color: #d4de4f;
   text-decoration: none;
   font-weight: bold;
@@ -2258,8 +2376,6 @@ select {
 
   @media (min-width: $min-960) {  
 
-    @include responsive-font(18px, 24px);
-    line-height: 40px;
   }
 
 }
@@ -2308,19 +2424,15 @@ select {
 
 .bakery_about__button_link {
 
-      background-color: #d4de4f;
-      padding: 10px 85px ;
-      text-align: center;
-      color: #15311a;
-      font-weight: 700;
-      text-decoration: none;      
+
+     
       @include grid-col(14);
       @include grid-offset-left(2);
       margin-bottom: 100px;
 
 
     @media (min-width: $min-960) {
-      align-self: center!important;    
+ 
       @include grid-col(3);
       @include grid-offset-left(10); 
       margin-bottom: 0px;      
@@ -3748,7 +3860,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -7.8vw;
+    top: -8.8vw;
     @include grid-col(3);
     @include grid-offset-left(3);
     z-index: 5; 
@@ -5852,7 +5964,7 @@ select {
   @media (min-width: $min-960) {
     bottom: 8.5vw;
     @include grid-col(3);
-    @include grid-offset-left(14.2);
+    @include grid-offset-left(14);
     z-index: 5; 
   } 
 

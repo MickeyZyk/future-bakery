@@ -6,6 +6,7 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Row } from 'components/row/Row';
+import { Link } from 'components/link/Link';
 import { Figure } from 'components/figure/Figure';
 import { Figure2 } from 'components/figure2/Figure2';
 import { AnimatedHeading  } from 'components/heading/AnimatedHeading';
@@ -62,13 +63,13 @@ const BakeryAbout = ({ data, className, query }) => {
             <HeadingTwo className="bakery_about__heading_two">{data.gravBakeryAbout.heading_two}</HeadingTwo>
             <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />   
             <div className="bakery_about__green_block">
-              <p className="bakery_about__green_text">&nbsp;</p>
-              <TransitionLink className="bakery_about__green_link" to={data.gravBakeryAbout.show_me_link} exit={{ length: 1 }} entry={{ delay: 1 }}>&nbsp;</TransitionLink>
+              <p className="bakery_about__green_text">{data.gravBakeryAbout.show_me_text}</p>
+              <Link bakery arrow className="bakery_about__green_link" to={data.gravBakeryAbout.show_me_link} exit={{ length: 1 }} entry={{ delay: 1 }}>SHOW ME</Link>
             </div>
           </Row>
           <img src="../images/company.png" className="bakery_about__white_company hide_on_mobile" />
           <Row className="centered-row">
-            <TransitionLink className="bakery_about__button_link" to={'/bakerycontact'} exit={{ length: 1 }} entry={{ delay: 1 }}>START A PROJECT WITH US</TransitionLink>
+            <Link bakery button arrow className="bakery_about__button_link" to={'/bakerycontact'} exit={{ length: 1 }} entry={{ delay: 1 }}>START A PROJECT WITH US</Link>
           </Row>
         </div>
         <SVGicon className='bakery_about__white_hearts' src='white_hearts.svg' />

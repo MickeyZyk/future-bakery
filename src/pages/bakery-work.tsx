@@ -121,19 +121,17 @@ export default class Work extends React.Component {
 
 
                 {this.props.data.allGravBakeryWork.edges.map(( node, i ) => (
-                  <div key={i}>
-                  <Item data={node} i={i} /> 
+                  <div className="work_item_wrapper" key={i}>
+                  <Item data={node} i={i} />
                   </div>
 
                 ))}
 
 
-
-               
-
                 </div>
 
-                <Link className="bakery_work_download" to={'/'}>DOWNLOAD MORE PROJECTS&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+                <Link gray arrow className="bakery_work_download" to={'/'}>DOWNLOAD MORE PROJECTS</Link>
+                <Link gray arrow className="bakery_work_project" to={'/'}>START A PROJECT WITH US</Link>                
 
               </ReactCursorPosition>                
 

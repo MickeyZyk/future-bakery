@@ -56,17 +56,17 @@ export default class Work extends React.Component {
 
   }  
 
-	fireEvent(elementId, eventName) {
-	  if(document.getElementById(elementId) != null) {   
-	    if(document.getElementById(elementId).fireEvent) {
-	      document.getElementById(elementId).fireEvent('on' + eventName);     
-	    } else {   
-	      var evObj = document.createEvent('Events');
-	      evObj.initEvent(eventName, true, false);
-	      document.getElementById(elementId).dispatchEvent(evObj);
-	    }
-	  }
-	}
+  fireEvent(elementId, eventName) {
+    if(document.getElementById(elementId) != null) {   
+      if(document.getElementById(elementId).fireEvent) {
+        document.getElementById(elementId).fireEvent('on' + eventName);     
+      } else {   
+        var evObj = document.createEvent('Events');
+        evObj.initEvent(eventName, true, false);
+        document.getElementById(elementId).dispatchEvent(evObj);
+      }
+    }
+  }
 
   componentDidMount(){
 
@@ -112,7 +112,7 @@ export default class Work extends React.Component {
               <ReactCursorPosition className='fullscreen_cursor_position'>  
 
                 <SVGicon className='bakery_work_icon' src='swirl.svg' /> 
-                <SVGiconReverse className='bakery_work_harmonica' src='bakers_harmonica.svg' />                
+               <SVGiconReverse className='bakery_work_harmonica' src='bakers_harmonica.svg' />               
 
                 <Split className="bakery_work_headline">COLLECTIVE INTELLIGENCE AND CREATIVE POWER IN ACTION</Split>
 
@@ -121,19 +121,17 @@ export default class Work extends React.Component {
 
 
                 {this.props.data.allGravBakeryWork.edges.map(( node, i ) => (
-                  <div key={i}>
-                  <Item2 data={node} i={i} /> 
+                  <div className="work_item_wrapper" key={i}>
+                  <Item2 data={node} i={i} />
                   </div>
 
                 ))}
 
 
-
-               
-
                 </div>
 
-                <Link className="bakery_work_download" to={'/'}>DOWNLOAD MORE PROJECTS&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+                <Link gray arrow className="bakery_work_download" to={'/'}>DOWNLOAD MORE PROJECTS</Link>
+                <Link gray arrow className="bakery_work_project" to={'/'}>START A PROJECT WITH US</Link>                
 
               </ReactCursorPosition>                
 
@@ -171,7 +169,7 @@ export default class Work extends React.Component {
 
 
 export const query = graphql`
-  query AllBakeryWork_forBakers {
+  query AllBakersWork {
     allGravBakeryWork {
       edges {
         node {

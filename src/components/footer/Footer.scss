@@ -5,7 +5,11 @@
   display: block;
   background-color: #222222;
   position: relative;
-  z-index: -1;
+  z-index: 0;
+  background-image: url('./logo_in_back.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 32vw;
 
 
 
@@ -112,16 +116,23 @@
   &__link {
     text-decoration: none;
     text-transform: uppercase;
-    $font-map: (375px: 9px, 959px: 12px, 960px: 8px, 2880px: 16px);
-    @include poly-fluid-sizing('font-size', $font-map);
+  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('font-size', $size-map);
   }
 
   &__h2 {
   color: #2d2d2d;
+  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('font-size', $size-map); 
+  $height-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('margin-bottom' , $size-map);  
   }
 
   &__p {
   color: #6d6d6d;  
+  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('font-size', $size-map);
+  margin-bottom: 1vw;  
   }
 
   &__s { 

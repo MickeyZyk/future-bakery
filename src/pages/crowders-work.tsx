@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import { Slider } from 'components/slider/Slider';
+import { Row } from 'components/row/Row';
 import { Heading } from 'components/heading/Heading';
 import { CrowdersItem } from 'components/item/CrowdersItem';
 import ReactDOM from 'react-dom';
@@ -11,6 +12,7 @@ import ReactCursorPosition from 'react-cursor-position';
 import { Link } from 'components/link/Link';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import { Footer } from 'components/footer/Footer';
+import { Paragraph } from 'components/paragraph/Paragraph';
 import { graphql } from 'gatsby'
 
 import SmoothScrollbar from 'smooth-scrollbar';
@@ -116,12 +118,14 @@ export default class Work extends React.Component {
 
 
                   <Split className="crowders_work_headline">HEADLINE ABOUT CROWDERS WORK</Split>
+
+
                 <div className='wrapper work-wrapper crowders_work_wrapper' ref={this.hovered_item}>
 
 
 
                 {this.props.data.allGravCrowdersWork.edges.map(( node, i ) => (
-                  <div key={i}>
+                  <div className="crowders_work_item_wrapper" key={i}>
                   <CrowdersItem data={node} i={i} /> 
                   </div>
 
@@ -132,8 +136,16 @@ export default class Work extends React.Component {
                
 
                 </div>
+                <Link gray arrow className="bakery_work_download" to={'/'}>DOWNLOAD MORE PROJECTS</Link>
+                <Link gray arrow className="bakery_work_project" to={'/'}>START A PROJECT WITH US</Link>  
+                <Row>
+                  <Paragraph className="crowders_work_cta_paragraph">We regularly measure sentiment of key segments and check “temperature”</Paragraph>
+                </Row>
+                <Row>  
+                  <Link crowders arrow button className="crowders_work_cta_link" to={'/'}>SEE A FUTURE REPORT</Link>
+                </Row>
 
-                <Link className="bakery_work_download" to={'/'}>DOWNLOAD MORE PROJECTS&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
+
 
               </ReactCursorPosition>                
 

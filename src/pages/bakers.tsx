@@ -4,6 +4,7 @@ import { BakersSlider } from 'components/slider/BakersSlider';
 import { Heading } from 'components/heading/Heading';
 import SVGicon from 'components/svgicon/SVGicon';
 import { Link } from 'components/link/Link';
+import { Row } from 'components/row/Row';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 
@@ -90,12 +91,9 @@ export default class BakersIndex extends React.Component {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >             
 
-                <div className="bakers_home_flip_button bakers_flip">
-                  <Link to={'/bakerscontact'}>
-                    <div className="front">START A PROJECT WITH US</div>
-                    <div className="back">START A PROJECT WITH US</div>
-                  </Link>
-                </div>              
+              <Row>
+                  <Link bakers arrow button className="bakers_home_flip_button" to={'/bakerscontact'}>START A PROJECT WITH US</Link>
+              </Row>
 
             </Tween>
 
@@ -104,7 +102,8 @@ export default class BakersIndex extends React.Component {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
-              <div className='fulscreen_white' style={{zIndex: -1, backgroundColor: '#ffffff', position: 'absolute', width: '100vw', height: '100vh', top: 0, bottom: 0, left: 0, right: 0}}></div>
+                <div className='fulscreen_white' style={{zIndex: -1, backgroundColor: '#ffffff', position: 'absolute', width: '100vw', height: '100vh', top: 0, bottom: 0, left: 0, right: 0}}></div>
+
 
             </Tween>
 

@@ -4,6 +4,7 @@ import { CrowdersSlider } from 'components/slider/CrowdersSlider';
 import { Heading } from 'components/heading/Heading';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Link } from 'components/link/Link';
+import { Row } from 'components/row/Row';
 import ReactCursorPosition from 'react-cursor-position';
 
 import { TweenMax, TimelineMax, Power3} from "gsap";
@@ -85,18 +86,23 @@ export default class CrowdersIndex extends React.Component {
 
             </Tween>
 
+            
+            <Row>
+
+
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >             
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } > 
 
-                <div className="crowders_home_flip_button crowders_flip" >
-                  <Link to={'/crowderscontact'}>
-                    <div className="front">START A PROJECT WITH US</div>
-                    <div className="back">START A PROJECT WITH US</div>
-                  </Link>
-                </div>    
 
-            </Tween>            
+                  <Link crowders arrow button className="crowders_home_flip_button" to={'/crowderscontact'}>START A PROJECT WITH US</Link>
+
+
+            </Tween>  
+
+            </Row>
+
+          
 
 
             <Tween duration={2} 
