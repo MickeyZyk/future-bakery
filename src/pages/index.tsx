@@ -6,6 +6,7 @@ import SVGicon from 'components/svgicon/SVGicon';
 import { Link } from 'components/link/Link';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
+import { Row } from 'components/row/Row';
 
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
@@ -83,24 +84,35 @@ export default class BakeryIndex extends React.Component {
 
           
               <div className='fulscreen_slider'>
-                <Slider subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>
+                <Slider auto subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>
               </div>
 
             </Tween>
+                     
+
+            <Row className="bakery_home_button_row">
+
+
 
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >                         
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >    
 
-              <div className="flip_button flip">
-                <Link to={'/bakerycontact'}>
-                  <div className="front">START A PROJECT WITH US</div>
-                  <div className="back">START A PROJECT WITH US</div>
-                </Link>
-              </div>
 
+                <div className="bakery_home_flip_button">
+                  <Row>
+                    <Link bakery arrow button className="home_cta_button" to={'/bakerycontact'}>START A PROJECT WITH US</Link>
+                  </Row>
+                </div>
 
             </Tween>
+
+
+            </Row>
+
+
+
+
 
 
             <Tween duration={2} 
