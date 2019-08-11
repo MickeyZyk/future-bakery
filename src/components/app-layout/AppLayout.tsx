@@ -40,31 +40,28 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
 
 
       <Helmet {...helmet}>
-
-
-
-      <link rel="preload"
-            as="font"
-            href="../fonts/bradley_hand_itc_tt_bold-webfont.woff2"
-            type="font/woff2"
-            crossOrigin="anonymous" />
-      <link rel="preload"
-            as="font"
-            href="../fonts/proxima_nova_black-webfont.woff2"
-            type="font/woff2"
-            crossOrigin="anonymous" />
-      <link rel="preload"
-            as="font"
-            href="proxima_nova_bold-webfont.woff2"
-            type="font/woff2"
-            crossOrigin="anonymous" />
-      <link rel="preload"
-            as="font"
-            href="../fonts/proxima_nova_light-webfont.woff2"
-            type="font/woff2"
-            crossOrigin="anonymous" />                        
-
-
+        <link rel="preload" href="../fonts/bradley_webfontkit.css" as="style" />
+        <link rel="preload" href="../fonts/proxima-nova-webfontkit.css" as="style" />
+        <link rel="preload"
+              as="font"
+              href="../fonts/bradley_hand_itc_tt_bold-webfont.woff2"
+              type="font/woff2"
+              crossOrigin="anonymous" />
+        <link rel="preload"
+              as="font"
+              href="../fonts/proxima_nova_black-webfont.woff2"
+              type="font/woff2"
+              crossOrigin="anonymous" />
+        <link rel="preload"
+              as="font"
+              href="proxima_nova_bold-webfont.woff2"
+              type="font/woff2"
+              crossOrigin="anonymous" />
+        <link rel="preload"
+              as="font"
+              href="../fonts/proxima_nova_light-webfont.woff2"
+              type="font/woff2"
+              crossOrigin="anonymous" />
       </Helmet>
 
       <ContextProviderComponent>

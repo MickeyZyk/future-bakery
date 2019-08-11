@@ -273,7 +273,7 @@ export default class Work extends React.Component {
           </div>
           <div className={s.row__four}>
             <div className={s.column__col8}>
-            <LeftLink arrow to={'/bakery-work'}>
+            <LeftLink gray arrow to={'/bakery-work'}>
               <p className={s.control_dark}>ALL CASES</p>
             </LeftLink>
             </div>

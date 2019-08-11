@@ -7,6 +7,7 @@ import { Link } from 'components/link/Link';
 import { Row } from 'components/row/Row';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
+import { graphql } from 'gatsby'
 
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';

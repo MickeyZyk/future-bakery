@@ -89,7 +89,7 @@ const BakeryAbout = ({ data, className, query }) => {
 
 
     <div className='wrapper about-wrapper'>
-      <ReactCursorPosition className='fullscreen_cursor_position'>
+      <ReactCursorPosition>
         <Helmet title={data.gravBakeryAbout.title} />
         <SVGicon className='bakery_about__green_rainbow' src='green_rainbow.svg'  />
         <Row>
@@ -114,6 +114,8 @@ const BakeryAbout = ({ data, className, query }) => {
             <Link bakery button arrow className="bakery_about__button_link" to={'/bakerycontact'} exit={{ length: 1 }} entry={{ delay: 1 }}>START A PROJECT WITH US</Link>
           </Row>
         </div>
+        </ReactCursorPosition>
+        <ReactCursorPosition>
         <SVGicon className='bakery_about__white_hearts' src='white_hearts.svg' />
         <SVGiconReverse className='bakery_about__white_pan' src='white_pan.svg' />        
         <Row>
@@ -127,7 +129,9 @@ const BakeryAbout = ({ data, className, query }) => {
               </div>
             ))}
           </div>
-        </Row>      
+        </Row>    
+        </ReactCursorPosition>
+        <ReactCursorPosition>  
         <SVGicon className='bakery_about_chef' src='bakery_about_chef.svg' />
         <SVGiconReverse className='bakery_about_soldier' src='bakery_about_soldier.svg' />  
         <AnimatedHeadingTwo className="bakery_about_team_heading">Meet the team</AnimatedHeadingTwo>
@@ -135,13 +139,14 @@ const BakeryAbout = ({ data, className, query }) => {
           <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages}/>
         </div>      
         <div style={{backgroundImage: "url('../images/clients_bck.png')"}} className="bakery_about_clients_background">
-        <AnimatedHeadingTwo className="bakery_about_clients_heading">Whom we bake with</AnimatedHeadingTwo>
-        <Clients className="bakery_about_clients"/>
-        <Row>
-          <Link gray arrow className="bakery_about_clients_contact_link" to={'/bakerycontact'}>CONTACT US</Link>
-        </Row>
-      </div>
-      </ReactCursorPosition>
+          <AnimatedHeadingTwo className="bakery_about_clients_heading">Whom we bake with</AnimatedHeadingTwo>
+          <Clients className="bakery_about_clients"/>
+          <Row>
+            <Link gray arrow className="bakery_about_clients_contact_link" to={'/bakerycontact'}>CONTACT US</Link>
+          </Row>
+        </div>
+        </ReactCursorPosition>
+
     </div>
 <Footer/>
 </Scrollbar>

@@ -117,7 +117,7 @@ var linkURLs = this.props.links
           <div className={`${s.data} ${this.state.activeIndex == i ? s.current_data : ''}`}>
             <h4 className={s.name}>{names[i]}</h4>
             <p className={s.text}>{texts[i]}</p>
-            <a className={s.link} href={'mailto:' + linkURLs[i]}>CONTACT {_.first( names[i].split(" ")).toUpperCase()}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></a>
+            <a className={s.link} href={'mailto:' + linkURLs[i]}>CONTACT {_.first( names[i].split(" ")).toUpperCase()}</a>
           </div>
         </div>
       )
@@ -143,9 +143,20 @@ var linkURLs = this.props.links
         <Row>
           <Location>
             {({ location }) => (
-              <>              
-                <LeftLink to={location.pathname} arrow gray className="team_left_link" onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
-                <Link to={location.pathname} arrow gray className="team_right_link" onClick={this.nextSlide.bind(this)}>NEXT</Link>      
+              <>          
+                <LeftLink 
+                to={location.pathname} 
+                bakery={ location.pathname == '/bakery-about' ? true : false } 
+                crowders={ location.pathname == '/crowders-about' ? true : false } 
+                arrow 
+                className="team_left_link" 
+                onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
+                <Link 
+                to={location.pathname} 
+                bakery={ location.pathname == '/bakery-about' ? true : false } 
+                crowders={ location.pathname == '/crowders-about' ? true : false } 
+                arrow className="team_right_link" 
+                onClick={this.nextSlide.bind(this)}>NEXT</Link>      
               </>
             )}
           </Location> 

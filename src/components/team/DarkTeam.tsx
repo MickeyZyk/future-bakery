@@ -116,7 +116,7 @@ var linkURLs = this.props.links
           <div className={`${s.data} ${this.state.activeIndex == i ? s.current_data : ''}`}>
             <h4 className={s.name}>{names[i]}</h4>
             <p className={s.text}>{texts[i]}</p>
-            <a className={s.link} href={'mailto:' + linkURLs[i]}>CONTACT {_.first( names[i].split(" ")).toUpperCase()}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></a>
+            <a className={s.link} href={'mailto:' + linkURLs[i]}>CONTACT {_.first( names[i].split(" ")).toUpperCase()}</a>
           </div>
         </div>
       )

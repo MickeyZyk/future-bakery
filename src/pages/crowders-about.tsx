@@ -91,7 +91,7 @@ const CrowdersAbout = ({ data, className }) => {
 
   <div className='wrapper about-wrapper'>
 
-      <ReactCursorPosition className='fullscreen_cursor_position'>
+      <ReactCursorPosition>
 
         <Helmet title={data.gravCrowdersAbout.title} />
 
@@ -116,6 +116,8 @@ const CrowdersAbout = ({ data, className }) => {
 
 
           </Row>
+
+      </ReactCursorPosition>            
       
 
         <div className="crowders_about_blueboard" style={{backgroundImage: `url(../images/how_we_do_it_image.jpg)`}}>
@@ -242,13 +244,18 @@ const CrowdersAbout = ({ data, className }) => {
 
 
       </Row>
+      
+      <ReactCursorPosition>
+
+
+        <SVGicon className='crowders_about_chef' src='blue_chef.svg' />
+        <SVGiconReverse className='crowders_about_soldier' src='blue_soldier.svg' />  
 
         <AnimatedHeadingTwo className="crowders_about_team_heading">Meet the team</AnimatedHeadingTwo>
-              <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages} className="crowders_about_team"/>      
 
-      </ReactCursorPosition>   
+        <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages} className="crowders_about_team"/>      
 
-      
+     </ReactCursorPosition>
 
   </div>
 <Footer/>

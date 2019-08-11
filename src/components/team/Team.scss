@@ -21,16 +21,16 @@
 .current_data {
   display: block;
   @media (min-width: $min-960) {
-    margin-bottom: 5vw;
+    margin-bottom: 6vw;
   }     
 }
 
 .name {
-  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 40px);
+  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 42px);
   @include poly-fluid-sizing('font-size', $font-map);
   font-weight: lighter;
   @media (min-width: $min-960) {
-    margin-bottom: 2vw;
+    margin-bottom: 3vw;
   }     
   
 
@@ -43,7 +43,7 @@
   $height-map: (375px: 19px, 959px: 50px, 960px: 16px, 2880px: 48px);
   @include poly-fluid-sizing('line-height', $height-map);    
   @media (min-width: $min-960) {
-    margin-bottom: 5vw;
+    min-height: 18vw;
   }     
 }
 

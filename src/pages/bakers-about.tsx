@@ -94,9 +94,9 @@ const BakersAbout = ({ data, className }) => {
  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>      
 
   <div className='wrapper about-wrapper'>
-    <ReactCursorPosition>
-      <Helmet title={data.gravBakersAbout.title} />
 
+      <Helmet title={data.gravBakersAbout.title} />
+    <ReactCursorPosition>
               <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
 
             <Tween duration={2} 
@@ -123,7 +123,8 @@ const BakersAbout = ({ data, className }) => {
 
             </Tween>
 
-
+    </ReactCursorPosition>
+      <ReactCursorPosition>
 
               <SVGicon className='bakers_about__brains' src='brains.svg' /> 
               <Row>
@@ -136,6 +137,9 @@ const BakersAbout = ({ data, className }) => {
                 <Link className="bakers_about__join_link" arrow bakers to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}</Link>
                 <Figure4 className="show_on_mobile"/>
               </Row>
+
+
+        </ReactCursorPosition>
 
       <Row className="tags_row">
         <Controller refreshInterval={1}>
@@ -252,7 +256,7 @@ const BakersAbout = ({ data, className }) => {
         <Link bakers arrow className="bakers_about__join_link_three" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       </Row>
 
-
+    <ReactCursorPosition>
       <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
       <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
       
@@ -266,6 +270,10 @@ const BakersAbout = ({ data, className }) => {
           <AnimatedHeadingTwo className="bakers_about_team_heading">{data.gravBakersAbout.team_heading}</AnimatedHeadingTwo>
 
           <DarkTeam members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages}/> 
+
+
+         </ReactCursorPosition>
+         <ReactCursorPosition>     
 
       <SVGicon className='bakers_about_treasure' src='treasure.svg' />
 
@@ -284,6 +292,10 @@ const BakersAbout = ({ data, className }) => {
         <Row>
           <Link bakers arrow button className="bakers_about_flip_button" to={data.gravBakersAbout.link_two}>{data.gravBakersAbout.link_two_text}</Link>
         </Row>
+
+
+          </ReactCursorPosition>
+
 
         <Row className="bakers_about_steps">
           <div className="bakers_about_numbers_first">1</div>
@@ -317,7 +329,7 @@ const BakersAbout = ({ data, className }) => {
           ))}
 
         </Row>   
-
+  <ReactCursorPosition>
       <SVGicon className='bakers_about_like' src='like.svg' />
       <SVGiconReverse className='bakers_about_book' src='book.svg' />         
 
@@ -338,6 +350,9 @@ const BakersAbout = ({ data, className }) => {
 
 
         </Row> 
+
+
+ </ReactCursorPosition>     
 
         <Row className="bakers_about_authors">
 
@@ -363,8 +378,7 @@ const BakersAbout = ({ data, className }) => {
         </Row>         
 
 
-   
-    </ReactCursorPosition>
+
   </div>
 
 <Footer/>
