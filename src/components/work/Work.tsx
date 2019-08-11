@@ -15,7 +15,7 @@ import { Footer } from 'components/footer/Footer';
 import { graphql } from 'gatsby'
 import { If, Then, Else, Switch, Case, Default } from 'react-if'
 import { ScrollTo } from "react-scroll-to";
-
+import { Location } from '@reach/router';
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
@@ -266,7 +266,7 @@ export default class Work extends React.Component {
             </div>
 
             <div className={s.column__col9}>
-              <p className="bold">NEXT CASE</p>
+              <p className="bold">{next ? 'NEXT CASE' : ''}</p>
             </div>
 
             <div className={s.column__col10}>
@@ -278,9 +278,27 @@ export default class Work extends React.Component {
 
 
           <div className={s.row__five}>
-            <Link gray className={s.column__col11} to={next ? "/bakery-work/" + slug(next.title.toLowerCase()) : '/'}>
-              <p className={s.topic}>{next ? next.title : ''}</p>
-            </Link>
+
+          <If condition={next}>
+            <Then>
+
+            <Location>
+              {({ location }) => (        
+                  
+  
+              <Link gray className={s.column__col11} 
+              to={ location.pathname.includes('bakery') ? "/bakery-work/" + slug(next.title.toLowerCase()) : "/bakers-work/" + slug(next.title.toLowerCase())}>
+                <p className={s.topic}>{next ? next.title : ''}</p>
+              </Link>
+
+                )}
+            </Location> 
+
+            </Then>
+
+          </If>
+
+
             <div className={s.column__col12}>
               <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
             </div>
