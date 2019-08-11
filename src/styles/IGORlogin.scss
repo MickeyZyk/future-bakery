@@ -618,3 +618,83 @@
     @include grid-offset-left(-.75);
   }  
 }
+
+
+
+ /* bakers-contact */
+.bakery_contact_heading  {
+  position: relative;
+  top: 25vw;
+  @include grid-col(14);
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 15vw;
+    @include grid-col(8);
+    @include grid-offset-left(3); 
+  }     
+}
+
+.bakery_contact_house {
+  top: 25vw;
+  right: 5vw;
+  @include grid-col(2);
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    top: 15vw;
+    right: auto;
+    @include grid-col(.75);
+    @include grid-offset-left(2); 
+  }     
+}
+
+.bakery_contact_adress_block {
+  position: relative;
+  top: 30vw;
+  @include grid-col(16);
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    top: 30vw;
+    @include grid-col(8);
+    @include grid-offset-left(3); 
+  } 
+}
+
+
+
+.bakery_contact_flip_button {  
+  top: 5vw;
+  position: relative;
+  height: 7vw;
+  @include grid-col(16);
+  @include grid-offset-left(0);   
+
+  @media (min-width: $min-960) {
+    top: 2vw;
+    position: relative;
+    height: auto;
+    @include grid-col(6.75);
+    @include grid-offset-left(0); 
+  } 
+}
+
+
+
+.bakery_contact_image {
+  position: relative;
+  top: 40vw;
+  bottom: auto;
+  @include grid-col(16);
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+    top: 0;
+    bottom: -1vw;
+    @include grid-col(10);
+    @include grid-offset-left(7); 
+  }     
+}

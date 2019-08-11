@@ -12,6 +12,7 @@ import Scrollbar from 'react-smooth-scrollbar';
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
+import Scrollbar from 'react-smooth-scrollbar';
 
 export default () => (
   <>
