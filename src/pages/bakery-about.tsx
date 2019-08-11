@@ -109,7 +109,10 @@ const BakeryAbout = ({ data, className, query }) => {
               <Link bakery arrow className="bakery_about__green_link" to={data.gravBakeryAbout.show_me_link} exit={{ length: 1 }} entry={{ delay: 1 }}>SHOW ME</Link>
             </div>
           </Row>
-          <img src="../images/company.png" className="bakery_about__white_company hide_on_mobile" />
+          <div className="bakery_about__white_company">
+            <img src="../images/usual_closed_process.png" className="hide_on_mobile visible" />
+            <img src="../images/usual_closed_process.png" className="hide_on_mobile hidden" />  
+          </div>        
           <Row className="centered-row">
             <Link bakery button arrow className="bakery_about__button_link" to={'/bakerycontact'} exit={{ length: 1 }} entry={{ delay: 1 }}>START A PROJECT WITH US</Link>
           </Row>

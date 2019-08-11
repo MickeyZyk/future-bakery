@@ -90,14 +90,18 @@ a {text-decoration: none}
   transition: all .5s;  
 }
 
-.bakery-color .the_link_text {
-  color: #d4de4f
+.gray_color:not(.the_button_link) .the_link_text {
+  color: #222;  
 }
-.bakers-color .the_link_text {
-  color: #ff4500  
+
+.bakery_color:not(.the_button_link) .the_link_text {
+  color: #d4de4f;
 }
-.crowders-color .the_link_text {
-  color: #37c6f4  
+.bakers_color:not(.the_button_link) .the_link_text {
+  color: #ff4500; 
+}
+.crowders_color:not(.the_button_link) .the_link_text {
+  color: #37c6f4; 
 }
 
 .the_link:not(.the_button_link):hover .the_arrow {
@@ -2493,13 +2497,25 @@ select {
       margin-bottom: 60px;
 
     @media (min-width: $min-960) {
+      min-height: 26vw;
+      position: relative;
       @include grid-col(9);
       @include grid-offset-left(4);      
-      margin-bottom: 150px;
+      margin-bottom: 8vw;
+      margin-top: 2vw;
     }        
 
 
 }
+
+.bakery_about__white_company > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 
 .bakery_about__white_hearts {
 
