@@ -2,7 +2,7 @@
 
 @import '~styles/fonts.css';
 
-
+@import '~styles/IGORlogin';
 
 
 
@@ -2983,7 +2983,7 @@ select {
     @include grid-offset-left(12);
     position: absolute !important;
     z-index: 5;
-    top: 63vw;
+    top: 76vw;
     /*
     $top-map: (320px: -0.15px, 959px: -0.25px, 960px: 250px, 2880px: 730px);  
     @include poly-fluid-sizing('font-size', $top-map);
@@ -5577,10 +5577,8 @@ select {
   }
 }
 
-.bakers_we__paragraph {
+.bakers_we__paragraph_one {
   color: rgba(35, 31, 32, 0.6);
-  position: relative;
-  top: 35vw;
 
   @include grid-col(14);
   @include grid-offset-left(2);
@@ -5588,18 +5586,19 @@ select {
   @media (min-width: $min-960) {
     position: relative;
     top: -20vw;    
-    @include grid-col(3);
+    @include grid-col(4);
     @include grid-offset-left(11);
   }
 }
 
-.bakers_about__join_link {
+
+.bakers_about__join_link_one {
   color: #ff4500;
   font-weight: bold;
   @include grid-col(4);
   @include grid-offset-left(2);
-  position: relative;
-  top: 50vw;
+
+  top: 15vw;
   bottom: 10vw;
 
   @media (min-width: $min-960) {
@@ -5610,7 +5609,6 @@ select {
     @include grid-offset-left(11);
   }  
 }
-
 
 .tags_heading {
   position: relative;
@@ -6290,4 +6288,3 @@ select {
 }
 
 
-@import '~styles/IGORlogin';
