@@ -147,15 +147,15 @@ console.log("WE GOT", this.props.arrayOfImages)
               <>          
                 <LeftLink 
                 to={location.pathname} 
-                bakery={ location.pathname == '/bakery-about' ? true : false } 
-                crowders={ location.pathname == '/crowders-about' ? true : false } 
+                bakery={ location.pathname == '/bakery-about' || '/bakery-about/' ? true : false } 
+                crowders={ location.pathname == '/crowders-about' || '/crowders-about/' ? true : false } 
                 arrow 
                 className="team_left_link" 
                 onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
                 <Link 
                 to={location.pathname} 
-                bakery={ location.pathname == '/bakery-about' ? true : false } 
-                crowders={ location.pathname == '/crowders-about' ? true : false } 
+                bakery={ location.pathname == '/bakery-about' || '/bakery-about/' ? true : false } 
+                crowders={ location.pathname == '/crowders-about' || '/crowders-about/' ? true : false } 
                 arrow className="team_right_link" 
                 onClick={this.nextSlide.bind(this)}>NEXT</Link>      
               </>
