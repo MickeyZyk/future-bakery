@@ -84,6 +84,7 @@ export class Item2 extends React.Component {
                   <h3 className={s.client_more}><Link arrow gray to={ '/bakers-work/' + this.props.data.node.title.toLowerCase() }>FIND OUT MORE</Link></h3>
                 </Tween>                      
                 <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.node.title.toLowerCase() + '/' + this.props.data.node.big_image}/>                        
+                <img className={s.bw_overlay} style={this.state.hover ? {opacity:1}:{opacity:0}} src="../images/bakers_overlay.png"/>                 
                 <img className={s.color} style={this.state.hover ? {opacity:1}:{opacity:0}} src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.node.title.toLowerCase() + '/' + this.props.data.node.big_image} />
               </div>
             </Tween>                   
