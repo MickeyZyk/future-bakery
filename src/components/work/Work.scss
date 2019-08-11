@@ -1,8 +1,5 @@
 @import '~styles/config';
 
-.bottom_row {
-  min-height: 6vw;
-}
 
 
 @keyframes fadeIn{
@@ -18,6 +15,7 @@
 }
 
 .row {
+  overflow: hidden; 
   display: block;
   position: relative;
 
@@ -389,6 +387,7 @@
 }
 
 .award {
+  min-height: 1.2vw;
   position: relative;
   z-index: 1;  
   font-weight: bold;
@@ -425,6 +424,7 @@
   $height-map: (320px: 26px, 375px: 30px, 768px: 52px, 959px: 60px, 960px: 26px, 1920px: 51px, 2880px: 78px);
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map); 
+  min-height: 17vw;
 }
  
 .topic {
@@ -449,7 +449,7 @@
   @media (min-width: $min-960) {
     position: relative;
     min-height: 31vw;
-    top: 15vw;
+    top: 2vw;
 
   }
 
@@ -463,7 +463,7 @@
   @media (min-width: $min-960) {
 
     @include grid-col(3);
-    @include grid-offset-left(1.55);
+    @include grid-offset-left(1.5);
   }
 }  
 
@@ -476,7 +476,7 @@
   @media (min-width: $min-960) {
 
     @include grid-col(2);
-    @include grid-offset-left(8.05);
+    @include grid-offset-left(8);
   }
 }  
 
@@ -488,7 +488,7 @@
   @media (min-width: $min-960) {
 
     @include grid-col(3);
-    @include grid-offset-left(14.52);
+    @include grid-offset-left(14.4);
   }
 }  
 
@@ -500,7 +500,7 @@
   @media (min-width: $min-960) {
 
     @include grid-col(3);
-    @include grid-offset-left(6);
+    @include grid-offset-left(6.72);
   }
 }  
 
@@ -523,7 +523,10 @@
   @media (min-width: $min-960) {
 
     @include grid-col(3.3);
-    @include grid-offset-left(13);
+    @include grid-offset-left(13.2);
   }   
 
 } 
+.bottom_row {
+  min-height: 3.7vw;
+}

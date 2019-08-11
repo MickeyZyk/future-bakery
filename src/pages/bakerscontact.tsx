@@ -20,9 +20,6 @@ export default () => (
       <Helmet title="Bakery" />
       <SVGicon className='bakery_contact_house' src='bakers_home.svg' /> 
 
-
-
-
       <TransitionState>
         {({ transitionStatus }) => {
           return (
