@@ -2,7 +2,7 @@
 
 @import '~styles/fonts.css';
 
-@import '~styles/IGORlogin';
+
 
 
 
@@ -1508,9 +1508,7 @@ select {
 
 /* BAKERY WORK */
 
-.bakery_work_start_link > .the_link_text {
-  display: inline-block;
-}
+
 
 .work_item_wrapper {
   height: 15.3vw;
@@ -6289,3 +6287,6 @@ select {
   } 
 
 }
+
+
+@import '~styles/IGORlogin';

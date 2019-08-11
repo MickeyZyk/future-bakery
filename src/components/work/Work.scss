@@ -1,5 +1,10 @@
 @import '~styles/config';
 
+.bottom_row {
+  min-height: 6vw;
+}
+
+
 @keyframes fadeIn{
   0% {
     opacity:0;
@@ -433,26 +438,22 @@
   @include poly-fluid-sizing('line-height', $height-map); 
 }  
 
-.project {
-  position: relative;
-  z-index: 1;  
-  color: #d4de4f;
-  font-weight: 900;
-  $font-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
-  $height-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
-  @include poly-fluid-sizing('font-size', $font-map);
-  @include poly-fluid-sizing('line-height', $height-map); 
-  text-align: right;
-} 
 
 
 
+.bottom_wrapper {
+
+  @include grid-col;
 
 
+  @media (min-width: $min-960) {
+    position: relative;
+    min-height: 31vw;
+    top: 15vw;
 
+  }
 
-
-
+}
 
 .all_cases {
 
@@ -460,8 +461,69 @@
   position: absolute;
 
   @media (min-width: $min-960) {
-    top: 31vw;
-    @include grid-col(.5);
-    @include grid-offset-left(4);
+
+    @include grid-col(3);
+    @include grid-offset-left(1.55);
   }
 }  
+
+.next_case {
+  font-weight: bold;
+  color: #222;
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(2);
+    @include grid-offset-left(8.05);
+  }
+}  
+
+.start_project {
+
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(3);
+    @include grid-offset-left(14.52);
+  }
+}  
+
+.next_case_link {
+
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(3);
+    @include grid-offset-left(6);
+  }
+}  
+
+
+
+.project {
+
+  position: absolute;
+  z-index: 1;  
+  color: #d4de4f;
+  font-weight: 900;
+  $font-map: (375px: 20px, 959px: 40px, 960px: 16px, 2880px: 40px);
+  $height-map: (375px: 20px, 959px: 40px, 960px: 16px, 2880px: 40px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map); 
+  text-align: right;
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(3.3);
+    @include grid-offset-left(13);
+  }   
+
+} 

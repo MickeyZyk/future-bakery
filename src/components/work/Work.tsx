@@ -19,6 +19,7 @@ import { Location } from '@reach/router';
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
+import { Row } from 'components/row/Row';
 
 import s from './Work.scss';
 const slug = require('slug')
@@ -256,42 +257,45 @@ export default class Work extends React.Component {
           </div>
 
 
+          <div className={s.bottom_wrapper}>
 
-            <LeftLink className={s.all_cases} gray arrow to={'/bakery-work'}>ALL CASES</LeftLink>
+            <div className={s.bottom_row}>
 
-              <p className="bold">{next ? 'NEXT CASE' : ''}</p>
+                <LeftLink className={s.all_cases} gray arrow to={'/bakery-work'}>ALL CASES</LeftLink>
 
-                <Link className="bakery_work_start_link" gray arrow to={next ? "/bakery-work/" + slug(next.title.toLowerCase()) : '/'}>
-                  <p className={s.control_dark}>START A PROJECT WITH US</p>
+                <p className={s.next_case}>{next ? 'NEXT CASE' : ''}</p>
+
+                <Link className={s.start_project} gray arrow 
+                to={next ? "/bakery-work/" + slug(next.title.toLowerCase()) : '/'}>
+                START A PROJECT WITH US
                 </Link>
+          
+            </div>
+            <div className={s.bottom_row}>
 
+                <If condition={next}>
+                  <Then>
 
+                  <Location>
+                    {({ location }) => (        
 
+                    <Link gray className={s.next_case_link} 
+                    to={ location.pathname.includes('bakery') ? "/bakery-work/" + slug(next.title.toLowerCase()) : "/bakers-work/" + slug(next.title.toLowerCase())}>
+                      <p className={s.topic}>{next ? next.title : ''}</p>
+                    </Link>
 
+                      )}
+                  </Location> 
 
-          <If condition={next}>
-            <Then>
+                  </Then>
 
-            <Location>
-              {({ location }) => (        
-                  
-  
-              <Link gray className={s.column__col11} 
-              to={ location.pathname.includes('bakery') ? "/bakery-work/" + slug(next.title.toLowerCase()) : "/bakers-work/" + slug(next.title.toLowerCase())}>
-                <p className={s.topic}>{next ? next.title : ''}</p>
-              </Link>
-
-                )}
-            </Location> 
-
-            </Then>
-
-          </If>
-
+                </If>
 
               <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
 
+            </div>
 
+          </div>
 
         </div>
       </ReactCursorPosition>
