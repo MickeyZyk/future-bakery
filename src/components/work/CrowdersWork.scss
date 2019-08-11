@@ -3,6 +3,8 @@
 .row {
   display: block;
   position: relative;
+  overflow-x: hidden;
+   
 
   &__one {
     display: flex;
@@ -20,12 +22,14 @@
     display: flex;
     padding-top: 5.5vw; 
     padding-bottom: 23vw;
+  position: relative;
+  z-index: 12;        
   }
 
   &__threebot {
     display: flex;
   position: relative;
-  z-index: 1;    
+  z-index: 12;    
   }
 
   &__four {
@@ -204,8 +208,12 @@
     @include grid-col;
 
     @media (min-width: $min-960) {
-      @include grid-col(3);
-      @include grid-offset-left(7.2);
+      @include grid-col(7.9);
+      @include grid-offset-left(5.6);
+    }
+
+    &>* {
+      text-align: left;
     }
 
   }
@@ -218,7 +226,7 @@
 
     @media (min-width: $min-960) {
       @include grid-col(3);
-      @include grid-offset-left(3.3);
+      @include grid-offset-left(0);
     }
 
   }

@@ -119,9 +119,9 @@ export default class Work extends React.Component {
 
                   <>
 
-                  <Tween duration={2} 
-                  from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
-                  to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
+                  <Tween duration={2} delay={1} 
+                  from={ ['entering'].includes(transitionStatus) ? false : { yPercent: -20, opacity: 0, ease: 'Power3.easeInOut' } } 
+                  to={ ['exiting'].includes(transitionStatus) ? { yPercent: 20, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
                   <div className={s.column__col0}>
                     <div className={s.wrapper}>
                       <img className={s.arrow} src={'../svg/work_arrow.svg'} />
@@ -141,29 +141,16 @@ export default class Work extends React.Component {
             <div className={s.column__col1}>
 
 
-            <TransitionState>
-              {({ transitionStatus, ...props }) => {
-                return (
-
-                  <>
-
-                  <Tween duration={2} 
-                  from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
-                  to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
               
 
                     <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_dark } />
+                    <>
+                    <HeadingTwo className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</HeadingTwo>
+                    </>
+
+        
 
 
-                  </Tween>
-
-                  </>
-
-                )
-              }}
-            </TransitionState>            
-
-              <HeadingTwo className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</HeadingTwo>
             </div>
           </div>
 
@@ -178,7 +165,7 @@ export default class Work extends React.Component {
 
             <>
 
-            <Tween duration={2} 
+            <Tween duration={2} delay={.2}
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
 
@@ -239,7 +226,7 @@ export default class Work extends React.Component {
 
             <>
 
-            <Tween duration={2} 
+            <Tween duration={2}  delay={.6}
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
 

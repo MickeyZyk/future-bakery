@@ -91,18 +91,16 @@ export default class Work extends React.Component {
 <>
 
 
+
           
   <Scrollbar ref={c => this.$container = c} className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>   
     
 
+
+
+
+
 <>
-  <div id ="topper" style={{overflowX: 'hidden'}}>
-    <div id="video_image_anchor" className='wrapper' style={{overflowX: 'hidden'}}>
-      <ReactCursorPosition className='fullscreen_cursor_position'>
-
-
-        <Helmet title={this.props.data.gravCrowdersWork.title} />
-
 
 
       <TransitionState>
@@ -115,8 +113,18 @@ export default class Work extends React.Component {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
+  <div id ="topper" style={{overflowX: 'hidden'}}>
+    <div className='wrapper' style={{overflowX: 'hidden'}}>
+      <ReactCursorPosition className='fullscreen_cursor_position'>
+
+
+        <Helmet title={this.props.data.gravCrowdersWork.title} />
 
         <div className={s.row}>
+
+
+
+
 
         <Heading className={s.column__col1_heading}>{this.props.data.gravCrowdersWork.heading_one}</Heading>
         <p className={s.paragraph}>{this.props.data.gravCrowdersWork.paragraph}</p>
@@ -144,18 +152,34 @@ export default class Work extends React.Component {
                   <Then>
                     <img className={s.client_logo} src={ 'https://future.stratego.ba/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.logo_light } />              
                   </Then>
+                  <Else>
+                    <div style={{height: '2.8vw'}}></div>
+                  </Else>
                 </If>
                 <p className={s.award}>{this.props.data.gravCrowdersWork.title.toUpperCase()}</p>
                 <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
+            <div style={{
+              opacity: .45,
+              backgroundColor: '#000',
+              width: '100%',
+              height: '47vw',
+              position: 'absolute',
+              zIndex: 1,
+              top: '4vw',
+              mixBlendMode: 'darken'
+            }}></div>
             <img id="video_image" src={ 'https://future.stratego.ba/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
             <div id="video" className={s.embedded_video} ref={this.videoEmbed}>
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravCrowdersWork.video} playing={this.state.playing} />            
             </div>
 
-
           </div>
+
+
+
+
           <div className={s.row__four}>
             <div className={s.column__col8}>
             <Link to={'/bakery-work'}>
@@ -184,7 +208,7 @@ export default class Work extends React.Component {
           <div className={s.row__five}>
             <div className={s.column__col11}>
 
-                <Link className={s.column__col9} to={next ? "/crowders-work/" + slug(next.title.toLowerCase()) : '/'}>
+                <Link className={s.column__col11} to={next ? "/crowders-work/" + slug(next.title.toLowerCase()) : '/'}>
                   <p className={s.topic}>{next ? next.title : ''}</p>
                 </Link>
 
@@ -194,12 +218,13 @@ export default class Work extends React.Component {
               <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
             </div>
           </div>
+
+
         </div>
 
-
-
-
-
+      </ReactCursorPosition>
+    </div>
+  </div>
 
 
 
@@ -213,18 +238,21 @@ export default class Work extends React.Component {
 
 
 
-
-
-
-
-
-
-
-      </ReactCursorPosition>
-    </div>
-  </div>
   </>
   <Footer/>  
+
+
+
+
+
+
+
+
+
+
+
+
+
   </Scrollbar>
 
              
@@ -248,6 +276,7 @@ export default class Work extends React.Component {
           )
         }}
       </TransitionState>
+
 
 </>
   
