@@ -29,7 +29,9 @@ const slug = require('slug')
 
 const BakeryAbout = ({ data, className, query }) => {
 
-
+ function switchEm() {
+  console.log("here I am")
+ }
 
  function getMembers(item) {
     var sub = [item.member];

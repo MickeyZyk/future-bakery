@@ -157,7 +157,6 @@ export default class Work extends React.Component {
                   </Else>
                 </If>
                 <p className={s.award}>{this.props.data.gravCrowdersWork.title.toUpperCase()}</p>
-                <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
             <div style={{
