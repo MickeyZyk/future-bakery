@@ -27,11 +27,34 @@ import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 const slug = require('slug')
 
-const BakeryAbout = ({ data, className, query }) => {
 
- function switchEm() {
-  console.log("here I am")
- }
+export default class BakeryAbout extends React.Component {
+
+
+  constructor(props){
+    super(props);
+
+    this.clicked_item = React.createRef();    
+    this.state ={
+      clicked: this.props.clicked ? true : false,
+    };
+    this.toggleShow = this.toggleShow.bind(this);      
+  }
+
+
+
+  toggleShow() {
+
+    this.setState(state => ({
+      clicked: !state.clicked
+    }));
+
+  }
+
+
+
+render() {
+
 
  function getMembers(item) {
     var sub = [item.member];
@@ -48,8 +71,10 @@ const BakeryAbout = ({ data, className, query }) => {
     return title;
   } 
 
+  var titleSlug = slug(this.props.data.gravBakeryAbout.title.toLowerCase());
+
   function getImages(item) {
-    var image = ['https://future.stratego.ba/en/bakery/pages/'  + slug(data.gravBakeryAbout.title.toLowerCase()) + '/' + item.image];
+    var image = ['https://future.stratego.ba/en/bakery/pages/'  + titleSlug + '/' + item.image];
     return image;
   }  
 
@@ -58,18 +83,20 @@ const BakeryAbout = ({ data, className, query }) => {
     return text;
   }   
 
-
-  const members = data.gravBakeryAbout.team.map(getMembers)
+  const members = this.props.data.gravBakeryAbout.team.map(getMembers)
   var mergedMembers = [].concat.apply([], members);
 
-  const links = data.gravBakeryAbout.team.map(getLinks)
+  const links = this.props.data.gravBakeryAbout.team.map(getLinks)
   var mergedLinks = [].concat.apply([], links);
 
-  const texts = data.gravBakeryAbout.team.map(getTexts)
+  const texts = this.props.data.gravBakeryAbout.team.map(getTexts)
   var mergedTexts = [].concat.apply([], texts);
 
-  const images = data.gravBakeryAbout.team.map(getImages)
+  const images = this.props.data.gravBakeryAbout.team.map(getImages)
   var mergedImages = [].concat.apply([], images);
+
+
+
 
   return (
 
@@ -92,31 +119,52 @@ const BakeryAbout = ({ data, className, query }) => {
 
     <div className='wrapper about-wrapper'>
       <ReactCursorPosition>
-        <Helmet title={data.gravBakeryAbout.title} />
+        <Helmet title={this.props.data.gravBakeryAbout.title} />
         <SVGicon className='bakery_about__green_rainbow' src='green_rainbow.svg'  />
         <Row>
           <div className='bakery_about__left_column_one'>
-            <AnimatedHeading className='__heading_one'>{data.gravBakeryAbout.heading_one}</AnimatedHeading>
+            <AnimatedHeading className='__heading_one'>{this.props.data.gravBakeryAbout.heading_one}</AnimatedHeading>
             <Figure2 className="show_on_mobile"/>
-            <Paragraph className='bakery_about__paragraph paragraph'>{data.gravBakeryAbout.paragraph_one}</Paragraph>
+            <Paragraph className='bakery_about__paragraph paragraph'>{this.props.data.gravBakeryAbout.paragraph_one}</Paragraph>
           </div>
-          <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + data.gravBakeryAbout.image_one } className="bakery_about__image_one hide_on_mobile"/>
+          <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 
+          className="bakery_about__image_one hide_on_mobile"/>
         </Row>
         <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/greenboard.jpg)`}}>
           <Row>
-            <HeadingTwo className="bakery_about__heading_two">{data.gravBakeryAbout.heading_two}</HeadingTwo>
+            <HeadingTwo className="bakery_about__heading_two">{this.props.data.gravBakeryAbout.heading_two}</HeadingTwo>
             <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />   
             <div className="bakery_about__green_block">
-              <p className="bakery_about__green_text">{data.gravBakeryAbout.show_me_text}</p>
-              <Link bakery arrow className="bakery_about__green_link" to={data.gravBakeryAbout.show_me_link} exit={{ length: 1 }} entry={{ delay: 1 }}>SHOW ME</Link>
+              
+
+
+
+
+              <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__green_text">{this.props.data.gravBakeryAbout.show_me_text}</p>
+              <p style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__green_text">{this.props.data.gravBakeryAbout.show_me_two_text}</p>              
+              <Link bakery arrow className="bakery_about__green_link" to={'/bakery-about'} onClick={this.toggleShow} >SHOW ME</Link>
+           
             </div>
           </Row>
           <div className="bakery_about__white_company">
-            <img src="../images/usual_closed_process.png" className="hide_on_mobile visible" />
-            <img src="../images/usual_closed_process.png" className="hide_on_mobile hidden" />  
+
+            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0% 0% 0% 0%)', ease: 'Power2.easeOut'} : { clipPath:'inset(0% 100% 0% 0%)', ease: 'Power2.easeOut'  } } >
+
+            <img src="../images/usual_closed_process.png" className="switch_top_image hide_on_mobile visible"/>
+
+            </Tween>
+
+            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0 0% 0% 100%)', ease: 'Power2.easeOut'  } : { clipPath:'inset(0% 0% 0% 0%)', ease: 'Power2.easeOut'  } } >
+
+            <img src="../images/our_process.png" className="switch_bottom_image hide_on_mobile visible"  />  
+
+            </Tween>            
+
+
+
           </div>        
           <Row className="centered-row">
-            <Link bakery button arrow className="bakery_about__button_link" to={'/bakerycontact'} exit={{ length: 1 }} entry={{ delay: 1 }}>START A PROJECT WITH US</Link>
+            <Link bakery button arrow className="bakery_about__button_link" to={'/bakerycontact'}>START A PROJECT WITH US</Link>
           </Row>
         </div>
         </ReactCursorPosition>
@@ -125,10 +173,10 @@ const BakeryAbout = ({ data, className, query }) => {
         <SVGiconReverse className='bakery_about__white_pan' src='white_pan.svg' />        
         <Row>
           <div className="bakery_about__green_heading_background">
-            <AnimatedHeadingTwo className="bakery_about__heading_three">{data.gravBakeryAbout.heading_three}</AnimatedHeadingTwo>     
+            <AnimatedHeadingTwo className="bakery_about__heading_three">{this.props.data.gravBakeryAbout.heading_three}</AnimatedHeadingTwo>     
           </div>
           <div className="bakery_about__right_icons">
-            {data.gravBakeryAbout.svg_icons.map(({ svg, svg_text }) => (
+            {this.props.data.gravBakeryAbout.svg_icons.map(({ svg, svg_text }) => (
               <div key={svg_text}>
                 <Texticon className='bakery_about__graph_icon' name={svg_text} src={svg} />
               </div>
@@ -186,6 +234,18 @@ const BakeryAbout = ({ data, className, query }) => {
 
 
   )
+
+
+
+
+
+
+  }
+
+
+
+
+
 }
 
 export const BakeryAboutquery = graphql`
@@ -199,6 +259,7 @@ export const BakeryAboutquery = graphql`
       paragraph_one
       show_me_link
       show_me_text
+      show_me_two_text      
       title
       team {
         member_text
@@ -215,5 +276,3 @@ export const BakeryAboutquery = graphql`
     }  
   }
 `
-
-export default BakeryAbout

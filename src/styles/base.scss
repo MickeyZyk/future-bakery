@@ -22,6 +22,8 @@
   font-weight: bold;
 }
 
+
+
 img {
       clip-path: inset(.001% .002% .003% .004%);
     }
@@ -2459,6 +2461,7 @@ select {
      margin-bottom: 50px;
 
     @media (min-width: $min-960) {
+      position: relative;
       @include grid-col(3);
       @include grid-offset-right(5);
     }
@@ -2466,6 +2469,8 @@ select {
 }
 
 .bakery_about__green_text {
+
+  transition: opacity 1.5s;
 
   @include responsive-font(17px, 22px);
   line-height: 20px;
@@ -2475,9 +2480,11 @@ select {
       margin-bottom: 35px;  
 
     @media (min-width: $min-960) {
-    @include responsive-font(30px, 38px);    
-        line-height: 38px;
-      margin-bottom: 15px;
+      position: absolute;
+      $font-map: (375px: 20px, 959px: 21px, 960px: 16px, 2880px: 48px);
+      $height-map: (375px: 20px, 959px: 50px, 960px: 17px, 2880px: 50px);
+      @include poly-fluid-sizing('font-size', $font-map);
+      @include poly-fluid-sizing('line-height', $height-map);
     }  
 
 }
@@ -2492,7 +2499,7 @@ select {
 
 
   @media (min-width: $min-960) {  
-
+    top: 8.5vw;
   }
 
 }
