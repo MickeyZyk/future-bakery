@@ -122,7 +122,7 @@ export default class Work extends React.Component {
 
                 {this.props.data.allGravBakeryWork.edges.map(( node, i ) => (
                   <div className="work_item_wrapper" key={i}>
-                  <Item data={node} i={i} />
+                    <Item data={node} i={i} />
                   </div>
 
                 ))}

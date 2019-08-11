@@ -4811,10 +4811,10 @@ select {
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-    position: absolute;
-    top: 45vw;
-    @include grid-col(8);
-    @include grid-offset-left(3); 
+    top: 2vw;
+    position: relative;
+    @include grid-col(6.75);
+    @include grid-offset-left(0); 
   } 
 }
 

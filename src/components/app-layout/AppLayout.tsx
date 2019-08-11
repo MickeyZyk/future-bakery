@@ -54,7 +54,7 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
               crossOrigin="anonymous" />
         <link rel="preload"
               as="font"
-              href="proxima_nova_bold-webfont.woff2"
+              href="../fonts/proxima_nova_bold-webfont.woff2"
               type="font/woff2"
               crossOrigin="anonymous" />
         <link rel="preload"

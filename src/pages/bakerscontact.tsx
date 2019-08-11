@@ -6,7 +6,7 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import { Link } from 'components/link/Link';
-
+import { Row } from 'components/row/Row';
 
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
@@ -43,14 +43,12 @@ export default () => (
                   <p className="text-bolder">Máte zájem se na cokoliv zeptat?</p>
                   <p>Neváhejte a kontaktujte nás.</p>
                   <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
+                  <Row>                
+                    <Link className="bakery_contact_flip_button" bakers button arrow to={'/'}>START A PROJECT WITH US</Link>
+                  </Row>                  
                 </div>
-                <div className="bakery_contact_flip_button bakers_flip">
-                  <Link to={'/bakerycontact'}>
-                    <div className="front">START A PROJECT WITH US</div>
-                    <div className="back">START A PROJECT WITH US</div>
-                  </Link>
-                </div>
-                <img src="../images/paper_plane.png" className='bakery_contact_image'/>
+
+                <img src="../images/paper_plane.jpg" className='bakery_contact_image'/>
               </div>
 
 

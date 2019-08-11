@@ -82,8 +82,9 @@ export class Item extends React.Component {
                 </Tween>
                 <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >  
                   <h3 className={s.client_more}><Link to={ '/bakery-work/' + slug(this.props.data.node.title.toLowerCase()) }>FIND OUT MORE&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link></h3>
-                </Tween>                      
-                <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image}/>                        
+                </Tween> 
+                <img className={s.bw} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image}/>                        
+                <img className={s.bw_overlay} style={this.state.hover ? {opacity:.5}:{opacity:0}} src="../images/overlay.png"/>                        
                 <img className={s.color} style={this.state.hover ? {opacity:1}:{opacity:0}} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image} />
               </div>
             </Tween>                   
