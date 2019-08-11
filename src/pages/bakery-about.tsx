@@ -142,21 +142,21 @@ render() {
 
               <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__green_text">{this.props.data.gravBakeryAbout.show_me_text}</p>
               <p style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__green_text">{this.props.data.gravBakeryAbout.show_me_two_text}</p>              
-              <Link bakery arrow className="bakery_about__green_link" to={'/bakery-about'} onClick={this.toggleShow} >SHOW ME</Link>
+              <Link to={'/bakery-about'} bakery arrow className="bakery_about__green_link" onClick={this.toggleShow} >SHOW ME</Link>
            
             </div>
           </Row>
           <div className="bakery_about__white_company">
 
-            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0% 0% 0% 0%)', ease: 'Power2.easeOut'} : { clipPath:'inset(0% 100% 0% 0%)', ease: 'Power2.easeOut'  } } >
+            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0% 0% 0% 0%)', ease: 'Power2.easeOut'} : { clipPath:'inset(0% 100% 0% 0%)', ease: 'Power2.easeInOut'  } } >
 
-            <img src="../images/usual_closed_process.png" className="switch_top_image hide_on_mobile visible"/>
+              <img src="../images/usual_closed_process.png" className="switch_top_image hide_on_mobile visible"/>
 
             </Tween>
 
-            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0 0% 0% 100%)', ease: 'Power2.easeOut'  } : { clipPath:'inset(0% 0% 0% 0%)', ease: 'Power2.easeOut'  } } >
+            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0 0% 0% 100%)', ease: 'Power2.easeOut'  } : { clipPath:'inset(0% 0% 0% 0%)', ease: 'Power2.easeInOut'  } } >
 
-            <img src="../images/our_process.png" className="switch_bottom_image hide_on_mobile visible"  />  
+              <img src="../images/our_process.png" className="switch_bottom_image hide_on_mobile visible"  />  
 
             </Tween>            
 

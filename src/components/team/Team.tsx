@@ -107,6 +107,7 @@ var names = this.props.members
 var texts = this.props.texts
 var linkNames = ["ALENA", "ALENA", "ALENA","ALENA", "ALENA", "ALENA" ]
 var linkURLs = this.props.links
+console.log("WE GOT", this.props.arrayOfImages)
 
 //var firstWord = _.first( str.split(" ");
 
@@ -115,7 +116,7 @@ var linkURLs = this.props.links
       return(
         <div className={s.member} key={'team'+i} position={i}>
           <div className={`${s.data} ${this.state.activeIndex == i ? s.current_data : ''}`}>
-            <h4 className={s.name}>{names[i]}</h4>
+            <h4 className="team_name">{names[i]}</h4>
             <p className={s.text}>{texts[i]}</p>
             <a className={s.link} href={'mailto:' + linkURLs[i]}>CONTACT {_.first( names[i].split(" ")).toUpperCase()}</a>
           </div>

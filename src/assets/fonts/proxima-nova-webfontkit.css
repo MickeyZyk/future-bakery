@@ -12,6 +12,7 @@
     font-weight: 700;
     font-style: normal;
 }
+/*
 @font-face {
     font-family: 'ProximaNova';
     src: url('proxima_nova_extrabold-webfont.woff2') format('woff2'),
@@ -19,6 +20,7 @@
     font-weight: 800;
     font-style: normal;
 }
+*/
 @font-face {
     font-family: 'ProximaNova';
     src: url('proxima_nova_light-webfont.woff2') format('woff2'),

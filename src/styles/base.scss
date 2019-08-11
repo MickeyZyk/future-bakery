@@ -2165,6 +2165,32 @@ select {
 /* TEAM */
 
 
+.dark_team_name {
+  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 42px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  font-weight: lighter;
+  color: #fff;
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 18vw;
+    margin-bottom: 2vw;
+  }  
+
+}
+
+
+.team_name {
+  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 42px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  font-weight: lighter;
+  @media (min-width: $min-960) {
+    margin-bottom: 3vw;
+  }     
+  
+
+}
+
+
 .team_left_link {
 
   @include grid-col;
