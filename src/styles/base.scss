@@ -4133,7 +4133,7 @@ select {
 
 .bakers_about_steps_text:first-child  {
 
-  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 26px, 1920px: 13px, 2880px: 20px);
+  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 8px, 2880px: 20px);
   @include poly-fluid-sizing('font-size', $font-map); 
 
   text-align: center;
@@ -4143,8 +4143,8 @@ select {
 
   @media (min-width: $min-960) {
     padding-left: 0!important;
-    @include grid-col(1.2);
-    @include grid-offset-left(2.9);
+    @include grid-col(1.5);
+    @include grid-offset-left(2.65);
 
   }  
 
@@ -4152,8 +4152,9 @@ select {
 
 .bakers_about_steps_text {
 
-  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 26px, 1920px: 13px, 2880px: 20px);
+  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 8px, 2880px: 20px);
   @include poly-fluid-sizing('font-size', $font-map); 
+
 
     text-align: center;
 
@@ -4162,8 +4163,8 @@ select {
 
   @media (min-width: $min-960) {
     padding-left: 2vw!important;
-    @include grid-col(1.4);
-    @include grid-offset-left(.6);
+    @include grid-col(1.5);
+    @include grid-offset-left(.48);
 
   }  
 
@@ -4175,7 +4176,7 @@ select {
 
     @media (min-width: $min-960) {
       position: relative;
-      top: 22vw;
+      top: 18vw;
       display: block;  
       @include grid-col(.9);
       @include grid-offset-left(4.95); 
@@ -4191,7 +4192,7 @@ select {
 
     @media (min-width: $min-960) {
       position: relative;
-      top: 41vw;
+      top: 33vw;
       display: block;  
       @include grid-col(1);
       @include grid-offset-left(9.5); 
@@ -4203,7 +4204,7 @@ select {
 
 .bakers_about_authors {
   @media (min-width: $min-960) {  
-  margin-top: 16vw;
+  margin-top: 4vw;
   }  
 
 }
@@ -4277,7 +4278,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: 28vw;
+    top: 31vw;
     @include grid-col(2);
     @include grid-offset-left(-5);
     z-index: 5; 
