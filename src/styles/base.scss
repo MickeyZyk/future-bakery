@@ -29,11 +29,11 @@ img {
     }
 
 .bakery_color, .bakery_color > .ts-line {color: #d4de4f}
-.bakers_color, .bakers_color > .ts-line {color: #ff4500}
+.bakers_color, .bakers_color > .ts-line {color: #ff7a00}
 .crowders_color, .crowders_color > .ts-line {color: #37c6f4}
 
 .bakery_back {background-color: #d4de4f}
-.bakers_back {background-color: #ff4500}
+.bakers_back {background-color: #ff7a00}
 .crowders_back {background-color: #37c6f4}
 
 
@@ -104,7 +104,7 @@ a {text-decoration: none}
   color: #d4de4f;
 }
 .bakers_color:not(.the_button_link) .the_link_text {
-  color: #ff4500; 
+  color: #ff7a00; 
 }
 .crowders_color:not(.the_button_link) .the_link_text {
   color: #37c6f4; 
@@ -117,7 +117,7 @@ a {text-decoration: none}
 
 
 .bakers_arrow polygon {
-    fill: #ff4500;
+    fill: #ff7a00;
 }
 
 .bakery_arrow polygon {
@@ -145,7 +145,7 @@ a {text-decoration: none}
 
 .the_button_link.bakers_color {
   color: #222;
-  background-color: #ff4500;
+  background-color: #ff7a00;
   text-align: center;
 }
 
@@ -295,7 +295,7 @@ a {text-decoration: none}
 }
 
 .bakers_color h2:before, .bakers_color h2:before {
-  background: #ff4500;
+  background: #ff7a00;
 }
 
 .crowders_color h2:before, .crowders_color h2:before {
@@ -343,7 +343,7 @@ a {text-decoration: none}
   height: 4px;
   top: 50%;
   margin-top: -0.5px;
-  background: #ff4500;  
+  background: #ff7a00;  
 }
 
 .crowders_header_menu_link.submenu_link > div:before, .crowders_header_menu_link.submenu_link > div:after {
@@ -830,7 +830,7 @@ a {
 }
 .bakers_flip a .front {
   opacity: 1;
-  background-color: #ff4500; 
+  background-color: #ff7a00; 
   color: #222; 
   transform: rotateY(0) translateZ(1.1vw);
 }
@@ -1955,11 +1955,11 @@ select {
 } 
 
 .bakers_link a {
-  color: #ff4500;
+  color: #ff7a00;
 }
 
 .bakers_divider {
-  background-color: #ff4500!important;
+  background-color: #ff7a00!important;
 }
 
 .crowders_divider {
@@ -3555,7 +3555,7 @@ select {
 
 
   font-weight: bold;
-  color: #ff4500;
+  color: #ff7a00;
   @include grid-col(16);
   @include grid-offset-left(0);
 
@@ -3570,7 +3570,7 @@ select {
 .bakers_about__join_link_three {
 
   font-weight: bold;
-  color: #ff4500;
+  color: #ff7a00;
   @include grid-col(16);
   @include grid-offset-left(0);
 
@@ -3859,7 +3859,7 @@ select {
 }
 
 .bakers_about__paragraph_six {
-  color: #ff4500;
+  color: #ff7a00;
 
   $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 10px, 2880px: 20px);
   $height-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 60px, 2880px: 120px);
@@ -4805,7 +4805,7 @@ select {
 }
  
 .family_bakery_link {color: #d4de4f}
-.family_bakers_link {color: #ff4500}
+.family_bakers_link {color: #ff7a00}
 .family_crowders_link {color: #37c6f4}
 
 
@@ -4933,7 +4933,7 @@ select {
 
 .for__join_link_two {
   font-weight: bold;
-  color: #ff4500;
+  color: #ff7a00;
   @include grid-col(4);
   @include grid-offset-left(2);
 
@@ -4947,7 +4947,7 @@ select {
 
 .for__join_link_three {
   font-weight: bold;
-  color: #ff4500;
+  color: #ff7a00;
   @include grid-col(4);
   @include grid-offset-left(1);
 
@@ -5573,7 +5573,7 @@ select {
 
 
 .bakers_about__join_link_one {
-  color: #ff4500;
+  color: #ff7a00;
   font-weight: bold;
   @include grid-col(4);
   @include grid-offset-left(2);
@@ -6021,7 +6021,7 @@ select {
 
 .bakers_about__join_link_two {
   font-weight: bold;
-  color: #ff4500;
+  color: #ff7a00;
   @include grid-col(4);
   @include grid-offset-left(2);
 
@@ -6035,7 +6035,7 @@ select {
 
 .bakers_about__join_link_three {
   font-weight: bold;
-  color: #ff4500;
+  color: #ff7a00;
   @include grid-col(4);
   @include grid-offset-left(1);
 
@@ -6075,7 +6075,7 @@ select {
 
   @include grid-col(10);
   @include grid-offset-left(6);
-  background: #ff4500;
+  background: #ff7a00;
   position: relative;
 
   $margin-map: (375px: -250px, 959px: -110px, 960px: -41px, 2880px: -117px);
@@ -6218,7 +6218,7 @@ select {
 
 .bakers_about__join_link_four {
   font-weight: bold;
-  color: #ff4500;
+  color: #ff7a00;
   position: relative;
   top: 40vw;
   @include grid-col(7);

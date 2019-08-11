@@ -17,7 +17,7 @@
 
 	&:hover h4 {
 		color: #d4de4f;
-		font-weight: 700;
+		/*font-weight: 700;*/
 		transform:  font-weight 1s;
 	}
 
@@ -38,3 +38,56 @@
 
 }
 
+
+
+@import '~styles/config';
+
+.text_icon  {
+	opacity: 1;
+	z-index: 15;
+	position: relative;
+  	
+
+
+
+	&>div>img {
+		width: 40%;
+		/* margin: 0 auto 15px auto; */
+    	margin-bottom: 1vw; 
+		transition: transform 1s;
+		transition-delay: .3s;
+		transform-origin: bottom center;	
+
+	}
+
+	&:hover >div>img {
+		transform: scale(1.1248);
+		transition: transform .5s ;
+		transform-origin: bottom center;
+		transition-delay: .3s;
+		/* margin: 0 auto 15px auto; */
+	}	
+
+
+
+	&:hover h4 {
+		color: #d4de4f;
+		/* font-weight: 700;  */
+
+	}
+
+}
+
+.icon_heading {
+	font-weight: lighter;
+	text-align: center;
+
+	
+
+	$font-map: (375px: 16px, 959px: 28px, 960px: 14px, 2880px: 40px);
+	@include poly-fluid-sizing('font-size', $font-map);
+
+	$height-map: (375px: 16px, 959px: 28px, 960px: 14px, 2880px: 40px);
+	@include poly-fluid-sizing('line-height', $font-map);
+
+}
