@@ -433,7 +433,7 @@ a {text-decoration: none}
 
     @media (min-width: $min-960) {
       position: relative;
-      top: -1vw;      
+      top: 2vw;      
       display: block;  
       @include grid-col(0.55);
       @include grid-offset-left(4.3); 
@@ -2901,7 +2901,7 @@ select {
 
     @media (min-width: $min-960) {
       position: relative;
-      top: 17vw;
+      top: 19vw;
       display: block;  
       @include grid-col(0.7);
       @include grid-offset-left(3.3); 
