@@ -64,6 +64,10 @@ const BakersAbout = ({ data, className }) => {
     return text;
   }   
 
+  function getAuthorNames(item) {
+    var text = [item.name];
+    return text;
+  }   
 
   const members = data.gravBakersAbout.team.map(getMembers)
   var mergedMembers = [].concat.apply([], members);
@@ -79,6 +83,9 @@ const BakersAbout = ({ data, className }) => {
 
   const authorTexts = data.gravBakersAbout.author_texts.map(getAuthorTexts)
   var mergedAuthorTexts = [].concat.apply([], authorTexts);  
+
+  const authorNames = data.gravBakersAbout.author_texts.map(getAuthorNames)
+  var mergedAuthorNames = [].concat.apply([], authorNames);    
 
 
   return (
@@ -344,7 +351,7 @@ const BakersAbout = ({ data, className }) => {
           <Heading className="bakers_about_authors_heading">{data.gravBakersAbout.authors_heading}</Heading>
 
 
-          <Authors texts={mergedAuthorTexts}/>
+          <Authors texts={mergedAuthorTexts} names={mergedAuthorNames}/>
 
           <Link bakers arrow button to={'/bakerslogin'} className="bakers_about_authors_flip_button">JOIN US</Link>
 
@@ -455,6 +462,7 @@ export const BakersAboutquery = graphql`
       authors_heading
       author_texts {
         text
+        name
       }
       ideas
       reward

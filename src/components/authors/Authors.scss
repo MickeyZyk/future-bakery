@@ -21,9 +21,14 @@
 .text {
   position: absolute;
   opacity: 0;
+  top:4vw;
+}
+.name {
+  position: absolute;
+  opacity: 0;
   top:0;
 }
 .dots{
   position: absolute;
-  top: 20vw;
+  top: 24vw;
 }

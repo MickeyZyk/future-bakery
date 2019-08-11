@@ -22,7 +22,7 @@ export class Authors extends React.Component {
 
   render() {
   return( 
-      <AuthorCarousel texts={this.props.texts} />
+      <AuthorCarousel texts={this.props.texts} names={this.props.names} />
   )
 
   }  
@@ -70,6 +70,23 @@ class AuthorCarousel extends React.Component {
   render() {
 
     var texts = this.props.texts
+    var names = this.props.names
+
+    var authorNames = names.map((name, i) =>{
+      return(
+
+      <Tween duration={2} key={'name'+i} 
+      to={ this.state.activeIndex == i ? { opacity: 1, ease: 'Power3.easeInOut' } : { opacity: 0, ease: 'Power3.easeInOut' }  } >          
+
+        <div className={s.name}>
+          <Paragraph position={i}>{names[i]}</Paragraph>
+        </div>
+
+
+      </Tween>
+
+      )
+    })      
 
     var authorTexts = texts.map((text, i) =>{
       return(
@@ -99,6 +116,7 @@ class AuthorCarousel extends React.Component {
 
     return (
       <div className={s.texts}>
+        {authorNames}      
         {authorTexts}
         <div className={s.dots}>
           {dots}

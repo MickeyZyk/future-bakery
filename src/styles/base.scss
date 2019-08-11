@@ -4203,7 +4203,7 @@ select {
 
 .bakers_about_authors {
   @media (min-width: $min-960) {  
-  margin-top: 10vw;
+  margin-top: 16vw;
   }  
 
 }
@@ -4277,7 +4277,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: 26vw;
+    top: 28vw;
     @include grid-col(2);
     @include grid-offset-left(-5);
     z-index: 5; 
