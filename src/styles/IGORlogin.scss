@@ -698,3 +698,90 @@
     @include grid-offset-left(7); 
   }     
 }
+
+
+/* crowders about */
+
+.crowders_about_button {
+  position: relative;
+  color: #37c6f4;
+  top: 45vw;
+  font-weight: bold;
+  @include grid-col;
+  @include grid-offset-left(0);   
+
+  @media (min-width: $min-960) {
+      top: 2vw;
+
+  @include grid-col(3);
+  @include grid-offset-left(0);    
+  }    
+}
+
+.crowders_about_blueboard {
+
+    margin-top: 35vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+
+    @media (min-width: $min-960) {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      margin-top: 12vw;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }    
+}
+
+
+.crowders_phases_row {
+
+  @include grid-col(6);
+  @include grid-offset-left(6);
+
+  @media (min-width: $min-960) {
+    margin-bottom: 5vw;
+    @include grid-col(10);
+    @include grid-offset-left(6); 
+    display: flex;
+    align-items: center;
+  }   
+}
+
+.crowders_phase_column img {
+
+  width: 100%;
+  margin-bottom: 5vw;
+
+  @media (min-width: $min-960) {
+    bottom: 2vw;
+    width: 40%;
+    margin-bottom: 2vw;
+  }   
+}
+
+
+.crowders_about_button_two {
+
+  position: relative;
+  color: #37c6f4;
+  top: 25vw;
+  font-weight: bold;
+  height: 7vw;
+  @include grid-col(14);
+  @include grid-offset-left(2);     
+
+  @media (min-width: $min-960) {
+    align-self: center!important;    
+    @include grid-col(3);
+    @include grid-offset-left(13); 
+    margin-bottom: 15vw;
+    top: auto;
+    height: auto;
+    }  
+}
