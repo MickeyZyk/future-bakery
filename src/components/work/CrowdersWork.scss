@@ -205,7 +205,7 @@
 
     @media (min-width: $min-960) {
       @include grid-col(3);
-      @include grid-offset-left(8);
+      @include grid-offset-left(7.2);
     }
 
   }
@@ -218,7 +218,7 @@
 
     @media (min-width: $min-960) {
       @include grid-col(3);
-      @include grid-offset-left(2.5);
+      @include grid-offset-left(3.3);
     }
 
   }

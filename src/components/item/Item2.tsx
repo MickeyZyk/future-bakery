@@ -7,7 +7,7 @@ import { Power3 } from "gsap/TweenMax";
 import { Link } from 'components/link/Link';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './Item.scss';
-
+const slug = require('slug')
 
 export class Item2 extends React.Component {
 
@@ -72,7 +72,7 @@ export class Item2 extends React.Component {
                   <h4 className={s.arrow_heading}>{this.props.data.node.heading_tag}</h4>     
                 </Tween>
                 <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                               
-                  <img className={s.client_logo} src={'https://future.stratego.ba/en/bakery/work/'+ this.props.data.node.title.toLowerCase() + '/' + this.props.data.node.logo_light}/>
+                  <img className={s.client_logo} src={'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.logo_light}/>
                 </Tween>
                 <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                      
                   <h4 className={s.top_title}>{this.props.data.node.category_name}</h4>
@@ -81,11 +81,11 @@ export class Item2 extends React.Component {
                   <h2 className={s.client_title}>{this.props.data.node.heading_two}</h2>
                 </Tween>
                 <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >  
-                  <h3 className={s.client_more}><Link arrow gray to={ '/bakers-work/' + this.props.data.node.title.toLowerCase() }>FIND OUT MORE</Link></h3>
+                  <h3 className={s.client_more}><Link arrow gray to={ '/bakers-work/' + slug(this.props.data.node.title.toLowerCase()) }>FIND OUT MORE</Link></h3>
                 </Tween>                      
-                <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.node.title.toLowerCase() + '/' + this.props.data.node.big_image}/>                        
+                <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image}/>                        
                 <img className={s.bw_overlay} style={this.state.hover ? {opacity:1}:{opacity:0}} src="../images/bakers_overlay.png"/>                 
-                <img className={s.color} style={this.state.hover ? {opacity:1}:{opacity:0}} src={ 'https://future.stratego.ba/en/bakery/work/'+ this.props.data.node.title.toLowerCase() + '/' + this.props.data.node.big_image} />
+                <img className={s.color} style={this.state.hover ? {opacity:1}:{opacity:0}} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image} />
               </div>
             </Tween>                   
           )

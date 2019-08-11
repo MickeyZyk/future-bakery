@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ReactDOM from 'react-dom'
 import Helmet from 'react-helmet';
 import { Heading } from 'components/heading/Heading';
 import { Paragraph } from 'components/paragraph/Paragraph';
@@ -31,7 +32,7 @@ export default class Work extends React.Component {
     this.videoOverlay = React.createRef();    
     this.videoPlayer = React.createRef();     
     this.playVideo = this.playVideo.bind(this);  
-    //this.handleClick= this.handleClick.bind(this);
+    this.handleClick= this.handleClick.bind(this);
     this.state = {
       url: null,
       pip: false,
@@ -50,8 +51,7 @@ export default class Work extends React.Component {
   } 
 
   componentDidMount(){
-    // Scrollbar.init(document.querySelector('#topper'));
-    console.log("TO SCROLL", this.videoEmbed.current)
+
   }
 
   playVideo(){
@@ -88,6 +88,22 @@ export default class Work extends React.Component {
   return (
 
 
+<>
+
+
+          
+  <Scrollbar ref={c => this.$container = c} className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>   
+    
+
+<>
+  <div id ="topper" style={{overflowX: 'hidden'}}>
+    <div id="video_image_anchor" className='wrapper' style={{overflowX: 'hidden'}}>
+      <ReactCursorPosition className='fullscreen_cursor_position'>
+
+
+        <Helmet title={this.props.data.gravCrowdersWork.title} />
+
+
 
       <TransitionState>
         {({ transitionStatus }) => {
@@ -99,17 +115,7 @@ export default class Work extends React.Component {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
-          
-  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>   
-    
 
-<>
-  <div id ="topper" style={{overflowX: 'hidden'}}>
-    <div className='wrapper' style={{overflowX: 'hidden'}}>
-      <ReactCursorPosition className='fullscreen_cursor_position'>
-
-
-        <Helmet title={this.props.data.gravCrowdersWork.title} />
         <div className={s.row}>
 
         <Heading className={s.column__col1_heading}>{this.props.data.gravCrowdersWork.heading_one}</Heading>
@@ -134,7 +140,11 @@ export default class Work extends React.Component {
             </div>
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <img className={s.client_logo} src={ 'https://future.stratego.ba/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.logo_light } />              
+                <If condition={this.props.data.gravCrowdersWork.logo_light}>
+                  <Then>
+                    <img className={s.client_logo} src={ 'https://future.stratego.ba/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.logo_light } />              
+                  </Then>
+                </If>
                 <p className={s.award}>{this.props.data.gravCrowdersWork.title.toUpperCase()}</p>
                 <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
@@ -155,7 +165,7 @@ export default class Work extends React.Component {
 
             <If condition={next}>
               <Then>
-                <Link className={s.column__col9} to={next ? "/crowders-work/" + next.title.toLowerCase() : '/'}>
+                <Link className={s.column__col9} to={next ? "/crowders-work/" + slug(next.title.toLowerCase()) : '/'}>
                   <p className={s.control_dark}>NEXT CASE</p>
                 </Link>
               </Then>
@@ -174,7 +184,7 @@ export default class Work extends React.Component {
           <div className={s.row__five}>
             <div className={s.column__col11}>
 
-                <Link className={s.column__col9} to={next ? "/crowders-work/" + next.title.toLowerCase() : '/'}>
+                <Link className={s.column__col9} to={next ? "/crowders-work/" + slug(next.title.toLowerCase()) : '/'}>
                   <p className={s.topic}>{next ? next.title : ''}</p>
                 </Link>
 
@@ -185,6 +195,31 @@ export default class Work extends React.Component {
             </div>
           </div>
         </div>
+
+
+
+
+
+
+
+
+            </Tween>
+
+            </>
+
+          )
+        }}
+      </TransitionState>
+
+
+
+
+
+
+
+
+
+
       </ReactCursorPosition>
     </div>
   </div>
@@ -194,9 +229,11 @@ export default class Work extends React.Component {
 
              
 
+      <TransitionState>
+        {({ transitionStatus }) => {
+          return (
 
-
-              </Tween>
+            <>
 
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
@@ -212,7 +249,7 @@ export default class Work extends React.Component {
         }}
       </TransitionState>
 
-
+</>
   
 )}
 }

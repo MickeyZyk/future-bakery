@@ -94,6 +94,10 @@ a {text-decoration: none}
   color: #222;  
 }
 
+.white_color:not(.the_button_link) .the_link_text {
+  color: #ffffff;  
+}
+
 .bakery_color:not(.the_button_link) .the_link_text {
   color: #d4de4f;
 }
@@ -126,6 +130,9 @@ a {text-decoration: none}
     fill: #222222;
 }
 
+.white_arrow polygon {
+    fill: #ffffff;
+}
 
 .the_button_link.bakery_color {
   color: #222;

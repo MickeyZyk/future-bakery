@@ -283,7 +283,7 @@ export default class Work extends React.Component {
             </div>
 
             <div className={s.column__col10}>
-                <Link className="bakery_work_start_link" gray arrow to={next ? "/bakery-work/" + next.title.toLowerCase() : '/'}>
+                <Link className="bakery_work_start_link" gray arrow to={next ? "/bakery-work/" + slug(next.title.toLowerCase()) : '/'}>
                   <p className={s.control_dark}>START A PROJECT WITH US</p>
                 </Link>
             </div>
@@ -291,7 +291,7 @@ export default class Work extends React.Component {
 
 
           <div className={s.row__five}>
-            <Link gray className={s.column__col11} to={next ? "/bakery-work/" + next.title.toLowerCase() : '/'}>
+            <Link gray className={s.column__col11} to={next ? "/bakery-work/" + slug(next.title.toLowerCase()) : '/'}>
               <p className={s.topic}>{next ? next.title : ''}</p>
             </Link>
             <div className={s.column__col12}>

@@ -8,7 +8,7 @@ interface ILinkProps {
   to: string;
 }
 
-export const Link = ({ children, state, to, className, arrow, button, bakery, bakers, crowders, gray, onClick  }: ILinkProps) => {
+export const Link = ({ children, state, to, className, arrow, button, bakery, bakers, crowders, gray, white, onClick  }: ILinkProps) => {
 
   return (
 
@@ -25,6 +25,7 @@ export const Link = ({ children, state, to, className, arrow, button, bakery, ba
           : ''} ${ bakers ? 'bakers_color' 
           : ''} ${ crowders ? 'crowders_color' 
           : ''} ${ gray ? 'gray_color'           
+          : ''} ${ white ? 'white_color'             
           : ''} ${ className ? className 
             : '' }`}>        
             <div className="the_link_text">{children}</div>{ arrow ? <LinkArrow 
@@ -32,6 +33,7 @@ export const Link = ({ children, state, to, className, arrow, button, bakery, ba
               : ''} ${ bakers ? 'bakers_arrow' 
               : ''} ${ crowders ? 'crowders_arrow' 
               : ''} ${ gray ? 'gray_arrow'               
+              : ''} ${ white ? 'white_arrow'                
               : ''}`}/> : null }
           </TransitionLink>  
         )}
