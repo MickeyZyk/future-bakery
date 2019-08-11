@@ -294,7 +294,6 @@
 
 .way {
   font-family: $font-family-handwriting;
-  color: #d4de4f;
     $font-map: (375px: 20px, 959px: 50px, 960px: 16px, 2880px: 48px);
     @include poly-fluid-sizing('font-size', $font-map);
     margin-bottom: 1vw;
@@ -418,15 +417,7 @@
   @include poly-fluid-sizing('line-height', $height-map); 
 }  
 
-.project {
-  color: #00d0ff;
-  font-weight: 900;
-  $font-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
-  $height-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
-  @include poly-fluid-sizing('font-size', $font-map);
-  @include poly-fluid-sizing('line-height', $height-map); 
-  text-align: right;
-} 
+
 
 .paragraph {
     @include grid-col;
@@ -437,4 +428,119 @@
     @include grid-col(8);
     @include grid-offset-left(8);
   }
+}
+
+
+
+
+
+
+
+
+
+
+.bottom_wrapper {
+
+  @include grid-col;
+
+
+  @media (min-width: $min-960) {
+    position: relative;
+    min-height: 29vw;
+    top: 17.5vw;
+
+  }
+
+}
+
+.all_cases {
+
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(3);
+    @include grid-offset-left(1.5);
+  }
+}  
+
+.next_case {
+  font-weight: bold;
+  color: #222;
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(2);
+    @include grid-offset-left(8);
+  }
+}  
+
+.start_project {
+
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(3);
+    @include grid-offset-left(14.4);
+  }
+}  
+
+.next_case_link {
+
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(3);
+    @include grid-offset-left(6.72);
+  }
+}  
+
+
+
+.project {
+
+  position: absolute;
+  z-index: 1;  
+
+
+  font-weight: 900;
+  $font-map: (375px: 20px, 959px: 40px, 960px: 16px, 2880px: 40px);
+  $height-map: (375px: 20px, 959px: 40px, 960px: 16px, 2880px: 40px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map); 
+  text-align: right;
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(3.3);
+    @include grid-offset-left(13.2);
+  }   
+
+} 
+.bottom_row {
+  min-height: 3.1vw;
+}
+
+
+
+
+.bottom_button {
+
+  @include grid-col;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(3);
+    @include grid-offset-left(8.1);
+    margin-bottom: 3vw;
+  }  
 }

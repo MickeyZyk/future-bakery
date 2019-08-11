@@ -4,11 +4,13 @@ import Helmet from 'react-helmet';
 import { Heading } from 'components/heading/Heading';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import { Link } from 'components/link/Link';
+import { LeftLink } from 'components/link/LeftLink';
 import ReactCursorPosition from 'react-cursor-position';
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactPlayer from 'react-player'
 import { Footer } from 'components/footer/Footer';
+import { Row } from 'components/row/Row';
 import { graphql } from 'gatsby'
 import { If, Then, Else, Switch, Case, Default } from 'react-if'
 import { ScrollTo } from "react-scroll-to";
@@ -163,7 +165,7 @@ export default class Work extends React.Component {
               opacity: .45,
               backgroundColor: '#000',
               width: '100%',
-              height: '47vw',
+              height: '46.5vw',
               position: 'absolute',
               zIndex: 1,
               top: '4vw',
@@ -179,47 +181,51 @@ export default class Work extends React.Component {
 
 
 
-          <div className={s.row__four}>
-            <div className={s.column__col8}>
-            <Link to={'/bakery-work'}>
-              <p className={s.control_dark}><span className={s.arrow_ml}>&lt;</span>&nbsp;&nbsp;ALL CASES</p>
-            </Link>
-            </div>
 
-            <If condition={next}>
-              <Then>
-                <Link className={s.column__col9} to={next ? "/crowders-work/" + slug(next.title.toLowerCase()) : '/'}>
-                  <p className={s.control_dark}>NEXT CASE</p>
+
+
+
+          <div className={s.bottom_wrapper}>
+
+            <div className={s.bottom_row}>
+
+                <LeftLink className={s.all_cases} gray arrow to={'/crowders-work'}>ALL CASES</LeftLink>
+
+                <p className={s.next_case}>{next ? 'NEXT CASE' : ''}</p>
+
+                <Link className={s.start_project} gray arrow 
+                to={next ? "/crosders-work/" + slug(next.title.toLowerCase()) : '/'}>
+                START A PROJECT WITH US
                 </Link>
-              </Then>
-              <Else>
-                <div className={s.column__col9}>
-                  <p className={s.control_dark}>&nbsp;</p>
-                </div>
-              </Else>              
-            </If>
-
-
-            <div className={s.column__col10}>
-              <p className={s.control_dark_right}>START A PROJECT WITH US&nbsp;&nbsp;<span className={s.arrow_ml}>&gt;</span></p>
+          
             </div>
-          </div>
-          <div className={s.row__five}>
-            <div className={s.column__col11}>
+            <div className={s.bottom_row}>
 
-                <Link className={s.column__col11} to={next ? "/crowders-work/" + slug(next.title.toLowerCase()) : '/'}>
-                  <p className={s.topic}>{next ? next.title : ''}</p>
-                </Link>
+                <If condition={next}>
+                  <Then>
+                    <Link gray className={s.next_case_link} 
+                    to={ "/crowders-work/" + slug( next ? next.title.toLowerCase() : '') }>
+                      <p className={s.topic}>{next ? next.title : ''}</p>
+                    </Link>
 
-              
+                  </Then>
+
+                </If>
+
+
+
             </div>
-            <div className={s.column__col12}>
-              <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
-            </div>
+
           </div>
 
+          <Row>
 
-        </div>
+            <Link crowders button arrow className={s.bottom_button} to={'/'} >SEE A FUTURE REPORT</Link>
+
+          </Row>
+
+
+       </div>
 
       </ReactCursorPosition>
     </div>
@@ -239,16 +245,6 @@ export default class Work extends React.Component {
 
   </>
   <Footer/>  
-
-
-
-
-
-
-
-
-
-
 
 
 
