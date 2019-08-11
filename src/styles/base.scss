@@ -26,9 +26,9 @@ img {
       clip-path: inset(.001% .002% .003% .004%);
     }
 
-.bakery_color {color: #d4de4f}
-.bakers_color {color: #ff4500}
-.crowders_color {color: #37c6f4}
+.bakery_color, .bakery_color > .ts-line {color: #d4de4f}
+.bakers_color, .bakers_color > .ts-line {color: #ff4500}
+.crowders_color, .crowders_color > .ts-line {color: #37c6f4}
 
 .bakery_back {background-color: #d4de4f}
 .bakers_back {background-color: #ff4500}
@@ -4820,12 +4820,12 @@ select {
 
 
 .bakery_contact_heading > div {
-  color: #d4de4f;
+  /* color: #d4de4f; */
 }
 
 .bakery_contact_heading  {
   position: relative;
-  color: #d4de4f;
+  /* color: #d4de4f; */
   @include grid-col;
   @include grid-offset-left(2);   
 

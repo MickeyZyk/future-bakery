@@ -36,7 +36,7 @@ export default () => (
 
           
               <div className='fulscreen_slider'>
-                <AnimatedHeading className='bakery_contact_heading'>Headline call to action for contact page.</AnimatedHeading>
+                <AnimatedHeading className='bakery_contact_heading bakery_color'>Headline call to action for contact page.</AnimatedHeading>
                 <div className="bakery_contact_adress_block">
                   <p className="text-bolder">The Future Bakery s.r.o.</p>
                   <p>Opletalova 1013/59, Nové Mesto<br/>
