@@ -80,7 +80,6 @@ const BakersAbout = ({ data, className }) => {
   const authorTexts = data.gravBakersAbout.author_texts.map(getAuthorTexts)
   var mergedAuthorTexts = [].concat.apply([], authorTexts);  
 
-  console.log("AUTH" + mergedAuthorTexts);
 
   return (
 
@@ -91,43 +90,53 @@ const BakersAbout = ({ data, className }) => {
 
             <>
 
-            <Tween duration={2} 
-            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
-
-
- <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>      
 
   <div className='wrapper about-wrapper'>
-    <ReactCursorPosition className='fullscreen_cursor_position'>
+    <ReactCursorPosition>
       <Helmet title={data.gravBakersAbout.title} />
-      <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
-      <Row>
 
-          <Figure 
-          src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_one } 
-          className="bakers_about__image_one hide_on_mobile dropped"
-          />
+              <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
 
-        <AnimatedHeading className='bakers_about__heading_one'>{data.gravBakersAbout.heading_one}</AnimatedHeading>
-        <HeadingTwo className='bakers_about__heading_two'>{data.gravBakersAbout.subheading_one}</HeadingTwo>      
-        <Figure3 className="show_on_mobile"/>
-      </Row>
-      <Row>
-        <Paragraph className='bakers_about__paragraph paragraph'>{data.gravBakersAbout.paragraph_one}</Paragraph>
-      </Row>
-      <SVGicon className='bakers_about__brains' src='brains.svg' /> 
-      <Row>
-        <Figure
-        src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_two } 
-        className="bakers_about__image_two hide_on_mobile"
-        />      
-        <Split className='bakers_about__heading_three'>{data.gravBakersAbout.subheading_two}</Split>      
-        <Paragraph className='bakers_we__paragraph paragraph'>{data.gravBakersAbout.paragraph_one}</Paragraph>
-        <Link className="bakers_about__join_link" arrow bakers to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}</Link>
-        <Figure4 className="show_on_mobile"/>
-      </Row>
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, ease: 'Power3.easeInOut' } : false  } >  
+              <div>
+              
+                <Row>
+
+                    <Figure 
+                    src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_one } 
+                    className="bakers_about__image_one hide_on_mobile dropped"
+                    />
+
+                  <AnimatedHeading className='bakers_about__heading_one'>{data.gravBakersAbout.heading_one}</AnimatedHeading>
+                  <HeadingTwo className='bakers_about__heading_two'>{data.gravBakersAbout.subheading_one}</HeadingTwo>      
+                  <Figure3 className="show_on_mobile"/>
+                </Row>
+                <Row>
+                  <Paragraph className='bakers_about__paragraph paragraph'>{data.gravBakersAbout.paragraph_one}</Paragraph>
+                </Row>
+
+              </div>
+
+            </Tween>
+
+
+
+              <SVGicon className='bakers_about__brains' src='brains.svg' /> 
+              <Row>
+                <Figure
+                src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_two } 
+                className="bakers_about__image_two hide_on_mobile"
+                />      
+                <Split className='bakers_about__heading_three'>{data.gravBakersAbout.subheading_two}</Split>      
+                <Paragraph className='bakers_we__paragraph paragraph'>{data.gravBakersAbout.paragraph_one}</Paragraph>
+                <Link className="bakers_about__join_link" arrow bakers to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}</Link>
+                <Figure4 className="show_on_mobile"/>
+              </Row>
+
       <Row className="tags_row">
         <Controller refreshInterval={1}>
           <Scene duration={'135%'} triggerHook={.85}>
@@ -232,8 +241,6 @@ const BakersAbout = ({ data, className }) => {
                 </div>
               </div>
 
-
-
             </Tween>
           </Scene>
         </Controller>
@@ -244,6 +251,8 @@ const BakersAbout = ({ data, className }) => {
         <div className="divider_text">or find out how to</div>
         <Link bakers arrow className="bakers_about__join_link_three" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       </Row>
+
+
       <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
       <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
       
@@ -266,7 +275,6 @@ const BakersAbout = ({ data, className }) => {
           <Figure 
           src="../images/kid.jpg" className="bakers_about_bakers_image"
           />
-
 
             <Paragraph className="bakers_about_bakers_p_one">{data.gravBakersAbout.bakers_paragraph_one}</Paragraph>
             <Paragraph className="bakers_about_bakers_p_two">{data.gravBakersAbout.bakers_paragraph_two}</Paragraph>
@@ -364,7 +372,7 @@ const BakersAbout = ({ data, className }) => {
 
 
 
-            </Tween>
+
 
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 

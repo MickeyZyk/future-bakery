@@ -34,7 +34,7 @@ const SVGicon = (props) => {
             from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: -200, ease: 'Power2.easeOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: -200, ease: 'Power2.easeIn'} : false } >
               <div>
-                <Tween duration={1} to={{ x: -0.025 * x, y: -0.025 * y, ease: 'Power2.easeOut', transformPerspective: 900, transformOrigin: 'center'}}>
+                <Tween duration={1} to={{ x: -0.085 * x, y: -0.085 * y, ease: 'Power2.easeOut', transformPerspective: 900, transformOrigin: 'center'}}>
                   <div>
                     <img src={'../svg/' + props.src} />
                   </div>

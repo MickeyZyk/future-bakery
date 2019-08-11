@@ -25,8 +25,8 @@ export const helmet = {
     { name: 'twitter:title', content: title },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:image', content: share },
-    { name: 'twitter:site', content: '@uenodotco' },
-    { name: 'twitter:creator', content: '@uenodotco' },
+    { name: 'twitter:site', content: '@future-bakery' },
+    { name: 'twitter:creator', content: '@future-bakery' },
     { name: 'twitter:description', content: description },
   ],
   link: [
