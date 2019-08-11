@@ -445,3 +445,23 @@
   text-align: right;
 } 
 
+
+
+
+
+
+
+
+
+
+.all_cases {
+
+  @include grid-col;
+  position: absolute;
+
+  @media (min-width: $min-960) {
+    top: 31vw;
+    @include grid-col(.5);
+    @include grid-offset-left(4);
+  }
+}  

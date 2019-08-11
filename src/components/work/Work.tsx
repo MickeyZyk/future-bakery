@@ -253,31 +253,21 @@ export default class Work extends React.Component {
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravBakeryWork.video} playing={this.state.playing} />            
             </div>
 
-
-
-
-
           </div>
-          <div className={s.row__four}>
-            <div className={s.column__col8}>
-            <LeftLink gray arrow to={'/bakery-work'}>
-              <p className={s.control_dark}>ALL CASES</p>
-            </LeftLink>
-            </div>
 
-            <div className={s.column__col9}>
+
+
+            <LeftLink className={s.all_cases} gray arrow to={'/bakery-work'}>ALL CASES</LeftLink>
+
               <p className="bold">{next ? 'NEXT CASE' : ''}</p>
-            </div>
 
-            <div className={s.column__col10}>
                 <Link className="bakery_work_start_link" gray arrow to={next ? "/bakery-work/" + slug(next.title.toLowerCase()) : '/'}>
                   <p className={s.control_dark}>START A PROJECT WITH US</p>
                 </Link>
-            </div>
-          </div>
 
 
-          <div className={s.row__five}>
+
+
 
           <If condition={next}>
             <Then>
@@ -299,10 +289,10 @@ export default class Work extends React.Component {
           </If>
 
 
-            <div className={s.column__col12}>
               <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
-            </div>
-          </div>
+
+
+
         </div>
       </ReactCursorPosition>
     </div>
