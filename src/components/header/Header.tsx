@@ -33,11 +33,11 @@ export const Header = ({ children, logo, data, set, location, ...props }: IHeade
                   :  location.pathname.includes('bakery') ? '/bakery' 
                   :  location.pathname.includes('bakers') ? '/bakers' 
                   :  location.pathname.includes('crowders') ? '/crowders' 
-                  :  '/bakery' }  onClick={() => set({ menuOpen: !data.menuOpen })} className={s.header__logo} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                  :  '/bakery' }  onClick={() => set({ menuOpen: !data.menuOpen })} className={s.header__logo} exit={{ length: 1 }} entry={{ length: 1 }}>
 
    
 
-                 { data.logo == 'bakery' || location.pathname.includes('bakery') ? <BakeryLogo className={s.header__logo}/>
+                 { data.logo == 'bakery' || location.pathname.includes('bakery') || location.pathname == '/' ? <BakeryLogo className={s.header__logo}/>
 
                   : data.logo == 'bakers' || location.pathname.includes('bakers') ? <BakersLogo className={s.header__logo}/>
 
