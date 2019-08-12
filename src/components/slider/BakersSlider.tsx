@@ -43,7 +43,8 @@ export class BakersSlider extends React.Component {
       horizontal={false} 
       showButtons={false} 
       showDots={true} 
-      timeInBetween={this.props.timeInBetween} auto={false} 
+      auto={true}
+      timeInBetween={4000} auto={true} 
       /></div>
     )
 
@@ -76,6 +77,7 @@ class Carousel extends React.Component {
     console.log("PROPS", this.props)
 
     if(this.props.auto){
+      console.log("GO!")
       this.startCarousel()
     };
     if(this.props.showButtons){
@@ -130,7 +132,8 @@ class Carousel extends React.Component {
   }
 
   startCarousel(){
-    startCarouselInterval = setInterval(this.nextSlide.bind(this), this.props.timeInBetween);
+    console.log("INTERVAL", this.props.timeInBetween)
+    startCarouselInterval = setInterval(this.nextSlide(1), this.props.timeInBetween);
   }
 
 

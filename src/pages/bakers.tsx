@@ -83,7 +83,7 @@ export default class BakersIndex extends React.Component {
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
         	    <div className='fulscreen_slider'>
-        	    	<BakersSlider auto 
+        	    	<BakersSlider auto={true} 
                 timeInBetween={2000}
                 subs={mergedSubs} 
                 titles={mergedTitles} 
