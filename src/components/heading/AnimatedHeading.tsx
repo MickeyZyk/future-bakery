@@ -16,20 +16,20 @@ export class AnimatedHeading extends React.Component {
       //console.log(this.props);
       var entering = ['entering'].includes(this.transitionStatus);    
       var exiting = ['exiting'].includes(this.transitionStatus);          
-      var h2 = this.heading.current; 
+      var hd2 = this.heading.current; 
       var state 
       const split = new SplitText(
-        'h2',
+        hd2,
         {
           type: "lines",
-          linesClass: "ts-line"
+          linesClass: "ts-line-h"
         }
       )
 
-      var tslines = h2.querySelectorAll('.ts-line');
+      var tslines = hd2.querySelectorAll('.ts-line-h');
       var currentTL = new TimelineMax(); 
 
-        currentTL.staggerFrom(tslines, 2.5, { yPercent: -100, ease: 'Power3.easeOut'}, .15, "+=1.5").staggerFrom(tslines, 1, {  opacity: 0, ease: 'Power3.easeOut'}, .15, "-=3"); 
+        currentTL.staggerFrom(tslines, 2.5, { yPercent: 100, ease: 'Power3.easeOut'}, .15, "+=1.5").staggerFrom(tslines, 1, {  opacity: 0, ease: 'Power3.easeOut'}, .15, "-=3"); 
 
   }
 

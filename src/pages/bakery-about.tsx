@@ -22,6 +22,9 @@ import { Location } from '@reach/router';
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
+import ImageTop from 'assets/images/our_process.png';
+import ImageBottom from 'assets/images/usual_closed_process.png';
+import { If, Then, Else, Switch, Case, Default } from 'react-if'
 
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
@@ -97,7 +100,6 @@ render() {
 
 
 
-
   return (
 
 
@@ -132,15 +134,15 @@ render() {
         </Row>
         <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/greenboard.jpg)`}}>
           <Row>
-            <div style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__heading_two sw_heading_first">
+            <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__heading_two sw_heading_first">
               <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two}</HeadingTwo>
             </div>
-            <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__heading_two_alt sw_heading_second">
+            <div style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__heading_two_alt sw_heading_second">
               <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two_alernate}</HeadingTwo>
             </div>
-             <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } 
+             <p style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } 
               className="bakery_about__green_text_one">{this.props.data.gravBakeryAbout.show_me_text}</p>
-            <p style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } 
+            <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } 
               className="bakery_about__green_text_two">{this.props.data.gravBakeryAbout.show_me_two_text}</p>   
 
             <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />  
@@ -148,31 +150,26 @@ render() {
           <Location>
             {({ location }) => (
               <>
-              <div style={ this.state.clicked ? {opacity : 0, display: 'none'} : {opacity: 1, display: 'block'} } className="bakery_about__green_link_one" >          
+              <div style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__green_link_one" >          
                   <Link to={location.pathname} bakery arrow onClick={this.toggleShow} >SHOW ME</Link>
               </div>
-              <div style={ this.state.clicked ? {opacity : 1, display: 'block'} : {opacity: 0, display: 'none'} } className="bakery_about__green_link_two">
+              <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__green_link_two">
                 <Link to={location.pathname} bakery arrow onClick={this.toggleShow} >SHOW ME</Link>    
               </div>
               </>
             )}
           </Location> 
 
-
           </Row>
           <div className="bakery_about__white_company">
 
-            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0% 0% 0% 0%)', ease: 'Power2.easeOut'} : { clipPath:'inset(0% 100% 0% 0%)', ease: 'Power2.easeInOut'  } } >
-              <img src="../images/usual_closed_process.png" className="switch_top_image hide_on_mobile visible"/>
+            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', ease: 'Power2.easeInOut'} : { clipPath:'inset(0% 100% 0% 0%)', ease: 'Power2.easeInOut'  } } >
+              <img src={ImageBottom} className="switch_top_image hide_on_mobile visible"/>
             </Tween>
 
-            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0 0% 0% 100%)', ease: 'Power2.easeOut'  } : { clipPath:'inset(0% 0% 0% 0%)', ease: 'Power2.easeInOut'  } } >
-
-              <img src="../images/our_process.png" className="switch_bottom_image hide_on_mobile visible"  />  
-
+            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0 0% 0% 100%)', ease: 'Power2.easeInOut'  } : { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', ease: 'Power2.easeInOut'  } } >
+              <img src={ImageTop} className="switch_bottom_image hide_on_mobile visible"  />  
             </Tween>            
-
-
 
           </div>        
           <Row className="centered-row">

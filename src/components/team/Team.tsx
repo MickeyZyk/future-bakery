@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { TweenMax, TimelineMax, Power3 } from "gsap";
 import { Tween } from 'react-gsap';
 import { Row } from 'components/row/Row';
+import { Paragraph } from 'components/paragraph/Paragraph';
 import { AnimatedHeadingTwo  } from 'components/heading/AnimatedHeadingTwo';
 import ReactDOM from 'react-dom';
 import { Link } from 'components/link/Link';
@@ -117,7 +118,7 @@ console.log("WE GOT", this.props.arrayOfImages)
         <div className={s.member} key={'team'+i} position={i}>
           <div className={`${s.data} ${this.state.activeIndex == i ? s.current_data : ''}`}>
             <h4 className="team_name">{names[i]}</h4>
-            <p className={s.text}>{texts[i]}</p>
+            <Paragraph className={s.text}>{texts[i]}</Paragraph>
             <a className={s.link} href={'mailto:' + linkURLs[i]}>CONTACT {_.first( names[i].split(" ")).toUpperCase()}</a>
           </div>
         </div>

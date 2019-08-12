@@ -2,9 +2,11 @@ import * as React from 'react';
 import ReactDOM from 'react-dom'
 import Helmet from 'react-helmet';
 import { Heading } from 'components/heading/Heading';
+import { AnimatedHeading } from 'components/heading/AnimatedHeading';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import { Link } from 'components/link/Link';
 import { LeftLink } from 'components/link/LeftLink';
+import { ExternalLink } from 'components/link/ExternalLink';
 import ReactCursorPosition from 'react-cursor-position';
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
@@ -125,10 +127,9 @@ export default class Work extends React.Component {
         <div className={s.row}>
 
 
+        <AnimatedHeading className={s.column__col1_heading}>{this.props.data.gravCrowdersWork.heading_one}</AnimatedHeading>
 
 
-
-        <Heading className={s.column__col1_heading}>{this.props.data.gravCrowdersWork.heading_one}</Heading>
         <p className={s.paragraph}>{this.props.data.gravCrowdersWork.paragraph}</p>
 
           <div id="video_image_anchor" className={s.detail_wrapper}>
@@ -240,7 +241,7 @@ export default class Work extends React.Component {
           </Row>
 
           <Row>
-            <Link crowders button arrow className={s.bottom_button} to={'/'} >SEE A FUTURE REPORT</Link>
+            <ExternalLink crowders button arrow className={s.bottom_button} to={'../pdf/report.pdf'} >SEE A FUTURE REPORT</ExternalLink>
           </Row>          
 
 

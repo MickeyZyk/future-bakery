@@ -149,7 +149,7 @@ a {text-decoration: none}
   text-align: center;
 }
 
-.the_button_link.crowders_color {
+.the_button_link.crowders_color, .the_button_link.crowders_color  * {
   color: #222;
   background-color: #37c6f4;
   text-align: center;
@@ -2633,7 +2633,7 @@ select {
       position: relative;
       top: 9vw;
       @include grid-col(1);
-      @include grid-offset-left(3);
+      @include grid-offset-left(5);
 
 
     } 

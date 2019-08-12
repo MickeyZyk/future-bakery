@@ -24,7 +24,7 @@ export const Split = ({ children, className, transitionStatus, entry, exit }) =>
               staggerFrom={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, color: '#fff', yPercent: 200, rotationX: 65 } }
               staggerTo={ ['exiting'].includes(transitionStatus) ? { opacity: 0, color: '#fff', yPercent: 200, rotationX: -65} : false }
               stagger={0.15}
-              duration={1}
+              duration={2} delay={.3}
               ease={Power3.easeInOut}
             >
 

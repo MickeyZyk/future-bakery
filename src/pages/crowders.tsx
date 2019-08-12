@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
-import { CrowdersSlider } from 'components/slider/CrowdersSlider';
+import { Slider } from 'components/slider/Slider';
 import { Heading } from 'components/heading/Heading';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Link } from 'components/link/Link';
@@ -82,7 +82,7 @@ export default class CrowdersIndex extends React.Component {
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
   		    	<div className='fulscreen_slider'>
-  			      <CrowdersSlider auto subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>   
+  			      <Slider auto={true} subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>   
   		    	</div>
 
             </Tween>

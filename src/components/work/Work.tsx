@@ -4,6 +4,7 @@ import Scrollbar from 'react-smooth-scrollbar';
 import { SmoothScrollbar } from 'smooth-scrollbar';
 import Helmet from 'react-helmet';
 import { Heading } from 'components/heading/Heading';
+import { AnimatedHeading } from 'components/heading/AnimatedHeading';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { Link } from 'components/link/Link';
 import { LeftLink } from 'components/link/LeftLink';
@@ -126,7 +127,7 @@ export default class Work extends React.Component {
                   <div className={s.column__col0}>
                     <div className={s.wrapper}>
                       <img className={s.arrow} src={'../svg/work_arrow.svg'} />
-                      <h4 className={s.arrow_heading}>Creative Strategy</h4>
+                      <AnimatedHeading className={s.arrow_heading}>Creative Strategy</AnimatedHeading>
                     </div>
                   </div> 
 

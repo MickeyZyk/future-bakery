@@ -69,7 +69,7 @@ class Carousel extends React.Component {
       animating: false
     };
     this.chidrenNodes = [];
-    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 2500);  
+    /* this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 2500);   */
     this.scream  = this.scream.bind(this)
     
   }
@@ -117,7 +117,7 @@ class Carousel extends React.Component {
     clearInterval(startCarouselInterval);      
   }  
 
-
+/*
   wheelCallback(ev) {
     if( 1 > ev.deltaY > 0 ) {
     //console.log( this.state.activeIndex + 1, "delta", ev.deltaY / 150 )
@@ -133,7 +133,7 @@ class Carousel extends React.Component {
     e.persist();
     this.wheelCallback(e);
   }
-
+*/ 
   scream(){
     if (goto == this.props.images.length) {
       this.gotoSlide(1)
@@ -420,7 +420,7 @@ class Carousel extends React.Component {
 
     return (
      
-        <div onWheel={this._onMouseMove} style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
+        <div style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
           <ReactCursorPosition className='fullscreen_cursor_position'>
             <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='home_arrow.svg'  />
             {this.state.showButtons  ? carouselLeftButton : null }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
-import { BakersSlider } from 'components/slider/BakersSlider';
+import { Slider } from 'components/slider/Slider';
 import { Heading } from 'components/heading/Heading';
 import SVGicon from 'components/svgicon/SVGicon';
 import { Link } from 'components/link/Link';
@@ -83,7 +83,7 @@ export default class BakersIndex extends React.Component {
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
         	    <div className='fulscreen_slider'>
-        	    	<BakersSlider auto={true} 
+        	    	<Slider auto={true} 
                 timeInBetween={2000}
                 subs={mergedSubs} 
                 titles={mergedTitles} 

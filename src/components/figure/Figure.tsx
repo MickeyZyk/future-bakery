@@ -14,11 +14,10 @@ export const Figure = ({ src, className }) => (
           {({ transitionStatus }) => {
             return (
               <div className={`${s.figure} ${className}`}>
-                <Tween duration={2} delay={1} from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeOut' } } to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)',  ease: 'Power2.easeIn' } : false } >
+                <Tween duration={2} delay={1} from={ ['entering'].includes(transitionStatus) ? false : { clipPath:'inset(0% 0% 100% 0%)', opacity:0 , ease: 'Power2.easeOut' } } to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', opacity:1,  ease: 'Power2.easeIn' } : false } >
                   <div>
                     <Controller refreshInterval={1}>
-                      <Scene duration={'100%'} triggerHook={'onEnter'}>
-                     
+                      <Scene duration={'100%'} triggerHook={'onEnter'}>                     
                         <Tween from={{ backgroundPositionY: '-300px' }}>
                           <div className={s.background} style={{ backgroundImage: `url(${src})` }}></div>
                         </Tween>

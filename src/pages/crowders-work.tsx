@@ -106,7 +106,7 @@ export default class Work extends React.Component {
 
 
 
-              <Tween duration={2} 
+              <Tween duration={2}  
               from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
               to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
@@ -132,8 +132,6 @@ export default class Work extends React.Component {
                 ))}
 
 
-
-               
 
                 </div>
                 <Link gray arrow className="bakery_work_download" to={'/'}>DOWNLOAD MORE PROJECTS</Link>
