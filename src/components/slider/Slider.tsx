@@ -122,11 +122,11 @@ class Carousel extends React.Component {
   wheelCallback(ev) {
     if( ev.deltaY > 0 ) {
       console.log( this.state.activeIndex + 1, "delta", ev.deltaY, ev.deltaMode )
-      parseInt(this.state.activeIndex) < this.props.images.length-1 ? this.nextSlide(parseInt(this.state.activeIndex) + 1) : false
+      parseInt(this.state.activeIndex) < this.props.images.length-1 && !this.state.animating ? this.nextSlide(parseInt(this.state.activeIndex) + 1) : false
     }
     else if( ev.deltaY < 0 ) {  
       console.log( this.state.activeIndex - 1, "delta", ev.deltaY,  ev.deltaMode )
-      parseInt(this.state.activeIndex)  > 0 ? this.prevSlide(parseInt(this.state.activeIndex) - 1) : false
+      parseInt(this.state.activeIndex)  > 0 && !this.state.animating ? this.prevSlide(parseInt(this.state.activeIndex) - 1) : false
     }
   }
 
@@ -214,7 +214,7 @@ class Carousel extends React.Component {
 
       setTimeout(function() { //Start the timer
           this.setState({ animating: false }) //After 1 second, set render to true
-      }.bind(this), 1000)  
+      }.bind(this), 2000)  
 
 
     });
@@ -280,7 +280,7 @@ class Carousel extends React.Component {
 
       setTimeout(function() { //Start the timer
         this.setState({ animating: false }) //After 1 second, set render to true
-      }.bind(this), 1000) 
+      }.bind(this), 2000) 
 
 
     });  
