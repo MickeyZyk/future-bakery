@@ -188,3 +188,11 @@
     z-index: 5;
   } 
 }
+
+
+
+.current_data > p > div:first-child:nth-last-child(1) {
+  transform: translate(0%, 0%)!important;
+  opacity: 1!important;
+  transition: all 1s;
+}
