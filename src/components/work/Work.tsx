@@ -263,7 +263,12 @@ export default class Work extends React.Component {
 
                 <LeftLink className={s.all_cases} gray arrow to={'/bakery-work'}>ALL CASES</LeftLink>
 
-                <p className={s.next_case}>{next ? 'NEXT CASE' : ''}</p>
+
+                <If condition={next}>
+                  <Then>
+                    <Link gray arrow className={s.next_case}>NEXT CASE</Link>
+                  </Then>
+                </If>
 
                 <Link className={s.start_project} gray arrow 
                 to={next ? "/bakery-work/" + slug(next.title.toLowerCase()) : '/'}>
