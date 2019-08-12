@@ -64,7 +64,6 @@ const BakeryAbout = ({ data, className }) => {
 
               <Paragraph className='for_clients_about_paragraph paragraph'>This is where you can submit your brief and generate wonderful ideas. We can provide additional services among others analysis of the ideas, creation of a strategy or plan of action. You can let us know, what exactly you need from Future Bakers.</Paragraph>
 
-
             </div>
 
             <AnimatedImage className='for_clients_image responsive_image hide_on_mobile' src="../images/rocket.jpg" />   
@@ -72,12 +71,19 @@ const BakeryAbout = ({ data, className }) => {
 
           </Row>
 
-     <Row>
-        <Link className="for__join_link_two" to={'/bakerscontact'}>BRIEF US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>
-        <div className="for_divider_text">Or simply</div>
-        <Link className="for__join_link_three" to={'/bakerscontact'}>CALL US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
-      </Row>
-      
+          <Row>
+
+              <Link className="for_join_link_one" arrow bakers to={'/bakerscontact'}>BRIEF US</Link>
+              <Paragraph className="for_divider_text_one">or simply</Paragraph>
+              <Link bakers arrow className="for_brief_link_one" to={'/bakerscontact'}>CALL US</Link>  
+
+          </Row>  
+
+           <Row>
+
+ 
+
+          </Row>  
 
       </ReactCursorPosition>   
 

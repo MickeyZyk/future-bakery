@@ -3137,7 +3137,7 @@ select {
 
 
 .bakers_about__paragraph {
-  color: rgba(35, 31, 32, 0.6);
+
 
   @include grid-col(16);
   @include grid-offset-left(0);
@@ -4829,6 +4829,63 @@ select {
 
 /* FOR CLIENTS */
 
+
+
+
+
+.for_join_link_one {
+  color: #ff7a00;
+  font-weight: bold;
+  @include grid-col(4);
+  @include grid-offset-left(2);
+
+  top: 15vw;
+  bottom: 10vw;
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 2vw;
+    bottom: 0;    
+    @include grid-col(1.3);
+    @include grid-offset-left(2);
+    margin-bottom: 3vw;
+  }  
+}
+
+
+.for_divider_text_one {
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 1.6vw;
+    @include grid-col(1);
+    @include grid-offset-left(.97);
+  } 
+}
+
+.for_brief_link_one {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 2vw;  
+    @include grid-col(1);
+    @include grid-offset-left(0);
+  }  
+}
+
+
+
+
+
+
+
+
 .for_clients_about_paragraph {
   position: relative;
   top: 35vw;
@@ -5419,7 +5476,7 @@ select {
     @include grid-offset-left(12);
     position: absolute !important;
     z-index: 5;
-    top: 74vw;
+    top: 64vw;
     /*
     $top-map: (320px: -0.15px, 959px: -0.25px, 960px: 250px, 2880px: 730px);  
     @include poly-fluid-sizing('font-size', $top-map);
@@ -5488,7 +5545,7 @@ select {
 }
 
 .bakers_about__paragraph {
-  color: rgba(35, 31, 32, 0.6);
+
   position: relative;
   top: 10vw;
 
@@ -5505,7 +5562,7 @@ select {
 }
 
 .bakers_we__paragraph_one {
-  color: rgba(35, 31, 32, 0.6);
+
 
   @include grid-col(14);
   @include grid-offset-left(2);
@@ -5532,10 +5589,40 @@ select {
     position: relative;
     top: -17vw;
     bottom: 0;    
-    @include grid-col(3);
+    @include grid-col(1.3);
     @include grid-offset-left(11);
   }  
 }
+
+
+.divider_text_one {
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -17.45vw;
+    @include grid-col(1.7);
+    @include grid-offset-left(0);
+  } 
+}
+
+.bakers_about__brief_link_one {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -17vw;  
+    @include grid-col(1);
+    @include grid-offset-left(0);
+  }  
+}
+
+
+
 
 .tags_heading {
   position: relative;
@@ -5987,7 +6074,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -15.35vw;
+    top: -15.4vw;
     @include grid-col(2);
     @include grid-offset-left(0);
   } 

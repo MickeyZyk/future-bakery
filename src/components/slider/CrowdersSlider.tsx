@@ -28,7 +28,7 @@ export class CrowdersSlider extends React.Component {
   }
 
   componentDidMount(){
-    console.log("PARENT PROPS", this.props)
+    //console.log("PARENT PROPS", this.props)
   }
   render() {
 
