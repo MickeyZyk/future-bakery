@@ -46,7 +46,7 @@ export class Slider extends React.Component {
         horizontal={false} 
         showButtons={false} 
         showDots={true} 
-        timeInBetween={4000} 
+        timeInBetween={6000} 
         auto={true} 
       /></div>
     )
