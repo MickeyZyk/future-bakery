@@ -4538,13 +4538,13 @@ select {
   top: 39vh;
   font-weight: 900;
   color: #fff;
-  text-align: center;
+  text-align: left;
   $font-map: (375px: 30px, 959px: 75px, 960px: 20px, 2880px: 60px);
   @include poly-fluid-sizing('font-size', $font-map); 
 
   @media (min-width: $min-960) {
   position: absolute;
-  font-weight: lighter;
+  left: 1vw;
   top: 9vw;
   }
 
@@ -4555,8 +4555,7 @@ select {
   @media (min-width: $min-960) {
 
   transition: all 1s;   
-  font-weight: 900;
-  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 30px, 2880px: 78px);
+  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 24px, 2880px: 68px);
   @include poly-fluid-sizing('font-size', $font-map); 
 
   }
