@@ -79,11 +79,64 @@ const BakeryAbout = ({ data, className }) => {
 
           </Row>  
 
-           <Row>
 
- 
+          <Row>
+
+          <HeadingTwo className="for_clients_solution_heading">Looking for ideas or a solution to a problem? </HeadingTwo>
+
+
+          </Row>
+
+
+
+      <div class="for_clients_icon_wrapper">
+
+        <Row className="clients_about_steps">
+          <div className="bakers_about_numbers_first">1</div>
+          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_numbers">2</div>
+          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_numbers">3</div>
+          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_numbers">4</div>
+          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
+          <div className="bakers_about_numbers">5</div>
+          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
+          <div className="bakers_about_numbers">6</div>
+        </Row>
+
+        <Row className="clients_about_steps_two">
+            <img className="bakers_about_step_icons" src="../svg/register.svg" />       
+            <img className="bakers_about_step_icons" src="../svg/location.svg" />       
+            <img className="bakers_about_step_icons" src="../svg/gold.svg" />       
+            <img className="bakers_about_step_icons" src="../svg/eye.svg" />       
+            <img className="bakers_about_step_icons" src="../svg/podium.svg" />       
+            <img className="bakers_about_step_icons" src="../svg/owner.svg" />       
+        </Row>
+
+        <Row className="clients_about_steps_three">
+
+
+            <div className="bakers_about_steps_text" >Fill out our Client Contact Form</div>
+            <div className="bakers_about_steps_text" >Make a detailed description of the problem or the task in hand (we can help you with this)</div>
+            <div className="bakers_about_steps_text" >Set up the reward</div>
+            <div className="bakers_about_steps_text" >Check out all the ideas from the contributors</div>
+            <div className="bakers_about_steps_text" >Pick the best one</div>
+            <div className="bakers_about_steps_text" >Become the owner of one</div>                                                            
+
+         </Row> 
+
+
+      </div>   
+
+          <Row>
+
+              <Link className="for_join_link_two" button arrow bakers to={'/bakerscontact'}>FILL OUT THE FORM</Link>
+              <Paragraph className="for_divider_text_two">or simply</Paragraph>
+              <Link bakers arrow className="for_brief_link_two" to={'/bakerscontact'}>CALL US</Link>  
 
           </Row>  
+
 
       </ReactCursorPosition>   
 

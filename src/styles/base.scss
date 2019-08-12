@@ -4879,9 +4879,73 @@ select {
   }  
 }
 
+.for_join_link_two {
+  color: #ff7a00;
+  font-weight: bold;
+  @include grid-col(4);
+  @include grid-offset-left(2);
+
+  top: 15vw;
+  bottom: 10vw;
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 4vw;
+    bottom: 0;    
+    @include grid-col(3);
+    @include grid-offset-left(6);
+    margin-bottom: 14vw;
+  }  
+}
 
 
+.for_divider_text_two {
+  @include grid-col(4);
+  @include grid-offset-left(1);
 
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 4vw;
+    @include grid-col(1);
+    @include grid-offset-left(.97);
+  } 
+}
+
+.for_brief_link_two {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 4.35vw;  
+    @include grid-col(1);
+    @include grid-offset-left(0);
+  }  
+}
+
+
+.clients_about_steps {
+  @media (min-width: $min-960) { 
+  margin-top: 0vw;
+  }  
+
+}
+
+.clients_about_steps_two {
+  @media (min-width: $min-960) {
+  margin-top: 2vw;
+  }  
+
+}
+
+.clients_about_steps_three {
+  @media (min-width: $min-960) {  
+  margin-top: 2vw;
+  }  
+
+}
 
 
 
@@ -4973,6 +5037,30 @@ select {
     top: 3vw;
     @include grid-col(0.7);
     @include grid-offset-left(0);
+  } 
+}
+
+.for_clients_icon_wrapper {
+  @include grid-col;
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    @include grid-offset-left(3);
+  } 
+}
+
+.for_clients_solution_heading {
+  $font-map: (375px: 60px, 959px: 90px, 960px: 34px, 2880px: 110px);
+  @include poly-fluid-sizing('font-size', $font-map);  
+  @include grid-col;
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    margin-top: 4vw;
+    position: relative;
+    @include grid-col(6);    
+    @include grid-offset-left(6);
   } 
 }
 
