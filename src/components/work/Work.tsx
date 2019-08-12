@@ -269,9 +269,9 @@ export default class Work extends React.Component {
 
                   <Location>
                     {({ location }) => (    
-                        
+
                       <Link 
-                      to={ location.pathname.includes('bakery') ? "/bakery-work/" + slug(next.title.toLowerCase()) : "/bakers-work/" + slug(next.title.toLowerCase())}>
+                      to={ location.pathname.includes('bakery') ? "/bakery-work/" + slug(next.title.toLowerCase()) : "/bakers-work/" + slug(next.title.toLowerCase())}
                       gray arrow className={s.next_case}>NEXT CASE</Link>
 
                       )}
