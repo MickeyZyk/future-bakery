@@ -284,10 +284,16 @@ export default class Work extends React.Component {
                   </Then>
                 </If>
 
-                <Link className={s.start_project} gray arrow 
-                to={next ? "/bakery-work/" + slug(next.title.toLowerCase()) : '/'}>
-                START A PROJECT WITH US
-                </Link>
+                  <Location>
+                    {({ location }) => (    
+
+                      <Link 
+                      to={ location.pathname.includes('bakery') ? "/crowderscontact/" + slug(next.title.toLowerCase()) : "/bakerscontact/" + slug(next.title.toLowerCase())}
+                      gray arrow className={s.start_project}>START A PROJECT WITH US</Link>
+
+                      )}
+                  </Location>  
+
           
             </div>
             <div className={s.bottom_row}>

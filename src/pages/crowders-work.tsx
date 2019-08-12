@@ -10,10 +10,12 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import { Link } from 'components/link/Link';
+import { ExternalLink } from 'components/link/ExternalLink';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import { Footer } from 'components/footer/Footer';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import { graphql } from 'gatsby'
+import { Location } from '@reach/router';
 
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
@@ -134,13 +136,24 @@ export default class Work extends React.Component {
 
 
                 </div>
-                <Link gray arrow className="bakery_work_download" to={'/'}>DOWNLOAD MORE PROJECTS</Link>
-                <Link gray arrow className="bakery_work_project" to={'/'}>START A PROJECT WITH US</Link>  
+
+
+          <Location>
+            {({ location }) => (
+              <>      
+
+                <Link gray arrow className="bakery_work_download" to={location.pathname}>DOWNLOAD MORE PROJECTS</Link>
+              </>
+            )}
+          </Location> 
+
+
+                <Link gray arrow className="bakery_work_project" to={'/crowderscontact/'}>START A PROJECT WITH US</Link>  
                 <Row>
-                  <Paragraph className="crowders_work_cta_paragraph">We regularly measure sentiment of key segments and check “temperature”</Paragraph>
+                  <p className="cw_paragraph_bottom crowders_work_cta_paragraph">We regularly measure sentiment of key segments and check “temperature”</p>
                 </Row>
                 <Row>  
-                  <Link crowders arrow button className="crowders_work_cta_link" to={'/'}>SEE A FUTURE REPORT</Link>
+                  <ExternalLink crowders button arrow className="crowders_work_cta_link" to={'../pdf/report.pdf'} >SEE A FUTURE REPORT</ExternalLink>
                 </Row>
 
 

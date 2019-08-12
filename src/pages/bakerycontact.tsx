@@ -6,6 +6,7 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import { Link } from 'components/link/Link';
+import { ExternalLink } from 'components/link/ExternalLink';
 import Scrollbar from 'react-smooth-scrollbar';
 
 import { TweenMax, TimelineMax, Power3} from "gsap";
