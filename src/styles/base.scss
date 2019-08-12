@@ -2474,11 +2474,10 @@ select {
 }
 
 .bakery_about__heading_two {
-
+    transition: opacity 1.5s;
   font-weight: 900;
   @include responsive-font(28px, 32px);  
   line-height: 28px;
-  color: #fff!important;
   @include grid-col(11);
   @include grid-offset-left(2);
   margin-bottom: 30px; 
@@ -2492,10 +2491,39 @@ select {
     @include grid-col(4);
     @include grid-offset-left(4);
     line-height: 51px;
-    margin-bottom: 5.6vw;
+    margin-bottom: 0vw;
 
   }
 }
+
+
+.bakery_about__heading_two_alt {
+    transition: opacity 1.5s;
+  font-weight: 900;
+  @include responsive-font(28px, 32px);  
+  line-height: 28px;
+  @include grid-col(11);
+  @include grid-offset-left(2);
+  margin-bottom: 30px; 
+  margin-top: 100px; 
+  letter-spacing: -0.6px;
+
+  @media (min-width: $min-960) {
+
+    @include responsive-font(46px, 52px);    
+    margin-top: 0;     
+    @include grid-col(4);
+    @include grid-offset-left(2);
+    line-height: 51px;
+    margin-bottom: 0vw;
+
+  }
+}
+
+.bakery_about__heading_two_alt > h2, .bakery_about__heading_two > h2 {
+  color: #fff!important;
+}
+
 
 .bakery_about__green_block {
 
@@ -2506,24 +2534,30 @@ select {
     @media (min-width: $min-960) {
       position: relative;
       @include grid-col(3);
-      @include grid-offset-right(5);
+      @include grid-offset-left(10);
     }
 
 }
 
-.bakery_about__green_text {
+.bakery_about__green_text_one {
 
-  transition: opacity 1.5s;
+    transition: opacity 1.5s;
 
-  @include responsive-font(17px, 22px);
-  line-height: 20px;
-  position: relative;
-  font-weight: lighter;
-  color: #d4de4f;
-      margin-bottom: 35px;  
+    line-height: 20px;
+    position: relative;
+    font-weight: lighter;
+    color: #d4de4f;
+
+      @include grid-col(7);
+      @include grid-offset-left(2); 
+     margin-bottom: 50px;
+
 
     @media (min-width: $min-960) {
-      position: absolute;
+
+      @include grid-col(3);
+      @include grid-offset-left(-4);
+
       $font-map: (375px: 20px, 959px: 21px, 960px: 16px, 2880px: 48px);
       $height-map: (375px: 20px, 959px: 50px, 960px: 17px, 2880px: 50px);
       @include poly-fluid-sizing('font-size', $font-map);
@@ -2532,18 +2566,77 @@ select {
 
 }
 
+.bakery_about__green_text_two {
 
-.bakery_about__green_link {
+    transition: opacity 1.5s;
 
+    line-height: 20px;
+
+    font-weight: lighter;
+    color: #d4de4f;
+
+      @include grid-col(7);
+      @include grid-offset-left(2); 
+     margin-bottom: 50px;
+
+
+    @media (min-width: $min-960) {
+      position: relative;
+      @include grid-col(3);
+      @include grid-offset-left(-9);
+
+      $font-map: (375px: 20px, 959px: 21px, 960px: 16px, 2880px: 48px);
+      $height-map: (375px: 20px, 959px: 50px, 960px: 17px, 2880px: 50px);
+      @include poly-fluid-sizing('font-size', $font-map);
+      @include poly-fluid-sizing('line-height', $height-map);
+    }   
+
+}
+
+
+.bakery_about__green_link_one {
+      transition: opacity 1.5s;
   color: #d4de4f;
   text-decoration: none;
   font-weight: bold;
   position: relative;  
 
+      @include grid-col(7);
+      @include grid-offset-left(2); 
 
-  @media (min-width: $min-960) {  
-    top: 8.5vw;
-  }
+
+
+    @media (min-width: $min-960) {
+      position: relative;
+      top: 9vw;
+      @include grid-col(1);
+      @include grid-offset-left(-3);
+
+
+    } 
+
+}
+
+.bakery_about__green_link_two {
+      transition: opacity 1.5s;
+  color: #d4de4f;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;  
+
+      @include grid-col(7);
+      @include grid-offset-left(2); 
+
+
+
+    @media (min-width: $min-960) {
+      position: relative;
+      top: 9vw;
+      @include grid-col(1);
+      @include grid-offset-left(3);
+
+
+    } 
 
 }
 

@@ -65,12 +65,10 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
         <link rel="preload"
               as="image"
               href="../images/usual_closed_process.png"
-              type="png"
               crossOrigin="anonymous" />   
         <link rel="preload"
               as="image"
               href="../images/our_process.png"
-              type="png"
               crossOrigin="anonymous" />  
       </Helmet>
 

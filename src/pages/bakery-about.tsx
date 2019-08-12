@@ -18,7 +18,7 @@ import { Team } from 'components/team/Team';
 import { Clients } from 'components/clients/Clients';
 import Texticon from 'components/texticon/Texticon';
 import { Footer } from 'components/footer/Footer';
-
+import { Location } from '@reach/router';
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
@@ -132,19 +132,33 @@ render() {
         </Row>
         <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/greenboard.jpg)`}}>
           <Row>
-            <HeadingTwo className="bakery_about__heading_two">{this.props.data.gravBakeryAbout.heading_two}</HeadingTwo>
-            <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />   
-            <div className="bakery_about__green_block">
-              
-
-
-
-
-              <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__green_text">{this.props.data.gravBakeryAbout.show_me_text}</p>
-              <p style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__green_text">{this.props.data.gravBakeryAbout.show_me_two_text}</p>              
-              <Link to={'/bakery-about'} bakery arrow className="bakery_about__green_link" onClick={this.toggleShow} >SHOW ME</Link>
-           
+            <div style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__heading_two sw_heading_first">
+              <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two}</HeadingTwo>
             </div>
+            <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__heading_two_alt sw_heading_second">
+              <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two_alernate}</HeadingTwo>
+            </div>
+             <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } 
+              className="bakery_about__green_text_one">{this.props.data.gravBakeryAbout.show_me_text}</p>
+            <p style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } 
+              className="bakery_about__green_text_two">{this.props.data.gravBakeryAbout.show_me_two_text}</p>   
+
+            <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />  
+
+          <Location>
+            {({ location }) => (
+              <>
+              <div style={ this.state.clicked ? {opacity : 0, display: 'none'} : {opacity: 1, display: 'block'} } className="bakery_about__green_link_one" >          
+                  <Link to={location.pathname} bakery arrow onClick={this.toggleShow} >SHOW ME</Link>
+              </div>
+              <div style={ this.state.clicked ? {opacity : 1, display: 'block'} : {opacity: 0, display: 'none'} } className="bakery_about__green_link_two">
+                <Link to={location.pathname} bakery arrow onClick={this.toggleShow} >SHOW ME</Link>    
+              </div>
+              </>
+            )}
+          </Location> 
+
+
           </Row>
           <div className="bakery_about__white_company">
 
@@ -253,6 +267,7 @@ export const BakeryAboutquery = graphql`
       heading_one
       heading_three
       heading_two
+      heading_two_alernate      
       image_one
       paragraph_one
       show_me_link
