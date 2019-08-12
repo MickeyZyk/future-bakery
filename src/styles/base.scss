@@ -78,7 +78,7 @@ a {text-decoration: none}
   transition: all .5s;  
   left: 0.3vw;  
   position: relative;
-  bottom: -0.05vw;
+  bottom: -0.09vw;
   padding-top: 0.1vw;
   $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
   @include poly-fluid-sizing('height', $size-map);   
@@ -1777,6 +1777,25 @@ select {
 
 
 /* CROWDERS WORK */
+
+.cw_paragraph_bottom {
+
+  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 40px);
+  $height-map: (320px: 18px, 375px: 20px, 959px: 50px, 960px: 20px, 2880px: 48px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);    
+
+  @include grid-col;
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(4);
+    @include grid-offset-left(8.1);
+    margin-bottom: 3vw;
+  }  
+}
 
 .crowders_wrapper {
   position: relative;

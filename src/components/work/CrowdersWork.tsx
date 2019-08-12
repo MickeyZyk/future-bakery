@@ -199,11 +199,20 @@ export default class Work extends React.Component {
 
                 <LeftLink className={s.all_cases} gray arrow to={'/crowders-work'}>ALL CASES</LeftLink>
 
-                <p className={s.next_case}>{next ? 'NEXT CASE' : ''}</p>
+                <If condition={next}>
+                  <Then>
+
+                    <Link gray arrow className={s.next_case} 
+                    to={ "/crowders-work/" + slug( next ? next.title.toLowerCase() : '') }>
+                      NEXT CASE
+                    </Link>
+
+                  </Then>
+                </If>
 
                 <Link className={s.start_project} gray arrow 
                 to={next ? "/crosders-work/" + slug(next.title.toLowerCase()) : '/'}>
-                START A PROJECT WITH US
+                  START A PROJECT WITH US
                 </Link>
           
             </div>
@@ -227,10 +236,12 @@ export default class Work extends React.Component {
           </div>
 
           <Row>
-
-            <Link crowders button arrow className={s.bottom_button} to={'/'} >SEE A FUTURE REPORT</Link>
-
+            <p className="cw_paragraph_bottom">We regularly measure sentiment of key segments and check “temperature”</p>
           </Row>
+
+          <Row>
+            <Link crowders button arrow className={s.bottom_button} to={'/'} >SEE A FUTURE REPORT</Link>
+          </Row>          
 
 
        </div>

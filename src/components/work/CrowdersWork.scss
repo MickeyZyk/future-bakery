@@ -466,15 +466,14 @@
 }  
 
 .next_case {
-  font-weight: bold;
-  color: #222;
+
   @include grid-col;
   position: absolute;
 
   @media (min-width: $min-960) {
 
     @include grid-col(2);
-    @include grid-offset-left(8);
+    @include grid-offset-left(8.1);
   }
 }  
 
@@ -498,11 +497,15 @@
   @media (min-width: $min-960) {
 
     @include grid-col(3);
-    @include grid-offset-left(6.72);
+    @include grid-offset-left(8.1);
   }
 }  
 
+.next_case_link > div{
 
+text-align: left;
+
+}  
 
 .project {
 
@@ -544,3 +547,4 @@
     margin-bottom: 3vw;
   }  
 }
+
