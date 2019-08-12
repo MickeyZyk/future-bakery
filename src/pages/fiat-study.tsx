@@ -43,7 +43,7 @@ export default class Fiat extends React.Component {
   } 
 
   playVideo(){
-    console.log(this.videoPreview.current);
+  //console.log(this.videoPreview.current);
     this.videoPreview.current.style.zIndex = -5;
     this.videoOverlay.current.style.visibility = 'hidden';
     this.setState({ playing: true })

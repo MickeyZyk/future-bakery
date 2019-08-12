@@ -18,7 +18,7 @@ export class Team extends React.Component {
   }
 
   componentDidMount(){
-    console.log(this.props)
+  //console.log(this.props)
   }
 
   render() {
@@ -57,12 +57,12 @@ class Member extends React.Component {
 
   prevSlide(){
     if ( this.state.activeIndex > 0 ) {
-      console.log("PREV",this.state.activeIndex )      
+    //console.log("PREV",this.state.activeIndex )      
       this.setState({activeIndex: this.state.activeIndex - 1}, () => {
 
         var imageStrip = this.strip.current; 
         var children = imageStrip.querySelectorAll('img');
-        console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex) * -27.77778, );    
+      //console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex) * -27.77778, );    
 
         var currentTL = new TimelineMax(); 
         currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -27.77778, ease: 'Expo.easeInOut' });
@@ -77,12 +77,12 @@ class Member extends React.Component {
 
   nextSlide(){    
     if ( this.state.activeIndex < this.props.arrayOfImages.length - 1 ) {
-      console.log("next",this.state.activeIndex,  this.props.arrayOfImages.length)
+    //console.log("next",this.state.activeIndex,  this.props.arrayOfImages.length)
       this.setState({activeIndex: this.state.activeIndex + 1}, () => {
 
         var imageStrip = this.strip.current; 
         var children = imageStrip.querySelectorAll('img');
-        console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex + 1) * -27.77778, );  
+      //console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex + 1) * -27.77778, );  
 
         var currentTL = new TimelineMax(); 
         currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -27.77778, ease: 'Expo.easeInOut' });

@@ -147,10 +147,10 @@ class Carousel extends React.Component {
 
 
 
-      console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
+    //console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
       if (currentIndex < this.state.activeIndex && parseInt(currentIndex)+1 == this.state.activeIndex) {
 
-        console.log('CURR < ACT'); 
+      //console.log('CURR < ACT'); 
         var prevTL = new TimelineMax(); 
         if(prevHeading !== null){prevTL.set(prevHeading, {opacity: 1}).to(prevHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
         var currentTLx = new TimelineMax(); 
@@ -160,14 +160,14 @@ class Carousel extends React.Component {
 
       } else if (currentIndex > this.state.activeIndex && currentIndex == parseInt(this.state.activeIndex)+1) {
 
-        console.log('CURR > ACT');
+      //console.log('CURR > ACT');
         var nextTL = new TimelineMax(); 
         if(nextHeading !== null){nextTL.set(nextHeading, {opacity: 1}).to(nextHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
         var currentTLy = new TimelineMax(); 
         if(currentHeading !== null){currentTLy.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
 
       } else {
-        console.log('NOGO');
+      //console.log('NOGO');
         var currentTL = new TimelineMax(); 
         if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
         var currentTextTLx = new TimelineMax(); 
@@ -238,10 +238,10 @@ class Carousel extends React.Component {
 
 
 
-      console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
+    //console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
       if (currentIndex < this.state.activeIndex && parseInt(currentIndex)+1 == this.state.activeIndex) {
 
-        console.log('CURR < ACT'); 
+      //console.log('CURR < ACT'); 
         var prevTL = new TimelineMax(); 
         if(prevHeading !== null){prevTL.set(prevHeading, {opacity: 1}).to(prevHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
         var currentTLx = new TimelineMax(); 
@@ -251,14 +251,14 @@ class Carousel extends React.Component {
 
       } else if (currentIndex > this.state.activeIndex && currentIndex == parseInt(this.state.activeIndex)+1) {
 
-        console.log('CURR > ACT');
+      //console.log('CURR > ACT');
         var nextTL = new TimelineMax(); 
         if(nextHeading !== null){nextTL.set(nextHeading, {opacity: 1}).to(nextHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
         var currentTLy = new TimelineMax(); 
         if(currentHeading !== null){currentTLy.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
 
       } else {
-        console.log('NOGO');
+      //console.log('NOGO');
         var currentTL = new TimelineMax(); 
         if(currentHeading !== null){currentTL.from(currentHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
 
@@ -303,7 +303,7 @@ class Carousel extends React.Component {
         this.setState({ animating: false }) //After 1 second, set render to true
       }.bind(this), 1000)      
 
-      console.log(this.state.animating);
+    //console.log(this.state.animating);
 
       percentage = - current * multiplier;
 
@@ -317,7 +317,7 @@ class Carousel extends React.Component {
 
       let lines = split.lines;
 
-      console.log('SPLIT' + lines);
+    //console.log('SPLIT' + lines);
 
       var image_top = this.wrapperRef_top.current; 
       var image_bottom = this.wrapperRef_bottom.current; 
@@ -332,10 +332,10 @@ class Carousel extends React.Component {
 
       //console.log('index',this.state.activeIndex,'prev',prevHeading, 'current',currentHeading, 'next',nextHeading);
 
-      console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
+    //console.log('CURR', parseInt(currentIndex), 'ACTIVE', parseInt(this.state.activeIndex));
       if (currentIndex < this.state.activeIndex && parseInt(currentIndex)+1 == this.state.activeIndex) {
 
-        console.log('CURR < ACT'); 
+      //console.log('CURR < ACT'); 
         var prevTL = new TimelineMax(); 
         if(prevHeading !== null){prevTL.staggerFrom(split, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};
 
@@ -347,7 +347,7 @@ class Carousel extends React.Component {
 
       } else if (currentIndex > this.state.activeIndex && currentIndex == parseInt(this.state.activeIndex)+1) {
 
-        console.log('CURR > ACT');
+      //console.log('CURR > ACT');
         var nextTL = new TimelineMax(); 
         if(nextHeading !== null){nextTL.staggerFrom(nextHeading, 2.25, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut' })};   
         var currentTLy = new TimelineMax(); 
@@ -355,7 +355,7 @@ class Carousel extends React.Component {
 
 
       } else {
-        console.log('NOGO');
+      //console.log('NOGO');
         var currentTL = new TimelineMax(); 
         if(currentHeading !== null){currentTL.staggerFrom(tslines, 0.1, { yPercent: 100, opacity: 0, ease: 'Expo.easeInOut'}, .1, "+=0")};
         var currentTextTLx = new TimelineMax(); 
@@ -477,7 +477,7 @@ class CarouselImage extends React.Component {
   }
 
   componentDidMount(){
-    console.log("Mounted", this.props)
+  //console.log("Mounted", this.props)
   }
 
   _handleImageErrored() {

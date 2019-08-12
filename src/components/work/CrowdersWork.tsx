@@ -62,13 +62,13 @@ export default class Work extends React.Component {
     this.videoEmbed.current.style.zIndex = 10;    
     //this.videoOverlay.current.style.visibility = 'hidden';
     this.setState({ playing: true },() => {
-      console.log("PLAYING", this.state.playing)
+    //console.log("PLAYING", this.state.playing)
     })
   }
 
 
   handleClick(){
-    console.log("ANCHOR" + document.querySelector('#video_image_anchor'))    
+  //console.log("ANCHOR" + document.querySelector('#video_image_anchor'))    
     const { scrollbar } = this.$container;
     scrollbar.scrollIntoView(document.querySelector('#video_image_anchor'), {
       alignToTop: true,

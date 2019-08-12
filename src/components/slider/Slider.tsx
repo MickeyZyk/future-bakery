@@ -79,7 +79,7 @@ class Carousel extends React.Component {
 
   componentDidMount(){
 
-    console.log("PROPS", this.props)
+  //console.log("PROPS", this.props)
 
     if(this.props.auto){
       this.startCarousel()
@@ -121,11 +121,11 @@ class Carousel extends React.Component {
 
   wheelCallback(ev) {
     if( ev.deltaY > 0 ) {
-      console.log( this.state.activeIndex + 1, "delta", ev.deltaY, ev.deltaMode )
+    //console.log( this.state.activeIndex + 1, "delta", ev.deltaY, ev.deltaMode )
       parseInt(this.state.activeIndex) < this.props.images.length-1 && !this.state.animating ? this.nextSlide(parseInt(this.state.activeIndex) + 1) : false
     }
     else if( ev.deltaY < 0 ) {  
-      console.log( this.state.activeIndex - 1, "delta", ev.deltaY,  ev.deltaMode )
+    //console.log( this.state.activeIndex - 1, "delta", ev.deltaY,  ev.deltaMode )
       parseInt(this.state.activeIndex)  > 0 && !this.state.animating ? this.prevSlide(parseInt(this.state.activeIndex) - 1) : false
     }
   }
@@ -140,12 +140,12 @@ class Carousel extends React.Component {
     if (this.state.gotoState == this.props.images.length) {
 
       this.setState({ gotoState: 1 }, () => {
-        console.log("R", this.state.gotoState)
+      //console.log("R", this.state.gotoState)
         this.gotoSlide(this.state.gotoState)              
       }) 
 
     } else {
-      console.log("N", this.state.gotoState)
+    //console.log("N", this.state.gotoState)
       this.nextSlide(this.state.gotoState) 
     }
   }

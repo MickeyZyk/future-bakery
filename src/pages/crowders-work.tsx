@@ -72,13 +72,13 @@ export default class Work extends React.Component {
 
   componentDidMount(){
 
-    console.log(this.props.data.allGravCrowdersWork.edges)
+  //console.log(this.props.data.allGravCrowdersWork.edges)
     
     var hovered = this.hovered_item.current; 
 
     //var hovered = ReactDOM.findDOMNode(this.hovered_item.current);
     var hover_el = hovered.querySelector('.hover_element');
-    console.log("HHOVERR",hover_el)
+  //console.log("HHOVERR",hover_el)
     this.fireEvent('hover_element', "mouseover");
 
   }

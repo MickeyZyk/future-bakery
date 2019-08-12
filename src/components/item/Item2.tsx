@@ -53,7 +53,7 @@ export class Item2 extends React.Component {
 
 
   render() {
-    console.log("LEMME C", this.props.data)
+  //console.log("LEMME C", this.props.data)
 
 
     return (

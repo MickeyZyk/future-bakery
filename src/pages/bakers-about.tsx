@@ -91,9 +91,7 @@ const BakersAbout = ({ data, className }) => {
   return (
 
 
-      <TransitionState>
-        {({ transitionStatus }) => {
-          return (
+
 
             <>
 
@@ -105,6 +103,13 @@ const BakersAbout = ({ data, className }) => {
       <Helmet title={data.gravBakersAbout.title} />
     <ReactCursorPosition>
               <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
+
+
+
+      <TransitionState>
+        {({ transitionStatus }) => {
+          return (
+
 
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, ease: 'Power3.easeInOut' } } 
@@ -129,6 +134,17 @@ const BakersAbout = ({ data, className }) => {
               </div>
 
             </Tween>
+
+
+
+          )
+        }}
+      </TransitionState>
+
+
+
+
+
 
     </ReactCursorPosition>
       <ReactCursorPosition>
@@ -398,7 +414,9 @@ const BakersAbout = ({ data, className }) => {
 </Scrollbar>
 
 
-
+      <TransitionState>
+        {({ transitionStatus }) => {
+          return (          
 
 
             <Tween duration={2} 
@@ -409,13 +427,13 @@ const BakersAbout = ({ data, className }) => {
 
             </Tween>
 
-            </>
+
 
           )
         }}
       </TransitionState>
 
-
+            </>
   )
 }
 
