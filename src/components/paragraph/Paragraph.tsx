@@ -48,7 +48,7 @@ export class Paragraph extends React.Component {
 
 
     var exhaust = new TimelineMax({repeat: -1});
-    exhaust.staggerFrom(thisParagraphLines, 2, { opacity: 0, yPercent: 200, ease: 'Expo.easeInOut' }, .35).set(thisParagraphLines, {opacity:1}).addPause(111111111111111111111111111111111110)
+    exhaust.staggerFrom(thisParagraphLines, 2, { opacity: 0, yPercent: 200, ease: 'Expo.easeOut'}, .3).set(thisParagraphLines, {opacity:1}).addPause(9999999999999999999999999)
 
 
 
