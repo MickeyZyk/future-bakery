@@ -17,7 +17,7 @@ export class Authors extends React.Component {
   }
 
   componentDidMount(){
-    console.log(this.props)
+    //console.log(this.props)
   }
 
   render() {
@@ -43,19 +43,19 @@ class AuthorCarousel extends React.Component {
 
   componentDidMount(){
 
-    console.log("AUTH PROPPS", this.props)
+    //console.log("AUTH PROPPS", this.props)
 
   }
 
   setActive(i){
 
-      console.log("DOT NO", i.index )    
+      //console.log("DOT NO", i.index )    
 
       let current = i.currentTarget ? i.currentTarget.getAttribute('data-id') : 0; 
 
       this.setState({activeIndex: current}, () => {
 
-        console.log("INDEX no", current, this.state.activeIndex ) 
+        //console.log("INDEX no", current, this.state.activeIndex ) 
 
       })
 

@@ -3551,59 +3551,6 @@ select {
 }
 
 
-.bakers_about__join_link_two {
-
-
-  font-weight: bold;
-  color: #ff7a00;
-  @include grid-col(16);
-  @include grid-offset-left(0);
-
-  @media (min-width: $min-960) {
-    position: relative;
-    top: -14vw;    
-    @include grid-col(3);
-    @include grid-offset-left(7);
-  }  
-}
-
-.bakers_about__join_link_three {
-
-  font-weight: bold;
-  color: #ff7a00;
-  @include grid-col(16);
-  @include grid-offset-left(0);
-
-  @media (min-width: $min-960) {
-    position: relative;
-    top: -16.4vw;    
-    @include grid-col(3);
-    @include grid-offset-left(9.4);
-  }  
-}
-
-.divider_text {
-
-  @include grid-col(16);
-  @include grid-offset-left(0);
-
-  @media (min-width: $min-960) {
-    position: relative;
-    top: -15.22vw;
-    @include grid-col(3);
-    @include grid-offset-left(8);
-  } 
-}
-
-
-
-
-
-.meet {
-    background-color: #222222;
-    padding-top: 4vw;
-}
-
 .background {
 
   min-height: 32vw;
@@ -6027,23 +5974,9 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -14vw;    
-    @include grid-col(3);
-    @include grid-offset-left(7);
-  }  
-}
-
-.bakers_about__join_link_three {
-  font-weight: bold;
-  color: #ff7a00;
-  @include grid-col(4);
-  @include grid-offset-left(1);
-
-  @media (min-width: $min-960) {
-    position: relative;
-    top: -16.4vw;    
-    @include grid-col(3);
-    @include grid-offset-left(9.4);
+    top: -15vw;
+    @include grid-col(1.2);
+    @include grid-offset-left(6.3);
   }  
 }
 
@@ -6054,11 +5987,28 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -15.22vw;
-    @include grid-col(3);
-    @include grid-offset-left(8);
+    top: -15.35vw;
+    @include grid-col(2);
+    @include grid-offset-left(0);
   } 
 }
+
+.bakers_about__join_link_three {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -15vw;  
+    @include grid-col(1);
+    @include grid-offset-left(0);
+  }  
+}
+
+
+
 
 
 .bakers_about_team_row {

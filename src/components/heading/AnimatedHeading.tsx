@@ -13,7 +13,7 @@ export class AnimatedHeading extends React.Component {
   }
 
   componentDidMount(){
-      console.log(this.props);
+      //console.log(this.props);
       var entering = ['entering'].includes(this.transitionStatus);    
       var exiting = ['exiting'].includes(this.transitionStatus);          
       var h2 = this.heading.current; 

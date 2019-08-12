@@ -259,7 +259,7 @@ const BakersAbout = ({ data, className }) => {
       <Split className="tags_heading_bottom">{data.gravBakersAbout.problem_heading_three}</Split>
       <Row>
         <Link bakers arrow className="bakers_about__join_link_two" to={data.gravBakersAbout.icons_link_one}>{data.gravBakersAbout.icons_link_one_text}</Link>
-        <div className="divider_text">or find out how to</div>
+        <Paragraph className="divider_text">or find out how to</Paragraph>
         <Link bakers arrow className="bakers_about__join_link_three" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       </Row>
 
