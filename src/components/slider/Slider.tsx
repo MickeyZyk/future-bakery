@@ -68,10 +68,11 @@ class Carousel extends React.Component {
       showDots: false,
       isActive: 1,
       activeIndex: 0,
-      animating: false
+      animating: false,
+      gotoState : 1
     };
     this.chidrenNodes = [];
-    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 2500);  
+    this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 2000, true);  
     this.scream  = this.scream.bind(this)
   }
 
@@ -119,13 +120,13 @@ class Carousel extends React.Component {
 
 
   wheelCallback(ev) {
-    if( 1 > ev.deltaY > 0 ) {
-      console.log( this.state.activeIndex + 1, "delta", ev.deltaY / 150 )
-      parseInt(this.state.activeIndex) < this.props.images.length-1 && !this.state.animating ? this.nextSlide(parseInt(this.state.activeIndex) + 1) : false
+    if( ev.deltaY > 0 ) {
+      console.log( this.state.activeIndex + 1, "delta", ev.deltaY, ev.deltaMode )
+      parseInt(this.state.activeIndex) < this.props.images.length-1 ? this.nextSlide(parseInt(this.state.activeIndex) + 1) : false
     }
-    else if( -1 < ev.deltaY < 0 ) {  
-      console.log( this.state.activeIndex - 1, "delta", ev.deltaY / 150 )
-      parseInt(this.state.activeIndex)  > 0 && !this.state.animating ? this.prevSlide(parseInt(this.state.activeIndex) - 1) : false
+    else if( ev.deltaY < 0 ) {  
+      console.log( this.state.activeIndex - 1, "delta", ev.deltaY,  ev.deltaMode )
+      parseInt(this.state.activeIndex)  > 0 ? this.prevSlide(parseInt(this.state.activeIndex) - 1) : false
     }
   }
 
@@ -135,14 +136,17 @@ class Carousel extends React.Component {
   }
 
   scream(){
-    if (goto == this.props.images.length) {
-      this.gotoSlide(1)
-      goto = 1
-      console.log("GT" + goto)
+
+    if (this.state.gotoState == this.props.images.length) {
+
+      this.setState({ gotoState: 1 }, () => {
+        console.log("R", this.state.gotoState)
+        this.gotoSlide(this.state.gotoState)              
+      }) 
+
     } else {
-      this.nextSlide(goto)
-      ++goto
-      console.log("GB" + goto)      
+      console.log("N", this.state.gotoState)
+      this.nextSlide(this.state.gotoState) 
     }
   }
 
@@ -158,7 +162,7 @@ class Carousel extends React.Component {
 
     let current = i;     
 
-    this.setState({ animating: true, activeIndex: current }, () => {
+    this.setState({ animating: true, activeIndex: current, gotoState:  parseInt(this.state.gotoState) - 1  }, () => {
 
 
       percentage = this.state.activeIndex < this.props.images.length ? percentage + multiplier : 0 ;
@@ -225,7 +229,7 @@ class Carousel extends React.Component {
 
     let current = i;     
 
-    this.setState({ animating: true, activeIndex: current }, () => {
+    this.setState({ animating: true, activeIndex: current, gotoState:  parseInt(this.state.gotoState) + 1 }, () => {
 
       percentage = this.state.activeIndex > 0 ? percentage - multiplier : multiplier - this.props.images.length * multiplier ;
 
@@ -291,7 +295,7 @@ class Carousel extends React.Component {
 
     let current = i.currentTarget ? i.currentTarget.getAttribute('data-test') : 0; 
 
-    this.setState({ animating: true, activeIndex: current }, () => {
+    this.setState({ animating: true, activeIndex: current, gotoState:  parseInt(current) + 1 }, () => {
 
       setTimeout(function() { //Start the timer
         this.setState({ animating: false }) //After 1 second, set render to true

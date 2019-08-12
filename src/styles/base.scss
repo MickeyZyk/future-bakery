@@ -1885,7 +1885,7 @@ select {
 
   @media (min-width: $min-960) {
     position: absolute;
-    top: 44.6vw;
+    bottom: 8.3vw;
     @include grid-col(3);
     @include grid-offset-left(14);
   }     
@@ -6480,7 +6480,7 @@ select {
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-    bottom: 8.5vw;
+    bottom: 8.3vw;
     @include grid-col(3);
     @include grid-offset-left(14);
     z-index: 5; 
@@ -6495,7 +6495,7 @@ select {
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-    bottom: 8.5vw;
+    bottom: 8.3vw;
     @include grid-col(2);
     @include grid-offset-left(15);
     z-index: 5; 
