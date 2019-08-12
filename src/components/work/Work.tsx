@@ -266,7 +266,9 @@ export default class Work extends React.Component {
 
                 <If condition={next}>
                   <Then>
-                    <Link gray arrow className={s.next_case}>NEXT CASE</Link>
+                    <Link 
+                    to={ location.pathname.includes('bakery') ? "/bakery-work/" + slug(next.title.toLowerCase()) : "/bakers-work/" + slug(next.title.toLowerCase())}>
+                    gray arrow className={s.next_case}>NEXT CASE</Link>
                   </Then>
                 </If>
 
