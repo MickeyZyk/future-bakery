@@ -62,6 +62,16 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
               href="../fonts/proxima_nova_light-webfont.woff2"
               type="font/woff2"
               crossOrigin="anonymous" />
+        <link rel="preload"
+              as="image"
+              href="../images/usual_closed_process.png"
+              type="png"
+              crossOrigin="anonymous" />   
+        <link rel="preload"
+              as="image"
+              href="../images/our_process.png"
+              type="png"
+              crossOrigin="anonymous" />  
       </Helmet>
 
       <ContextProviderComponent>
