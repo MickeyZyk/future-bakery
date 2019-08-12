@@ -150,7 +150,7 @@ export default class Work extends React.Component {
             </div>
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <If condition={this.props.data.gravCrowdersWork.logo_light}>
+                <If condition={this.props.data.gravCrowdersWork.video != 'null'}>
                   <Then>
                     <img className={s.client_logo} src={ 'https://future.stratego.ba/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.logo_light } />              
                   </Then>
@@ -158,11 +158,19 @@ export default class Work extends React.Component {
                     <div style={{height: '2.8vw'}}></div>
                   </Else>
                 </If>
-                <p className={s.award}>{this.props.data.gravCrowdersWork.title.toUpperCase()}</p>
+                <If condition={this.props.data.gravCrowdersWork.video != 'null'}>
+                  <Then>
+                    <p className={s.award}>{this.props.data.gravCrowdersWork.title.toUpperCase()}</p>
+                  </Then>
+                  <Else>
+                    <div style={{height: '2.8vw'}}></div>
+                  </Else>
+                </If>                
+
               </div>
             </div>
             <div style={{
-              opacity: .45,
+              opacity: 0,
               backgroundColor: '#000',
               width: '100%',
               height: '46.5vw',

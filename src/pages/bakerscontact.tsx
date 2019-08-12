@@ -6,6 +6,7 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import { Link } from 'components/link/Link';
+import { ExternalLink } from 'components/header/ExternalLink';
 import { Row } from 'components/row/Row';
 
 
@@ -48,7 +49,7 @@ export default () => (
                     <p>Neváhejte a kontaktujte nás.</p>
                     <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
                     <Row>                
-                      <Link className="bakery_contact_flip_button" bakers button arrow to={'/'}>START A PROJECT WITH US</Link>
+                      <Link className="bakery_contact_flip_button" bakers button arrow to={'mailto:info@futurebakers.com'}>CONTACT US</Link>
                     </Row>                  
                   </div>
 

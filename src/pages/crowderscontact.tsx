@@ -6,6 +6,7 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import { Link } from 'components/link/Link';
+import { ExternalLink } from 'components/header/ExternalLink';
 import { Row } from 'components/row/Row';
 import Scrollbar from 'react-smooth-scrollbar';
 
@@ -16,10 +17,8 @@ import { TransitionState } from "gatsby-plugin-transition-link";
 export default () => (
   <>
     <ReactCursorPosition className='fullscreen_cursor_position'>   
-      <Helmet title="Bakery" />
-      <SVGicon className='bakery_contact_house' src='crowders_home.svg' /> 
-
-
+      <Helmet title="Contact" />
+      <SVGicon className='bakery_contact_house' src='crowders_home.svg' />
 
       <TransitionState>
         {({ transitionStatus }) => {
@@ -33,8 +32,7 @@ export default () => (
           
               <div className='fulscreen_slider'>
 
-                  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>      
-
+                  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}> 
 
                     <AnimatedHeading className='bakery_contact_heading crowders_color'>Headline call to action for contact page.</AnimatedHeading>
                     <div className="bakery_contact_adress_block">
@@ -47,7 +45,7 @@ export default () => (
                       <p>Neváhejte a kontaktujte nás.</p>
                       <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
                       <Row>                
-                        <Link className="bakery_contact_flip_button" crowders button arrow to={'/'}>START A PROJECT WITH US</Link>
+                        <Link className="bakery_contact_flip_button" crowders button arrow to={'https://blah.com'}>CONTACT US</Link>
                       </Row>
                     </div>
                     <img src="../images/paper_plane.jpg" className='bakery_contact_image'/>
