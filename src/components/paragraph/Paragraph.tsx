@@ -24,6 +24,7 @@ export class Paragraph extends React.Component {
 
   componentDidMount(){
 
+/*
     TimelineMax.defaultOverwrite = false
 
     var thisParagraph = this.paragraph.current;
