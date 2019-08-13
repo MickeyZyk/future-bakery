@@ -79,7 +79,7 @@ class AuthorCarousel extends React.Component {
       to={ this.state.activeIndex == i ? { opacity: 1, ease: 'Power3.easeInOut' } : { opacity: 0, ease: 'Power3.easeInOut' }  } >          
 
         <div className={s.name}>
-          <Paragraph position={i}>{names[i]}</Paragraph>
+          <p className="author_names" position={i}>{names[i]}</p>
         </div>
 
 

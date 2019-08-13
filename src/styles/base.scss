@@ -2652,7 +2652,7 @@ select {
     @include responsive-font(46px, 52px);    
     margin-top: 0;     
     @include grid-col(4);
-    @include grid-offset-left(2);
+    @include grid-offset-left(-4);
     line-height: 51px;
     margin-bottom: 0vw;
 
@@ -2695,7 +2695,7 @@ select {
     @media (min-width: $min-960) {
 
       @include grid-col(3);
-      @include grid-offset-left(-4);
+      @include grid-offset-left(2);
 
       $font-map: (375px: 20px, 959px: 21px, 960px: 16px, 2880px: 48px);
       $height-map: (375px: 20px, 959px: 50px, 960px: 17px, 2880px: 50px);
@@ -2722,7 +2722,7 @@ select {
     @media (min-width: $min-960) {
       position: relative;
       @include grid-col(3);
-      @include grid-offset-left(-9);
+      @include grid-offset-left(-3);
 
       $font-map: (375px: 20px, 959px: 21px, 960px: 16px, 2880px: 48px);
       $height-map: (375px: 20px, 959px: 50px, 960px: 17px, 2880px: 50px);
@@ -2772,7 +2772,7 @@ select {
       position: relative;
       top: 9vw;
       @include grid-col(1);
-      @include grid-offset-left(5);
+      @include grid-offset-left(-1);
 
 
     } 

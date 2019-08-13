@@ -163,11 +163,11 @@ render() {
           </Row>
           <div className="bakery_about__white_company">
 
-            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', ease: 'Power2.easeInOut'} : { clipPath:'inset(0% 100% 0% 0%)', ease: 'Power2.easeInOut'  } } >
+            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', opacity:1, ease: 'Power2.easeInOut'} : { clipPath:'inset(0% 100% 0% 0%)', opacity:0, ease: 'Power2.easeInOut'  } } >
               <img src={ImageBottom} className="switch_top_image hide_on_mobile visible"/>
             </Tween>
 
-            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0 0% 0% 100%)', ease: 'Power2.easeInOut'  } : { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', ease: 'Power2.easeInOut'  } } >
+            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0 0% 0% 100%)', opacity:0, ease: 'Power2.easeInOut'  } : { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', opacity:1, ease: 'Power2.easeInOut'  } } >
               <img src={ImageTop} className="switch_bottom_image hide_on_mobile visible"  />  
             </Tween>            
 

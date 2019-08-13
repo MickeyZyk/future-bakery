@@ -150,12 +150,12 @@ export class Clients extends React.Component {
             <img src="../images/dukla.png" className="whom_02 b_image" ref={this.imageb_02}/>
             <img src="../images/emco.png" className="whom_03 b_image" ref={this.imageb_03}/>
 
-            <img src="../images/fiat.png" className="whom_01 b_image" ref={this.imageb_04}/>
+            <img src="../images/mallcz.png" className="whom_01 b_image" ref={this.imageb_04}/>
             <img src="../images/grants.png" className="whom_02 b_image" ref={this.imageb_05}/>
             <img src="../images/hello.png" className="whom_03 b_image" ref={this.imageb_06}/>
 
             <img src="../images/hledamerodice.png" className="whom_01 b_image" ref={this.imageb_07}/>
-            <img src="../images/j&t-banka.png" className="whom_02 b_image" ref={this.imageb_08}/>
+            <img src="../images/muller.png" className="whom_02 b_image" ref={this.imageb_08}/>
             <img src="../images/jihoceska-univerzita.png" className="whom_03 b_image" ref={this.imageb_09}/>      
 
 
