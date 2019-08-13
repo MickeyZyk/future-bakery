@@ -13,6 +13,7 @@ import SVGicon from 'components/svgicon/SVGicon';
 import { Link } from 'components/link/Link';
 import ReactCursorPosition from 'react-cursor-position';
 import { Throttle } from 'react-throttle';
+import { Location } from '@reach/router';
 import _ from 'lodash';
 import s from './Slider.scss';
 
@@ -404,16 +405,35 @@ class Carousel extends React.Component {
 
     var carouselImages =  images.map((image, i) =>{
       return(
+
+
+      <Location>
+          {({ location }) => (
+
+
+
         <div style={{ position: 'relative', width: '100%', height: '35vw' }} key={'2key_'+i}>
           <CarouselImage horizontal={this.state.horizontal} className='child_image' key={'key_'+i} label={labels[i]} 
           timeInBetween={this.props.timeInBetween} whichOne={i} src={image} />
           <h2 key={'2key_'+i} id={'i0'+(i)} className={`${'single_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>
           <h3 key={'key_text_'+i} className={`${'single_slide_text'} ${this.state.activeIndex == (i-1) ? 'text_next' : ''} ${this.state.activeIndex == i ? 'text_current' : ''} ${this.state.activeIndex == (i+1) ? 'text_prev' : ''}`}>{texts[i]}</h3>
-            <Link arrow gray className={`${'button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>LEARN MORE</Link>
+            <Link arrow gray className={`${'button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>{location.pathname.includes('cz') ? 'ZJISTIT VÍCE' : 'LEARN MORE'}</Link>
           <div className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>{this.props.images.length}</div>
           <div className='indicator_divider'></div>
           <div className={`${'slider_indicator'} ${this.state.activeIndex == i ? 'indicator_current': ''}`}>{i+1}</div>
         </div>
+
+
+
+
+          )}
+        </Location> 
+
+
+
+
+
+
       )
     })
 
