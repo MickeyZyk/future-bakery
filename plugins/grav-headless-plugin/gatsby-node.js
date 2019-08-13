@@ -15,7 +15,14 @@ exports.sourceNodes = async ({boundActionCreators}) => {
 
     bakersSlides.forEach(x => {
         createNode(x)
-    })     
+    }) 
+
+
+    const bakersCzSlides = await fetchBakersCzSlides()
+
+    bakersCzSlides.forEach(x => {
+        createNode(x)
+    }) 
 
     const crowdersSlides = await fetchCrowdersSlides()
 
@@ -35,12 +42,25 @@ exports.sourceNodes = async ({boundActionCreators}) => {
         createNode(x)
     })    
 
+    const bakersWorkCz = await fetchBakersCzWork()
+
+    bakersWorkCz.forEach(x => {
+        createNode(x)
+    })  
 
     const bakersAbout = await fetchBakersAbout()
 
     bakersAbout.forEach(x => {
         createNode(x)
     }) 
+
+    const bakersCzAbout = await fetchBakersCzAbout()
+
+    bakersCzAbout.forEach(x => {
+        createNode(x)
+    }) 
+
+
 /*
     const bakersWork = await fetchBakersWork()
 
@@ -129,6 +149,42 @@ fetchBakersSlides = async () => {
             .map(x => Object.assign(x, {
                 id: x.title,                  
                 path: `/bakers-slides/${slug(x.title)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
+fetchBakersCzSlides = async () => {
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `BakersCz`
+    })
+
+    const ProductNode = createNodeFactory('SlideCz', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('http://future.stratego.ba/cz/czbakers', {
+            params: {
+                "return-as": "json"
+            }
+        })
+    
+        return response.data.header.slider
+            .map(x => x)
+            .map(x => Object.assign(x, {
+                id: x.title,                  
+                path: `/bakers-slides-cz/${slug(x.title)}`.toLowerCase()
             }))
             .map(ProductNode)
     }
@@ -247,6 +303,42 @@ fetchBakeryWork = async () => {
     }
 }
 
+fetchBakersCzWork = async () => {
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `grav`
+    })
+
+    const ProductNode = createNodeFactory('BakersCzWork', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('http://future.stratego.ba/cz/czbakers/work', {
+            params: {
+                "return-as": "json"
+            }
+        })
+    
+        return response.data.children
+            .map(x => x.header)
+            .map(x => Object.assign(x, {
+                id: x.title,
+                path: `/grav-page-bakers-cz-work/${slug(x.title)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
 
 fetchBakersAbout = async () => {
     const {
@@ -282,6 +374,42 @@ fetchBakersAbout = async () => {
         //throw e
     }
 }
+
+fetchBakersCzAbout = async () => {
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `grav`
+    })
+
+    const ProductNode = createNodeFactory('BakersCzAbout', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('http://future.stratego.ba/cz/czbakers/pages', {
+            params: {
+                "return-as": "json"
+            }
+        })
+    
+        return response.data.children
+            .map(x => x.header)
+            .map(x => Object.assign(x, {
+                path: `/grav-page-bakers-cz-about/${slug(x.title)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
 /*
 fetchBakersWork = async () => {
     const {

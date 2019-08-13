@@ -22,6 +22,9 @@
   font-weight: bold;
 }
 
+.lighter {
+  font-weight: lighter;;
+}
 
 
 img {
@@ -269,7 +272,42 @@ a {text-decoration: none}
 
 
 
+
+
+
+
 /* menu links */
+
+
+
+
+.switcher_link {
+    @include grid-offset-left(10); 
+    @media (min-width: $min-960) {
+      margin-left: 16.666666vw!important; 
+      display: inline-block; /* show above tablet width */ 
+      top:5vw;  
+    }  
+  
+  }  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .menu_white_svg {
   
@@ -382,55 +420,10 @@ a {text-decoration: none}
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* 18 GRID */
 
 
 /* mobile */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

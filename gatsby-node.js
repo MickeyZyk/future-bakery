@@ -23,6 +23,24 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
               }
             }
           }
+          allGravBakersCzWork {
+            edges {
+              node {
+                heading_two
+                heading_one
+                big_image
+                category_name
+                category
+                logo_dark
+                logo_light
+                new_way
+                one_way
+                title
+                video
+                id
+              }
+            }
+          }          
           allGravCrowdersWork {
             edges {
               node {
@@ -43,6 +61,7 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
 
     const { createPage } = boundActionCreators
     const productTemplate = path.resolve('src/components/work/Work.tsx')
+    const bakersCzTemplate = path.resolve('src/components/work/CzWork.tsx')    
     const crowdersTemplate = path.resolve('src/components/work/CrowdersWork.tsx')
 
 
@@ -78,7 +97,28 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
 
         })
 
+    result.data.allGravBakersCzWork
+        .edges
+        .map(x => x.node)
+        .forEach((node, index) => {
 
+        const prev = index === 0 ? null : result.data.allGravBakersCzWork.edges[index - 1].node
+        const next = index === result.data.allGravBakersCzWork.edges.length - 1 ? null : result.data.allGravBakersCzWork.edges[index + 1].node
+
+
+            createPage({
+                path: `/czbakers-work/${slug(node.title)}`.toLowerCase(),
+                component: slash(bakersCzTemplate),
+                context: {
+                    id: node.id,
+                    prev,
+                    next
+                }
+            })
+
+
+
+        })
 
     result.data.allGravCrowdersWork
         .edges
@@ -101,6 +141,8 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
 
 
         })
+
+
 
 
 }

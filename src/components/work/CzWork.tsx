@@ -25,7 +25,7 @@ import { Row } from 'components/row/Row';
 import s from './Work.scss';
 const slug = require('slug')
 
-export default class Work extends React.Component {
+export default class CzWork extends React.Component {
 
   constructor(props){
     super(props);
@@ -106,11 +106,11 @@ export default class Work extends React.Component {
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
 
-        <SVGicon className={this.props.data.gravBakeryWork.one_way ? s.work_details_no : s.hidden} src='work_details_no.svg'  />       
-        <SVGiconReverse className={this.props.data.gravBakeryWork.one_way ? s.work_details_ok : s.hidden } src='work_details_ok.svg'  /> 
+        <SVGicon className={this.props.data.gravBakersCzWork.one_way ? s.work_details_no : s.hidden} src='work_details_no.svg'  />       
+        <SVGiconReverse className={this.props.data.gravBakersCzWork.one_way ? s.work_details_ok : s.hidden } src='work_details_ok.svg'  /> 
 
 
-        <Helmet title={this.props.data.gravBakeryWork.title} />
+        <Helmet title={this.props.data.gravBakersCzWork.title} />
         <div className={s.row}>
           <div className={s.row__one}>
 
@@ -145,9 +145,9 @@ export default class Work extends React.Component {
 
               
 
-                    <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_dark } />
+                    <img className={s.client_logo} src={ 'http://future.stratego.ba/cz/czbakers/work/'+ slug(this.props.data.gravBakersCzWork.title.toLowerCase()) + '/' + this.props.data.gravBakersCzWork.logo_dark } />
                     <>
-                    <HeadingTwo className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</HeadingTwo>
+                    <HeadingTwo className={s.column__col1_heading}>{this.props.data.gravBakersCzWork.heading_one}</HeadingTwo>
                     </>
 
         
@@ -156,7 +156,7 @@ export default class Work extends React.Component {
             </div>
           </div>
 
-              <If condition={() => this.props.data.gravBakeryWork.one_way}>
+              <If condition={() => this.props.data.gravBakersCzWork.one_way}>
                   <Then>
 
 
@@ -176,11 +176,11 @@ export default class Work extends React.Component {
                     <div className={s.row__two}>
                       <div className={s.column__col2}>
                         <p className={s.way}>one way</p>
-                        <p className={s.advice}>{this.props.data.gravBakeryWork.one_way}</p>
+                        <p className={s.advice}>{this.props.data.gravBakersCzWork.one_way}</p>
                       </div>
                       <div className={s.column__col3}>
                         <p className={s.way}>new way</p>      
-                        <p className={s.larger_advice}>{this.props.data.gravBakeryWork.new_way}</p>
+                        <p className={s.larger_advice}>{this.props.data.gravBakersCzWork.new_way}</p>
                       </div>
                     </div>
 
@@ -213,7 +213,7 @@ export default class Work extends React.Component {
                 </ScrollTo>
               </div>
 
-              <If condition={this.props.data.gravBakeryWork.video != 'null'}>
+              <If condition={this.props.data.gravBakersCzWork.video != 'null'}>
                 <Then>              
                   <div className={s.column__col6}>
                     <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
@@ -234,9 +234,9 @@ export default class Work extends React.Component {
 
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_light } />              
-                <p className={s.award}>{this.props.data.gravBakeryWork.category ? this.props.data.gravBakeryWork.category : ' '}<span className={s.green}>{this.props.data.gravBakeryWork.category_name ? this.props.data.gravBakeryWork.category_name : ' '}</span></p>
-                <h1 className={s.award_heading}>{this.props.data.gravBakeryWork.heading_two}</h1>
+                <img className={s.client_logo} src={ 'http://future.stratego.ba/cz/czbakers/work/'+ slug(this.props.data.gravBakersCzWork.title.toLowerCase()) + '/' + this.props.data.gravBakersCzWork.logo_light } />              
+                <p className={s.award}>{this.props.data.gravBakersCzWork.category ? this.props.data.gravBakersCzWork.category : ' '}<span className={s.green}>{this.props.data.gravBakersCzWork.category_name ? this.props.data.gravBakersCzWork.category_name : ' '}</span></p>
+                <h1 className={s.award_heading}>{this.props.data.gravBakersCzWork.heading_two}</h1>
               </div>
             </div>
             </Tween>
@@ -247,12 +247,12 @@ export default class Work extends React.Component {
       }}
     </TransitionState>              
             
-            <img id="video_image" src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
+            <img id="video_image" src={ 'http://future.stratego.ba/cz/czbakers/work/'+ slug(this.props.data.gravBakersCzWork.title.toLowerCase()) + '/' + this.props.data.gravBakersCzWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
               
 
 
             <div id="video" className={s.embedded_video} ref={this.videoEmbed}>
-              <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravBakeryWork.video} playing={this.state.playing} />            
+              <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravBakersCzWork.video} playing={this.state.playing} />            
             </div>
 
           </div>
@@ -262,7 +262,7 @@ export default class Work extends React.Component {
 
             <div className={s.bottom_row}>
 
-                <LeftLink className={s.all_cases} gray arrow to={'/bakery-work'}>ALL CASES</LeftLink>
+                <LeftLink className={s.all_cases} gray arrow to={'/czbakers-work'}>ALL CASES</LeftLink>
 
 
                 <If condition={next}>
@@ -272,7 +272,7 @@ export default class Work extends React.Component {
                     {({ location }) => (    
 
                       <Link 
-                      to={ location.pathname.includes('bakery') ? "/bakery-work/" + slug(next.title.toLowerCase()) : "/bakers-work/" + slug(next.title.toLowerCase())}
+                      to={ "/czbakers-work/" + slug(next.title.toLowerCase())}
                       gray arrow className={s.next_case}>NEXT CASE</Link>
 
                       )}
@@ -288,7 +288,7 @@ export default class Work extends React.Component {
                     {({ location }) => (    
 
                       <Link 
-                      to={ location.pathname.includes('bakery') ? "/crowderscontact/" + slug(next.title.toLowerCase()) : "/bakerscontact/" + slug(next.title.toLowerCase())}
+                      to={ "/bakerscontact/" + slug(next.title.toLowerCase())}
                       gray arrow className={s.start_project}>START A PROJECT WITH US</Link>
 
                       )}
@@ -305,11 +305,7 @@ export default class Work extends React.Component {
                     {({ location }) => (        
 
                     <Link gray className={s.next_case_link} 
-                    to={ 
-                      location.pathname.includes('czbakers') ? "/czbakers-work/" + slug(next.title.toLowerCase()) 
-                    : location.pathname.includes('bakery') ? "/bakery-work/" + slug(next.title.toLowerCase()) 
-                    : "/bakers-work/" + slug(next.title.toLowerCase())
-                    }>
+                    to={ "/czczbakers-work/" + slug(next.title.toLowerCase()) }>
                       <p className={s.topic}>{next ? next.title : ''}</p>
                     </Link>
 
@@ -364,8 +360,8 @@ export default class Work extends React.Component {
 
 
 export const query = graphql`
-  query BakeryWorkQueryByTitle($id: String!) {
-    gravBakeryWork(id: {eq: $id}) {
+  query BakersCzWorkQueryByTitle($id: String!) {
+    gravBakersCzWork(id: {eq: $id}) {
       big_image
       category
       category_name

@@ -9,7 +9,7 @@ import { Footer } from 'components/footer/Footer';
 import { Link as HeaderLink } from 'components/header/Link';
 import { Devtools } from 'components/devtools/Devtools';
 import ReactDOM from 'react-dom';
-
+import { If, Then, Else, Switch, Case, Default } from 'react-if'
 import Circle from 'assets/svg/circle.svg';
 import WhiteCircle from 'assets/svg/white_circle.svg';
 import { Controller, Scene } from 'react-scrollmagic';
@@ -62,21 +62,57 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
               href="../fonts/proxima_nova_light-webfont.woff2"
               type="font/woff2"
               crossOrigin="anonymous" />
-        <link rel="preload"
-              as="image"
-              href="../images/usual_closed_process.png"
-              crossOrigin="anonymous" />   
-        <link rel="preload"
-              as="image"
-              href="../images/our_process.png"
-              crossOrigin="anonymous" />  
+ 
       </Helmet>
 
       <ContextProviderComponent>
 
+ 
+         <Location>
+            {({ location }) => (   
+                <>
+
+              <If condition={location.pathname.includes('bakers') && !location.pathname.includes('cz')}>
+
+                <Then>
+
+                <ContextConsumer>
+                  {({ data, set  }) => (
+                    <HeaderLink 
+                    className={ 'submenu_link switcher_link'} 
+                    onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERY" to="/czbakers">CZ / <span className="bold">EN</span></HeaderLink>
+                  )}
+                </ContextConsumer>
+
+                </Then>
+
+              </If>
+
+              <If condition={location.pathname.includes('czbakers')}>
+
+                <Then>
+
+                <ContextConsumer>
+                  {({ data, set  }) => (
+                    <HeaderLink 
+                    className={ 'submenu_link switcher_link'} 
+                    onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERY" to="/bakers"><span className="bold">CZ</span> / EN</HeaderLink>
+                  )}
+                </ContextConsumer>
+
+                </Then>
+
+              </If>              
+
+              </>
+            )}
+          </Location> 
+
+
         <Header>
 
-          <Location>
+
+           <Location>
             {({ location }) => (          
 
               <ContextConsumer>
@@ -143,7 +179,7 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
 
               <ContextConsumer>
                 {({ data, set }) => (
-                  <HeaderLink className={ location.pathname.includes('menu') ? `white_text white_circle` : '' } name="MENU" 
+                  <HeaderLink className={ location.pathname.includes('menu') || location.pathname.includes('family') ? `white_text white_circle` : '' } name="MENU" 
                  
                   to={ 
 
@@ -151,8 +187,9 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
                   : location.pathname == '/family/' ?   ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )
                   : location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu' ? ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )
                   : location.pathname.includes('bakery') && !location.pathname.includes('menu') ? '/bakerymenu'  
-                  : location.pathname.includes('bakers') && !location.pathname.includes('menu') ? '/bakersmenu' 
+                  : location.pathname.includes('bakers') && !location.pathname.includes('cz') && !location.pathname.includes('menu') ? '/bakersmenu' 
                   : location.pathname.includes('crowders') && !location.pathname.includes('menu') ? '/crowdersmenu' 
+                  : location.pathname.includes('czbakers') && !location.pathname.includes('menu') ? '/czbakersmenu'                   
                   : ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu' ) 
 
 

@@ -9,6 +9,7 @@ import { LeftLink } from 'components/link/LeftLink';
 import { Link } from 'components/link/Link';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './DarkTeam.scss';
+import { Location } from '@reach/router';
 import _ from 'lodash';
 
 export class DarkTeam extends React.Component {
@@ -140,10 +141,20 @@ var linkURLs = this.props.links
               <div className={s.after_bar}></div>              
           </div>        
 
-        <Row>
-          <LeftLink arrow bakers to={'/bakers-about'} className={s.team_previous} onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
-          <Link arrow bakers to={'/bakers-about'} className={s.team_next} onClick={this.nextSlide.bind(this)}>NEXT</Link>     
-        </Row>
+
+          <Location>
+            {({ location }) => (
+
+            <Row>
+              <LeftLink arrow bakers to={location.pathname} className={s.team_previous} onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
+              <Link arrow bakers to={location.pathname} className={s.team_next} onClick={this.nextSlide.bind(this)}>NEXT</Link>     
+            </Row>
+
+            )}
+          </Location> 
+
+
+
       </>
     );
 

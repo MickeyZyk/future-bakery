@@ -70,7 +70,7 @@ export default class Work extends React.Component {
 
   componentDidMount(){
 
-  //console.log(this.props.data.allGravBakeryWork.edges)
+  //console.log(this.props.data.allGravBakersCzWork.edges)
     
     var hovered = this.hovered_item.current; 
 
@@ -120,7 +120,7 @@ export default class Work extends React.Component {
 
 
 
-                {this.props.data.allGravBakeryWork.edges.map(( node, i ) => (
+                {this.props.data.allGravBakersCzWork.edges.map(( node, i ) => (
                   <div className="work_item_wrapper" key={i}>
                   <Item2 data={node} i={i} />
                   </div>
@@ -131,6 +131,7 @@ export default class Work extends React.Component {
                 </div>
 
 
+
               <Location>
                 {({ location }) => (
                     <Link gray arrow className="bakery_work_download" to={location.pathname}>DOWNLOAD MORE PROJECTS</Link>
@@ -138,7 +139,7 @@ export default class Work extends React.Component {
               </Location> 
 
 
-                <Link gray arrow className="bakery_work_project" to={'/bakerscontatc'}>START A PROJECT WITH US</Link>                
+                <Link gray arrow className="bakery_work_project" to={'/czbakerscontact'}>START A PROJECT WITH US</Link>                
 
               </ReactCursorPosition>                
 
@@ -176,8 +177,8 @@ export default class Work extends React.Component {
 
 
 export const query = graphql`
-  query AllBakersWork {
-    allGravBakeryWork {
+  query AllBakersCzWork {
+    allGravBakersCzWork {
       edges {
         node {
           id
