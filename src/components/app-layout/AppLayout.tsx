@@ -33,7 +33,7 @@ interface IAppLayoutProps {
 export default ({  children, data, set, state, location, ...props }: IAppLayoutProps) => ( 
 
   <>
-      <Devtools />
+
 
 
     <div className={s.layout}>
