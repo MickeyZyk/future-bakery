@@ -20,7 +20,7 @@ import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
-import s from '../components/item/Item.scss';
+import s from '/components/item/Item.scss';
 
 export default class Work extends React.Component {
 

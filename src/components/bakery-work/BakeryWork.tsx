@@ -91,13 +91,13 @@ var item=(
                   to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeIn', opacity: 0 } : false } >
                     <div className={`${s.figure} ${this.props.className}`} onMouseEnter={this.toggleHoverEnter} onMouseLeave={this.toggleHoverLeave}>
                       <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', clipPath:'inset(0.001% 0.002% 0.003% 0.005%)'} : {ease: 'Power2.easeOut', clipPath:'inset(0.001% 100% 0.003% -2%)'}} >
-                        <img className={s.arrow} src={'../svg/work_arrow.svg'} />
+                        <img className={s.arrow} src={'/svg/work_arrow.svg'} />
                       </Tween>
                       <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut',  opacity: 0}} >                      
                         <h4 className={s.arrow_heading}>Creative strategy</h4>     
                       </Tween>
                       <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                               
-                        <img className={s.client_logo} src='../images/client.png'/>
+                        <img className={s.client_logo} src='/images/client.png'/>
                       </Tween>
                       <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                      
                         <h4 className={s.top_title}>FIAT 500X</h4>
@@ -108,8 +108,8 @@ var item=(
                       <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >  
                         <h3 className={s.client_more}><Link to={'/fiat-study'}>FIND OUT MORE <LinkArrow className="link_arrow"/></Link></h3>
                       </Tween>                      
-                      <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src='../images/fiat_bw.jpg'/>                        
-                      <img className={s.color} src='../images/fiat_color.jpg'/>
+                      <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src='/images/fiat_bw.jpg'/>                        
+                      <img className={s.color} src='/images/fiat_color.jpg'/>
                     </div>
                   </Tween>                   
                 )

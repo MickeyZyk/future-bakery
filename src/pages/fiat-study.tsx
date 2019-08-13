@@ -84,12 +84,12 @@ export default class Fiat extends React.Component {
           <div className={s.row__one}>
             <div className={s.column__col0}>
               <div className={s.wrapper}>
-                <img className={s.arrow} src={'../svg/work_arrow.svg'} />
+                <img className={s.arrow} src={'/svg/work_arrow.svg'} />
                 <h4 className={s.arrow_heading}>Creative strategy</h4>
               </div>
             </div>   
             <div className={s.column__col1}>
-              <img className={s.client_logo} src={'../images/fiat.png'} />
+              <img className={s.client_logo} src={'/images/fiat.png'} />
               <h1 className={s.column__col1_heading}>How do you explain and sell the legal insurance to<br/>people that are afraid of lawyers and hate insurance houses?</h1>
             </div>
           </div>
@@ -106,20 +106,20 @@ export default class Fiat extends React.Component {
           <div className={s.detail_wrapper}>
             <div className={s.row__threetop}> 
               <div className={s.column__col5}>
-                <p className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>
+                <p className={s.control}>EXPLORE <img className={s.explore} src='/images/explore_arrow.png' /></p>
               </div>
               <div className={s.column__col6}>
-                <p onClick={this.playVideo} className={s.control}>WATCH VIDEO <img className={s.explore} src='../images/video_play.png' /></p>
+                <p onClick={this.playVideo} className={s.control}>WATCH VIDEO <img className={s.explore} src='/images/video_play.png' /></p>
               </div>
             </div>
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <img className={s.client_logo} src='../images/client.png'/>              
+                <img className={s.client_logo} src='/images/client.png'/>              
                 <p className={s.award}>AWARD: <span className={s.green}>FIAT 500X</span></p>
                 <h1 className={s.award_heading}>BEAUTY AND FUNCTION COMBINED</h1>
               </div>
             </div>
-            <img src="../images/fiat.jpg" ref={this.videoPreview} className={s.fiat_img} />
+            <img src="/images/fiat.jpg" ref={this.videoPreview} className={s.fiat_img} />
             <div className={s.embedded_video}>
               <ReactPlayer ref={this.videoPlayer} url='https://www.youtube.com/watch?v=9HQLdSHOHxU' playing={this.state.playing} />            
             </div>

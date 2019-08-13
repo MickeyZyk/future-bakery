@@ -60,13 +60,13 @@ const BakeryAbout = ({ data, className }) => {
 
               <HeadingTwo className='for_clients_about_heading'>We found thousands of creative people, who are ready to help you solve your problem, or find a direction for your business.</HeadingTwo>   
 
-              <AnimatedImage className='for_clients_image responsive_image show_on_mobile' src="../images/rocket.jpg" />         
+              <AnimatedImage className='for_clients_image responsive_image show_on_mobile' src="/images/rocket.jpg" />         
 
               <Paragraph className='for_clients_about_paragraph paragraph'>This is where you can submit your brief and generate wonderful ideas. We can provide additional services among others analysis of the ideas, creation of a strategy or plan of action. You can let us know, what exactly you need from Future Bakers.</Paragraph>
 
             </div>
 
-            <AnimatedImage className='for_clients_image responsive_image hide_on_mobile' src="../images/rocket.jpg" />   
+            <AnimatedImage className='for_clients_image responsive_image hide_on_mobile' src="/images/rocket.jpg" />   
 
 
           </Row>
@@ -93,25 +93,25 @@ const BakeryAbout = ({ data, className }) => {
 
         <Row className="clients_about_steps">
           <div className="bakers_about_numbers_first">1</div>
-          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_arrows"><img src="/svg/process_arrow.svg"/></div>
           <div className="bakers_about_numbers">2</div>
-          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_arrows"><img src="/svg/process_arrow.svg"/></div>
           <div className="bakers_about_numbers">3</div>
-          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_arrows"><img src="/svg/process_arrow.svg"/></div>
           <div className="bakers_about_numbers">4</div>
-          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
+          <div className="bakers_about_arrows"><img src="/svg/process_arrow.svg"/></div> 
           <div className="bakers_about_numbers">5</div>
-          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
+          <div className="bakers_about_arrows"><img src="/svg/process_arrow.svg"/></div> 
           <div className="bakers_about_numbers">6</div>
         </Row>
 
         <Row className="clients_about_steps_two">
-            <img className="bakers_about_step_icons" src="../svg/register.svg" />       
-            <img className="bakers_about_step_icons" src="../svg/location.svg" />       
-            <img className="bakers_about_step_icons" src="../svg/gold.svg" />       
-            <img className="bakers_about_step_icons" src="../svg/eye.svg" />       
-            <img className="bakers_about_step_icons" src="../svg/podium.svg" />       
-            <img className="bakers_about_step_icons" src="../svg/owner.svg" />       
+            <img className="bakers_about_step_icons" src="/svg/register.svg" />       
+            <img className="bakers_about_step_icons" src="/svg/location.svg" />       
+            <img className="bakers_about_step_icons" src="/svg/gold.svg" />       
+            <img className="bakers_about_step_icons" src="/svg/eye.svg" />       
+            <img className="bakers_about_step_icons" src="/svg/podium.svg" />       
+            <img className="bakers_about_step_icons" src="/svg/owner.svg" />       
         </Row>
 
         <Row className="clients_about_steps_three">

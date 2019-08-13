@@ -132,7 +132,7 @@ render() {
           <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 
           className="bakery_about__image_one hide_on_mobile"/>
         </Row>
-        <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/greenboard.jpg)`}}>
+        <div className="bakery_about__greenboard" style={{backgroundImage: `url(/images/greenboard.jpg)`}}>
           <Row>
             <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__heading_two sw_heading_first">
               <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two}</HeadingTwo>
@@ -145,7 +145,7 @@ render() {
             <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } 
               className="bakery_about__green_text_two">{this.props.data.gravBakeryAbout.show_me_two_text}</p>   
 
-            <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />  
+            <img src="/images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />  
 
           <Location>
             {({ location }) => (
@@ -200,7 +200,7 @@ render() {
         <div className="bakery_team">
           <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages}/>
         </div>      
-        <div style={{backgroundImage: "url('../images/clients_bck.png')"}} className="bakery_about_clients_background">
+        <div style={{backgroundImage: "url('/images/clients_bck.png')"}} className="bakery_about_clients_background">
           <AnimatedHeadingTwo className="bakery_about_clients_heading">Whom we bake with</AnimatedHeadingTwo>
           <Clients className="bakery_about_clients"/>
           <Row>

@@ -67,7 +67,7 @@ export class Item2 extends React.Component {
             to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeIn', opacity: 0 } : false } >
               <div key={this.props.i} className={`${s.figure} ${'no' + (this.props.i+1)} ${this.props.i == 0 ? 'hover_element' :''}`} onMouseEnter={this.toggleHoverEnter} onMouseLeave={this.toggleHoverLeave}>
                 <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', clipPath:'inset(0.001% 0.002% 0.003% 0.005%)'} : {ease: 'Power2.easeOut', clipPath:'inset(0.001% 100% 0.003% -2%)'}} >
-                  <img className={s.arrow} src={'../svg/work_arrow.svg'} />
+                  <img className={s.arrow} src={'/svg/work_arrow.svg'} />
                 </Tween>
                 <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut',  opacity: 0}} >                      
                   <h4 className={s.arrow_heading}>{this.props.data.node.heading_tag}</h4>     
@@ -102,7 +102,7 @@ export class Item2 extends React.Component {
                   </h3>
                 </Tween>                      
                 <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image}/>                        
-                <img className={s.bw_overlay} style={this.state.hover ? {opacity:1}:{opacity:0}} src="../images/bakers_overlay.png"/>                 
+                <img className={s.bw_overlay} style={this.state.hover ? {opacity:1}:{opacity:0}} src="/images/bakers_overlay.png"/>                 
                 <img className={s.color} style={this.state.hover ? {opacity:1}:{opacity:0}} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image} />
               </div>
             </Tween>                   

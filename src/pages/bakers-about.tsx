@@ -196,81 +196,81 @@ const BakersAbout = ({ data, className }) => {
               <div className="tag_04">
               <p className="tag">{data.gravBakersAbout.problem_text}</p>
               </div>
-              <img className="tag_arrow_01" src="../images/tag_arow_01.png" />
-              <img className="tag_arrow_01l show_on_mobile" src="../images/tag_arow_01l.png" />
-              <img className="phone_logo" src="../images/phone_logo.png " /> 
-              <img className="tag_arrow_02 hide_on_mobile" src="../images/tag_arow_02.png" /> 
-              <img className="hip hide_on_mobile" src="../svg/hip.svg"/>
-              <img className="nerd hide_on_mobile" src="../svg/nerd.svg"/> 
+              <img className="tag_arrow_01" src="/images/tag_arow_01.png" />
+              <img className="tag_arrow_01l show_on_mobile" src="/images/tag_arow_01l.png" />
+              <img className="phone_logo" src="/images/phone_logo.png " /> 
+              <img className="tag_arrow_02 hide_on_mobile" src="/images/tag_arow_02.png" /> 
+              <img className="hip hide_on_mobile" src="/svg/hip.svg"/>
+              <img className="nerd hide_on_mobile" src="/svg/nerd.svg"/> 
               <p className="tag nerd_text hide_on_mobile">{data.gravBakersAbout.icon01_text}</p>
-              <img className="granny hide_on_mobile" src="../svg/granny.svg"/>
+              <img className="granny hide_on_mobile" src="/svg/granny.svg"/>
               <p className="tag granny_text hide_on_mobile">{data.gravBakersAbout.icon02_text}</p>
-              <img className="afro hide_on_mobile" src="../svg/afro.svg"/>                  
-              <img className="dude hide_on_mobile" src="../svg/dude.svg"/>   
+              <img className="afro hide_on_mobile" src="/svg/afro.svg"/>                  
+              <img className="dude hide_on_mobile" src="/svg/dude.svg"/>   
               <p className="tag dude_text hide_on_mobile">{data.gravBakersAbout.icon03_text}</p>
-              <img className="smart hide_on_mobile" src="../svg/smart.svg"/>
+              <img className="smart hide_on_mobile" src="/svg/smart.svg"/>
               <p className="tag smart_text hide_on_mobile">{data.gravBakersAbout.icon04_text}</p> 
-              <img className="kid hide_on_mobile" src="../svg/kid.svg"/>
+              <img className="kid hide_on_mobile" src="/svg/kid.svg"/>
               <p className="tag kid_text hide_on_mobile">{data.gravBakersAbout.icon05_text}</p> 
               <div className="tags_heading_middle hide_on_mobile"><HeadingTwo>{data.gravBakersAbout.problem_heading_two}</HeadingTwo></div> 
-              <img className="fireman hide_on_mobile" src="../svg/fireman.svg"/>
+              <img className="fireman hide_on_mobile" src="/svg/fireman.svg"/>
               <p className="tag fireman_text hide_on_mobile">{data.gravBakersAbout.icon06_text}</p>
-              <img className="girl hide_on_mobile" src="../svg/girl.svg"/>
+              <img className="girl hide_on_mobile" src="/svg/girl.svg"/>
               <p className="tag girl_text hide_on_mobile">{data.gravBakersAbout.icon07_text}</p>
-              <img className="mlada hide_on_mobile" src="../svg/mlada.svg"/>   
-              <img className="tag_arrow_03 hide_on_mobile" src="../images/tag_arow_03.png" /> 
-              <img className="vial hide_on_mobile" src="../svg/vial.svg"/>  
+              <img className="mlada hide_on_mobile" src="/svg/mlada.svg"/>   
+              <img className="tag_arrow_03 hide_on_mobile" src="/images/tag_arow_03.png" /> 
+              <img className="vial hide_on_mobile" src="/svg/vial.svg"/>  
 
 
               <div className="people_doodles show_on_mobile">
                 <div className="people_doodle">
                   <div className="tags_heading_middle"><HeadingTwo>Spousta lidy spousta napadu</HeadingTwo></div>
                 </div> 
-                <img className="tag_arrow_04" src="../images/tag_arow_04.png" /> 
+                <img className="tag_arrow_04" src="/images/tag_arow_04.png" /> 
                 <div className="people_doodle">
-                  <img className="hip" src="../svg/hip.svg"/>
+                  <img className="hip" src="/svg/hip.svg"/>
                 </div>
                 <div className="people_doodle">
-                  <img className="nerd" src="../svg/nerd.svg"/> 
+                  <img className="nerd" src="/svg/nerd.svg"/> 
                 </div>
                 <div className="people_doodle">
                   <p className="tag nerd_text">Marketa grafik miluje horska kola</p>
                 </div>
                 <div className="people_doodle">
-                  <img className="granny" src="../svg/granny.svg"/>
+                  <img className="granny" src="/svg/granny.svg"/>
                 </div>
                 <div className="people_doodle">
                   <p className="tag granny_text">Marketa grafik miluje horska kola</p>
                 </div>
                 <div className="people_doodle">
-                  <img className="fireman" src="../svg/fireman.svg"/>
+                  <img className="fireman" src="/svg/fireman.svg"/>
                 </div>
                 <div className="people_doodle">
                   <p className="tag fireman_text">Karel hasic</p>
                 </div>
                 <div className="people_doodle">
-                  <img className="girl" src="../svg/girl.svg"/>
+                  <img className="girl" src="/svg/girl.svg"/>
                 </div>
                 <div className="people_doodle">
                   <p className="tag girl_text">Marketa grafik miluje horska kola</p>
                 </div>
                 <div className="people_doodle">
-                  <img className="kid" src="../svg/kid.svg"/>
+                  <img className="kid" src="/svg/kid.svg"/>
                 </div>
                 <div className="people_doodle">
                   <p className="tag kid_text">Honza marketer miluje reklamu</p> 
                 </div>
                 <div className="people_doodle">
-                  <img className="smart" src="../svg/smart.svg"/>
+                  <img className="smart" src="/svg/smart.svg"/>
                 </div>
                 <div className="people_doodle">
                   <p className="tag smart_text">Marketa grafik miluje horska kola</p> 
                 </div>
                 <div className="people_doodle">
-                  <img className="afro" src="../svg/afro.svg"/>     
+                  <img className="afro" src="/svg/afro.svg"/>     
                 </div>
                 <div className="people_doodle">
-                  <img className="vial" src="../svg/vial.svg"/>
+                  <img className="vial" src="/svg/vial.svg"/>
                 </div>
               </div>
 
@@ -310,7 +310,7 @@ const BakersAbout = ({ data, className }) => {
           <Heading className="bakers_about_bakers_heading">{data.gravBakersAbout.bakers_heading}</Heading>
 
           <Figure 
-          src="../images/kid.jpg" className="bakers_about_bakers_image"
+          src="/images/kid.jpg" className="bakers_about_bakers_image"
           />
 
             <Paragraph className="bakers_about_bakers_p_one">{data.gravBakersAbout.bakers_paragraph_one}</Paragraph>
@@ -328,15 +328,15 @@ const BakersAbout = ({ data, className }) => {
 
         <Row className="bakers_about_steps">
           <div className="bakers_about_numbers_first">1</div>
-          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_arrows"><img src="/svg/process_arrow.svg"/></div>
           <div className="bakers_about_numbers">2</div>
-          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_arrows"><img src="/svg/process_arrow.svg"/></div>
           <div className="bakers_about_numbers">3</div>
-          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
+          <div className="bakers_about_arrows"><img src="/svg/process_arrow.svg"/></div>
           <div className="bakers_about_numbers">4</div>
-          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
+          <div className="bakers_about_arrows"><img src="/svg/process_arrow.svg"/></div> 
           <div className="bakers_about_numbers">5</div>
-          <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
+          <div className="bakers_about_arrows"><img src="/svg/process_arrow.svg"/></div> 
           <div className="bakers_about_numbers">6</div>
         </Row>
 
@@ -390,9 +390,9 @@ const BakersAbout = ({ data, className }) => {
         </Row>
 
         <Row className="bakers_about_in_numbers">
-          <div className="bakers_about_in_numbers_icons_first"><img src="../svg/gold.svg"/></div>
-          <div className="bakers_about_in_numbers_icons"><img src="../svg/bulb.svg"/></div>
-          <div className="bakers_about_in_numbers_icons"><img src="../svg/fiver.svg"/></div>
+          <div className="bakers_about_in_numbers_icons_first"><img src="/svg/gold.svg"/></div>
+          <div className="bakers_about_in_numbers_icons"><img src="/svg/bulb.svg"/></div>
+          <div className="bakers_about_in_numbers_icons"><img src="/svg/fiver.svg"/></div>
         </Row>
         <Row className="bakers_about_in_numbers_two">
           <div className="bakers_about_in_numbers_numbers_first">{data.gravBakersAbout.reward}</div>

@@ -30,10 +30,10 @@ const BakersLoginDal = ({ data, className }) => {
             <Row>
 
               <div className='bakers_login__main_image'>
-                <img src="../images/planekid.jpg" />
+                <img src="/images/planekid.jpg" />
               </div>
 
-              <img src="../images/form arrow.png" className="bakers_login_form__form_arrow"/>
+              <img src="/images/form arrow.png" className="bakers_login_form__form_arrow"/>
 
               <div className='bakers_login_dal__main_header'>
                 <h1>Staňte se součástí největší kreativní komunity u nás</h1>

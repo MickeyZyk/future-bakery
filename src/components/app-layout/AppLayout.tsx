@@ -16,10 +16,10 @@ import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Controls } from 'react-gsap'
 import { Power2 } from "gsap/TweenMax";
 
-import FontUrl01 from "../fonts/bradley_hand_itc_tt_bold-webfont.woff2"
-import FontUrl02 from "../fonts/proxima_nova_black-webfont.woff2"
-import FontUrl03 from "../fonts/proxima_nova_bold-webfont.woff2"
-import FontUrl04 from "../fonts/proxima_nova_light-webfont.woff2"
+import FontUrl01 from "/fonts/bradley_hand_itc_tt_bold-webfont.woff2"
+import FontUrl02 from "/fonts/proxima_nova_black-webfont.woff2"
+import FontUrl03 from "/fonts/proxima_nova_bold-webfont.woff2"
+import FontUrl04 from "/fonts/proxima_nova_light-webfont.woff2"
 
 
 import s from './AppLayout.scss';
@@ -40,26 +40,26 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
 
 
       <Helmet {...helmet}>
-        <link rel="preload" href="../fonts/bradley_webfontkit.css" as="style" />
-        <link rel="preload" href="../fonts/proxima-nova-webfontkit.css" as="style" />
+        <link rel="preload" href="/fonts/bradley_webfontkit.css" as="style" />
+        <link rel="preload" href="/fonts/proxima-nova-webfontkit.css" as="style" />
         <link rel="preload"
               as="font"
-              href="../fonts/bradley_hand_itc_tt_bold-webfont.woff2"
+              href="/fonts/bradley_hand_itc_tt_bold-webfont.woff2"
               type="font/woff2"
               crossOrigin="anonymous" />
         <link rel="preload"
               as="font"
-              href="../fonts/proxima_nova_black-webfont.woff2"
+              href="/fonts/proxima_nova_black-webfont.woff2"
               type="font/woff2"
               crossOrigin="anonymous" />
         <link rel="preload"
               as="font"
-              href="../fonts/proxima_nova_bold-webfont.woff2"
+              href="/fonts/proxima_nova_bold-webfont.woff2"
               type="font/woff2"
               crossOrigin="anonymous" />
         <link rel="preload"
               as="font"
-              href="../fonts/proxima_nova_light-webfont.woff2"
+              href="/fonts/proxima_nova_light-webfont.woff2"
               type="font/woff2"
               crossOrigin="anonymous" />
  
