@@ -93,7 +93,7 @@ export class Clients extends React.Component {
         .to(this.imageb_02.current, 2, { opacity: 0 })
         .to(this.imageb_05.current, 2, { opacity: 0 })
         .to(this.imageb_09.current, 2, { opacity: 0 }) 
-
+/*
         var TLC = new TimelineMax({repeat:-1}); 
         TLC
         .to(this.imagec_06.current, 2, { opacity: 1 })
@@ -115,7 +115,7 @@ export class Clients extends React.Component {
         .to(this.imagec_05.current, 2, { opacity: 0 })
         .to(this.imagec_09.current, 2, { opacity: 0 }) 
      
-    
+  */  
 
 
   }
