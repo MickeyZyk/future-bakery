@@ -64,7 +64,13 @@ h2.crowders_color > .ts-line-h {color: #37c6f4!important}
 }
 
 
+.mobile_mask {
+      display: block;
+    @media (min-width: $min-960) {
+      display: none
+    }    
 
+}
 
 
 

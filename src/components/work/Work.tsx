@@ -262,9 +262,18 @@ export default class Work extends React.Component {
 
             <div className={s.bottom_row}>
 
-                <LeftLink className={s.all_cases} gray arrow 
-                to={ location.pathname.includes('bakery') ? "/bakery-work/"  : "/bakers-work/" }
-                >ALL CASES</LeftLink>
+
+
+                  <Location>
+                    {({ location }) => (             
+
+                      <LeftLink className={s.all_cases} gray arrow 
+                      to={ location.pathname.includes('bakery') ? "/bakery-work/"  : "/bakers-work/" }
+                      >ALL CASES</LeftLink>
+
+                      )}
+                  </Location> 
+
 
 
                 <If condition={next}>
