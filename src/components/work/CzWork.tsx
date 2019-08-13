@@ -262,7 +262,7 @@ export default class CzWork extends React.Component {
 
             <div className={s.bottom_row}>
 
-                <LeftLink className={s.all_cases} gray arrow to={'/czbakers-work'}>ALL CASES</LeftLink>
+                <LeftLink className={s.all_cases} gray arrow to={'/czbakers-work'}>VŠECHNI CASES</LeftLink>
 
 
                 <If condition={next}>
@@ -273,7 +273,7 @@ export default class CzWork extends React.Component {
 
                       <Link 
                       to={ "/czbakers-work/" + slug(next.title.toLowerCase())}
-                      gray arrow className={s.next_case}>NEXT CASE</Link>
+                      gray arrow className={s.next_case}>DALŠÍ CASE</Link>
 
                       )}
                   </Location> 
@@ -316,7 +316,7 @@ export default class CzWork extends React.Component {
 
                 </If>
 
-              <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
+              <p className={s.project}>To a mnohem více jsme již vyřešili s týmem 25 000 přátel z davu.</p>
 
             </div>
 
