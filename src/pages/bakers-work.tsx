@@ -138,7 +138,7 @@ export default class Work extends React.Component {
               </Location> 
 
 
-                <Link gray arrow className="bakery_work_project" to={'/bakerscontatc'}>START A PROJECT WITH US</Link>                
+                <Link gray arrow className="bakery_work_project" to={'/bakerscontact'}>START A PROJECT WITH US</Link>                
 
               </ReactCursorPosition>                
 

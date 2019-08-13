@@ -262,7 +262,9 @@ export default class Work extends React.Component {
 
             <div className={s.bottom_row}>
 
-                <LeftLink className={s.all_cases} gray arrow to={'/bakery-work'}>ALL CASES</LeftLink>
+                <LeftLink className={s.all_cases} gray arrow 
+                to={ location.pathname.includes('bakery') ? "/bakery-work/"  : "/bakers-work/" }
+                >ALL CASES</LeftLink>
 
 
                 <If condition={next}>
@@ -288,7 +290,7 @@ export default class Work extends React.Component {
                     {({ location }) => (    
 
                       <Link 
-                      to={ location.pathname.includes('bakery') ? "/crowderscontact/" : "/bakerscontact/"}
+                      to={ location.pathname.includes('bakery') ? "/bakerycontact/" : "/bakerscontact/"}
                       gray arrow className={s.start_project}>START A PROJECT WITH US</Link>
 
                       )}

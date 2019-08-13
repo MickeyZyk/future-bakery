@@ -12,7 +12,7 @@ import { Link } from 'components/link/Link';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import { Footer } from 'components/footer/Footer';
 import { graphql } from 'gatsby'
-
+import { Location } from '@reach/router';
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 
@@ -130,8 +130,18 @@ export default class Work extends React.Component {
 
                 </div>
 
-                <Link gray arrow className="bakery_work_download" to={'/'}>DOWNLOAD MORE PROJECTS</Link>
-                <Link gray arrow className="bakery_work_project" to={'/'}>START A PROJECT WITH US</Link>                
+
+
+              <Location>
+                {({ location }) => (
+                    <Link gray arrow className="bakery_work_download" to={location.pathname}>DOWNLOAD MORE PROJECTS</Link>
+                )}
+              </Location> 
+
+
+
+
+                <Link gray arrow className="bakery_work_project" to={'/bakerycontact'}>START A PROJECT WITH US</Link>                
 
               </ReactCursorPosition>                
 

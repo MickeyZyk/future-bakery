@@ -212,7 +212,7 @@ export default class Work extends React.Component {
                 </If>
 
                 <Link className={s.start_project} gray arrow 
-                to={next ? "/crosders-work/" + slug(next.title.toLowerCase()) : '/'}>
+                to={"/crowderscontact/"}>
                   START A PROJECT WITH US
                 </Link>
           
