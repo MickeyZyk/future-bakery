@@ -2012,11 +2012,7 @@ select {
 
 
 .bakery_home_flip_button {
-    position: relative;
-    top: 8.3vw;
-  @include grid-col(14);
-  @include grid-offset-left(2);
-  margin-bottom: 50vw;   
+  
 
   @media (min-width: $min-960) {
     position: absolute;
