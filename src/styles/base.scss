@@ -649,21 +649,6 @@ a {
 
 
 
-.flip_button {
-/*
-      @include grid-col(14);
-      @include grid-offset-right(2); 
-
-    @media (min-width: $min-960) {
-  
-      @include grid-col(3);
-      @include grid-offset-right(1); 
-
-
-    }
-*/
-}
-
 
 .flip {
   font-weight: bold;
@@ -1323,15 +1308,34 @@ select {
 
 .fullscreen {
   width: 100vw;
-  height: 100vh;
+
   overflow: hidden;
+
+
+    @media (min-width: $min-960) {
+      
+      height: 100vh;
+
+
+    }
+
+
+
+
 }
 
 .fulscreen_slider {
   width: 100vw;
-  height: 100vh;
+
   overflow: hidden;
   /* background-color: #fff; */
+
+    @media (min-width: $min-960) {
+      
+      height: 100vh;
+
+
+    }  
 
 }
 
@@ -6747,7 +6751,13 @@ select {
 }
 
 
+.mobile_mask {
+  display: none;
 
+  @media (max-width: $max-960) {
+    display: block;
+  }  
+}
 
 
 
@@ -6790,11 +6800,14 @@ select {
 
 }
 
+
+
 .mobile_slide_text {
   margin-top: 10vw;
   @include grid-col(14);
   margin-left: 11.1111%!important;  
- 
+  $font-map: (375px: 16px, 959px: 41px);
+  @include poly-fluid-sizing('font-size', $font-map); 
 
 }   
 
@@ -6883,8 +6896,8 @@ select {
   position: fixed;
   font-weight: bold;
   margin-left: 80%;
-  top: 188vw; 
-  left: 4vw;     
+  top: 170vw; 
+  left: 1vw;     
 }
 
 .mobile_total_indicator.total_indicator_current {
@@ -6898,20 +6911,20 @@ select {
   display: none;
   position: fixed;
   font-weight: bold;
-  top: 188vw;
-  margin-left: 80%;  
+  top: 170vw;
+  margin-left: 76%;  
 }
 
 .mob_left {
   position: absolute; 
   text-align: right;
-  top: 185vw;
+  top: 167vw;
   left: 11.11%;  
 }
 .mob_right {
   position: absolute; 
   text-align: right;
-  top: 185vw;
+  top: 167vw;
   left: 25%;  
 }
 .mob_nextprev {
@@ -6930,7 +6943,12 @@ select {
 }
 
 
-
+.fulscreen_slider {
+    width: 100vw;
+    height: 200vw;
+    overflow: visible;
+    /* background-color: #fff; */
+}
 
 
 

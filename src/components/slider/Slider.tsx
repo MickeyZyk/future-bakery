@@ -510,14 +510,8 @@ class Carousel extends React.Component {
         </Location>
 
 
-
-
-
-
-
-
-        <div key={'ind' + i} className={`${'slider_indicator'} ${this.state.activeIndex == i ? 'indicator_current': ''}`}>{i+1}</div>
-        <div key={ 'it' + i } className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>/ {this.props.images.length}</div>
+        <div key={'ind' + i} className={`${'slider_indicator'} ${this.state.activeIndex == i ? 'indicator_current': ''}`}>0{i+1}</div>
+        <div key={ 'it' + i } className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>/ 0{this.props.images.length}</div>
 
 
         </div>
