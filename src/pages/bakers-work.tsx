@@ -32,7 +32,15 @@ export default class Work extends React.Component {
       hover: this.props.hovered ? true : false,
     };
     this.toggleHoverLeave = this.toggleHoverLeave.bind(this);  
-    this.toggleHoverEnter = this.toggleHoverEnter.bind(this);      
+    this.toggleHoverEnter = this.toggleHoverEnter.bind(this);  
+    this.unhideMore = this.unhideMore.bind(this);   
+  }
+
+  unhideMore(){   
+   var x = document.querySelector(".work_item_wrapper:nth-child(5)");   
+   var s = document.querySelector(".spacer_top");   
+   x.style.display = "block";   
+   s.style.marginBottom = '37vw';   
   }
 
   toggleHoverLeave() {
@@ -129,16 +137,18 @@ export default class Work extends React.Component {
 
 
                 </div>
-
+                <div className="spacer_top"></div>
 
               <Location>
                 {({ location }) => (
-                    <Link gray arrow className="bakery_work_download" to={location.pathname}>DOWNLOAD MORE PROJECTS</Link>
+                    <Link gray arrow className="bakery_work_download" onClick={ this.unhideMore }  to={location.pathname}>DOWNLOAD MORE PROJECTS</Link>
                 )}
               </Location> 
 
 
-                <Link gray arrow className="bakery_work_project" to={'/bakerscontact'}>START A PROJECT WITH US</Link>                
+                <Link gray arrow className="bakery_work_project" to={'/bakerscontact'}>START A PROJECT WITH US</Link>       
+
+                <div className="spacer_bottom"></div>         
 
               </ReactCursorPosition>                
 
