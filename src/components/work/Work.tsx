@@ -288,7 +288,7 @@ export default class Work extends React.Component {
                     {({ location }) => (    
 
                       <Link 
-                      to={ location.pathname.includes('bakery') ? "/crowderscontact/" : "/bakerscontact/")}
+                      to={ location.pathname.includes('bakery') ? "/crowderscontact/" : "/bakerscontact/"}
                       gray arrow className={s.start_project}>START A PROJECT WITH US</Link>
 
                       )}
