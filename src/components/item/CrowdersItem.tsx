@@ -65,7 +65,7 @@ export class CrowdersItem extends React.Component {
             from={ ['entering'].includes(transitionStatus) ? false : {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeOut', opacity: 0} } 
             to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeIn', opacity: 0 } : false } >
               <div key={this.props.i} className={`${s.figure} ${'no' + (this.props.i+1)} ${this.props.i == 0 ? 'hover_element' :''}`} onMouseEnter={this.toggleHoverEnter} onMouseLeave={this.toggleHoverLeave}>
-                <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut', opacity: 1}} >
+                <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut', opacity: 0}} >
                   <img className={s.arrow} src={'../svg/work_arrow.svg'} />
                 </Tween>
                 <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut',  opacity: 0}} >                      
