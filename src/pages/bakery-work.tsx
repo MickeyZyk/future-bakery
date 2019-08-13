@@ -44,7 +44,7 @@ export default class Work extends React.Component {
    var x = document.querySelector(".work_item_wrapper:nth-child(5)");
    var s = document.querySelector(".spacer_top");
    x.style.display = "block";
-   s.style.marginBottom = '30vw';
+   s.style.marginBottom = '37vw';
   }
 
 
