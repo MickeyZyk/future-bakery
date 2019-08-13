@@ -24,7 +24,7 @@ import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
-import s from '/components/item/Item.scss';
+import s from '../components/item/Item.scss';
 
 export default class Work extends React.Component {
 
@@ -153,7 +153,7 @@ export default class Work extends React.Component {
                   <p className="cw_paragraph_bottom crowders_work_cta_paragraph">We regularly measure sentiment of key segments and check “temperature”</p>
                 </Row>
                 <Row>  
-                  <ExternalLink crowders button arrow className="crowders_work_cta_link" to={'/pdf/report.pdf'} >SEE A FUTURE REPORT</ExternalLink>
+                  <ExternalLink crowders button arrow className="crowders_work_cta_link" to={'../pdf/report.pdf'} >SEE A FUTURE REPORT</ExternalLink>
                 </Row>
 
 
