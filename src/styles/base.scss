@@ -14,7 +14,12 @@
 
 
 
-
+.author_names {
+  position: absolute;
+      width: 20vw;
+  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('font-size', $size-map);
+}
 
 
 
@@ -23,7 +28,7 @@
 }
 
 .lighter {
-  font-weight: lighter;;
+  font-weight: lighter;
 }
 
 
