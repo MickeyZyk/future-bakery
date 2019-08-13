@@ -61,7 +61,8 @@ class Carousel extends React.Component {
     super(props);
     this.wrapperRef_bottom = React.createRef();
     this.wrapperRef_top = React.createRef();    
-    this.dotz = React.createRef();     
+    this.dotz = React.createRef(); 
+    this.wrapperRef_mobile = React.createRef();  
     this.state ={
       horizontal: false,
       showButtons: false,
@@ -376,6 +377,7 @@ class Carousel extends React.Component {
   }
 
 
+
   render() {
 
     var texts = this.props.subs
@@ -383,6 +385,9 @@ class Carousel extends React.Component {
     var links = this.props.links
     var images = this.props.images
 
+
+    var mobileWidth = (this.props.images.length * 100) + '%'
+    console.log(mobileWidth)
 
 
     var carouselLeftButton = (
@@ -412,6 +417,22 @@ class Carousel extends React.Component {
       )
     })
 
+    var singleMobile = 100 / this.props.images.length + '%'
+
+    var mobileCarouselImages =  images.map((image, i) =>{
+      return(
+        <div style={{ position: 'absolute', top: '-100%', width: '100%' }} key={'2key_'+i}>
+          <h2 key={'2key_'+i} id={'i0'+(i)} className={`${'mobile_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>
+          <MobileCarouselImage style={{ width: '50px' }} horizontal={this.state.horizontal} 
+          className={`${'child_image mobile_child'} ${this.state.activeIndex == i ? 'child_current': ''}`}
+          key={'key_'+i} label={labels[i]} 
+          timeInBetween={this.props.timeInBetween} whichOne={i} src={image} />
+          <h3 key={'key_text_'+i} className={`${'mobile_slide_text'} ${this.state.activeIndex == (i-1) ? 'text_next' : ''} ${this.state.activeIndex == i ? 'text_current' : ''} ${this.state.activeIndex == (i+1) ? 'text_prev' : ''}`}>{texts[i]}</h3>
+          <Link arrow gray className={`${'mobile_button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>LEARN MORE</Link>
+        </div>
+      )
+    })    
+
     var dots = images.map((image, i) =>{
       return(
         <div className='dot' data-test={i} key={i} id={i} onClick={this.gotoSlide.bind(this)}>
@@ -421,7 +442,7 @@ class Carousel extends React.Component {
 
     return (
      <>
-        <div style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
+        <div className="desktop_carousel" style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
           <ReactCursorPosition className='fullscreen_cursor_position'>
             <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='home_arrow.svg'  />
             {this.state.showButtons  ? carouselLeftButton : null }
@@ -449,14 +470,10 @@ class Carousel extends React.Component {
 
         </div>
 
-
-
-            <div className='mask_wrapper_top mobile_mask' style={{left: 0, top: 0, position: 'absolute', right: 0, bottom: 'auto', height: '35vw', overflow: 'hidden'}}>
-              <div ref={this.wrapperRef_top} className='mask_parent_top' 
-              style={{position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', 
-              display: 'flex', flexDirection: `${ this.state.horizontal ? 'row' : 'column' }`, alignContent: `${ this.state.horizontal ? 'center' : 'flex-end' }`, 
-              alignItems: `${ this.state.horizontal ? 'center' : 'flex-end' }`}}>         
-                {carouselImages}            
+            <div className='mobile_mask' style={{width: '100%', left: 0, top: 0, right: 0, bottom: 'auto',}}>
+              <div ref={this.wrapperRef_mobile} className='mobile_mask_parent_top' 
+              style={{  display: 'block', width: '100%', position: 'relative'}}>         
+                {mobileCarouselImages}            
               </div>
             </div>
 
@@ -523,6 +540,54 @@ class CarouselImage extends React.Component {
   }
 
 }
+
+class MobileCarouselImage extends React.Component {
+
+  constructor(props) {
+    super(props);
+    //console.log("Not Mounted", this.props)
+    this.state = { imageStatus: null };
+  }
+ 
+  _handleImageLoaded() {
+    this.setState({ imageStatus: 'loaded' });
+  }
+
+  componentDidMount(){
+
+  }
+
+  _handleImageErrored() {
+    this.setState({ imageStatus: 'failed' });
+  }
+
+  render(e) {
+
+    var src = `${this.props.src}`;
+    var srcTo = ' no-repeat center center';
+    var srcToFull = 'url(' +  src + ')'+  srcTo;
+
+    return (
+
+
+              <div className={this.props.className}
+               style={{ clipPath: 'inset(.001% .002% .003% .004%)', transform: 'scale(1)', 
+               display: 'block', zIndex:`${this.props.whichOne}`, 
+               background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
+               minHeight: '75vw'
+               }}
+                onLoad={this._handleImageLoaded.bind(this)}
+                onError={this._handleImageErrored.bind(this)}
+              ></div>
+
+
+
+    );
+  }
+
+}
+
+
 
 class Dot extends React.Component {
 

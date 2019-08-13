@@ -51,6 +51,8 @@ h2.crowders_color > .ts-line-h {color: #37c6f4!important}
 
 /* slider links */
 
+
+
 .button_link {
   display: none;
 }
@@ -64,15 +66,131 @@ h2.crowders_color > .ts-line-h {color: #37c6f4!important}
 }
 
 
+
+
+
+/* MOBILE SLIDER */
+
+
+
+.mobile_child {
+
+  @include grid-col(16);
+  margin-left: 11.1111%!important;  
+ 
+
+}
+
+.mobile_slide_heading {
+
+  margin-top: 18vw;
+  font-weight: 900;
+  $font-map: (375px: 33px, 959px: 85px);
+  @include poly-fluid-sizing('font-size', $font-map); 
+  $height-map: (375px: 26px, 959px: 75px);
+  @include poly-fluid-sizing('line-height', $height-map); 
+  min-height: 40vw;
+  @include grid-col(14);
+  @include grid-offset-left(2);
+  opacity: 0;
+  transition: opacity 1s;
+
+
+}
+
+.mobile_slide_text {
+  margin-top: 10vw;
+  @include grid-col(16);
+  margin-left: 11.1111%!important;  
+ 
+
+}   
+
+.mobile_slide_heading.current {
+  opacity: 1;
+  transition: opacity 1s;  
+}
+
+.mobile_button_link {
+  margin-left: 11.1111%!important;   
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  top: 170vw;  
+}
+
+.mobile_button_link.link_current {
+  opacity: 1;
+  transition: opacity 1s;  
+}
+
+.mobile_slide_text {
+  opacity: 0;
+  transition: opacity 1s;  
+} 
+
+.mobile_slide_text.text_current {
+  opacity: 1;
+  transition: opacity 1s;  
+} 
+
+
+.mobile_mask .child_image {
+  transform: translateX(100%)!important;
+  opacity: 0!important;
+  transition: all 1s;  
+  transition-timing-function: ease-in-out;
+} 
+
+.mobile_mask .child_current {
+  transform: translateX(0%)!important;  
+  opacity: 1!important;
+  transition: all 1s;  
+  transition-timing-function: ease-in-out;
+} 
+
+
+
+
+
+
+
 .mobile_mask {
-      display: block;
+    margin-top: 15vw;
+     display: block;
     @media (min-width: $min-960) {
       display: none
     }    
 
 }
 
+.desktop_carousel {
+      display: none!important;
+    @media (min-width: $min-960) {
+      display: flex!important;
+    }    
 
+}
+
+
+.mobile_mask .mask_parent_top {
+  flex-direction: row!important;
+}
+
+
+.fulscreen_slider {
+
+    @media (min-width: $min-960) {
+      ;
+    }    
+
+}
+
+
+
+
+
+/* END MOBILE SLIDER */
 
 a {text-decoration: none}
 
@@ -95,8 +213,14 @@ a {text-decoration: none}
   position: relative;
   bottom: -0.09vw;
   padding-top: 0.1vw;
-  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
-  @include poly-fluid-sizing('height', $size-map);   
+  $size-map: (375px: 14px, 959px: 34px, 960px: 8px, 2880px: 24px);
+  @include poly-fluid-sizing('height', $size-map); 
+
+  @media (max-width: $max-960) {
+    left: 5vw;     
+    bottom: -0.15vw;
+    padding-top: 0.5vw;
+  }  
 }
 
 .the_link_text {
@@ -235,6 +359,10 @@ a {text-decoration: none}
 .the_button_link {
   height: 2vw;
   line-height: 2vw;
+    @media (max-width: $max-960) {
+      height: 12vw;
+      line-height: 12vw;
+    }    
 }
 
 
@@ -1884,9 +2012,11 @@ select {
 
 
 .bakery_home_flip_button {
-
-  @include grid-col;
-  @include grid-offset-left(2);   
+    position: relative;
+    top: 8.3vw;
+  @include grid-col(14);
+  @include grid-offset-left(2);
+  margin-bottom: 50vw;   
 
   @media (min-width: $min-960) {
     position: absolute;
@@ -2127,10 +2257,12 @@ select {
   position: fixed;
   margin-left: 82.74444%;
   top: 48vh; 
+   
 }
 
 .total_indicator.total_indicator_current {
   display: block;
+
 }
 
 .slider_indicator {
@@ -2141,10 +2273,13 @@ select {
   margin-left: 82.74444%;
   top: 62vh;    
 
+
+
 }
 
 .slider_indicator.indicator_current {
   display: block;
+    
 }
 
 .indicator_divider {
@@ -2154,6 +2289,9 @@ select {
   height: 8vh;
   width: 1px;
   background-color: #d4de4f;
+  @media (max-width: $max-960) {
+    display: none;
+  }    
 }
 
 .home_arrow {
@@ -4565,14 +4703,15 @@ select {
 /* BAKERY HOME */
 
 .bakery_home__bakery_bulb {
-
+  position: absolute;
+  top: 70vw;
   transform: rotate(15deg);
-  @include grid-col(1);
-  @include grid-offset-left(2); 
- 
+  @include grid-col(3);
+  @include grid-offset-left(12); 
+   z-index: 15; 
 
   @media (min-width: $min-960) {
-  position: absolute;
+
   bottom: 33vw;
   z-index: 15;  
   @include grid-col(1);
@@ -4606,13 +4745,13 @@ select {
 /* CROWDERS HOME */
 
 .crowders_home__crowders_bubble {
-
+    position: absolute;
   transform: rotate(15deg);
   @include grid-col;
  
 
   @media (min-width: $min-960) {
-    position: absolute;
+
     bottom: 29vw;
     z-index: 15;  
     @include grid-col(1);
