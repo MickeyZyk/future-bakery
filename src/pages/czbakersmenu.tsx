@@ -78,7 +78,7 @@ export default class BakersMenu extends React.Component {
 							      			name="About us" 
 							      			to="/czbakers-about"
 				      						>
-														<MenuHeading className='white_text'>About Us</MenuHeading>
+														<MenuHeading className='white_text'>O nás</MenuHeading>
 												  </Link>
 											  </li>
 											  <li className='menu_item_wrapper'>
@@ -89,7 +89,7 @@ export default class BakersMenu extends React.Component {
 							      			name="Work"
 							      			to="/czbakers-work"
 						      				>
-														<MenuHeading className='white_text'>Work</MenuHeading>
+														<MenuHeading className='white_text'>Prace</MenuHeading>
 												  </Link>
 											  </li>
 											  <li className='menu_item_wrapper'>
@@ -100,7 +100,7 @@ export default class BakersMenu extends React.Component {
 							      			name="Future Bakery Family" 
 							      			to="/family"
 						      				>
-														<MenuHeading className='white_text'>Future Bakery family</MenuHeading>
+														<MenuHeading className='white_text'>Rodina Future Bakery</MenuHeading>
 												  </Link>
 											  </li>
 											  <li className='menu_item_wrapper'>
@@ -111,7 +111,7 @@ export default class BakersMenu extends React.Component {
 							      			name="Contact" 
 							      			to="/czbakerscontact"
 						      				>
-														<MenuHeading className='white_text'>Contact</MenuHeading>
+														<MenuHeading className='white_text'>Kontakt</MenuHeading>
 												  </Link>
 											  </li>
 										  </ul>

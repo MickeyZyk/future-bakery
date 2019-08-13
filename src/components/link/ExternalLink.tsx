@@ -16,7 +16,7 @@ export const ExternalLink = ({ children, state, to, className, arrow, button, ba
       {({ location }) => (      	
           <div 
           onClick={onClick} 
-          className={`${'the_link'} ${ arrow ? 'the_arrow_link' 
+          className={`${'the_link the_external_link'} ${ arrow ? 'the_arrow_link' 
           : ''} ${ button ? 'the_button_link' 
           : ''} ${ bakery ? 'bakery_color' 
           : ''} ${ bakers ? 'bakers_color' 

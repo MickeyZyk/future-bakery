@@ -6,7 +6,7 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import { Link } from 'components/link/Link';
-import { ExternalLink } from 'components/header/ExternalLink';
+import { ExternalLink } from 'components/link/ExternalLink';
 import { Row } from 'components/row/Row';
 import Scrollbar from 'react-smooth-scrollbar';
 
@@ -45,7 +45,7 @@ export default () => (
                       <p>Neváhejte a kontaktujte nás.</p>
                       <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
                       <Row>                
-                        <Link className="bakery_contact_flip_button" crowders button arrow to={'https://blah.com'}>CONTACT US</Link>
+                        <ExternalLink className="bakery_contact_flip_button" bakers button arrow to={'mailto:info@futurecrowders.com'}>CONTACT US</ExternalLink>
                       </Row>
                     </div>
                     <img src="../images/paper_plane.jpg" className='bakery_contact_image'/>
