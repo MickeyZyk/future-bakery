@@ -106,6 +106,7 @@ export default class Work extends React.Component {
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
 
+
         <SVGicon className={this.props.data.gravBakeryWork.one_way ? s.work_details_no : s.hidden} src='work_details_no.svg'  />       
         <SVGiconReverse className={this.props.data.gravBakeryWork.one_way ? s.work_details_ok : s.hidden } src='work_details_ok.svg'  /> 
 
@@ -384,6 +385,7 @@ export const query = graphql`
       heading_two
       logo_dark
       logo_light
+      toggle
       new_way
       one_way
       title

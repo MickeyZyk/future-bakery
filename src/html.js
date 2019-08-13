@@ -25,7 +25,8 @@ export default function HTML(props) {
 			html.wf-active, html.wf-inactive {
 			  visibility: visible;
 			}
-	    `}} />        
+    
+	    `}} />  
         <div
           key={`body`}
           id="___gatsby"
