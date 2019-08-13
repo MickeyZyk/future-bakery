@@ -55,7 +55,7 @@ export default () => (
                     <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
 
                     <Row>                
-                      <Link className="bakery_contact_flip_button" bakery button arrow to={'mailto:info@futurebakers.com'}>CONTACT US</Link>
+                      <ExternalLink className="bakery_contact_flip_button" bakery button arrow to={'mailto:info@futurebakers.com'}>CONTACT US</ExternalLink>
                     </Row>              
 
                   </div>

@@ -45,7 +45,7 @@ export default () => (
                       <p>Neváhejte a kontaktujte nás.</p>
                       <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
                       <Row>                
-                        <ExternalLink className="bakery_contact_flip_button" bakers button arrow to={'mailto:info@futurecrowders.com'}>CONTACT US</ExternalLink>
+                        <ExternalLink className="bakery_contact_flip_button" crowders button arrow to={'mailto:info@futurecrowders.com'}>CONTACT US</ExternalLink>
                       </Row>
                     </div>
                     <img src="../images/paper_plane.jpg" className='bakery_contact_image'/>

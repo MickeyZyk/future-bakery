@@ -18,7 +18,7 @@ import Scrollbar from 'react-smooth-scrollbar';
 export default () => (
   <>
     <ReactCursorPosition className='fullscreen_cursor_position'>   
-      <Helmet title="Bakery" />
+      <Helmet title="Bakers" />
       <SVGicon className='bakery_contact_house' src='bakers_home.svg' /> 
 
       <TransitionState>
@@ -49,7 +49,7 @@ export default () => (
                     <p>Neváhejte a kontaktujte nás.</p>
                     <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
                     <Row>                
-                      <ExternalLink className="bakery_contact_flip_button" bakers button arrow to={'mailto:info@futurebakers.com'}>CONTACT US</ExternalLink>
+                      <ExternalLink className="bakery_contact_flip_button" bakers button arrow to={'mailto:info@futurebakers.com'}>KONTAKTUJTE NÁS</ExternalLink>
                     </Row>                  
                   </div>
 
