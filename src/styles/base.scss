@@ -4419,6 +4419,24 @@ select {
 
 }
 
+.cz_bakers_about_in_numbers_numbers_first {
+
+  font-weight: 900;
+  $font-map: (375px: 30px, 959px: 75px, 960px: 20px, 2880px: 60px);
+  @include poly-fluid-sizing('font-size', $font-map);
+
+  @include grid-col;
+  @include grid-offset-left(2);   
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(2.9);
+    @include grid-offset-left(4.8);
+
+  }  
+
+}
+
 .bakers_about_in_numbers_numbers {
 
   font-weight: 900;
@@ -5816,6 +5834,23 @@ select {
   }  
 }
 
+.cz_bakers_about__join_link_one {
+  color: #ff7a00;
+  font-weight: bold;
+  @include grid-col(4);
+  @include grid-offset-left(2);
+
+  top: 15vw;
+  bottom: 10vw;
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -17vw;
+    bottom: 0;    
+    @include grid-col(1.5);
+    @include grid-offset-left(11);
+  }  
+}
 
 .divider_text_one {
   @include grid-col(4);
@@ -5826,6 +5861,18 @@ select {
     top: -17.45vw;
     @include grid-col(1.7);
     @include grid-offset-left(0);
+  } 
+}
+
+.cz_divider_text_one {
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -17.45vw;
+    @include grid-col(1.7);
+    @include grid-offset-left(0.2);
   } 
 }
 
@@ -5843,7 +5890,19 @@ select {
   }  
 }
 
+.cz_bakers_about__brief_link_one {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(1);
 
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -17vw;  
+    @include grid-col(1.5);
+    @include grid-offset-left(0);
+  }  
+}
 
 
 .tags_heading {
@@ -6316,7 +6375,46 @@ select {
   }  
 }
 
+.cz_bakers_about__join_link_two {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(2);
 
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -15vw;
+    @include grid-col(1.5);
+    @include grid-offset-left(6.3);
+  }  
+}
+
+
+.cz_divider_text {
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -15.4vw;
+    @include grid-col(1.4);
+    @include grid-offset-left(0.1);
+  } 
+}
+
+.cz_bakers_about__join_link_three {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -15vw;  
+    @include grid-col(1.5);
+    @include grid-offset-left(0);
+  }  
+}
 
 
 
@@ -6325,6 +6423,15 @@ select {
 
   @media (min-width: $min-960) {
   margin-top: -58vw;
+  }
+
+}
+
+.cz_bakers_about_team_row {
+  margin-top: 45vw;
+
+  @media (min-width: $min-960) {
+  margin-top: -56vw;
   }
 
 }

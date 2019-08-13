@@ -158,9 +158,9 @@ const BakersAbout = ({ data, className }) => {
                 <Split className='bakers_about__heading_three'>{data.gravBakersCzAbout.subheading_two}</Split>      
                 <Paragraph className='bakers_we__paragraph_one paragraph'>{data.gravBakersCzAbout.paragraph_one}</Paragraph>
 
-                <Link className="bakers_about__join_link_one" arrow bakers to={data.gravBakersCzAbout.link_one}>{data.gravBakersCzAbout.link_one_text}</Link>
-                <Paragraph className="divider_text_one">or find out how to</Paragraph>
-                <Link bakers arrow className="bakers_about__brief_link_one" to={data.gravBakersCzAbout.icons_link_two}>{data.gravBakersCzAbout.icons_link_two_text}</Link>          
+                <Link className="cz_bakers_about__join_link_one" arrow bakers to={data.gravBakersCzAbout.link_one}>{data.gravBakersCzAbout.link_one_text}</Link>
+                <Paragraph className="cz_divider_text_one">or find out how to</Paragraph>
+                <Link bakers arrow className="cz_bakers_about__brief_link_one" to={data.gravBakersCzAbout.icons_link_two}>{data.gravBakersCzAbout.icons_link_two_text}</Link>          
 
 
 
@@ -280,9 +280,9 @@ const BakersAbout = ({ data, className }) => {
       </Row>
       <Split className="tags_heading_bottom">{data.gravBakersCzAbout.problem_heading_three}</Split>
       <Row>
-        <Link bakers arrow className="bakers_about__join_link_two" to={data.gravBakersCzAbout.icons_link_one}>{data.gravBakersCzAbout.icons_link_one_text}</Link>
-        <Paragraph className="divider_text">or find out how to</Paragraph>
-        <Link bakers arrow className="bakers_about__join_link_three" to={data.gravBakersCzAbout.icons_link_two}>{data.gravBakersCzAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
+        <Link bakers arrow className="cz_bakers_about__join_link_two" to={data.gravBakersCzAbout.icons_link_one}>{data.gravBakersCzAbout.icons_link_one_text}</Link>
+        <Paragraph className="cz_divider_text">or find out how to</Paragraph>
+        <Link bakers arrow className="cz_bakers_about__join_link_three" to={data.gravBakersCzAbout.icons_link_two}>{data.gravBakersCzAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       </Row>
 
     <ReactCursorPosition>
@@ -290,7 +290,7 @@ const BakersAbout = ({ data, className }) => {
       <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
       
 
-        <Row className="bakers_about_team_row">
+        <Row className="cz_bakers_about_team_row">
           <div className="bakers_about__orange_heading_background">
               <Split className="bakers_about__heading_four">{data.gravBakersCzAbout.team_section_heading}</Split>
           </div>  
@@ -395,7 +395,7 @@ const BakersAbout = ({ data, className }) => {
           <div className="bakers_about_in_numbers_icons"><img src="../svg/fiver.svg"/></div>
         </Row>
         <Row className="bakers_about_in_numbers_two">
-          <div className="bakers_about_in_numbers_numbers_first">{data.gravBakersCzAbout.reward}</div>
+          <div className="cz_bakers_about_in_numbers_numbers_first">{data.gravBakersCzAbout.reward}</div>
           <div className="bakers_about_in_numbers_numbers">{data.gravBakersCzAbout.ideas}</div>
           <div className="bakers_about_in_numbers_numbers">{data.gravBakersCzAbout.bakers}</div>
         </Row>

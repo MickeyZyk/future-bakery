@@ -288,7 +288,7 @@ export default class CzWork extends React.Component {
                     {({ location }) => (    
 
                       <Link 
-                      to={ "/bakerscontact/" + slug(next.title.toLowerCase())}
+                      to={ "/bakerscontact/" }
                       gray arrow className={s.start_project}>START A PROJECT WITH US</Link>
 
                       )}
