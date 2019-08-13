@@ -137,14 +137,14 @@ export default class Work extends React.Component {
               <div className={s.column__col5}>
                 <ScrollTo>
                   {({ scrollTo }) => (
-                    <p onClick={ this.handleClick} className={s.control}>EXPLORE <img className={s.explore} src='/images/explore_arrow.png' /></p>                    
+                    <p onClick={ this.handleClick} className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>                    
                   )}
                 </ScrollTo>
               </div>
               <If condition={this.props.data.gravCrowdersWork.video != 'null'}>
                 <Then>
                   <div className={s.column__col6}>
-                    <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='/images/video_play.png' /></p>
+                    <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
                   </div>
                 </Then>
               </If>
@@ -241,7 +241,7 @@ export default class Work extends React.Component {
           </Row>
 
           <Row>
-            <ExternalLink crowders button arrow className={s.bottom_button} to={'/pdf/report.pdf'} >SEE A FUTURE REPORT</ExternalLink>
+            <ExternalLink crowders button arrow className={s.bottom_button} to={'../pdf/report.pdf'} >SEE A FUTURE REPORT</ExternalLink>
           </Row>          
 
 

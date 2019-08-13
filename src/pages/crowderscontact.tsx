@@ -48,7 +48,7 @@ export default () => (
                         <ExternalLink className="bakery_contact_flip_button" crowders button arrow to={'mailto:info@futurecrowders.com'}>CONTACT US</ExternalLink>
                       </Row>
                     </div>
-                    <img src="/images/paper_plane.jpg" className='bakery_contact_image'/>
+                    <img src="../images/paper_plane.jpg" className='bakery_contact_image'/>
                     
                   </Scrollbar>
 

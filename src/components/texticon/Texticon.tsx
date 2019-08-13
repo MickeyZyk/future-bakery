@@ -16,7 +16,7 @@ const Texticon = (props, className) => {
             from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: -200, ease: 'Power2.easeOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: -200, ease: 'Power2.easeIn' } : false } >
               <div>
-                <img src={'/svg/' + props.src} />
+                <img src={'../svg/' + props.src} />
                 <h4 className={s.icon_heading}>{props.name}</h4>
               </div>
             </Tween>

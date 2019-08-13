@@ -53,7 +53,7 @@ export default () => (
                     </Row>                  
                   </div>
 
-                  <img src="/images/paper_plane.jpg" className='bakery_contact_image'/>
+                  <img src="../images/paper_plane.jpg" className='bakery_contact_image'/>
 
 
                 </Scrollbar>

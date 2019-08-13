@@ -17,7 +17,7 @@ import s from './Slider.scss';
 
 var startCarouselInterval;
 
-var images = ['/images/image.jpg', '/images/dude.jpg','/images/desk.jpg','/images/image.jpg', '/images/dude.jpg','/images/desk.jpg']
+var images = ['../images/image.jpg', '../images/dude.jpg','../images/desk.jpg','../images/image.jpg', '../images/dude.jpg','../images/desk.jpg']
 var labels = ["THE FUTURE IS HERE", "THE END IS NIGH", "THE HUNS ARE COMING","ROME HAS FALLEN", "APOCALYPSE NOW", "FLIGHT OVER THE COCKOO'S NEST" ]
 var texts = ['Top creative and strategic minds joined forces with the largest crowd of consumers.', 
 'Many variations of Lorem Ipsum exist today, the text includes humorous phrases.',

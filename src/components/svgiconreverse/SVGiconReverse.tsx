@@ -36,7 +36,7 @@ const SVGiconReverse = (props) => {
               <div>
                 <Tween duration={1} to={{ x: 0.065 * x, y: 0.065 * y, ease: 'Power2.easeOut', transformPerspective: 900, transformOrigin: 'center'}}>
                   <div>
-                    <img src={'/svg/' + props.src} />
+                    <img src={'../svg/' + props.src} />
                   </div>
                 </Tween>
               </div>

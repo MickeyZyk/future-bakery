@@ -25,7 +25,7 @@ export class MenuBackground extends React.Component {
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
 				<div className={s.background}>
-					<img className={s.background_logo} src="/images/bakery_menu_logo.png"/>					
+					<img className={s.background_logo} src="../images/bakery_menu_logo.png"/>					
 				</div>
 
             </Tween>

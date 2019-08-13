@@ -120,7 +120,7 @@ const CrowdersAbout = ({ data, className }) => {
       </ReactCursorPosition>            
       
 
-        <div className="crowders_about_blueboard" style={{backgroundImage: `url(/images/how_we_do_it_image.jpg)`}}>
+        <div className="crowders_about_blueboard" style={{backgroundImage: `url(../images/how_we_do_it_image.jpg)`}}>
 
           <Row>
 
@@ -140,7 +140,7 @@ const CrowdersAbout = ({ data, className }) => {
 
             <div className='crowders_phase_column'>
 
-              <img src='/svg/crowders_arrowz.svg' />
+              <img src='../svg/crowders_arrowz.svg' />
 
               <Paragraph>CHANGE THEME IDENTIFICATION</Paragraph>
 
@@ -148,14 +148,14 @@ const CrowdersAbout = ({ data, className }) => {
 
             <div className='crowders_phase_column arrow_column'>
 
-              <img src='/images/crowders_about_down_arrow.png' />
+              <img src='../images/crowders_about_down_arrow.png' />
 
 
             </div>
 
             <div className='crowders_phase_column'>
 
-              <img src='/svg/crowders_turntable.svg' />
+              <img src='../svg/crowders_turntable.svg' />
 
               <Paragraph>THEME/TOPIC AMPLIFICATION</Paragraph> 
 
@@ -163,14 +163,14 @@ const CrowdersAbout = ({ data, className }) => {
 
             <div className='crowders_phase_column arrow_column'>
 
-              <img src='/images/crowders_about_up_arrow.png' />
+              <img src='../images/crowders_about_up_arrow.png' />
 
 
             </div>
 
             <div className='crowders_phase_column'>
 
-              <img src='/svg/crowders_tablet.svg' />
+              <img src='../svg/crowders_tablet.svg' />
 
               <Paragraph>COMMUNITY BUILD UP</Paragraph>
 
@@ -178,14 +178,14 @@ const CrowdersAbout = ({ data, className }) => {
 
             <div className='crowders_phase_column arrow_column'>
 
-              <img src='/images/crowders_about_down_arrow.png' />
+              <img src='../images/crowders_about_down_arrow.png' />
 
 
             </div>
 
             <div className='crowders_phase_column'>
 
-              <img src='/svg/crowders_clipboard.svg' />
+              <img src='../svg/crowders_clipboard.svg' />
 
               <Paragraph>DEMAND AND CONTENT</Paragraph>
 
@@ -216,7 +216,7 @@ const CrowdersAbout = ({ data, className }) => {
 
               <Heading className="crowders_about_heading_three">What we do</Heading>     
 
-              <CrowdersSmallFigure src="/images/nail_sharpener.jpg" className="crowders_about_middle_image" />                 
+              <CrowdersSmallFigure src="../images/nail_sharpener.jpg" className="crowders_about_middle_image" />                 
 
             </div>
 
