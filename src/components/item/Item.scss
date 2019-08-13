@@ -58,7 +58,6 @@
     mix-blend-mode: multiply;
 }
 .arrow {
-  clip-path: inset(.001% 100% .003% -2.5%);    
   position: absolute;
   width: 8vw;
   top: 0.7vw;
@@ -66,6 +65,7 @@
   bottom: auto;
   right: auto;
   z-index: 10;
+  opacity: 0;
 }
 .arrow_heading {
   opacity: 0;
