@@ -97,7 +97,7 @@ export default class CrowdersIndex extends React.Component {
 
                 <div className="crowders_home_flip_button">
                   <Row>
-                    <Link crowders arrow button className="home_cta_button" to={'/crowderscontact'}>JOIN US</Link>
+                    <Link crowders arrow button className="home_cta_button" to={'/crowders'}>JOIN US</Link>
                   </Row>
                 </div>
 

@@ -146,8 +146,8 @@ var linkURLs = this.props.links
             {({ location }) => (
 
             <Row>
-              <LeftLink arrow bakers to={location.pathname} className={s.team_previous} onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
-              <Link arrow bakers to={location.pathname} className={s.team_next} onClick={this.nextSlide.bind(this)}>NEXT</Link>     
+              <LeftLink arrow bakers to={location.pathname} className={s.team_previous} onClick={this.prevSlide.bind(this)}>{location.pathname.includes('cz') ? 'PŘEDCHOZÍ' : 'PREVIOUS'}</LeftLink>
+              <Link arrow bakers to={location.pathname} className={s.team_next} onClick={this.nextSlide.bind(this)}>{location.pathname.includes('cz') ? 'DALŠÍ' : 'NEXT'}</Link>     
             </Row>
 
             )}

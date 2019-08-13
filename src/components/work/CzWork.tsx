@@ -289,7 +289,7 @@ export default class CzWork extends React.Component {
 
                       <Link 
                       to={ "/czbakerscontact/" }
-                      gray arrow className={s.start_project}>START A PROJECT WITH US</Link>
+                      gray arrow className={s.start_project}>ZAHÁJIT PROJEKT S NÁMI</Link>
 
                       )}
                   </Location>  
