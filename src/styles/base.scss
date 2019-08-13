@@ -75,128 +75,6 @@ h2.crowders_color > .ts-line-h {color: #37c6f4!important}
 
 
 
-/* MOBILE SLIDER */
-
-
-
-.mobile_child {
-
-  @include grid-col(16);
-  margin-left: 11.1111%!important;  
- 
-
-}
-
-.mobile_slide_heading {
-
-  margin-top: 18vw;
-  font-weight: 900;
-  $font-map: (375px: 33px, 959px: 85px);
-  @include poly-fluid-sizing('font-size', $font-map); 
-  $height-map: (375px: 26px, 959px: 75px);
-  @include poly-fluid-sizing('line-height', $height-map); 
-  min-height: 40vw;
-  @include grid-col(14);
-  @include grid-offset-left(2);
-  opacity: 0;
-  transition: opacity 1s;
-
-
-}
-
-.mobile_slide_text {
-  margin-top: 10vw;
-  @include grid-col(14);
-  margin-left: 11.1111%!important;  
- 
-
-}   
-
-.mobile_slide_heading.current {
-  opacity: 1;
-  transition: opacity 1s;  
-}
-
-.mobile_button_link {
-  margin-left: 11.1111%!important;   
-  opacity: 0;
-  transition: opacity 1s;
-  position: absolute;
-  top: 170vw;  
-}
-
-.mobile_button_link.link_current {
-  opacity: 1;
-  transition: opacity 1s;  
-}
-
-.mobile_slide_text {
-  opacity: 0;
-  transition: opacity 1s;  
-} 
-
-.mobile_slide_text.text_current {
-  opacity: 1;
-  transition: opacity 1s;  
-} 
-
-
-.mobile_mask .child_image {
-  transform: translateX(100%)!important;
-  opacity: 0!important;
-  transition: all 1s;  
-  transition-timing-function: ease-in-out;
-} 
-
-.mobile_mask .child_current {
-  transform: translateX(0%)!important;  
-  opacity: 1!important;
-  transition: all 1s;  
-  transition-timing-function: ease-in-out;
-} 
-
-
-
-
-
-
-
-.mobile_mask {
-    margin-top: 15vw;
-     display: block;
-    @media (min-width: $min-960) {
-      display: none
-    }    
-
-}
-
-.desktop_carousel {
-      display: none!important;
-    @media (min-width: $min-960) {
-      display: flex!important;
-    }    
-
-}
-
-
-.mobile_mask .mask_parent_top {
-  flex-direction: row!important;
-}
-
-
-.fulscreen_slider {
-
-    @media (min-width: $min-960) {
-      ;
-    }    
-
-}
-
-
-
-
-
-/* END MOBILE SLIDER */
 
 a {text-decoration: none}
 
@@ -6867,3 +6745,204 @@ select {
 .work_item_wrapper:nth-child(10) {
   display: none;
 }
+
+
+
+
+
+
+
+/* MOBILE STUFF */
+
+
+
+
+
+@media (max-width: $max-960) {
+
+
+
+
+
+
+.mobile_child {
+
+  @include grid-col(16);
+  margin-left: 11.1111%!important;  
+ 
+
+}
+
+.mobile_slide_heading {
+
+  margin-top: 18vw;
+  font-weight: 900;
+  $font-map: (375px: 33px, 959px: 85px);
+  @include poly-fluid-sizing('font-size', $font-map); 
+  $height-map: (375px: 26px, 959px: 75px);
+  @include poly-fluid-sizing('line-height', $height-map); 
+  min-height: 22vw;
+  @include grid-col(14);
+  @include grid-offset-left(2);
+  opacity: 0;
+  transition: opacity 1s;
+
+
+}
+
+.mobile_slide_text {
+  margin-top: 10vw;
+  @include grid-col(14);
+  margin-left: 11.1111%!important;  
+ 
+
+}   
+
+.mobile_slide_heading.current {
+  opacity: 1;
+  transition: opacity 1s;  
+}
+
+.mobile_button_link {
+  margin-left: 11.1111%!important;   
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  top: 150vw;  
+}
+
+.mobile_button_link.link_current {
+  opacity: 1;
+  transition: opacity 1s;  
+}
+
+.mobile_slide_text {
+  opacity: 0;
+  transition: opacity 1s;  
+} 
+
+.mobile_slide_text.text_current {
+  opacity: 1;
+  transition: opacity 1s;  
+} 
+
+
+.mobile_mask .child_image {
+  transform: translateX(100%)!important;
+  opacity: 0!important;
+  transition: all 1s;  
+  transition-timing-function: ease-in-out;
+} 
+
+.mobile_mask .child_current {
+  transform: translateX(0%)!important;  
+  opacity: 1!important;
+  transition: all 1s;  
+  transition-timing-function: ease-in-out;
+} 
+
+
+
+
+
+
+
+.mobile_mask {
+    margin-top: 15vw;
+     display: block;
+    @media (min-width: $min-960) {
+      display: none
+    }    
+
+}
+
+.desktop_carousel {
+      display: none!important;
+    @media (min-width: $min-960) {
+      display: flex!important;
+    }    
+
+}
+
+
+.mobile_mask .mask_parent_top {
+  flex-direction: row!important;
+}
+
+
+
+
+
+
+
+
+.total_indicator {
+  transform: rotate(0deg);  
+  text-align: center;
+  display: none;  
+  position: fixed;
+  font-weight: bold;
+  margin-left: 80%;
+  top: 188vw; 
+  left: 4vw;     
+}
+
+.mobile_total_indicator.total_indicator_current {
+  display: block;
+
+}
+
+.slider_indicator {
+  transform: rotate(0deg);   
+  text-align: center;
+  display: none;
+  position: fixed;
+  font-weight: bold;
+  top: 188vw;
+  margin-left: 80%;  
+}
+
+.mob_left {
+  position: absolute; 
+  text-align: right;
+  top: 185vw;
+  left: 11.11%;  
+}
+.mob_right {
+  position: absolute; 
+  text-align: right;
+  top: 185vw;
+  left: 25%;  
+}
+.mob_nextprev {
+  position: relative;
+  width: 20%;
+
+}
+
+.bakery_home_flip_button {
+  
+    position: relative;
+    bottom: 10vw;
+    @include grid-col(14);
+    @include grid-offset-left(2);
+    
+}
+
+
+
+
+
+
+} 
+/* END MOBILE STUFF */
+
+
+
+
+
+
+
+
+
+

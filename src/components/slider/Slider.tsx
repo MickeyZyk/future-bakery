@@ -76,7 +76,41 @@ class Carousel extends React.Component {
     this.chidrenNodes = [];
     /* this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 2000, true);   */
     this.scream  = this.scream.bind(this)
+    this.pre  = this.pre.bind(this)
+    this.nex  = this.nex.bind(this)
   }
+
+  pre(){
+    if (this.state.gotoState > 0 ) {
+
+      console.log("N", this.state.gotoState)
+      this.prevSlide(this.state.gotoState) 
+
+    } else {
+
+      this.setState({ gotoState: 1 }, () => {
+      console.log("R", this.state.gotoState)
+        this.gotoSlide(this.state.gotoState)              
+      }) 
+
+
+    }
+  }
+
+  nex(){
+    if (this.state.gotoState == this.props.images.length) {
+
+      this.setState({ gotoState: 1 }, () => {
+      console.log("R", this.state.gotoState)
+        this.gotoSlide(this.state.gotoState)              
+      }) 
+
+    } else {
+      console.log("N", this.state.gotoState)
+      this.nextSlide(this.state.gotoState) 
+    }
+  }
+
 
 
   componentDidMount(){
@@ -387,8 +421,18 @@ class Carousel extends React.Component {
     var images = this.props.images
 
 
-    var mobileWidth = (this.props.images.length * 100) + '%'
-    console.log(mobileWidth)
+
+    var controlz = (
+          <>
+            <div className="mob_left">
+              <div onClick={this.pre} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
+            </div>
+            <div className="mob_right"> 
+              <div onClick={this.nex} className="mob_nextprev"><img src="/svg/mob_right.svg"/></div>
+            </div>
+          </>
+
+    )
 
 
     var carouselLeftButton = (
@@ -434,14 +478,6 @@ class Carousel extends React.Component {
         </div>
 
 
-
-
-
-
-
-
-
-
       )
     })
 
@@ -449,6 +485,7 @@ class Carousel extends React.Component {
 
     var mobileCarouselImages =  images.map((image, i) =>{
       return(
+
         <div style={{ position: 'absolute', top: '-100%', width: '100%' }} key={'2key_'+i}>
           <h2 key={'2key_'+i} id={'i0'+(i)} className={`${'mobile_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>
           <MobileCarouselImage style={{ width: '50px' }} horizontal={this.state.horizontal} 
@@ -456,8 +493,35 @@ class Carousel extends React.Component {
           key={'key_'+i} label={labels[i]} 
           timeInBetween={this.props.timeInBetween} whichOne={i} src={image} />
           <h3 key={'key_text_'+i} className={`${'mobile_slide_text'} ${this.state.activeIndex == (i-1) ? 'text_next' : ''} ${this.state.activeIndex == i ? 'text_current' : ''} ${this.state.activeIndex == (i+1) ? 'text_prev' : ''}`}>{texts[i]}</h3>
-          <Link arrow gray className={`${'mobile_button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>LEARN MORE</Link>
+
+      <Location>
+          {({ location }) => (
+
+
+          <Link arrow 
+          bakery = {location.pathname.includes('bakery') || location.pathname == '/' ? true : false}
+          bakers = {location.pathname.includes('bakers') ? true : false}
+          crowders = {location.pathname.includes('crowders') ? true : false}                    
+          className={`${'mobile_button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} 
+          to={links[i]}>{location.pathname.includes('cz') ? 'ZJISTIT VÍCE' : 'LEARN MORE'}</Link>
+
+
+          )}
+        </Location>
+
+
+
+
+
+
+
+
+        <div key={'ind' + i} className={`${'slider_indicator'} ${this.state.activeIndex == i ? 'indicator_current': ''}`}>{i+1}</div>
+        <div key={ 'it' + i } className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>/ {this.props.images.length}</div>
+
+
         </div>
+
       )
     })    
 
@@ -468,12 +532,12 @@ class Carousel extends React.Component {
       )
     }) 
 
+
     return (
      <>
         <div className="desktop_carousel" style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
           <ReactCursorPosition className='fullscreen_cursor_position'>
             <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='home_arrow.svg'  />
-            {this.state.showButtons  ? carouselLeftButton : null }
             <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '7vw', height: '35vw', overflow: 'hidden'}}>
               <div ref={this.wrapperRef_top} className='mask_parent_top' 
               style={{position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', 
@@ -493,7 +557,6 @@ class Carousel extends React.Component {
                 {carouselImages}
               </div>          
             </div>
-            {this.state.showButtons ? carouselRightButton : null } 
           </ReactCursorPosition>
 
         </div>
@@ -503,7 +566,8 @@ class Carousel extends React.Component {
               style={{  display: 'block', width: '100%', position: 'relative'}}>         
                 {mobileCarouselImages}            
               </div>
-            </div>
+            </div>  
+            {controlz}          
 
     </>
 
