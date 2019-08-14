@@ -6788,10 +6788,9 @@ select {
 
 @media (min-width: $min-960) {
 
-.crowders_scroll > div > div {
-  max-height: 100vh;
-  overflow: hidden; 
-}
+  .crowders_contact_fulscreen_slider {
+      max-height: 100vh;
+  }
 
 }
 
