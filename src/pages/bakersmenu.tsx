@@ -10,6 +10,10 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import ReactDOM from 'react-dom';
+import { globalHistory, Location } from "@reach/router"
+import { If, Then, Else, Switch, Case, Default } from 'react-if'
+import { ContextProviderComponent } from "utils/Context";
+import ContextConsumer from "utils/Context";
 
 export default class BakersMenu extends React.Component {
 
@@ -62,7 +66,7 @@ export default class BakersMenu extends React.Component {
 					<>
 					<MenuBackground/>
 					  <Helmet title="Future Bakery" />
-							<div className='fullscreen'>
+							<div className='fullscreen mob_menu_wrapper'>
 						    <ReactCursorPosition className='fullscreen_cursor_position'>   
 						      <Helmet title="Bakery" />
 						      <SVGicon className='bakers_menu_crown' src='bakers_menu_crown.svg' /> 
@@ -120,21 +124,54 @@ export default class BakersMenu extends React.Component {
 							</div>
 
 				      <div className='fb_linkedin_menu'>
-				        <a href='https://facebook.com' target='_blank'>FACEBOOK</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
+				        <a href='https://facebook.com' target='_blank'>FACEBOOK</a><a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
 				      </div>
+
+
+
+			         <Location>
+			            {({ location }) => (   
+			                <>
+
+			              <If condition={location.pathname.includes('bakers') && !location.pathname.includes('cz')}>
+
+			                <Then>
+
+			                <ContextConsumer>
+			                  {({ data, set  }) => (
+			                    <Link 
+			                    className={ 'submenu_link switcher_link mobile_switcher'} 
+			                    onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERY" to="/czbakers">CZ / <span className="bold">EN</span></Link>
+			                  )}
+			                </ContextConsumer>
+
+			                </Then>
+
+			              </If>
+
+			              <If condition={location.pathname.includes('czbakers')}>
+
+			                <Then>
+
+			                <ContextConsumer>
+			                  {({ data, set  }) => (
+			                    <Link 
+			                    className={ 'submenu_link switcher_link mobile_switcher'} 
+			                    onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERY" to="/bakers"><span className="bold">CZ</span> / EN</Link>
+			                  )}
+			                </ContextConsumer>
+
+			                </Then>
+
+			              </If>              
+
+			              </>
+			            )}
+			          </Location> 
+
 
 					</>
 
-
-
-
-
-
-
-
-
-
-					
 
 			  );	
 

@@ -1022,7 +1022,7 @@ p {font-weight: lighter;}
   position: fixed;
   bottom: 8vw;
   z-index: 15;  
-  @include grid-col(3);
+  @include grid-col(6);
   @include grid-offset-left(3); 
 
   }    
@@ -1037,6 +1037,7 @@ p {font-weight: lighter;}
   display: inline-block; 
   transition: transform 0.5s; 
   transform: translateZ(0);
+  margin-right: 4vw;
 
 }
 
@@ -7009,65 +7010,53 @@ select {
 
 .bakers_menu_crown {
 
-  transform: rotate(-15deg);
-  @include grid-col;
- 
 
-  @media (min-width: $min-960) {
   position: absolute;
-  top: 10vw;
+  top: 30vw;
   z-index: 15;  
-  @include grid-col(.75);
+  @include grid-col(2.5);
   @include grid-offset-left(2.75); 
 
-  }
 
 }
 
 .bakers_menu_baloons {
   
-  transform: rotate(5deg);
-  @include grid-col; 
 
-  @media (min-width: $min-960) {
   position: absolute;
-  top: 9vw;
+  top: 28vw;
   z-index: 15;  
-  @include grid-col(.75);
-  @include grid-offset-left(5); 
+  @include grid-col(2.5);
+  @include grid-offset-left(9); 
 
-
-  }  
 }
 
 .bakers_menu_temple {
 
-  transform: rotate(-15deg);
-  @include grid-col; 
 
-  @media (min-width: $min-960) {
   position: absolute;
-  top: 11vw;
+  top: 35vw;
   z-index: 15;  
-  @include grid-col(.75);
-  @include grid-offset-left(6.5); 
+  @include grid-col(2.5);
+  @include grid-offset-left(14); 
 
-  }
+
 
 }
 
 
 .menu_cursor_position {
   opacity: 1;
+  overflow: hidden;
 }
 
 .menu_crown {
 
   opacity: 1;
-  position: absolute;
+  position: fixed;
   z-index: 15;  
   bottom: 25vw;  
-  @include grid-col(3);
+  @include grid-col(2.5);
   @include grid-offset-left(2.75); 
 
  
@@ -7077,10 +7066,10 @@ select {
 .menu_baloons {
   
   opacity: 1;
-  position: absolute;
+  position: fixed;
   z-index: 15;  
   bottom: 25vw;  
-  @include grid-col(3);
+  @include grid-col(2.5);
   @include grid-offset-left(8); 
 
 }
@@ -7088,10 +7077,10 @@ select {
 .menu_temple {
 
   opacity: 1;
-  position: absolute;
+  position: fixed;
   bottom: 25vw;  
   z-index: 15;  
-  @include grid-col(3);
+  @include grid-col(2.5);
   @include grid-offset-left(12); 
 
 
@@ -7128,16 +7117,82 @@ opacity: 0;
 
 
 
+.fb_linkedin_menu {
+
+  position: fixed;
+  bottom: 8vw;
+  z-index: 15;  
+  @include grid-col(2);
+  @include grid-offset-left(2); 
+
+ 
+
+}
+
+.fb_linkedin_menu a {
+  color: #fff;
+  text-decoration: none;
+  $font-map: (375px: 16px, 959px: 40px);
+  @include poly-fluid-sizing('font-size', $font-map);    
+  display: inline; 
+  transition: transform 0.5s; 
+  transform: translateZ(0);
+  margin-right: 8vw;
+
+}
+
+
+.fb_linkedin_menu a:hover {
+  transform: scale(1.124);
+  transition: transform 0.5s;
+}
+
+.mobile_switcher {
+    position: fixed;
+    bottom: 8.1vw;
+    right: 11%;
+    left: auto;
+    color: #fff;
+}
 
 
 
 
 
+.crowders_menu_phone {
+
+  opacity: 1;
+  position: absolute;
+  z-index: 15;  
+  bottom: 25vw;  
+  @include grid-col(3);
+  @include grid-offset-left(2.75); 
 
 
 
+}
 
+.crowders_menu_blah {
+  
+  opacity: 1;
+  position: absolute;
+  z-index: 15;  
+  bottom: 25vw;  
+  @include grid-col(3);
+  @include grid-offset-left(8); 
 
+}
+
+.crowders_menu_chat {
+
+  opacity: 1;
+  position: absolute;
+  bottom: 25vw;  
+  z-index: 15;  
+  @include grid-col(3);
+  @include grid-offset-left(12); 
+
+}
 
 
 } 

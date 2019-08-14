@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { ContextProviderComponent } from "utils/Context";
-import { globalHistory, Location } from "@reach/router"
 import ContextConsumer from "utils/Context";
 import Helmet from 'react-helmet';
 import { helmet } from 'utils/helmet';
@@ -9,6 +8,7 @@ import { Footer } from 'components/footer/Footer';
 import { Link as HeaderLink } from 'components/header/Link';
 import { Devtools } from 'components/devtools/Devtools';
 import ReactDOM from 'react-dom';
+import { globalHistory, Location } from "@reach/router"
 import { If, Then, Else, Switch, Case, Default } from 'react-if'
 import Circle from 'assets/svg/circle.svg';
 import WhiteCircle from 'assets/svg/white_circle.svg';

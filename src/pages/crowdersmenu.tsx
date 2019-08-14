@@ -60,7 +60,7 @@ export default class CrowdersMenu extends React.Component {
 					<>
 					<MenuBackground/>
 					  <Helmet title="Future Crowders" />
-							<div className='fullscreen'>
+							<div className='fullscreen mob_menu_wrapper'>
 						    <ReactCursorPosition className='fullscreen_cursor_position'>   
 						      <Helmet title="Bakery" />
 						      <SVGicon className='crowders_menu_phone' src='crowders_menu_phone.svg' /> 
@@ -118,7 +118,7 @@ export default class CrowdersMenu extends React.Component {
 							</div>
 
 				      <div className='fb_linkedin_menu'>
-				        <a href='https://facebook.com' target='_blank'>FACEBOOK</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
+				        <a href='https://facebook.com' target='_blank'>FACEBOOK</a><a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
 				      </div>
 
 					</>
