@@ -4770,7 +4770,7 @@ select {
   text-align: left;
   $font-map: (375px: 30px, 959px: 75px, 960px: 20px, 2880px: 60px);
   @include poly-fluid-sizing('font-size', $font-map); 
-
+  transform-origin: bottom left;
   @media (min-width: $min-960) {
   position: absolute;
   left: 1vw;
@@ -4784,8 +4784,8 @@ select {
   @media (min-width: $min-960) {
 
   transition: all 1s;   
-  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 24px, 2880px: 68px);
-  @include poly-fluid-sizing('font-size', $font-map); 
+  transform: scale(1.1);
+  transform-origin: bottom left;
 
   }
 
@@ -4912,13 +4912,16 @@ select {
 
 .family_icon img {
   transition: all 1s; 
+  transform: translateX(-3vw);
+  transform-origin: bottom left;
 }
 
 .family_wrapper:hover .family_icon img {
   transition: all 1s;  
 
   @media (min-width: $min-960) {
-    transform: scale(1.2);
+    transform: scale(1.2) translateX(-3vw);
+  transform-origin: bottom left;    
   }    
 
 }

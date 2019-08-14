@@ -44,14 +44,13 @@ export default ({ state }) => {
 
 
 
-			  	
 			<>
 
 
 
 
 					<MenuBackground/>
-					  <Helmet title="Future Bakery" />
+					  <Helmet title="Family" />
 
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
@@ -59,7 +58,7 @@ export default ({ state }) => {
 
 						<div className='fullscreen'>
 						    <ReactCursorPosition className='fullscreen_cursor_position'>   
-						      <Helmet title="Bakery" />
+
 									<h2 className="family_heading">FUTURE BAKERY FAMILY</h2>
 									<div className="family_row">		      
 										<div className="family_wrapper family_bakery_wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={ current==0 ? {opacity: 1, left: 0} : {opacity: 0, left: 0} }>
