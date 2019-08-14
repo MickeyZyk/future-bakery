@@ -2184,6 +2184,10 @@ select {
       top: 96vw;  
 }
 
+
+
+
+
 .total_indicator {
   transform: rotate(-90deg);  
   text-align: center;
@@ -7188,9 +7192,47 @@ opacity: 0;
   opacity: 1;
   position: absolute;
   bottom: 25vw;  
-  z-index: 15;  
+  z-index: 17;  
   @include grid-col(3);
   @include grid-offset-left(12); 
+
+}
+
+
+.bakery_work_icon {
+
+    top: 20vw;
+    @include grid-col(2.5);
+    @include grid-offset-left(4);
+    z-index: 5; 
+   
+}
+
+.bakery_work_harmonica {
+
+    top: 70vw;
+    @include grid-col(4);
+    @include grid-offset-left(12);
+    z-index: 5; 
+    
+}
+
+
+.bakery_work_headline {
+    @include grid-col(12);
+    @include grid-offset-left(2);
+    top: 20vw;
+
+}
+
+
+.bakery_work_project {
+    top: 10vw;
+    @include grid-col(2.5);
+    @include grid-offset-left(-10.5);
+    z-index: 5; 
+    margin-bottom: 10vw;
+    padding-bottom: 10vw;    
 
 }
 
