@@ -90,7 +90,7 @@ export class Item2 extends React.Component {
 
                       <Link arrow white
                         to={ 
-                          location.pathname.includes('czbakers') ? "/czbakers-work/" + this.props.data.node.title.toLowerCase()                         
+                          location.pathname.includes('czbakers') ? "/czbakers-work/" + slug(this.props.data.node.title.toLowerCase())                         
                           : '/bakers-work/' + slug(this.props.data.node.title.toLowerCase()) 
                         }>FIND OUT MORE</Link>
 
