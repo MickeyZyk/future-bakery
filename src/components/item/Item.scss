@@ -91,9 +91,9 @@
   opacity: 0;
   transition: opacity 1s;
   @media (max-width: 959px) {
-    width: 16vw;
+    width: 18vw;
     top: 3vw;
-    left: -0.71vw; 
+    left: -0.71vw;
   }   
 }
 .arrow_heading {
@@ -114,11 +114,12 @@
   align-items: center;
   height: 2vw; 
   @media (max-width: 959px) {
-    font-size: 2vw;
-    line-height: 2vw;      
-    width: 16vw;
-    top: 7.25vw;
-    left: 3vw; 
+    font-size: 1.7vw;
+    line-height: 1.6vw;
+    width: 13.7vw;
+    top: 6.25vw;
+    left: 2vw;
+    height: 5.7vw;
   }      
 }
 .client_logo {
