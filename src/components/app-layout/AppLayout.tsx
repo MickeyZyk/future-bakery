@@ -79,7 +79,7 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
                 <ContextConsumer>
                   {({ data, set  }) => (
                     <HeaderLink 
-                    className={ 'submenu_link switcher_link'} 
+                    className={ 'submenu_link switcher_link'} style={ location.pathname.includes('menu') ? {color:'#fff'} : {color:'#231f20'}} 
                     onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERY" to="/czbakers">CZ / <span className="bold">EN</span></HeaderLink>
                   )}
                 </ContextConsumer>
@@ -95,7 +95,7 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
                 <ContextConsumer>
                   {({ data, set  }) => (
                     <HeaderLink 
-                    className={ 'submenu_link switcher_link'} 
+                    className={ 'submenu_link switcher_link'} style={ location.pathname.includes('menu') ? {color:'#fff'} : {color:'#231f20'}} 
                     onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERY" to="/bakers"><span className="bold">CZ</span> / EN</HeaderLink>
                   )}
                 </ContextConsumer>
