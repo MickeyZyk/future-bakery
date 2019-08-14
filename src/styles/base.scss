@@ -1364,13 +1364,16 @@ select {
   opacity: 0;  
   width: 100%;
   height: 7vh;
-  position: absolute;  
+  position: fixed;  
 }
 
 .submenu_link:hover .menu_cursor_position {
   transition: opacity 1s;  
   pointer-events: all;
   opacity: 1;
+  width: 100%;
+  height: 7vh;
+  position: fixed;  
 }
 
 
@@ -6842,20 +6845,17 @@ select {
 
 .mobile_mask .child_image {
   transform: translateX(100%)!important;
-  opacity: 0!important;
+  /* opacity: 0!important; */
   transition: all 1s;  
   transition-timing-function: ease-in-out;
 } 
 
 .mobile_mask .child_current {
   transform: translateX(0%)!important;  
-  opacity: 1!important;
+  /* opacity: 1!important; */
   transition: all 1s;  
   transition-timing-function: ease-in-out;
 } 
-
-
-
 
 
 
@@ -6884,20 +6884,16 @@ select {
 
 
 
-
-
-
-
-
 .total_indicator {
   transform: rotate(0deg);  
   text-align: center;
   display: none;  
   position: fixed;
   font-weight: bold;
-  margin-left: 80%;
+  margin-left: 79%;
   top: 170vw; 
-  left: 1vw;     
+  left: 1.8vw; 
+  color: #9e9e9e;    
 }
 
 .mobile_total_indicator.total_indicator_current {
@@ -6912,7 +6908,7 @@ select {
   position: fixed;
   font-weight: bold;
   top: 170vw;
-  margin-left: 76%;  
+  margin-left: 75%;  
 }
 
 .mob_left {
@@ -6942,6 +6938,24 @@ select {
     
 }
 
+.bakers_home_flip_button {
+
+    position: relative;
+    bottom: 10vw;
+    @include grid-col(14);
+    @include grid-offset-left(2);
+
+}
+
+.crowders_home_flip_button {
+
+    position: relative;
+    bottom: 10vw;
+    @include grid-col(14);
+    @include grid-offset-left(2); 
+
+}
+
 
 .fulscreen_slider {
     width: 100vw;
@@ -6951,13 +6965,47 @@ select {
 }
 
 
+.bakers_home__bakers_crown {
+
+  position: absolute;
+  top: 85vw;
+  transform: rotate(15deg);
+  @include grid-col(2.5);
+  @include grid-offset-left(10.2); 
+  z-index: 15; 
+
+
+}
+
+.bakers_home__bakers_bulb {
+  
+    position: absolute;
+    top: 85vw;
+    transform: rotate(15deg);
+    @include grid-col(2.5);
+    @include grid-offset-left(6.2); 
+    z-index: 15; 
+ 
+}
+
+.crowders_home__crowders_bubble {
+    position: absolute;
+    top: 95vw;
+    transform: rotate(15deg);
+    @include grid-col(2.5);
+    @include grid-offset-left(4); 
+    z-index: 15; 
+
+}
+
+.mob_menu_wrapper {
+  height: 100vh;
+  overflow: auto;
+}
+
 
 } 
 /* END MOBILE STUFF */
-
-
-
-
 
 
 

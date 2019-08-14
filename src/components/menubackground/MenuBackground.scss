@@ -15,11 +15,23 @@
 .background_logo {
     opacity: 1;
     position: absolute;
-    width: 43vw;
+    width: 75vw;
     margin: auto;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 0;    
+    z-index: 0; 
+
+   @media (min-width: $min-960) {
+        opacity: 1  ;
+        position: absolute;
+        width: 43vw;
+        margin: auto;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0; 
+  } 
 }

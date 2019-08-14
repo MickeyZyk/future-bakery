@@ -67,7 +67,7 @@ export default class BakeryMenu extends React.Component {
 
 
 					  <Helmet title="Future Bakery" />
-							<div className='fullscreen'>
+							<div className='fullscreen mob_menu_wrapper'>
   
 						      <Helmet title="Bakery" />
 									<div className='menu_row'>
