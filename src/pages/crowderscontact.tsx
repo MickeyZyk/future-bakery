@@ -30,9 +30,9 @@ export default () => (
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
           
-              <div className='fulscreen_slider'>
+              <div className='crowders_contact_fulscreen_slider'>
 
-                  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}> 
+                  <Scrollbar className="scrollbar crowders_scroll" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}> 
 
                     <AnimatedHeading className='bakery_contact_heading crowders_color'>Headline call to action for contact page.</AnimatedHeading>
                     <div className="bakery_contact_adress_block">

@@ -1781,6 +1781,9 @@ select {
 /* CROWDERS MENU */
 
 
+
+
+
 .crowders_menu_phone {
 
   transform: rotate(-15deg);
@@ -6783,6 +6786,18 @@ select {
 
 
 
+@media (min-width: $min-960) {
+
+.crowders_scroll > div > div {
+  max-height: 100vh;
+  overflow: hidden; 
+}
+
+}
+
+
+
+
 /* MOBILE STUFF */
 
 
@@ -7313,15 +7328,62 @@ opacity: 0;
     margin-left: 11.11111%;
 }
 
+.bakery_contact_house {
+    top: 25vw;
+    @include grid-col(2.5);
+    @include grid-offset-left(4);
+    z-index: 5; 
+  
+}
+
+.bakery_contact_heading  {
+
+    position: relative;
+    top: 35vw;
+    @include grid-col(14);
+    @include grid-offset-left(2); 
+   
+}
 
 
+.bakery_contact_adress_block {  
 
 
+    position: relative;
+    top: 55vw;
+    @include grid-col(14);
+    @include grid-offset-left(2); 
 
+}
 
+.bakery_contact_image {
+    z-index: 0;
+    bottom: auto;
+    top: -85vw;
+    @include grid-col(12);
+    @include grid-offset-left(6); 
+    
+}
 
+.bakery_contact_flip_button {  
 
+    top: 10vw;
+    position: relative;
+    @include grid-col(18);
+    @include grid-offset-left(0); 
+    margin-bottom: 20vw;
 
+}
+
+.crowders_scroll {
+  height: 100vh;
+}
+
+.crowders_contact_fulscreen_slider {
+    width: 100vw;
+    overflow: visible;
+    /* background-color: #fff; */
+}
 
 } 
 /* END MOBILE STUFF */
