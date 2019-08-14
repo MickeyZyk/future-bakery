@@ -126,7 +126,8 @@ render() {
         <Row>
           <div className='bakery_about__left_column_one'>
             <AnimatedHeading className='__heading_one'>{this.props.data.gravBakeryAbout.heading_one}</AnimatedHeading>
-            <Figure2 className="show_on_mobile"/>
+            <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 
+            className="bakery_about__image_one_mobile show_on_mobile"/>
             <Paragraph className='bakery_about__paragraph paragraph'>{this.props.data.gravBakeryAbout.paragraph_one}</Paragraph>
           </div>
           <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 

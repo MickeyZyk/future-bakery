@@ -7381,6 +7381,48 @@ opacity: 0;
     /* background-color: #fff; */
 }
 
+
+
+
+.bakery_about__image_one_mobile {
+
+      @include grid-col(18);
+      @include grid-offset-left(0);
+      margin-bottom: 16vw;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scrollbar {
+  overflow: auto!important;
+  max-height: none;
+}
+
+.scroll-content {
+    padding-bottom: 20vw;
+}
+
+
 } 
 /* END MOBILE STUFF */
 

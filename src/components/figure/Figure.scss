@@ -2,12 +2,11 @@
 
 .figure {
 
-    height: 67vw;
+    height: 90vw;
 
 
     @media (min-width: $min-960) {
       z-index: -1;
-
       height: 30vw;
     }
 
@@ -20,8 +19,8 @@
 .background {
 
   @media (max-width: 959px) {
-    height: 67vw;
-    background-size: 220%;  
+    height: 90vw;
+    background-size: 200%; 
   }
   @media (min-width: $min-960) {
     height: 30vw;
