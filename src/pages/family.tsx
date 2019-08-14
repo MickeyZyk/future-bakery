@@ -61,19 +61,19 @@ export default ({ state }) => {
 
 									<h2 className="family_heading">FUTURE BAKERY FAMILY</h2>
 									<div className="family_row">		      
-										<div className="family_wrapper family_bakery_wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={ current==0 ? {opacity: 1, left: 0} : {opacity: 0, left: 0} }>
+										<div className="family_wrapper family_bakery_wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={ current==0 ? {opacity: 1, right: 0} : {opacity: 0, right: '89vw'} }>
 									      <SVGicon className='family_icon family_bakery_icon' src='family_bakery.svg' /> 
 									      <h3 className="family_subheading">Future Bakery</h3>
 									      <p className="family_paragraph">Fresh ideas and original content by and for your future consumers. (JE TO OK?)</p>	
 									      <Link className="family_link family_bakery_link" to={'/bakery'}>FIND OUT MORE</Link>							      
 										</div>
-										<div className=" family_wrapper family_bakers_wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={ current==1 ?  {opacity: 1, left: '-89vw'} : {opacity: 0, left: 0} }>
+										<div className=" family_wrapper family_bakers_wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={ current==1 ?  {opacity: 1, right: '89vw'} : {opacity: 0, right: '178vw'} }>
 									      <SVGicon className='family_icon family_bakers_icon' src='family_bakers.svg' />
 									      <h3 className="family_subheading">Future Bakers</h3>
 									      <p className="family_paragraph">Unleash your creativity and ideas. Join thousands of other creative souls who are eager to share ideas.(JE TO OK?)</p>
 									      <Link className="family_link family_bakers_link" to={'/bakers'}>FIND OUT MORE</Link>							      
 										</div>
-										<div className=" family_wrapper family_crowders_wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={ current==2 ?  {opacity: 1, left: '-178vw'} : {opacity: 0, left: 0} }>
+										<div className=" family_wrapper family_crowders_wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={ current==2 ?  {opacity: 1, right: '178vw'} : {opacity: 0, right: '267vw'} }>
 									      <SVGicon className='family_icon family_crowders_icon' src='family_crowders.svg' />
 									      <h3 className="family_subheading">Future Crowders</h3>
 									      <p className="family_paragraph">We create demand through seeking and developing cross-social topics. Communities building.(JE TO OK?)</p>								      
