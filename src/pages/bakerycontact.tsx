@@ -40,8 +40,7 @@ export default () => (
           
               <div className='crowders_contact_fulscreen_slider'>
 
-
-                <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>      
+   
 
                   <AnimatedHeading className='bakery_contact_heading bakery_color'>Headline call to action for contact page.</AnimatedHeading>
                   <div className="bakery_contact_adress_block">
@@ -61,7 +60,7 @@ export default () => (
                   </div>
                   <img src="../images/paper_plane.jpg" className='bakery_contact_image'/>
 
-                </Scrollbar>
+
 
               </div>
 
