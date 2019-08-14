@@ -32,7 +32,15 @@ export default class Work extends React.Component {
       hover: this.props.hovered ? true : false,
     };
     this.toggleHoverLeave = this.toggleHoverLeave.bind(this);  
-    this.toggleHoverEnter = this.toggleHoverEnter.bind(this);      
+    this.toggleHoverEnter = this.toggleHoverEnter.bind(this);
+    this.unhideMore = this.unhideMore.bind(this);  
+  }
+
+  unhideMore(){   
+   var x = document.querySelector(".work_item_wrapper:nth-child(5)");   
+   var s = document.querySelector(".spacer_top");   
+   x.style.display = "block";   
+   s.style.marginBottom = '37vw';   
   }
 
   toggleHoverLeave() {
@@ -122,7 +130,7 @@ export default class Work extends React.Component {
 
                 {this.props.data.allGravBakersCzWork.edges.map(( node, i ) => (
                   <div className="work_item_wrapper" key={i}>
-                  <Item2 data={node} i={i} />
+                    <Item2 data={node} i={i} />
                   </div>
 
                 ))}
@@ -130,16 +138,19 @@ export default class Work extends React.Component {
 
                 </div>
 
+                <div className="spacer_top"></div>
 
 
               <Location>
                 {({ location }) => (
-                    <Link gray arrow className="bakery_work_download" to={location.pathname}>STÁHNOUT VÍCE PROJEKTŮ</Link>
+                    <Link gray arrow className="bakery_work_download" onClick={ this.unhideMore }   to={location.pathname}>STÁHNOUT VÍCE PROJEKTŮ</Link>
                 )}
               </Location> 
 
 
                 <Link gray arrow className="bakery_work_project" to={'/czbakerscontact'}>ZAHÁJIT PROJEKT S NÁMI</Link>                
+
+                <div className="spacer_bottom"></div> 
 
               </ReactCursorPosition>                
 
