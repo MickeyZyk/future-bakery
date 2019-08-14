@@ -126,7 +126,7 @@ export default class CzWork extends React.Component {
                   to={ ['exiting'].includes(transitionStatus) ? { yPercent: 20, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
                   <div className={s.column__col0}>
                     <div className={s.wrapper}>
-                      <img className={s.arrow} src={'../svg/work_arrow.svg'} />
+                      <img className={s.arrow} src={'/svg/work_arrow.svg'} />
                       <AnimatedHeading className={s.arrow_heading}>Creative Strategy</AnimatedHeading>
                     </div>
                   </div> 
@@ -208,7 +208,7 @@ export default class CzWork extends React.Component {
               <div className={s.column__col5}>
                 <ScrollTo>
                   {({ scrollTo }) => (
-                    <p onClick={ this.handleClick } className={s.control}>EXPLORE <img className={s.explore} src='../images/explore_arrow.png' /></p>                    
+                    <p onClick={ this.handleClick } className={s.control}>EXPLORE <img className={s.explore} src='/images/explore_arrow.png' /></p>                    
                   )}
                 </ScrollTo>
               </div>
@@ -216,7 +216,7 @@ export default class CzWork extends React.Component {
               <If condition={this.props.data.gravBakersCzWork.video != 'null'}>
                 <Then>              
                   <div className={s.column__col6}>
-                    <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='../images/video_play.png' /></p>
+                    <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='/images/video_play.png' /></p>
                   </div>
                 </Then>
               </If>
