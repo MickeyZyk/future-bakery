@@ -6998,10 +6998,146 @@ select {
 
 }
 
+
+/* menu */
+
+
 .mob_menu_wrapper {
   height: 100vh;
   overflow: auto;
 }
+
+.bakers_menu_crown {
+
+  transform: rotate(-15deg);
+  @include grid-col;
+ 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 10vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(2.75); 
+
+  }
+
+}
+
+.bakers_menu_baloons {
+  
+  transform: rotate(5deg);
+  @include grid-col; 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 9vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(5); 
+
+
+  }  
+}
+
+.bakers_menu_temple {
+
+  transform: rotate(-15deg);
+  @include grid-col; 
+
+  @media (min-width: $min-960) {
+  position: absolute;
+  top: 11vw;
+  z-index: 15;  
+  @include grid-col(.75);
+  @include grid-offset-left(6.5); 
+
+  }
+
+}
+
+
+.menu_cursor_position {
+  opacity: 1;
+}
+
+.menu_crown {
+
+  opacity: 1;
+  position: absolute;
+  z-index: 15;  
+  bottom: 25vw;  
+  @include grid-col(3);
+  @include grid-offset-left(2.75); 
+
+ 
+
+}
+
+.menu_baloons {
+  
+  opacity: 1;
+  position: absolute;
+  z-index: 15;  
+  bottom: 25vw;  
+  @include grid-col(3);
+  @include grid-offset-left(8); 
+
+}
+
+.menu_temple {
+
+  opacity: 1;
+  position: absolute;
+  bottom: 25vw;  
+  z-index: 15;  
+  @include grid-col(3);
+  @include grid-offset-left(12); 
+
+
+
+}
+
+.menu_drill {
+opacity: 0;
+}
+
+
+.menu_saw {
+opacity: 0;
+}
+
+
+.menu_paint {
+opacity: 0;
+}
+
+
+.menu_phone {
+opacity: 0;
+}
+
+.menu_blah { 
+opacity: 0;
+}
+
+.menu_chat {
+opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 } 
