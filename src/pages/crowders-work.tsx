@@ -138,6 +138,8 @@ export default class Work extends React.Component {
                 </div>
 
 
+                <div className="crowders_spacer_top"></div>
+
           <Location>
             {({ location }) => (
               <>      
@@ -156,7 +158,7 @@ export default class Work extends React.Component {
                   <ExternalLink crowders button arrow className="crowders_work_cta_link" to={'../pdf/report.pdf'} >SEE A FUTURE REPORT</ExternalLink>
                 </Row>
 
-
+                <div className="crowders_spacer_bottom"></div>
 
               </ReactCursorPosition>                
 

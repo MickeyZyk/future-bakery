@@ -33,6 +33,10 @@ export class Slider extends React.Component {
 
   }
 
+  componentWillUnmount() {
+    clearInterval(startCarouselInterval);      
+  }   
+
   render() {
 
     //console.log("PARENT PROPS", this.props)

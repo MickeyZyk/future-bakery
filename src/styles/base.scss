@@ -1663,6 +1663,14 @@ select {
 
 }
 
+.crowders_spacer_top{
+  margin-bottom: 16vw;
+}
+
+.crowders_spacer_bottom{
+  margin-bottom: 2vw;
+}
+
 .spacer_top{
   margin-bottom: 8vw;
 }
@@ -1900,7 +1908,7 @@ select {
 }
 
 .crowders_work_item_wrapper {
-    height: 15.3vw;
+   /*  height: 15.3vw; */
 }
 
 .crowders_work_cta_paragraph {
@@ -7251,6 +7259,68 @@ opacity: 0;
 .family_subheading {
   text-align: center;
 }
+
+
+
+.crowders_work_swirl {
+
+    top: 20vw;
+    @include grid-col(2.5);
+    @include grid-offset-left(4);
+    z-index: 5; 
+
+}
+
+
+.crowders_work_headline {
+    @include grid-col(12);
+    @include grid-offset-left(2);
+    top: 20vw;
+    position: relative;
+
+}
+
+.crowders_project {
+    top: 10vw;
+    @include grid-col(2.5);
+    @include grid-offset-left(-10.5);
+    z-index: 5; 
+    margin-bottom: 10vw;
+    padding-bottom: 10vw;    
+
+}
+
+.crowders_work_project {
+    top: 10vw;
+    @include grid-col(2.5);
+    @include grid-offset-left(-10.5);
+    z-index: 5; 
+    margin-bottom: 10vw;
+    padding-bottom: 10vw;    
+
+}
+
+.crowders_work_cta_paragraph {
+    width: 77%;
+    margin-left: 11.11111%;
+    margin-top: 20vw;
+    margin-bottom: 10vw;
+}
+
+.crowders_work_cta_link {
+    width: 77%;
+    margin-bottom: 10vw;
+    margin-left: 11.11111%;
+}
+
+
+
+
+
+
+
+
+
 
 
 } 
