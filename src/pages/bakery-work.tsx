@@ -37,19 +37,12 @@ export default class Work extends React.Component {
   }
 
 
-
-
-
   unhideMore(){
    var x = document.querySelector(".work_item_wrapper:nth-child(5)");
    var s = document.querySelector(".spacer_top");
    x.style.display = "block";
    s.style.marginBottom = '37vw';
   }
-
-
-
-
 
   toggleHoverLeave() {
 
@@ -60,7 +53,6 @@ export default class Work extends React.Component {
       }      
 
   }
-
 
 
   toggleHoverEnter() {
@@ -106,8 +98,7 @@ export default class Work extends React.Component {
     return (
 
 
-
-  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
 
 
       <>
@@ -119,8 +110,6 @@ export default class Work extends React.Component {
             return (
 
               <>
-
-
 
               <Tween duration={2} 
               from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 

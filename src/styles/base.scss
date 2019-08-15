@@ -272,8 +272,15 @@ a {text-decoration: none}
   position: relative;
   bottom: -0.05vw;
   padding-top: 0.1vw;
-  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  $size-map: (375px: 14px, 959px: 38px, 960px: 10px, 2880px: 24px);
   @include poly-fluid-sizing('height', $size-map);   
+
+  @media (max-width: $max-960) {
+    right: 5vw;     
+    bottom: -0.15vw;
+    padding-top: 0.5vw;
+  }  
+
 }
 
 .the_left_link:hover .the_left_arrow {
@@ -7394,6 +7401,14 @@ opacity: 0;
 
 }
 
+/* work.scss */
+.bottom_logo {
+  display: none
+}
+
+.play_control {
+  visibility: visible;
+}
 
 
 
@@ -7407,11 +7422,7 @@ opacity: 0;
 
 
 
-
-
-
-
-
+/*
 
 .scrollbar {
   overflow: auto!important;
@@ -7422,7 +7433,7 @@ opacity: 0;
     padding-bottom: 20vw;
 }
 
-
+*/
 } 
 /* END MOBILE STUFF */
 

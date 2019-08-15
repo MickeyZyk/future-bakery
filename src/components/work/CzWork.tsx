@@ -316,7 +316,7 @@ export default class CzWork extends React.Component {
 
                 </If>
 
-              <p className={s.project}>To a mnohem více jsme již vyřešili s týmem 25 000 přátel z davu.</p>
+              <p className={s.bakers_project}>To a mnohem více jsme již vyřešili s týmem 25 000 přátel z davu.</p>
 
             </div>
 

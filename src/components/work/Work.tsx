@@ -95,8 +95,6 @@ export default class Work extends React.Component {
 <>
 
 
-
-       
   <Scrollbar ref={c => this.$container = c} className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>   
     
 
@@ -217,7 +215,7 @@ export default class Work extends React.Component {
               <If condition={this.props.data.gravBakeryWork.video != 'null'}>
                 <Then>              
                   <div className={s.column__col6}>
-                    <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={s.explore} src='/images/video_play.png' /></p>
+                    <p onClick={ this.scrollPlay } className={s.control}>{'WATCH VIDEO'} <img className={`${s.explore} ${'play_control'}`} src='/images/video_play.png' /></p>
                   </div>
                 </Then>
               </If>
@@ -235,7 +233,7 @@ export default class Work extends React.Component {
 
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_light } />              
+                <img className={`${s.client_logo} ${'bottom_logo'}`} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_light } />              
                 <p className={s.award}>{this.props.data.gravBakeryWork.category ? this.props.data.gravBakeryWork.category : ' '}<span className={s.green}>{this.props.data.gravBakeryWork.category_name ? this.props.data.gravBakeryWork.category_name : ' '}</span></p>
                 <h1 className={s.award_heading}>{this.props.data.gravBakeryWork.heading_two}</h1>
               </div>
@@ -332,7 +330,17 @@ export default class Work extends React.Component {
 
                 </If>
 
-              <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
+
+                  <Location>
+                    {({ location }) => (        
+
+                      <p className={ location.pathname.includes('bakery') ? `${s.project}` : `${s.bakers_project}` }>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
+
+                      )}
+                  </Location> 
+
+
+
 
             </div>
 

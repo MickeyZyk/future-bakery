@@ -82,13 +82,13 @@
   &__icon {
     position: relative; 
 
-    $size-map: (375px: 14px, 768px: 15px, 959px: 18px, 960px: 8px, 1920px: 16px, 2880px: 22px);
+    $size-map: (375px: 13px, 959px: 30px, 960px: 8px, 1920px: 16px, 2880px: 22px);
     @include poly-fluid-sizing('width', $size-map);
 
-    $top-map: (375px: 1px, 959px: 1.5px, 960px: 1.5px, 2880px: 3px);
+    $top-map: (375px: 2px, 959px: 1.5px, 960px: 1.5px, 2880px: 3px);
     @include poly-fluid-sizing('top', $top-map);
 
-    $margin-map: (375px: 14px, 959px: 16px, 960px: 10px, 2880px: 14px);
+    $margin-map: (375px: 5px, 959px: 16px, 960px: 10px, 2880px: 14px);
     @include poly-fluid-sizing('margin-left', $margin-map);    
 
     height: auto;    
