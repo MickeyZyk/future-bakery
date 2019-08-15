@@ -581,7 +581,7 @@
   } 
   
   @media (min-width: $min-960) {
-    top: 0vw;
+    top: 2vw;
     @include grid-col(3);
     @include grid-offset-left(8.1);
   }
