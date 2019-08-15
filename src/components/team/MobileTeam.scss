@@ -1,0 +1,219 @@
+@import '~styles/config';
+
+.team {
+  display: block;
+  margin-top: 10vw;
+  @media (min-width: $min-960) {
+    display: none;
+  }  
+}
+
+.data {
+
+  display: none;
+
+  @include grid-col;
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    @include grid-col(4);
+    @include grid-offset-left(4); 
+        min-height: 28vw;
+  }   
+}
+
+.current_data {
+  display: block;
+  @media (min-width: $min-960) {
+    margin-bottom: 6vw;
+  }     
+}
+
+.name {
+  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 42px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  font-weight: lighter;
+  @media (min-width: $min-960) {
+    margin-bottom: 3vw;
+  }     
+  
+
+}
+
+
+.text {
+  $font-map: (375px: 16px, 959px: 40px, 960px: 7px, 2880px: 20px);
+  @include poly-fluid-sizing('font-size', $font-map);  
+  $height-map: (375px: 19px, 959px: 50px, 960px: 16px, 2880px: 48px);
+  @include poly-fluid-sizing('line-height', $height-map);    
+  @media (min-width: $min-960) {
+    min-height: 18vw;
+  }     
+}
+
+.link {
+  position: relative;
+  top: 3vw;
+  color: #231f20; 
+  margin-bottom: 3vw; 
+  font-weight: bold; 
+}
+
+.image {
+  position: absolute;
+  @include grid-col(16);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(5);
+    @include grid-offset-right(2);
+  }   
+}  
+
+.current_image {
+
+  /* display: none; */
+
+  @include grid-col(16);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    transform: none;    
+    @include grid-col(5);
+    @include grid-offset-left(3);
+  }   
+}
+
+/*
+.image_secondary {
+  
+  /* display: none; */
+
+/*
+  @media (min-width: $min-960) {
+    position: absolute;
+    @include grid-col(5);
+    @include grid-offset-left(17.5);
+  }
+}
+*/
+
+
+
+.current_image, .next_image, .previous_image {
+  display: block;
+}
+
+
+.before_bar {
+
+  display: none;
+
+  @media (min-width: $min-960) {
+    
+    display: block;    
+    position: absolute;
+    height:50vw;
+    @include grid-col(11);
+    background-color: #fff;
+    z-index: 5;
+  } 
+}
+
+
+.after_bar {
+
+  display: none;
+
+  @media (min-width: $min-960) {
+    
+    display: block;    
+    position: absolute;
+    height:50vw;
+    @include grid-col(1);
+    @include grid-offset-left(16);
+    background-color: #fff;
+    z-index: 5;
+  } 
+}
+
+
+.window {
+
+  display: block;
+
+  @media (min-width: $min-960) {
+
+    display: block;
+    overflow: hidden;
+    height: 37vw;
+    margin-top: -37vw;  
+    z-index: -1;
+    position: relative;
+  }   
+
+}
+
+.strip {
+  opacity: 1;
+    width: 100vw;
+    overflow: hidden;
+    height: 120vw;  
+}
+
+.team_previous {
+
+  display: none;
+
+  @media (min-width: $min-960) {
+    
+    display: block;    
+    position: absolute;
+    height:50vw;
+    @include grid-col(1);
+    @include grid-offset-left(16);
+    background-color: #fff;
+    z-index: 5;
+  } 
+}
+
+.team_next {
+
+  display: none;
+
+  @media (min-width: $min-960) {
+    
+    display: block;    
+    position: absolute;
+    height:50vw;
+    @include grid-col(1);
+    @include grid-offset-left(16);
+    background-color: #fff;
+    z-index: 5;
+  } 
+}
+
+
+
+.current_data > p > div:first-child:nth-last-child(1) {
+  transform: translate(0%, 0%)!important;
+  opacity: 1!important;
+  transition: all 1s;
+}
+
+.indicator {
+  display: none;
+}
+
+.current_indicator {
+  display: block;
+  position: absolute;  
+    top: 0vw;
+    left: 0vw;
+    right: auto;
+    bottom: auto;
+    width: 30%;
+
+}

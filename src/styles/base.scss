@@ -1284,7 +1284,7 @@ select {
 
 .hide_on_mobile {
 
-  display: none;  
+  display: none!important;  
 
   @media (min-width: $min-960) {  
   display: block;
@@ -5389,14 +5389,38 @@ select {
 }
 
 
+.crowders_about_scrollbar > div.scroll-content > div {
+  max-width: 100vw;
+  overflow-x: hidden;
+
+}
+
+
+  .croders_icons_indicators {
+
+    @media (max-width: $max-960) {
+        display: block;
+    }   
+    @media (min-width: $min-960) {
+
+      display: none;
+    } 
+  }
+
 
   div.crowders_about__graph_icon {
 
-      @include grid-col(10);
       display: inline-block;
+      transition: all 1s;
+
+  @media (max-width: $max-960) {
+
+      @include grid-col(3);
+
+  }       
 
     @media (min-width: $min-960) {
-
+      opacity: 1!important;
       display: block;
       float: left;
       @include grid-col(4);
@@ -5784,10 +5808,18 @@ select {
 
 .crowders_about_right_icons {
 
+
+  
+
     position: relative;
     display: flex;
     flex-direction: row;
 
+  @media (max-width: $max-960) {
+  
+    opacity: 1;
+
+  } 
 
   @media (min-width: $min-960) {
     margin-top: 5vw;
@@ -7444,5 +7476,6 @@ opacity: 0;
 
 
 
-
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
 

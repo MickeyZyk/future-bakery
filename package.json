@@ -64,6 +64,7 @@
     "react-scrollmagic": "^2.1.0",
     "react-smooth-scrollbar": "^8.0.6",
     "react-throttle": "^0.3.0",
+    "react-touch": "^0.4.4",
     "rfs": "^8.0.4",
     "scrollmagic": "^2.0.7",
     "scrollmagic-with-ssr": "^1.0.2",

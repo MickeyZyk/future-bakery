@@ -8,11 +8,11 @@ import ReactDOM from 'react-dom';
 import { Link } from 'components/link/Link';
 import { LeftLink } from 'components/link/LeftLink';
 import LinkArrow from 'assets/svg/link_arrow.svg'
-import s from './Team.scss';
+import s from './MobileTeam.scss';
 import _ from 'lodash';
 import { Location } from '@reach/router';
 
-export class Team extends React.Component {
+export class MobileTeam extends React.Component {
 
   constructor(props){
     super(props);
@@ -66,7 +66,7 @@ class Member extends React.Component {
       //console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex) * -27.77778, );    
 
         var currentTL = new TimelineMax(); 
-        currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -27.77778, ease: 'Expo.easeInOut' });
+        currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -88.88, ease: 'Expo.easeInOut' });
         var currentTLZoom = new TimelineMax(); 
         currentTLZoom.to(children, .5, {scale: 1, xPercent: 0}).to(children, .25, {scale: 1.04, transformOrigin:'right 50%'}).to(children, 1.5, {scale: 1, xPercent: 0});
 
@@ -86,7 +86,7 @@ class Member extends React.Component {
       //console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex + 1) * -27.77778, );  
 
         var currentTL = new TimelineMax(); 
-        currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -27.77778, ease: 'Expo.easeInOut' });
+        currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -88.88, ease: 'Expo.easeInOut' });
         var currentTLZoom = new TimelineMax(); 
         currentTLZoom.to(children, .5, {scale: 1, xPercent: 0}).to(children, .25, {scale: 1.04, transformOrigin:'right 50%'}).to(children, 1.5, {scale: 1, xPercent: 0});
 
@@ -121,18 +121,21 @@ var linkURLs = this.props.links
             <Paragraph className={s.text}>{texts[i]}</Paragraph>
             <a className={s.link} href={'mailto:' + linkURLs[i]}>CONTACT {_.first( names[i].split(" ")).toUpperCase()}</a>
           </div>
+          <div className={`${s.indicator} ${this.state.activeIndex == i ? s.current_indicator : ''}`} >{i+1} / {this.props.arrayOfImages.length}</div>          
         </div>
       )
     })  
 
     var imagesStrip = this.props.arrayOfImages.map((image, j) =>{
       return(
-        <img className={s.image} src={image} style={{ zIndex : -j , right: `${-j * 27.77778}%` }} key={'image'+j}/>
+        <div key={'image_indicator'+j}>
+          <img className={s.image} src={image} style={{ zIndex : -j , right: `${-j * 88.88}%` }} />
+        </div>
       )
     }) 
 
     return (
-      <>
+      <div style={{position: 'relative'}}>
         {members}
           <div className={s.window}>
               <div className={s.before_bar}></div>            
@@ -163,7 +166,7 @@ var linkURLs = this.props.links
             )}
           </Location> 
         </Row>
-      </>
+      </div>
     );
 
   }

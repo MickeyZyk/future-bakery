@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import ReactCursorPosition from 'react-cursor-position';
@@ -22,6 +22,8 @@ import { Footer } from 'components/footer/Footer';
 import { Controller, Scene } from 'react-scrollmagic';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import { Team } from 'components/team/Team';
+import { MobileTeam } from 'components/team/MobileTeam';
+import { Swipeable } from 'react-touch';
 
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
@@ -31,7 +33,20 @@ import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 const slug = require('slug')
 
-const CrowdersAbout = ({ data, className }) => {
+const CrowdersAbout = ({ data, className, state }) => {
+
+  const [currentIcon, setCurrentIcon] = useState(0);
+
+  function prevIcon() {
+    console.log(currentIcon)    
+    currentIcon > 0 ? setCurrentIcon(currentIcon - 1) : null
+
+  }
+
+  function nextIcon() {
+    console.log(currentIcon)      
+    currentIcon < 5 ? setCurrentIcon(currentIcon + 1) : null    
+  }  
 
 
  function getMembers(item) {
@@ -74,7 +89,6 @@ const CrowdersAbout = ({ data, className }) => {
 
   return (
 
-
       <TransitionState>
         {({ transitionStatus }) => {
           return (
@@ -85,9 +99,7 @@ const CrowdersAbout = ({ data, className }) => {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
-
-
-  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>   
+  <Scrollbar className="scrollbar crowders_about_scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true} >   
 
   <div className='wrapper about-wrapper'>
 
@@ -113,7 +125,6 @@ const CrowdersAbout = ({ data, className }) => {
             </div>
 
             <ReverseFigure className='crowders_about_image responsive_image hide_on_mobile' src={'http://future.stratego.ba/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />   
-
 
           </Row>
 
@@ -193,9 +204,6 @@ const CrowdersAbout = ({ data, className }) => {
 
           </div>
 
-
-
-
           </Row>
 
           <Row>
@@ -206,11 +214,7 @@ const CrowdersAbout = ({ data, className }) => {
 
         </div>
 
-
-
         <Row>
-
-
 
             <div className="crowders_about_heading_background">
 
@@ -220,29 +224,35 @@ const CrowdersAbout = ({ data, className }) => {
 
             </div>
 
+<Swipeable onSwipeLeft={prevIcon} onSwipeLeft={nextIcon}>
 
 
+              <>
               <div className="crowders_about_right_icons cr_one">
 
-                  <CrowdersTexticon className='crowders_about__graph_icon' name='COMMUNITY BUILDING' src='cr_rainbow.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon' style={ currentIcon == 0 ? {opacity:1} : {opacity:0} } name='COMMUNITY BUILDING' src='cr_rainbow.svg' />
 
-                  <CrowdersTexticon className='crowders_about__graph_icon' name='"CHANGE THEME" IDENTIFICATION' src='cr_recycle.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon' style={ currentIcon == 1  ? {opacity:1} : {opacity:0} } name='"CHANGE THEME" IDENTIFICATION' src='cr_recycle.svg' />
 
-                  <CrowdersTexticon className='crowders_about__graph_icon' name='IDEA GENERATION' src='cr_bulb.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon' style={ currentIcon == 2 ? {opacity:1} : {opacity:0} } name='IDEA GENERATION' src='cr_bulb.svg' />
 
               </div>  
 
               <div className="crowders_about_right_icons cr_two">
 
-                  <CrowdersTexticon className='crowders_about__graph_icon cr_first cr_second_row' name='STRATEGIC PLANNING' src='cr_target.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon cr_first cr_second_row' style={ currentIcon == 3 ? {opacity:1} : {opacity:0} } name='STRATEGIC PLANNING' src='cr_target.svg' />
 
-                  <CrowdersTexticon className='crowders_about__graph_icon cr_second_row' name='COMMUNICATION STEPS' src='cr_gauge.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon cr_second_row' style={ currentIcon == 4 ? {opacity:1} : {opacity:0} } name='COMMUNICATION STEPS' src='cr_gauge.svg' />
                   
-                  <CrowdersTexticon className='crowders_about__graph_icon cr_second_row' name='ON-LINE RESEARCH SPACE' src='cr_globe.svg' />
+                  <CrowdersTexticon className='crowders_about__graph_icon cr_second_row' style={ currentIcon == 5 ? {opacity:1} : {opacity:0} } name='ON-LINE RESEARCH SPACE' src='cr_globe.svg' />
 
               </div>
+              <div className="croders_icons_indicators" style={{position: 'relative'}}>
+              <a href="#" onClick={prevIcon} className="prev_icon">PREV</a>       {currentIcon}     <a href="#" onClick={nextIcon} className="nextIcon">NEXT</a>   
+              </div>   
+              </>        
 
-
+</Swipeable>
       </Row>
       
       <ReactCursorPosition>
@@ -253,7 +263,9 @@ const CrowdersAbout = ({ data, className }) => {
 
         <AnimatedHeadingTwo className="crowders_about_team_heading">Meet the team</AnimatedHeadingTwo>
 
-        <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages} className="crowders_about_team"/>      
+        <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages} className="crowders_about_team hide_on_mobile"/>      
+
+        <MobileTeam members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages} className="crowders_about_team show_on_mobile"/>        
 
      </ReactCursorPosition>
 
@@ -261,9 +273,7 @@ const CrowdersAbout = ({ data, className }) => {
 <Footer/>
 </Scrollbar>
 
-
-
-            </Tween>
+     </Tween>
 
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
