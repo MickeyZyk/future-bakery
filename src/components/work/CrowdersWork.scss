@@ -562,7 +562,7 @@
   position: absolute;
 
   @media (min-width: $min-960) {
-
+    top: 0vw; 
     @include grid-col(2);
     @include grid-offset-left(8.1);
   }
@@ -581,7 +581,7 @@
   } 
   
   @media (min-width: $min-960) {
-
+    top: 0vw;
     @include grid-col(3);
     @include grid-offset-left(8.1);
   }
