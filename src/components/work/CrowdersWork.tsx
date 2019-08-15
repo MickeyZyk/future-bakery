@@ -119,7 +119,7 @@ export default class Work extends React.Component {
 
   <div id ="topper" style={{overflowX: 'hidden'}}>
     <div className='wrapper' style={{overflowX: 'hidden'}}>
-      <ReactCursorPosition className='fullscreen_cursor_position'>
+      <ReactCursorPosition className='fullscreen_cursor_position crowders_single_work_fc'>
 
 
         <Helmet title={this.props.data.gravCrowdersWork.title} />

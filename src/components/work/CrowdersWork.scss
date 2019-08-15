@@ -6,6 +6,12 @@
   overflow-x: hidden;
    
 
+  @media (max-width: $max-960) {
+  
+    min-height: 250vw;
+
+  } 
+
   &__one {
     display: flex;
     flex-direction: row;
@@ -65,7 +71,8 @@
     font-weight: 900;
 
     margin-bottom: 3.7vw;     
-
+      @include grid-col(14);
+      @include grid-offset-left(2);  
 
     @media (min-width: $min-960) {
       @include grid-col(4);
@@ -235,12 +242,33 @@
 .hidden {display: none}
 
 .fiat_img {
+
+  @media (max-width: $max-960) {
+  
+  position: absolute;
+  top: 12vw;
+  z-index: 0;
+      @include grid-col(16);
+      @include grid-offset-left(2);
+  height: auto;
+
+  } 
+  
+  @media (min-width: $min-960) {  
   position: absolute;
   top: 4vw;
   z-index: 0;
   width: 100%;
   height: auto;
+
+
+  }
+
+
 }
+
+
+
 .embedded_video {
   position: absolute;
   top: 0;
@@ -360,6 +388,17 @@
   @include poly-fluid-sizing('font-size', $font-map);
     position: relative;
   z-index: 1;
+  @media (max-width: $max-960) {
+  
+    display: none;
+
+  } 
+  
+  @media (min-width: $min-960) {  
+
+    display: block;
+
+  }  
 }
 
 .control_dark {
@@ -409,20 +448,41 @@
 }
  
 .topic {
+  /*
   color: #231f20;
   font-weight: 900;
   $font-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
   $height-map: (320px: 16px, 375px: 20px, 768px: 32px, 959px: 40px, 960px: 16px, 1920px: 27px, 2880px: 40px);
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map); 
+*/
+
+  position: relative;
+  z-index: 1;  
+  font-weight: 900;
+  $font-map: (375px: 33px, 959px: 85px, 960px: 16px, 1920px: 27px, 2880px: 40px);
+  $height-map: (375px: 30px, 959px: 75px, 960px: 16px, 1920px: 27px, 2880px: 40px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map); 
+
+  @media (max-width: $max-960) {
+   color: #d7d7d7;
+  } 
+  
+  @media (min-width: $min-960) {
+  color: #231f20;
+  }
+
+
 }  
 
 
 
 .paragraph {
-    @include grid-col;
-
-
+    position: relative;
+    top: 5vw;
+    @include grid-col(14);
+    @include grid-offset-left(2);
   @media (min-width: $min-960) {
     top: 1vw;
     @include grid-col(8);
@@ -443,7 +503,10 @@
 
   @include grid-col;
 
-
+  @media (max-width: $max-960) {
+    position: relative;
+    top: 30vw;
+  } 
   @media (min-width: $min-960) {
     position: relative;
     min-height: 29vw;
@@ -455,19 +518,47 @@
 
 .all_cases {
 
-  @include grid-col;
-  position: absolute;
+  @media (max-width: $max-960) {  
+    position: relative;
+    top: 2vw;
+    @include grid-col(7);
+    @include grid-offset-left(2.7);
+  }   
 
   @media (min-width: $min-960) {
-
+    position: absolute;
     @include grid-col(3);
     @include grid-offset-left(1.5);
   }
+
 }  
 
+
+
+.start_project {
+
+  position: absolute;
+
+  @media (max-width: $max-960) {
+  
+    top: 45vw;
+    @include grid-col(14);
+    @include grid-offset-left(2);
+
+  } 
+  
+  @media (min-width: $min-960) {
+
+    @include grid-col(3);
+    @include grid-offset-left(14.4);
+  }
+
+}  
 .next_case {
 
-  @include grid-col;
+  @include grid-col(14);
+  @include grid-offset-left(2);  
+  top: 28vw;  
   position: absolute;
 
   @media (min-width: $min-960) {
@@ -477,28 +568,26 @@
   }
 }  
 
-.start_project {
-
-  @include grid-col;
-  position: absolute;
-
-  @media (min-width: $min-960) {
-
-    @include grid-col(3);
-    @include grid-offset-left(14.4);
-  }
-}  
 
 .next_case_link {
 
-  @include grid-col;
   position: absolute;
 
+  @media (max-width: $max-960) {
+    
+    @include grid-col(14);
+    @include grid-offset-left(2);
+    top: 20vw;
+  } 
+  
   @media (min-width: $min-960) {
 
     @include grid-col(3);
     @include grid-offset-left(8.1);
   }
+
+
+
 }  
 
 .next_case_link > div{
@@ -538,13 +627,24 @@ text-align: left;
 
 .bottom_button {
 
-  @include grid-col;
 
+  @media (max-width: $max-960) {
+    position: relative;
+    top: 90vw;
+    @include grid-col(14);
+    @include grid-offset-left(2);
+    margin-bottom: 10vw;
+  } 
+  
   @media (min-width: $min-960) {
-
+    top: 0vw;
     @include grid-col(3);
     @include grid-offset-left(8.1);
     margin-bottom: 3vw;
-  }  
+  } 
+
+
+
+ 
 }
 
