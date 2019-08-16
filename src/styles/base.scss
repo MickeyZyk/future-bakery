@@ -6869,14 +6869,15 @@ select {
   @include grid-offset-left(2);
   opacity: 0;
   transition: opacity 1s;
-
-
+  z-index: 100;
+  position: absolute;
 }
 
 
 
 .mobile_slide_text {
-  margin-top: 10vw;
+  position: absolute;
+  top: 123vw;
   @include grid-col(14);
   margin-left: 11.1111%!important;  
   $font-map: (375px: 16px, 959px: 41px);
@@ -6918,8 +6919,8 @@ select {
   /* opacity: 0!important; */
   transition: all 1s;  
   transition-timing-function: ease-in-out;
-  position: absolute;
-  top: 0;  
+  position: absolute!important;
+  top: 45vw;  
 } 
 
 .mobile_mask .child_current {

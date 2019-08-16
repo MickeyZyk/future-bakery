@@ -89,33 +89,17 @@ class Carousel extends React.Component {
   pre(){
     this.setState({ autoPlay: false });   
     if (this.state.gotoState > 0) {
-
       console.log("NP", this.state.gotoState, this.state.activeIndex)
-      this.prevSlide(this.state.gotoState - 1) 
-
-    } else {
-/*
-      this.setState({ gotoState: 0 }, () => {
-      console.log("RP", this.state.gotoState, this.state.activeIndex)
-        //this.gotoSlide(this.state.gotoState)              
-      }) 
-
-*/
-    }
+      this.prevSlide(parseInt(this.state.gotoState) - 1)} 
+    else {false}
   }
 
   nex(){
     this.setState({ autoPlay: false });  
-    if (this.state.gotoState == this.props.images.length-1) {
-/*
-      this.setState({ gotoState: this.props.images.length }, () => {
-      console.log("RN", this.state.gotoState, this.state.activeIndex)
-        //this.gotoSlide(this.state.gotoState)              
-      }) 
-*/
-    } else {
+    if (this.state.gotoState == this.props.images.length-1) {false} 
+    else {
       console.log("NN", this.state.gotoState, this.state.activeIndex)
-      this.nextSlide(this.state.gotoState + 1) 
+      this.nextSlide(parseInt(this.state.gotoState) + 1) 
     }
   }
 
@@ -180,11 +164,13 @@ class Carousel extends React.Component {
   }
 */
   scream(){
-
-    if (this.state.gotoState > 0 && this.state.autoPlay ) {
-      this.prevSlide(this.state.gotoState - 1)
-    } else if (this.state.gotoState < this.props.images.length - 1) {
-      this.nextSlide(this.state.gotoState + 1) 
+    console.log(this.state.autoPlay, "AP")
+    if(this.state.autoPlay){
+      if (this.state.gotoState < this.props.images.length -1 ) {
+        this.nextSlide(parseInt(this.state.gotoState) + 1) 
+      } else {
+        this.gotoSlide(0)      
+      }
     }
   }
 
@@ -359,7 +345,19 @@ class Carousel extends React.Component {
 
     let current = i.currentTarget ? i.currentTarget.getAttribute('data-test') : 0; 
 
-    this.setState({ animating: true, activeIndex: current }, () => {
+    this.setState({ animating: true, activeIndex: current, gotoState: current}, () => {
+
+
+
+    //mobile part
+
+    var mobileImagesWrapper = this.wrapperRef_mobile.current
+    var allMobileImages = mobileImagesWrapper.querySelectorAll('.mobile_child');
+    console.log("aot - 100 + state", this.state.gotoState, "index", this.state.activeIndex, "PER", parseInt(this.state.gotoState) * -100 + 'vw')
+    var mobileTimelineGo = new TimelineMax({repeat:0});    
+    if(allMobileImages !== null){ mobileTimelineGo.to(allMobileImages, .5, { x: '0vw'}) };    
+
+    // end mobile part
 
 
       setTimeout(function() { //Start the timer
