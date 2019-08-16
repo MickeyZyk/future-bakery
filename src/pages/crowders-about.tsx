@@ -35,6 +35,19 @@ const slug = require('slug')
 
 const CrowdersAbout = ({ data, className, state }) => {
 
+  const [currentTopIcon, setCurrentTopIcon] = useState(0);
+
+  function prevTopIcon() {
+    console.log(currentIcon)    
+    currentTopIcon > 0 ? setCurrentTopIcon(currentTopIcon - 1) : null
+
+  }
+
+  function nextTopIcon() {
+    console.log(currentIcon)      
+    currentTopIcon < 3 ? setCurrentTopIcon(currentTopIcon + 1) : null    
+  } 
+
   const [currentIcon, setCurrentIcon] = useState(0);
 
   function prevIcon() {
@@ -148,9 +161,15 @@ const CrowdersAbout = ({ data, className, state }) => {
 
           <Row>
 
+
           <div className='crowders_phases_row'>
 
-            <div className='crowders_phase_column'>
+
+      <Swipeable
+        onSwipedRight={prevTopIcon}
+        onSwipedLeft={nextTopIcon} >          
+
+            <div className='crowders_phase_column' style={ currentTopIcon == 0 ? {opacity:1} : {opacity:0} }>
 
               <img src='../svg/crowders_arrowz.svg' />
 
@@ -165,7 +184,7 @@ const CrowdersAbout = ({ data, className, state }) => {
 
             </div>
 
-            <div className='crowders_phase_column'>
+            <div className='crowders_phase_column' style={ currentTopIcon == 1 ? {opacity:1} : {opacity:0} }>
 
               <img src='../svg/crowders_turntable.svg' />
 
@@ -180,7 +199,7 @@ const CrowdersAbout = ({ data, className, state }) => {
 
             </div>
 
-            <div className='crowders_phase_column'>
+            <div className='crowders_phase_column' style={ currentTopIcon == 2 ? {opacity:1} : {opacity:0} }>
 
               <img src='../svg/crowders_tablet.svg' />
 
@@ -195,15 +214,35 @@ const CrowdersAbout = ({ data, className, state }) => {
 
             </div>
 
-            <div className='crowders_phase_column'>
+            <div className='crowders_phase_column'style={ currentTopIcon == 3 ? {opacity:1} : {opacity:0} }>
 
               <img src='../svg/crowders_clipboard.svg' />
 
               <Paragraph>DEMAND AND CONTENT</Paragraph>
 
-            </div>                                                
+            </div>     
+
+          </Swipeable>
+
 
           </div>
+
+
+          <>
+            <div className="cr_mob_left">
+              <div onClick={prevTopIcon} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
+            </div>
+            <div className="cr_mob_right"> 
+              <div onClick={nextTopIcon} className="mob_nextprev"><img src="/svg/mob_right.svg"/></div>
+            </div>
+          </>          
+
+              <div className="crowders_top_icons_indicators" style={{position: 'relative'}}>
+                {currentTopIcon + 1} / 4
+              </div>             
+
+
+
 
           </Row>
 
@@ -231,8 +270,6 @@ const CrowdersAbout = ({ data, className, state }) => {
 
 
 
-
-
               <div className="crowders_about_right_icons cr_one">
 
                   <CrowdersTexticon className='crowders_about__graph_icon' style={ currentIcon == 0 ? {opacity:1} : {opacity:0} } name='COMMUNITY BUILDING' src='cr_rainbow.svg' />
@@ -252,7 +289,7 @@ const CrowdersAbout = ({ data, className, state }) => {
                   <CrowdersTexticon className='crowders_about__graph_icon cr_second_row' style={ currentIcon == 5 ? {opacity:1} : {opacity:0} } name='ON-LINE RESEARCH SPACE' src='cr_globe.svg' />
 
               </div>
-              <div className="croders_icons_indicators" style={{position: 'relative'}}>
+              <div className="crowders_icons_indicators" style={{position: 'relative'}}>
               <a href="#" onClick={prevIcon} className="prev_icon">PREV</a>       {currentIcon}     <a href="#" onClick={nextIcon} className="nextIcon">NEXT</a>   
               </div>   
        

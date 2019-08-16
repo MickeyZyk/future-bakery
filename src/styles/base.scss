@@ -1275,10 +1275,10 @@ select {
 
 .show_on_mobile {
 
-  display: block;
+  display: block!important;  
 
   @media (min-width: $min-960) { 
-    display: none;
+    display: none!important;  
   }
 }
 
@@ -1287,7 +1287,7 @@ select {
   display: none!important;  
 
   @media (min-width: $min-960) {  
-  display: block;
+  display: block!important;  
   }
 }
 
@@ -5619,17 +5619,25 @@ select {
 .crowders_about_button {
   position: relative;
   color: #37c6f4;
-  top: 25vw;
+  top: 43vw;
   font-weight: bold;
   @include grid-col;
   @include grid-offset-left(0);   
 
+  @media (max-width: $max-960) {  
+
+    margin-bottom: 10vw;
+
+  } 
+  
   @media (min-width: $min-960) {
       top: 2vw;
 
   @include grid-col(3);
   @include grid-offset-left(0);    
-  }    
+  }
+
+    
 }
 
 .crowders_about_blueboard {
@@ -5673,20 +5681,33 @@ select {
   @include grid-col(14);
   @include grid-offset-left(2);
 
+  @media (max-width: $max-960) {  
+
+    margin-bottom: 10vw; 
+
+  }  
+
   @media (min-width: $min-960) {
 
     @include grid-col(2);
     @include grid-offset-left(6); 
+    margin-bottom: 5vw;    
   }     
 
 
 }
 
 
-.crowders_phases_row {
+.crowders_phases_row > div {
 
-  @include grid-col;
+  @media (max-width: $max-960) {  
+
+  @include grid-col(14);
   @include grid-offset-left(2);
+  height: 50vw;
+  width: 100vw;
+
+  }  
 
   @media (min-width: $min-960) {
     margin-bottom: 5vw;
@@ -5694,6 +5715,7 @@ select {
     @include grid-offset-left(6); 
     display: flex;
     align-items: center;
+    height: auto;    
   }   
 }
 
@@ -5701,6 +5723,33 @@ select {
   bottom: 2vw;
   width: 40%;
   margin-bottom: 2vw;
+
+  @media (max-width: $max-960) {  
+
+        min-height: 30vw;
+
+  } 
+  
+
+
+}
+
+.crowders_phase_column {
+
+  transition: opacity 1s;
+
+  @media (max-width: $max-960) {  
+
+    position: absolute;
+
+  } 
+  
+  @media (min-width: $min-960) {  
+
+    position: relative;
+    opacity: 1!important;
+
+  }
 }
 
 .crowders_phase_column p {
@@ -5712,12 +5761,31 @@ select {
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);  
+
+
 }
 
 .arrow_column {
+
   width: 27%;
   margin-top: -4vw;
   position: relative;
+
+  @media (max-width: $max-960) {  
+
+    display: none;
+
+  } 
+  
+  @media (min-width: $min-960) {  
+
+    display: block;
+
+  }
+
+
+
+
 }
 
 .arrow_column img {
@@ -5731,7 +5799,7 @@ select {
    
       @include grid-col(14);
       @include grid-offset-left(2);
-      margin-bottom: 2vw;
+      margin-bottom: 10vw;
 
 
     @media (min-width: $min-960) {
@@ -7003,6 +7071,19 @@ select {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 .bakery_home_flip_button {
   
     position: relative;
@@ -7485,3 +7566,68 @@ opacity: 0;
 
 
 
+
+
+
+
+.cr_mob_left {
+  position: relative; 
+  text-align: right;
+
+  left: 11.11%; 
+      margin-bottom: 10vw;   
+
+  @media (max-width: $max-960) {  
+
+    display: block;
+
+  } 
+  
+  @media (min-width: $min-960) {  
+
+    display: none!important;
+
+  }  
+
+}
+.cr_mob_right {
+  position: relative; 
+  text-align: right;
+
+  left: 10%;    
+      margin-bottom: 10vw;
+  @media (max-width: $max-960) {  
+
+    display: block;
+
+  } 
+  
+  @media (min-width: $min-960) {  
+
+    display: none!important;
+
+  }   
+
+}
+
+.crowders_top_icons_indicators {
+
+  font-weight: bold;
+
+  @media (max-width: $max-960) {  
+
+    display: block;
+    @include grid-col(2);
+    @include grid-offset-left(14); 
+    text-align: right;
+    top: -15vw;
+
+  } 
+  
+  @media (min-width: $min-960) {  
+
+    display: none!important;
+
+  }   
+
+}

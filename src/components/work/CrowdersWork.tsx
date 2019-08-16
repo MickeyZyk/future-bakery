@@ -130,7 +130,7 @@ export default class Work extends React.Component {
         <AnimatedHeading className={s.column__col1_heading}>{this.props.data.gravCrowdersWork.heading_one}</AnimatedHeading>
 
 
-        <p className={s.paragraph}>{this.props.data.gravCrowdersWork.paragraph}</p>
+        <p className={s.paragraph} dangerouslySetInnerHTML={{ __html: this.props.data.gravCrowdersWork.paragraph }} />
 
           <div id="video_image_anchor" className={s.detail_wrapper}>
             <div className={s.row__threetop}> 
