@@ -11,6 +11,7 @@ import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './MobileTeam.scss';
 import _ from 'lodash';
 import { Location } from '@reach/router';
+import {Swipeable} from 'react-swipeable'
 
 export class MobileTeam extends React.Component {
 
@@ -135,38 +136,51 @@ var linkURLs = this.props.links
     }) 
 
     return (
-      <div style={{position: 'relative'}}>
-        {members}
-          <div className={s.window}>
-              <div className={s.before_bar}></div>            
-              <div className={s.strip} ref={this.strip}>
-                {imagesStrip}
-              </div>
-              <div className={s.after_bar}></div>              
-          </div>        
 
-        <Row>
-          <Location>
-            {({ location }) => (
-              <>          
-                <LeftLink 
-                to={location.pathname} 
-                bakery={ location.pathname.includes('bakery') ? true : false } 
-                crowders={ location.pathname.includes('crowders') ? true : false } 
-                arrow 
-                className="team_left_link" 
-                onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
-                <Link 
-                to={location.pathname} 
-                bakery={ location.pathname.includes('bakery') ? true : false } 
-                crowders={ location.pathname.includes('crowders') ? true : false } 
-                arrow className="team_right_link" 
-                onClick={this.nextSlide.bind(this)}>NEXT</Link>      
-              </>
-            )}
-          </Location> 
-        </Row>
-      </div>
+            <Swipeable
+              onSwipedRight={this.prevSlide.bind(this)}
+              onSwipedLeft={this.nextSlide.bind(this)} >
+
+
+                  <div style={{position: 'relative'}}>
+                    {members}
+                      <div className={s.window}>
+                          <div className={s.before_bar}></div>            
+                          <div className={s.strip} ref={this.strip}>
+                            {imagesStrip}
+                          </div>
+                          <div className={s.after_bar}></div>              
+                      </div>        
+
+                    <Row>
+                      <Location>
+                        {({ location }) => (
+                          <>          
+                            <LeftLink 
+                            to={location.pathname} 
+                            bakery={ location.pathname.includes('bakery') ? true : false } 
+                            crowders={ location.pathname.includes('crowders') ? true : false } 
+                            arrow 
+                            className="team_left_link" 
+                            onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
+                            <Link 
+                            to={location.pathname} 
+                            bakery={ location.pathname.includes('bakery') ? true : false } 
+                            crowders={ location.pathname.includes('crowders') ? true : false } 
+                            arrow className="team_right_link" 
+                            onClick={this.nextSlide.bind(this)}>NEXT</Link>      
+                          </>
+                        )}
+                      </Location> 
+                    </Row>
+                  </div>
+
+
+
+            </Swipeable>
+
+
+
     );
 
   }

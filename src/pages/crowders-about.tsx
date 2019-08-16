@@ -228,6 +228,10 @@ const CrowdersAbout = ({ data, className, state }) => {
           </div>
 
 
+
+
+
+
           <>
             <div className="cr_mob_left">
               <div onClick={prevTopIcon} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
@@ -264,9 +268,13 @@ const CrowdersAbout = ({ data, className, state }) => {
 
             </div>
 
-      <Swipeable
-        onSwipedRight={nextIcon}
-        onSwipedLeft={prevIcon} >
+
+            <div className="cr_two_swiper">
+
+
+            <Swipeable
+              onSwipedRight={prevIcon}
+              onSwipedLeft={nextIcon} >
 
 
 
@@ -288,13 +296,32 @@ const CrowdersAbout = ({ data, className, state }) => {
                   
                   <CrowdersTexticon className='crowders_about__graph_icon cr_second_row' style={ currentIcon == 5 ? {opacity:1} : {opacity:0} } name='ON-LINE RESEARCH SPACE' src='cr_globe.svg' />
 
+
               </div>
+
+          <>
+            <div className="cr_mob_left_two">
+              <div onClick={prevIcon} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
+            </div>
+            <div className="cr_mob_right_two"> 
+              <div onClick={nextIcon} className="mob_nextprev"><img src="/svg/mob_right.svg"/></div>
+            </div>
+          </>          
+
               <div className="crowders_icons_indicators" style={{position: 'relative'}}>
-              <a href="#" onClick={prevIcon} className="prev_icon">PREV</a>       {currentIcon}     <a href="#" onClick={nextIcon} className="nextIcon">NEXT</a>   
-              </div>   
+                {currentIcon + 1} / 6
+              </div>    
+
+
+ 
        
 
-      </Swipeable>
+           </Swipeable>
+
+
+      </div>
+
+
       </Row>
       
       <ReactCursorPosition>

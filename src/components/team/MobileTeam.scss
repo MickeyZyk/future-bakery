@@ -3,16 +3,22 @@
 .team {
   display: block;
   margin-top: 10vw;
+  height: 300vw; 
   @media (min-width: $min-960) {
     display: none;
   }  
 }
 
+.team > div {
+  height: 280vw;  
+}
+
 .data {
 
   display: none;
-
-  @include grid-col;
+    top: 135vw;
+    position: relative;
+  @include grid-col(14);
   @include grid-offset-left(2);
 
   @media (min-width: $min-960) {
@@ -45,7 +51,10 @@
   $font-map: (375px: 16px, 959px: 40px, 960px: 7px, 2880px: 20px);
   @include poly-fluid-sizing('font-size', $font-map);  
   $height-map: (375px: 19px, 959px: 50px, 960px: 16px, 2880px: 48px);
-  @include poly-fluid-sizing('line-height', $height-map);    
+  @include poly-fluid-sizing('line-height', $height-map);   
+       min-height: 100vw;
+       top: 10vw;
+       position: relative;
   @media (min-width: $min-960) {
     min-height: 18vw;
   }     
@@ -53,7 +62,7 @@
 
 .link {
   position: relative;
-  top: 3vw;
+  top: 10vw;
   color: #231f20; 
   margin-bottom: 3vw; 
   font-weight: bold; 
@@ -144,6 +153,9 @@
 
   display: block;
 
+  top: -120vw;
+    position: relative;
+
   @media (min-width: $min-960) {
 
     display: block;
@@ -159,7 +171,7 @@
 .strip {
   opacity: 1;
     width: 100vw;
-    overflow: hidden;
+    /*overflow: hidden; */
     height: 120vw;  
 }
 
@@ -208,7 +220,7 @@
 }
 
 .current_indicator {
-  display: block;
+  display: none;
   position: absolute;  
     top: 0vw;
     left: 0vw;

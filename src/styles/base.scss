@@ -286,6 +286,10 @@ a {text-decoration: none}
 .the_left_link:hover .the_left_arrow {
   right: .8vw;
   transition: all .5s;
+
+  @media (max-width: $max-960) {
+    right: 5vw;     
+  }    
 }
 
 .the_left_link polygon {
@@ -2312,8 +2316,15 @@ select {
 
 .team_left_link {
 
-  @include grid-col;
-  @include grid-offset-left(2);
+
+  @media (max-width: $max-960) {  
+    top: 40vw;
+    position: relative;
+    @include grid-col(6);
+    @include grid-offset-left(3); 
+
+  } 
+
 
   @media (min-width: $min-960) {
     @include grid-col(1);
@@ -2325,8 +2336,13 @@ select {
 
 .team_right_link {
 
-  @include grid-col;
-  @include grid-offset-left(2);
+  @media (max-width: $max-960) {  
+    top: 40vw;
+    position: relative;
+    @include grid-col(6);
+    @include grid-offset-left(3); 
+
+  } 
 
   @media (min-width: $min-960) {
     @include grid-col(1);
@@ -5415,7 +5431,11 @@ select {
 
   @media (max-width: $max-960) {
 
-      @include grid-col(3);
+      position: absolute;
+      width: 100%;
+
+      @include grid-col(14);
+      @include grid-offset-left(2);  
 
   }       
 
@@ -5433,12 +5453,37 @@ select {
    div.crowders_about__graph_icon > div > img {
 
 
+    @media (max-width: $max-960) {
+
+    height: 25vw;
+    width: 40%;
+    margin-bottom: 6vw;
+
+    }  
+
     @media (min-width: $min-960) {
 
       min-height: 4vw; 
 
     } 
 
+  }
+
+
+
+  div.cr_two {
+    @media (max-width: $max-960) {  
+
+        top: -34vw;
+
+
+    } 
+    
+    @media (min-width: $min-960) {  
+
+
+
+    }    
   }
 
 
@@ -5711,8 +5756,8 @@ select {
 
   @media (min-width: $min-960) {
     margin-bottom: 5vw;
-    @include grid-col(10);
-    @include grid-offset-left(6); 
+    width: 100%;
+    margin-left: 60%;
     display: flex;
     align-items: center;
     height: auto;    
@@ -5799,7 +5844,7 @@ select {
    
       @include grid-col(14);
       @include grid-offset-left(2);
-      margin-bottom: 10vw;
+      margin-bottom: 60vw;
 
 
     @media (min-width: $min-960) {
@@ -5814,10 +5859,23 @@ select {
 .crowders_about_heading_background {
 
       pointer-events: none;
-      @include grid-col(14);
-      @include grid-offset-left(2);
 
 
+
+  @media (max-width: $max-960) {  
+      height: 61vw;
+  
+      @include grid-col(28);
+      @include grid-offset-left(2); 
+      background:  linear-gradient(90deg, rgba(55,198,244,1) 0%, rgba(55,198,244,1) 28.5%, rgba(53,198,244,0) 28.501%, rgba(0,212,255,0) 100%);
+      margin-top: -1.9vw;
+      margin-bottom: 20vw;      
+      z-index: 5;  
+      float: left;
+
+
+  } 
+  
     @media (min-width: $min-960) {
 
       height: 20vw;
@@ -5830,9 +5888,15 @@ select {
       z-index: 5;  
       float: left;
     }  
+
+
+
+
 }
 
 .crowders_about_heading_three {
+
+
 
   font-weight: 900;
 
@@ -5849,20 +5913,37 @@ select {
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);  
 
+  @media (max-width: $max-960) {  
+
+    z-index: 5;
+    margin-left: 7%;
+    max-width: 25%;
+
+  } 
+  
   @media (min-width: $min-960) {
     z-index: 5;
     margin-left: 2vw;
     max-width: 25%;
 
-  }
+  }  
+
+
 
 
 }
 
 .crowders_about_middle_image {
 
-  @include grid-col;
-  @include grid-offset-left(2);
+  @media (max-width: $max-960) {  
+
+    top: -115vw;
+    position: relative;
+  @include grid-col(8);
+  @include grid-offset-left(5.1);
+
+  } 
+  
 
   @media (min-width: $min-960) {
     position: relative;
@@ -5870,22 +5951,44 @@ select {
     @include grid-col(12.8);
     @include grid-offset-left(5.1); 
 
-  }   
+  }    
+
+ 
 }
 
 
+.cr_two_swiper > div {
+
+
+  @media (max-width: $max-960) {
+  
+
+    width: 100vw;
+ 
+
+  } 
+
+  @media (min-width: $min-960) {
+
+    width: 100vw;
+
+  } 
+
+  }        
+
 .crowders_about_right_icons {
 
-
-  
 
     position: relative;
     display: flex;
     flex-direction: row;
 
   @media (max-width: $max-960) {
-  
     opacity: 1;
+    width: 100vw;
+    height: 30vw;
+    margin-top: 4vw;
+    position: relative; 
 
   } 
 
@@ -7610,6 +7713,48 @@ opacity: 0;
 
 }
 
+.cr_mob_left_two {
+  position: relative; 
+  text-align: right;
+
+  left: 11.11%; 
+      margin-bottom: 10vw;   
+
+  @media (max-width: $max-960) {  
+    width: 16%;
+    display: inline-block;
+    top: -10vw;
+
+  } 
+  
+  @media (min-width: $min-960) {  
+
+    display: none!important;
+
+  }  
+
+}
+.cr_mob_right_two {
+  position: relative; 
+  text-align: right;
+
+  left: 10%;    
+      margin-bottom: 10vw;
+  @media (max-width: $max-960) {  
+    width: 16%;
+    display: inline-block;
+    top: -10vw;    
+
+  } 
+  
+  @media (min-width: $min-960) {  
+
+    display: none!important;
+
+  }   
+
+}
+
 .crowders_top_icons_indicators {
 
   font-weight: bold;
@@ -7621,6 +7766,28 @@ opacity: 0;
     @include grid-offset-left(14); 
     text-align: right;
     top: -15vw;
+
+  } 
+  
+  @media (min-width: $min-960) {  
+
+    display: none!important;
+
+  }   
+
+}
+
+.crowders_icons_indicators {
+
+  font-weight: bold;
+
+  @media (max-width: $max-960) {  
+
+    display: block;
+    @include grid-col(2);
+    @include grid-offset-left(14); 
+    text-align: right;
+    top: -25vw;
 
   } 
   
