@@ -63,6 +63,7 @@
     "react-scroll-to": "^2.0.10",
     "react-scrollmagic": "^2.1.0",
     "react-smooth-scrollbar": "^8.0.6",
+    "react-swipeable": "^5.4.0",
     "react-throttle": "^0.3.0",
     "react-touch": "^0.4.4",
     "rfs": "^8.0.4",

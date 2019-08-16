@@ -6914,15 +6914,18 @@ select {
 
 
 .mobile_mask .child_image {
-  transform: translateX(100%)!important;
+  /*transform: translateX(100%)!important;*/
   /* opacity: 0!important; */
   transition: all 1s;  
   transition-timing-function: ease-in-out;
+  position: absolute;
+  top: 0;  
 } 
 
 .mobile_mask .child_current {
-  transform: translateX(0%)!important;  
+  /*transform: translateX(0%)!important;  */
   /* opacity: 1!important; */
+
   transition: all 1s;  
   transition-timing-function: ease-in-out;
 } 
@@ -7478,4 +7481,6 @@ opacity: 0;
 
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
+
+
 

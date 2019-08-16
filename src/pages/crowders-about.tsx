@@ -23,7 +23,7 @@ import { Controller, Scene } from 'react-scrollmagic';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import { Team } from 'components/team/Team';
 import { MobileTeam } from 'components/team/MobileTeam';
-import { Swipeable } from 'react-touch';
+import {Swipeable} from 'react-swipeable'
 
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
@@ -98,6 +98,7 @@ const CrowdersAbout = ({ data, className, state }) => {
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
 
   <Scrollbar className="scrollbar crowders_about_scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true} >   
 
@@ -224,10 +225,14 @@ const CrowdersAbout = ({ data, className, state }) => {
 
             </div>
 
-<Swipeable onSwipeLeft={prevIcon} onSwipeLeft={nextIcon}>
+      <Swipeable
+        onSwipedRight={nextIcon}
+        onSwipedLeft={prevIcon} >
 
 
-              <>
+
+
+
               <div className="crowders_about_right_icons cr_one">
 
                   <CrowdersTexticon className='crowders_about__graph_icon' style={ currentIcon == 0 ? {opacity:1} : {opacity:0} } name='COMMUNITY BUILDING' src='cr_rainbow.svg' />
@@ -250,9 +255,9 @@ const CrowdersAbout = ({ data, className, state }) => {
               <div className="croders_icons_indicators" style={{position: 'relative'}}>
               <a href="#" onClick={prevIcon} className="prev_icon">PREV</a>       {currentIcon}     <a href="#" onClick={nextIcon} className="nextIcon">NEXT</a>   
               </div>   
-              </>        
+       
 
-</Swipeable>
+      </Swipeable>
       </Row>
       
       <ReactCursorPosition>

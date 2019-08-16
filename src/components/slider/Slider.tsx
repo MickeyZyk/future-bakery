@@ -16,6 +16,7 @@ import { Throttle } from 'react-throttle';
 import { Location } from '@reach/router';
 import _ from 'lodash';
 import s from './Slider.scss';
+import {Swipeable} from 'react-swipeable'
 
 var startCarouselInterval;
 var goto = 1;
@@ -75,7 +76,8 @@ class Carousel extends React.Component {
       isActive: 1,
       activeIndex: 0,
       animating: false,
-      gotoState : 1
+      gotoState : 0,
+      autoPlay: true
     };
     this.chidrenNodes = [];
     /* this.wheelCallback = _.throttle(this.wheelCallback.bind(this), 2000, true);   */
@@ -85,33 +87,35 @@ class Carousel extends React.Component {
   }
 
   pre(){
-    if (this.state.gotoState > 0 ) {
+    this.setState({ autoPlay: false });   
+    if (this.state.gotoState > 0) {
 
-      console.log("N", this.state.gotoState)
-      this.prevSlide(this.state.gotoState) 
+      console.log("NP", this.state.gotoState, this.state.activeIndex)
+      this.prevSlide(this.state.gotoState - 1) 
 
     } else {
-
-      this.setState({ gotoState: 1 }, () => {
-      console.log("R", this.state.gotoState)
-        this.gotoSlide(this.state.gotoState)              
+/*
+      this.setState({ gotoState: 0 }, () => {
+      console.log("RP", this.state.gotoState, this.state.activeIndex)
+        //this.gotoSlide(this.state.gotoState)              
       }) 
 
-
+*/
     }
   }
 
   nex(){
-    if (this.state.gotoState == this.props.images.length) {
-
-      this.setState({ gotoState: 1 }, () => {
-      console.log("R", this.state.gotoState)
-        this.gotoSlide(this.state.gotoState)              
+    this.setState({ autoPlay: false });  
+    if (this.state.gotoState == this.props.images.length-1) {
+/*
+      this.setState({ gotoState: this.props.images.length }, () => {
+      console.log("RN", this.state.gotoState, this.state.activeIndex)
+        //this.gotoSlide(this.state.gotoState)              
       }) 
-
+*/
     } else {
-      console.log("N", this.state.gotoState)
-      this.nextSlide(this.state.gotoState) 
+      console.log("NN", this.state.gotoState, this.state.activeIndex)
+      this.nextSlide(this.state.gotoState + 1) 
     }
   }
 
@@ -177,16 +181,10 @@ class Carousel extends React.Component {
 */
   scream(){
 
-    if (this.state.gotoState == this.props.images.length) {
-
-      this.setState({ gotoState: 1 }, () => {
-      //console.log("R", this.state.gotoState)
-        this.gotoSlide(this.state.gotoState)              
-      }) 
-
-    } else {
-    //console.log("N", this.state.gotoState)
-      this.nextSlide(this.state.gotoState) 
+    if (this.state.gotoState > 0 && this.state.autoPlay ) {
+      this.prevSlide(this.state.gotoState - 1)
+    } else if (this.state.gotoState < this.props.images.length - 1) {
+      this.nextSlide(this.state.gotoState + 1) 
     }
   }
 
@@ -203,6 +201,19 @@ class Carousel extends React.Component {
     let current = i;     
 
     this.setState({ animating: true, activeIndex: current, gotoState:  parseInt(this.state.gotoState) - 1  }, () => {
+
+
+
+    //mobile part
+
+    var mobileImagesWrapper = this.wrapperRef_mobile.current
+    var allMobileImages = mobileImagesWrapper.querySelectorAll('.mobile_child');
+    console.log("aot + 100 + state", this.state.gotoState, "index", this.state.activeIndex,  "PER", parseInt(this.state.gotoState) * -100 + 'vw')
+    var mobileTimelinePrev = new TimelineMax({repeat:0});    
+    if(allMobileImages !== null){ mobileTimelinePrev.to(allMobileImages, .5, { x: parseInt(this.state.gotoState) * -100 + 'vw'}) };    
+
+    // end mobile part
+
 
 
       percentage = this.state.activeIndex < this.props.images.length ? percentage + multiplier : 0 ;
@@ -271,6 +282,19 @@ class Carousel extends React.Component {
 
     this.setState({ animating: true, activeIndex: current, gotoState:  parseInt(this.state.gotoState) + 1 }, () => {
 
+
+    //mobile part
+
+    var mobileImagesWrapper = this.wrapperRef_mobile.current
+    var allMobileImages = mobileImagesWrapper.querySelectorAll('.mobile_child');
+    console.log("aot - 100 + state", this.state.gotoState, "index", this.state.activeIndex, "PER", parseInt(this.state.gotoState) * -100 + 'vw')
+    var mobileTimelineNext = new TimelineMax({repeat:0});    
+    if(allMobileImages !== null){ mobileTimelineNext.to(allMobileImages, .5, { x: parseInt(this.state.gotoState) * -100 + 'vw'}) };    
+
+    // end mobile part
+
+
+
       percentage = this.state.activeIndex > 0 ? percentage - multiplier : multiplier - this.props.images.length * multiplier ;
 
       //console.log('percentage', percentage, 'this.state.which', this.state.which);
@@ -335,7 +359,8 @@ class Carousel extends React.Component {
 
     let current = i.currentTarget ? i.currentTarget.getAttribute('data-test') : 0; 
 
-    this.setState({ animating: true, activeIndex: current, gotoState:  parseInt(current) + 1 }, () => {
+    this.setState({ animating: true, activeIndex: current }, () => {
+
 
       setTimeout(function() { //Start the timer
         this.setState({ animating: false }) //After 1 second, set render to true
@@ -438,7 +463,7 @@ class Carousel extends React.Component {
 
     )
 
-
+/*
     var carouselLeftButton = (
       <div className={s.slider__control_left} style={{ display:'flex', zIndex:9999, alignItems:'center', alignContent:'center', height:'100vh'}}>
         <div onClick={this.prevSlide.bind(this)} className="btn btn-primary">&lt;</div>
@@ -450,7 +475,7 @@ class Carousel extends React.Component {
         <div onClick={this.nextSlide.bind(this)} className="btn btn-primary">&gt;</div>
       </div>
     )
-
+*/
     var carouselImages =  images.map((image, i) =>{
       return(
 
@@ -490,9 +515,9 @@ class Carousel extends React.Component {
     var mobileCarouselImages =  images.map((image, i) =>{
       return(
 
-        <div style={{ position: 'absolute', top: '-100%', width: '100%' }} key={'2key_'+i}>
+        <div style={{ position: 'absolute', top: '-100%', width: '100%'}} key={'2key_'+i}>
           <h2 key={'2key_'+i} id={'i0'+(i)} className={`${'mobile_slide_heading'} ${this.state.activeIndex == (i-1) ? 'next' : ''} ${this.state.activeIndex == i ? 'current' : ''} ${this.state.activeIndex == (i+1) ? 'prev' : ''}`}>{labels[i]}</h2>
-          <MobileCarouselImage style={{ width: '50px' }} horizontal={this.state.horizontal} 
+          <MobileCarouselImage style={{ width: '50px'}} horizontal={this.state.horizontal} 
           className={`${'child_image mobile_child'} ${this.state.activeIndex == i ? 'child_current': ''}`}
           key={'key_'+i} label={labels[i]} 
           timeInBetween={this.props.timeInBetween} whichOne={i} src={image} />
@@ -560,6 +585,12 @@ class Carousel extends React.Component {
 
         </div>
 
+      <Swipeable
+        onSwipedRight={this.pre}
+        onSwipedLeft={this.nex} 
+
+      >
+
             <div className='mobile_mask' style={{width: '100%', left: 0, top: 0, right: 0, bottom: 'auto',}}>
               <div ref={this.wrapperRef_mobile} className='mobile_mask_parent_top' 
               style={{  display: 'block', width: '100%', position: 'relative'}}>         
@@ -567,6 +598,8 @@ class Carousel extends React.Component {
               </div>
             </div>  
             {controlz}          
+
+      </Swipeable>
 
     </>
 
@@ -614,8 +647,18 @@ class CarouselImage extends React.Component {
             to={ ['exiting'].includes(transitionStatus) ? { clipPath:'inset(100% 0% 0% 0%)', opacity: 0, ease: 'Power3.easeInOut' } : false  } >
 
               <div className={this.props.className}
-               style={{ clipPath: 'inset(.001% .002% .003% .004%)', transform: 'scale(1)', display: 'block', zIndex:`${this.props.whichOne}`, background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
-               width: '100%', height: '35vw', minHeight: '33vh'}}
+               style={{ 
+                  clipPath: 'inset(.001% .002% .003% .004%)', 
+                  transform: 'scale(1)', 
+                  display: 'block', 
+                  zIndex:`${this.props.whichOne}`, 
+                  background:srcToFull, 
+                  backgroundSize: 'cover',  
+                  margin: 'auto', 
+                  width: '100%', 
+                  height: '35vw', 
+                  minHeight: '33vh'
+                }}
                 onLoad={this._handleImageLoaded.bind(this)}
                 onError={this._handleImageErrored.bind(this)}
               ></div>
@@ -665,7 +708,8 @@ class MobileCarouselImage extends React.Component {
                style={{ clipPath: 'inset(.001% .002% .003% .004%)', transform: 'scale(1)', 
                display: 'block', zIndex:`${this.props.whichOne}`, 
                background:srcToFull, backgroundSize: 'cover',  margin: 'auto', 
-               minHeight: '75vw'
+               minHeight: '75vw', left: `${this.props.whichOne * 100 + 'vw'}`,
+               position: 'relative'
                }}
                 onLoad={this._handleImageLoaded.bind(this)}
                 onError={this._handleImageErrored.bind(this)}
