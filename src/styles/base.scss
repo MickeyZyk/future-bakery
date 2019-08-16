@@ -6038,7 +6038,7 @@ select {
     @include grid-offset-left(12);
     position: absolute !important;
     z-index: 5;
-    top: 64vw;
+    top: 70vw;
     /*
     $top-map: (320px: -0.15px, 959px: -0.25px, 960px: 250px, 2880px: 730px);  
     @include poly-fluid-sizing('font-size', $top-map);
@@ -6281,6 +6281,7 @@ added
     top: -4vw;  
     @include grid-col(1);
     @include grid-offset-left(0);
+    margin-bottom: 5vw;
   }  
 }
 
