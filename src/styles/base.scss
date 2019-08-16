@@ -6227,6 +6227,71 @@ select {
 }
 
 
+
+
+
+
+
+/*
+added
+*/
+
+
+
+
+.bakers_about__join_link_one_top {
+  color: #ff7a00;
+  font-weight: bold;
+  @include grid-col(4);
+  @include grid-offset-left(2);
+
+  top: 15vw;
+  bottom: 10vw;
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -4vw;
+    bottom: 0;    
+    @include grid-col(1.3);
+    @include grid-offset-left(3);
+  }  
+}
+
+
+.divider_text_one_top {
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -4.45vw;
+    @include grid-col(1.7);
+    @include grid-offset-left(0);
+  } 
+}
+
+.bakers_about__brief_link_one_top {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -4vw;  
+    @include grid-col(1);
+    @include grid-offset-left(0);
+  }  
+}
+
+
+
+
+
+
+
+
+
 .tags_heading {
   position: relative;
   top: 23vw;    

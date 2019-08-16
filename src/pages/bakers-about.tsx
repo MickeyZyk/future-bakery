@@ -20,6 +20,7 @@ import { Paragraph } from 'components/paragraph/Paragraph';
 import Texticon from 'components/texticon/Texticon';
 import { Link } from 'components/link/Link';
 import { DarkTeam } from 'components/team/DarkTeam';
+import { DarkMobileTeam } from 'components/team/DarkMobileTeam';
 import { Authors } from 'components/authors/Authors';
 import { Footer } from 'components/footer/Footer';
 import { TweenMax, TimelineMax, Power3 } from "gsap";
@@ -130,6 +131,11 @@ const BakersAbout = ({ data, className }) => {
                 <Row>
                   <Paragraph className='bakers_about__paragraph paragraph'>{data.gravBakersAbout.paragraph_one}</Paragraph>
                 </Row>
+                <Row>
+                  <Link className="bakers_about__join_link_one_top" arrow bakers to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}</Link>
+                  <Paragraph className="divider_text_one_top">or find out how to</Paragraph>
+                  <Link bakers arrow className="bakers_about__brief_link_one_top" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}</Link>          
+                </Row>
 
               </div>
 
@@ -161,8 +167,6 @@ const BakersAbout = ({ data, className }) => {
                 <Link className="bakers_about__join_link_one" arrow bakers to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}</Link>
                 <Paragraph className="divider_text_one">or find out how to</Paragraph>
                 <Link bakers arrow className="bakers_about__brief_link_one" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}</Link>          
-
-
 
                 <Figure4 className="show_on_mobile"/>
               </Row>
@@ -298,8 +302,8 @@ const BakersAbout = ({ data, className }) => {
         </Row>
           <AnimatedHeadingTwo className="bakers_about_team_heading">{data.gravBakersAbout.team_heading}</AnimatedHeadingTwo>
 
-          <DarkTeam members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages}/> 
-
+          <DarkTeam members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages} className="hide_on_mobile"/> 
+          <DarkMobileTeam members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages} className="show_on_mobile"/>           
 
          </ReactCursorPosition>
          <ReactCursorPosition>     

@@ -5,14 +5,15 @@ import { Row } from 'components/row/Row';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import { AnimatedHeadingTwo  } from 'components/heading/AnimatedHeadingTwo';
 import ReactDOM from 'react-dom';
-import { LeftLink } from 'components/link/LeftLink';
 import { Link } from 'components/link/Link';
+import { LeftLink } from 'components/link/LeftLink';
 import LinkArrow from 'assets/svg/link_arrow.svg'
-import s from './DarkTeam.scss';
-import { Location } from '@reach/router';
+import s from './DarkMobileTeam.scss';
 import _ from 'lodash';
+import { Location } from '@reach/router';
+import {Swipeable} from 'react-swipeable'
 
-export class DarkTeam extends React.Component {
+export class DarkMobileTeam extends React.Component {
 
   constructor(props){
     super(props);
@@ -24,7 +25,7 @@ export class DarkTeam extends React.Component {
 
   render() {
   return( 
-    <div className={`${s.dark_team} ${this.props.className}`} >
+    <div className={`${s.team} ${this.props.className}`}>
       <Member 
       members={this.props.members} 
       links={this.props.links} 
@@ -66,7 +67,7 @@ class Member extends React.Component {
       //console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex) * -27.77778, );    
 
         var currentTL = new TimelineMax(); 
-        currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -27.77778, ease: 'Expo.easeInOut' });
+        currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -88.88, ease: 'Expo.easeInOut' });
         var currentTLZoom = new TimelineMax(); 
         currentTLZoom.to(children, .5, {scale: 1, xPercent: 0}).to(children, .25, {scale: 1.04, transformOrigin:'right 50%'}).to(children, 1.5, {scale: 1, xPercent: 0});
 
@@ -86,7 +87,7 @@ class Member extends React.Component {
       //console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex + 1) * -27.77778, );  
 
         var currentTL = new TimelineMax(); 
-        currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -27.77778, ease: 'Expo.easeInOut' });
+        currentTL.to(imageStrip, 0.5, { opacity: 1 }).to(imageStrip, 1.75, { xPercent: (this.state.activeIndex ) * -88.88, ease: 'Expo.easeInOut' });
         var currentTLZoom = new TimelineMax(); 
         currentTLZoom.to(children, .5, {scale: 1, xPercent: 0}).to(children, .25, {scale: 1.04, transformOrigin:'right 50%'}).to(children, 1.5, {scale: 1, xPercent: 0});
 
@@ -108,6 +109,7 @@ var names = this.props.members
 var texts = this.props.texts
 var linkNames = ["ALENA", "ALENA", "ALENA","ALENA", "ALENA", "ALENA" ]
 var linkURLs = this.props.links
+//console.log("WE GOT", this.props.arrayOfImages)
 
 //var firstWord = _.first( str.split(" ");
 
@@ -116,46 +118,69 @@ var linkURLs = this.props.links
       return(
         <div className={s.member} key={'team'+i} position={i}>
           <div className={`${s.data} ${this.state.activeIndex == i ? s.current_data : ''}`}>
-            <h4 className="dark_team_name">{names[i]}</h4>
+            <h4 className="team_name">{names[i]}</h4>
             <Paragraph className={s.text}>{texts[i]}</Paragraph>
             <a className={s.link} href={'mailto:' + linkURLs[i]}>CONTACT {_.first( names[i].split(" ")).toUpperCase()}</a>
           </div>
+          <div className={`${s.indicator} ${this.state.activeIndex == i ? s.current_indicator : ''}`} >{i+1} / {this.props.arrayOfImages.length}</div>          
         </div>
       )
     })  
 
     var imagesStrip = this.props.arrayOfImages.map((image, j) =>{
       return(
-        <img className={s.image} src={image} style={{ zIndex : -j , right: `${-j * 27.77778}%` }} key={'image'+j}/>
+        <div key={'image_indicator'+j}>
+          <img className={s.image} src={image} style={{ zIndex : -j , right: `${-j * 88.88}%` }} />
+        </div>
       )
     }) 
 
     return (
-      <>
-        {members}
-          <div className={s.window}>
-              <div className={s.before_bar}></div>            
-              <div className={s.strip} ref={this.strip}>
-                {imagesStrip}
-              </div>
-              <div className={s.after_bar}></div>              
-          </div>        
+
+            <Swipeable
+              onSwipedRight={this.prevSlide.bind(this)}
+              onSwipedLeft={this.nextSlide.bind(this)} >
 
 
-          <Location>
-            {({ location }) => (
+                  <div style={{position: 'relative'}}>
+                    {members}
+                      <div className={s.window}>
+                          <div className={s.before_bar}></div>            
+                          <div className={s.strip} ref={this.strip}>
+                            {imagesStrip}
+                          </div>
+                          <div className={s.after_bar}></div>              
+                      </div>        
 
-            <Row>
-              <LeftLink arrow bakers to={location.pathname} className={s.team_previous} onClick={this.prevSlide.bind(this)}>{location.pathname.includes('cz') ? 'PŘEDCHOZÍ' : 'PREVIOUS'}</LeftLink>
-              <Link arrow bakers to={location.pathname} className={s.team_next} onClick={this.nextSlide.bind(this)}>{location.pathname.includes('cz') ? 'DALŠÍ' : 'NEXT'}</Link>     
-            </Row>
+                    <Row>
+                      <Location>
+                        {({ location }) => (
+                          <>          
+                            <LeftLink 
+                            to={location.pathname} 
+                            bakery={ location.pathname.includes('bakery') ? true : false } 
+                            crowders={ location.pathname.includes('crowders') ? true : false } 
+                            arrow 
+                            className="team_left_link" 
+                            onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
+                            <Link 
+                            to={location.pathname} 
+                            bakery={ location.pathname.includes('bakery') ? true : false } 
+                            crowders={ location.pathname.includes('crowders') ? true : false } 
+                            arrow className="team_right_link" 
+                            onClick={this.nextSlide.bind(this)}>NEXT</Link>      
+                          </>
+                        )}
+                      </Location> 
+                    </Row>
+                  </div>
 
-            )}
-          </Location> 
+
+
+            </Swipeable>
 
 
 
-      </>
     );
 
   }
