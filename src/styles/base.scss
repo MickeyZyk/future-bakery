@@ -5207,7 +5207,7 @@ font-size: 6vw;
     bottom: 0;    
     @include grid-col(3);
     @include grid-offset-left(6);
-    margin-bottom: 14vw;
+    margin-bottom: 32vw;
   }  
 }
 
@@ -5378,9 +5378,39 @@ font-size: 6vw;
 }
 
 
+/* FORM */
+
+.clients_form {
+  transition: all 1s ease-in-out; 
+  @include grid-col();
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    @include grid-col;    
+    @include grid-offset-left(18);
+    top: 65vw;
+    background-color: #fff;
+    height: 70vw;
+  } 
+}
+
+.clients_form_inside {
+  transition: all 1s;
+  @include grid-col();
+
+  @media (min-width: $min-960) {
+    position: absolute;
+    @include grid-col;    
+    @include grid-offset-left(0);
+    top: 65vw;    
+    z-index: 5;
+    background-color: #fff;    
+  } 
+}
+
 
 .clients_form_icon {
-
+  opacity: 1;
   @include grid-col(4);
   @include grid-offset-left(2);
 
@@ -5388,6 +5418,23 @@ font-size: 6vw;
     position: relative;
     @include grid-col(.7);    
     @include grid-offset-left(12.7);
+    top: -55vw;
+    z-index: 10;
+  } 
+
+}
+
+.clients_form_icon_hidden {
+  opacity: 0;
+  @include grid-col(4);
+  @include grid-offset-left(2);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    @include grid-col(.7);    
+    @include grid-offset-left(12.7);
+    top: -55vw;
+    z-index: 10;
   } 
 
 }
@@ -5438,6 +5485,10 @@ font-size: 6vw;
 
 }
 
+.srv-validation-message {
+  color: red;
+}
+
 .clients_form_submit {
 
   @include grid-col(4);
@@ -5446,8 +5497,25 @@ font-size: 6vw;
 
   @media (min-width: $min-960) {
     position: relative;
-    @include grid-col(2);    
+    @include grid-col(4);    
     @include grid-offset-left(0);
+    margin-top: 2vw;
+    margin-bottom: 8vw;
+  } 
+
+}
+
+.clients_form_goto {
+
+  @include grid-col(4);
+  @include grid-offset-left(2);
+  position: relative;
+
+  @media (min-width: $min-960) {
+    position: relative;
+    @include grid-col(4);    
+    @include grid-offset-left(0);
+    margin-top: 15vw;
   } 
 
 }

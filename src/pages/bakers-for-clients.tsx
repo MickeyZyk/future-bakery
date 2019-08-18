@@ -30,8 +30,47 @@ import { TransitionState } from "gatsby-plugin-transition-link";
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 
+import SimpleReactValidator from 'simple-react-validator';
 
-const BakersClients = ({ data, className }) => {
+
+export default class BakersClients extends React.Component {
+
+
+  constructor(props){
+    super(props);
+    this.state = {
+      email: '',
+      active: false
+    };
+    this.validator = new SimpleReactValidator({autoForceUpdate: this});
+    this.submitForm = this.submitForm.bind(this);    
+    this.toggleClass = this.toggleClass.bind(this);      
+  } 
+
+  handleChange = e => {
+    this.setState({ email: e.target.value })
+  }
+
+submitForm() {
+  if (this.validator.allValid()) {
+    alert('You submitted the form!');
+  } else {
+    this.validator.showMessages();
+    // rerender to show messages for the first time
+    // you can use the autoForceUpdate option to do this automatically`
+    this.forceUpdate();
+  }
+}
+
+    toggleClass() {
+        const currentState = this.state.active;
+        this.setState({ active: !currentState });
+    };
+
+
+  render() {
+
+
   return (
 
 
@@ -137,7 +176,7 @@ const BakersClients = ({ data, className }) => {
               <Location>
                 {({ location }) => ( 
 
-                  <Link className="for_join_link_two" button arrow bakers to={location.pathname}>FILL OUT THE FORM</Link>
+                  <Link className="for_join_link_two" button arrow bakers to={location.pathname} onClick={this.toggleClass}>FILL OUT THE FORM</Link>
 
                   )}
               </Location> 
@@ -149,12 +188,13 @@ const BakersClients = ({ data, className }) => {
       </Row>  
 
 
-        <SVGicon className='clients_form_icon' src='paper.svg' /> 
-        <div className="clients_form">
+        <SVGicon className={this.state.active ? 'clients_form_icon': 'clients_form_icon_hidden'} src='paper.svg' />   
+        <div className={this.state.active ? 'clients_form_inside': 'clients_form'}>
+
           <HeadingFour className="clients_form_heading">Call to action headline for a form.</HeadingFour>
           <Location>
             {({ location }) => ( 
-              <LeftLink bakers arrow className="clients_form_link" to={location.pathname}>CLOSE</LeftLink>
+              <LeftLink bakers arrow className="clients_form_link" onClick={this.toggleClass} to={location.pathname}>CLOSE</LeftLink>
             )}
           </Location>           
          <img className="clients_form_arrow" src={'../svg/work_arrow.svg'} />
@@ -163,7 +203,8 @@ const BakersClients = ({ data, className }) => {
           <p>Jméno</p>
           <input type="text" name="name"/><br/><br/><br/>
           <p>Kontakt</p>
-          <input type="email" name="contact"/><br/><br/><br/>
+          <input type="email" value={this.state.email} onChange={this.handleChange} name="contact"/><br/><br/><br/>
+          {this.validator.message('email', this.state.email, 'email')}
           <p>Fakturační údaje</p>
           <input type="text" name="invoice"/><br/><br/><br/>  
           <p>Text objednávky</p>
@@ -173,14 +214,11 @@ const BakersClients = ({ data, className }) => {
           <Location>
             {({ location }) => (
             <Row> 
-              <Link className="clients_form_submit" button bakers arrow to={location.pathname}><strong>ODESLAT</strong></Link>
+              <Link className="clients_form_submit" button bakers arrow to={location.pathname} onClick={this.submitForm}><strong>ODESLAT</strong></Link>
             </Row>
             )}
           </Location>  
-
-          
-
-
+          <Link className="clients_form_goto" bakers arrow to={location.pathname}><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO ZADAVATELE</strong></Link>
 
          </form>
         </div>
@@ -222,7 +260,16 @@ const BakersClients = ({ data, className }) => {
 
 
   )
+
+
+
+
+
+
+  }
+
+
+
+
 }
 
-
-export default BakersClients
