@@ -116,7 +116,7 @@ render() {
 
 
 
- <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
 
 
     <div className='wrapper about-wrapper'>

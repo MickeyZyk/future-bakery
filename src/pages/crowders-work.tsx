@@ -93,7 +93,7 @@ export default class Work extends React.Component {
 
 
 
-  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
+  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>      
 
 
       <>
@@ -128,7 +128,7 @@ export default class Work extends React.Component {
 
                 {this.props.data.allGravCrowdersWork.edges.map(( node, i ) => (
                   <div className="crowders_work_item_wrapper" key={i}>
-                  <CrowdersItem data={node} i={i} /> 
+                    <CrowdersItem data={node} i={i} /> 
                   </div>
 
                 ))}
@@ -140,14 +140,14 @@ export default class Work extends React.Component {
 
                 <div className="crowders_spacer_top"></div>
 
-          <Location>
-            {({ location }) => (
-              <>      
+                <Location>
+                  {({ location }) => (
+                    <>      
 
-                <Link gray arrow className="crowders_work_download" to={location.pathname}>DOWNLOAD MORE PROJECTS</Link>
-              </>
-            )}
-          </Location> 
+                      <Link gray arrow className="crowders_work_download" to={location.pathname}>DOWNLOAD MORE PROJECTS</Link>
+                    </>
+                  )}
+                </Location> 
 
 
                 <Link gray arrow className="crowders_work_project" to={'/crowderscontact/'}>START A PROJECT WITH US</Link>  

@@ -29,7 +29,7 @@ import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 
 
-const BakeryAbout = ({ data, className }) => {
+const BakersClients = ({ data, className }) => {
   return (
 
 
@@ -45,7 +45,7 @@ const BakeryAbout = ({ data, className }) => {
 
 
 
-  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>   
+  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>   
 
   <div className='wrapper'>
 
@@ -172,31 +172,4 @@ const BakeryAbout = ({ data, className }) => {
 }
 
 
-export const CrowdersAboutquery = graphql`
-  query ForClientsPageQuery {
-    gravCrowdersAbout {
-      heading_one
-      heading_three
-      heading_two
-      image_one
-      image_two
-      link_one
-      link_one_text
-      link_two
-      link_two_text
-      paragraph_one
-      subheading_two
-      title
-      svg_icons_two {
-        svg_two
-        svg_text_two
-      }
-      svg_icons {
-        svg_text
-        svg
-      }
-    }    
-  }
-`
-
-export default BakeryAbout
+export default BakersClients

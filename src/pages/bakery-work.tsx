@@ -98,7 +98,7 @@ export default class Work extends React.Component {
     return (
 
 
- <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>      
 
 
       <>

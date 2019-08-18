@@ -97,7 +97,7 @@ export default class Work extends React.Component {
 
 
 
-  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true}>      
+  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>      
 
 
       <>
@@ -130,7 +130,7 @@ export default class Work extends React.Component {
 
                 {this.props.data.allGravBakeryWork.edges.map(( node, i ) => (
                   <div className="work_item_wrapper" key={i}>
-                  <Item2 data={node} i={i} />
+                    <Item2 data={node} i={i} />
                   </div>
 
                 ))}

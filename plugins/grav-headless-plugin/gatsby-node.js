@@ -60,15 +60,6 @@ exports.sourceNodes = async ({boundActionCreators}) => {
         createNode(x)
     }) 
 
-
-/*
-    const bakersWork = await fetchBakersWork()
-
-    bakersWork.forEach(x => {
-        createNode(x)
-    })     
-*/
-
     const crowdersAbout = await fetchCrowdersAbout()
 
     crowdersAbout.forEach(x => {
@@ -80,6 +71,12 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     crowdersWork.forEach(x => {
         createNode(x)
     })     
+
+    const bakersLogin = await fetchBakersLogin()
+
+    bakersLogin.forEach(x => {
+        createNode(x)
+    }) 
 
     return
 }
@@ -410,45 +407,6 @@ fetchBakersCzAbout = async () => {
     }
 }
 
-/*
-fetchBakersWork = async () => {
-    const {
-        createNodeFactory,
-        generateNodeId,
-        generateTypeName
-    } = createNodeHelpers({
-        typePrefix: `grav`
-    })
-
-    const ProductNode = createNodeFactory('BakersWork', node => {
-        return node
-    })
-
-    try
-    {
-        // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakers/work', {
-            params: {
-                "return-as": "json"
-            }
-        })
-    
-        return response.data.children
-            .map(x => x.header)
-            .map(x => Object.assign(x, {
-                id: x.title,
-                path: `/grav-page-bakers-work/${slug(x.title)}`.toLowerCase()
-            }))
-            .map(ProductNode)
-    }
-    catch (error) {
-        console.log(error)
-        //throw e
-    }
-}
-*/
-
-
 fetchCrowdersAbout = async () => {
     const {
         createNodeFactory,
@@ -519,3 +477,47 @@ fetchCrowdersWork = async () => {
         //throw e
     }
 }
+
+fetchBakersLogin = async () => {
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `api`
+    })
+
+    const ProductNode = createNodeFactory('BakersLogin', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('https://futurebakers.wnh.cz/app/api/project', {
+            params: {
+                "return-as": "json"
+            }
+        })
+    
+        return response.data
+            .map(x => x)
+            .map(x => Object.assign(x, {
+                id: x.name,
+                date:  convertDate(x.date),   
+                path: `/api-login/${slug(x.name)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
+function convertDate(inputFormat) {
+  function pad(s) { return (s < 10) ? '0' + s : s; }
+  var d = new Date(inputFormat);
+  return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('.') ;
+}
+

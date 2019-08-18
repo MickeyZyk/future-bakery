@@ -113,7 +113,7 @@ const CrowdersAbout = ({ data, className, state }) => {
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
 
-  <Scrollbar className="scrollbar crowders_about_scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={true} >   
+  <Scrollbar className="scrollbar crowders_about_scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false} >   
 
   <div className='wrapper about-wrapper'>
 

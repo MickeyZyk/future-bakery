@@ -34,7 +34,7 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
 
   <>
 
-
+  <Devtools/>
 
 
 

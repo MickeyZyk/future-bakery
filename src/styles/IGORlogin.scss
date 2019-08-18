@@ -130,10 +130,50 @@
 
   }
 
-  @media (min-width: $min-1440) {
+}
 
-    @include grid-col(2);
-    @include grid-offset-left(15);
+.bakers_login__projects_case_heading {
+
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+    @include grid-col(10);
+   
+
+  @media (min-width: $min-960) {
+
+    margin-top: 2vw;
+    margin-bottom: 1vw;   
+    @include grid-col(10);
+    min-height: 5.2vw;
+ 
+
+  }
+
+}
+
+.api_projects_link {
+
+  @include grid-col(12);
+
+  @media (min-width: $min-960) {
+
+    @include grid-col(8.3);
+    margin-bottom: 5vw;
+    margin-top: 1vw;
+
+  }
+
+}
+
+
+.api_project_image{
+
+  height: 60vw;
+
+  @media (min-width: $min-960) {
+
+  height: 24vw;
+  background-size: cover;
 
   }
 
@@ -202,7 +242,8 @@
 .bakers_login__projects {
   position: relative;
   top: 10vw;
-  @include grid-col(18);
+  @include grid-col(17);
+  @include grid-offset-left(1);  
 }
 
 
@@ -229,7 +270,7 @@
 }
 
 
-.bakers_login__projects_box_l {
+.bakers_login__projects_box {
   position: relative;
   
   @include grid-col(7);
@@ -238,38 +279,13 @@
   @media (min-width: $min-960) {
 
     @include grid-col(7);
-    @include grid-offset-left(2);
-
-  }
-
-  @media (min-width: $min-1440) {
-
-    @include grid-col(7);
-    @include grid-offset-left(2);
-
-  }
-}
-
-.bakers_login__projects_box_r {
-  position: relative;
-  
-  @include grid-col(7);
-  @include grid-offset-left(1);
-
-  @media (min-width: $min-960) {
-
-    @include grid-col(7);
     @include grid-offset-left(1);
 
   }
 
-  @media (min-width: $min-1440) {
-
-    @include grid-col(7);
-    @include grid-offset-left(1);
-
-  }
 }
+
+
 
 
 /* Bakers Login Form */

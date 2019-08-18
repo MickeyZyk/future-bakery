@@ -7,117 +7,139 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Row } from 'components/row/Row';
 import { Heading } from 'components/heading/Heading';
-import { HeadingTwo } from 'components/heading/HeadingTwo';
+import { HeadingThree } from 'components/heading/HeadingThree';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import Texticon from 'components/texticon/Texticon';
 import { Link } from 'components/link/Link';
+import { ExternalLink } from 'components/link/ExternalLink';
 import { Footer } from 'components/footer/Footer';
 import { Controller, Scene } from 'react-scrollmagic';
 import LinkArrow from 'assets/svg/link_arrow.svg'
+import SmoothScrollbar from 'smooth-scrollbar';
+import Scrollbar from 'react-smooth-scrollbar';
+
+export default class bakersLogin extends React.Component {
+
+  constructor(props){
+    super(props);
+
+  }
+
+  componentDidMount(){
+
+    console.log(this.props.data.allApiBakersLogin.edges)
+
+  }  
 
 
-const BakersLogin = ({ data, className }) => {
 
-  return (
+  render() {
 
-  <div className='wrapper'>
 
-      <ReactCursorPosition className='fullscreen_cursor_position'>
+    return (
 
-        <Helmet title='Login' />
 
-          <div className='bakers_login__main'>
+ <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
 
-            <Row>
+    <div className='wrapper'>
 
-            <div className='bakers_login__main_image'>
-              <img src="../images/planekid.jpg" />
+        <ReactCursorPosition className='fullscreen_cursor_position'>
+
+          <Helmet title='Login' />
+
+            <div className='bakers_login__main'>
+
+              <Row>
+
+              <div className='bakers_login__main_image'>
+                <img src="../images/planekid.jpg" />
+              </div>
+
+
+              <div className='bakers_login__main_header'>
+                <h1>Vymýšlejte s námi nápady - odměnujeme ty nejlepší</h1>
+              </div>
+
+
+              <div className='bakers_login__main_subheader'>
+                <p>Jsou nás tu tisíce, co to uz udelali. Ale stále je více tech, kterí vase nápady potrebují.</p>
+              </div>
+
+
+              <div className='bakers_login__main_login'>
+                <Link gray arrow to={'/'}>LOGIN</Link>
+              </div>
+
+
+
+                <Row>
+                 <Link className='bakers_login__main_joinus'bakers button gray arrow to={'/'}>JOIN US</Link>
+                </Row>
+
+
+              </Row>
+              <Row>
+
+                <Link arrow gray className='bakers_login__main_projects' to={'/'}>
+                  CHECK OUT ACTUAL PROJECTS
+                </Link>
+
+
+                <Link arrow gray className='bakers_login__main_briefs' to={'/'}>
+                  CHECK OUT OLD BRIEFS
+                </Link>
+
+              </Row>
+
             </div>
+          
+            <div className='bakers_login__projects'>
 
+              <Row>
 
-            <div className='bakers_login__main_header'>
-              <h1>Vymýšlejte s námi nápady - odměnujeme ty nejlepší</h1>
+                  {this.props.data.allApiBakersLogin.edges.map(( i ) => (
+                    <div className="bakers_login__projects_box" key={i.node.name}>
+                      <div className="api_project_image" style={{backgroundImage: 'url(' + i.node.image + ')'}}></div>
+                      <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
+                      <p className="bakers_login__projects_text_arrow">{i.node.reward}</p>
+                      <HeadingThree className="bakers_login__projects_case_heading">{i.node.name}</HeadingThree>
+                      <p>Ukonceny projektu <span className="black_text">{i.node.date}</span></p>
+                      <ExternalLink className="api_projects_link"  button bakers arrow to={i.node.url}>ZAOBRAZIT PROJEKT</ExternalLink>
+                    </div>
+
+                  ))}
+
+              </Row> 
+
             </div>
+     
+
+        </ReactCursorPosition>  
+
+    </div>
+
+ </Scrollbar>    
+
+    )
+
+  }
 
 
-            <div className='bakers_login__main_subheader'>
-              <p>Jsou nás tu tisíce, co to uz udelali. Ale stále je více tech, kterí vase nápady potrebují.</p>
-            </div>
-
-
-            <div className='bakers_login__main_login'>
-              <p>LOGIN&nbsp;&nbsp;<LinkArrow className="link_arrow"/></p>
-            </div>
-
-
-            <div className='bakers_login__main_joinus'>
-              <p>JOIN US&nbsp;&nbsp;<LinkArrow className="link_arrow"/></p>
-            </div>
-
-            </Row>
-            <Row>
-
-              <div className='bakers_login__main_projects'>
-                <p>CHECK OUT ACTUAL PROJECTS</p>
-              </div>
-
-
-              <div className='bakers_login__main_briefs'>
-                <p>CHECK OUT OLD BRIEFS</p>
-              </div>
-
-            </Row>
-
-          </div>
-        
-
-
-          <div className='bakers_login__projects'>
-
-            <Row>
-              <div className="bakers_login__projects_box_l">
-                <img src="../images/rum.jpg" />
-                <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
-                <p className="bakers_login__projects_text_arrow">3 x 3,000 CZK</p>
-                <p>Recepty s Captain Morgan</p>
-                <p>Ukonceny projektu 12.06.2019.</p>
-                <p>zaobrazit projekt</p>
-              </div>
-              <div className="bakers_login__projects_box_r">
-                <img src="../images/dogs.jpg" />
-                <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
-                <p className="bakers_login__projects_text_arrow">3 x 3,000 CZK</p>
-                <p>Some new brief headline</p>
-                <p>Ukonceny projektu 23.08.2019.</p>
-                <p>zaobrazit projekt</p>
-              </div>
-            </Row>  
-            <Row>
-              <div className="bakers_login__projects_box_l">
-                <img src="../images/rum.jpg" />
-                <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
-                <p className="bakers_login__projects_text_arrow">3 x 3,000 CZK</p>
-                <p>Recepty s Captain Morgan</p>
-                <p>Ukonceny projektu 12.06.2019.</p>
-                <p>zaobrazit projekt</p>
-              </div>
-              <div className="bakers_login__projects_box_r">
-                <img src="../images/dogs.jpg" />
-                <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
-                <p className="bakers_login__projects_text_arrow">3 x 3,000 CZK</p>
-                <p>Some new brief headline</p>
-                <p>Ukonceny projektu 23.08.2019.</p>
-                <p>zaobrazit projekt</p>
-              </div>
-            </Row>  
-          </div>
-   
-
-      </ReactCursorPosition>  
-
-  </div>
-
-  )
 }
 
-export default BakersLogin
+export const ApiBakersLogin = graphql`
+  query AllBakersLogin {
+    allApiBakersLogin {
+      edges {
+        node {
+          url
+          reward
+          name
+          image
+          date
+        }
+      }
+    }
+  }
+
+`
