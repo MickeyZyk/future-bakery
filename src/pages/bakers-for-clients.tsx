@@ -6,11 +6,13 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Link } from 'components/link/Link';
+import { LeftLink } from 'components/link/LeftLink';
 import { Row } from 'components/row/Row';
 import { Figure2 } from 'components/figure2/Figure2';
 import { Split } from 'components/split/Split';
 import { Heading } from 'components/heading/Heading';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
+import { HeadingFour } from 'components/heading/HeadingFour';
 import { AnimatedHeading } from 'components/heading/AnimatedHeading';
 import { AnimatedHeadingTwo } from 'components/heading/AnimatedHeadingTwo';
 import { AnimatedImage } from 'components/image/AnimatedImage';
@@ -20,7 +22,7 @@ import { Footer } from 'components/footer/Footer';
 import { Controller, Scene } from 'react-scrollmagic';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import { Team } from 'components/team/Team';
-
+import { Location } from '@reach/router';
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
@@ -45,7 +47,7 @@ const BakersClients = ({ data, className }) => {
 
 
 
-  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>   
+    <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>   
 
   <div className='wrapper'>
 
@@ -89,7 +91,7 @@ const BakersClients = ({ data, className }) => {
 
 
 
-      <div class="for_clients_icon_wrapper">
+      <div className="for_clients_icon_wrapper">
 
         <Row className="clients_about_steps">
           <div className="bakers_about_numbers_first">1</div>
@@ -129,19 +131,70 @@ const BakersClients = ({ data, className }) => {
 
       </div>   
 
-          <Row>
+      <Row>
 
-              <Link className="for_join_link_two" button arrow bakers to={'/bakerscontact'}>FILL OUT THE FORM</Link>
-              <Paragraph className="for_divider_text_two">or simply</Paragraph>
-              <Link bakers arrow className="for_brief_link_two" to={'/bakerscontact'}>CALL US</Link>  
 
-          </Row>  
+              <Location>
+                {({ location }) => ( 
+
+                  <Link className="for_join_link_two" button arrow bakers to={location.pathname}>FILL OUT THE FORM</Link>
+
+                  )}
+              </Location> 
+
+
+          <Paragraph className="for_divider_text_two">or simply</Paragraph>
+          <Link bakers arrow className="for_brief_link_two" to={'/bakerscontact'}>CALL US</Link>  
+
+      </Row>  
+
+
+        <SVGicon className='clients_form_icon' src='paper.svg' /> 
+        <div className="clients_form">
+          <HeadingFour className="clients_form_heading">Call to action headline for a form.</HeadingFour>
+          <Location>
+            {({ location }) => ( 
+              <LeftLink bakers arrow className="clients_form_link" to={location.pathname}>CLOSE</LeftLink>
+            )}
+          </Location>           
+         <img className="clients_form_arrow" src={'../svg/work_arrow.svg'} />
+         <form className="clients_form_form">
+
+          <p>Jméno</p>
+          <input type="text" name="name"/><br/><br/><br/>
+          <p>Kontakt</p>
+          <input type="email" name="contact"/><br/><br/><br/>
+          <p>Fakturační údaje</p>
+          <input type="text" name="invoice"/><br/><br/><br/>  
+          <p>Text objednávky</p>
+          <textarea rows="4" cols="50" name="text"/><br/><br/><br/>
+          <input id="individual" type="checkbox" name="user" value="Individual"/>
+          <label htmlFor="individual"><span></span>Souhlasim.....GDPR text.........</label>
+          <Location>
+            {({ location }) => (
+            <Row> 
+              <Link className="clients_form_submit" button bakers arrow to={location.pathname}><strong>ODESLAT</strong></Link>
+            </Row>
+            )}
+          </Location>  
+
+          
+
+
+
+         </form>
+        </div>
 
 
       </ReactCursorPosition>   
 
 
         </div>
+
+
+
+
+
 
 
 <Footer/>
