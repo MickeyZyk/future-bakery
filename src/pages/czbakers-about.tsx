@@ -130,6 +130,11 @@ const BakersAbout = ({ data, className }) => {
                 <Row>
                   <Paragraph className='bakers_about__paragraph paragraph'>{data.gravBakersCzAbout.paragraph_one}</Paragraph>
                 </Row>
+                <Row>
+                  <Link className="bakers_cz_about__join_link_one_top" arrow bakers to={data.gravBakersCzAbout.link_one}>{data.gravBakersCzAbout.link_one_text}</Link>
+                  <Paragraph className="divider_cz_text_one_top">nebo zjistíte, jak</Paragraph>
+                  <Link bakers arrow className="bakers_cz_about__brief_link_one_top" to={data.gravBakersCzAbout.icons_link_two}>{data.gravBakersCzAbout.icons_link_two_text}</Link>          
+                </Row>                
 
               </div>
 
@@ -287,7 +292,7 @@ const BakersAbout = ({ data, className }) => {
 
     <ReactCursorPosition>
       <SVGicon className='bakers_about_chef' src='bakers_about_chef.svg' />
-      <SVGiconReverse className='bakers_about_soldier' src='bakers_about_soldier.svg' />    
+      <SVGiconReverse className='bakers_cz_about_soldier' src='bakers_about_soldier.svg' />    
       
 
         <Row className="cz_bakers_about_team_row">
@@ -296,7 +301,7 @@ const BakersAbout = ({ data, className }) => {
           </div>  
 
         </Row>
-          <AnimatedHeadingTwo className="bakers_about_team_heading">{data.gravBakersCzAbout.team_heading}</AnimatedHeadingTwo>
+          <Heading className="bakers_about_team_heading">{data.gravBakersCzAbout.team_heading}</Heading>
 
           <DarkTeam members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages}/> 
 

@@ -20,7 +20,7 @@
 .author_names {
   position: absolute;
       width: 20vw;
-  $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
+  $size-map: (375px: 19px, 959px: 41px, 960px: 12px, 2880px: 28px);
   @include poly-fluid-sizing('font-size', $size-map);
 }
 
@@ -2313,6 +2313,10 @@ select {
 
 }
 
+.white_team_name {
+color: #fff;
+font-size: 6vw;
+}
 
 .team_left_link {
 
@@ -4111,6 +4115,22 @@ select {
     @media (min-width: $min-960) {
       position: relative;
       top: -16vw;      
+      display: block;  
+      @include grid-col(0.6);
+      @include grid-offset-left(4.3); 
+      z-index: 15;
+
+    }   
+
+}
+
+.bakers_cz_about_soldier {
+    transform: rotate(15deg);
+    display: none;
+
+    @media (min-width: $min-960) {
+      position: relative;
+      top: -14vw;      
       display: block;  
       @include grid-col(0.6);
       @include grid-offset-left(4.3); 
@@ -6286,7 +6306,51 @@ added
 }
 
 
+.bakers_cz_about__join_link_one_top {
+  color: #ff7a00;
+  font-weight: bold;
+  @include grid-col(4);
+  @include grid-offset-left(2);
 
+  top: 15vw;
+  bottom: 10vw;
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -4vw;
+    bottom: 0;    
+    @include grid-col(1.75);
+    @include grid-offset-left(3);
+  }  
+}
+
+
+.divider_cz_text_one_top {
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -4.45vw;
+    @include grid-col(1.7);
+    @include grid-offset-left(0);
+  } 
+}
+
+.bakers_cz_about__brief_link_one_top {
+  font-weight: bold;
+  color: #ff7a00;
+  @include grid-col(4);
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    position: relative;
+    top: -4vw;  
+    @include grid-col(2);
+    @include grid-offset-left(0);
+    margin-bottom: 5vw;
+  }  
+}
 
 
 

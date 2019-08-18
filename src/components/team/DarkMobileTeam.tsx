@@ -118,7 +118,7 @@ var linkURLs = this.props.links
       return(
         <div className={s.member} key={'team'+i} position={i}>
           <div className={`${s.data} ${this.state.activeIndex == i ? s.current_data : ''}`}>
-            <h4 className="team_name">{names[i]}</h4>
+            <h4 className="white_team_name">{names[i]}</h4>
             <Paragraph className={s.text}>{texts[i]}</Paragraph>
             <a className={s.link} href={'mailto:' + linkURLs[i]}>CONTACT {_.first( names[i].split(" ")).toUpperCase()}</a>
           </div>
@@ -158,15 +158,13 @@ var linkURLs = this.props.links
                           <>          
                             <LeftLink 
                             to={location.pathname} 
-                            bakery={ location.pathname.includes('bakery') ? true : false } 
-                            crowders={ location.pathname.includes('crowders') ? true : false } 
+                            bakers
                             arrow 
                             className="team_left_link" 
                             onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
                             <Link 
                             to={location.pathname} 
-                            bakery={ location.pathname.includes('bakery') ? true : false } 
-                            crowders={ location.pathname.includes('crowders') ? true : false } 
+                            bakers 
                             arrow className="team_right_link" 
                             onClick={this.nextSlide.bind(this)}>NEXT</Link>      
                           </>
