@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TransitionState } from 'gatsby-plugin-transition-link';
 import TransitionLink from 'gatsby-plugin-transition-link'
+import { Location } from "@reach/router"
 
 import s from './Footer.scss';
 
@@ -10,7 +11,17 @@ interface IFooterProps {
 
 export const Footer = ({ className, delay }: IFooterProps) => (
 
-            <div className={s.row}>
+       <Location>
+          {({ location }) => (   
+
+             
+
+            <div className={s.row} style={ 
+                location.pathname.includes('bakery') ? { backgroundImage: 'url(/svg/footer_bakery.svg)'} 
+              : location.pathname.includes('bakers') ? { backgroundImage: 'url(/svg/footer_bakers.svg)'} 
+              : location.pathname.includes('crowders') ? { backgroundImage: 'url(/svg/footer_crowders.svg)'}
+              : { backgroundImage: 'url(/svg/footer_bakery.svg)'}
+            }>
               <div className={s.row__one}>
                 <div className={s.footer}>
                   <div className={s.footer__col1}>
@@ -83,5 +94,12 @@ export const Footer = ({ className, delay }: IFooterProps) => (
                 </div>
               </div>
             </div>
+
+
+
+        )}
+      </Location> 
+
+
 
 );
