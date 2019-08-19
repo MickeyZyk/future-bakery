@@ -19,6 +19,9 @@ import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 import { ScrollTo } from "react-scroll-to";
 import { Location } from '@reach/router';
+import { TweenMax, TimelineMax, Power3} from "gsap";
+import { Tween } from 'react-gsap';
+import { TransitionState } from "gatsby-plugin-transition-link";
 
 export default class bakersLogin extends React.Component {
 
@@ -51,7 +54,29 @@ export default class bakersLogin extends React.Component {
     return (
 
 
+
+
+            <>
+
+
+
+
  <Scrollbar ref={c => this.$container = c} className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
+
+
+
+      <TransitionState>
+        {({ transitionStatus }) => {
+          return (
+
+
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+
+
 
     <div className='wrapper'>
 
@@ -63,9 +88,17 @@ export default class bakersLogin extends React.Component {
 
               <Row>
 
+
+
+                      <Tween duration={2} 
+                      from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
+                      to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+
               <div className='bakers_login__main_image'>
                 <img src="../images/planekid.jpg" />
               </div>
+
 
 
               <div className='bakers_login__main_header'>
@@ -76,7 +109,7 @@ export default class bakersLogin extends React.Component {
               <div className='bakers_login__main_subheader'>
                 <p>Jsou nás tu tisíce, co to uz udelali. Ale stále je více tech, kterí vase nápady potrebují.</p>
               </div>
-
+                  </Tween>
 
               <div className='bakers_login__main_login'>
                 <Link gray arrow to={'/'}>LOGIN</Link>
@@ -122,12 +155,26 @@ export default class bakersLogin extends React.Component {
 
                   {this.props.data.allApiBakersLogin.edges.map(( i ) => (
                     <div className="bakers_login__projects_box" key={i.node.name}>
-                      <div className="api_project_image" style={{backgroundImage: 'url(' + i.node.image + ')'}}></div>
-                      <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
-                      <p className="bakers_login__projects_text_arrow">{i.node.reward}</p>
-                      <HeadingThree className="bakers_login__projects_case_heading">{i.node.name}</HeadingThree>
-                      <p>Ukonceny projektu <span className="black_text">{i.node.date}</span></p>
-                      <ExternalLink className="api_projects_link"  button bakers arrow to={i.node.url}>ZAOBRAZIT PROJEKT</ExternalLink>
+
+
+                      <Tween duration={2} 
+                      from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+                      to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+
+                          <div className="api_project_image" style={{backgroundImage: 'url(' + i.node.image + ')'}}></div>
+                          <img src="../images/big arrow.png" className="bakers_login__projects_big_arrow"/>
+                          <p className="bakers_login__projects_text_arrow">{i.node.reward}</p>
+                          <HeadingThree className="bakers_login__projects_case_heading">{i.node.name}</HeadingThree>
+                          <p>Ukonceny projektu <span className="black_text">{i.node.date}</span></p>
+                          <ExternalLink className="api_projects_link"  button bakers arrow to={i.node.url}>ZAOBRAZIT PROJEKT</ExternalLink>
+
+
+
+                      </Tween>
+
+
+
                     </div>
 
                   ))}
@@ -141,7 +188,48 @@ export default class bakersLogin extends React.Component {
 
     </div>
 
+
+            </Tween>
+
+
+
+
+
+          )
+        }}
+      </TransitionState>
+
+
  </Scrollbar>    
+
+
+
+
+      <TransitionState>
+        {({ transitionStatus }) => {
+          return (
+
+            <>
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+              <div className='fulscreen_white' style={{zIndex: -1, backgroundColor: '#ffffff', position: 'absolute', width: '100vw', height: '100vh', top: 0, bottom: 0, left: 0, right: 0}}></div>
+
+            </Tween>
+
+            </>
+          )
+        }}
+      </TransitionState>
+
+
+
+
+            </>
+
+
 
     )
 

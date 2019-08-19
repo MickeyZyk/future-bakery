@@ -101,7 +101,7 @@ export default class BakersIndex extends React.Component {
 
                 <div className="bakers_home_flip_button">
                   <Row>
-                    <Link bakers arrow button className="home_cta_button" to={'/czbakerscontact'}>ZAHÁJIT PROJEKT S NÁMI</Link>
+                    <Link bakers arrow button className="home_cta_button" to={'/bakerslogin'}>PŘIPOJ SE K NÁM</Link>
                   </Row>
                 </div>
 

@@ -7249,8 +7249,8 @@ added
 
   @media (min-width: $min-960) {
     bottom: 8.3vw;
-    @include grid-col(3);
-    @include grid-offset-left(14);
+    @include grid-col(2);
+    @include grid-offset-left(15);
     z-index: 5; 
   } 
 

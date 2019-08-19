@@ -222,9 +222,7 @@ submitForm() {
          </form>
         </div>
 
-
       </ReactCursorPosition>   
-
 
         </div>
 
