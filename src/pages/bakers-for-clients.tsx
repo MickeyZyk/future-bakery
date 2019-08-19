@@ -31,9 +31,7 @@ import Scrollbar from 'react-smooth-scrollbar';
 
 import SimpleReactValidator from 'simple-react-validator';
 
-
 export default class BakersClients extends React.Component {
-
 
   constructor(props){
     super(props);
@@ -202,8 +200,8 @@ submitForm() {
           <p>Jméno</p>
           <input type="text" name="name"/><br/><br/><br/>
           <p>Kontakt</p>
-          <input type="email" value={this.state.email} onChange={this.handleChange} name="contact"/><br/><br/><br/>
-          {this.validator.message('email', this.state.email, 'email')}
+          <input type="email" value={this.state.email} onChange={this.handleChange} name="contact"/><br/>
+          {this.validator.message('email', this.state.email, 'email')}<br/><br/>
           <p>Fakturační údaje</p>
           <input type="text" name="invoice"/><br/><br/><br/>  
           <p>Text objednávky</p>
@@ -212,12 +210,14 @@ submitForm() {
           <label htmlFor="individual"><span></span>Souhlasim.....GDPR text.........</label>
           <Location>
             {({ location }) => (
+              <>
             <Row> 
               <Link className="clients_form_submit" button bakers arrow to={location.pathname} onClick={this.submitForm}><strong>ODESLAT</strong></Link>
             </Row>
+            <Link className="clients_form_goto" bakers arrow to={location.pathname}><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO ZADAVATELE</strong></Link>
+            </>
             )}
           </Location>  
-          <Link className="clients_form_goto" bakers arrow to={location.pathname}><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO ZADAVATELE</strong></Link>
 
          </form>
         </div>
