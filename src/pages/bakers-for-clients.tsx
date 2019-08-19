@@ -110,8 +110,14 @@ submitForm() {
           </Row>
 
           <Row>
+          <Location>
+            {({ location }) => ( 
 
-              <Link className="for_join_link_one" arrow bakers to={'/bakerscontact'}>BRIEF US</Link>
+              <Link className="for_join_link_one" arrow bakers onClick={this.toggleClass} to={location.pathname}>BRIEF US</Link>
+
+            )}
+          </Location>  
+        
               <Paragraph className="for_divider_text_one">or simply</Paragraph>
               <Link bakers arrow className="for_brief_link_one" to={'/bakerscontact'}>CALL US</Link>  
 
@@ -120,7 +126,7 @@ submitForm() {
 
           <Row>
 
-          <HeadingTwo className="for_clients_solution_heading">Looking for ideas or a solution to a problem? </HeadingTwo>
+          <HeadingTwo className={this.state.active ? 'for_clients_solution_heading_hidden' : 'for_clients_solution_heading'} >Looking for ideas or a solution to a problem? </HeadingTwo>
 
 
           </Row>
@@ -168,12 +174,10 @@ submitForm() {
       </div>   
 
       <Row>
-
-
               <Location>
                 {({ location }) => ( 
 
-                  <Link className="for_join_link_two" button arrow bakers to={location.pathname} onClick={this.toggleClass}>FILL OUT THE FORM</Link>
+                  <Link className="for_join_link_two" button arrow bakers onClick={this.toggleClass} to={location.pathname} onClick={this.toggleClass}>FILL OUT THE FORM</Link>
 
                   )}
               </Location> 
@@ -188,33 +192,46 @@ submitForm() {
         <SVGicon className={this.state.active ? 'clients_form_icon': 'clients_form_icon_hidden'} src='paper.svg' />   
         <div className={this.state.active ? 'clients_form_inside': 'clients_form'}>
 
-          <HeadingFour className="clients_form_heading">Call to action headline for a form.</HeadingFour>
-          <Location>
-            {({ location }) => ( 
-              <LeftLink bakers arrow className="clients_form_link" onClick={this.toggleClass} to={location.pathname}>CLOSE</LeftLink>
-            )}
-          </Location>           
+        
          <img className="clients_form_arrow" src={'../svg/work_arrow.svg'} />
          <form className="clients_form_form">
 
-          <p>Jméno</p>
+          <Location>
+            {({ location }) => ( 
+
+              <LeftLink bakers arrow className="clients_form_link" onClick={this.toggleClass} to={location.pathname}>CLOSE</LeftLink>
+
+            )}
+          </Location>            
+          <p>&nbsp;</p>
+          <p>Jméno a přijmení</p>
           <input type="text" name="name"/><br/><br/>
-          <p>Kontakt</p>
+          <p>Email</p>
           <input type="email" value={this.state.email} onChange={this.handleChange} name="contact"/><br/>
           {this.validator.message('email', this.state.email, 'email')}<br/>
-          <p>Fakturační údaje</p>
-          <input type="text" name="invoice"/><br/><br/>  
+          <p>Telefon</p>
+          <input type="text" name="phone"/><br/><br/>          
+          <p>Firma</p>
+          <input type="text" name="company"/><br/><br/>  
+          <p>IČO</p>
+          <input type="text" name="ico"/><br/><br/>   
+          <p>Fakturační adresa</p>
+          <input type="text" name="adress"/><br/><br/>   
           <p>Text objednávky</p>
           <textarea rows="4" cols="50" name="text"/><br/><br/>
-          <input id="individual" type="checkbox" name="user" value="Individual"/>
-          <label htmlFor="individual"><span></span>Souhlasim.....GDPR text.........</label>
+          <input id="gdpr" type="checkbox" name="user" value="Individual"/>
+          <label htmlFor="gdpr"><span></span>Souhlas s GDPR..</label>
+          <br/>
+          <input id="terms" type="checkbox" name="user" value="Individual"/>
+          <label htmlFor="terms"><span></span>Souhlasim s podminkami FutureBakery</label>          
           <Location>
             {({ location }) => (
               <>
             <Row> 
               <Link className="clients_form_submit" button bakers arrow to={location.pathname} onClick={this.submitForm}><strong>ODESLAT</strong></Link>
             </Row>
-            <Link className="clients_form_goto" bakers arrow to={location.pathname}><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO ZADAVATELE</strong></Link>
+            <Link className="clients_form_goto" bakers arrow to={location.pathname}><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO ZADAVATELE</strong></Link><br/>
+            <Link className="clients_form_goto" bakers arrow to={location.pathname}><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO AUTORY</strong></Link>            
             </>
             )}
           </Location>  

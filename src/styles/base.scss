@@ -5207,7 +5207,7 @@ font-size: 6vw;
     bottom: 0;    
     @include grid-col(3);
     @include grid-offset-left(6);
-    margin-bottom: 32vw;
+    margin-bottom: 22.5vw;
   }  
 }
 
@@ -5364,12 +5364,32 @@ font-size: 6vw;
 }
 
 .for_clients_solution_heading {
+  transition: opacity 1s;  
+  pointer-events: none;
   $font-map: (375px: 60px, 959px: 90px, 960px: 34px, 2880px: 110px);
   @include poly-fluid-sizing('font-size', $font-map);  
   @include grid-col;
   @include grid-offset-left(1);
 
   @media (min-width: $min-960) {
+    opacity: 1!important;
+    margin-top: 4vw;
+    position: relative;
+    @include grid-col(6);    
+    @include grid-offset-left(6);
+  } 
+}
+
+.for_clients_solution_heading_hidden {
+  transition: opacity 1s;
+  pointer-events: none;  
+  $font-map: (375px: 60px, 959px: 90px, 960px: 34px, 2880px: 110px);
+  @include poly-fluid-sizing('font-size', $font-map);  
+  @include grid-col;
+  @include grid-offset-left(1);
+
+  @media (min-width: $min-960) {
+    opacity: 0!important;
     margin-top: 4vw;
     position: relative;
     @include grid-col(6);    
@@ -5418,7 +5438,7 @@ font-size: 6vw;
     position: relative;
     @include grid-col(.7);    
     @include grid-offset-left(12.7);
-    top: -55vw;
+    top: -50vw;
     z-index: 10;
   } 
 
@@ -5464,8 +5484,8 @@ font-size: 6vw;
   @media (min-width: $min-960) {
     position: relative;
     @include grid-col(1);    
-    @include grid-offset-left(7);
-    top: -16vw;
+    @include grid-offset-left(0);
+    top: 0vw;
   } 
 
 }
@@ -5478,9 +5498,10 @@ font-size: 6vw;
 
   @media (min-width: $min-960) {
     position: relative;
-    @include grid-col(1);    
-    @include grid-offset-left(5.8);
-    top: -8vw;
+    @include grid-col(.9);    
+    @include grid-offset-left(6.9);
+    top: -3.5vw;
+    z-index: 16;
   } 
 
 }
@@ -5500,7 +5521,7 @@ font-size: 6vw;
     @include grid-col(4);    
     @include grid-offset-left(0);
     margin-top: 2vw;
-    margin-bottom: 8vw;
+    margin-bottom: 2vw;
   } 
 
 }
@@ -5527,15 +5548,25 @@ font-size: 6vw;
   position: relative;
 
   @media (min-width: $min-960) {
+    z-index: 5;
     position: relative;
-
+    @include grid-col(11);
     @include grid-offset-left(7);
     top: -12vw;    
+    background-color: #f3f2f1;
+    padding: 2vw 6vw;
   } 
 
 }
 
-input {font-weight: 900}
+input {
+  $font-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 10px, 2880px: 30px);
+  $height-map: (320px: 14px, 375px: 16px, 959px: 41px, 960px: 10px, 2880px: 30px);
+  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.25px, 2880px: -0.35px);  
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  @include poly-fluid-sizing('letter-spacing', $spacing-map);   
+}
 
 input[type="checkbox"]{
   display: none;
