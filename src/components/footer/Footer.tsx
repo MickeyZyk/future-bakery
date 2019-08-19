@@ -34,8 +34,8 @@ export const Footer = ({ className, delay }: IFooterProps) => (
                     <TransitionLink  to="/bakery-work" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                     	<p className={`${s.footer__p} ${className}`}>Work</p>
                     </TransitionLink> 
-                    <TransitionLink  to="/bakery-work" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
-                      <p className={`${s.footer__p} ${className}`}>Whom we bake with</p>
+                    <TransitionLink  to="/bakerycontact" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                      <p className={`${s.footer__p} ${className}`}>Contact</p>
                     </TransitionLink> 
                   </div>
                   <div className={s.footer__col2}>      
@@ -48,8 +48,8 @@ export const Footer = ({ className, delay }: IFooterProps) => (
                     <TransitionLink  to="/bakers-work" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                     	<p className={`${s.footer__p} ${className}`}>Work</p>
                     </TransitionLink>
-                    <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
-                    	<p className={`${s.footer__p} ${className}`}>How we work</p>
+                    <TransitionLink  to="/bakerscontact" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                    	<p className={`${s.footer__p} ${className}`}>Contact</p>
                     </TransitionLink>
                   </div>
                   <div className={s.footer__col3}>      
@@ -62,8 +62,8 @@ export const Footer = ({ className, delay }: IFooterProps) => (
                     <TransitionLink  to="/crowders-work" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                     	<p className={`${s.footer__p} ${className}`}>Work</p>
                     </TransitionLink>                
-                    <TransitionLink  to="/crowders-work" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
-                    	<p className={`${s.footer__p} ${className}`}>What we do</p>
+                    <TransitionLink  to="/crowderscontact" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                    	<p className={`${s.footer__p} ${className}`}>Contact</p>
                     </TransitionLink>
                   </div>
                 </div>
@@ -73,9 +73,6 @@ export const Footer = ({ className, delay }: IFooterProps) => (
                   <div className={s.footer__col4}>
                     <TransitionLink  to="/family" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                       <p className={`${s.footer__p} ${className}`}>Future Bakery Family</p>
-                    </TransitionLink>
-                    <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
-                      <p className={`${s.footer__p} ${className}`}>Contact</p>
                     </TransitionLink>
                     <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                       <p className={`${s.footer__p} ${className}`}>Privacy Policy</p>

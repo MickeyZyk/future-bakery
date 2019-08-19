@@ -56,13 +56,6 @@ export default class BakersMenu extends React.Component {
 
 
 
-
-
-
-
-
-
-
 					<>
 					<MenuBackground/>
 					  <Helmet title="Future Bakery" />
