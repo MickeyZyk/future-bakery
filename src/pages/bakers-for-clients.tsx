@@ -198,14 +198,14 @@ submitForm() {
          <form className="clients_form_form">
 
           <p>Jméno</p>
-          <input type="text" name="name"/><br/><br/><br/>
+          <input type="text" name="name"/><br/><br/>
           <p>Kontakt</p>
           <input type="email" value={this.state.email} onChange={this.handleChange} name="contact"/><br/>
-          {this.validator.message('email', this.state.email, 'email')}<br/><br/>
+          {this.validator.message('email', this.state.email, 'email')}<br/>
           <p>Fakturační údaje</p>
-          <input type="text" name="invoice"/><br/><br/><br/>  
+          <input type="text" name="invoice"/><br/><br/>  
           <p>Text objednávky</p>
-          <textarea rows="4" cols="50" name="text"/><br/><br/><br/>
+          <textarea rows="4" cols="50" name="text"/><br/><br/>
           <input id="individual" type="checkbox" name="user" value="Individual"/>
           <label htmlFor="individual"><span></span>Souhlasim.....GDPR text.........</label>
           <Location>

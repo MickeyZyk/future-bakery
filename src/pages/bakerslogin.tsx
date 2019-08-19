@@ -17,11 +17,14 @@ import { Controller, Scene } from 'react-scrollmagic';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
+import { ScrollTo } from "react-scroll-to";
+import { Location } from '@reach/router';
 
 export default class bakersLogin extends React.Component {
 
   constructor(props){
     super(props);
+    this.handleClick = this.handleClick.bind(this);    
 
   }
 
@@ -31,6 +34,15 @@ export default class bakersLogin extends React.Component {
 
   }  
 
+  handleClick(){
+  //console.log("ANCHOR" + document.querySelector('#video_image_anchor'))
+    const { scrollbar } = this.$container;
+    scrollbar.scrollIntoView(document.querySelector('#projects'), {
+      alignToTop: true,
+      onlyScrollIfNeeded: false,
+    });
+  }   
+
 
 
   render() {
@@ -39,7 +51,7 @@ export default class bakersLogin extends React.Component {
     return (
 
 
- <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
+ <Scrollbar ref={c => this.$container = c} className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
 
     <div className='wrapper'>
 
@@ -70,30 +82,41 @@ export default class bakersLogin extends React.Component {
                 <Link gray arrow to={'/'}>LOGIN</Link>
               </div>
 
-
-
                 <Row>
                  <Link className='bakers_login__main_joinus'bakers button gray arrow to={'/'}>JOIN US</Link>
                 </Row>
 
-
               </Row>
               <Row>
 
-                <Link arrow gray className='bakers_login__main_projects' to={'/'}>
-                  CHECK OUT ACTUAL PROJECTS
-                </Link>
+                <ScrollTo>
+                  {({ scrollTo }) => (
 
 
-                <Link arrow gray className='bakers_login__main_briefs' to={'/'}>
+                  <Location>
+                    {({ location }) => (             
+
+                    <Link arrow gray className='bakers_login__main_projects' to={location.pathname} onClick={ this.handleClick } >
+                      CHECK OUT ACTUAL PROJECTS
+                    </Link> 
+
+                      )}
+                  </Location> 
+
+
+             
+                  )}
+                </ScrollTo>
+
+                <ExternalLink arrow gray className='bakers_login__main_briefs' to={'/'}>
                   CHECK OUT OLD BRIEFS
-                </Link>
+                </ExternalLink>
 
               </Row>
 
             </div>
           
-            <div className='bakers_login__projects'>
+            <div className='bakers_login__projects' id="projects">
 
               <Row>
 
