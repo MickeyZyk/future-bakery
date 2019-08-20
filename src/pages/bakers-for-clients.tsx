@@ -232,7 +232,7 @@ submitForm() {
           <p>&nbsp;</p>
           <p>Jméno a přijmení</p>
           <input type="text" value={this.state.name} onChange={this.handleChange} name="name"/><br/>
-          {this.validator.message('name', this.state.name, 'alpha|required')}<br/>
+          {this.validator.message('name', this.state.name, 'required')}<br/>
           <p>Email</p>
           <input type="email" value={this.state.email} onChange={this.handleChange} name="email"/><br/>
           {this.validator.message('email', this.state.email, 'email|required')}<br/>
