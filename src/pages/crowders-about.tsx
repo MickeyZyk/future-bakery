@@ -78,7 +78,7 @@ const CrowdersAbout = ({ data, className, state }) => {
   } 
 
   function getImages(item) {
-    var image = ['https://future.stratego.ba/en/bakery/pages/'  + slug(data.gravCrowdersAbout.title.toLowerCase()) + '/' + item.image];
+    var image = ['https://future.stratego.ba/en/crowders/pages/'  + slug(data.gravCrowdersAbout.title.toLowerCase()) + '/' + item.image];
     return image;
   }  
 
