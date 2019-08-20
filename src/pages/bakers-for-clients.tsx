@@ -25,6 +25,7 @@ import { Location } from '@reach/router';
 import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
+import axios from 'axios';
 
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
@@ -36,21 +37,49 @@ export default class BakersClients extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      name: '',
       email: '',
+      phone: '',
+      company: '',
+      ico: '',
+      address: '',
+      text: '',
+      gdpr: '',
+      terms: '',
       active: false
     };
     this.validator = new SimpleReactValidator({autoForceUpdate: this});
     this.submitForm = this.submitForm.bind(this);    
-    this.toggleClass = this.toggleClass.bind(this);      
+    this.toggleClass = this.toggleClass.bind(this); 
+    this.handleChange = this.handleChange.bind(this); 
   } 
 
-  handleChange = e => {
-    this.setState({ email: e.target.value })
+  handleChange = event => {
+    //this.setState({ [e.target.name]: e.target.value })
+
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    this.setState({
+      [name]: value
+    });
+
+
   }
 
 submitForm() {
   if (this.validator.allValid()) {
-    alert('You submitted the form!');
+    //alert('You submitted the form!');
+    const { name, email, phone, company, ico, address, text } = this.state;
+    axios({
+      method: 'post',
+      url: 'https://futurebakers.wnh.cz/app/api/query-form',
+      data: { name, email, phone, company, ico, address, text },
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    })
+      .then((result) => {
+        console.log(result);
+      });    
   } else {
     this.validator.showMessages();
     // rerender to show messages for the first time
@@ -159,16 +188,13 @@ submitForm() {
         </Row>
 
         <Row className="clients_about_steps_three">
-
-
             <div className="bakers_about_steps_text" >Fill out our Client Contact Form</div>
             <div className="bakers_about_steps_text" >Make a detailed description of the problem or the task in hand (we can help you with this)</div>
             <div className="bakers_about_steps_text" >Set up the reward</div>
             <div className="bakers_about_steps_text" >Check out all the ideas from the contributors</div>
             <div className="bakers_about_steps_text" >Pick the best one</div>
-            <div className="bakers_about_steps_text" >Become the owner of one</div>                                                            
-
-         </Row> 
+            <div className="bakers_about_steps_text" >Become the owner of one</div>
+        </Row> 
 
 
       </div>   
@@ -194,7 +220,7 @@ submitForm() {
 
         
          <img className="clients_form_arrow" src={'../svg/work_arrow.svg'} />
-         <form className="clients_form_form">
+         <form className="clients_form_form" action="https://futurebakers.wnh.cz/app/api/query-form " method="post">
 
           <Location>
             {({ location }) => ( 
@@ -205,25 +231,27 @@ submitForm() {
           </Location>            
           <p>&nbsp;</p>
           <p>Jméno a přijmení</p>
-          <input type="text" name="name"/><br/><br/>
+          <input type="text" value={this.state.name} onChange={this.handleChange} name="name"/><br/>
+          {this.validator.message('name', this.state.name, 'alpha|required')}<br/>
           <p>Email</p>
-          <input type="email" value={this.state.email} onChange={this.handleChange} name="contact"/><br/>
-          {this.validator.message('email', this.state.email, 'email')}<br/>
+          <input type="email" value={this.state.email} onChange={this.handleChange} name="email"/><br/>
+          {this.validator.message('email', this.state.email, 'email|required')}<br/>
           <p>Telefon</p>
-          <input type="text" name="phone"/><br/><br/>          
+          <input type="text" value={this.state.phone} onChange={this.handleChange} name="phone"/><br/><br/>          
           <p>Firma</p>
-          <input type="text" name="company"/><br/><br/>  
+          <input type="text" value={this.state.company} onChange={this.handleChange} name="company"/><br/><br/>  
           <p>IČO</p>
-          <input type="text" name="ico"/><br/><br/>   
+          <input type="text" value={this.state.ico} onChange={this.handleChange} name="ico"/><br/><br/>   
           <p>Fakturační adresa</p>
-          <input type="text" name="adress"/><br/><br/>   
+          <input type="text" value={this.state.address} onChange={this.handleChange} name="address"/><br/><br/>   
           <p>Text objednávky</p>
-          <textarea rows="4" cols="50" name="text"/><br/><br/>
-          <input id="gdpr" type="checkbox" name="user" value="Individual"/>
-          <label htmlFor="gdpr"><span></span>Souhlas s GDPR..</label>
-          <br/>
-          <input id="terms" type="checkbox" name="user" value="Individual"/>
-          <label htmlFor="terms"><span></span>Souhlasim s podminkami FutureBakery</label>          
+          <textarea value={this.state.text} onChange={this.handleChange} rows="4" cols="50" name="text"/><br/><br/>
+          <input id="gdpr" type="checkbox" checked={this.state.gdpr} onChange={this.handleChange} name="gdpr"/>
+          <label htmlFor="gdpr"><span></span>Souhlas s GDPR..</label><br/>
+          {this.validator.message('gdpr', this.state.gdpr, 'accepted')}<br/>
+          <input id="terms" type="checkbox" checked={this.state.terms} onChange={this.handleChange} name="terms"/>
+          <label htmlFor="terms"><span></span>Souhlasim s podminkami FutureBakery</label><br/>
+          {this.validator.message('terms', this.state.terms, 'accepted')}
           <Location>
             {({ location }) => (
               <>
