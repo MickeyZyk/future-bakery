@@ -73,7 +73,7 @@ submitForm() {
     const { name, email, phone, company, ico, address, text } = this.state;
     axios({
       method: 'post',
-      url: 'https://futurebakers.wnh.cz/app/api/query-form',
+      url: 'https://bakerycorsproxy.herokuapp.com/https://futurebakers.wnh.cz/app/api/query-form',
       data: { name, email, phone, company, ico, address, text },
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     })

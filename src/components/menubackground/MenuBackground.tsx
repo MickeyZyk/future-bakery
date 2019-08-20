@@ -15,6 +15,10 @@ export class MenuBackground extends React.Component {
 
 
 	return (
+
+
+<Location>
+  {({ location }) => (  		
 			
 	  <TransitionState>
 	  	{({ transitionStatus }) => {
@@ -24,9 +28,7 @@ export class MenuBackground extends React.Component {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
-
-		       <Location>
-		          {({ location }) => (   
+ 
 
 						<div className={s.background}>
 							<img className={s.background_logo} src={
@@ -37,17 +39,18 @@ export class MenuBackground extends React.Component {
 							}/>					
 						</div>
 
-		        )}
-		      </Location> 
-
-
             </Tween>
 
 			  );	
 
 	  	}}
 
-		</TransitionState>			
+		</TransitionState>	
+
+	)}
+</Location> 
+
+
 	)
 
   }
