@@ -767,7 +767,7 @@
   } 
   
   @media (min-width: $min-960) {  
-    top: 3vw;
+    top: 0vw;
     @include grid-col(3);
     @include grid-offset-left(14.4);
 
@@ -899,7 +899,7 @@
   
 
   @media (min-width: $min-960) {
-    top: 0;
+    top: 3vw;
     @include grid-col(3.3);
     @include grid-offset-left(13.2);
     text-align: right;
