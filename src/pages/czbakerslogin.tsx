@@ -142,7 +142,7 @@ export default class bakersLogin extends React.Component {
                 </ScrollTo>
 
                 <ExternalLink arrow gray className='bakers_login__main_briefs' to={'https://futurebakers.wnh.cz/cs/ukoncene'}>
-                  ZOBRAZTE STARÉ BRIEFS
+                  ZOBRAZIT STARÉ BRIEFY
                 </ExternalLink>
 
               </Row>
