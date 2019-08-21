@@ -102,17 +102,10 @@
 
   @media (min-width: $min-960) {
 
-    @include grid-col(1);
+    @include grid-col(1.2);
     @include grid-offset-left(13);
 
-  }
-
-  @media (min-width: $min-1440) {
-
-    @include grid-col(1);
-    @include grid-offset-left(13);
-
-  }
+}
 
 }
 

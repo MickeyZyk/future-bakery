@@ -146,7 +146,7 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
                     : location.pathname.includes('crowders') ? 'crowders_header_menu_link submenu_link'  
                     : 'submenu_link'
                   } 
-                  onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERS" to="/bakers">FUTURE BAKERS</HeaderLink>
+                  onClick={() => set({ logo: 'bakers' })} name="FUTURE BAKERS" to={ location.pathname.includes('cz') ? "/czbakers" : "/bakers" }>FUTURE BAKERS</HeaderLink>
                 )}
               </ContextConsumer>
 
