@@ -126,12 +126,10 @@ render() {
         <Row>
           <div className='bakery_about__left_column_one'>
             <AnimatedHeading className='__heading_one'>{this.props.data.gravBakeryAbout.heading_one}</AnimatedHeading>
-            <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 
-            className="bakery_about__image_one_mobile show_on_mobile"/>
             <Paragraph className='bakery_about__paragraph paragraph'>{this.props.data.gravBakeryAbout.paragraph_one}</Paragraph>
           </div>
           <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 
-          className="bakery_about__image_one hide_on_mobile"/>
+          className="bakery_about__image_one"/>
         </Row>
         <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/greenboard.jpg)`}}>
           <Row>
@@ -145,8 +143,6 @@ render() {
               className="bakery_about__green_text_one">{this.props.data.gravBakeryAbout.show_me_text}</p>
             <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } 
               className="bakery_about__green_text_two">{this.props.data.gravBakeryAbout.show_me_two_text}</p>   
-
-            <img src="../images/mobile_company.png" className="bakery_about__white_company show_on_mobile" />  
 
           <Location>
             {({ location }) => (
@@ -165,11 +161,11 @@ render() {
           <div className="bakery_about__white_company">
 
             <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', opacity:1, ease: 'Power2.easeInOut'} : { clipPath:'inset(0% 100% 0% 0%)', opacity:0, ease: 'Power2.easeInOut'  } } >
-              <img src={ImageBottom} className="switch_top_image hide_on_mobile visible"/>
+              <img src={ImageBottom} className="switch_top_image visible"/>
             </Tween>
 
             <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0 0% 0% 100%)', opacity:0, ease: 'Power2.easeInOut'  } : { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', opacity:1, ease: 'Power2.easeInOut'  } } >
-              <img src={ImageTop} className="switch_bottom_image hide_on_mobile visible"  />  
+              <img src={ImageTop} className="switch_bottom_image visible"  />  
             </Tween>            
 
           </div>        

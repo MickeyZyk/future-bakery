@@ -112,11 +112,11 @@ export default class bakersLogin extends React.Component {
                   </Tween>
 
               <div className='bakers_login__main_login'>
-                <Link gray arrow to={'/'}>LOGIN</Link>
+                <ExternalLink className='bakers_login__main_login_link' gray arrow to={'https://futurebakers.wnh.cz/cs/sign/in'}>LOGIN</ExternalLink>
               </div>
 
                 <Row>
-                 <Link className='bakers_login__main_joinus'bakers button gray arrow to={'/'}>JOIN US</Link>
+                 <ExternalLink className='bakers_login__main_joinus' bakers button gray arrow to={'https://futurebakers.wnh.cz/cs/registrovat'}>JOIN US</ExternalLink>
                 </Row>
 
               </Row>
@@ -141,7 +141,7 @@ export default class bakersLogin extends React.Component {
                   )}
                 </ScrollTo>
 
-                <ExternalLink arrow gray className='bakers_login__main_briefs' to={'/'}>
+                <ExternalLink arrow gray className='bakers_login__main_briefs' to={'https://futurebakers.wnh.cz/cs/ukoncene'}>
                   CHECK OUT OLD BRIEFS
                 </ExternalLink>
 

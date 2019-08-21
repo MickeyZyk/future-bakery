@@ -91,7 +91,7 @@
 
 .bakers_login__main_login {
   position: absolute;
-  top: 35vw;
+  top: 35.3vw;
 
   font-weight: bold;
   $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 14px, 2880px: 24px);
@@ -130,6 +130,10 @@
 
   }
 
+}
+
+.bakers_login__main_login_link a {
+  color: #222!important;
 }
 
 .bakers_login__projects_case_heading {

@@ -2565,6 +2565,7 @@ font-size: 6vw;
   @media (max-width: $max-960) {
 
     margin-right: 12.5%!important;
+    margin-bottom: 15vw;
 
   }    
 
@@ -2626,14 +2627,13 @@ font-size: 6vw;
 
 
 .bakery_about__heading_two_alt {
-    transition: opacity 1.5s;
+  transition: opacity 1.5s;
   font-weight: 900;
   @include responsive-font(28px, 32px);  
   line-height: 28px;
   @include grid-col(11);
   @include grid-offset-left(2);
   margin-bottom: 30px; 
-  margin-top: 100px; 
   letter-spacing: -0.6px;
 
   @media (min-width: $min-960) {
@@ -2769,7 +2769,7 @@ font-size: 6vw;
 }
 
 .bakery_about__white_company {
-
+      position: relative;
       @include grid-col(14);
       @include grid-offset-left(2);      
       margin-bottom: 60px;
@@ -2787,11 +2787,29 @@ font-size: 6vw;
 }
 
 .bakery_about__white_company > img {
+
+
+  @media (max-width: $max-960) {  
+
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+
+  } 
+  
+  @media (min-width: $min-960) {  
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  }
+
+
 }
 
 
