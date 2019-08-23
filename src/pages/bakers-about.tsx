@@ -91,9 +91,6 @@ const BakersAbout = ({ data, className }) => {
 
   return (
 
-
-
-
             <>
 
 

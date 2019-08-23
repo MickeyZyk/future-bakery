@@ -4,14 +4,14 @@ import { Power2 } from "gsap/TweenMax";
 import { TransitionState } from "gatsby-plugin-transition-link";
 import s from './Texticon.scss';
 
-const Texticon = (props, className) => {
+const Texticon = (props, className, style) => {
 
   return (
   <>
     <TransitionState>
       {({ transitionStatus }) => {
         return (
-          <div className={`${s.text_icon} ${props.className}`} >
+          <div style={props.style} className={`${s.text_icon} ${props.className}`} >
             <Tween duration={1.5} delay={.5} 
             from={ ['entering'].includes(transitionStatus) ? false : { opacity: 0, yPercent: -200, ease: 'Power2.easeOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { opacity: 0, yPercent: -200, ease: 'Power2.easeIn' } : false } >

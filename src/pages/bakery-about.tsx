@@ -25,39 +25,42 @@ import { TransitionState } from "gatsby-plugin-transition-link";
 import ImageTop from 'assets/images/our_process.png';
 import ImageBottom from 'assets/images/usual_closed_process.png';
 import { If, Then, Else, Switch, Case, Default } from 'react-if'
-
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
-const slug = require('slug')
-
+const slug = require('slug');
 
 export default class BakeryAbout extends React.Component {
 
-
   constructor(props){
     super(props);
-
     this.clicked_item = React.createRef();    
     this.state ={
       clicked: this.props.clicked ? true : false,
+      currentTopIcon: 0
     };
-    this.toggleShow = this.toggleShow.bind(this);      
+    this.toggleShow = this.toggleShow.bind(this);   
+    this.prevTopIcon = this.prevTopIcon.bind(this);  
+    this.nextTopIcon = this.nextTopIcon.bind(this);      
   }
 
-
-
   toggleShow() {
-
     this.setState(state => ({
       clicked: !state.clicked
     }));
+  }
+
+  prevTopIcon() {
+    console.log(this.state.currentTopIcon)    
+    this.state.currentTopIcon > 0 ? this.setState({ currentTopIcon: this.state.currentTopIcon - 1 }) : null
 
   }
 
-
+  nextTopIcon() {
+    console.log(this.state.currentIcon)      
+    this.state.currentTopIcon < 8 ? this.setState({ currentTopIcon: this.state.currentTopIcon + 1 }) : null    
+  } 
 
 render() {
-
 
  function getMembers(item) {
     var sub = [item.member];
@@ -98,11 +101,7 @@ render() {
   const images = this.props.data.gravBakeryAbout.team.map(getImages)
   var mergedImages = [].concat.apply([], images);
 
-
-
   return (
-
-
 
       <TransitionState>
         {({ transitionStatus }) => {
@@ -114,142 +113,132 @@ render() {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
+              <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
 
+                <div className='wrapper about-wrapper'>
+                  <ReactCursorPosition>
+                    <Helmet title={this.props.data.gravBakeryAbout.title} />
+                    <SVGicon className='bakery_about__green_rainbow' src='green_rainbow.svg'  />
+                    <Row>
+                      <div className='bakery_about__left_column_one'>
+                        <AnimatedHeading className='__heading_one'>{this.props.data.gravBakeryAbout.heading_one}</AnimatedHeading>
+                        <Paragraph className='bakery_about__paragraph paragraph'>{this.props.data.gravBakeryAbout.paragraph_one}</Paragraph>
+                      </div>
+                      <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 
+                      className="bakery_about__image_one"/>
+                    </Row>
+                    <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/greenboard.jpg)`}}>
+                      <Row>
+                        <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__heading_two sw_heading_first">
+                          <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two}</HeadingTwo>
+                        </div>
+                        <div style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__heading_two_alt sw_heading_second">
+                          <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two_alernate}</HeadingTwo>
+                        </div>
+                         <p style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } 
+                          className="bakery_about__green_text_one">{this.props.data.gravBakeryAbout.show_me_text}</p>
+                        <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } 
+                          className="bakery_about__green_text_two">{this.props.data.gravBakeryAbout.show_me_two_text}</p>   
 
- <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
+                      <Location>
+                        {({ location }) => (
+                          <>
+                          <div style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__green_link_one" >          
+                              <Link to={location.pathname} bakery arrow onClick={this.toggleShow} >SHOW ME</Link>
+                          </div>
+                          <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__green_link_two">
+                            <Link to={location.pathname} bakery arrow onClick={this.toggleShow} >SHOW ME</Link>    
+                          </div>
+                          </>
+                        )}
+                      </Location> 
 
+                      </Row>
+                      <div className="bakery_about__white_company">
 
-    <div className='wrapper about-wrapper'>
-      <ReactCursorPosition>
-        <Helmet title={this.props.data.gravBakeryAbout.title} />
-        <SVGicon className='bakery_about__green_rainbow' src='green_rainbow.svg'  />
-        <Row>
-          <div className='bakery_about__left_column_one'>
-            <AnimatedHeading className='__heading_one'>{this.props.data.gravBakeryAbout.heading_one}</AnimatedHeading>
-            <Paragraph className='bakery_about__paragraph paragraph'>{this.props.data.gravBakeryAbout.paragraph_one}</Paragraph>
-          </div>
-          <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 
-          className="bakery_about__image_one"/>
-        </Row>
-        <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/greenboard.jpg)`}}>
-          <Row>
-            <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__heading_two sw_heading_first">
-              <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two}</HeadingTwo>
+                        <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', opacity:1, ease: 'Power2.easeInOut'} : { clipPath:'inset(0% 100% 0% 0%)', opacity:0, ease: 'Power2.easeInOut'  } } >
+                          <img src={ImageBottom} className="switch_top_image visible"/>
+                        </Tween>
+
+                        <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0 0% 0% 100%)', opacity:0, ease: 'Power2.easeInOut'  } : { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', opacity:1, ease: 'Power2.easeInOut'  } } >
+                          <img src={ImageTop} className="switch_bottom_image visible"  />  
+                        </Tween>            
+
+                      </div>        
+                      <Row className="centered-row">
+                        <Link bakery button arrow className="bakery_about__button_link" to={'/bakerycontact'}>START A PROJECT WITH US</Link>
+                      </Row>
+                    </div>
+                    </ReactCursorPosition>
+                    <ReactCursorPosition>
+                    <SVGicon className='bakery_about__white_hearts' src='white_hearts.svg' />
+                    <SVGiconReverse className='bakery_about__white_pan' src='white_pan.svg' />        
+                    <Row>
+                      <div className="bakery_about__green_heading_background">
+                        <AnimatedHeadingTwo className="bakery_about__heading_three">{this.props.data.gravBakeryAbout.heading_three}</AnimatedHeadingTwo>     
+                      </div>
+                      <div className="bakery_about__right_icons">
+                        {this.props.data.gravBakeryAbout.svg_icons.map(({ svg, svg_text }, index) => (
+                          <div key={svg_text}>
+                            <Texticon style={ this.state.currentTopIcon == index ? {opacity:1} : {opacity:0} } className='bakery_about__graph_icon' name={svg_text} src={svg} />
+                          </div>
+                        ))}
+                      </div>
+
+          <>
+            <div className="cr_mob_left">
+              <div onClick={this.prevTopIcon} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
             </div>
-            <div style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__heading_two_alt sw_heading_second">
-              <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two_alernate}</HeadingTwo>
+            <div className="cr_mob_right"> 
+              <div onClick={this.nextTopIcon} className="mob_nextprev"><img src="/svg/mob_right.svg"/></div>
             </div>
-             <p style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } 
-              className="bakery_about__green_text_one">{this.props.data.gravBakeryAbout.show_me_text}</p>
-            <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } 
-              className="bakery_about__green_text_two">{this.props.data.gravBakeryAbout.show_me_two_text}</p>   
+          </>          
 
-          <Location>
-            {({ location }) => (
-              <>
-              <div style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__green_link_one" >          
-                  <Link to={location.pathname} bakery arrow onClick={this.toggleShow} >SHOW ME</Link>
-              </div>
-              <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__green_link_two">
-                <Link to={location.pathname} bakery arrow onClick={this.toggleShow} >SHOW ME</Link>    
-              </div>
-              </>
-            )}
-          </Location> 
+              <div className="crowders_top_icons_indicators" style={{position: 'relative'}}>
+                {this.state.currentTopIcon + 1} / 9
+              </div> 
 
-          </Row>
-          <div className="bakery_about__white_company">
+                    </Row>    
+                    </ReactCursorPosition>
+                    <ReactCursorPosition>  
+                    <SVGicon className='bakery_about_chef' src='bakery_about_chef.svg' />
+                    <SVGiconReverse className='bakery_about_soldier' src='bakery_about_soldier.svg' />  
+                    <AnimatedHeadingTwo className="bakery_about_team_heading">Meet the team</AnimatedHeadingTwo>
+                    <div className="bakery_team">
+                      <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages}/>
+                    </div>      
+                    <div style={{backgroundImage: "url('../images/clients_bck.png')"}} className="bakery_about_clients_background">
+                      <AnimatedHeadingTwo className="bakery_about_clients_heading">Whom we bake with</AnimatedHeadingTwo>
+                      <Clients className="bakery_about_clients"/>
+                      <Row>
+                        <Link gray arrow className="bakery_about_clients_contact_link" to={'/bakerycontact'}>CONTACT US</Link>
+                      </Row>
+                    </div>
+                    </ReactCursorPosition>
 
-            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', opacity:1, ease: 'Power2.easeInOut'} : { clipPath:'inset(0% 100% 0% 0%)', opacity:0, ease: 'Power2.easeInOut'  } } >
-              <img src={ImageBottom} className="switch_top_image visible"/>
-            </Tween>
+                </div>
+            <Footer/>
+            </Scrollbar>
 
-            <Tween duration={3} delay={.5} to={ this.state.clicked ? { clipPath:'inset(0 0% 0% 100%)', opacity:0, ease: 'Power2.easeInOut'  } : { clipPath:'inset(0.001% 0.002% 0.003% 0.004%)', opacity:1, ease: 'Power2.easeInOut'  } } >
-              <img src={ImageTop} className="switch_bottom_image visible"  />  
-            </Tween>            
+          </Tween>
 
-          </div>        
-          <Row className="centered-row">
-            <Link bakery button arrow className="bakery_about__button_link" to={'/bakerycontact'}>START A PROJECT WITH US</Link>
-          </Row>
-        </div>
-        </ReactCursorPosition>
-        <ReactCursorPosition>
-        <SVGicon className='bakery_about__white_hearts' src='white_hearts.svg' />
-        <SVGiconReverse className='bakery_about__white_pan' src='white_pan.svg' />        
-        <Row>
-          <div className="bakery_about__green_heading_background">
-            <AnimatedHeadingTwo className="bakery_about__heading_three">{this.props.data.gravBakeryAbout.heading_three}</AnimatedHeadingTwo>     
-          </div>
-          <div className="bakery_about__right_icons">
-            {this.props.data.gravBakeryAbout.svg_icons.map(({ svg, svg_text }) => (
-              <div key={svg_text}>
-                <Texticon className='bakery_about__graph_icon' name={svg_text} src={svg} />
-              </div>
-            ))}
-          </div>
-        </Row>    
-        </ReactCursorPosition>
-        <ReactCursorPosition>  
-        <SVGicon className='bakery_about_chef' src='bakery_about_chef.svg' />
-        <SVGiconReverse className='bakery_about_soldier' src='bakery_about_soldier.svg' />  
-        <AnimatedHeadingTwo className="bakery_about_team_heading">Meet the team</AnimatedHeadingTwo>
-        <div className="bakery_team">
-          <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages}/>
-        </div>      
-        <div style={{backgroundImage: "url('../images/clients_bck.png')"}} className="bakery_about_clients_background">
-          <AnimatedHeadingTwo className="bakery_about_clients_heading">Whom we bake with</AnimatedHeadingTwo>
-          <Clients className="bakery_about_clients"/>
-          <Row>
-            <Link gray arrow className="bakery_about_clients_contact_link" to={'/bakerycontact'}>CONTACT US</Link>
-          </Row>
-        </div>
-        </ReactCursorPosition>
+          <Tween duration={2} 
+          from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
+          to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
-    </div>
-<Footer/>
-</Scrollbar>
+            <div className='fulscreen_white' style={{zIndex: -1, backgroundColor: '#ffffff', position: 'absolute', width: '100vw', height: '100vh', top: 0, bottom: 0, left: 0, right: 0}}></div>
 
+          </Tween>
 
+          </>
 
-
-
-            </Tween>
-
-            <Tween duration={2} 
-            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { backgroundColor: '#222222', yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
-
-              <div className='fulscreen_white' style={{zIndex: -1, backgroundColor: '#ffffff', position: 'absolute', width: '100vw', height: '100vh', top: 0, bottom: 0, left: 0, right: 0}}></div>
-
-            </Tween>
-
-            </>
-
-          )
-        }}
-      </TransitionState>
-
-
-
-
-
-
-
- 
-
+        )
+      }}
+    </TransitionState>
 
   )
 
-
-
-
-
-
-  }
-
-
-
+}
 
 
 }

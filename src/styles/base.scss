@@ -2295,7 +2295,7 @@ select {
 
 
 .dark_team_name {
-  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 42px);
+  $font-map: (375px: 22px, 959px: 58px, 960px: 16px, 2880px: 42px);
   @include poly-fluid-sizing('font-size', $font-map);
   font-weight: lighter;
   color: #fff;
@@ -2309,7 +2309,7 @@ select {
 
 
 .team_name {
-  $font-map: (320px: 18px, 375px: 20px, 959px: 21px, 960px: 16px, 2880px: 42px);
+  $font-map: (375px: 22px, 959px: 58px, 960px: 16px, 2880px: 42px);
   @include poly-fluid-sizing('font-size', $font-map);
   font-weight: lighter;
   @media (min-width: $min-960) {
@@ -2320,8 +2320,8 @@ select {
 }
 
 .white_team_name {
-color: #fff;
-font-size: 6vw;
+  color: #fff;
+  font-size: 6vw;
 }
 
 .team_left_link {
@@ -2584,35 +2584,57 @@ font-size: 6vw;
 
 .bakery_about__greenboard {
 
+  @media (max-width: $max-960) {
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    padding-bottom: 100px;    
+  } 
+  
+  @media (min-width: $min-960) {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    margin-top: 150px;
+    background-size: 83.333% 100%;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    padding-bottom: 100px;      
 
-    @media (min-width: $min-960) {
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      margin-top: 150px;
-      background-size: 83.333% 100%;
-      background-position: bottom left;
-      background-repeat: no-repeat;
-      padding-top: 100px;
-      padding-bottom: 100px;
-    }  
+  }  
+}
+
+.bakery_about__heading_two h2 {
+
+  $font-map: (375px: 30px, 959px: 75px, 960px: 24px, 2880px: 72px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  $height-map: (375px: 30px, 959px: 75px, 960px: 24px, 2880px: 72px);
+  @include poly-fluid-sizing('line-height', $height-map);  
 
 }
 
 .bakery_about__heading_two {
-    transition: opacity 1.5s;
+
+  transition: opacity 1.5s;
   font-weight: 900;
-  @include responsive-font(28px, 32px);  
-  line-height: 28px;
-  @include grid-col(11);
-  @include grid-offset-left(2);
   margin-bottom: 30px; 
   margin-top: 100px; 
   letter-spacing: -0.6px;
 
+  @media (max-width: $max-960) {
+    @include grid-col(11);
+    @include grid-offset-left(2);
+    $top-map: (375px: -60px, 959px: -40px);
+    @include poly-fluid-sizing('top', $top-map);
+    position: relative;
+    margin-top: 0;
+    min-height: 28vw;
+    $margin-map: (375px: 30px, 959px: 75px);    
+    @include poly-fluid-sizing('margin-bottom', $margin-map);       
+  } 
+  
   @media (min-width: $min-960) {
 
     @include responsive-font(46px, 52px);    
@@ -2623,21 +2645,42 @@ font-size: 6vw;
     margin-bottom: 0vw;
 
   }
+
 }
 
+.bakery_about__heading_two_alt h2 {
+
+  $font-map: (375px: 30px, 959px: 75px, 960px: 24px, 2880px: 72px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  $height-map: (375px: 30px, 959px: 75px, 960px: 24px, 2880px: 72px);
+  @include poly-fluid-sizing('line-height', $height-map);  
+
+}
 
 .bakery_about__heading_two_alt {
+
   transition: opacity 1.5s;
   font-weight: 900;
-  @include responsive-font(28px, 32px);  
-  line-height: 28px;
-  @include grid-col(11);
-  @include grid-offset-left(2);
+
+  $font-map: (375px: 30px, 959px: 75px, 960px: 24px, 2880px: 72px);
+  @include poly-fluid-sizing('font-size', $font-map);
+
   margin-bottom: 30px; 
-  letter-spacing: -0.6px;
+  letter-spacing: -0.6px;  
 
+  @media (max-width: $max-960) { 
+    @include grid-col(11);
+    @include grid-offset-left(2);
+    $top-map: (375px: -200px, 959px: -388px);
+    @include poly-fluid-sizing('top', $top-map);
+    position: relative;  
+    margin-top: 0;
+    min-height: 28vw;
+    $margin-map: (375px: 30px, 959px: 75px);    
+    @include poly-fluid-sizing('margin-bottom', $margin-map);   
+  } 
+  
   @media (min-width: $min-960) {
-
     @include responsive-font(46px, 52px);    
     margin-top: 0;     
     @include grid-col(4);
@@ -2646,6 +2689,7 @@ font-size: 6vw;
     margin-bottom: 0vw;
 
   }
+
 }
 
 .bakery_about__heading_two_alt > h2, .bakery_about__heading_two > h2 {
@@ -2669,102 +2713,101 @@ font-size: 6vw;
 
 .bakery_about__green_text_one {
 
-    transition: opacity 1.5s;
+  $font-map: (375px: 16px, 959px: 41px, 960px: 16px, 2880px: 48px);
+  $height-map: (375px: 18px, 959px: 50px, 960px: 17px, 2880px: 50px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map);
+  transition: opacity 1.5s;
+  line-height: 20px;
+  position: relative;
+  font-weight: lighter;
+  color: #d4de4f;      
 
-    line-height: 20px;
+  @media (max-width: $max-960) {
     position: relative;
-    font-weight: lighter;
-    color: #d4de4f;
+    top: -50vw;      
+    @include grid-col(7);
+    @include grid-offset-left(2);
+  }   
+  @media (min-width: $min-960) {
+    @include grid-col(3);
+    @include grid-offset-left(2);
+    margin-bottom: 50px;
 
-      @include grid-col(7);
-      @include grid-offset-left(2); 
-     margin-bottom: 50px;
-
-
-    @media (min-width: $min-960) {
-
-      @include grid-col(3);
-      @include grid-offset-left(2);
-
-      $font-map: (375px: 20px, 959px: 21px, 960px: 16px, 2880px: 48px);
-      $height-map: (375px: 20px, 959px: 50px, 960px: 17px, 2880px: 50px);
-      @include poly-fluid-sizing('font-size', $font-map);
-      @include poly-fluid-sizing('line-height', $height-map);
-    }  
-
+  }
 }
 
 .bakery_about__green_text_two {
 
-    transition: opacity 1.5s;
+  $font-map: (375px: 16px, 959px: 41px, 960px: 16px, 2880px: 48px);
+  $height-map: (375px: 18px, 959px: 50px, 960px: 17px, 2880px: 50px);
+  @include poly-fluid-sizing('font-size', $font-map);
+  @include poly-fluid-sizing('line-height', $height-map); 
+  transition: opacity 1.5s;
+  line-height: 20px;
+  font-weight: lighter;
+  color: #d4de4f;   
 
-    line-height: 20px;
-
-    font-weight: lighter;
-    color: #d4de4f;
-
-      @include grid-col(7);
-      @include grid-offset-left(2); 
-     margin-bottom: 50px;
-
-
+  @media (max-width: $max-960) {  
+    position: relative;
+    top: -50vw;
+    @include grid-col(7);
+    @include grid-offset-left(-7); 
+  } 
+  
     @media (min-width: $min-960) {
       position: relative;
       @include grid-col(3);
       @include grid-offset-left(-3);
-
-      $font-map: (375px: 20px, 959px: 21px, 960px: 16px, 2880px: 48px);
-      $height-map: (375px: 20px, 959px: 50px, 960px: 17px, 2880px: 50px);
-      @include poly-fluid-sizing('font-size', $font-map);
-      @include poly-fluid-sizing('line-height', $height-map);
-    }   
-
+      margin-bottom: 50px;
+    } 
 }
 
 
 .bakery_about__green_link_one {
-      transition: opacity 1.5s;
+  transition: opacity 1.5s;
   color: #d4de4f;
   text-decoration: none;
   font-weight: bold;
   position: relative;  
-
-      @include grid-col(7);
-      @include grid-offset-left(2); 
-
-
-
-    @media (min-width: $min-960) {
-      position: relative;
-      top: 9vw;
-      @include grid-col(1);
-      @include grid-offset-left(-3);
-
-
-    } 
-
+  
+  @media (max-width: $max-960) {
+    position: relative;
+    top: -18vw;    
+    @include grid-col(7);
+    @include grid-offset-left(-7);
+    margin-bottom: 24vw;    
+  } 
+  
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 9vw;
+    @include grid-col(1);
+    @include grid-offset-left(-3);
+  } 
 }
 
 .bakery_about__green_link_two {
-      transition: opacity 1.5s;
-  color: #d4de4f;
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;  
+    transition: opacity 1.5s;
+    color: #d4de4f;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative; 
 
-      @include grid-col(7);
-      @include grid-offset-left(2); 
-
-
-
-    @media (min-width: $min-960) {
-      position: relative;
-      top: 9vw;
-      @include grid-col(1);
-      @include grid-offset-left(-1);
-
-
-    } 
+  @media (max-width: $max-960) {
+    position: relative;
+    top: -18vw;    
+    @include grid-col(7);
+    @include grid-offset-left(-7);
+    margin-bottom: 24vw;    
+  } 
+  
+  @media (min-width: $min-960) {
+    position: relative;
+    top: 9vw;
+    @include grid-col(1);
+    @include grid-offset-left(-1);
+  }  
 
 }
 
@@ -2772,7 +2815,7 @@ font-size: 6vw;
       position: relative;
       @include grid-col(14);
       @include grid-offset-left(2);      
-      margin-bottom: 60px;
+      margin-bottom: 160px;
 
     @media (min-width: $min-960) {
       min-height: 26vw;
@@ -2792,7 +2835,7 @@ font-size: 6vw;
   @media (max-width: $max-960) {  
 
   position: absolute;
-  top: 0;
+  top: -30vw;
   left: 0;
   right: 0;
   bottom: 0;
@@ -2860,18 +2903,20 @@ font-size: 6vw;
 
 .bakery_about__green_heading_background {
 
+  $margin-map: (375px: -43px, 959px: -110px, 960px: -41px, 2880px: -117px);
+  @include poly-fluid-sizing('margin-top', $margin-map);     
+
+  $height-map: (375px: 300px, 959px: 630px, 960px: 250px, 2880px: 745px);
+  @include poly-fluid-sizing('height', $height-map);
+
+  @media (max-width: $max-960) {  
+
       @include grid-col(14);
       @include grid-offset-left(2);
       background: linear-gradient( to right, #d4de4f 57.14%, transparent 42.86% );      
-      margin-top: -40px; 
-
-      $margin-map: (375px: -43px, 959px: -110px, 960px: -41px, 2880px: -117px);
-      @include poly-fluid-sizing('margin-top', $margin-map);     
-
-      $height-map: (375px: 246px, 959px: 630px, 960px: 250px, 2880px: 745px);
-      @include poly-fluid-sizing('height', $height-map);
-
-
+      margin-top: -30vw; 
+  } 
+  
     @media (min-width: $min-960) {
   
       @include grid-col(3);
@@ -2880,11 +2925,6 @@ font-size: 6vw;
       margin-top: -150px;
       z-index: 5;  
       float: left;
-
-
-
-
-
     }  
 }
 
@@ -2895,7 +2935,7 @@ font-size: 6vw;
 
   color: #231f20;
   position: relative;
-  $margin-map: (375px: 120px, 959px: 300px, 960px: 110px, 2880px: 330px);
+  $margin-map: (375px: 160px, 959px: 300px, 960px: 110px, 2880px: 330px);
   @include poly-fluid-sizing('top', $margin-map);
   margin-left: 7%;
 
@@ -2953,13 +2993,10 @@ font-size: 6vw;
 .bakery_about__right_icons {
 
 
-    position: relative;
-    display: flex;
-    flex-direction: row;
-
   @media (max-width: $max-960) {
-
-    margin-top: 35px;       
+    display: block;
+    margin-top: 35px;
+    min-height: 130vw;      
 
   }   
 
@@ -2967,11 +3004,12 @@ font-size: 6vw;
   @media (min-width: $min-960) {
 
     position: relative;
-    display: block;
+
     margin-left: 5.5%;
     @include grid-col(12);
     float: left;    
-    margin-bottom: 5vw;    
+    margin-bottom: 5vw;   
+
 
   }        
 
@@ -2980,16 +3018,23 @@ font-size: 6vw;
 
 .bakery_about__graph_icon {
 
-    @include grid-col(10);
-    display: inline-block;
+  @media (max-width: $max-960) {  
+    @include grid-col;
+    display: block;
+    position: absolute!important;
+    left: 0;
+    right: 0;
+    margin-top: 55vw !important;    
+  } 
+
 
   @media (min-width: $min-960) {
-
+    position: relative;
     display: block;
     float: left;
     @include grid-col(3);
     @include grid-offset-right(1.5);    
-        
+    opacity: 1!important;            
 
   } 
 
@@ -2998,11 +3043,11 @@ font-size: 6vw;
 
   .bakery_about__right_icons > div:nth-child(3) > div.bakery_about__graph_icon {
 
-    @include grid-col(9);
-    display: inline-block;
+    @include grid-col;
+    display: block;
 
     @media (min-width: $min-960) {
-
+    position: relative;
       display: block;
       @include grid-col(3);
       @include grid-offset-right(6);          
@@ -3013,11 +3058,11 @@ font-size: 6vw;
 
   .bakery_about__right_icons > div:nth-child(4) > div.bakery_about__graph_icon {
 
-    @include grid-col(9);
-    display: inline-block;
+    @include grid-col;
+    display: block;
 
     @media (min-width: $min-960) {
-
+    position: relative;
       display: block;
       @include grid-col(3);
       margin-left: 0;
@@ -3030,11 +3075,11 @@ font-size: 6vw;
 
   .bakery_about__right_icons > div:nth-child(6) > div.bakery_about__graph_icon {
 
-    @include grid-col(9);
-    display: inline-block;
+    @include grid-col;
+    display: block;
 
     @media (min-width: $min-960) {
-
+    position: relative;
       display: block;
       @include grid-col(3);
       @include grid-offset-right(6);          
@@ -3045,11 +3090,11 @@ font-size: 6vw;
 
   .bakery_about__right_icons > div:nth-child(7) > div.bakery_about__graph_icon {
 
-    @include grid-col(9);
-    display: inline-block;
+    @include grid-col;
+    display: block;
 
     @media (min-width: $min-960) {
-
+    position: relative;
       display: block;
       @include grid-col(3);
       margin-left: 0;
@@ -3062,11 +3107,11 @@ font-size: 6vw;
 
   .bakery_about__right_icons > div:nth-child(9) > div.bakery_about__graph_icon {
 
-    @include grid-col(9);
-    display: inline-block;
+    @include grid-col;
+    display: block;
 
     @media (min-width: $min-960) {
-
+    position: relative;
       display: block;
       @include grid-col(3);
       @include grid-offset-right(6);          
