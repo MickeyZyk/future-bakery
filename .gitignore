@@ -12,5 +12,3 @@ yarn-error.log
 # Build directory
 /public
 .DS_Store
-src/pages/bakerslogin.tsx
-src/pages/czbakerslogin.tsx

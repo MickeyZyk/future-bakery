@@ -176,6 +176,7 @@ render() {
                     <SVGicon className='bakery_about__white_hearts' src='white_hearts.svg' />
                     <SVGiconReverse className='bakery_about__white_pan' src='white_pan.svg' />        
                     <Row>
+                    
                       <div className="bakery_about__green_heading_background">
                         <AnimatedHeadingTwo className="bakery_about__heading_three">{this.props.data.gravBakeryAbout.heading_three}</AnimatedHeadingTwo>     
                       </div>
