@@ -15,6 +15,7 @@ import { Heading } from 'components/heading/Heading';
 import { HeadingTwo } from 'components/heading/HeadingTwo';
 import { Paragraph } from 'components/paragraph/Paragraph';
 import { Team } from 'components/team/Team';
+import { MobileTeam } from 'components/team/MobileTeam';
 import { Clients } from 'components/clients/Clients';
 import Texticon from 'components/texticon/Texticon';
 import { Footer } from 'components/footer/Footer';
@@ -27,6 +28,7 @@ import ImageBottom from 'assets/images/usual_closed_process.png';
 import { If, Then, Else, Switch, Case, Default } from 'react-if'
 import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
+import {Swipeable} from 'react-swipeable'
 const slug = require('slug');
 
 export default class BakeryAbout extends React.Component {
@@ -177,26 +179,33 @@ render() {
                       <div className="bakery_about__green_heading_background">
                         <AnimatedHeadingTwo className="bakery_about__heading_three">{this.props.data.gravBakeryAbout.heading_three}</AnimatedHeadingTwo>     
                       </div>
-                      <div className="bakery_about__right_icons">
-                        {this.props.data.gravBakeryAbout.svg_icons.map(({ svg, svg_text }, index) => (
-                          <div key={svg_text}>
-                            <Texticon style={ this.state.currentTopIcon == index ? {opacity:1} : {opacity:0} } className='bakery_about__graph_icon' name={svg_text} src={svg} />
-                          </div>
-                        ))}
-                      </div>
 
-          <>
-            <div className="cr_mob_left">
-              <div onClick={this.prevTopIcon} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
-            </div>
-            <div className="cr_mob_right"> 
-              <div onClick={this.nextTopIcon} className="mob_nextprev"><img src="/svg/mob_right.svg"/></div>
-            </div>
-          </>          
+                      <Swipeable
+                        onSwipedRight={this.prevTopIcon}
+                        onSwipedLeft={this.nextTopIcon} >
 
-              <div className="crowders_top_icons_indicators" style={{position: 'relative'}}>
-                {this.state.currentTopIcon + 1} / 9
-              </div> 
+                        <div className="bakery_about__right_icons">
+                          {this.props.data.gravBakeryAbout.svg_icons.map(({ svg, svg_text }, index) => (
+                            <div key={svg_text}>
+                              <Texticon style={ this.state.currentTopIcon == index ? {opacity:1} : {opacity:0} } className='bakery_about__graph_icon' name={svg_text} src={svg} />
+                            </div>
+                          ))}
+                        </div>
+
+                      </Swipeable>
+
+                      <>
+                        <div className="cr_mob_left">
+                          <div onClick={this.prevTopIcon} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
+                        </div>
+                        <div className="cr_mob_right"> 
+                          <div onClick={this.nextTopIcon} className="mob_nextprev"><img src="/svg/mob_right.svg"/></div>
+                        </div>
+                      </>          
+
+                      <div className="crowders_top_icons_indicators" style={{position: 'relative'}}>
+                        {this.state.currentTopIcon + 1} / 9
+                      </div> 
 
                     </Row>    
                     </ReactCursorPosition>
@@ -205,7 +214,11 @@ render() {
                     <SVGiconReverse className='bakery_about_soldier' src='bakery_about_soldier.svg' />  
                     <AnimatedHeadingTwo className="bakery_about_team_heading">Meet the team</AnimatedHeadingTwo>
                     <div className="bakery_team">
-                      <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages}/>
+
+                      <Team members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages} className="crowders_about_team hide_on_mobile"/>      
+
+                      <MobileTeam members={mergedMembers} links={mergedLinks} texts={mergedTexts} images={mergedImages} className="crowders_about_team show_on_mobile"/>   
+
                     </div>      
                     <div style={{backgroundImage: "url('../images/clients_bck.png')"}} className="bakery_about_clients_background">
                       <AnimatedHeadingTwo className="bakery_about_clients_heading">Whom we bake with</AnimatedHeadingTwo>

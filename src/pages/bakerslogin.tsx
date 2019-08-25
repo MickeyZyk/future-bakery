@@ -1,3 +1,5 @@
+/*
+
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
@@ -54,11 +56,7 @@ export default class bakersLogin extends React.Component {
     return (
 
 
-
-
             <>
-
-
 
 
  <Scrollbar ref={c => this.$container = c} className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
@@ -87,8 +85,6 @@ export default class bakersLogin extends React.Component {
             <div className='bakers_login__main'>
 
               <Row>
-
-
 
                       <Tween duration={2} 
                       from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
@@ -191,10 +187,6 @@ export default class bakersLogin extends React.Component {
 
             </Tween>
 
-
-
-
-
           )
         }}
       </TransitionState>
@@ -224,10 +216,7 @@ export default class bakersLogin extends React.Component {
         }}
       </TransitionState>
 
-
-
-
-            </>
+      </>
 
 
 
@@ -254,3 +243,4 @@ export const ApiBakersLogin = graphql`
   }
 
 `
+*/

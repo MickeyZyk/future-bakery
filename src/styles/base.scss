@@ -2815,7 +2815,7 @@ select {
       position: relative;
       @include grid-col(14);
       @include grid-offset-left(2);      
-      margin-bottom: 160px;
+      margin-bottom: 15vw;
 
     @media (min-width: $min-960) {
       min-height: 26vw;
