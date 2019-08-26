@@ -153,6 +153,12 @@ export default class bakersLogin extends React.Component {
 
               <Row>
 
+
+
+{/*
+
+
+
                   {this.props.data.allApiBakersLogin.edges.map(( i ) => (
                     <div className="bakers_login__projects_box" key={i.node.name}>
 
@@ -178,6 +184,17 @@ export default class bakersLogin extends React.Component {
                     </div>
 
                   ))}
+
+
+
+
+
+*/}
+
+
+
+
+
 
               </Row> 
 
@@ -238,6 +255,10 @@ export default class bakersLogin extends React.Component {
 
 }
 
+
+{/* 
+
+
 export const czApiBakersLogin = graphql`
   query czAllBakersLogin {
     allApiBakersLogin {
@@ -254,3 +275,9 @@ export const czApiBakersLogin = graphql`
   }
 
 `
+
+
+ */}
+
+
+
