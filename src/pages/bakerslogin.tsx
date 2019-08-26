@@ -33,8 +33,7 @@ export default class bakersLogin extends React.Component {
 
   componentDidMount(){
 
-    console.log(this.props.data.allApiBakersLogin.edges)
-
+ 
   }  
 
   handleClick(){

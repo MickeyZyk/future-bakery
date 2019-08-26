@@ -2401,7 +2401,10 @@ select {
 .bakery_about_clients_contact_link {
 
       @include grid-col;
-      @include grid-offset-left(2);      
+      @include grid-offset-left(2);   
+      position: relative;
+      top: 125vw;
+      margin-bottom: 35vw;
 
 
     @media (min-width: $min-960) {
@@ -2409,11 +2412,20 @@ select {
       @include grid-col(2);
       @include grid-offset-left(2);   
        position: relative;
-    top: -59vw;
+      top: -59vw;
 
     }     
 }
 
+
+.mobile_clients_left, .mobile_clients_right {
+  top: 110vw!important;
+}
+
+.mobile_clients_indicators {
+  top: 95vw!important;
+  width: 12.11111%!important;
+}
 
 .bakery_team .team_previous, .bakery_team .team_next {
   color: #d4de4f;
@@ -2940,9 +2952,9 @@ select {
   margin-left: 7%;
 
 
-  $font-map: (320px: 50px, 375px: 60px, 768px: 80px, 959px: 90px, 960px: 45px, 2880px: 158px);
-  $height-map: (320px: 40px, 375px: 50px, 768px: 60px, 959px: 70px, 960px: 37px, 2880px: 125px);
-  $spacing-map: (320px: -0.15px, 375px: -0.25px, 768px: -0.5px, 960px: -0.35px, 2880px: -3px);  
+  $font-map: (375px: 70px, 959px: 90px, 960px: 45px, 2880px: 158px);
+  $height-map: (375px: 60px, 959px: 70px, 960px: 37px, 2880px: 125px);
+  $spacing-map: (375px: -0.25px, 960px: -0.35px, 2880px: -3px);  
   @include poly-fluid-sizing('font-size', $font-map);
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);  
@@ -3006,7 +3018,7 @@ select {
     position: relative;
 
     margin-left: 5.5%;
-    @include grid-col(12);
+     @include grid-col(48);
     float: left;    
     margin-bottom: 5vw;   
 
@@ -3018,13 +3030,16 @@ select {
 
 .bakery_about__graph_icon {
 
+
+
   @media (max-width: $max-960) {  
     @include grid-col;
     display: block;
     position: absolute!important;
     left: 0;
     right: 0;
-    margin-top: 55vw !important;    
+    margin-top: 55vw !important;  
+    transition: opacity 1s;  
   } 
 
 
@@ -3037,6 +3052,17 @@ select {
     opacity: 1!important;            
 
   } 
+
+}
+
+
+.bakery_about__graph_icon > div > img {
+
+  @media (max-width: $max-960) {  
+
+    margin-bottom: 6vw!important;
+  } 
+
 
 }
 
@@ -3172,16 +3198,26 @@ select {
 }
 
 
+.bakery-about-wrapper {
+  overflow: hidden;
+}
+
 .bakery_team {
   padding-bottom: 12vw;
+  overflow: hidden;
 }
 
 
 .bakery_about_clients_heading {
   color: #d4de4f!important;
-  @include grid-col(6);
-  @include grid-offset-left(11);
 
+  @media (max-width: $max-960) {
+    position: relative;
+    top: 30vw;
+    @include grid-col(12);
+    @include grid-offset-left(2);
+
+  }
 
   @media (min-width: $min-960) {
     position: relative;
@@ -3194,8 +3230,13 @@ select {
 }
 
 .bakery_about_clients_background {
-  @include grid-col(6);
-  @include grid-offset-left(11);
+
+
+  @media (max-width: $max-960) {
+    @include grid-col(18);
+    @include grid-offset-left(0);
+    background-image: none!important; 
+  }
 
 
   @media (min-width: $min-960) {
@@ -3220,6 +3261,22 @@ select {
     @include grid-offset-left(-2); 
 
   }
+}
+
+.mobile_clients {
+    top: 45vw;
+    position: relative;
+    width: 100vw;
+}
+
+.mobile_clients img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0;
+    top: -15vw;
+    transition: opacity 1s;
 }
 
 

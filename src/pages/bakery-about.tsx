@@ -17,6 +17,7 @@ import { Paragraph } from 'components/paragraph/Paragraph';
 import { Team } from 'components/team/Team';
 import { MobileTeam } from 'components/team/MobileTeam';
 import { Clients } from 'components/clients/Clients';
+import { MobileClients } from 'components/clients/MobileClients';
 import Texticon from 'components/texticon/Texticon';
 import { Footer } from 'components/footer/Footer';
 import { Location } from '@reach/router';
@@ -117,7 +118,7 @@ render() {
 
               <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
 
-                <div className='wrapper about-wrapper'>
+                <div className='wrapper about-wrapper bakery-about-wrapper'>
                   <ReactCursorPosition>
                     <Helmet title={this.props.data.gravBakeryAbout.title} />
                     <SVGicon className='bakery_about__green_rainbow' src='green_rainbow.svg'  />
@@ -223,7 +224,8 @@ render() {
                     </div>      
                     <div style={{backgroundImage: "url('../images/clients_bck.png')"}} className="bakery_about_clients_background">
                       <AnimatedHeadingTwo className="bakery_about_clients_heading">Whom we bake with</AnimatedHeadingTwo>
-                      <Clients className="bakery_about_clients"/>
+                      <Clients className="bakery_about_clients hide_on_mobile"/>
+                      <MobileClients className="bakery_about_clients show_on_mobile"/>
                       <Row>
                         <Link gray arrow className="bakery_about_clients_contact_link" to={'/bakerycontact'}>CONTACT US</Link>
                       </Row>
