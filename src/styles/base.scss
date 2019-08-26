@@ -4684,8 +4684,9 @@ select {
 
 .bakers_about_authors_flip_button {
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+  @include grid-col(14);
+  @include grid-offset-left(2);  
+  margin-bottom: 25vw; 
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4704,7 +4705,7 @@ select {
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);
 
-  @include grid-col(16);
+  @include grid-col(14);
   @include grid-offset-left(2);
 
   @media (min-width: $min-960) {
@@ -4721,18 +4722,19 @@ select {
 
 
   @media (max-width: $max-960) {
-
+    transition: opacity 1s;
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
+    width: 35vw;
 
   }  
 
    
 
   @media (min-width: $min-960) {
-
+    opacity: 1!important;
     @include grid-col(.7);
     @include grid-offset-left(5.8);
 
@@ -4745,16 +4747,16 @@ select {
 
 
   @media (max-width: $max-960) {
-
+    transition: opacity 1s;
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
+    width: 35vw;
 
-  } 
-
+  }  
   @media (min-width: $min-960) {
-
+    opacity: 1!important;
     @include grid-col(.6);
     @include grid-offset-left(2.5);
 
@@ -4770,16 +4772,17 @@ select {
   @include poly-fluid-sizing('font-size', $font-map);
 
   @media (max-width: $max-960) {
-
+    transition: opacity 1s;
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
+        width: 80vw;
 
   }  
 
   @media (min-width: $min-960) {
-
+    opacity: 1!important;
     @include grid-col(2.7);
     @include grid-offset-left(5);
 
@@ -4793,11 +4796,18 @@ select {
   $font-map: (375px: 30px, 959px: 75px, 960px: 20px, 2880px: 60px);
   @include poly-fluid-sizing('font-size', $font-map);
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+  @media (max-width: $max-960) {
+    transition: opacity 1s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80vw;    
+
+  }    
 
   @media (min-width: $min-960) {
-
+    opacity: 1!important;
     @include grid-col(2.9);
     @include grid-offset-left(4.8);
 
@@ -4812,11 +4822,12 @@ select {
   @include poly-fluid-sizing('font-size', $font-map);
 
   @media (max-width: $max-960) {
-
+    transition: opacity 1s;
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
+    width: 80vw;    
 
   } 
 
@@ -4824,7 +4835,7 @@ select {
     padding-left: 2vw!important;
     @include grid-col(2.5);
     @include grid-offset-left(.6);
-
+    opacity: 1!important;
   }  
 
 }
@@ -4832,16 +4843,17 @@ select {
 .bakers_about_in_numbers_texts_first {
 
   @media (max-width: $max-960) {
-
+    transition: opacity 1s;
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
+    width: 80vw;    
 
   } 
 
   @media (min-width: $min-960) {
-
+    opacity: 1!important;
     @include grid-col(.7);
     @include grid-offset-left(5.85);
 
@@ -4851,16 +4863,17 @@ select {
 .bakers_about_in_numbers_texts {
 
   @media (max-width: $max-960) {
-
+    transition: opacity 1s;
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
+    width: 80vw;
 
   } 
 
   @media (min-width: $min-960) {
-
+    opacity: 1!important;
     @include grid-col(1);
     @include grid-offset-left(2.3);
 
@@ -4868,6 +4881,10 @@ select {
 }
 
 .bakers_about_in_numbers {
+  @media (max-width: $max-960) {
+  margin-top: 20vw;
+
+  }   
   @media (min-width: $min-960) { 
   margin-top: 1vw;
   }  
@@ -4875,6 +4892,11 @@ select {
 }
 
 .bakers_about_in_numbers_two {
+  @media (max-width: $max-960) {
+  margin-top: 40vw;
+  text-align: center;
+
+  }   
   @media (min-width: $min-960) {
   margin-top: 1vw;
   }  
@@ -4882,6 +4904,12 @@ select {
 }
 
 .bakers_about_in_numbers_three {
+  @media (max-width: $max-960) {
+  margin-top: 10vw;
+  margin-bottom: 20vw;  
+  text-align: center; 
+
+  }    
   @media (min-width: $min-960) {  
   margin-top: 1vw;
   margin-bottom: 6vw;  

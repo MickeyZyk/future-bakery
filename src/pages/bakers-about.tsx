@@ -435,22 +435,42 @@ const BakersAbout = ({ data, className }) => {
 
         </Row>
 
+      <Swipeable
+        onSwipedRight={prevIcon}
+        onSwipedLeft={nextIcon} >  
+
         <Row className="bakers_about_in_numbers">
-          <div className="bakers_about_in_numbers_icons_first"><img src="../svg/gold.svg"/></div>
-          <div className="bakers_about_in_numbers_icons"><img src="../svg/bulb.svg"/></div>
-          <div className="bakers_about_in_numbers_icons"><img src="../svg/fiver.svg"/></div>
+          <div className="bakers_about_in_numbers_icons_first" style={ currentIcon == 0 ? {opacity: 1} : {opacity: 0} }><img src="../svg/gold.svg"/></div>
+          <div className="bakers_about_in_numbers_icons" style={ currentIcon == 1 ? {opacity: 1} : {opacity: 0} }><img src="../svg/bulb.svg"/></div>
+          <div className="bakers_about_in_numbers_icons" style={ currentIcon == 2 ? {opacity: 1} : {opacity: 0} }><img src="../svg/fiver.svg"/></div>
         </Row>
         <Row className="bakers_about_in_numbers_two">
-          <div className="bakers_about_in_numbers_numbers_first">{data.gravBakersAbout.reward}</div>
-          <div className="bakers_about_in_numbers_numbers">{data.gravBakersAbout.ideas}</div>
-          <div className="bakers_about_in_numbers_numbers">{data.gravBakersAbout.bakers}</div>
+          <div className="bakers_about_in_numbers_numbers_first" style={ currentIcon == 0 ? {opacity: 1} : {opacity: 0} }>{data.gravBakersAbout.reward}</div>
+          <div className="bakers_about_in_numbers_numbers" style={ currentIcon == 1 ? {opacity: 1} : {opacity: 0} }>{data.gravBakersAbout.ideas}</div>
+          <div className="bakers_about_in_numbers_numbers" style={ currentIcon == 2 ? {opacity: 1} : {opacity: 0} }>{data.gravBakersAbout.bakers}</div>
         </Row>
         <Row className="bakers_about_in_numbers_three">
-          <div className="bakers_about_in_numbers_texts_first">Reward</div>
-          <div className="bakers_about_in_numbers_texts">creative ideas</div>
-          <div className="bakers_about_in_numbers_texts">Bakers</div>
+          <div className="bakers_about_in_numbers_texts_first" style={ currentIcon == 0 ? {opacity: 1} : {opacity: 0} }>Reward</div>
+          <div className="bakers_about_in_numbers_texts" style={ currentIcon == 1 ? {opacity: 1} : {opacity: 0} }>creative ideas</div>
+          <div className="bakers_about_in_numbers_texts" style={ currentIcon == 2 ? {opacity: 1} : {opacity: 0} }>Bakers</div>
 
-        </Row>         
+        </Row>
+
+      </Swipeable>        
+        <Row>
+              <>
+                <div className="cr_mob_left">
+                  <div onClick={prevIcon} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
+                </div>
+                <div className="cr_mob_right"> 
+                  <div onClick={nextIcon} className="mob_nextprev"><img src="/svg/mob_right.svg"/></div>
+                </div>
+              </>          
+
+              <div className="crowders_top_icons_indicators" style={{position: 'relative'}}>
+                {currentIcon + 1} / 3
+              </div>   
+        </Row>
 
 
 
