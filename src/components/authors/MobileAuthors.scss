@@ -4,17 +4,18 @@
 
   @media (max-width: $max-960) {  
 
-    display: none;
+  @include grid-col(14);
+  @include grid-offset-left(2);
+  top:0;
+  position: relative;
+  margin-bottom: 160vw;
 
   } 
 
 
   @media (min-width: $min-960) {
-    top: 0vw;
-    position: relative;
-    @include grid-col(5);
-    @include grid-offset-left(9);
-    min-height: 37vw;
+
+    display: none;
 
   }  
 }
@@ -84,7 +85,7 @@
 
 
   position: absolute;
-  top: 60vw;
+  top: 140vw;
 
   } 
   

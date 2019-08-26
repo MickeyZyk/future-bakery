@@ -6,11 +6,12 @@ import { Paragraph } from 'components/paragraph/Paragraph';
 import ReactDOM from 'react-dom';
 import { Link as InternalLink } from 'components/link/Link';
 import LinkArrow from 'assets/svg/link_arrow.svg'
-import s from './Authors.scss';
+import s from './MobileAuthors.scss';
 import Circle from 'assets/svg/circle.svg';
 import FullCircle from 'assets/svg/full_circle.svg';
+import {Swipeable} from 'react-swipeable'
 
-export class Authors extends React.Component {
+export class MobileAuthors extends React.Component {
 
   constructor(props){
     super(props);
@@ -22,7 +23,7 @@ export class Authors extends React.Component {
 
   render() {
   return( 
-      <AuthorCarousel className={s.hide_on_mobile} texts={this.props.texts} names={this.props.names} />
+      <AuthorCarousel className={s.show_on_mobile} texts={this.props.texts} names={this.props.names} />
   )
 
   }  
@@ -37,7 +38,9 @@ class AuthorCarousel extends React.Component {
       activeIndex: 0,
     };    
     //this.strip = React.createRef();
-    this.setActive = this.setActive.bind(this); 
+    this.setActive = this.setActive.bind(this);
+    this.prevAuthor = this.prevAuthor.bind(this); 
+    this.nextAuthor = this.nextAuthor.bind(this); 
   }
 
 
@@ -62,6 +65,38 @@ class AuthorCarousel extends React.Component {
 
 
   }
+
+  prevAuthor(){
+
+      //console.log("DOT NO", i.index )    
+      if (this.state.activeIndex > 0) {
+
+      this.setState({activeIndex: this.state.activeIndex - 1}, () => {
+
+        //console.log("INDEX no", current, this.state.activeIndex ) 
+
+      })
+
+      }
+
+
+  }  
+
+  nextAuthor(){
+
+      //console.log("DOT NO", i.index )    
+      if (this.state.activeIndex < this.props.texts.length - 1 ) {
+
+        this.setState({activeIndex: this.state.activeIndex + 1}, () => {
+
+          //console.log("INDEX no", current, this.state.activeIndex ) 
+
+        })
+
+      }
+
+
+  }   
 
   componentWillUnmount(){
 
@@ -115,13 +150,30 @@ class AuthorCarousel extends React.Component {
 
 
     return (
+
+
+
+
+
       <div className={s.texts}>
+
+      <Swipeable
+        onSwipedRight={this.prevAuthor}
+        onSwipedLeft={this.nextAuthor} >
+
         {authorNames}      
         {authorTexts}
         <div className={s.dots}>
           {dots}
         </div>
+
+      </Swipeable>
+
       </div>
+
+
+
+
     );
 
   }

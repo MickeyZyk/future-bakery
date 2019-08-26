@@ -19,6 +19,14 @@
 
 
 .author_names {
+
+  @media (max-width: $max-960) {  
+
+      width: 70vw;
+
+  }  
+
+
   position: absolute;
       width: 20vw;
   $size-map: (375px: 19px, 959px: 41px, 960px: 12px, 2880px: 28px);
@@ -1087,6 +1095,14 @@ p {font-weight: lighter;}
 }
 
 .dot {
+
+  @media (max-width: $max-960) {  
+    width: 10px;
+    height: 10px;
+
+  } 
+
+
   float: left;
   width: .75vw;
   height: .75vw;
@@ -3330,7 +3346,9 @@ select {
 /* BAKERS - ABOUT */
 
 
-
+.bakers-about-wrapper {
+  overflow-x: hidden;
+}
 
 
 .bakers_about__talk_bubbles {
@@ -4270,8 +4288,15 @@ select {
 .bakers_about_bakers_heading {
 
 
+  @media (max-width: $max-960) {
   @include grid-col(16);
   @include grid-offset-left(2);
+  margin-top: 25vw;
+  margin-bottom: 10vw;
+
+
+  }
+
 
   @media (min-width: $min-960) {
     @include grid-col(4);
@@ -4311,10 +4336,16 @@ select {
 
 .bakers_about_bakers_p_one {
 
+  @media (max-width: $max-960) {
+    @include grid-col(14);
+    @include grid-offset-left(2);
+    margin-top: 10vw;
+
+  }
+
   font-weight: bold!important;
   color: #7b7979;
-  @include grid-col(16);
-  @include grid-offset-left(2);
+
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4329,8 +4360,13 @@ select {
 .bakers_about_bakers_p_two {
 
   color: #7b7979;
-  @include grid-col(16);
-  @include grid-offset-left(2);
+  @media (max-width: $max-960) {
+    @include grid-col(14);
+    @include grid-offset-left(2);
+    margin-top: 5vw;
+    margin-bottom: 10vw;
+
+  }
 
   @media (min-width: $min-960) {
     position: relative;
@@ -4344,7 +4380,7 @@ select {
 
 .bakers_about_flip_button { 
 
-  @include grid-col;
+  @include grid-col(14);
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
@@ -4358,6 +4394,7 @@ select {
 }
 
 .bakers_about_steps {
+    margin-top: 18vw;
   @media (min-width: $min-960) { 
   margin-top: 8vw;
   }  
@@ -4365,6 +4402,7 @@ select {
 }
 
 .bakers_about_steps_two {
+    margin-top: 5vw;
   @media (min-width: $min-960) {
   margin-top: 2vw;
   }  
@@ -4372,6 +4410,12 @@ select {
 }
 
 .bakers_about_steps_three {
+
+  @media (max-width: $max-960) {  
+      margin-top: 42vw;
+    margin-bottom: 40vw;
+  }    
+
   @media (min-width: $min-960) {  
   margin-top: 2vw;
   }  
@@ -4382,14 +4426,24 @@ select {
 .bakers_about_numbers_first {
 
   font-weight: 900;
-  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 30px, 2880px: 78px);
+  $font-map: (375px: 60px, 959px: 90px, 960px: 30px, 2880px: 78px);
   @include poly-fluid-sizing('font-size', $font-map); 
+
+  @media (max-width: $max-960) {
+    transition: opacity 1s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 10vw;
+
+  } 
 
   @include grid-col;
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-
+    opacity: 1!important;
     @include grid-col(.7);
     @include grid-offset-left(3.2);
 
@@ -4400,16 +4454,24 @@ select {
 .bakers_about_numbers {
 
   font-weight: 900;
-  $font-map: (320px: 10px, 375px: 14px, 768px: 18px, 959px: 8px, 960px: 30px, 2880px: 78px);
+  $font-map: (375px: 60px, 959px: 90px, 960px: 30px, 2880px: 78px);
   @include poly-fluid-sizing('font-size', $font-map); 
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+  @media (max-width: $max-960) {
+    transition: opacity 1s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 10vw;
+
+  }  
 
   @media (min-width: $min-960) {
     padding-left: 2vw!important;
     @include grid-col(1);
     @include grid-offset-left(0);
+    opacity: 1!important;
 
   }  
 
@@ -4417,10 +4479,10 @@ select {
 
 .bakers_about_arrows {
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+  display: none;  
 
   @media (min-width: $min-960) {
+    display: block;
     position: relative;
     top: 1.2vw;
     @include grid-col(1);
@@ -4432,25 +4494,29 @@ select {
 
 .bakers_about_step_icons:first-child {
 
-  @include grid-col;
-  @include grid-offset-left(2);   
-
   @media (min-width: $min-960) {
     padding-left: 0vw!important;
     @include grid-col(.5);
     @include grid-offset-left(3.2);
-
+    opacity: 1!important;
   }  
 
 }
 
 .bakers_about_step_icons {
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+  @media (max-width: $max-960) {
+    width: 30vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 20vw;
+    transition: opacity 1s;
+  }   
 
   @media (min-width: $min-960) {
-
+    opacity: 1!important;
     padding-left: 2vw!important;
     @include grid-col(.8);
     @include grid-offset-left(1.2);
@@ -4466,14 +4532,22 @@ select {
 
   text-align: center;
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+  @media (max-width: $max-960) {
+    width: 70vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 20vw;
+    margin-bottom: 20vw;    
+    transition: opacity 1s;
+  }    
 
   @media (min-width: $min-960) {
     padding-left: 0!important;
     @include grid-col(1.5);
     @include grid-offset-left(2.65);
-
+    opacity: 1!important;
   }  
 
 }
@@ -4486,14 +4560,23 @@ select {
 
     text-align: center;
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+  @media (max-width: $max-960) {
+    width: 70vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 20vw;
+    margin-bottom: 20vw;    
+    transition: opacity 1s;
+
+  }    
 
   @media (min-width: $min-960) {
     padding-left: 2vw!important;
     @include grid-col(1.5);
     @include grid-offset-left(.48);
-
+    opacity: 1!important;
   }  
 
 }
@@ -4637,9 +4720,16 @@ select {
 .bakers_about_in_numbers_icons_first {
 
 
+  @media (max-width: $max-960) {
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+  }  
+
+   
 
   @media (min-width: $min-960) {
 
@@ -4654,8 +4744,14 @@ select {
 
 
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+  @media (max-width: $max-960) {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+  } 
 
   @media (min-width: $min-960) {
 
@@ -4673,8 +4769,14 @@ select {
   $font-map: (375px: 30px, 959px: 75px, 960px: 20px, 2880px: 60px);
   @include poly-fluid-sizing('font-size', $font-map);
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+  @media (max-width: $max-960) {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+  }  
 
   @media (min-width: $min-960) {
 
@@ -4709,8 +4811,14 @@ select {
   $font-map: (375px: 30px, 959px: 75px, 960px: 20px, 2880px: 60px);
   @include poly-fluid-sizing('font-size', $font-map);
 
-  @include grid-col;
-  @include grid-offset-left(2);   
+  @media (max-width: $max-960) {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+  } 
 
   @media (min-width: $min-960) {
     padding-left: 2vw!important;
@@ -4723,8 +4831,14 @@ select {
 
 .bakers_about_in_numbers_texts_first {
 
-  @include grid-col(16);
-  @include grid-offset-left(2);
+  @media (max-width: $max-960) {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+  } 
 
   @media (min-width: $min-960) {
 
@@ -4736,8 +4850,14 @@ select {
 
 .bakers_about_in_numbers_texts {
 
-  @include grid-col(16);
-  @include grid-offset-left(2);
+  @media (max-width: $max-960) {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+  } 
 
   @media (min-width: $min-960) {
 
@@ -6483,7 +6603,8 @@ input[type="checkbox"]:not(:checked) + label span {
 
 .bakers_we__paragraph_one {
 
-
+    position: relative;
+    top: 30vw; 
   @include grid-col(14);
   @include grid-offset-left(2);
 
@@ -6502,8 +6623,8 @@ input[type="checkbox"]:not(:checked) + label span {
   @include grid-col(4);
   @include grid-offset-left(2);
 
-  top: 15vw;
-  bottom: 10vw;
+    position: relative;
+    top: 41vw;
 
   @media (min-width: $min-960) {
     position: relative;
@@ -6520,8 +6641,8 @@ input[type="checkbox"]:not(:checked) + label span {
   @include grid-col(4);
   @include grid-offset-left(2);
 
-  top: 15vw;
-  bottom: 10vw;
+    position: relative;
+    top: 38vw;
 
   @media (min-width: $min-960) {
     position: relative;
@@ -6535,7 +6656,8 @@ input[type="checkbox"]:not(:checked) + label span {
 .divider_text_one {
   @include grid-col(4);
   @include grid-offset-left(1);
-
+    position: relative;
+    top: 36vw;
   @media (min-width: $min-960) {
     position: relative;
     top: -17.45vw;
@@ -6561,6 +6683,8 @@ input[type="checkbox"]:not(:checked) + label span {
   color: #ff7a00;
   @include grid-col(4);
   @include grid-offset-left(1);
+    position: relative;
+    top: 41vw;  
 
   @media (min-width: $min-960) {
     position: relative;
@@ -6602,9 +6726,8 @@ added
   font-weight: bold;
   @include grid-col(4);
   @include grid-offset-left(2);
-
-  top: 15vw;
-  bottom: 10vw;
+    position: relative;
+    top: 20vw;
 
   @media (min-width: $min-960) {
     position: relative;
@@ -6619,6 +6742,8 @@ added
 .divider_text_one_top {
   @include grid-col(4);
   @include grid-offset-left(1);
+    position: relative;
+    top: 15vw;  
 
   @media (min-width: $min-960) {
     position: relative;
@@ -6631,6 +6756,8 @@ added
 .bakers_about__brief_link_one_top {
   font-weight: bold;
   color: #ff7a00;
+    position: relative;
+    top: 20vw;    
   @include grid-col(4);
   @include grid-offset-left(1);
 
@@ -6689,8 +6816,6 @@ added
     margin-bottom: 5vw;
   }  
 }
-
-
 
 
 
@@ -7129,6 +7254,8 @@ added
   color: #ff7a00;
   @include grid-col(4);
   @include grid-offset-left(2);
+      position: relative;
+    top: 5vw;  
 
   @media (min-width: $min-960) {
     position: relative;
@@ -7156,7 +7283,8 @@ added
   color: #ff7a00;
   @include grid-col(4);
   @include grid-offset-left(1);
-
+    position: relative;
+    top: 5vw;  
   @media (min-width: $min-960) {
     position: relative;
     top: -15vw;  
@@ -7170,6 +7298,8 @@ added
   color: #ff7a00;
   @include grid-col(4);
   @include grid-offset-left(2);
+    position: relative;
+    top: 5vw;    
 
   @media (min-width: $min-960) {
     position: relative;
@@ -7209,7 +7339,13 @@ added
 
 
 .bakers_about_team_row {
-  margin-top: 45vw;
+
+  @media (max-width: $max-960) {
+  margin-top: 95vw;
+  position: relative;
+  top: 45vw;
+  }  
+
 
   @media (min-width: $min-960) {
   margin-top: -58vw;
@@ -7308,6 +7444,8 @@ added
   color: #fff!important;
   @include grid-col;
   @include grid-offset-left(2);
+    position: relative; 
+    top: 60vw;  
 
   @media (min-width: $min-960) {
     @include grid-col(3);

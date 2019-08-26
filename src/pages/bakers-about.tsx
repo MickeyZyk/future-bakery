@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import ReactCursorPosition from 'react-cursor-position';
@@ -22,6 +22,7 @@ import { Link } from 'components/link/Link';
 import { DarkTeam } from 'components/team/DarkTeam';
 import { DarkMobileTeam } from 'components/team/DarkMobileTeam';
 import { Authors } from 'components/authors/Authors';
+import { MobileAuthors } from 'components/authors/MobileAuthors';
 import { Footer } from 'components/footer/Footer';
 import { TweenMax, TimelineMax, Power3 } from "gsap";
 import { Tween, SplitWords } from 'react-gsap'
@@ -29,6 +30,7 @@ import { Controller, Scene } from 'react-scrollmagic';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import Circle from 'assets/svg/circle.svg';
 import FullCircle from 'assets/svg/full_circle.svg';
+import {Swipeable} from 'react-swipeable'
 const slug = require('slug')
 
 
@@ -39,6 +41,31 @@ import Scrollbar from 'react-smooth-scrollbar';
 
 const BakersAbout = ({ data, className }) => {
 
+  const [currentTopIcon, setCurrentTopIcon] = useState(0);
+
+  function prevTopIcon() {
+   
+    currentTopIcon > 0 ? setCurrentTopIcon(currentTopIcon - 1) : null
+
+  }
+
+  function nextTopIcon() {
+     
+    currentTopIcon < 5 ? setCurrentTopIcon(currentTopIcon + 1) : null    
+  } 
+
+  const [currentIcon, setCurrentIcon] = useState(0);
+
+  function prevIcon() {
+   
+    currentIcon > 0 ? setCurrentIcon(currentIcon - 1) : null
+
+  }
+
+  function nextIcon() {
+     
+    currentIcon < 2 ? setCurrentIcon(currentIcon + 1) : null    
+  }   
 
  function getMembers(item) {
     var sub = [item.member];
@@ -96,7 +123,7 @@ const BakersAbout = ({ data, className }) => {
 
  <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>      
 
-  <div className='wrapper about-wrapper'>
+  <div className='wrapper about-wrapper bakers-about-wrapper'>
 
       <Helmet title={data.gravBakersAbout.title} />
     <ReactCursorPosition>
@@ -143,11 +170,6 @@ const BakersAbout = ({ data, className }) => {
           )
         }}
       </TransitionState>
-
-
-
-
-
 
     </ReactCursorPosition>
       <ReactCursorPosition>
@@ -224,53 +246,53 @@ const BakersAbout = ({ data, className }) => {
 
 
               <div className="people_doodles show_on_mobile">
-                <div className="people_doodle">
-                  <div className="tags_heading_middle"><HeadingTwo>Spousta lidy spousta napadu</HeadingTwo></div>
+                <div className="people_doodle show_on_mobile">
+                  <div className="tags_heading_middle"><HeadingTwo>{data.gravBakersAbout.problem_heading_two}</HeadingTwo></div>
                 </div> 
                 <img className="tag_arrow_04" src="../images/tag_arow_04.png" /> 
-                <div className="people_doodle">
+                <div className="people_doodle show_on_mobile">
                   <img className="hip" src="../svg/hip.svg"/>
                 </div>
-                <div className="people_doodle">
+                <div className="people_doodle show_on_mobile">
                   <img className="nerd" src="../svg/nerd.svg"/> 
                 </div>
-                <div className="people_doodle">
-                  <p className="tag nerd_text">Marketa grafik miluje horska kola</p>
+                <div className="people_doodle show_on_mobile">
+                  <p className="tag nerd_text">{data.gravBakersAbout.icon01_text}</p>
                 </div>
-                <div className="people_doodle">
+                <div className="people_doodle show_on_mobile">
                   <img className="granny" src="../svg/granny.svg"/>
                 </div>
-                <div className="people_doodle">
-                  <p className="tag granny_text">Marketa grafik miluje horska kola</p>
+                <div className="people_doodle show_on_mobile">
+                  <p className="tag granny_text">{data.gravBakersAbout.icon02_text}</p>
                 </div>
-                <div className="people_doodle">
+                <div className="people_doodle show_on_mobile">
                   <img className="fireman" src="../svg/fireman.svg"/>
                 </div>
-                <div className="people_doodle">
-                  <p className="tag fireman_text">Karel hasic</p>
+                <div className="people_doodle show_on_mobile">
+                  <p className="tag fireman_text">{data.gravBakersAbout.icon06_text}</p>
                 </div>
-                <div className="people_doodle">
+                <div className="people_doodle show_on_mobile">
                   <img className="girl" src="../svg/girl.svg"/>
                 </div>
-                <div className="people_doodle">
-                  <p className="tag girl_text">Marketa grafik miluje horska kola</p>
+                <div className="people_doodle show_on_mobile">
+                  <p className="tag girl_text">{data.gravBakersAbout.icon07_text}</p>
                 </div>
-                <div className="people_doodle">
+                <div className="people_doodle show_on_mobile">
                   <img className="kid" src="../svg/kid.svg"/>
                 </div>
-                <div className="people_doodle">
-                  <p className="tag kid_text">Honza marketer miluje reklamu</p> 
+                <div className="people_doodle show_on_mobile">
+                  <p className="tag kid_text">{data.gravBakersAbout.icon05_text}</p> 
                 </div>
-                <div className="people_doodle">
+                <div className="people_doodle show_on_mobile">
                   <img className="smart" src="../svg/smart.svg"/>
                 </div>
-                <div className="people_doodle">
-                  <p className="tag smart_text">Marketa grafik miluje horska kola</p> 
+                <div className="people_doodle show_on_mobile">
+                  <p className="tag smart_text">{data.gravBakersAbout.icon04_text}</p> 
                 </div>
-                <div className="people_doodle">
+                <div className="people_doodle show_on_mobile">
                   <img className="afro" src="../svg/afro.svg"/>     
                 </div>
-                <div className="people_doodle">
+                <div className="people_doodle show_on_mobile">
                   <img className="vial" src="../svg/vial.svg"/>
                 </div>
               </div>
@@ -327,25 +349,30 @@ const BakersAbout = ({ data, className }) => {
           </ReactCursorPosition>
 
 
+
+      <Swipeable
+        onSwipedRight={prevTopIcon}
+        onSwipedLeft={nextTopIcon} >  
+
         <Row className="bakers_about_steps">
-          <div className="bakers_about_numbers_first">1</div>
+          <div className="bakers_about_numbers_first" style={currentTopIcon == 0 ? {opacity : 1} : {opacity : 0}}>1</div>
           <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
-          <div className="bakers_about_numbers">2</div>
+          <div className="bakers_about_numbers" style={currentTopIcon == 1 ? {opacity : 1} : {opacity : 0}}>2</div>
           <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
-          <div className="bakers_about_numbers">3</div>
+          <div className="bakers_about_numbers" style={currentTopIcon == 2 ? {opacity : 1} : {opacity : 0}}>3</div>
           <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
-          <div className="bakers_about_numbers">4</div>
+          <div className="bakers_about_numbers" style={currentTopIcon == 3 ? {opacity : 1} : {opacity : 0}}>4</div>
           <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
-          <div className="bakers_about_numbers">5</div>
+          <div className="bakers_about_numbers" style={currentTopIcon == 4 ? {opacity : 1} : {opacity : 0}}>5</div>
           <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div> 
-          <div className="bakers_about_numbers">6</div>
+          <div className="bakers_about_numbers" style={currentTopIcon == 5 ? {opacity : 1} : {opacity : 0}}>6</div>
         </Row>
 
         <Row className="bakers_about_steps_two">
 
 
           {data.gravBakersAbout.svg_icons.map((svg, i) => (
-            <img key={i} className="bakers_about_step_icons" 
+            <img key={i} className="bakers_about_step_icons" style={currentTopIcon == i ? {opacity : 1} : {opacity : 0}}
             src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + svg.svg }
             />       
           ))}
@@ -355,11 +382,29 @@ const BakersAbout = ({ data, className }) => {
         <Row className="bakers_about_steps_three">
 
           {data.gravBakersAbout.svg_icons.map((svg, i) => (
-            <div key={i} className="bakers_about_steps_text" dangerouslySetInnerHTML={{ __html: svg.svg_text }}/>
+            <div key={i} className="bakers_about_steps_text" style={currentTopIcon == i ? {opacity : 1} : {opacity : 0}} dangerouslySetInnerHTML={{ __html: svg.svg_text }}/>
           ))}
 
         </Row>   
-  <ReactCursorPosition>
+
+
+        </Swipeable>
+
+        <Row>
+              <>
+                <div className="cr_mob_left">
+                  <div onClick={prevTopIcon} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
+                </div>
+                <div className="cr_mob_right"> 
+                  <div onClick={nextTopIcon} className="mob_nextprev"><img src="/svg/mob_right.svg"/></div>
+                </div>
+              </>          
+
+              <div className="crowders_top_icons_indicators" style={{position: 'relative'}}>
+                {currentTopIcon + 1} / 6
+              </div>   
+        </Row>
+    <ReactCursorPosition>
       <SVGicon className='bakers_about_like' src='like.svg' />
       <SVGiconReverse className='bakers_about_book' src='book.svg' />         
 
@@ -373,8 +418,8 @@ const BakersAbout = ({ data, className }) => {
 
           <Heading className="bakers_about_authors_heading">{data.gravBakersAbout.authors_heading}</Heading>
 
-
-          <Authors texts={mergedAuthorTexts} names={mergedAuthorNames}/>
+          <Authors texts={mergedAuthorTexts} names={mergedAuthorNames} className="hide_on_mobile"/>
+          <MobileAuthors texts={mergedAuthorTexts} names={mergedAuthorNames} className="show_on_mobile" />
 
           <Link bakers arrow button to={'/bakers-about'} className="bakers_about_authors_flip_button">JOIN US</Link>
 

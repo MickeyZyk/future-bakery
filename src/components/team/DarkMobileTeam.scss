@@ -2,8 +2,8 @@
 
 .team {
   display: block;
-  margin-top: 10vw;
-  height: 300vw; 
+  padding-top: 90vw;
+  height: 390vw; 
     background-color: #222222;  
   @media (min-width: $min-960) {
     display: none;
@@ -137,7 +137,13 @@
 
 .after_bar {
 
-  display: none;
+    /* display: none; */
+    position: absolute;
+    width: 12vw;
+    height: 121vw;
+    top: -1vw;
+    z-index: 100000;
+    background: #222;
 
   @media (min-width: $min-960) {
     
@@ -175,7 +181,7 @@
 .strip {
   opacity: 1;
     width: 100vw;
-    overflow: hidden; 
+    /* overflow: hidden;  */
     height: 120vw;  
 }
 

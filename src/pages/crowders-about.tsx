@@ -228,24 +228,18 @@ const CrowdersAbout = ({ data, className, state }) => {
           </div>
 
 
-
-
-
-
-          <>
-            <div className="cr_mob_left">
-              <div onClick={prevTopIcon} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
-            </div>
-            <div className="cr_mob_right"> 
-              <div onClick={nextTopIcon} className="mob_nextprev"><img src="/svg/mob_right.svg"/></div>
-            </div>
-          </>          
+              <>
+                <div className="cr_mob_left">
+                  <div onClick={prevTopIcon} className="mob_nextprev"><img src="/svg/mob_left.svg"/></div>
+                </div>
+                <div className="cr_mob_right"> 
+                  <div onClick={nextTopIcon} className="mob_nextprev"><img src="/svg/mob_right.svg"/></div>
+                </div>
+              </>          
 
               <div className="crowders_top_icons_indicators" style={{position: 'relative'}}>
                 {currentTopIcon + 1} / 4
               </div>             
-
-
 
 
           </Row>

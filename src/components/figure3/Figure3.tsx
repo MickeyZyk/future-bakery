@@ -34,7 +34,7 @@ export const Figure3 = ({ data, className }) => (
                 to={ ['exiting'].includes(transitionStatus) ? {clipPath:'inset(0% 0% 100% 0%)', ease: 'Power2.easeIn', opacity: 0 } : false } >
                   <div>
                     <Controller refreshInterval={1}>
-                      <Scene duration={'300%'} triggerHook={'onEnter'}>
+                      <Scene duration={'150%'} triggerHook={'onEnter'}>
                         <Tween from={{ backgroundPositionY: '-300px' }}>
                           <div className={s.background} style={{ backgroundImage: `url(${data.file.childImageSharp.fluid.src})` }}></div>
                         </Tween>
