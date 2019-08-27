@@ -30,7 +30,9 @@ import { Controller, Scene } from 'react-scrollmagic';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import Circle from 'assets/svg/circle.svg';
 import FullCircle from 'assets/svg/full_circle.svg';
-import {Swipeable} from 'react-swipeable'
+import {Swipeable} from 'react-swipeable';
+import Bubbles from 'assets/svg/talk_bubbles.svg';
+import Brains from 'assets/svg/brains.svg';
 const slug = require('slug')
 
 
@@ -127,7 +129,7 @@ const BakersAbout = ({ data, className }) => {
 
       <Helmet title={data.gravBakersAbout.title} />
     <ReactCursorPosition>
-              <SVGicon className='bakers_about__talk_bubbles' src='talk_bubbles.svg'  />
+              <SVGicon className='bakers_about__talk_bubbles hide_on_mobile' src='talk_bubbles.svg'  />
 
 
 
@@ -140,7 +142,7 @@ const BakersAbout = ({ data, className }) => {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, ease: 'Power3.easeInOut' } : false  } >  
               <div>
-              
+                <Bubbles className='bakers_about__talk_bubbles show_on_mobile' />
                 <Row>
 
                     <Figure 
@@ -174,7 +176,8 @@ const BakersAbout = ({ data, className }) => {
     </ReactCursorPosition>
       <ReactCursorPosition>
 
-              <SVGicon className='bakers_about__brains' src='brains.svg' /> 
+              <SVGicon className='bakers_about__brains hide_on_mobile' src='brains.svg' />
+              <Brains className='bakers_about__brains show_on_mobile' /> 
               <Row>
                 <Figure
                 src={ 'https://future.stratego.ba/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_two } 

@@ -3356,7 +3356,7 @@ select {
   @include grid-col(6);
   @include grid-offset-left(11);
   position: absolute;
-  top: 200px;
+  top: 100px;
 
   @media (min-width: $min-960) {
     @include grid-col(1.3);
@@ -6515,10 +6515,10 @@ input[type="checkbox"]:not(:checked) + label span {
 /* bakers-about */
 
 .bakers_about__talk_bubbles {
-  @include grid-col(6);
+  @include grid-col(4);
   @include grid-offset-left(8);
   position: absolute;
-  top: 45vw;
+  top: 25vw;
 
   @media (min-width: $min-960) {
     @include grid-col(1);
@@ -7309,7 +7309,7 @@ added
 .bakers_about__join_link_three {
   font-weight: bold;
   color: #ff7a00;
-  @include grid-col(4);
+  @include grid-col(6);
   @include grid-offset-left(1);
     position: relative;
     top: 5vw;  
