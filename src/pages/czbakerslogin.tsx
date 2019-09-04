@@ -41,18 +41,13 @@ export default class bakersLogin extends React.Component {
   }   
 
 
-
   render() {
 
 
     return (
 
 
-
-
             <>
-
-
 
 
  <Scrollbar ref={c => this.$container = c} className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
@@ -149,7 +144,7 @@ export default class bakersLogin extends React.Component {
 
 
 
-{/*
+
 
 
 
@@ -178,15 +173,6 @@ export default class bakersLogin extends React.Component {
                     </div>
 
                   ))}
-
-
-
-
-
-*/}
-
-
-
 
 
 
@@ -250,7 +236,6 @@ export default class bakersLogin extends React.Component {
 }
 
 
-{/* 
 
 
 export const czApiBakersLogin = graphql`
@@ -269,9 +254,3 @@ export const czApiBakersLogin = graphql`
   }
 
 `
-
-
- */}
-
-
-

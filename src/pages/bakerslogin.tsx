@@ -147,7 +147,7 @@ export default class bakersLogin extends React.Component {
               <Row>
 
 
-{/* 
+
 
 
                   {this.props.data.allApiBakersLogin.edges.map(( i ) => (
@@ -177,7 +177,7 @@ export default class bakersLogin extends React.Component {
                   ))}
 
 
- */}
+
 
 
 
@@ -234,7 +234,7 @@ export default class bakersLogin extends React.Component {
 }
 
 
-{/* 
+
 
 export const ApiBakersLogin = graphql`
   query AllBakersLogin {
@@ -253,6 +253,6 @@ export const ApiBakersLogin = graphql`
 
 `
 
- */}
+
 
 
