@@ -129,7 +129,7 @@ submitForm() {
 
               <AnimatedImage className='for_clients_image responsive_image show_on_mobile' src="../images/rocket.jpg" />         
 
-              <Paragraph className='for_clients_about_paragraph paragraph'>This is where you can submit your brief and generate wonderful ideas. We can provide additional services among others analysis of the ideas, creation of a strategy or plan of action. You can let us know, what exactly you need from Future Bakers.</Paragraph>
+              <Paragraph className='for_clients_about_paragraph paragraph'>Jen nápady nestačí a potřebujete píchnout i s analýzou, strategií nebo koncepcí? Dejte nám vědět.</Paragraph>
 
             </div>
 
@@ -142,13 +142,13 @@ submitForm() {
           <Location>
             {({ location }) => ( 
 
-              <Link className="for_join_link_one" arrow bakers onClick={this.toggleClass} to={location.pathname}>BRIEF US</Link>
+              <Link className="for_join_link_one" arrow bakers onClick={this.toggleClass} to={location.pathname}>POŠLETE ZADÁNÍ</Link>
 
             )}
           </Location>  
         
-              <Paragraph className="for_divider_text_one">or simply</Paragraph>
-              <Link bakers arrow className="for_brief_link_one" to={'/czbakerscontact'}>CALL US</Link>  
+              <Paragraph className="for_divider_text_one">nebo</Paragraph>
+              <Link bakers arrow className="for_brief_link_one" to={'/czbakerscontact'}>ZAVOLEJTE</Link>  
 
           </Row>  
 
