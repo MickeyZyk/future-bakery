@@ -114,7 +114,7 @@ submitForm() {
 
     <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>   
 
-  <div className='wrapper'>
+  <div className='wrapper no_overflow_x'>
 
       <ReactCursorPosition className='fullscreen_cursor_position'>
 
