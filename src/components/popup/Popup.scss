@@ -54,8 +54,8 @@
     left: 8vw;
     width: 30vw;
     font-weight: normal;
-      $font-map: (375px: 18px, 959px: 43px, 960px: 20px, 2880px: 36px);
-      $height-map: (375px: 18px, 959px: 43px, 960px: 20px, 2880px: 36px);
+      $font-map: (375px: 18px, 959px: 43px, 960px: 14px, 2880px: 36px);
+      $height-map: (375px: 18px, 959px: 43px, 960px: 14px, 2880px: 36px);
       @include poly-fluid-sizing('font-size', $font-map);
       @include poly-fluid-sizing('line-height', $height-map);    
 }

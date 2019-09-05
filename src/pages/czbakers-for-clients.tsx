@@ -125,7 +125,7 @@ submitForm() {
 
             <div className="crowders_about_first_left">
 
-              <HeadingTwo className='for_clients_about_heading'>We found thousands of creative people, who are ready to help you solve your problem, or find a direction for your business.</HeadingTwo>   
+              <HeadingTwo className='for_clients_about_heading'>Našli jsme tisíce talentů, kteří jsou připraveni pomoct rozlousknout Váš problém nebo vymyslet nápady pro Váš byznys. Jen nápady nestačí a potřebujete píchnout i s analýzou, strategií nebo koncepcí? Dejte nám vědět.</HeadingTwo>   
 
               <AnimatedImage className='for_clients_image responsive_image show_on_mobile' src="../images/rocket.jpg" />         
 
