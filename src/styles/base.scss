@@ -8440,6 +8440,11 @@ opacity: 0;
     top: 32vw;
     left: 8vw;
     width: 12vw;
+    transition: none!important;
+}
+
+.popup_button .the_link_text {
+    transition: left .5s!important;
 }
 
 .popup_button.the_button_link.bakers_color .bakers_arrow polygon {
