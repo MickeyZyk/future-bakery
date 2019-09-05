@@ -122,7 +122,7 @@ export default class Work extends React.Component {
                 <SVGicon className='bakery_work_icon' src='swirl.svg' /> 
                <SVGiconReverse className='bakery_work_harmonica' src='bakers_harmonica.svg' />               
 
-                <Split className="bakery_work_headline">KOLEKTIVNÍ INTELIGENCE A KREATIVNÍ SILA V AKCI</Split>
+                <Split className="bakery_work_headline">KOLEKTIVNÍ MYŠLENÍ A KREATIVNÍ SILA V AKCI</Split>
 
                 <div className='wrapper work-wrapper' ref={this.hovered_item}>
 
