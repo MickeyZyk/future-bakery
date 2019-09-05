@@ -4,6 +4,7 @@ import { Slider } from 'components/slider/Slider';
 import { Heading } from 'components/heading/Heading';
 import SVGicon from 'components/svgicon/SVGicon';
 import { Link } from 'components/link/Link';
+import { Popup } from 'components/popup/Popup';
 import { Row } from 'components/row/Row';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
@@ -69,6 +70,9 @@ export default class BakersIndex extends React.Component {
 
   <ReactCursorPosition className='fullscreen_cursor_position'>  
     <Helmet title="Bakers" />
+
+    <Popup/>
+
     <SVGicon className='bakers_home__bakers_crown' src='bakers_crown.svg'  /> 
     <SVGiconReverse className='bakers_home__bakers_bulb' src='bakers_bulb.svg'  /> 
 
