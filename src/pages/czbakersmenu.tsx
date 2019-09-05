@@ -93,7 +93,7 @@ export default class BakersMenu extends React.Component {
 							      			name="Work"
 							      			to="/czbakers-work"
 						      				>
-														<MenuHeading className='white_text'>Prace</MenuHeading>
+														<MenuHeading className='white_text'>Práce</MenuHeading>
 												  </Link>
 											  </li>
 											  <li className='menu_item_wrapper'>

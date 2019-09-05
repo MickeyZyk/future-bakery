@@ -380,7 +380,7 @@ const BakersAbout = ({ data, className }) => {
 
           <Authors texts={mergedAuthorTexts} names={mergedAuthorNames}/>
 
-          <Link bakers arrow button to={'/czbakers-about'} className="bakers_about_authors_flip_button">JOIN US</Link>
+          <Link bakers arrow button to={'/czbakers-about'} className="bakers_about_authors_flip_button">PŘIPOJ SE K NÁM</Link>
 
 
         </Row> 
