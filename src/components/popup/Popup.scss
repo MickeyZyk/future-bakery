@@ -1,0 +1,61 @@
+@import '~styles/config';
+
+.background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(23,28,34,.86);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.background_logo {
+    background-color: #ff7a00;
+    opacity: 1;
+    position: absolute;
+    width: 75vw;
+    height: 75vw;    
+    border-radius: 50%;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; 
+
+   @media (min-width: $min-960) {
+        opacity: 1  ;
+        position: absolute;
+        width: 43vw;
+        height: 43vw;
+        border-radius: 50%;        
+        margin: auto;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0; 
+  } 
+}
+
+.heading {
+    position: absolute;
+    top: 12vw;
+    left: 8vw;
+}
+
+.paragraph {
+    position: absolute;
+    top: 21vw;
+    left: 8vw;
+    width: 30vw;
+    font-weight: normal;
+      $font-map: (375px: 18px, 959px: 43px, 960px: 20px, 2880px: 36px);
+      $height-map: (375px: 18px, 959px: 43px, 960px: 20px, 2880px: 36px);
+      @include poly-fluid-sizing('font-size', $font-map);
+      @include poly-fluid-sizing('line-height', $height-map);    
+}

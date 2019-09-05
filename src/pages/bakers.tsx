@@ -5,6 +5,7 @@ import { Heading } from 'components/heading/Heading';
 import SVGicon from 'components/svgicon/SVGicon';
 import { Link } from 'components/link/Link';
 import { Row } from 'components/row/Row';
+import { Popup } from 'components/popup/Popup';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import { graphql } from 'gatsby'
@@ -65,10 +66,16 @@ export default class BakersIndex extends React.Component {
   var mergedImages = [].concat.apply([], images);
   
      return (
+    
+    <>
 
+    <Popup/>
 
   <ReactCursorPosition className='fullscreen_cursor_position'>  
     <Helmet title="Bakers" />
+
+
+
     <SVGicon className='bakers_home__bakers_crown' src='bakers_crown.svg'  /> 
     <SVGiconReverse className='bakers_home__bakers_bulb' src='bakers_bulb.svg'  /> 
 
@@ -124,6 +131,8 @@ export default class BakersIndex extends React.Component {
       </TransitionState>
       
   </ReactCursorPosition>
+
+  </>
 
 );
 
