@@ -148,7 +148,7 @@ submitForm() {
           </Location>  
         
               <Paragraph className="for_divider_text_one">or simply</Paragraph>
-              <Link bakers arrow className="for_brief_link_one" to={'/bakerscontact'}>CALL US</Link>  
+              <Link bakers arrow className="for_brief_link_one" to={'/czbakerscontact'}>CALL US</Link>  
 
           </Row>  
 
