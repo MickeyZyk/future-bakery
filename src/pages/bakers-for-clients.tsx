@@ -125,11 +125,11 @@ submitForm() {
 
             <div className="crowders_about_first_left">
 
-              <HeadingTwo className='for_clients_about_heading'>Našli jsme tisíce talentů, kteří jsou připraveni pomoct rozlousknout Váš problém nebo vymyslet nápady pro Váš byznys. Jen nápady nestačí a potřebujete píchnout i s analýzou, strategií nebo koncepcí? Dejte nám vědět.</HeadingTwo>   
+              <HeadingTwo className='for_clients_about_heading'>Našli jsme tisíce talentů, kteří jsou připraveni pomoct rozlousknout Váš problém nebo vymyslet nápady pro Váš byznys.</HeadingTwo>   
 
               <AnimatedImage className='for_clients_image responsive_image show_on_mobile' src="../images/rocket.jpg" />         
 
-              <Paragraph className='for_clients_about_paragraph paragraph'>This is where you can submit your brief and generate wonderful ideas. We can provide additional services among others analysis of the ideas, creation of a strategy or plan of action. You can let us know, what exactly you need from Future Bakers.</Paragraph>
+              <Paragraph className='for_clients_about_paragraph paragraph'>Jen nápady nestačí a potřebujete píchnout i s analýzou, strategií nebo koncepcí? Dejte nám vědět.</Paragraph>
 
             </div>
 
