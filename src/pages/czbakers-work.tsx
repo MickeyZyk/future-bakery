@@ -2,7 +2,7 @@ import * as React from 'react';
 import Helmet from 'react-helmet';
 import { Slider } from 'components/slider/Slider';
 import { Heading } from 'components/heading/Heading';
-import { Item2 } from 'components/item/Item2';
+import { Item2cz } from 'components/item/Item2cz';
 import ReactDOM from 'react-dom';
 import { Split } from 'components/split/Split';
 import SVGicon from 'components/svgicon/SVGicon';
@@ -130,7 +130,7 @@ export default class Work extends React.Component {
 
                 {this.props.data.allGravBakersCzWork.edges.map(( node, i ) => (
                   <div className="work_item_wrapper" key={i}>
-                    <Item2 data={node} i={i} />
+                    <Item2cz data={node} i={i} />
                   </div>
 
                 ))}
