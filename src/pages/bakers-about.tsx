@@ -159,8 +159,8 @@ const BakersAbout = ({ data, className }) => {
                 </Row>
                 <Row>
                   <Link className="bakers_about__join_link_one_top" arrow bakers to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}</Link>
-                  <Paragraph className="divider_text_one_top">or find out how to</Paragraph>
-                  <Link bakers arrow className="bakers_about__brief_link_one_top" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}</Link>          
+                  <Paragraph className="divider_text_one_top">{data.gravBakersAbout.link_one_divider}</Paragraph>
+                  <Link bakers arrow className="bakers_about__brief_link_one_top" to={data.gravBakersAbout.link_one_brief}>{data.gravBakersAbout.link_one_brief_text}</Link>          
                 </Row>
 
               </div>
@@ -186,9 +186,9 @@ const BakersAbout = ({ data, className }) => {
                 <Split className='bakers_about__heading_three'>{data.gravBakersAbout.subheading_two}</Split>      
                 <Paragraph className='bakers_we__paragraph_one paragraph'>{data.gravBakersAbout.paragraph_two}</Paragraph>
 
-                <Link className="bakers_about__join_link_one" arrow bakers to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}</Link>
-                <Paragraph className="divider_text_one">or find out how to</Paragraph>
-                <Link bakers arrow className="bakers_about__brief_link_one" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}</Link>          
+                <Link className="bakers_about__join_link_one" arrow bakers to={data.gravBakersAbout.link_second}>{data.gravBakersAbout.link_second_text}</Link>
+                <Paragraph className="divider_text_one">{data.gravBakersAbout.link_second_divider}</Paragraph>
+                <Link bakers arrow className="bakers_about__brief_link_one" to={data.gravBakersAbout.link_second_brief}>{data.gravBakersAbout.link_second_brief_text}</Link>          
 
                 <Figure4 className="show_on_mobile"/>
               </Row>
@@ -537,6 +537,14 @@ export const BakersAboutquery = graphql`
       link_two
       link_one_text
       link_one
+      link_one_divider
+      link_one_brief
+      link_one_brief_text
+      link_second
+      link_second_text
+      link_second_divider
+      link_second_brief
+      link_second_brief_text
       image_two
       image_one
       icons_link_two_text
