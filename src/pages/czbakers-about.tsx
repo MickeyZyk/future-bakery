@@ -193,13 +193,13 @@ const BakersAbout = ({ data, className }) => {
 
 
               <div className="tag_02">
-              <p className="tag">{data.gravBakersCzAbout.problem_text}</p>
+              <p className="tag">{data.gravBakersCzAbout.problem_text_two}</p>
               </div>
               <div className="tag_03">
-              <p className="tag">{data.gravBakersCzAbout.problem_text}</p>
+              <p className="tag">{data.gravBakersCzAbout.problem_text_three}</p>
               </div>
               <div className="tag_04">
-              <p className="tag">{data.gravBakersCzAbout.problem_text}</p>
+              <p className="tag">{data.gravBakersCzAbout.problem_text_four}</p>
               </div>
               <img className="tag_arrow_01" src="../images/tag_arow_01.png" />
               <img className="tag_arrow_01l show_on_mobile" src="../images/tag_arow_01l.png" />
@@ -390,7 +390,7 @@ const BakersAbout = ({ data, className }) => {
 
         <Row className="bakers_about_authors">
 
-          <HeadingTwo className="bakers_about_in_numbers_heading">Our bakers in numbers</HeadingTwo>
+          <HeadingTwo className="bakers_about_in_numbers_heading">{data.gravBakersCzAbout.bakers_in_numbers}</HeadingTwo>
 
         </Row>
 
@@ -405,9 +405,9 @@ const BakersAbout = ({ data, className }) => {
           <div className="bakers_about_in_numbers_numbers">{data.gravBakersCzAbout.bakers}</div>
         </Row>
         <Row className="bakers_about_in_numbers_three">
-          <div className="bakers_about_in_numbers_texts_first">Reward</div>
-          <div className="bakers_about_in_numbers_texts">creative ideas</div>
-          <div className="bakers_about_in_numbers_texts">Bakers</div>
+          <div className="bakers_about_in_numbers_texts_first">{data.gravBakersCzAbout.reward_label}</div>
+          <div className="bakers_about_in_numbers_texts">{data.gravBakersCzAbout.ideas_label}</div>
+          <div className="bakers_about_in_numbers_texts">{data.gravBakersCzAbout.bakers_label}</div>
 
         </Row>         
 
@@ -461,6 +461,9 @@ export const BakersAboutquery = graphql`
       subheading_two
       subheading_one
       problem_text
+      problem_text_two
+      problem_text_three
+      problem_text_four            
       problem_heading_two
       problem_heading_three
       problem_heading_one
@@ -493,9 +496,13 @@ export const BakersAboutquery = graphql`
         text
         name
       }
+      bakers_in_numbers
       ideas
       reward
-      bakers      
+      bakers    
+      ideas_label
+      reward_label
+      bakers_label
     }   
   }
 `
