@@ -214,13 +214,13 @@ const BakersAbout = ({ data, className }) => {
 
 
               <div className="tag_02">
-              <p className="tag">{data.gravBakersAbout.problem_text}</p>
+              <p className="tag">{data.gravBakersAbout.problem_text_two}</p>
               </div>
               <div className="tag_03">
-              <p className="tag">{data.gravBakersAbout.problem_text}</p>
+              <p className="tag">{data.gravBakersAbout.problem_text_three}</p>
               </div>
               <div className="tag_04">
-              <p className="tag">{data.gravBakersAbout.problem_text}</p>
+              <p className="tag">{data.gravBakersAbout.problem_text_four}</p>
               </div>
               <img className="tag_arrow_01" src="../images/tag_arow_01.png" />
               <img className="tag_arrow_01l show_on_mobile" src="../images/tag_arow_01l.png" />
@@ -525,6 +525,9 @@ export const BakersAboutquery = graphql`
       subheading_two
       subheading_one
       problem_text
+      problem_text_two
+      problem_text_three
+      problem_text_four            
       problem_heading_two
       problem_heading_three
       problem_heading_one
@@ -559,7 +562,10 @@ export const BakersAboutquery = graphql`
       }
       ideas
       reward
-      bakers      
+      bakers 
+      ideas_label
+      reward_label
+      bakers_label       
     }   
   }
 `
