@@ -286,7 +286,7 @@ const BakersAbout = ({ data, className }) => {
       <Split className="tags_heading_bottom">{data.gravBakersCzAbout.problem_heading_three}</Split>
       <Row>
         <Link bakers arrow className="cz_bakers_about__join_link_two" to={data.gravBakersCzAbout.icons_link_one}>{data.gravBakersCzAbout.icons_link_one_text}</Link>
-        <Paragraph className="cz_divider_text">nebo zjistíte, jak</Paragraph>
+        <Paragraph className="cz_divider_text">{data.gravBakersCzAbout.icons_links_divider}</Paragraph>
         <Link bakers arrow className="cz_bakers_about__join_link_three" to={data.gravBakersCzAbout.icons_link_two}>{data.gravBakersCzAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
       </Row>
 
@@ -487,6 +487,7 @@ export const BakersAboutquery = graphql`
       icons_link_two
       icons_link_one_text
       icons_link_one
+      icons_links_divider
       icon07_text
       icon06_text
       icon05_text
