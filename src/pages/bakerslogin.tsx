@@ -95,12 +95,12 @@ export default class bakersLogin extends React.Component {
 
 
               <div className='bakers_login__main_header'>
-                <h1>Vymýšlejte s námi nápady - odměnujeme ty nejlepší</h1>
+                <h1>Think up with us - we reward the best</h1>
               </div>
 
 
               <div className='bakers_login__main_subheader'>
-                <p>Jsou nás tu tisíce, co to uz udelali. Ale stále je více tech, kterí vase nápady potrebují.</p>
+                <p>There are thousands of us who've done it. But there are still more people who need your ideas.</p>
               </div>
                   </Tween>
 
