@@ -184,7 +184,7 @@ const BakersAbout = ({ data, className }) => {
                 className="bakers_about__image_two hide_on_mobile"
                 />      
                 <Split className='bakers_about__heading_three'>{data.gravBakersAbout.subheading_two}</Split>      
-                <Paragraph className='bakers_we__paragraph_one paragraph'>{data.gravBakersAbout.paragraph_one}</Paragraph>
+                <Paragraph className='bakers_we__paragraph_one paragraph'>{data.gravBakersAbout.paragraph_two}</Paragraph>
 
                 <Link className="bakers_about__join_link_one" arrow bakers to={data.gravBakersAbout.link_one}>{data.gravBakersAbout.link_one_text}</Link>
                 <Paragraph className="divider_text_one">or find out how to</Paragraph>
