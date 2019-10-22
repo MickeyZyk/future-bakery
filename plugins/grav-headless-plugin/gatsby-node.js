@@ -72,11 +72,60 @@ exports.sourceNodes = async ({boundActionCreators}) => {
         createNode(x)
     })    
 
+
+        const apiResponse = await axios.get('http://future.stratego.ba/en/bakers/login', {
+            params: {
+                "return-as": "json"
+            }
+        })
+
+      const newNode = {
+        heading: apiResponse.data.header.heading,
+        subheading: apiResponse.data.header.subheading,
+        image: apiResponse.data.header.image,
+        link_one_text: apiResponse.data.header.link_one_text,
+        link_one_url: apiResponse.data.header.link_one_url,
+        link_two_text: apiResponse.data.header.link_two_text,
+        link_two_url: apiResponse.data.header.link_two_url,
+        link_three_text: apiResponse.data.header.link_three_text,
+        link_four_text: apiResponse.data.header.link_four_text,
+        link_four_url: apiResponse.data.header.link_four_url,        
+        id: apiResponse.data.header.heading, // required by Gatsby
+        internal: {
+          type: 'TestNode', 
+          contentDigest: 'something'
+          // required by Gatsby
+          //contentDigest: createContentDigest('testnode') // required by Gatsby, must be unique
+        }
+      };
+      // This is where we actually create the data node, by passing in the newNode object.
+      createNode(newNode);
+
+
+
+
+
+
+
+        console.log(apiResponse.data.header)
+      // Process data into nodes.
+      //apiResponse.data.header.forEach(item => createNode(processDatum(item)))
+      // We're done, return.
+
+
+
+
+
+
+    /*
+
     const bakersData = await fetchBakersData()
 
     bakersData.forEach(x => {
         createNode(x)
-    })  
+    })
+
+    */  
 
     
 /*
@@ -487,7 +536,7 @@ fetchCrowdersWork = async () => {
         //throw e
     }
 }
-
+/*
 
 fetchBakersData = async () => {
 
@@ -514,8 +563,9 @@ fetchBakersData = async () => {
     
             console.log(response.data)
 
-        return response.data
-            .map(x => x.header)
+
+        return response.data.header
+            .map(x => x)
             .map(x => Object.assign(x, {
                 id: x.title,                  
                 path: `/bakers-login-data/${slug(x.title)}`.toLowerCase()
@@ -531,7 +581,7 @@ fetchBakersData = async () => {
     }
 }
 
-
+*/
 
 
 
