@@ -73,13 +73,13 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     })     
 
     
-
+/*
     const bakersLogin = await fetchBakersLogin()
 
     bakersLogin.forEach(x => {
         createNode(x)
     }) 
-
+*/
     
     
     return
@@ -482,6 +482,8 @@ fetchCrowdersWork = async () => {
     }
 }
 
+/*
+
 fetchBakersLogin = async () => {
     const {
         createNodeFactory,
@@ -518,6 +520,8 @@ fetchBakersLogin = async () => {
         //throw e
     }
 }
+
+*/
 
 function convertDate(inputFormat) {
   function pad(s) { return (s < 10) ? '0' + s : s; }
