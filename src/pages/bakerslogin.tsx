@@ -235,7 +235,7 @@ export default class bakersLogin extends React.Component {
 
 
 
-
+/*
 export const ApiBakersLogin = graphql`
   query AllBakersLogin {
     allApiBakersLogin {
@@ -252,7 +252,7 @@ export const ApiBakersLogin = graphql`
   }
 
 `
-
+*/
 
 
 

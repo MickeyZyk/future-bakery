@@ -70,7 +70,13 @@ exports.sourceNodes = async ({boundActionCreators}) => {
 
     crowdersWork.forEach(x => {
         createNode(x)
-    })     
+    })    
+
+    const bakersData = await fetchBakersData()
+
+    bakersData.forEach(x => {
+        createNode(x)
+    })  
 
     
 /*
@@ -481,6 +487,54 @@ fetchCrowdersWork = async () => {
         //throw e
     }
 }
+
+
+fetchBakersData = async () => {
+
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `BakersData`
+    })
+
+    const ProductNode = createNodeFactory('BakersData', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('http://future.stratego.ba/en/bakers/login', {
+            params: {
+                "return-as": "json"
+            }
+        })
+    
+            console.log(response.data)
+
+        return response.data
+            .map(x => x.header)
+            .map(x => Object.assign(x, {
+                id: x.title,                  
+                path: `/bakers-login-data/${slug(x.title)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+
+
+
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
+
+
+
+
 
 /*
 
