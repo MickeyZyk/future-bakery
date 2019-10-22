@@ -144,10 +144,6 @@ export default class bakersLogin extends React.Component {
 
 
 
-
-
-
-
                   {this.props.data.allApiBakersLogin.edges.map(( i ) => (
                     <div className="bakers_login__projects_box" key={i.node.name}>
 
