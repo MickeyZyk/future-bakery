@@ -81,7 +81,7 @@ exports.sourceNodes = async ({boundActionCreators}) => {
 
       const newNode = {
         heading: apiResponse.data.header.heading,
-        subheading: apiResponse.data.header.subheading,
+        //subheading: apiResponse.data.header.subheading,
         image: apiResponse.data.header.image,
         link_one_text: apiResponse.data.header.link_one_text,
         link_one_url: apiResponse.data.header.link_one_url,
@@ -102,19 +102,10 @@ exports.sourceNodes = async ({boundActionCreators}) => {
       createNode(newNode);
 
 
-
-
-
-
-
-        console.log(apiResponse.data.header)
+       // console.log(apiResponse.data.header)
       // Process data into nodes.
       //apiResponse.data.header.forEach(item => createNode(processDatum(item)))
       // We're done, return.
-
-
-
-
 
 
     /*

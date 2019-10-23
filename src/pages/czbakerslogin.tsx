@@ -96,7 +96,7 @@ export default class bakersLogin extends React.Component {
 
 
               <div className='bakers_login__main_subheader'>
-                <p>Jsou nás tu tisíce, co to uz udelali. Ale stále je více tech, kterí vase nápady potrebují.</p>
+                <p>Jsou nás tu tisíce, co už to udělali. Ale stále je více těch, kteří vaše nápady potřebují.</p>
               </div>
                   </Tween>
 
