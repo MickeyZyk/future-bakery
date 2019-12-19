@@ -205,11 +205,8 @@ export default class Work extends React.Component {
           <div id="video_image_anchor" className={s.detail_wrapper}>
             <div className={s.row__threetop}> 
               <div className={s.column__col5}>
-                <ScrollTo>
-                  {({ scrollTo }) => (
-                    <p onClick={ this.handleClick } className={s.control}>EXPLORE <img className={s.explore} src='/images/explore_arrow.png' /></p>                    
-                  )}
-                </ScrollTo>
+
+
               </div>
 
               <If condition={this.props.data.gravBakeryWork.video != 'null'}>
@@ -233,9 +230,9 @@ export default class Work extends React.Component {
 
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <img className={`${s.client_logo} ${'bottom_logo'}`} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_light } />              
-                <p className={s.award}>{this.props.data.gravBakeryWork.category ? this.props.data.gravBakeryWork.category : ' '}<span className={s.green}>{this.props.data.gravBakeryWork.category_name ? this.props.data.gravBakeryWork.category_name : ' '}</span></p>
-                <h1 className={s.award_heading}>{this.props.data.gravBakeryWork.heading_two}</h1>
+                <img className={`${s.client_logo} ${'bottom_logo'}`} src="" />              
+                <p className={s.award}>&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;<br/></p>
+                <h1 className={s.award_heading}></h1>
               </div>
             </div>
             </Tween>

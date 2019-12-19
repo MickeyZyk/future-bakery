@@ -105,7 +105,7 @@ export class Item2 extends React.Component {
    
 
                 <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                               
-                  <img className={s.client_logo} src={'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.logo_light}/>
+                  <img className={s.client_logo} src=""/>
                 </Tween>
                 <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                      
                   <h4 className={s.top_title}>{this.props.data.node.category_name}</h4>
