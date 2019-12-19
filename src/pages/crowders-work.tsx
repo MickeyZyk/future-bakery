@@ -39,6 +39,14 @@ export default class Work extends React.Component {
     this.toggleHoverEnter = this.toggleHoverEnter.bind(this);      
   }
 
+  unhideMore(){   
+   var x = document.querySelector(".crowders_work_item_wrapper:nth-child(5)");   
+   var s = document.querySelector(".spacer_top");   
+   if (x) {x.style.display = "block";}
+   if (s) {s.style.marginBottom = '37vw'};
+  }
+
+
   toggleHoverLeave() {
 
       if (this.props.hovered) {
@@ -137,26 +145,24 @@ export default class Work extends React.Component {
 
                 </div>
 
+                  <Location>
+                    {({ location }) => (
+                      <>      
 
-                <div className="crowders_spacer_top"></div>
-
-                <Location>
-                  {({ location }) => (
-                    <>      
-
-                      <Link gray arrow className="crowders_work_download" to={location.pathname}>DOWNLOAD MORE PROJECTS</Link>
-                    </>
-                  )}
-                </Location> 
+                        <Link gray arrow className="crowders_work_download" onClick={ this.unhideMore } to={location.pathname}>DOWNLOAD MORE PROJECTS</Link>
+                      </>
+                    )}
+                  </Location> 
 
 
-                <Link gray arrow className="crowders_work_project" to={'/crowderscontact/'}>START A PROJECT WITH US</Link>  
-                <Row>
-                  <p className="cw_paragraph_bottom crowders_work_cta_paragraph">We regularly measure sentiment of key segments and check “temperature”</p>
-                </Row>
-                <Row>  
-                  <ExternalLink crowders button arrow className="crowders_work_cta_link" to={'../pdf/report.pdf'} >SEE A FUTURE REPORT</ExternalLink>
-                </Row>
+                  <Link gray arrow className="crowders_work_project" to={'/crowderscontact/'}>START A PROJECT WITH US</Link>  
+                  <Row>
+                    <p className="cw_paragraph_bottom crowders_work_cta_paragraph">We regularly measure sentiment of key segments and check “temperature”</p>
+                  </Row>
+                  <Row>  
+                    <ExternalLink crowders button arrow className="crowders_work_cta_link" to={'../pdf/report.pdf'} >SEE A FUTURE REPORT</ExternalLink>
+                  </Row>
+
 
                 <div className="crowders_spacer_bottom"></div>
 
