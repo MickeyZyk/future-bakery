@@ -455,8 +455,8 @@ const BakersAbout = ({ data, className }) => {
           <div className="bakers_about_in_numbers_numbers" style={ currentIcon == 2 ? {opacity: 1} : {opacity: 0} }>{data.gravBakersAbout.bakers}</div>
         </Row>
         <Row className="bakers_about_in_numbers_three">
-          <div className="bakers_about_in_numbers_texts_first" style={ currentIcon == 0 ? {opacity: 1} : {opacity: 0} }>Reward</div>
-          <div className="bakers_about_in_numbers_texts" style={ currentIcon == 1 ? {opacity: 1} : {opacity: 0} }>creative ideas</div>
+          <div className="bakers_about_in_numbers_texts_first" style={ currentIcon == 0 ? {opacity: 1} : {opacity: 0} }>Total reward</div>
+          <div className="bakers_about_in_numbers_texts" style={ currentIcon == 1 ? {opacity: 1} : {opacity: 0} }>Creative ideas</div>
           <div className="bakers_about_in_numbers_texts" style={ currentIcon == 2 ? {opacity: 1} : {opacity: 0} }>Bakers</div>
 
         </Row>
