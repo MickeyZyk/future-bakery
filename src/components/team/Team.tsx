@@ -152,9 +152,6 @@ var linkURLs = this.props.links
 
 
 
-
-
-
                 <LeftLink 
                 to={location.pathname} 
                 bakery={ location.pathname.includes('bakery') ? true : false } 
@@ -162,12 +159,6 @@ var linkURLs = this.props.links
                 arrow 
                 className="team_left_link" 
                 onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
-
-
-
-
-
-
 
 
             <If condition={this.state.activeIndex < this.props.arrayOfImages.length - 1}>
@@ -183,12 +174,7 @@ var linkURLs = this.props.links
 
             </If>
 
-
-
-
-
-
-      
+    
               </>
             )}
           </Location> 
