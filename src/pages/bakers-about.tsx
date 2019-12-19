@@ -351,13 +351,15 @@ const BakersAbout = ({ data, className }) => {
 
           </ReactCursorPosition>
 
-
-
-      <Swipeable
+          <HeadingTwo className="bakers_about_in_numbers_heading_top">Few easy steps</HeadingTwo>
+     <Swipeable
         onSwipedRight={prevTopIcon}
         onSwipedLeft={nextTopIcon} >  
 
         <Row className="bakers_about_steps">
+
+
+
           <div className="bakers_about_numbers_first" style={currentTopIcon == 0 ? {opacity : 1} : {opacity : 0}}>1</div>
           <div className="bakers_about_arrows"><img src="../svg/process_arrow.svg"/></div>
           <div className="bakers_about_numbers" style={currentTopIcon == 1 ? {opacity : 1} : {opacity : 0}}>2</div>
