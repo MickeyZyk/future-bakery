@@ -492,7 +492,7 @@ class Carousel extends React.Component {
           {({ location }) => (
 
 
-            <Link arrow gray className={`${'button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>{location.pathname.includes('cz') ? 'ZJISTIT VÍCE' : 'LEARN MORE'}</Link>
+            <Link bakery arrow button className={`${'button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>{location.pathname.includes('cz') ? 'ZJISTIT VÍCE' : 'LEARN MORE'}</Link>
 
 
           )}
