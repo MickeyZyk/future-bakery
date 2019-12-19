@@ -122,6 +122,32 @@
     height: 5.7vw;
   }      
 }
+.arrow_heading_bigger {
+  opacity: 0;
+  font-size: .85vw;
+  line-height: .85vw;  
+  font-weight: 900;
+  color: #fff;
+  position: absolute;
+  width: 4vw;
+  top: 2.5vw;
+  left: .5vw;
+  bottom: auto;
+  right: auto;
+  z-index: 10;  
+  display: flex;
+  align-self: center;
+  align-items: center;
+  height: 2vw; 
+  @media (max-width: 959px) {
+    font-size: 1.7vw;
+    line-height: 1.6vw;
+    width: 13.7vw;
+    top: 6.25vw;
+    left: 2vw;
+    height: 5.7vw;
+  }      
+}
 .client_logo {
   opacity: 0;  
   position: absolute;

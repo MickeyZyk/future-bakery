@@ -8,6 +8,7 @@ import { Link } from 'components/link/Link';
 import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './Item.scss';
 import { Location } from '@reach/router';
+import { If } from 'react-if';
 const slug = require('slug')
 
 export class Item2 extends React.Component {
@@ -69,9 +70,40 @@ export class Item2 extends React.Component {
                 <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut', opacity: 0}} >
                   <img className={s.arrow} src={'../svg/work_arrow.svg'} />
                 </Tween>
-                <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut',  opacity: 0}} >                      
-                  <h4 className={s.arrow_heading}>{this.props.data.node.heading_tag}</h4>     
+                 
+
+
+                  <Location>
+                      {({ location }) => (
+
+                        <>
+
+                        <If condition={location.pathname.includes('bakery')}>
+                <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut',  opacity: 0}} >    
+                          <h4 className={s.arrow_heading_bigger}>{this.props.data.node.heading_tag}</h4> 
                 </Tween>
+                        </If>
+
+                        <If condition={location.pathname.includes('bakers')}>
+                <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut',  opacity: 0}} >    
+                          <h4 className={s.arrow_heading_bigger}>{this.props.data.node.heading_tag}</h4> 
+                </Tween>
+                        </If>
+
+                         <If condition={location.pathname.includes('crowders')}>
+                <Tween duration={.2} to={ this.state.hover ? {ease: 'Power2.easeOut', opacity: 1} : {ease: 'Power2.easeOut',  opacity: 0}} >    
+                          <h4 className={s.arrow_heading}>{this.props.data.node.heading_tag}</h4> 
+                </Tween>
+                        </If>
+
+                        </>
+
+
+                      )}
+                    </Location>
+
+   
+
                 <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >                               
                   <img className={s.client_logo} src={'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.logo_light}/>
                 </Tween>
