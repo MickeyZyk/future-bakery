@@ -502,7 +502,7 @@
   z-index: 1;
   cursor: pointer;
   font-weight: bold;
-  color: #ddd;
+  color: #fff;
   $font-map: (375px: 16px, 768px: 16px, 959px: 20px, 960px: 14px, 1920px: 16px, 2880px: 24px);
   @include poly-fluid-sizing('font-size', $font-map);  
   @media (max-width: $max-960) {
@@ -640,7 +640,6 @@
   height: auto;
   margin-left: 0.5vw;
   transform: translateY(0.45vw);
-  filter: brightness(.9);
 
   }  
 
