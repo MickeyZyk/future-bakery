@@ -578,7 +578,14 @@ class Carousel extends React.Component {
      <>
         <div className="desktop_carousel" style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
           <ReactCursorPosition className='fullscreen_cursor_position'>
-            <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='home_arrow.svg'  />
+
+            <If condition={!location.pathname.includes('crowders')}>
+
+              <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='home_arrow.svg'  />
+
+            </If>
+
+
             <div className='mask_wrapper_top' style={{left: 0, top: 'auto', position: 'absolute', right: 0, bottom: '7vw', height: '35vw', overflow: 'hidden'}}>
               <div ref={this.wrapperRef_top} className='mask_parent_top' 
               style={{position:'absolute', bottom: 0, top: 0, left: 0, right: 0, width: '100%', 
