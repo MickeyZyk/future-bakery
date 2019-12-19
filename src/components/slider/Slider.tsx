@@ -577,14 +577,18 @@ class Carousel extends React.Component {
     return (
      <>
         <div className="desktop_carousel" style={{display:'flex',flexDirection:'row',position:'relative', height: '100%'}}>
-          <ReactCursorPosition className='fullscreen_cursor_position'>
+
 
         <Location>
           {({ location }) => (
 
             <If condition={!location.pathname.includes('crowders')}>
 
+          <ReactCursorPosition className='fullscreen_cursor_position'>
+
               <SVGicon className={`${'home_arrow'} ${this.state.animating ? 'home_arrow_current': ''}`} src='home_arrow.svg'  />
+
+          </ReactCursorPosition>              
 
             </If>
 
@@ -611,7 +615,7 @@ class Carousel extends React.Component {
                 {carouselImages}
               </div>          
             </div>
-          </ReactCursorPosition>
+
 
         </div>
 
