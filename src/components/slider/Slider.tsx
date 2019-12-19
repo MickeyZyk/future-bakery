@@ -491,8 +491,27 @@ class Carousel extends React.Component {
       <Location>
           {({ location }) => (
 
+            <>
 
-            <Link bakery arrow button className={`${'button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>{location.pathname.includes('cz') ? 'ZJISTIT VÍCE' : 'LEARN MORE'}</Link>
+            <If condition={location.pathname.includes('bakery')}>
+
+              <Link bakery arrow button className={`${'button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>{location.pathname.includes('cz') ? 'ZJISTIT VÍCE' : 'LEARN MORE'}</Link>
+
+            </If>
+
+            <If condition={location.pathname.includes('bakers')}>
+
+              <Link bakers arrow button className={`${'button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>{location.pathname.includes('cz') ? 'ZJISTIT VÍCE' : 'LEARN MORE'}</Link>
+
+            </If>
+
+             <If condition={location.pathname.includes('crowders')}>
+
+              <Link crowders arrow button className={`${'button_link'} ${this.state.activeIndex == i ? 'link_current': ''} ${this.state.animating ? 'link_animating': ''}`} to={links[i]}>{location.pathname.includes('cz') ? 'ZJISTIT VÍCE' : 'LEARN MORE'}</Link>
+
+            </If>
+
+            </>
 
 
           )}
