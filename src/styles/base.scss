@@ -2453,6 +2453,25 @@ select {
     }     
 }
 
+.crowders_about_work_long_link {
+
+      @include grid-col;
+      @include grid-offset-left(2);   
+      position: relative;
+      top: 55vw;
+      margin-bottom: 5vw;
+
+
+    @media (min-width: $min-960) {
+
+      @include grid-col(4);
+      @include grid-offset-left(2);   
+       position: relative;
+      top: 4vw;
+
+    }     
+}
+
 .mobile_clients_left, .mobile_clients_right {
   top: 110vw!important;
 }
@@ -7632,8 +7651,6 @@ added
   } 
 
 }
-
-
 
 
 

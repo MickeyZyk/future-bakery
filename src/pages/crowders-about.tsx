@@ -145,6 +145,11 @@ const CrowdersAbout = ({ data, className, state }) => {
       </ReactCursorPosition>            
       
 
+                    <Row>
+                      <Link gray arrow className="bakery_about_work_long_link crowders_about_work_long_link" to={'/crowders-work'}>See what the crowd field of proffesionals can do</Link>
+                    </Row>
+
+
         <div className="crowders_about_blueboard" style={{backgroundImage: `url(../images/how_we_do_it_image.jpg)`}}>
 
           <Row>
