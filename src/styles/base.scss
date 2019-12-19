@@ -2829,7 +2829,7 @@ select {
     position: relative;
     top: 9vw;
     @include grid-col(1);
-    @include grid-offset-left(-3);
+    @include grid-offset-left(-9);
   } 
 }
 
@@ -2844,7 +2844,7 @@ select {
     position: relative;
     top: -18vw;    
     @include grid-col(7);
-    @include grid-offset-left(-7);
+    @include grid-offset-left(2);
     margin-bottom: 24vw;    
   } 
   
@@ -2852,7 +2852,7 @@ select {
     position: relative;
     top: 9vw;
     @include grid-col(1);
-    @include grid-offset-left(-7);
+    @include grid-offset-left(-1);
   }  
 
 }
