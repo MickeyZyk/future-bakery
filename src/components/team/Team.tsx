@@ -11,6 +11,7 @@ import LinkArrow from 'assets/svg/link_arrow.svg'
 import s from './Team.scss';
 import _ from 'lodash';
 import { Location } from '@reach/router';
+import { If } from 'react-if'
 
 export class Team extends React.Component {
 
@@ -83,6 +84,7 @@ class Member extends React.Component {
 
         var imageStrip = this.strip.current; 
         var children = imageStrip.querySelectorAll('img');
+
       //console.log('INDEX', this.state.activeIndex, 'MOVE', (this.state.activeIndex + 1) * -27.77778, );  
 
         var currentTL = new TimelineMax(); 
@@ -90,9 +92,10 @@ class Member extends React.Component {
         var currentTLZoom = new TimelineMax(); 
         currentTLZoom.to(children, .5, {scale: 1, xPercent: 0}).to(children, .25, {scale: 1.04, transformOrigin:'right 50%'}).to(children, 1.5, {scale: 1, xPercent: 0});
 
+
       })
 
-    }
+    } 
 
   }
 
@@ -145,7 +148,13 @@ var linkURLs = this.props.links
         <Row>
           <Location>
             {({ location }) => (
-              <>          
+              <>   
+
+
+
+
+
+
                 <LeftLink 
                 to={location.pathname} 
                 bakery={ location.pathname.includes('bakery') ? true : false } 
@@ -153,12 +162,33 @@ var linkURLs = this.props.links
                 arrow 
                 className="team_left_link" 
                 onClick={this.prevSlide.bind(this)}>PREVIOUS</LeftLink>
+
+
+
+
+
+
+
+
+            <If condition={this.state.activeIndex < this.props.arrayOfImages.length - 1}>
+
+
                 <Link 
                 to={location.pathname} 
                 bakery={ location.pathname.includes('bakery') ? true : false } 
                 crowders={ location.pathname.includes('crowders') ? true : false } 
                 arrow className="team_right_link" 
-                onClick={this.nextSlide.bind(this)}>NEXT</Link>      
+                onClick={this.nextSlide.bind(this)}>NEXT</Link>
+
+
+            </If>
+
+
+
+
+
+
+      
               </>
             )}
           </Location> 
