@@ -2433,6 +2433,24 @@ select {
     }     
 }
 
+.bakery_about_work_long_link {
+
+      @include grid-col;
+      @include grid-offset-left(2);   
+      position: relative;
+      top: 55vw;
+      margin-bottom: 5vw;
+
+
+    @media (min-width: $min-960) {
+
+      @include grid-col(4);
+      @include grid-offset-left(3);   
+       position: relative;
+      top: 4vw;
+
+    }     
+}
 
 .mobile_clients_left, .mobile_clients_right {
   top: 110vw!important;
@@ -2834,7 +2852,7 @@ select {
     position: relative;
     top: 9vw;
     @include grid-col(1);
-    @include grid-offset-left(-1);
+    @include grid-offset-left(-7);
   }  
 
 }
@@ -4349,7 +4367,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -20vw;
+    top: -16vw;
     @include grid-col(4);
     @include grid-offset-left(3);
 
@@ -4370,7 +4388,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -12vw;
+    top: -10vw;
     @include grid-col(4);
     @include grid-offset-left(-4);
 
@@ -4385,7 +4403,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -8.8vw;
+    top: -7vw;
     @include grid-col(3);
     @include grid-offset-left(3);
     z-index: 5; 
@@ -8456,4 +8474,19 @@ opacity: 0;
 
 .no_overflow_x {
   overflow-x: hidden;
+}
+
+
+/* COLORZ */
+
+.black_text {
+  color: #000000!important;
+  opacity: 1!important;
+}
+
+.black_icon {
+  @media (min-width: $min-960) {
+    filter: brightness(0);    
+
+  }  
 }

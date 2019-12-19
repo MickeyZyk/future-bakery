@@ -214,7 +214,7 @@ const BakersAbout = ({ data, className }) => {
 
 
               <div className="tag_02">
-              <p className="tag">{data.gravBakersAbout.problem_text_two}</p>
+              <p className="tag">{data.gravBakersAbout.problem_text_two}</p> 
               </div>
               <div className="tag_03">
               <p className="tag">{data.gravBakersAbout.problem_text_three}</p>
