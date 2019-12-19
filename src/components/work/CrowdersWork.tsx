@@ -235,8 +235,7 @@ export default class Work extends React.Component {
             </div>
 
           </div>
-
-     
+    
 
 
        </div>

@@ -38,9 +38,11 @@ export default class Work extends React.Component {
 
   unhideMore(){   
    var x = document.querySelector(".work_item_wrapper:nth-child(5)");   
-   var s = document.querySelector(".spacer_top");   
+   var x1 = document.querySelector(".work_item_wrapper:nth-child(6)");      
+   var x2 = document.querySelector(".work_item_wrapper:nth-child(7)");    
+   // var s = document.querySelector(".spacer_top");   
    x.style.display = "block";   
-   s.style.marginBottom = '37vw';   
+   // s.style.marginBottom = '37vw';   
   }
 
   toggleHoverLeave() {
