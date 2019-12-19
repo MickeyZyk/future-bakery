@@ -4894,8 +4894,8 @@ select {
 
   @media (min-width: $min-960) {
     opacity: 1!important;
-    @include grid-col(.7);
-    @include grid-offset-left(5.85);
+    @include grid-col(.95);
+    @include grid-offset-left(5.7);
 
   }
 }
@@ -4915,7 +4915,7 @@ select {
   @media (min-width: $min-960) {
     opacity: 1!important;
     @include grid-col(1);
-    @include grid-offset-left(2.3);
+    @include grid-offset-left(2.18);
 
   }
 }
