@@ -126,7 +126,7 @@ export default class Work extends React.Component {
                   <div className={s.column__col0}>
                     <div className={s.wrapper}>
                       <img className={s.arrow} src={'/svg/work_arrow.svg'} />
-                      <AnimatedHeading className={s.arrow_heading}>Creative Strategy</AnimatedHeading>
+                      <AnimatedHeading className={s.arrow_heading}>{this.props.data.gravBakeryWork.heading_tag}</AnimatedHeading>
                     </div>
                   </div> 
 
@@ -391,6 +391,7 @@ export const query = graphql`
       category_name
       heading_one
       heading_two
+      heading_tag
       logo_dark
       logo_light
       toggle
