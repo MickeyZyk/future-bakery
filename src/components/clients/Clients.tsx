@@ -134,9 +134,9 @@ export class Clients extends React.Component {
 
             <Row style={{maxHeight: '54vw'}}>
 
-                <img src="../images/bos.png" className="whom_01" ref={this.image_01}/>
-                <img src="../images/bublology.png" className="whom_02" ref={this.image_02}/>
-                <img src="../images/captain-morgan.png" className="whom_03" ref={this.image_03}/>
+                <img src="../images/about_fiat_logo.png" className="whom_01" ref={this.image_01}/>
+                <img src="../images/kooperativa.png" className="whom_02" ref={this.image_02}/>
+                <img src="../images/staropramen.png" className="whom_03" ref={this.image_03}/>
 
                 <img src="../images/cebia.png" className="whom_01" ref={this.image_04}/>
                 <img src="../images/clavin.png" className="whom_02" ref={this.image_05}/>
@@ -146,7 +146,7 @@ export class Clients extends React.Component {
                 <img src="../images/czechinn.png" className="whom_02" ref={this.image_08}/>
                 <img src="../images/das.png" className="whom_03" ref={this.image_09}/>      
 
-                <img src="../images/dongoiovan.png" className="whom_01 b_image" ref={this.imageb_01}/>
+                <img src="../images/captain-morgan.png" className="whom_01 b_image" ref={this.imageb_01}/>
                 <img src="../images/dukla.png" className="whom_02 b_image" ref={this.imageb_02}/>
                 <img src="../images/emco.png" className="whom_03 b_image" ref={this.imageb_03}/>
 
