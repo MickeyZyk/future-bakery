@@ -36,10 +36,10 @@ export default () => (
 
                     <AnimatedHeading className='bakery_contact_heading crowders_color'>Headline call to action for contact page.</AnimatedHeading>
                     <div className="bakery_contact_adress_block">
-                      <p className="text-bolder">The Future Bakery s.r.o.</p>
+                      <p className="text-bolder">FUTURE CROWDERS s. r. o.</p>
                       <p>Opletalova 1013/59, Nové Mesto<br/>
                       110 00 Praha 1<br/>
-                      IC: 24168858 DIC: CZ24168858</p>
+                      IC: 04639481 DIC: CZ04639481</p>
                       <p>&nbsp;</p>
                       <p className="text-bolder">Máte zájem se na cokoliv zeptat?</p>
                       <p>Neváhejte a kontaktujte nás.</p>

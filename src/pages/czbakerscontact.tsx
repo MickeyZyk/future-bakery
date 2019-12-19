@@ -47,6 +47,7 @@ export default () => (
                     <p>&nbsp;</p>
                     <p className="text-bolder">Máte zájem se na cokoliv zeptat?</p>
                     <p>Neváhejte a kontaktujte nás.</p>
+                    <p><strong>Tel:</strong> +420 602 278 974</p>
                     <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
                     <Row>                
                       <ExternalLink className="bakery_contact_flip_button" bakers button arrow to={'mailto:info@futurebakers.com'}>KONTAKTUJTE NÁS</ExternalLink>
