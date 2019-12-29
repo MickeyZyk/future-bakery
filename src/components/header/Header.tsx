@@ -43,6 +43,8 @@ export const Header = ({ children, logo, data, set, location, ...props }: IHeade
                   : data.logo == 'bakers' || location.pathname.includes('bakers') ? <BakersLogo className={s.header__logo}/>
 
                   : data.logo == 'crowders' || location.pathname.includes('crowders') ? <CrowdersLogo className={s.header__logo}/>
+                  
+                  : location.pathname === "/menu" ? null
 
                   : <BakeryLogo className={s.header__logo}/>}
        

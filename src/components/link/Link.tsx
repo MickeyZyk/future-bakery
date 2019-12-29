@@ -14,7 +14,7 @@ export const Link = ({ children, state, to, className, arrow, button, bakery, ba
 
     <Location>
       {({ location }) => (      	
-          <TransitionLink state={{ prevUrlPath: location.pathname, ...state }}  
+          <TransitionLink  
           exit={{ length: 2}} 
           entry={{ length: 2}}
           to={to}

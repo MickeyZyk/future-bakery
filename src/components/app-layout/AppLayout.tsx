@@ -30,7 +30,7 @@ interface IAppLayoutProps {
 }
 
 
-export default ({  children, data, set, state, location, ...props }: IAppLayoutProps) => ( 
+export default ({ children, data, set, state, location, ...props }: IAppLayoutProps) => ( 
 
   <>
 
@@ -109,10 +109,10 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
             )}
           </Location> 
 
-
+      </ContextProviderComponent>
         <Header>
 
-
+      <ContextProviderComponent>
            <Location>
             {({ location }) => (          
 
@@ -175,33 +175,27 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
             )}
           </Location>  
           
-          <Location>
-            {({ location }) => (                
+      </ContextProviderComponent> 
 
-              <ContextConsumer>
-                {({ data, set }) => (
+          <Location>
+            {({ location, state }) => (                
+
+
                   <HeaderLink className={ location.pathname.includes('menu') || location.pathname.includes('family') ? `white_text white_circle` : '' } name="MENU" 
                  
                   to={ 
 
-                  location.pathname == '/' ?  '/bakerymenu'  
-                  : location.pathname == '/family/' ?   ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )
-                  : location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu'  || location.pathname == '/crowdersmenu' ? ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu'  )
-                  : location.pathname.includes('bakery') && !location.pathname.includes('menu') ? '/bakerymenu'  
-                  : location.pathname.includes('bakers') && !location.pathname.includes('cz') && !location.pathname.includes('menu') ? '/bakersmenu' 
-                  : location.pathname.includes('crowders') && !location.pathname.includes('menu') ? '/crowdersmenu' 
-                  : location.pathname.includes('czbakers') && !location.pathname.includes('menu') ? '/czbakersmenu'                   
-                  : ( location.state != null  ? location.state.prevUrlPath : '/bakerymenu' ) 
-
-
+                    location.pathname === '/' ?  '/menu'  
+                    : ( location.pathname.includes('czbakers') && !location.pathname.includes('menu')) ? '/czbakersmenu'                   
+                    : location.state != null  ? location.state.prevUrlPath 
+                    : '/menu'
 
                   } 
 
-                  icon={ ( location.pathname == '/bakerymenu'  || location.pathname == '/bakersmenu' || location.pathname == '/crowdersmenu') ? <WhiteCircle className="menu_white_svg"/> : <Circle/>} permanent={true}>                
+                  icon={ location.pathname.includes('menu') ? <WhiteCircle className="menu_white_svg"/> : <Circle/>} permanent={true}>                
                     {location.pathname.includes('menu') ? `CLOSE` : `MENU`}
                   </HeaderLink>
-                )}
-              </ContextConsumer> 
+
 
             )}
           </Location>               
@@ -209,7 +203,7 @@ export default ({  children, data, set, state, location, ...props }: IAppLayoutP
 
         </Header>
 
-      </ContextProviderComponent> 
+
 
       <div className='fb_linkedin'>
         <a href='https://facebook.com' target='_blank'>FACEBOOK</a><a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
