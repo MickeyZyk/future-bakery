@@ -250,7 +250,7 @@ export default class BakeryMenu extends React.Component {
 											  <li>
 										          <Location>
 										            {({ location }) => ( 									                     
-														<img style={location.state.prevUrlPath.includes('bakery') ? {opacity:1} : {opacity:0}} className="here_now" src="../images/crowders_now.png"/> 
+														<img style={location.state.prevUrlPath.includes('crowders') ? {opacity:1} : {opacity:0}} className="here_now" src="../images/crowders_now.png"/> 
 										            )}
 										          </Location> 
 									          </li>											
