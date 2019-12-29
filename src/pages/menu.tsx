@@ -138,7 +138,7 @@ export default class BakeryMenu extends React.Component {
 							</div>
 
 				      <div className='fb_linkedin_menu'>
-				        <a href='https://facebook.com' target='_blank'>FACEBOOK</a><a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
+				        <a href='https://facebook.com' target='_blank'>FACEBOOK_x</a><a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
 				      </div>
 
 					</>
