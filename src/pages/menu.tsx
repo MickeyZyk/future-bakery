@@ -22,7 +22,7 @@ export default class BakeryMenu extends React.Component {
     super(props);
     this.unorderedList = React.createRef();
     this.unorderedList2 = React.createRef();
-    this.unorderedList3 = React.createRef();    
+    this.unorderedList3 = React.createRef();
     this.state = {
       isHovered: false,
       setHovered: false,
@@ -51,13 +51,13 @@ export default class BakeryMenu extends React.Component {
     var listItems2 = uL2.querySelectorAll('.menu_item_wrapper');
 
     var itemsTL2 = new TimelineMax();
-    itemsTL2.staggerFrom(listItems2, 2, { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' }, .1, "+=0");    
+    itemsTL2.staggerFrom(listItems2, 2, { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' }, .1, "+=0");
 
     var uL3 = this.unorderedList3.current;
     var listItems3 = uL3.querySelectorAll('.menu_item_wrapper');
 
     var itemsTL3 = new TimelineMax();
-    itemsTL3.staggerFrom(listItems3, 2, { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' }, .1, "+=0");     
+    itemsTL3.staggerFrom(listItems3, 2, { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' }, .1, "+=0");
 
   }
 
@@ -91,17 +91,31 @@ export default class BakeryMenu extends React.Component {
 
 
 											<ul className="one_third" ref={this.unorderedList}>
+
+											<Tween duration={2} 
+											            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 1, ease: 'Power3.easeInOut' } } 
+											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+
 											  <li>
 										          <Location>
-										            {({ location }) => ( 									                     
-														<img style={location.state != null ? ( location.state.prevUrlPath.includes('bakery') || location.state.prevUrlPath == '/' ? {opacity:1} : {opacity:0}) : {opacity:0} } className="here_now" src="../images/bakery_now.png"/> 
+										            {({ location }) => ( 	
 
+
+																<img style={location.state != null ? ( location.state.prevUrlPath.includes('bakery') || location.state.prevUrlPath == '/' ? {opacity:1} : {opacity:0}) : {opacity:0} } className="here_now" src="../images/bakery_now.png"/> 
+
+
+			                     
+														
 										            )}
 										          </Location> 
 									          </li>
 											  <li>
 											  	<BakeryLogo className="menu_logo"/> 
 											  </li>
+
+											  </Tween>
+
 											  <li className='menu_item_wrapper'>
 												  <Link bakery
 													onMouseEnter={this.toggleHover}
@@ -166,16 +180,34 @@ export default class BakeryMenu extends React.Component {
 
 
 											<ul className="one_third" ref={this.unorderedList2}>
+
+											<Tween duration={2} 
+											            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 1, ease: 'Power3.easeInOut' } } 
+											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+
+
 											  <li>
 										          <Location>
-										            {({ location }) => ( 									                     
-														<img style={location.state != null ? (location.state.prevUrlPath.includes('bakers') ? {opacity:1} : {opacity:0}) : {opacity:0}} className="here_now" src="../images/bakers_now.png"/> 
+										            {({ location }) => ( 	
+
+
+																<img style={location.state != null ? (location.state.prevUrlPath.includes('bakers') ? {opacity:1} : {opacity:0}) : {opacity:0}} className="here_now" src="../images/bakers_now.png"/> 
+
+
+
+
+														
 										            )}
 										          </Location> 
 									          </li>											
 											  <li>
 											  	<BakersLogo className="menu_logo"/> 
-											  </li>											
+											  </li>	
+
+											 </Tween>	
+
+
 											  <li className='menu_item_wrapper'>
 												  <Link bakers
 													onMouseEnter={this.toggleHover}
@@ -247,16 +279,32 @@ export default class BakeryMenu extends React.Component {
 
 
 											<ul className="one_third" ref={this.unorderedList3}>
+
+								            <Tween duration={2} 
+											            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 1, ease: 'Power3.easeInOut' } } 
+											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+
+
 											  <li>
 										          <Location>
-										            {({ location }) => ( 									                     
-														<img style={ location.state != null ? (location.state.prevUrlPath.includes('crowders') ? {opacity:1} : {opacity:0}) : {opacity:0} } className="here_now" src="../images/crowders_now.png"/> 
+										            {({ location }) => ( 	
+
+
+
+																<img style={ location.state != null ? (location.state.prevUrlPath.includes('crowders') ? {opacity:1} : {opacity:0}) : {opacity:0} } className="here_now" src="../images/crowders_now.png"/>  
+
+
+
+
+														
 										            )}
 										          </Location> 
 									          </li>											
 											  <li>
 											  	<CrowdersLogo className="menu_logo"/> 
-											  </li>											
+											  </li>		
+
+											</Tween>									
 											  <li className='menu_item_wrapper'>
 												  <Link crowders
 													onMouseEnter={this.toggleHover}

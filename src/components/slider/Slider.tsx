@@ -143,7 +143,7 @@ class Carousel extends React.Component {
 
   componentWillUnmount() {
     this.prevSlide()
-    clearInterval(startCarouselInterval);      
+    clearInterval(startCarouselInterval);  
   }  
 /*
 
