@@ -93,8 +93,8 @@ export default class BakeryMenu extends React.Component {
 											<ul className="one_third" ref={this.unorderedList}>
 
 											<Tween duration={2} 
-											            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 1, ease: 'Power3.easeInOut' } } 
-											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+											            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
+											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >  
 
 
 											  <li>
@@ -182,8 +182,8 @@ export default class BakeryMenu extends React.Component {
 											<ul className="one_third" ref={this.unorderedList2}>
 
 											<Tween duration={2} 
-											            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 1, ease: 'Power3.easeInOut' } } 
-											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+											            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
+											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >  
 
 
 
@@ -281,8 +281,8 @@ export default class BakeryMenu extends React.Component {
 											<ul className="one_third" ref={this.unorderedList3}>
 
 								            <Tween duration={2} 
-											            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 1, ease: 'Power3.easeInOut' } } 
-											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+											            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
+											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >  
 
 
 											  <li>
