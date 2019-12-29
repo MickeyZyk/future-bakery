@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'components/link/Link';
 import { useState } from 'react';
+import { Location } from "@reach/router"
 import Helmet from 'react-helmet';
 import { TweenMax, TimelineMax, Power2, Power3 } from "gsap";
 import { Tween } from 'react-gsap';
@@ -11,6 +12,9 @@ import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
 import ReactDOM from 'react-dom';
+import BakeryLogo from 'assets/svg/bakery-logo.svg';
+import BakersLogo from 'assets/svg/bakers-logo.svg';
+import CrowdersLogo from 'assets/svg/crowders-logo.svg';
 
 export default class BakeryMenu extends React.Component {
 
@@ -61,6 +65,8 @@ export default class BakeryMenu extends React.Component {
 
     return (
 
+
+
       <TransitionState>
 	  	{({ transitionStatus }) => {
 			  return (  
@@ -68,7 +74,7 @@ export default class BakeryMenu extends React.Component {
 
 
 					<>
-
+    				<Helmet title="Future Bakery" />
 
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
@@ -78,17 +84,36 @@ export default class BakeryMenu extends React.Component {
 
             </Tween>
 
-
-
-					  <Helmet title="Future Bakery" />
-							<div className='fullscreen mob_menu_wrapper'>
-  
+							<div className='fullscreen mob_menu_wrapper'> 
 						      
 
 									<div className='menu_row'>
 
 
 											<ul className="one_third" ref={this.unorderedList}>
+											  <li>
+										          <Location>
+										            {({ location }) => ( 									                     
+														<img style={location.state.prevUrlPath.includes('bakery') || location.state.prevUrlPath == '/' ? {opacity:1} : {opacity:0}} className="here_now" src="../images/bakery_now.png"/> 
+
+										            )}
+										          </Location> 
+									          </li>
+											  <li>
+											  	<BakeryLogo className="menu_logo"/> 
+											  </li>
+											  <li className='menu_item_wrapper'>
+												  <Link bakery
+													onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Home" 
+							      			to="/bakery" 
+				      						>
+			      						
+														<MenuHeading className='white_text'>Home</MenuHeading>
+												  </Link>
+											  </li>											
 											  <li className='menu_item_wrapper'>
 												  <Link bakery
 													onMouseEnter={this.toggleHover}
@@ -141,6 +166,28 @@ export default class BakeryMenu extends React.Component {
 
 
 											<ul className="one_third" ref={this.unorderedList2}>
+											  <li>
+										          <Location>
+										            {({ location }) => ( 									                     
+														<img style={location.state.prevUrlPath.includes('bakers') ? {opacity:1} : {opacity:0}} className="here_now" src="../images/bakers_now.png"/> 
+										            )}
+										          </Location> 
+									          </li>											
+											  <li>
+											  	<BakersLogo className="menu_logo"/> 
+											  </li>											
+											  <li className='menu_item_wrapper'>
+												  <Link bakers
+													onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Home" 
+							      			to="/bakers" 
+				      						>
+			      						
+														<MenuHeading className='white_text'>Home</MenuHeading>
+												  </Link>
+											  </li>												
 											  <li className='menu_item_wrapper'>
 												  <Link bakers
 													onMouseEnter={this.toggleHover}
@@ -152,6 +199,17 @@ export default class BakeryMenu extends React.Component {
 														<MenuHeading className='white_text'>About Us</MenuHeading>
 												  </Link>
 											  </li>
+											  <li className='menu_item_wrapper'>
+												  <Link bakers
+													onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Join us" 
+							      			to="/bakerslogin"
+				      						>
+														<MenuHeading className='white_text'>Join Us</MenuHeading>
+												  </Link>
+											  </li>											  
 											  <li className='menu_item_wrapper'>
 												  <Link bakers
 												  onMouseEnter={this.toggleHover}
@@ -189,6 +247,28 @@ export default class BakeryMenu extends React.Component {
 
 
 											<ul className="one_third" ref={this.unorderedList3}>
+											  <li>
+										          <Location>
+										            {({ location }) => ( 									                     
+														<img style={location.state.prevUrlPath.includes('bakery') ? {opacity:1} : {opacity:0}} className="here_now" src="../images/crowders_now.png"/> 
+										            )}
+										          </Location> 
+									          </li>											
+											  <li>
+											  	<CrowdersLogo className="menu_logo"/> 
+											  </li>											
+											  <li className='menu_item_wrapper'>
+												  <Link crowders
+													onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Home" 
+							      			to="/crowders" 
+				      						>
+			      						
+														<MenuHeading className='white_text'>Home</MenuHeading>
+												  </Link>
+											  </li>												
 											  <li className='menu_item_wrapper'>
 												  <Link crowders
 													onMouseEnter={this.toggleHover}

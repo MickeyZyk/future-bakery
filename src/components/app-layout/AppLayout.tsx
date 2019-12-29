@@ -41,6 +41,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
 
 
       <Helmet {...helmet}>
+      
         <link rel="preload" href="/fonts/bradley_webfontkit.css" as="style" />
         <link rel="preload" href="/fonts/proxima-nova-webfontkit.css" as="style" />
         <link rel="preload"
@@ -187,7 +188,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
 
                     location.pathname == '/' ?  '/menu'  
                     : ( location.pathname.includes('czbakers') && !location.pathname.includes('menu')) ? '/czbakersmenu'                   
-                    : location.state != null  ?  location.state.prevUrlPath 
+                    : location.pathname.includes('menu')  ?  location.state.prevUrlPath 
                     : '/menu'
 
                   } 

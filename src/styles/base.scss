@@ -1046,10 +1046,10 @@ p {font-weight: lighter;}
 
   @media (min-width: $min-960) {
   position: fixed;
-  bottom: 8vw;
+  bottom: 4vw;
   z-index: 15;  
   @include grid-col(6);
-  @include grid-offset-left(3); 
+  @include grid-offset-left(2); 
 
   }    
 
@@ -1736,7 +1736,7 @@ select {
 }
 
 .menu_row {
-  margin-top: 30vh;
+  margin-top: 20vh;
 }
 
 
@@ -8543,11 +8543,24 @@ opacity: 0;
 /* NEW MENU */
 
 .one_third {
-
+  position: relative;
   width: 33%;
   float: left;
 }
 
 .menu_row {
-  @include grid-offset-left(3); 
+  @include grid-offset-left(2); 
+}
+
+.menu_logo {
+  width: 6vw;
+  margin-bottom: 1vw;
+}
+
+.here_now {
+    position: absolute;
+    width: 6vw;
+    height: auto;
+    top: -9vh;
+    left: 7vw;
 }
