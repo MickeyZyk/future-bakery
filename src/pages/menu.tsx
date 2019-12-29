@@ -94,7 +94,7 @@ export default class BakeryMenu extends React.Component {
 											  <li>
 										          <Location>
 										            {({ location }) => ( 									                     
-														<img style={location.state.prevUrlPath.includes('bakery') || location.state.prevUrlPath == '/' ? {opacity:1} : {opacity:0}} className="here_now" src="../images/bakery_now.png"/> 
+														<img style={location.state != null ? ( location.state.prevUrlPath.includes('bakery') || location.state.prevUrlPath == '/' ? {opacity:1} : {opacity:0}) : {opacity:0} } className="here_now" src="../images/bakery_now.png"/> 
 
 										            )}
 										          </Location> 
@@ -169,7 +169,7 @@ export default class BakeryMenu extends React.Component {
 											  <li>
 										          <Location>
 										            {({ location }) => ( 									                     
-														<img style={location.state.prevUrlPath.includes('bakers') ? {opacity:1} : {opacity:0}} className="here_now" src="../images/bakers_now.png"/> 
+														<img style={location.state != null ? (location.state.prevUrlPath.includes('bakers') ? {opacity:1} : {opacity:0}) : {opacity:0}} className="here_now" src="../images/bakers_now.png"/> 
 										            )}
 										          </Location> 
 									          </li>											
@@ -250,7 +250,7 @@ export default class BakeryMenu extends React.Component {
 											  <li>
 										          <Location>
 										            {({ location }) => ( 									                     
-														<img style={location.state.prevUrlPath.includes('crowders') ? {opacity:1} : {opacity:0}} className="here_now" src="../images/crowders_now.png"/> 
+														<img style={ location.state != null ? (location.state.prevUrlPath.includes('crowders') ? {opacity:1} : {opacity:0}) : {opacity:0} } className="here_now" src="../images/crowders_now.png"/> 
 										            )}
 										          </Location> 
 									          </li>											
