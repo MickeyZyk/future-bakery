@@ -185,9 +185,9 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
                  
                   to={ 
 
-                    location.pathname === '/' ?  '/menu'  
+                    location.pathname == '/' ?  '/menu'  
                     : ( location.pathname.includes('czbakers') && !location.pathname.includes('menu')) ? '/czbakersmenu'                   
-                    : location.state != null  ? location.state.prevUrlPath 
+                    : location.state != null  ?  location.state.prevUrlPath 
                     : '/menu'
 
                   } 

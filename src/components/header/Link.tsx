@@ -33,7 +33,7 @@ export const Link = ({ className, name, to, icon, permanent, children, state, ..
   return (
 
  
-      <InternalLink state={{ prevUrlPath: location.pathname, ...state }} className={permanent ? `${s.permanent} ${className}`: `${s.link} ${className}`} activeClassName={s.link__active} to={to} {...props} >
+      <InternalLink className={permanent ? `${s.permanent} ${className}`: `${s.link} ${className}`} activeClassName={s.link__active} to={to} {...props} >
           {content()}
       </InternalLink>
 
