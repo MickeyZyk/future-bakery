@@ -14,40 +14,40 @@ import ReactDOM from 'react-dom';
 
 export default class BakeryMenu extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.unorderedList = React.createRef();        
-    this.state ={
+    this.unorderedList = React.createRef();
+    this.state = {
       isHovered: false,
       setHovered: false,
       section: false,
     };
     this.chidrenNodes = [];
-    this.toggleHover = this.toggleHover.bind(this);    
+    this.toggleHover = this.toggleHover.bind(this);
   }
 
-	toggleHover(){
+  toggleHover() {
     this.setState(prevState => ({
-        isHovered: !prevState.isHovered
+      isHovered: !prevState.isHovered
     }));
-	}
+  }
 
 
-  componentDidMount(){
+  componentDidMount() {
 
-  	var uL = this.unorderedList.current;
-  	var listItems = uL.querySelectorAll('.menu_item_wrapper');  	
+    var uL = this.unorderedList.current;
+    var listItems = uL.querySelectorAll('.menu_item_wrapper');
 
     var itemsTL = new TimelineMax();
-    itemsTL.staggerFrom(listItems, 2, { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut'}, .1, "+=0");
+    itemsTL.staggerFrom(listItems, 2, { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' }, .1, "+=0");
 
   }
 
   render() {
 
-  return (
+    return (
 
-	  <TransitionState>
+      <TransitionState>
 	  	{({ transitionStatus }) => {
 			  return (  
 
@@ -70,7 +70,7 @@ export default class BakeryMenu extends React.Component {
 							<div className='fullscreen mob_menu_wrapper'>
   
 						      <Helmet title="Bakery" />
-									<div className='menu_row'>
+									<div className='menu_row one_third'>
 											<ul ref={this.unorderedList}>
 											  <li className='menu_item_wrapper'>
 												  <Link bakery
@@ -135,34 +135,130 @@ export default class BakeryMenu extends React.Component {
 										  </ul>
 								  </div>
 
+									<div className='menu_row one_third'>
+											<ul ref={this.unorderedList}>
+											  <li className='menu_item_wrapper'>
+												  <Link bakery
+													onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="About us" 
+							      			to="/bakery-about" 
+				      						>
+			      						
+														<MenuHeading className='white_text'>About Us</MenuHeading>
+												  </Link>
+											  </li>
+											  <li className='menu_item_wrapper'>
+												  <Link bakery
+												  onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Work" 
+							      			to="/bakery-work"
+						      				>
+												      
+														<MenuHeading className='white_text'>Work</MenuHeading>
+
+												  </Link>
+											  </li>
+											  <li className='menu_item_wrapper'>
+												  <Link bakery
+												  onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Future Bakery Family" 
+							      			to="/family"
+						      				>
+														<MenuHeading className='white_text'>Future Bakery family</MenuHeading>												    
+												  </Link>
+											  </li>
+											  <li className='menu_item_wrapper'>
+												  <Link bakery
+												  onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Contact" 
+							      			to="/bakerycontact"
+						      				>
+						      				
+														<MenuHeading className='white_text'>Contact</MenuHeading>
+												  </Link>
+											  </li>
+										  </ul>
+								  </div>
+
+									<div className='menu_row one_third'>
+											<ul ref={this.unorderedList}>
+											  <li className='menu_item_wrapper'>
+												  <Link bakery
+													onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="About us" 
+							      			to="/bakery-about"
+				      						>
+			      						
+														<MenuHeading className='white_text'>About Us</MenuHeading>
+												  </Link>
+											  </li>
+											  <li className='menu_item_wrapper'>
+												  <Link bakery
+												  onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Work" 
+							      			to="/bakery-work"
+						      				>
+											      
+														<MenuHeading className='white_text'>Work</MenuHeading>
+
+												  </Link>
+											  </li>
+											  <li className='menu_item_wrapper'>
+												  <Link bakery
+												  onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Future Bakery Family" 
+							      			to="/family"
+						      				>
+														<MenuHeading className='white_text'>Future Bakery family</MenuHeading>												    
+												  </Link>
+											  </li>
+											  <li className='menu_item_wrapper'>
+												  <Link bakery
+												  onMouseEnter={this.toggleHover}
+							      			onMouseLeave={this.toggleHover} 
+							      			className={ this.hovered ? 'hovered submenu_link' : 'submenu_link'}
+							      			name="Contact" 
+							      			to="/bakerycontact"
+						      				>
+					      				
+														<MenuHeading className='white_text'>Contact</MenuHeading>
+												  </Link>
+											  </li>
+										  </ul>
+								  </div>								  								  
+
 							</div>
 
+
 				      <div className='fb_linkedin_menu'>
-				        <a href='https://facebook.com' target='_blank'>FACEBOOK_x</a><a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
+				        <a href='https://facebook.com' target='_blank'>FACEBOOK</a><a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
 				      </div>
 
 					</>
-
-
-
-
-
-
-
-
-
-
-
 
 
 			  );	
 
 	  	}}
 
-		</TransitionState>	
+		</TransitionState>
 
-	)
+    )
 
-}
+  }
 
 }

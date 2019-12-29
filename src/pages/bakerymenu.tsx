@@ -146,15 +146,6 @@ export default class BakeryMenu extends React.Component {
 
 
 
-
-
-
-
-
-
-
-
-
 			  );	
 
 	  	}}
