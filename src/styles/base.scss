@@ -8543,5 +8543,11 @@ opacity: 0;
 /* NEW MENU */
 
 .one_third {
+
   width: 33%;
+  float: left;
+}
+
+.menu_row {
+  @include grid-offset-left(3); 
 }

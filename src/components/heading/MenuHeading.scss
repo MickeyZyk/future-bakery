@@ -8,9 +8,11 @@
 	  $font-map: (320px: 28px, 375px: 30px, 768px: 46px, 959px: 50px, 960px: 33px, 2880px: 66px);
 	  @include poly-fluid-sizing('font-size', $font-map);  
 
+   @media (max-width: $max-960) {
 	  @include grid-offset-left(2); 
 	  width: max-content;  
 	  margin-bottom: 4vw;
+	}
 
 
    @media (min-width: $min-960) {
@@ -19,8 +21,9 @@
 
 	  $font-map: (320px: 28px, 375px: 30px, 768px: 46px, 959px: 50px, 960px: 33px, 2880px: 66px);
 	  @include poly-fluid-sizing('font-size', $font-map);  
-
+/*
 	  @include grid-offset-left(3); 
+*/
 	  width: max-content;  
 	  margin-bottom: 0vw;	  
 
