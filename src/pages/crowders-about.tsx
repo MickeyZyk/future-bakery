@@ -33,7 +33,7 @@ import SmoothScrollbar from 'smooth-scrollbar';
 import Scrollbar from 'react-smooth-scrollbar';
 const slug = require('slug')
 
-const CrowdersAbout = ({ data, className, state }) => {
+const CrowdersAbout = ({ data, className, state, transitionStatus }) => {
 
   const [currentTopIcon, setCurrentTopIcon] = useState(0);
 
@@ -108,9 +108,6 @@ const CrowdersAbout = ({ data, className, state }) => {
 
             <>
 
-            <Tween duration={2} 
-            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
 
   <Scrollbar className="scrollbar crowders_about_scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false} >   
@@ -142,16 +139,15 @@ const CrowdersAbout = ({ data, className, state }) => {
 
           </Row>
 
-      </ReactCursorPosition>            
-      
+      </ReactCursorPosition>   
+
 
                     <Row>
-                      <h3 className="family_subheading black_text check_heading">See what the crowd field of professionals can do</h3>
+                      <h3 style={ transitionStatus == 'entered' ? {opacity:1} : {opacity:0} } className="family_subheading check_heading fade-in-small one">See what the crowd field of professionals can do</h3>
                     </Row>
                     <Row>
-                      <Link crowders button arrow className="bakery_about__button_link check_link" to={'/crowders-work'}>CHECK IT</Link>
+                      <Link className= {` ${'bakery_about__button_link check_link fade-in-small one'} ${ transitionStatus == 'entered' ? 'see' : 'no_see'} `} crowders button arrow  to={'/crowders-work'}>CHECK IT</Link>
                     </Row>
-
 
         <div className="crowders_about_blueboard" style={{backgroundImage: `url(../images/how_we_do_it_image.jpg)`}}>
 
@@ -344,7 +340,7 @@ const CrowdersAbout = ({ data, className, state }) => {
 <Footer/>
 </Scrollbar>
 
-     </Tween>
+
 
             <Tween duration={2} 
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 

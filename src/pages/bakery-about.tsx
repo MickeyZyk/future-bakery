@@ -110,11 +110,7 @@ render() {
         {({ transitionStatus }) => {
           return (
 
-            <>
-
-            <Tween duration={2} 
-            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
-            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
+            <> 
 
               <Scrollbar className="scrollbar" damping={0.1} renderByPixels={true} alwaysShowTracks={false} syncCallbacks={false}>
 
@@ -130,11 +126,12 @@ render() {
                       <Figure src={ 'https://future.stratego.ba/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 
                       className="bakery_about__image_one"/>
                     </Row>
+
                     <Row>
-                      <h3 className="family_subheading black_text check_heading">See what the crowd field of professionals can do</h3>
+                      <h3 style={ transitionStatus == 'entered' ? {opacity:1} : {opacity:0} } className="family_subheading check_heading fade-in-small one">See what the crowd field of professionals can do</h3>
                     </Row>
                     <Row>
-                      <Link bakery button arrow className="bakery_about__button_link check_link" to={'/bakery-work'}>CHECK IT</Link>
+                      <Link bakery button arrow className= {` ${'bakery_about__button_link check_link fade-in-small one'} ${ transitionStatus == 'entered' ? 'see' : 'no_see'} `} to={'/bakery-work'}>CHECK IT</Link>
                     </Row>
 
                     <Row>
@@ -271,7 +268,6 @@ render() {
             <Footer/>
             </Scrollbar>
 
-          </Tween>
 
           <Tween duration={2} 
           from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
