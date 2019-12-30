@@ -126,8 +126,20 @@
   @include poly-fluid-sizing('font-size', $size-map);
   }
 
+  &__link:hover {
+    color: #ffffff;
+  } 
+
+  &__h2:hover {
+    color: #ffffff;
+  } 
+
+  &__p:hover {
+    color: #ffffff;
+  }  
+
   &__h2 {
-  color: #0a0a0a;
+  /* color: #0a0a0a; */
   $size-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);
   @include poly-fluid-sizing('font-size', $size-map); 
   $height-map: (375px: 15px, 959px: 37px, 960px: 8px, 2880px: 24px);

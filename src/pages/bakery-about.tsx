@@ -131,25 +131,28 @@ render() {
                       className="bakery_about__image_one"/>
                     </Row>
                     <Row>
-                      <Link gray arrow className="bakery_about_work_long_link" to={'/bakery-work'}>See what the crowd field of proffesionals can do</Link>
+                      <h3 className="family_subheading black_text check_heading">See what the crowd field of proffesionals can do</h3>
+                    </Row>
+                    <Row>
+                      <Link bakery button arrow className="bakery_about__button_link check_link" to={'/bakery-work'}>CHECK IT</Link>
                     </Row>
 
                     <Row>
                       
                   <div className="family_row">          
-                    <div className="family_wrapper family_bakery_wrapper">
+                    <div className="family_wrapper family_bakery_wrapper family_about_wrapper ">
                         <SVGicon className='family_icon family_bakery_icon black_icon' src='family_bakery.svg' /> 
                         <h3 className="family_subheading black_text">Future Bakery</h3>
                         <p className="family_paragraph black_text">Fresh ideas and original content by and for your future consumers. (JE TO OK?)</p>  
                         <Link className="family_link family_bakery_link black_text" to={'/bakery'}>FIND OUT MORE</Link>                    
                     </div>
-                    <div className=" family_wrapper family_bakers_wrapper" >
+                    <div className=" family_wrapper family_bakers_wrapper family_about_wrapper" >
                         <SVGicon className='family_icon family_bakers_icon black_icon' src='family_bakers.svg' />
                         <h3 className="family_subheading black_text">Future Bakers</h3>
                         <p className="family_paragraph black_text">Unleash your creativity and ideas. Join thousands of other creative souls who are eager to share ideas.(JE TO OK?)</p>
                         <Link className="family_link family_bakers_link black_text" to={'/bakers'}>FIND OUT MORE</Link>                    
                     </div>
-                    <div className=" family_wrapper family_crowders_wrapper" >
+                    <div className=" family_wrapper family_crowders_wrapper family_about_wrapper" >
                         <SVGicon className='family_icon family_crowders_icon black_icon' src='family_crowders.svg' />
                         <h3 className="family_subheading black_text">Future Crowders</h3>
                         <p className="family_paragraph black_text">We create demand through seeking and developing cross-social topics. Communities building.(JE TO OK?)</p>                     
@@ -164,24 +167,24 @@ render() {
 
                     <div className="bakery_about__greenboard" style={{backgroundImage: `url(../images/greenboard.jpg)`}}>
                       <Row>
-                        <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__heading_two sw_heading_first">
+                        <div style={ {opacity: 1} } className="bakery_about__heading_two sw_heading_first">
                           <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two}</HeadingTwo>
                         </div>
-                        <div style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__heading_two_alt sw_heading_second">
+                        <div style={ {opacity: 0} } className="bakery_about__heading_two_alt sw_heading_second">
                           <HeadingTwo>{this.props.data.gravBakeryAbout.heading_two_alernate}</HeadingTwo>
                         </div>
-                         <p style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } 
+                         <p style={ {opacity: 1} } 
                           className="bakery_about__green_text_one">{this.props.data.gravBakeryAbout.show_me_text}</p>
-                        <p style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } 
+                        <p style={ {opacity: 0} } 
                           className="bakery_about__green_text_two">{this.props.data.gravBakeryAbout.show_me_two_text}</p>   
 
                       <Location>
                         {({ location }) => (
                           <>
-                          <div style={ this.state.clicked ? {opacity : 1} : {opacity: 0} } className="bakery_about__green_link_one" >          
+                          <div  className="bakery_about__green_link_one" >          
                               <Link to={location.pathname} bakery arrow onClick={this.toggleShow} >SHOW ME</Link>
                           </div>
-                          <div style={ this.state.clicked ? {opacity : 0} : {opacity: 1} } className="bakery_about__green_link_two">
+                          <div className="bakery_about__green_link_two">
                             <Link to={location.pathname} bakery arrow onClick={this.toggleShow} >SHOW ME</Link>    
                           </div>
                           </>
