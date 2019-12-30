@@ -2590,14 +2590,14 @@ select {
     @include grid-offset-left(2);
 
   }    
-
+/*
   @media (min-width: $min-1440) {
 
     @include grid-col(5);
     @include grid-offset-left(3);
 
   }  
-
+*/
 
 
 }
@@ -5167,6 +5167,7 @@ select {
   position: absolute;
   left: 1vw;
   top: 9vw;
+  line-height: 1;
   }
 
 }
@@ -7646,8 +7647,8 @@ added
 
   @media (min-width: $min-960) {
     bottom: 8.3vw;
-    @include grid-col(2);
-    @include grid-offset-left(15);
+    @include grid-col(3);
+    @include grid-offset-left(14);
     z-index: 5; 
   } 
 
@@ -8583,7 +8584,7 @@ opacity: 0;
       margin-bottom: 1vw;      
 
     }    
-
+/*
     @media (min-width: 1440px) {
       top:0;
       left:0;
@@ -8593,7 +8594,8 @@ opacity: 0;
       margin-top: 2vw; 
       margin-bottom: 1vw;      
 
-    }    
+    }  
+    */  
 }
 
 .check_link {
@@ -8609,14 +8611,15 @@ opacity: 0;
       margin-bottom: 0px;      
 
     }  
-
+/*
     @media (min-width: 1440px)  {
       position: relative;
       @include grid-col(3);
       @include grid-offset-left(3); 
       margin-bottom: 0px;      
 
-    }     
+    }  
+    */   
 }
 
 .family_about_wrapper {

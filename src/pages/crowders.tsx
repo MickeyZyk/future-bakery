@@ -85,12 +85,28 @@ export default class CrowdersIndex extends React.Component {
   			      <Slider auto={true} subs={mergedSubs} titles={mergedTitles} links={mergedLinks} images={mergedImages} count={imagesCount} className='new-slider'/>   
   		    	</div>
 
-            </Tween>
-
-            
 
 
-          
+            </Tween>   
+
+
+            <Row>
+
+
+            <Tween duration={2} 
+            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
+            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } > 
+
+                <div className="crowders_home_flip_button">
+                  <Row>
+                    <Link crowders arrow button className="home_cta_button" to={'/crowders'}>START A PROJECT WITH US</Link>
+                  </Row>
+                </div>
+
+
+            </Tween>  
+
+            </Row>          
 
 
             <Tween duration={2} 

@@ -135,11 +135,7 @@ export default class Work extends React.Component {
           <div id="video_image_anchor" className={s.detail_wrapper}>
             <div className={s.row__threetop}> 
               <div className={s.column__col5}>
-                <ScrollTo>
-                  {({ scrollTo }) => (
-                    <p onClick={ this.handleClick} className={s.control}>EXPLORE <img className={s.explore} src='/images/explore_arrow.png' /></p>                    
-                  )}
-                </ScrollTo>
+
               </div>
               <If condition={this.props.data.gravCrowdersWork.video != 'null'}>
                 <Then>

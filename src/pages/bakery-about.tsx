@@ -131,7 +131,7 @@ render() {
                       className="bakery_about__image_one"/>
                     </Row>
                     <Row>
-                      <h3 className="family_subheading black_text check_heading">See what the crowd field of proffesionals can do</h3>
+                      <h3 className="family_subheading black_text check_heading">See what the crowd field of professionals can do</h3>
                     </Row>
                     <Row>
                       <Link bakery button arrow className="bakery_about__button_link check_link" to={'/bakery-work'}>CHECK IT</Link>

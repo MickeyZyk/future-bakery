@@ -146,7 +146,10 @@ const CrowdersAbout = ({ data, className, state }) => {
       
 
                     <Row>
-                      <Link gray arrow className="bakery_about_work_long_link crowders_about_work_long_link" to={'/crowders-work'}>See what the crowd field of proffesionals can do</Link>
+                      <h3 className="family_subheading black_text check_heading">See what the crowd field of professionals can do</h3>
+                    </Row>
+                    <Row>
+                      <Link crowders button arrow className="bakery_about__button_link check_link" to={'/crowders-work'}>CHECK IT</Link>
                     </Row>
 
 
