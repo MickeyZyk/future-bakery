@@ -5115,9 +5115,27 @@ select {
 
 /* FAMILY */
 
-.family_row {
+.about-wrapper .family_row {
+  
+    @media (max-width: $max-960) {
 
     display: none;
+
+    }  
+
+    @media (min-width: $min-960) {
+
+    display: flex;
+
+    }  
+
+}
+
+
+
+.family_row {
+
+
     width: 400vw;
     margin-left: -0.5px;
     margin-right: -0.5px;
