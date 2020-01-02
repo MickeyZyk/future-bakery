@@ -5117,7 +5117,7 @@ select {
 
 .family_row {
 
-    display: block;
+    display: none;
     width: 400vw;
     margin-left: -0.5px;
     margin-right: -0.5px;
@@ -8596,7 +8596,7 @@ opacity: 0;
     @media (max-width: $max-960) {
 
       margin-top: 10vh;    
-      margin-bottom: 10vh; 
+      margin-bottom: 25vh; 
 
     }  
 
@@ -8654,7 +8654,7 @@ opacity: 0;
 .check_heading {
 
     color: #000000;
-
+      top:0;
       @include grid-col(14);
       @include grid-offset-left(2);
       margin-bottom: 100px;

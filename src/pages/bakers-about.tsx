@@ -308,7 +308,7 @@ const BakersAbout = ({ data, className }) => {
       <Row>
         <Link bakers arrow className="bakers_about__join_link_two" to={data.gravBakersAbout.icons_link_one}>{data.gravBakersAbout.icons_link_one_text}</Link>
         <Paragraph className="divider_text">{data.gravBakersAbout.icons_links_divider}</Paragraph>
-        <Link bakers arrow className="bakers_about__join_link_three" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}&nbsp;&nbsp;<LinkArrow className="link_arrow"/></Link>          
+        <Link bakers arrow className="bakers_about__join_link_three" to={data.gravBakersAbout.icons_link_two}>{data.gravBakersAbout.icons_link_two_text}</Link>          
       </Row>
 
     <ReactCursorPosition>
