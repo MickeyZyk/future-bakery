@@ -1,16 +1,31 @@
 @import '~styles/config';
 
 .background {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(23,28,34,.86);
-    width: 100vw;
-    height: 100vh;
-    z-index: 100;
-    overflow: hidden;
+
+    @media (max-width: $max-960) {
+
+        display: none;
+
+    } 
+
+    @media (min-width: $min-960) {
+
+        display: block;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(23,28,34,.86);
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        overflow: hidden; 
+
+    }      
+
+
 }
 
 .background_logo {

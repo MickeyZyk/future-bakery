@@ -11,8 +11,10 @@ import { MenuBackground } from 'components/menubackground/MenuBackground';
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import ReactCursorPosition from 'react-cursor-position';
-import LeftArrow from 'assets/svg/slider_arrow_left.svg'
-import RightArrow from 'assets/svg/slider_arrow_right.svg'
+import LeftArrow from 'assets/svg/slider_arrow_left.svg';
+import RightArrow from 'assets/svg/slider_arrow_right.svg';
+
+import {Swipeable} from 'react-swipeable';
 
 export default ({ state }) => {
 
@@ -60,6 +62,13 @@ export default ({ state }) => {
 						    <ReactCursorPosition className='fullscreen_cursor_position'>   
 
 									<h2 className="family_heading">FUTURE BAKERY FAMILY</h2>
+
+      <Swipeable
+        onSwipedRight={moveLeft} 
+        onSwipedLeft={moveRight}
+
+      >
+
 									<div className="family_row">		      
 										<div className="family_wrapper family_bakery_wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={ current==0 ? {opacity: 1, right: 0} : {opacity: 0, right: '89vw'} }>
 									      <SVGicon className='family_icon family_bakery_icon' src='family_bakery.svg' /> 
@@ -79,7 +88,12 @@ export default ({ state }) => {
 									      <p className="family_paragraph">We create demand through seeking and developing cross-social topics. Communities building.(JE TO OK?)</p>								      
 									      <Link className="family_link family_crowders_link" to={'/crowders'}>FIND OUT MORE</Link>							      
 										</div>
-									</div>
+									</div>         
+
+      </Swipeable>
+
+									
+
 									<div className="mobile_slider_controls">
 										<LeftArrow onClick={moveLeft}/>
 										<RightArrow onClick={moveRight}/> 
