@@ -7658,7 +7658,7 @@ added
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-    bottom: 8.3vw;
+    bottom: 8.75vw;
     @include grid-col(2);
     @include grid-offset-left(15);
     z-index: 5; 
@@ -7673,7 +7673,7 @@ added
   @include grid-offset-left(2);   
 
   @media (min-width: $min-960) {
-    bottom: 8.3vw;
+    bottom: 8.75vw;
     @include grid-col(3);
     @include grid-offset-left(14);
     z-index: 5; 
