@@ -94,7 +94,7 @@ export default class BakeryMenu extends React.Component {
 
 											<Tween duration={2} 
 											            from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 200, opacity: 0, ease: 'Power3.easeInOut' } } 
-											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } : false  } >  
+											            to={ ['exiting'].includes(transitionStatus) ? { yPercent: -200, opacity: 0, ease: 'Power3.easeInOut' } :  false } >  
 
 
 											  <li>
@@ -193,8 +193,6 @@ export default class BakeryMenu extends React.Component {
 
 
 																<img style={location.state != null ? (location.state.prevUrlPath.includes('bakers') ? {opacity:1} : {opacity:0}) : {opacity:0}} className="here_now" src="../images/bakers_now.png"/> 
-
-
 
 
 														

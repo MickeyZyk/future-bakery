@@ -2012,7 +2012,7 @@ select {
 
   @media (min-width: $min-960) {
     position: absolute;
-    bottom: 8.3vw;
+    bottom: 8.75vw;
     @include grid-col(3);
     @include grid-offset-left(14);
   }     
@@ -8642,6 +8642,8 @@ opacity: 0;
 }
 
 .here_now {
+
+  transition: all 2s;
 
     @media (max-width: $max-960) {
 
