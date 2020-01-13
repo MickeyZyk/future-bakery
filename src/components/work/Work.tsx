@@ -272,7 +272,7 @@ export default class Work extends React.Component {
 
 
 
-                <If condition={next}>
+                <If condition={ next ? true : false }>
                   <Then>
 
                   <Location>
@@ -305,7 +305,7 @@ export default class Work extends React.Component {
             </div>
             <div className={s.bottom_row}>
 
-                <If condition={next}>
+                <If condition={ next ? true : false }>
                   <Then>
 
                   <Location>
