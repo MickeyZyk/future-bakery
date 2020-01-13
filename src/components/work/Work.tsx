@@ -391,7 +391,6 @@ export const query = graphql`
       heading_tag
       logo_dark
       logo_light
-      toggle
       new_way
       one_way
       title
