@@ -40,10 +40,17 @@ export default class Work extends React.Component {
   }
 
   unhideMore(){   
-   var x = document.querySelector(".crowders_work_item_wrapper:nth-child(5)");   
-   var s = document.querySelector(".spacer_top");   
+   var x = document.querySelector(".crowders_work_item_wrapper:nth-child(5)"); 
+   var x1 = document.querySelector(".crowders_work_item_wrapper:nth-child(6)");
+   var x2 = document.querySelector(".crowders_work_item_wrapper:nth-child(7)");        
+   var x3 = document.querySelector(".crowders_work_item_wrapper:nth-child(8)");    
+   //var s = document.querySelector(".spacer_top");   
    if (x) {x.style.display = "block";}
-   if (s) {s.style.marginBottom = '37vw'};
+   if (x1) {x1.style.display = "block";}
+   if (x2) {x2.style.display = "block";}
+   if (x3) {x3.style.display = "block";}         
+
+   //if (s) {s.style.marginBottom = '37vw'};
   }
 
 
