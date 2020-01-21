@@ -35,7 +35,7 @@ export class Slider extends React.Component {
   }
 
   componentWillUnmount() {
-    clearInterval(startCarouselInterval);      
+    clearInterval(startCarouselInterval);
   }   
 
   render() {
@@ -519,7 +519,14 @@ class Carousel extends React.Component {
 
             
           <div className={`${'total_indicator'} ${this.state.activeIndex == i ? 'total_indicator_current': ''}`}>{this.props.images.length}</div>
-          <div className='indicator_divider'></div>
+
+        <Location>
+          {({ location }) => (          
+          <div className='indicator_divider' style={ location.pathname.includes('bakery') ? {backgroundColor:'#d4de4f'} : location.pathname.includes('bakers') ? {backgroundColor:'#ff7a00'} : location.pathname.includes('crowders') ? {backgroundColor:'#37c6f4'} : {backgroundColor:'#d4de4f'} }></div>
+          )}
+        </Location> 
+
+
           <div className={`${'slider_indicator'} ${this.state.activeIndex == i ? 'indicator_current': ''}`}>{i+1}</div>
         </div>
 
