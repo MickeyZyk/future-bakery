@@ -80,9 +80,9 @@ export const Footer = ({ className, delay }: IFooterProps) => (
               <div className={s.row__two}>
                 <div className={s.footer}>
                   <div className={s.footer__col4}>
-                    <TransitionLink  to="/" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
+                    <a href="https://futurebakers.wnh.cz/files/Podm%C3%ADnky%20zpracov%C3%A1n%C3%AD%20osobn%C3%ADch%20%C3%BAdaj%C5%AF.pdf" className={s.footer__link} exit={{ length: 1 }} entry={{ delay: 0 }}>
                       <p className={`${s.footer__p} ${className}`}>Privacy Policy</p>
-                    </TransitionLink> 
+                    </a> 
                   </div>
                 </div>
               </div>

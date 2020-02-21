@@ -3263,7 +3263,13 @@ select {
 
 
 .bakery-about-wrapper {
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .about-wrapper {
+    overflow-y: auto;
+  }
 }
 
 .bakery_team {
