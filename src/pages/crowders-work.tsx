@@ -166,10 +166,6 @@ export default class Work extends React.Component {
                   <Row>
                     <p className="cw_paragraph_bottom crowders_work_cta_paragraph">We regularly measure sentiment of key segments and check “temperature”</p>
                   </Row>
-                  <Row>  
-                    <ExternalLink crowders button arrow className="crowders_work_cta_link" to={'../pdf/report.pdf'} >SEE A FUTURE REPORT</ExternalLink>
-                  </Row>
-
 
                 <div className="crowders_spacer_bottom"></div>
 
