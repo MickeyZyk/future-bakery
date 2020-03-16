@@ -163,9 +163,6 @@ export default class Work extends React.Component {
 
 
                   <Link gray arrow className="crowders_work_project" to={'/crowderscontact/'}>START A PROJECT WITH US</Link>  
-                  <Row>
-                    <p className="cw_paragraph_bottom crowders_work_cta_paragraph">We regularly measure sentiment of key segments and check “temperature”</p>
-                  </Row>
 
                 <div className="crowders_spacer_bottom"></div>
 
