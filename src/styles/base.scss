@@ -6659,7 +6659,8 @@ input[type="checkbox"]:not(:checked) + label span {
   @include grid-offset-left(2);
 
   @media (min-width: $min-960) {
-    @include grid-col(2.5);
+    margin-top: 58px;
+    @include grid-col(8);
     @include grid-offset-left(3);
   }
 }
@@ -6679,9 +6680,9 @@ input[type="checkbox"]:not(:checked) + label span {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: 12vw;
+    top: 6vw;
     @include grid-col(2);
-    @include grid-offset-left(-.5);
+    @include grid-offset-left(4);
   }
 }
 
