@@ -151,6 +151,8 @@ const BakersAbout = ({ data, className }) => {
                     />
 
                   <AnimatedHeading className='bakers_about__heading_one'>{data.gravBakersAbout.heading_one}</AnimatedHeading>
+                </Row>
+                <Row>
                   <HeadingTwo className='bakers_about__heading_two'>{data.gravBakersAbout.subheading_one}</HeadingTwo>      
                   <Figure3 className="show_on_mobile"/>
                 </Row>

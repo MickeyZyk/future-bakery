@@ -6655,7 +6655,7 @@ input[type="checkbox"]:not(:checked) + label span {
   @include poly-fluid-sizing('line-height', $height-map);
   @include poly-fluid-sizing('letter-spacing', $spacing-map);
 
-  @include grid-col(6);
+  @include grid-col(8);
   @include grid-offset-left(2);
 
   @media (min-width: $min-960) {

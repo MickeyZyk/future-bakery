@@ -139,20 +139,20 @@ render() {
                   <div className="family_row">          
                     <div className="family_wrapper family_bakery_wrapper family_about_wrapper ">
                         <SVGicon className='family_icon family_bakery_icon black_icon' src='family_bakery.svg' /> 
-                        <h3 className="family_subheading black_text">Future Bakery</h3>
-                        <p className="family_paragraph black_text">Fresh ideas and original content by and for your future consumers. </p>  
+                        <h3 className="family_subheading black_text">{this.props.data.gravBakeryAbout.menu_bakery_heading}</h3>
+                        <p className="family_paragraph black_text">{this.props.data.gravBakeryAbout.menu_bakery_text}</p>  
                         <Link className="family_link family_bakery_link black_text" to={'/bakery'}>FIND OUT MORE</Link>                    
                     </div>
                     <div className=" family_wrapper family_bakers_wrapper family_about_wrapper" >
                         <SVGicon className='family_icon family_bakers_icon black_icon' src='family_bakers.svg' />
-                        <h3 className="family_subheading black_text">Future Bakers</h3>
-                        <p className="family_paragraph black_text">Unleash your creativity and ideas. Join thousands of other creative souls who are eager to share ideas.</p>
+                        <h3 className="family_subheading black_text">{this.props.data.gravBakeryAbout.menu_bakers_heading}</h3>
+                        <p className="family_paragraph black_text">{this.props.data.gravBakeryAbout.menu_bakers_text}</p>
                         <Link className="family_link family_bakers_link black_text" to={'/bakers'}>FIND OUT MORE</Link>                    
                     </div>
                     <div className=" family_wrapper family_crowders_wrapper family_about_wrapper" >
                         <SVGicon className='family_icon family_crowders_icon black_icon' src='family_crowders.svg' />
-                        <h3 className="family_subheading black_text">Future Crowders</h3>
-                        <p className="family_paragraph black_text">We create demand through seeking and developing cross-social topics. Communities building.</p>                     
+                        <h3 className="family_subheading black_text">{this.props.data.gravBakeryAbout.menu_crowders_heading}</h3>
+                        <p className="family_paragraph black_text">{this.props.data.gravBakeryAbout.menu_crowders_text}</p>                     
                         <Link className="family_link family_crowders_link black_text" to={'/crowders'}>FIND OUT MORE</Link>                    
                     </div>
                   </div>
@@ -301,6 +301,12 @@ export const BakeryAboutquery = graphql`
       image_one
       paragraph_one
       CTA_heading
+      menu_bakery_heading
+      menu_bakery_text
+      menu_bakers_heading
+      menu_bakers_text  
+      menu_crowders_heading
+      menu_crowders_text
       show_me_link
       show_me_text
       show_me_two_text      
