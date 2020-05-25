@@ -4344,22 +4344,10 @@ select {
 
   @media (max-width: $max-960) {
 
-
-    font-weight: 900;
-    z-index: 5;
-    $font-map: (375px: 50px, 959px: 143px, 960px: 42px, 2880px: 148px);
-    $height-map: (375px: 50px, 959px: 128px, 960px: 42px, 2880px: 115px);
-    $spacing-map: (375px: -0.25px, 959px: -3px, 960px: -0.5px, 2880px: -3px);  
-    @include poly-fluid-sizing('font-size', $font-map);
-    @include poly-fluid-sizing('line-height', $height-map);
-    @include poly-fluid-sizing('letter-spacing', $spacing-map);  
-
-
     @include grid-col(16);
     @include grid-offset-left(2);
     margin-top: 25vw;
     margin-bottom: 10vw;
-
 
   }
 
@@ -4415,7 +4403,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -16vw;
+    top: -13vw;
     @include grid-col(4);
     @include grid-offset-left(3);
 
@@ -4436,7 +4424,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -10vw;
+    top: -7vw;
     @include grid-col(4);
     @include grid-offset-left(-4);
 
@@ -4451,7 +4439,7 @@ select {
 
   @media (min-width: $min-960) {
     position: relative;
-    top: -7vw;
+    top: -5vw;
     @include grid-col(3);
     @include grid-offset-left(3);
     z-index: 5; 
