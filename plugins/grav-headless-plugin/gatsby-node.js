@@ -73,6 +73,31 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     })    
 
 
+    const bakeryContact = await fetchBakeryContact ()
+
+    bakeryContact.forEach(x => {
+        createNode(x)
+    })  
+
+    const bakersContact = await fetchBakersContact ()
+
+    bakersContact.forEach(x => {
+        createNode(x)
+    }) 
+
+    const czBakersContact = await fetchCzBakersContact ()
+
+    czBakersContact.forEach(x => {
+        createNode(x)
+    }) 
+
+    const crowdersContact = await fetchCrowdersContact ()
+
+    crowdersContact.forEach(x => {
+        createNode(x)
+    }) 
+
+
         const apiResponse = await axios.get('http://future.stratego.ba/en/bakers/login', {
             params: {
                 "return-as": "json"
@@ -527,6 +552,154 @@ fetchCrowdersWork = async () => {
         //throw e
     }
 }
+
+
+
+fetchBakeryContact = async () => {
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `grav`
+    })
+
+    const ProductNode = createNodeFactory('BakeryContact', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('http://future.stratego.ba/en/bakery/contact', {
+            params: {
+                "return-as": "json"
+            }
+        })
+        console.log(response.data.children)
+        return response.data.children
+
+            .map(x => x.header)
+            .map(x => Object.assign(x, {
+                id: x.title,
+                path: `/grav-page-bakery-contact/${slug(x.title)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
+fetchBakersContact = async () => {
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `grav`
+    })
+
+    const ProductNode = createNodeFactory('BakersContact', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('http://future.stratego.ba/en/bakers/contact', {
+            params: {
+                "return-as": "json"
+            }
+        })
+    
+        return response.data.children
+            .map(x => x.header)
+            .map(x => Object.assign(x, {
+                id: x.title,
+                path: `/grav-page-bakers-contact/${slug(x.title)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
+fetchCzBakersContact = async () => {
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `grav`
+    })
+
+    const ProductNode = createNodeFactory('CzBakersContact', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('http://future.stratego.ba/en/czbakers/contact', {
+            params: {
+                "return-as": "json"
+            }
+        })
+    
+        return response.data.children
+            .map(x => x.header)
+            .map(x => Object.assign(x, {
+                id: x.title,
+                path: `/grav-page-czbakers-contact/${slug(x.title)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
+fetchCrowdersContact = async () => {
+    const {
+        createNodeFactory,
+        generateNodeId,
+        generateTypeName
+    } = createNodeHelpers({
+        typePrefix: `grav`
+    })
+
+    const ProductNode = createNodeFactory('CrowdersContact', node => {
+        return node
+    })
+
+    try
+    {
+        // This is where we call Grav API.
+        const response = await axios.get('http://future.stratego.ba/en/crowders/contact', {
+            params: {
+                "return-as": "json"
+            }
+        })
+    
+        return response.data.children
+            .map(x => x.header)
+            .map(x => Object.assign(x, {
+                id: x.title,
+                path: `/grav-page-crowders-contact/${slug(x.title)}`.toLowerCase()
+            }))
+            .map(ProductNode)
+    }
+    catch (error) {
+        console.log(error)
+        //throw e
+    }
+}
+
 /*
 
 fetchBakersData = async () => {

@@ -14,7 +14,7 @@ import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
-export default () => (
+export default ({data}) => (
   <>
     <ReactCursorPosition className='fullscreen_cursor_position'>   
       <Helmet title="Contact" />
@@ -30,29 +30,22 @@ export default () => (
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 1, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
           
-              <div className='crowders_contact_fulscreen_slider'>
+              <div className='crowders_contact_fulscreen_slider'>  
 
 
+                  <AnimatedHeading className='bakery_contact_heading crowders_color'>{data.gravCrowdersContact.headline}</AnimatedHeading>
+                  <div className="bakery_contact_adress_block">
+                  <div dangerouslySetInnerHTML={{ __html: data.gravCrowdersContact.data }}></div>
+                    <a className="contact-email color-black" href="mailto:{data.gravCrowdersContact.link}">{data.gravCrowdersContact.text}</a>
+                    <Row>                
+                      <ExternalLink className="bakery_contact_flip_button" crowders button arrow to={data.gravCrowdersContact.link}>{data.gravCrowdersContact.link_text}</ExternalLink>
+                    </Row>                  
+                  </div>
 
-                    <AnimatedHeading className='bakery_contact_heading crowders_color'>Headline call to action for contact page.</AnimatedHeading>
-                    <div className="bakery_contact_adress_block">
-                      <p className="text-bolder">FUTURE CROWDERS s. r. o.</p>
-                      <p>Opletalova 1013/59, Nové Mesto<br/>
-                      110 00 Praha 1<br/>
-                      IC: 04639481 DIC: CZ04639481</p>
-                      <p>&nbsp;</p>
-                      <p className="text-bolder">Máte zájem se na cokoliv zeptat?</p>
-                      <p>Neváhejte a kontaktujte nás.</p>
-                      <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
-                      <Row>                
-                        <ExternalLink className="bakery_contact_flip_button" crowders button arrow to={'mailto:info@futurecrowders.com'}>CONTACT US</ExternalLink>
-                      </Row>
-                    </div>
-                    <img src="../images/paper_plane.jpg" className='bakery_contact_image'/>
-                    
-
+                  <img src="../images/paper_plane.jpg" className='bakery_contact_image'/>
 
               </div>
+
 
 
             </Tween>
@@ -78,3 +71,18 @@ export default () => (
     </ReactCursorPosition>	    
   </>
 );
+
+
+
+export const gravCrowdersQuery = graphql`
+  query gravCrowdersContacts {
+    gravCrowdersContact {
+      data
+      headline
+      image
+      link
+      link_text
+    }
+  }
+
+`

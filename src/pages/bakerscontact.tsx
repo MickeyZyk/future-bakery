@@ -15,7 +15,7 @@ import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 import Scrollbar from 'react-smooth-scrollbar';
 
-export default () => (
+export default ({data}) => (
   <>
     <ReactCursorPosition className='fullscreen_cursor_position'>   
       <Helmet title="Bakery" />
@@ -32,33 +32,19 @@ export default () => (
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 1, ease: 'Power3.easeInOut' } : false  } >  
 
           
-              <div className='crowders_contact_fulscreen_slider'>
+              <div className='crowders_contact_fulscreen_slider'>  
 
 
-  
-
-
-                  <AnimatedHeading className='bakery_contact_heading bakers_color'>Headline call to action for contact page.</AnimatedHeading>
+                  <AnimatedHeading className='bakery_contact_heading bakers_color'>{data.gravBakersContact.headline}</AnimatedHeading>
                   <div className="bakery_contact_adress_block">
-                    <p className="text-bolder">The Future Bakery s.r.o.</p>
-                    <p>Opletalova 1013/59, Nové Mesto<br/>
-                    110 00 Praha 1<br/>
-                    IC: 24168858 DIC: CZ24168858</p>
-                    <p>&nbsp;</p>
-                    <p className="text-bolder">Máte zájem se na cokoliv zeptat?</p>
-                    <p>Neváhejte a kontaktujte nás.</p>
-                    <p><strong>Tel:</strong> +420 602 278 974</p>
-                    <a className="contact-email color-black" href="mailto:info@futurebakery.cz">info@futurebakery.cz</a>
+                  <div dangerouslySetInnerHTML={{ __html: data.gravBakersContact.data }}></div>
+                    <a className="contact-email color-black" href="mailto:{data.gravBakersContact.link}">{data.gravBakersContact.text}</a>
                     <Row>                
-                      <ExternalLink className="bakery_contact_flip_button" bakers button arrow to={'mailto:info@futurebakers.com'}>CONTACT US</ExternalLink>
+                      <ExternalLink className="bakery_contact_flip_button" bakers button arrow to={data.gravBakersContact.link}>{data.gravBakersContact.link_text}</ExternalLink>
                     </Row>                  
                   </div>
 
                   <img src="../images/paper_plane.jpg" className='bakery_contact_image'/>
-
-
-
-
 
               </div>
 
@@ -84,3 +70,20 @@ export default () => (
     </ReactCursorPosition>	    
   </>
 );
+
+
+
+
+export const gravBakersContactsQuery = graphql`
+  query gravBakersContacts {
+    gravBakersContact {
+      data
+      headline
+      image
+      link
+      link_text
+    }
+  }
+
+`
+
