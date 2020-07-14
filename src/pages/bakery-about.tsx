@@ -131,7 +131,7 @@ render() {
                       <h3 style={ transitionStatus == 'entered' ? {opacity:1} : {opacity:0} } className="family_subheading check_heading fade-in-small one">{this.props.data.gravBakeryAbout.CTA_heading}</h3>
                     </Row>
                     <Row>
-                      <Link bakery button arrow className= {` ${'bakery_about__button_link check_link fade-in-small one'} ${ transitionStatus == 'entered' ? 'see' : 'no_see'} `} to={'/bakery-work'}>CHECK IT</Link>
+                      <Link bakery button arrow className= {` ${'bakery_about__button_link check_link fade-in-small one'} ${ transitionStatus == 'entered' ? 'see' : 'no_see'} `} to={'/bakery-work'}>CHECK IT OUT</Link>
                     </Row>
 
                     <Row>

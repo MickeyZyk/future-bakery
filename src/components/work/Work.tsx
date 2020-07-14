@@ -170,22 +170,16 @@ export default class Work extends React.Component {
             from={ ['entering'].includes(transitionStatus) ? false : { yPercent: 100, opacity: 0, ease: 'Power3.easeInOut' } } 
             to={ ['exiting'].includes(transitionStatus) ? { yPercent: -100, opacity: 0, ease: 'Power3.easeInOut'} : false  } >
 
-
-
-                    <div className={s.row__two}>
+                   <div className={s.row__two}>
                       <div className={s.column__col2}>
-                        <p className={s.way}>one way</p>
+                        <p className={s.way}>{this.props.data.gravBakeryWork.one_way_title}</p>
                         <p className={s.advice}>{this.props.data.gravBakeryWork.one_way}</p>
                       </div>
                       <div className={s.column__col3}>
-                        <p className={s.way}>new way</p>      
+                        <p className={s.way}>{this.props.data.gravBakeryWork.new_way_title}</p>      
                         <p className={s.larger_advice}>{this.props.data.gravBakeryWork.new_way}</p>
                       </div>
                     </div>
-
-
-
-
 
             </Tween>
 
@@ -331,7 +325,7 @@ export default class Work extends React.Component {
                   <Location>
                     {({ location }) => (        
 
-                      <p className={ location.pathname.includes('bakery') ? `${s.project}` : `${s.bakers_project}` }>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
+                      <p className={ location.pathname.includes('bakery') ? `${s.project}` : `${s.bakers_project}` }>We have already solved this and much more with our 25,000 strong crowd.</p>
 
                       )}
                   </Location> 
@@ -392,7 +386,9 @@ export const query = graphql`
       logo_dark
       logo_light
       new_way
+      new_way_title      
       one_way
+      one_way_title      
       title
       video
       id

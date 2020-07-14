@@ -146,7 +146,7 @@ const CrowdersAbout = ({ data, className, state, transitionStatus }) => {
                       <h3 style={ transitionStatus == 'entered' ? {opacity:1} : {opacity:0} } className="family_subheading check_heading fade-in-small one">See what the crowd field of professionals can do</h3>
                     </Row>
                     <Row>
-                      <Link className= {` ${'bakery_about__button_link check_link fade-in-small one'} ${ transitionStatus == 'entered' ? 'see' : 'no_see'} `} crowders button arrow  to={'/crowders-work'}>CHECK IT</Link>
+                      <Link className= {` ${'bakery_about__button_link check_link fade-in-small one'} ${ transitionStatus == 'entered' ? 'see' : 'no_see'} `} crowders button arrow  to={'/crowders-work'}>CHECK IT OUT</Link>
                     </Row>
 
         <div className="crowders_about_blueboard" style={{backgroundImage: `url(../images/how_we_do_it_image.jpg)`}}>
