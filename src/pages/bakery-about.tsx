@@ -136,7 +136,11 @@ render() {
 
                     <Row>
                       
-                  <div className="family_row">          
+
+
+                  <div className="family_row"> 
+                  <h2 className="family_heading about_family_heading">THE FUTURE BAKERY FAMILY</h2>
+
                     <div className="family_wrapper family_bakery_wrapper family_about_wrapper ">
                         <SVGicon className='family_icon family_bakery_icon black_icon' src='family_bakery.svg' /> 
                         <h3 className="family_subheading black_text">{this.props.data.gravBakeryAbout.menu_bakery_heading}</h3>
@@ -146,7 +150,7 @@ render() {
                     <div className=" family_wrapper family_bakers_wrapper family_about_wrapper" >
                         <SVGicon className='family_icon family_bakers_icon black_icon' src='family_bakers.svg' />
                         <h3 className="family_subheading black_text">{this.props.data.gravBakeryAbout.menu_bakers_heading}</h3>
-                        <p className="family_paragraph black_text">{this.props.data.gravBakeryAbout.menu_bakers_text}</p>
+                        <p className="family_paragraph black_text ">{this.props.data.gravBakeryAbout.menu_bakers_text}</p>
                         <Link className="family_link family_bakers_link black_text" to={'/bakers'}>FIND OUT MORE</Link>                    
                     </div>
                     <div className=" family_wrapper family_crowders_wrapper family_about_wrapper" >

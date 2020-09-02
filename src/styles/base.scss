@@ -1718,6 +1718,7 @@ select {
   margin-bottom: 6vw;
 }
 
+
 /* BAKERY MENU */
 
 
@@ -5260,7 +5261,7 @@ select {
   @media (min-width: $min-960) {
     opacity: 1;
     position: absolute;
-    top: 23vw;      
+    top: 24vw;      
     
   }   
 }
@@ -6315,7 +6316,7 @@ input[type="checkbox"]:not(:checked) + label span {
   @media (min-width: $min-960) {
     margin-top: -7.3vw;
     margin-bottom: 2vw;
-    @include grid-col(3);
+    @include grid-col(5);
     @include grid-offset-left(6); 
   }     
 
@@ -8750,3 +8751,18 @@ transition: all 2s;
   opacity: 0;
 }
 
+
+
+.about_family_heading {
+    top: 65vw;
+    flex: none;
+    align-self: stretch;
+    padding-left: 0.5px;
+    padding-right: 0.5px;
+    width: 66.666%;
+    margin-left: 16.66667%;
+    margin-right: 16.66667%;    
+    color: #000;
+    text-align: center;
+    /* margin-right: 0; */
+}
