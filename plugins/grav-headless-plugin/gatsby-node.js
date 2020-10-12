@@ -133,15 +133,17 @@ exports.sourceNodes = async ({boundActionCreators}) => {
       // We're done, return.
 
 
-    /*
+    
 
     const bakersData = await fetchBakersData()
-
+/*
     bakersData.forEach(x => {
         createNode(x)
     })
-
-    */  
+*/
+ 
+    //console.log("BakersData", bakersData);
+    //createNode(bakersData);
 
     
 /*
@@ -576,7 +578,7 @@ fetchBakeryContact = async () => {
                 "return-as": "json"
             }
         })
-        console.log(response.data.children)
+        //console.log(response.data.children)
         return response.data.children
 
             .map(x => x.header)
@@ -700,7 +702,7 @@ fetchCrowdersContact = async () => {
     }
 }
 
-/*
+
 
 fetchBakersData = async () => {
 
@@ -725,16 +727,32 @@ fetchBakersData = async () => {
             }
         })
     
-            console.log(response.data)
-
+            //console.log("BAKERS DATA: ", response.data.header)
+/*
 
         return response.data.header
-            .map(x => x)
+            //.map(x => x)
             .map(x => Object.assign(x, {
                 id: x.title,                  
                 path: `/bakers-login-data/${slug(x.title)}`.toLowerCase()
             }))
             .map(ProductNode)
+
+*/
+            let source = {};
+            source.id = response.data.header.title;
+            source.path = `/bakers-login-data/${slug(response.data.header.title)}`.toLowerCase();
+
+            //console.log("SOURCE", source);
+
+            //let assigned = Object.assign(ProductNode, source);
+
+            //console.log("ASSIGNED", assigned);
+
+            //ProductNode.id = response.data.header.title;
+            //ProductNode.path = `/bakers-login-data/${slug(response.data.header.title)}`.toLowerCase() ;
+
+            //console.log("ProductNode", ProductNode)
 
 
 
@@ -745,7 +763,7 @@ fetchBakersData = async () => {
     }
 }
 
-*/
+
 
 
 
