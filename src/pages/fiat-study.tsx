@@ -142,7 +142,7 @@ export default class Fiat extends React.Component {
               <p className={s.topic}>How to make people think OF SERIOUS TOPICS?</p>
             </div>
             <div className={s.column__col12}>
-              <p className={s.project}>This and much more we have already solved with a team of 25.000 friends from the crowd.</p>
+              <p className={s.project}>We have already solved this and much more with our 25,000 strong crowd.</p>
             </div>
           </div>
         </div>

@@ -175,11 +175,11 @@ export default class CzWork extends React.Component {
 
                     <div className={s.row__two}>
                       <div className={s.column__col2}>
-                        <p className={s.way}>one way</p>
+                        <p className={s.way}>{this.props.data.gravBakersCzWork.one_way_title}</p>
                         <p className={s.advice}>{this.props.data.gravBakersCzWork.one_way}</p>
                       </div>
                       <div className={s.column__col3}>
-                        <p className={s.way}>new way</p>      
+                        <p className={s.way}>{this.props.data.gravBakersCzWork.new_way_title}</p>      
                         <p className={s.larger_advice}>{this.props.data.gravBakersCzWork.new_way}</p>
                       </div>
                     </div>
@@ -370,7 +370,9 @@ export const query = graphql`
       logo_dark
       logo_light
       new_way
+      new_way_title      
       one_way
+      one_way_title  
       title
       video
       id
