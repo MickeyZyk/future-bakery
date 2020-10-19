@@ -134,7 +134,7 @@ export default class Work extends React.Component {
                   <SVGicon className='crowders_work_swirl' src='swirl.svg' />                
 
 
-                  <Split className="crowders_work_headline">HEADLINE ABOUT CROWDERS WORK</Split>
+                  <Split className="crowders_work_headline">The power of crowd</Split>
 
 
                 <div className='wrapper work-wrapper crowders_work_wrapper' ref={this.hovered_item}>

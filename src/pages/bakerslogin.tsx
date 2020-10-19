@@ -95,7 +95,7 @@ export default class bakersLogin extends React.Component {
 
 
               <div className='bakers_login__main_header'>
-                <h1>Think up with us - we reward the best</h1>
+                <h1>Let's create together - we reward the best </h1>
               </div>
 
 
@@ -135,7 +135,7 @@ export default class bakersLogin extends React.Component {
                 </ScrollTo>
 
                 <ExternalLink arrow gray className='bakers_login__main_briefs' to={'https://futurebakers.wnh.cz/cs/ukoncene'}>
-                  CHECK OUT OLD BRIEFS
+                  CHECK OUT PREVIOUS PROJECTS
                 </ExternalLink>
 
               </Row>
@@ -146,7 +146,7 @@ export default class bakersLogin extends React.Component {
 
               <Row>
 
-
+<p>&nbsp;</p>
 
 
 {/*
