@@ -46,7 +46,7 @@ export default class Bakery extends React.Component {
   } 
 
   function getImages(item) {
-    var image = ['https://future.stratego.ba/en/bakery/' + item.node.image];
+    var image = ['http://futurebakery.appio.cz/grav/en/bakery/' + item.node.image];
     return image;
   }     
 

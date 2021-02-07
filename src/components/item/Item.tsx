@@ -111,9 +111,9 @@ export class Item extends React.Component {
                 <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >  
                   <h3 className={s.client_more}><Link arrow white to={ '/bakery-work/' + slug(this.props.data.node.title.toLowerCase()) }>FIND OUT MORE</Link></h3>
                 </Tween> 
-                <img className={s.bw} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image}/>                        
+                <img className={s.bw} src={ 'http://futurebakery.appio.cz/grav/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image}/>                        
                 <img className={s.bw_overlay} style={this.state.hover ? {opacity:1}:{opacity:0}} src="../images/bakery_overlay.png"/>                        
-                <img className={s.color} style={this.state.hover ? {opacity:1}:{opacity:0}} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image} />
+                <img className={s.color} style={this.state.hover ? {opacity:1}:{opacity:0}} src={ 'http://futurebakery.appio.cz/grav/en/bakery/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image} />
               </div>
             </Tween>                   
           )

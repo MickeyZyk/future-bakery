@@ -145,7 +145,7 @@ export default class CzWork extends React.Component {
 
               
 
-                    <img className={s.client_logo} src={ 'https://future.stratego.ba/cz/czbakers/work/'+ slug(this.props.data.gravBakersCzWork.title.toLowerCase()) + '/' + this.props.data.gravBakersCzWork.logo_dark } />
+                    <img className={s.client_logo} src={ 'http://futurebakery.appio.cz/grav/cz/czbakers/work/'+ slug(this.props.data.gravBakersCzWork.title.toLowerCase()) + '/' + this.props.data.gravBakersCzWork.logo_dark } />
                     <>
                     <HeadingTwo className={s.column__col1_heading}>{this.props.data.gravBakersCzWork.heading_one}</HeadingTwo>
                     </>
@@ -234,7 +234,7 @@ export default class CzWork extends React.Component {
 
             <div className={s.row__threebot} ref={this.videoOverlay}>
               <div className={s.column__col7}>
-                <img className={s.client_logo} src={ 'https://future.stratego.ba/cz/czbakers/work/'+ slug(this.props.data.gravBakersCzWork.title.toLowerCase()) + '/' + this.props.data.gravBakersCzWork.logo_light } />              
+                <img className={s.client_logo} src={ 'http://futurebakery.appio.cz/grav/cz/czbakers/work/'+ slug(this.props.data.gravBakersCzWork.title.toLowerCase()) + '/' + this.props.data.gravBakersCzWork.logo_light } />              
                 <p className={s.award}>{this.props.data.gravBakersCzWork.category ? this.props.data.gravBakersCzWork.category : ' '}<span className={s.green}>{this.props.data.gravBakersCzWork.category_name ? this.props.data.gravBakersCzWork.category_name : ' '}</span></p>
                 <h1 className={s.award_heading}>{this.props.data.gravBakersCzWork.heading_two}</h1>
               </div>
@@ -247,7 +247,7 @@ export default class CzWork extends React.Component {
       }}
     </TransitionState>              
             
-            <img id="video_image" src={ 'https://future.stratego.ba/cz/czbakers/work/'+ slug(this.props.data.gravBakersCzWork.title.toLowerCase()) + '/' + this.props.data.gravBakersCzWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
+            <img id="video_image" src={ 'http://futurebakery.appio.cz/grav/cz/czbakers/work/'+ slug(this.props.data.gravBakersCzWork.title.toLowerCase()) + '/' + this.props.data.gravBakersCzWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
               
 
 

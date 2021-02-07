@@ -144,7 +144,7 @@ export default class Work extends React.Component {
 
               
 
-                    <img className={s.client_logo} src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_dark } />
+                    <img className={s.client_logo} src={ 'http://futurebakery.appio.cz/grav/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.logo_dark } />
                     <>
                     <HeadingTwo className={s.column__col1_heading}>{this.props.data.gravBakeryWork.heading_one}</HeadingTwo>
                     </>
@@ -237,7 +237,7 @@ export default class Work extends React.Component {
       }}
     </TransitionState>              
             
-            <img id="video_image" src={ 'https://future.stratego.ba/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
+            <img id="video_image" src={ 'http://futurebakery.appio.cz/grav/en/bakery/work/'+ slug(this.props.data.gravBakeryWork.title.toLowerCase()) + '/' + this.props.data.gravBakeryWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
               
 
 

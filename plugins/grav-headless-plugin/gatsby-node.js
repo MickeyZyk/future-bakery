@@ -98,7 +98,7 @@ exports.sourceNodes = async ({boundActionCreators}) => {
     }) 
 
 
-        const apiResponse = await axios.get('http://future.stratego.ba/en/bakers/login', {
+        const apiResponse = await axios.get('http://futurebakery.appio.cz/grav/en/bakers/login', {
             params: {
                 "return-as": "json"
             }
@@ -175,7 +175,7 @@ fetchBakerySlides = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakery', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/bakery', {
             params: {
                 "return-as": "json"
             }
@@ -212,7 +212,7 @@ fetchBakersSlides = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakers', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/bakers', {
             params: {
                 "return-as": "json"
             }
@@ -248,7 +248,7 @@ fetchBakersCzSlides = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/cz/czbakers', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/cz/czbakers', {
             params: {
                 "return-as": "json"
             }
@@ -284,7 +284,7 @@ fetchCrowdersSlides = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/crowders', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/crowders', {
             params: {
                 "return-as": "json"
             }
@@ -322,7 +322,7 @@ fetchBakeryAbout = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakery/pages', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/bakery/pages', {
             params: {
                 "return-as": "json"
             }
@@ -357,7 +357,7 @@ fetchBakeryWork = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakery/work', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/bakery/work', {
             params: {
                 "return-as": "json"
             }
@@ -393,7 +393,7 @@ fetchBakersCzWork = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/cz/czbakers/work', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/cz/czbakers/work', {
             params: {
                 "return-as": "json"
             }
@@ -430,7 +430,7 @@ fetchBakersAbout = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakers/pages', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/bakers/pages', {
             params: {
                 "return-as": "json"
             }
@@ -465,7 +465,7 @@ fetchBakersCzAbout = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/cz/czbakers/pages', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/cz/czbakers/pages', {
             params: {
                 "return-as": "json"
             }
@@ -500,7 +500,7 @@ fetchCrowdersAbout = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/crowders/pages', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/crowders/pages', {
             params: {
                 "return-as": "json"
             }
@@ -535,7 +535,7 @@ fetchCrowdersWork = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/crowders/work', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/crowders/work', {
             params: {
                 "return-as": "json"
             }
@@ -573,7 +573,7 @@ fetchBakeryContact = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakery/contact', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/bakery/contact', {
             params: {
                 "return-as": "json"
             }
@@ -610,7 +610,7 @@ fetchBakersContact = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakers/contact', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/bakers/contact', {
             params: {
                 "return-as": "json"
             }
@@ -646,7 +646,7 @@ fetchCzBakersContact = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/czbakers/contact', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/czbakers/contact', {
             params: {
                 "return-as": "json"
             }
@@ -682,7 +682,7 @@ fetchCrowdersContact = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/crowders/contact', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/crowders/contact', {
             params: {
                 "return-as": "json"
             }
@@ -721,7 +721,7 @@ fetchBakersData = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('http://future.stratego.ba/en/bakers/login', {
+        const response = await axios.get('http://futurebakery.appio.cz/grav/en/bakers/login', {
             params: {
                 "return-as": "json"
             }
@@ -786,7 +786,7 @@ fetchBakersLogin = async () => {
     try
     {
         // This is where we call Grav API.
-        const response = await axios.get('https://futurebakers.wnh.cz/app/api/project', {
+        const response = await axios.get('http://futurebakers.wnh.cz/app/api/project', {
             params: {
                 "return-as": "json"
             }
