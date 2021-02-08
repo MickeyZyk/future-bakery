@@ -1,0 +1,7 @@
+
+tasks:
+  build-deps:
+    runner: node:12
+    steps:
+    - run: npm install
+    - run: npm build
