@@ -23,7 +23,7 @@ import { TweenMax, TimelineMax, Power3} from "gsap";
 import { Tween } from 'react-gsap';
 import { TransitionState } from "gatsby-plugin-transition-link";
 
-export default class bakersLogin extends React.Component {
+export default class bakersLogin extends React.Component { 
 
   constructor(props){
     super(props);
