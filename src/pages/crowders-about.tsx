@@ -78,7 +78,7 @@ const CrowdersAbout = ({ data, className, state, transitionStatus }) => {
   } 
 
   function getImages(item) {
-    var image = ['http://futurebakery.appio.cz/grav/en/crowders/pages/'  + slug(data.gravCrowdersAbout.title.toLowerCase()) + '/' + item.image];
+    var image = ['http://futurebakery.cz/grav/en/crowders/pages/'  + slug(data.gravCrowdersAbout.title.toLowerCase()) + '/' + item.image];
     return image;
   }  
 
@@ -127,7 +127,7 @@ const CrowdersAbout = ({ data, className, state, transitionStatus }) => {
 
               <AnimatedHeading className='crowders_about_heading'>{data.gravCrowdersAbout.heading_one}</AnimatedHeading>   
 
-              <ReverseFigure className='crowders_about_image responsive_image show_on_mobile' src={'http://futurebakery.appio.cz/grav/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />         
+              <ReverseFigure className='crowders_about_image responsive_image show_on_mobile' src={'http://futurebakery.cz/grav/en/crowders/pages/about-us/' + data.gravCrowdersAbout.image_one} />         
 
               <Paragraph className='crowders_about_paragraph paragraph'>{data.gravCrowdersAbout.paragraph_one}</Paragraph>
 

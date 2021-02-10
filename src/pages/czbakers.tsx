@@ -49,7 +49,7 @@ export default class BakersIndex extends React.Component {
   } 
 
   function getImages(item) {
-    var image = ['http://futurebakery.appio.cz/grav/en/bakers/' + item.node.image];
+    var image = ['http://futurebakery.cz/grav/en/bakers/' + item.node.image];
     return image;
   }     
 

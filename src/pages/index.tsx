@@ -46,7 +46,7 @@ export default class BakeryIndex extends React.Component {
   } 
 
   function getImages(item) {
-    var image = ['http://futurebakery.appio.cz/grav/en/bakery/' + item.node.image];
+    var image = ['http://futurebakery.cz/grav/en/bakery/' + item.node.image];
     return image;
   }     
 

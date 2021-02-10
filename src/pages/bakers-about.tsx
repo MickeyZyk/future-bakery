@@ -85,7 +85,7 @@ const BakersAbout = ({ data, className }) => {
   } 
 
   function getImages(item) {
-    var image = ['http://futurebakery.appio.cz/grav/en/bakers/pages/'  + slug(data.gravBakersAbout.title.toLowerCase()) + '/' + item.image];
+    var image = ['http://futurebakery.cz/grav/en/bakers/pages/'  + slug(data.gravBakersAbout.title.toLowerCase()) + '/' + item.image];
     return image;
   }  
 
@@ -146,7 +146,7 @@ const BakersAbout = ({ data, className }) => {
                 <Row>
 
                     <Figure 
-                    src={ 'http://futurebakery.appio.cz/grav/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_one } 
+                    src={ 'http://futurebakery.cz/grav/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_one } 
                     className="bakers_about__image_one hide_on_mobile dropped"
                     />
 
@@ -182,7 +182,7 @@ const BakersAbout = ({ data, className }) => {
               <Brains className='bakers_about__brains show_on_mobile' /> 
               <Row>
                 <Figure
-                src={ 'http://futurebakery.appio.cz/grav/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_two } 
+                src={ 'http://futurebakery.cz/grav/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.image_two } 
                 className="bakers_about__image_two hide_on_mobile"
                 />      
                 <Split className='bakers_about__heading_three'>{data.gravBakersAbout.subheading_two}</Split>      
@@ -380,7 +380,7 @@ const BakersAbout = ({ data, className }) => {
 
           {data.gravBakersAbout.svg_icons.map((svg, i) => (
             <img key={i} className="bakers_about_step_icons" style={currentTopIcon == i ? {opacity : 1} : {opacity : 0}}
-            src={ 'http://futurebakery.appio.cz/grav/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + svg.svg }
+            src={ 'http://futurebakery.cz/grav/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + svg.svg }
             />       
           ))}
 
@@ -419,7 +419,7 @@ const BakersAbout = ({ data, className }) => {
 
 
           <SmallFigure
-          src={ 'http://futurebakery.appio.cz/grav/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.authors_image } 
+          src={ 'http://futurebakery.cz/grav/en/bakers/pages/'+ slug(data.gravBakersAbout.title.toLowerCase()) + '/' + data.gravBakersAbout.authors_image } 
           className="bakers_about_authors_image"
           />
 

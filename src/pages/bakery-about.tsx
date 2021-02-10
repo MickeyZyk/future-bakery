@@ -83,7 +83,7 @@ render() {
   var titleSlug = slug(this.props.data.gravBakeryAbout.title.toLowerCase());
 
   function getImages(item) {
-    var image = ['http://futurebakery.appio.cz/grav/en/bakery/pages/'  + titleSlug + '/' + item.image];
+    var image = ['http://futurebakery.cz/grav/en/bakery/pages/'  + titleSlug + '/' + item.image];
     return image;
   }  
 
@@ -123,7 +123,7 @@ render() {
                         <AnimatedHeading className='__heading_one'>{this.props.data.gravBakeryAbout.heading_one}</AnimatedHeading>
                         <Paragraph className='bakery_about__paragraph paragraph'>{this.props.data.gravBakeryAbout.paragraph_one}</Paragraph>
                       </div>
-                      <Figure src={ 'http://futurebakery.appio.cz/grav/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 
+                      <Figure src={ 'http://futurebakery.cz/grav/user/pages/bakery/pages/about-us/' + this.props.data.gravBakeryAbout.image_one } 
                       className="bakery_about__image_one"/>
                     </Row>
 

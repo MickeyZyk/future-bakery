@@ -43,7 +43,7 @@ export default class CrowdersIndex extends React.Component {
   } 
 
   function getImages(item) {
-    var image = ['http://futurebakery.appio.cz/grav/en/crowders/' + item.node.image];
+    var image = ['http://futurebakery.cz/grav/en/crowders/' + item.node.image];
     return image;
   }     
 
