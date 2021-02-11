@@ -6359,12 +6359,13 @@ input[type="checkbox"]:not(:checked) + label span {
   @media (min-width: $min-960) {
     margin-bottom: 5vw;
     width: 100%;
-    margin-left: 60%;
+    margin-left: 33.333vw;
     display: flex;
     align-items: center;
-    height: auto;    
-  }   
-}
+    height: auto;
+    align-self: flex-start;
+    max-width: 60.666vw;
+  }
 
 .crowders_phase_column img {
   bottom: 2vw;
