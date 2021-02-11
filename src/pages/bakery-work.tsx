@@ -160,7 +160,7 @@ export default class Work extends React.Component {
 
               </ReactCursorPosition>                
 
-              </Tween>
+              </Tween> 
 
 
               <Tween duration={2} 
