@@ -80,9 +80,9 @@ export class CrowdersItem extends React.Component {
                 <Tween duration={1} to={ this.state.hover ? { opacity: 1, delay: 1, ease: 'Power2.easeOut'} : {ease: 'Power2.easeOut',  opacity: 0, delay: .5}} >  
                   <h3 className={s.client_more}><Link arrow white to={ '/crowders-work/' + slug(this.props.data.node.title.toLowerCase()) }>FIND OUT MORE</Link></h3>
                 </Tween>                      
-                <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src={ 'http://futurebakery.cz/grav/en/crowders/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image}/>                        
+                <img className={s.bw} style={this.state.hover ? {opacity:0}:{opacity:1}} src={ 'https://futurebakery.cz/grav/en/crowders/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image}/>                        
                 <img className={s.bw_overlay} style={this.state.hover ? {opacity:1}:{opacity:0}} src="../images/crowders_overlay.png"/>                                 
-                <img className={s.color} style={this.state.hover ? {opacity:1}:{opacity:0}} src={ 'http://futurebakery.cz/grav/en/crowders/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image} />
+                <img className={s.color} style={this.state.hover ? {opacity:1}:{opacity:0}} src={ 'https://futurebakery.cz/grav/en/crowders/work/'+ slug(this.props.data.node.title.toLowerCase()) + '/' + this.props.data.node.big_image} />
               </div>
             </Tween>                   
           )

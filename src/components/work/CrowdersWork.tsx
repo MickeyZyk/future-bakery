@@ -149,7 +149,7 @@ export default class Work extends React.Component {
               <div className={s.column__col7}>
                 <If condition={this.props.data.gravCrowdersWork.video != 'null'}>
                   <Then>
-                    <img className={s.client_logo} src={ 'http://futurebakery.cz/grav/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.logo_light } />              
+                    <img className={s.client_logo} src={ 'https://futurebakery.cz/grav/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.logo_light } />              
                   </Then>
                   <Else>
                     <div style={{height: '2.8vw'}}></div>
@@ -176,7 +176,7 @@ export default class Work extends React.Component {
               top: '4vw',
               mixBlendMode: 'darken'
             }}></div>
-            <img id="video_image" src={ 'http://futurebakery.cz/grav/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
+            <img id="video_image" src={ 'https://futurebakery.cz/grav/en/crowders/work/'+ slug(this.props.data.gravCrowdersWork.title.toLowerCase()) + '/' + this.props.data.gravCrowdersWork.big_image } ref={this.videoPreview} className={s.fiat_img} />
             <div id="video" className={s.embedded_video} ref={this.videoEmbed}>
               <ReactPlayer controls ref={this.videoPlayer} url={this.props.data.gravCrowdersWork.video} playing={this.state.playing} />            
             </div>

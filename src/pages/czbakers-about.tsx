@@ -55,7 +55,7 @@ const BakersAbout = ({ data, className }) => {
   } 
 
   function getImages(item) {
-    var image = ['http://futurebakery.cz/grav/cz/czbakers/pages/'  + slug(data.gravBakersCzAbout.title.toLowerCase()) + '/' + item.image];
+    var image = ['https://futurebakery.cz/grav/cz/czbakers/pages/'  + slug(data.gravBakersCzAbout.title.toLowerCase()) + '/' + item.image];
     return image;
   }  
 
@@ -119,7 +119,7 @@ const BakersAbout = ({ data, className }) => {
                 <Row>
 
                     <Figure 
-                    src={ 'http://futurebakery.cz/grav/cz/czbakers/pages/'+ slug(data.gravBakersCzAbout.title.toLowerCase()) + '/' + data.gravBakersCzAbout.image_one } 
+                    src={ 'https://futurebakery.cz/grav/cz/czbakers/pages/'+ slug(data.gravBakersCzAbout.title.toLowerCase()) + '/' + data.gravBakersCzAbout.image_one } 
                     className="bakers_about__image_one hide_on_mobile dropped"
                     />
 
@@ -157,7 +157,7 @@ const BakersAbout = ({ data, className }) => {
               <SVGicon className='bakers_about__brains' src='brains.svg' /> 
               <Row>
                 <Figure
-                src={ 'http://futurebakery.cz/grav/cz/czbakers/pages/'+ slug(data.gravBakersCzAbout.title.toLowerCase()) + '/' + data.gravBakersCzAbout.image_two } 
+                src={ 'https://futurebakery.cz/grav/cz/czbakers/pages/'+ slug(data.gravBakersCzAbout.title.toLowerCase()) + '/' + data.gravBakersCzAbout.image_two } 
                 className="bakers_about__image_two hide_on_mobile"
                 />      
                 <Split className='bakers_about__heading_three'>{data.gravBakersCzAbout.subheading_two}</Split>      
@@ -350,7 +350,7 @@ const BakersAbout = ({ data, className }) => {
 
           {data.gravBakersCzAbout.svg_icons.map((svg, i) => (
             <img key={i} className="bakers_about_step_icons" 
-            src={ 'http://futurebakery.cz/grav/cz/czbakers/pages/'+ slug(data.gravBakersCzAbout.title.toLowerCase()) + '/' + svg.svg }
+            src={ 'https://futurebakery.cz/grav/cz/czbakers/pages/'+ slug(data.gravBakersCzAbout.title.toLowerCase()) + '/' + svg.svg }
             />       
           ))}
 
@@ -371,7 +371,7 @@ const BakersAbout = ({ data, className }) => {
 
 
           <SmallFigure
-          src={ 'http://futurebakery.cz/grav/cz/czbakers/pages/'+ slug(data.gravBakersCzAbout.title.toLowerCase()) + '/' + data.gravBakersCzAbout.authors_image } 
+          src={ 'https://futurebakery.cz/grav/cz/czbakers/pages/'+ slug(data.gravBakersCzAbout.title.toLowerCase()) + '/' + data.gravBakersCzAbout.authors_image } 
           className="bakers_about_authors_image"
           />
 
