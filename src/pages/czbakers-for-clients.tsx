@@ -188,12 +188,12 @@ submitForm() {
         </Row>
 
         <Row className="clients_about_steps_three">
-            <div className="bakers_about_steps_text" >Fill out our Client Contact Form</div>
-            <div className="bakers_about_steps_text" >Make a detailed description of the problem or the task in hand (we can help you with this)</div>
-            <div className="bakers_about_steps_text" >Set up the reward</div>
-            <div className="bakers_about_steps_text" >Check out all the ideas from the contributors</div>
-            <div className="bakers_about_steps_text" >Pick the best one</div>
-            <div className="bakers_about_steps_text" >Become the owner of one</div>
+            <div className="bakers_about_steps_text" >Vyplňte formulář pro klienty.</div>
+            <div className="bakers_about_steps_text" >Popište, s čím Vám můžeme pomoci.</div>
+            <div className="bakers_about_steps_text" >Určete odměnu za vybraný nápad.</div>
+            <div className="bakers_about_steps_text" >Probírejte se nápady od tvůrců.</div>
+            <div className="bakers_about_steps_text" >Vyberte pro Vás ten nejlepší nápad.</div>
+            <div className="bakers_about_steps_text" >Staňte se vlastníkem nápadu.</div>
         </Row> 
 
 
@@ -203,14 +203,14 @@ submitForm() {
               <Location>
                 {({ location }) => ( 
 
-                  <Link className="for_join_link_two" button arrow bakers onClick={this.toggleClass} to={location.pathname} onClick={this.toggleClass}>FILL OUT THE FORM</Link>
+                  <Link className="for_join_link_two" button arrow bakers onClick={this.toggleClass} to={location.pathname} onClick={this.toggleClass}>Vyplnit formulář</Link>
 
                   )}
               </Location> 
 
 
           <Paragraph className="for_divider_text_two">or simply</Paragraph>
-          <Link bakers arrow className="for_brief_link_two" to={'/bakerscontact'}>CALL US</Link>  
+          <Link bakers arrow className="for_brief_link_two" to={'/bakerscontact'}>Zavolejte nám</Link>  
 
       </Row>  
 
@@ -220,7 +220,7 @@ submitForm() {
 
         
          <img className="clients_form_arrow" src={'../svg/work_arrow.svg'} />
-         <form className="clients_form_form" action="https://futurebakers.wnh.cz/app/api/query-form " method="post">
+         <form className="clients_form_form" action="https://futurebakers.wnh.cz/app/api/query-form" method="post">
 
           <Location>
             {({ location }) => ( 

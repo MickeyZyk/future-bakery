@@ -144,7 +144,7 @@ export default ({ children, data, set, state, location, ...props }: IAppLayoutPr
 
 
       <div className='fb_linkedin'>
-        <a href='https://facebook.com' target='_blank'>FACEBOOK</a><a href='https://linkedin.com' target='_blank'>LINKEDIN</a>
+        <a href='https://facebook.com/FutureBakery' target='_blank'>FACEBOOK</a><a href='https://www.linkedin.com/company/the-future-bakery/about/' target='_blank'>LINKEDIN</a>
       </div>    
      
       {children}
