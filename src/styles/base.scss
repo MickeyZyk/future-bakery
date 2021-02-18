@@ -5261,7 +5261,7 @@ select {
   @media (min-width: $min-960) {
     opacity: 1;
     position: absolute;
-    top: 24vw;      
+    top: 24.5vw;      
     
   }   
 }
@@ -5524,7 +5524,7 @@ select {
     position: relative;
     top: 2vw;
     bottom: 0;    
-    @include grid-col(1.3);
+    @include grid-col(1.5);
     @include grid-offset-left(2);
     margin-bottom: 3vw;
   }  
@@ -5598,7 +5598,7 @@ select {
   @media (min-width: $min-960) {
     position: relative;
     top: 4.35vw;  
-    @include grid-col(1);
+    @include grid-col(2);
     @include grid-offset-left(0);
   }  
 }
@@ -5891,17 +5891,35 @@ select {
 
 }
 
-.clients_form_goto {
+.clients_form_goto_bottom {
 
   @include grid-col(4);
   @include grid-offset-left(2);
   position: relative;
+  color: #ff7a00;
 
   @media (min-width: $min-960) {
     position: relative;
-    @include grid-col(4);    
+    @include grid-col(9);    
     @include grid-offset-left(0);
-    margin-top: 15vw;
+    margin-top: .5vw;
+    margin-bottom: 15vw;
+  } 
+
+}
+
+.clients_form_goto_top {
+
+  @include grid-col(4);
+  @include grid-offset-left(2);
+  position: relative;
+  color: #ff7a00;
+
+  @media (min-width: $min-960) {
+    position: relative;
+    @include grid-col(9);    
+    @include grid-offset-left(0);
+    margin-top: 5vw;
   } 
 
 }
@@ -8767,4 +8785,8 @@ transition: all 2s;
     color: #000;
     text-align: center;
     /* margin-right: 0; */
+}
+
+.bakers_color:not(.the_button_link) .the_link_text a {
+    color: #ff7a00!important;
 }

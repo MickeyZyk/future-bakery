@@ -5,6 +5,7 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Link } from 'components/link/Link';
+import { ExternalLink } from 'components/link/ExternalLink';
 import { LeftLink } from 'components/link/LeftLink';
 import { Row } from 'components/row/Row';
 import { Figure2 } from 'components/figure2/Figure2';
@@ -155,7 +156,7 @@ submitForm() {
 
           <Row>
 
-          <HeadingTwo className={this.state.active ? 'for_clients_solution_heading_hidden' : 'for_clients_solution_heading'} >Looking for ideas or a solution to a problem? </HeadingTwo>
+          <HeadingTwo className={this.state.active ? 'for_clients_solution_heading_hidden' : 'for_clients_solution_heading'} >Hledáte nápady nebo komplexnější řešení pro vaše projekty? </HeadingTwo>
 
 
           </Row>
@@ -209,7 +210,7 @@ submitForm() {
               </Location> 
 
 
-          <Paragraph className="for_divider_text_two">or simply</Paragraph>
+          <Paragraph className="for_divider_text_two">nebo</Paragraph>
           <Link bakers arrow className="for_brief_link_two" to={'/bakerscontact'}>Zavolejte nám</Link>  
 
       </Row>  
@@ -225,7 +226,7 @@ submitForm() {
           <Location>
             {({ location }) => ( 
 
-              <LeftLink bakers arrow className="clients_form_link" onClick={this.toggleClass} to={location.pathname}>CLOSE</LeftLink>
+              <LeftLink bakers arrow className="clients_form_link" onClick={this.toggleClass} to={location.pathname}>Zavřít</LeftLink>
 
             )}
           </Location>            
@@ -247,7 +248,7 @@ submitForm() {
           <p>Text objednávky</p>
           <textarea value={this.state.text} onChange={this.handleChange} rows="4" cols="50" name="text"/><br/><br/>
           <input id="gdpr" type="checkbox" checked={this.state.gdpr} onChange={this.handleChange} name="gdpr"/>
-          <label htmlFor="gdpr"><span></span>Souhlas s GDPR..</label><br/>
+          <label htmlFor="gdpr"><span></span>Souhlas s <a href="https://futurebakers.wnh.cz/files/Podm%C3%ADnky%20zpracov%C3%A1n%C3%AD%20osobn%C3%ADch%20%C3%BAdaj%C5%AF.pdf" target="_blank"><strong style={{color: "#ff7a00"}}>GDPR</strong></a>..</label><br/>
           {this.validator.message('gdpr', this.state.gdpr, 'accepted')}<br/>
           <input id="terms" type="checkbox" checked={this.state.terms} onChange={this.handleChange} name="terms"/>
           <label htmlFor="terms"><span></span>Souhlasim s podminkami FutureBakery</label><br/>
@@ -258,8 +259,8 @@ submitForm() {
             <Row> 
               <Link className="clients_form_submit" button bakers arrow to={location.pathname} onClick={this.submitForm}><strong>ODESLAT</strong></Link>
             </Row>
-            <Link className="clients_form_goto" bakers arrow to={location.pathname}><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO ZADAVATELE</strong></Link><br/>
-            <Link className="clients_form_goto" bakers arrow to={location.pathname}><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO AUTORY</strong></Link>            
+            <ExternalLink style="{marginTop: '1vw'}" className="clients_form_goto_top" orange bakers arrow to="https://futurebakers.com/files/terms/client/cs_CZ.pdf"><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO ZADAVATELE</strong></ExternalLink><br/>
+            <ExternalLink style="{marginTop: '1vw'}" className="clients_form_goto_bottom" orange bakers arrow to="https://futurebakers.com/files/terms/creative/cs_CZ.pdf"><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO AUTORY</strong></ExternalLink>            
             </>
             )}
           </Location>  

@@ -101,11 +101,11 @@ export default class bakersLogin extends React.Component {
                   </Tween>
 
               <div className='bakers_login__main_login'>
-                <ExternalLink className='bakers_login__main_login_link' gray arrow to={'https://futurebakers.wnh.cz/cs/sign/in'}>PŘIHLÁSIT SE</ExternalLink>
+                <ExternalLink className='bakers_login__main_login_link' gray arrow to={'https://futurebakers.com/cs/sign/in'}>PŘIHLÁSIT SE</ExternalLink>
               </div>
 
                 <Row>
-                 <ExternalLink className='bakers_login__main_joinus' bakers button gray arrow to={'https://futurebakers.wnh.cz/cs/registrovat'}>PŘIPOJ SE K NÁM</ExternalLink>
+                 <ExternalLink className='bakers_login__main_joinus' bakers button gray arrow to={'https://futurebakers.com/cs/registrovat'}>PŘIPOJ SE K NÁM</ExternalLink>
                 </Row>
 
               </Row>
@@ -118,9 +118,9 @@ export default class bakersLogin extends React.Component {
                   <Location>
                     {({ location }) => (             
 
-                    <Link arrow gray className='bakers_login__main_projects' to={location.pathname} onClick={ this.handleClick } >
+                    <ExternalLink arrow gray className='bakers_login__main_projects' to={'https://futurebakers.com/cs'} onClick={ this.handleClick } >
                       ZOBRAZIT AKTUÁLNÍ PROJEKTY
-                    </Link> 
+                    </ExternalLink> 
 
                       )}
                   </Location> 
@@ -130,7 +130,7 @@ export default class bakersLogin extends React.Component {
                   )}
                 </ScrollTo>
 
-                <ExternalLink arrow gray className='bakers_login__main_briefs' to={'https://futurebakers.wnh.cz/cs/ukoncene'}>
+                <ExternalLink arrow gray className='bakers_login__main_briefs' to={'https://futurebakers.com/cs/ukoncene'}>
                   ZOBRAZIT STARÉ BRIEFY
                 </ExternalLink>
 
