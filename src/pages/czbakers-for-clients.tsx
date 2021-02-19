@@ -261,6 +261,8 @@ submitForm() {
               <>
             <Row> 
               <Link className="clients_form_submit" button bakers arrow to={location.pathname} onClick={this.submitForm}><strong>ODESLAT</strong></Link>
+            </Row>
+            <Row>
               <p>{this.form_message}</p>
             </Row>
             <ExternalLink style="{marginTop: '1vw'}" className="clients_form_goto_top" orange bakers arrow to="https://futurebakers.com/files/terms/client/cs_CZ.pdf"><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO ZADAVATELE</strong></ExternalLink><br/>
