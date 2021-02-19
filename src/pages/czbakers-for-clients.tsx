@@ -53,7 +53,7 @@ export default class BakersClients extends React.Component {
     this.submitForm = this.submitForm.bind(this);    
     this.toggleClass = this.toggleClass.bind(this); 
     this.handleChange = this.handleChange.bind(this); 
-    this.form_message = 'SSS';
+    this.form_message = '';
   } 
 
   handleChange = event => {
