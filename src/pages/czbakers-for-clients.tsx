@@ -53,6 +53,7 @@ export default class BakersClients extends React.Component {
     this.submitForm = this.submitForm.bind(this);    
     this.toggleClass = this.toggleClass.bind(this); 
     this.handleChange = this.handleChange.bind(this); 
+    this.form_message = 'SSS';
   } 
 
   handleChange = event => {
@@ -74,17 +75,19 @@ submitForm() {
     const { name, email, phone, company, ico, address, text } = this.state;
     axios({
       method: 'post',
-      url: 'https://bakerycorsproxy.herokuapp.com/https://futurebakers.wnh.cz/app/api/query-form',
+      url: 'https://bakerycorsproxy.herokuapp.com/https://futurebakers.com/app/api/query-form',
       data: { name, email, phone, company, ico, address, text },
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     })
       .then((result) => {
+          this.form_message = 'Děkujeme za objednávku!';
         console.log(result);
       });    
   } else {
     this.validator.showMessages();
     // rerender to show messages for the first time
     // you can use the autoForceUpdate option to do this automatically`
+    this.form_message = 'Něco se pokazilo. Prosím zkuste to znovu!';
     this.forceUpdate();
   }
 }
@@ -221,7 +224,7 @@ submitForm() {
 
         
          <img className="clients_form_arrow" src={'../svg/work_arrow.svg'} />
-         <form className="clients_form_form" action="https://futurebakers.wnh.cz/app/api/query-form" method="post">
+         <form className="clients_form_form" action="https://futurebakers.com/app/api/query-form" method="post">
 
           <Location>
             {({ location }) => ( 
@@ -258,6 +261,7 @@ submitForm() {
               <>
             <Row> 
               <Link className="clients_form_submit" button bakers arrow to={location.pathname} onClick={this.submitForm}><strong>ODESLAT</strong></Link>
+              <p>{this.form_message}</p>
             </Row>
             <ExternalLink style="{marginTop: '1vw'}" className="clients_form_goto_top" orange bakers arrow to="https://futurebakers.com/files/terms/client/cs_CZ.pdf"><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO ZADAVATELE</strong></ExternalLink><br/>
             <ExternalLink style="{marginTop: '1vw'}" className="clients_form_goto_bottom" orange bakers arrow to="https://futurebakers.com/files/terms/creative/cs_CZ.pdf"><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO AUTORY</strong></ExternalLink>            

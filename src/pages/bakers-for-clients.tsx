@@ -5,6 +5,7 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 import SVGicon from 'components/svgicon/SVGicon';
 import SVGiconReverse from 'components/svgiconreverse/SVGiconReverse';
 import { Link } from 'components/link/Link';
+import { ExternalLink } from 'components/link/ExternalLink';
 import { LeftLink } from 'components/link/LeftLink';
 import { Row } from 'components/row/Row';
 import { Figure2 } from 'components/figure2/Figure2';
@@ -52,6 +53,7 @@ export default class BakersClients extends React.Component {
     this.submitForm = this.submitForm.bind(this);    
     this.toggleClass = this.toggleClass.bind(this); 
     this.handleChange = this.handleChange.bind(this); 
+    this.form_message = '';
   } 
 
   handleChange = event => {
@@ -73,18 +75,21 @@ submitForm() {
     const { name, email, phone, company, ico, address, text } = this.state;
     axios({
       method: 'post',
-      url: 'https://bakerycorsproxy.herokuapp.com/https://futurebakers.wnh.cz/app/api/query-form',
+      url: 'https://bakerycorsproxy.herokuapp.com/https://futurebakers.com/app/api/query-form',
       data: { name, email, phone, company, ico, address, text },
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     })
       .then((result) => {
         console.log(result);
+        this.form_message = 'Thank you for your message!';
       });    
   } else {
     this.validator.showMessages();
     // rerender to show messages for the first time
     // you can use the autoForceUpdate option to do this automatically`
+    this.form_message = 'Something went wrong, please try again!';
     this.forceUpdate();
+
   }
 }
 
@@ -125,11 +130,11 @@ submitForm() {
 
             <div className="crowders_about_first_left">
 
-              <HeadingTwo className='for_clients_about_heading'>Našli jsme tisíce talentů, kteří jsou připraveni pomoct rozlousknout Váš problém nebo vymyslet nápady pro Váš byznys.</HeadingTwo>   
+              <HeadingTwo className='for_clients_about_heading'>This is where you can submit your brief and generate wonderful ideas. We can provide additional services among others analysis of the ideas, creation of a strategy or plan of action. </HeadingTwo>   
 
               <AnimatedImage className='for_clients_image responsive_image show_on_mobile' src="../images/rocket.jpg" />         
 
-              <Paragraph className='for_clients_about_paragraph paragraph'>Jen nápady nestačí a potřebujete píchnout i s analýzou, strategií nebo koncepcí? Dejte nám vědět.</Paragraph>
+              <Paragraph className='for_clients_about_paragraph paragraph'>You can let us know, what exactly you need from Future Bakers.</Paragraph>
 
             </div>
 
@@ -220,7 +225,7 @@ submitForm() {
 
         
          <img className="clients_form_arrow" src={'../svg/work_arrow.svg'} />
-         <form className="clients_form_form" action="https://futurebakers.wnh.cz/app/api/query-form " method="post">
+         <form className="clients_form_form" action="https://futurebakers.com/app/api/query-form" method="post">
 
           <Location>
             {({ location }) => ( 
@@ -230,36 +235,39 @@ submitForm() {
             )}
           </Location>            
           <p>&nbsp;</p>
-          <p>Jméno a přijmení</p>
+          <p>Name and Surname</p>
           <input type="text" value={this.state.name} onChange={this.handleChange} name="name"/><br/>
           {this.validator.message('name', this.state.name, 'required')}<br/>
           <p>Email</p>
           <input type="email" value={this.state.email} onChange={this.handleChange} name="email"/><br/>
           {this.validator.message('email', this.state.email, 'email|required')}<br/>
-          <p>Telefon</p>
+          <p>Phone</p>
           <input type="text" value={this.state.phone} onChange={this.handleChange} name="phone"/><br/><br/>          
-          <p>Firma</p>
+          <p>Company</p>
           <input type="text" value={this.state.company} onChange={this.handleChange} name="company"/><br/><br/>  
-          <p>IČO</p>
+          <p>ID Number</p>
           <input type="text" value={this.state.ico} onChange={this.handleChange} name="ico"/><br/><br/>   
-          <p>Fakturační adresa</p>
+          <p>Address</p>
           <input type="text" value={this.state.address} onChange={this.handleChange} name="address"/><br/><br/>   
-          <p>Text objednávky</p>
+          <p>Message text</p>
           <textarea value={this.state.text} onChange={this.handleChange} rows="4" cols="50" name="text"/><br/><br/>
           <input id="gdpr" type="checkbox" checked={this.state.gdpr} onChange={this.handleChange} name="gdpr"/>
-          <label htmlFor="gdpr"><span></span>Souhlas s GDPR..</label><br/>
+          <label htmlFor="gdpr"><span></span>I agree with <a href="https://futurebakers.wnh.cz/files/Podm%C3%ADnky%20zpracov%C3%A1n%C3%AD%20osobn%C3%ADch%20%C3%BAdaj%C5%AF.pdf" target="_blank"><strong style={{color: "#ff7a00"}}>GDPR</strong></a>..</label><br/>
           {this.validator.message('gdpr', this.state.gdpr, 'accepted')}<br/>
           <input id="terms" type="checkbox" checked={this.state.terms} onChange={this.handleChange} name="terms"/>
-          <label htmlFor="terms"><span></span>Souhlasim s podminkami FutureBakery</label><br/>
+          <label htmlFor="terms"><span></span>I agree with FutureBakery Terms and Conditions</label><br/>
           {this.validator.message('terms', this.state.terms, 'accepted')}
           <Location>
             {({ location }) => (
               <>
             <Row> 
-              <Link className="clients_form_submit" button bakers arrow to={location.pathname} onClick={this.submitForm}><strong>ODESLAT</strong></Link>
+              <Link className="clients_form_submit" button bakers arrow to={location.pathname} onClick={this.submitForm}><strong>SEND</strong></Link>
             </Row>
-            <Link className="clients_form_goto" bakers arrow to={location.pathname}><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO ZADAVATELE</strong></Link><br/>
-            <Link className="clients_form_goto" bakers arrow to={location.pathname}><strong>VŠEOBECNÉ OBCHODNÍ PODMÍNKY PRO AUTORY</strong></Link>            
+            <Row>
+              <p>{this.form_message}</p>
+            </Row>
+            <ExternalLink style="{marginTop: '1vw'}" className="clients_form_goto_top" orange bakers arrow to="https://futurebakers.com/files/terms/client/cs_CZ.pdf"><strong>GENERAL TERMS AND CONDITIONS FOR CONTRACTING AUTHORITIES</strong></ExternalLink><br/>
+            <ExternalLink style="{marginTop: '1vw'}" className="clients_form_goto_bottom" orange bakers arrow to="https://futurebakers.com/files/terms/creative/cs_CZ.pdf"><strong>GENERAL TERMS AND CONDITIONS FOR AUTHORS</strong></ExternalLink>             
             </>
             )}
           </Location>  
