@@ -8,7 +8,7 @@ export default () => (
     <Helmet title="404 Not Found" />
 
     <Segment>
-      <h1>Page was not found</h1>
+      <h1>Page was not found</h1> 
     </Segment> 
   </>
 );
